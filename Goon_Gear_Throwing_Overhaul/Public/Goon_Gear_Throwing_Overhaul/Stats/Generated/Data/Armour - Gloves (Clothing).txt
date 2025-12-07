@@ -270,9 +270,29 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Craterflesh Gloves ====================================
-// TODO: Something/anything.
+// Bug Fix: No longer a damage rider that functions as a damage rider source.
+// TODO: Template stuff.
 
-// gear entry
+// new entry "MAG_Critical_Force_Gloves"
+// type "Armor"
+// using "_Hand_Magic_Metal"
+// data "RootTemplate" "556c4071-7d59-4cb7-ad84-9fa0efcd535f"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Critical_Force_Critical_Passive"
+// data "Unique" "1"
+
+new entry "MAG_Critical_Force_Critical_Passive"
+type "PassiveData"
+using "MAG_Critical_Force_Critical_Passive"
+// Craterous Wounds
+// data "DisplayName" "h14b285aag980cg4e8dg9d1fgec61e7aba0e4;2"
+// Whenever you score a <LSTag Tooltip="CriticalHit">critical hit</LSTag>, deal an additional [1].
+// data "Description" "h485c5d37g241dg453fg8555g0406d28f1476;3"
+// data "DescriptionParams" "DealDamage(1d6, Force)"
+// data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical)"
+data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,false)"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"

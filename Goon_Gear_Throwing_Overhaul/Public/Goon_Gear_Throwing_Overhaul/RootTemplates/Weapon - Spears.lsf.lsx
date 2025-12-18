@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Jagged Spear -->
+			<!-- Jagged Spear -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h74f27475g758ag4473gb6dcg5b2df323f242" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h544c3a35g538bg4ca0gbdabga9213a9ebdc4" version="1" />
@@ -56,7 +56,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Lightning Jabber -->
+			<!-- Lightning Jabber -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hf6ae4f36ga5e5g4f54g9375g50ad1c738cdb" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="heb9ab780g155dg4c30ga064g738a7b9d7603" version="3" />
@@ -115,7 +115,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Vision of the Absolute -->
+			<!-- Vision of the Absolute -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hcdf42a60g1636g476egb7e2g7d12ea538f3c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb8ed6552g013fg49a6g8044g63144ff47df0" version="1" />

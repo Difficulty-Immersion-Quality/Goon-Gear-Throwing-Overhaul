@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Crossbow of Arcane Force -->
+			<!-- Crossbow of Arcane Force -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hdd930052gb197g425eg91e2ga839077f270a" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h1159d4f8gf0e4g4a4bgaed2gfa643d6594f1" version="2" />
@@ -46,6 +46,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -55,7 +56,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Gandrel's Aspiration -->
+			<!-- Gandrel's Aspiration -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="he001f766g7fe5g46a3ga6ecg54ee0ff76690" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h8a83a31egb863g43a5g862cg736307d4aa34" version="3" />
@@ -97,6 +98,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -106,7 +108,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Giantbreaker -->
+			<!-- Giantbreaker -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h3626cd8egb061g4e5egb89fg8fde516a70f4" version="4" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h06f73dc3gb80ag4e92gafe0gb0585b1bdd11" version="2" />
@@ -148,6 +150,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -157,7 +160,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Harold -->
+			<!-- Harold -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h8ff9d5dfgf8eag4eecgb4e8gd8cc454135ec" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="had113768gf347g4c1egb60fg6a58b4eb89a2" version="2" />
@@ -199,6 +202,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -208,7 +212,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Long Arm of the Gur -->
+			<!-- The Long Arm of the Gur -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h147f158ag17b9g4c01g8417g012023a4cf8c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h8b3dd519gdda9g47fdg840eg185948e6c811" version="1" />
@@ -262,7 +266,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Fabricated Arbalest -->
+			<!-- Fabricated Arbalest -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hac631d7cg4033g4003g91f2g40e119ba0a17" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h5fd60ee3g580eg4175g9d2fgca067cf4889f" version="2" />
@@ -304,6 +308,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -313,7 +318,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Hellfire Engine Crossbow -->
+			<!-- Hellfire Engine Crossbow -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hf9cc6cd3geb5dg41b4g9a74gb69c03fa30d0" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb3f5a1bcgbc0cg4fa3gabfdg65c7f3fe5ed3" version="4" />
@@ -357,6 +362,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">

@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Comeback Handaxe -->
+			<!-- Comeback Handaxe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h16f8a1dcg9d86g49eag8624g48b34e0112c3" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h54ad7900gec4eg4199gb4c2g3b6da889a553" version="1" />
@@ -83,7 +83,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Dragon's Grasp -->
+			<!-- Dragon's Grasp -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9bdc39d1gea2bg4ba6gba90gfe5888f9b28c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h5827fc2eg661eg4649gbdb1g4f27aef3cdcc" version="1" />
@@ -137,7 +137,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Ritual Axe -->
+			<!-- Ritual Axe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h67c6b863gc98bg4eb9gbcd0g441d0b4e5089" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hddf2f065ga2d3g468aga744gc1534a6d81ef" version="1" />

@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Magical Pike -->
+			<!-- Magical Pike -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h464abc97gcff4g4c97g9cc4g8feb534ae339" version="1" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -55,7 +55,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Returning Pike -->
+			<!-- Returning Pike -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9836c60ag8993g46d8gb2e0g5c9ddf49303b" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h788d91f4g6dfeg4e40g9ed0gd19b1519ccfe" version="2" />
@@ -109,7 +109,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Breaching Pikestaff -->
+			<!-- Breaching Pikestaff -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2301ce7dg393ag4e94gb749g61930ae62773" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h322c8889gbe9eg48b8g9e37g55de2a6909bd" version="2" />
@@ -160,7 +160,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Unseen Menace -->
+			<!-- Unseen Menace -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hf455caa6gc4c4g4b78gb386g9bb2d8fa1f5b" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h2a08b068g277cg428agb5b3g3e330e4c4b0b" version="2" />
@@ -213,7 +213,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Impaler -->
+			<!-- The Impaler -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h85cbc64fgcc10g483eg9a32g8d52587a0f3c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h0427cd3cga481g47a5g8ec7gecf2892b9c03" version="2" />

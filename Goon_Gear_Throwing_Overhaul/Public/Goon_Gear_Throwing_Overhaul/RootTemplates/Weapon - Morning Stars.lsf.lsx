@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Ravengard's Scourger -->
+			<!-- Ravengard's Scourger -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2c73d7d3g57abg49edg8051ge4df1cf88b39" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hce3c24d6g7bc7g4a42ga9f3gd567f28fb2dc" version="3" />
@@ -56,7 +56,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Twist of Fortune -->
+			<!-- Twist of Fortune -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="ha86f54fdgbc7bg455bg82c4g0679dac57a5b" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb1eaeb2eg0879g489eg94d2g4c2eab3cbb42" version="3" />
@@ -108,7 +108,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Sacred Star -->
+			<!-- The Sacred Star -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hab2527bcge4cdg46fcg98e3g1ce37c87c5de" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h715d6d8ege87cg479dga3b1g74c06848026d" version="3" />
@@ -163,7 +163,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Tough Sunrises -->
+			<!-- Tough Sunrises -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h0b7848b3gf361g4922ga517gcbba881819aa" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h1b870ba4g9bacg459fgb33fg8c5f766e719d" version="2" />

@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Myrkulite Scourge -->
+			<!-- Myrkulite Scourge -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h4c430f0dg3ea0g4bd0gb14ag8726215af138" version="1" />
@@ -85,7 +85,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Corrosive Flail -->
+			<!-- Corrosive Flail -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h529fc45bg3f9cg41e2gbfdfg271af6c4a38d" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hdbada8d5ga7a1g4a9agbd71gaf5aa698a28c" version="2" />
@@ -136,7 +136,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Defender Flail -->
+			<!-- Defender Flail -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h81bafe80g5c19g426bgbcdbg2b112fa91b96" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hf0a370a0g3a61g4372ga61dg6b63cb64ac18" version="1" />
@@ -188,7 +188,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Flail of Ages -->
+			<!-- Flail of Ages -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h1a806c47ge23dg4c77gb70bgaef3a9f2dd50" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h0962dffaga293g4ad3g998agc5805558059f" version="2" />
@@ -240,7 +240,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Chaos Flail -->
+			<!-- Chaos Flail -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h6bc9c326g91bbg42f9g977fg46172ec0c94c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hddb39ffdg875eg419cg976dg2be29090abb8" version="1" />
@@ -327,7 +327,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Flail of Dread Skulls -->
+			<!-- Flail of Dread Skulls -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h48d777acg8be0g4dccga058ge6df98e3f662" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="he0a4ddf7ge316g41feg8388ged83f4cb5ed9" version="1" />
@@ -384,7 +384,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Planeslayer Flail -->
+			<!-- Planeslayer Flail -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h185cc788g90f8g4476g9ae6gc6275c7dafc9" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h062bbda8g494bg425cg8eadg07a9985d6b83" version="2" />

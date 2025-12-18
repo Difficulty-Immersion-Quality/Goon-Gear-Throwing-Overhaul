@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Exterminator's Axe -->
+			<!-- Exterminator's Axe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h890c9c8cg5b87g4253gb748g647602fab950" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hbccec4f1g3d36g4effga453gfa5ceff2f08d" version="2" />
@@ -57,7 +57,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Undead Bane -->
+			<!-- The Undead Bane -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h90d74810gfdf5g4f96gbf19g5f19fae94919" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hc46dba75gd272g4974gb6ddga0d8ebd9dcbf" version="1" />
@@ -109,7 +109,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Very Heavy Greataxe -->
+			<!-- Very Heavy Greataxe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hba1a35e6g805eg4bcegb2a1g044d93737613" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hab8d4534g18b6g4655gad0fg46692f31e5bb" version="2" />
@@ -133,7 +133,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Blooded Greataxe -->
+			<!-- Blooded Greataxe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h8e4ea50bgb74fg437aga67agc44a2cbbe5b0" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hd3671db8g7b99g424dg86d5g79683498fa23" version="2" />
@@ -187,7 +187,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Defender Greataxe -->
+			<!-- Defender Greataxe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h7599056dge8adg4032g8b77ga266b91daed6" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hf55146e9g8b0ag4882g833ag6ce432009755" version="2" />
@@ -242,7 +242,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Hellfire Greataxe -->
+			<!-- Hellfire Greataxe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hd4cb8d54g494cg44b5g92bcg683dc59f3177" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hdd74d694g4366g43fcg8f04g9b7e914b9e82" version="4" />
@@ -297,7 +297,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Sethan -->
+			<!-- Sethan -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h92ad0b4bged65g49adga6c8gb5c79a94558c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h54df347eg63bdg4216g8a95gfa5f5f1891ab" version="1" />

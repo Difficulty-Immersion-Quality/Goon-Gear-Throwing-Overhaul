@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Artificial Leech +1 -->
+			<!-- Artificial Leech +1 -->
 				<node id="GameObjects">
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="MapKey" type="FixedString" value="a27e3e3a-ef55-4733-9655-29c7913d26d5" />
@@ -53,7 +53,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Syringe +1 -->
+			<!-- Syringe +1 -->
 				<node id="GameObjects">
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="MapKey" type="FixedString" value="95c3af3c-83b9-4cc0-b633-1493b7daca4d" />
@@ -102,7 +102,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Assassin's Touch -->
+			<!-- Assassin's Touch -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hde32801bg3ed1g4affg9fb1g388047b2a1a1" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h37ddff25gd2d2g4aadga190gd469ee08b124" version="2" />
@@ -152,7 +152,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Hunter's Dagger -->
+			<!-- Hunter's Dagger -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hda22a120g5589g4c91g9e4fg2548c7781176" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h33bf11edg0743g4481g889fgcf85cefe2f0d" version="2" />
@@ -204,7 +204,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Dolor's Dagger -->
+			<!-- Dolor's Dagger -->
 				<node id="GameObjects">
 					<attribute id="CanClickThrough" type="bool" value="False" />
 					<attribute id="CanClimbOn" type="bool" value="False" />
@@ -263,7 +263,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Dolor Amarus -->
+			<!-- Dolor Amarus -->
 				<node id="GameObjects">
 					<attribute id="MapKey" type="FixedString" value="d3e121fb-09c0-4478-84f1-f4f3e28cd50f" />
 					<attribute id="Name" type="LSString" value="MAG_Vicious_Dagger" />
@@ -315,7 +315,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Sussur Dagger -->
+			<!-- Sussur Dagger -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h0496d826gfd8dg4ac2gbab7gf8d8bf831be0" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hd3f607a8gbd0fg4b9aga683g965c06fb6055" version="1" />

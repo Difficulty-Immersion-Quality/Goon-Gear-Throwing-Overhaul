@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Drakethroat Glaive -->
+			<!-- Drakethroat Glaive -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hf3eab132geb4cg4d5eg8281gb9a005d7aa6a" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hba1e047cgb3e6g49d2ga209gf6e6e1dfbecf" version="2" />
@@ -56,7 +56,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Monster Slayer Glaive -->
+			<!-- Monster Slayer Glaive -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h10796596g87eag450bga868geca0a64b0374" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="he27617d4g711ag4a75gbc1bg320f455fb768" version="1" />
@@ -108,7 +108,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Moonlight Glaive -->
+			<!-- Moonlight Glaive -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h1316e739gb4b0g4b1fg87d7g698e26f9cc47" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h7cb363d0g94edg49f7g8dbbgb65977e3daac" version="2" />
@@ -163,7 +163,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Sorrow -->
+			<!-- Sorrow -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h66f28cfeg3977g4f5dg886fg39785135cbcc" version="6" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h416914bagc8b3g4c19g948dgc562dfab8e47" version="2" />
@@ -215,7 +215,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Dancing Breeze -->
+			<!-- The Dancing Breeze -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h367259e3gf04eg4d71gadf5gcde8741338b9" version="2" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -266,7 +266,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Scythe of Myrkul -->
+			<!-- Scythe of Myrkul -->
 				<node id="GameObjects">
 					<attribute id="CanBePickpocketed" type="bool" value="False" />
 					<attribute id="ContainerAutoAddOnPickup" type="bool" value="False" />

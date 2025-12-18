@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Shining Staver-of-Skulls -->
+			<!-- Shining Staver-of-Skulls -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="ha8bcdfaeg7f89g4176g9dbfg6ad8bed3cc7a" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h12d23ca4g6d56g45a7gbdd7g929f25dbb562" version="3" />
@@ -48,6 +48,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -62,7 +63,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Skybreaker -->
+			<!-- Skybreaker -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9da5ac53g1969g49d3g88d0g50d6eb3aac7e" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h14424035gd954g49aeg83cdg42190ae27ae5" version="3" />
@@ -104,6 +105,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -113,7 +115,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Wulbren's Hammer -->
+			<!-- Wulbren's Hammer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2fb65908g182eg44f3g94ffgc355feac8ded" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hee7328fbg7dedg4037g810egc5ee3f92f5a7" version="2" />
@@ -182,6 +184,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
@@ -194,7 +197,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Brewing Ladle -->
+			<!-- Brewing Ladle -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h94e7f078g4e72g49eaga2e3g8ab836dbdde4" version="1" />
@@ -267,6 +270,7 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">

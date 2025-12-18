@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Azer Warhammer -->
+			<!-- Azer Warhammer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hd9e6ee82g3897g47a2ga6dcg4bc56630635c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h18b57093g4f09g4b89g8873g44cefd964d8b" version="2" />
@@ -59,7 +59,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Ceremonial Warhammer - Local template -->
+			<!-- Ceremonial Warhammer - Local template -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h1c836e41g47bag4061g96d6g423fdb63c342" version="1" />
 					<attribute id="Flag" type="int32" value="1" />
@@ -140,7 +140,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Faithbreaker -->
+			<!-- Faithbreaker -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h92dcc307gaee5g44a0gb0f1g5a42ad362cb2" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h3e03dfefg1e23g4ef8g8dfbg44e5b92d769e" version="1" />
@@ -195,7 +195,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Intransigent Warhammer -->
+			<!-- Intransigent Warhammer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="heeb0a636gf1d9g4475g81b6g1c517fe4468b" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h58bd40c7ga91bg446fg8928g35681ce76e51" version="2" />
@@ -248,7 +248,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Charge-Bound Warhammer -->
+			<!-- Charge-Bound Warhammer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hb57679cdg9810g4ad9gaf9agd793d8593ba9" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h0b474963gd232g468egaf09g25e8795c422c" version="2" />
@@ -307,7 +307,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Clown Hammer -->
+			<!-- Clown Hammer -->
 				<node id="GameObjects">
 					<attribute id="CanClickThrough" type="bool" value="False" />
 					<attribute id="CanClimbOn" type="bool" value="False" />
@@ -401,7 +401,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Hammer of the Just -->
+			<!-- Hammer of the Just -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="ha5efd25eg225bg4e88gac4egf6587dc77f30" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hda2028d8g1d8eg4685g8eb2g47bb703e0a33" version="2" />
@@ -456,7 +456,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Ketheric's Warhammer -->
+			<!-- Ketheric's Warhammer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2b2314d1g6c44g4ff3g9f63ge0041dac2c9e" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hcfe90223g5d43g4cfbg8431ged8516caa054" version="2" />
@@ -510,7 +510,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Dwarven Thrower -->
+			<!-- Dwarven Thrower -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hbafb86d6g3349g4241gb303g428f445f31cd" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="had087e20g32d1g4f2dgaaeag423c7e88982d" version="1" />
@@ -568,7 +568,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Orphic Hammer -->
+			<!-- Orphic Hammer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hf64042f4g8fbdg4c00g9f23g8cf73993bd83" version="1" />
 					<attribute id="Icon" type="FixedString" value="Item_LOW_MephistosVault_OrphicHammer" />
@@ -591,7 +591,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Infernal Warhammer -->
+			<!-- Infernal Warhammer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hd5e59552gf417g4218ga308g2daf7767b32e" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h2e87c006g29b2g4ca7gb28agfcba61b127fa" version="1" />

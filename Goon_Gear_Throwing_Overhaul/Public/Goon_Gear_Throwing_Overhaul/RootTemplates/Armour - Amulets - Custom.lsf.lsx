@@ -4,6 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+			<!-- Pendant Of Animal Speech -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="haa29c2f4g9eecg46eeg96c9g3efbe30a1c48" version="1" />
 					<attribute id="Description" type="TranslatedString" handle="h1276696cg0997g4e4bg8b7cg9312f9039a84" version="1" />

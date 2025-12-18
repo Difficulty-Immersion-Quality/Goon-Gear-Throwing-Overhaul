@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Sussur Greatsword -->
+			<!-- Sussur Greatsword -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h76b3b60fg8606g4204g83d2g925db719d5cc" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="he11cbd50gad99g4f4dgb6edg82b0174e0de2" version="1" />

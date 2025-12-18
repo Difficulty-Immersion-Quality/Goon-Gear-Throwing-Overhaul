@@ -4,8 +4,8 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- TODO: More than just cosmetic changes -->
-				<!-- Spidersilk Armour -->
+			<!-- Spidersilk Armour -->
+			<!-- TODO: More than just cosmetic changes -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h6d13c83cg1ab4g46d3ga3bcg8de349ce185d" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h0d36c182gd7acg4e02gacdcg8b6094f22408" version="1" />

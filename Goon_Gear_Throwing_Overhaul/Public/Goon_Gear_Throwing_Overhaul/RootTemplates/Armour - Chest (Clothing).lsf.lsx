@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- The Mighty Cloth -->
+			<!-- The Mighty Cloth -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h442cb42cg42eag4db3g97d2g00af03ffeee6" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h22994e4cgb725g4847g8720gea1ba809f60e" version="5" />
@@ -55,7 +55,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Protecty Sparkswall -->
+			<!-- The Protecty Sparkswall -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="heee0e803g50efg4c00g8255g8827e025ef7d" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h7272d7bcgfb91g4022gba34g3d62146ba78f" version="6" />

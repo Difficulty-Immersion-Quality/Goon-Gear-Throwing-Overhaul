@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Sickle of BOOOAL -->
+			<!-- Sickle of BOOOAL -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h9b7ac0b7g5e1fg4307ga7a8gc911787a28ad" version="1" />
@@ -99,7 +99,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Sussur Sickle -->
+			<!-- Sussur Sickle -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h4dfb7163gf3f5g42e4ga39ege8e25bd316dd" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hf9d58539gc31fg4b02gb3d6g36f0134571b8" version="1" />
@@ -184,7 +184,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Wavemother's Sickle -->
+			<!-- Wavemother's Sickle -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h8e6943fagb792g4598g86fcgd7c1bd0dc10c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h74856d42gb077g486fg878cga70643ddc8c7" version="2" />

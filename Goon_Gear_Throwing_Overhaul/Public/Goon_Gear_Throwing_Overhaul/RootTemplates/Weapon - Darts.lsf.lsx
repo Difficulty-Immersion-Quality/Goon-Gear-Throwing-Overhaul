@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Base entry -->
+			<!-- Base entry -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="heabf6ccdg5f76g41a2g903cg98e28de7870d" version="1" />
@@ -83,7 +83,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Dart +1 -->
+			<!-- Dart +1 -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h7f94c9ccgd6e1g4e37g9c99g75fdd1384fbd" version="2" />
@@ -130,7 +130,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Dart +2 -->
+			<!-- Dart +2 -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hb53186cbga313g4b9bg890dg56e8c638a7ff" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hfb502717g447cg4038g95bbg4ff7a448f733" version="2" />

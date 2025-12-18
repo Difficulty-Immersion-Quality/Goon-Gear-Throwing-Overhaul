@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Boots of Stormy Clamour -->
+			<!-- Boots of Stormy Clamour -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h5f5d0090gd37ag4d8dga9e5gdc08ee29d42c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="he48b4550g8cb0g4b1bga196g061e7c97de20" version="2" />
@@ -57,7 +57,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Boots of Genial Striding  -->
+			<!-- Boots of Genial Striding  -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9ed760d9g3277g4aebgb63ag8c51e81942df" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h23f5a39cg6ed3g442fga86dg1c28e8db4878" version="2" />
@@ -284,7 +284,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Boots of Speed -->
+			<!-- Boots of Speed -->
 				<node id="GameObjects">
 					<attribute id="CanClickThrough" type="bool" value="False" />
 					<attribute id="CanClimbOn" type="bool" value="False" />

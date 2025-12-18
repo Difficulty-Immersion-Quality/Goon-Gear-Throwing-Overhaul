@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- The Joltshooter -->
+			<!-- The Joltshooter -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h99c118bdg2e83g469egb938g7fb5daec1adf" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h9e2deeb1gc734g4259ga600gfb0e75908db0" version="2" />

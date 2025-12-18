@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Trident of the Depths - Parent template for both Wildshape and Conjure Elemental versions -->
+			<!-- Trident of the Depths - Parent template for both Wildshape and Conjure Elemental versions -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h89a72b67gf945g4086gadc1g6194698683f8" version="2" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -70,7 +70,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Sparky Points -->
+			<!-- The Sparky Points -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hefe5c63ag9dcbg4193g8c3cgab47da358c66" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h3744342bg3711g4be3g9139gc4d88f8d1615" version="2" />
@@ -125,7 +125,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Trident of the Waves -->
+			<!-- Trident of the Waves -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hecbc17d9g0e3ag4be1gab2fg839031a37960" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h6575fa95gb207g4f1egb3aeg8936005dac0d" version="2" />
@@ -180,7 +180,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Nyrulna -->
+			<!-- Nyrulna -->
 				<!-- No longer inherits from Trident of the Depths, just incase it pulls the throwing technical from over there. Better to change things in an environment without redundant inheritence. -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hba6970aag756fg4432ga113ga7858d43ed10" version="3" />
@@ -290,7 +290,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Allandra's Whelm -->
+			<!-- Allandra's Whelm -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hf577b8a0g9a5fg4590g8678g282a0b96b064" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hc670ad53g7cbdg4054g8912g86ccfd9b69ed" version="3" />

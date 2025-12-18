@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Boots of Striding (Minthara) -->
+			<!-- Boots of Striding (Minthara) -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h3c1a772age8bag4d5bgb7c6gc28bc48175d6" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h9b29bd46g2b12g4988g80b6ge44c491d8b34" version="2" />

@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Torch -->
+			<!-- Torch -->
 				<node id="GameObjects">
 					<attribute id="ConstellationConfigName" type="FixedString" value="EquippableTorch" />
 					<attribute id="Description" type="TranslatedString" handle="hbe198b83g9135g44ceg9902g48175bdcc7b6" version="1" />
@@ -150,7 +150,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Twisting Branch -->
+			<!-- Twisting Branch -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h6bf83cb5gc790g49f3g83d6gb7f731b74f56" version="1" />
@@ -181,7 +181,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Club of Hill Giant Strength -->
+			<!-- Club of Hill Giant Strength -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="ha8c1723fg6bb5g4affg9e93g43f18824d8e6" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb8091b51gc424g4bafgb4e7g6d47bde34a0f" version="1" />
@@ -235,7 +235,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Ironwood Club -->
+			<!-- Ironwood Club -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h5fbdefeag037cg4412gab38gc4919118df76" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hd5b582afg0defg4bbeg9c2bg891dadc00039" version="2" />
@@ -290,7 +290,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Shadow Lantern -->
+			<!-- Shadow Lantern -->
 				<node id="GameObjects">
 					<attribute id="AnubisConfigName" type="FixedString" value="" />
 					<attribute id="ConstellationConfigName" type="FixedString" value="WieldedOrDroppedStatus" />
@@ -346,7 +346,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Moonlantern -->
+			<!-- Moonlantern -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="ConstellationConfigName" type="FixedString" value="WieldedOrDroppedStatus" />
@@ -446,7 +446,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Torch of Revocation -->
+			<!-- Torch of Revocation -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9a1b775cg94deg41d7ga4c8gd8f7406eafe3" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h51a9b128g3d53g4118g950bg213555de3cbf" version="2" />
@@ -483,7 +483,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Torch of Revocation -->
+			<!-- Torch of Revocation -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hbac87353g8f14g4e7bga9b6g87aca76ed438" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h7ffa3da3g139fg4bacgb964g131f98669fbb" version="2" />
@@ -519,7 +519,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Enforcer Club -->
+			<!-- Enforcer Club -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h13e61a08g2cb7g43fdg95a1gaf422bf808a3" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h2bf35a33gef60g4a9cg8c1ag645c30ab98ea" version="2" />

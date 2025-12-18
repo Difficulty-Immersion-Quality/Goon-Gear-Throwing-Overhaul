@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Absolute's Warboard -->
+			<!-- Absolute's Warboard -->
 				<node id="GameObjects">
 					<attribute id="CanClimbOn" type="bool" value="False" />
 					<attribute id="Description" type="TranslatedString" handle="h26a388d3gf562g494eg981ag81e12e6434e7" version="4" />
@@ -59,7 +59,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Gloomstrand Shield -->
+			<!-- Gloomstrand Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9e759940g6096g4b6dgbee1ge7afc9861e76" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h385b281eg3662g4d57gb0afg33c3aacdf276" version="2" />
@@ -111,7 +111,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Glowing Shield -->
+			<!-- Glowing Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h1e2b1f5fge523g4ad8g90f6g086898bf880d" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h91d7adf6g2cb6g42e3gba2fg8f27dc223f07" version="1" />
@@ -163,7 +163,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Ironvine Shield -->
+			<!-- Ironvine Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9d57dc43g0187g4019gbd99g0135670b3672" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h031c7419g978fg47cbga6bdg2ecba7aaceb2" version="3" />
@@ -215,7 +215,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Safeguard Shield -->
+			<!-- Safeguard Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h60e43263g36a8g4b0egb7deg1792427ed2d7" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h8094b8deg709eg4f27ga926g7fc4d6e3298d" version="1" />
@@ -266,7 +266,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Real Sparky Sparkswall -->
+			<!-- The Real Sparky Sparkswall -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hf49a870cg1556g4e2egbfb8g000c65068cf5" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h0025d3f9g0e31g4f68gacecg7c62bae19084" version="2" />
@@ -319,7 +319,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Watcher's Shield -->
+			<!-- Watcher's Shield -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h3e43b32eg44eeg42ffg979ag76f927f91db3" version="2" />
@@ -430,7 +430,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Wood Woad Shield -->
+			<!-- Wood Woad Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h554c1320g5561g4ea9g9a10g0f30f4498059" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hf0f89c02g0482g4d52g822agdba3a7ac4680" version="2" />
@@ -481,7 +481,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Absolute's Protector -->
+			<!-- Absolute's Protector -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h1194c540g65dfg44bag8f1bgb209d3de3f21" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h33cc0c5eg921fg4eb4g8920gf26b58f5e1a5" version="1" />
@@ -532,7 +532,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Adamantine Shield -->
+			<!-- Adamantine Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h53f5b5cfg4d91g4958ga643g3ca031f36768" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h74251ecag1738g4535gbe43g008a09b94249" version="2" />
@@ -614,7 +614,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Justiciar's Greatshield -->
+			<!-- Justiciar's Greatshield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="he2776debg8ee5g4f95g9e50g01ce595848db" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h10ccd20eg2ae4g4e06gbb13g23ba2553defe" version="2" />
@@ -665,7 +665,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Ketheric's Shield -->
+			<!-- Ketheric's Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h8c35467dg20dcg4891g9bbcg8fa60055ad22" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hc8d17a1dgf9feg465eg8b8fgcbbe2ded9289" version="3" />
@@ -716,7 +716,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Sentinel Shield -->
+			<!-- Sentinel Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h0738b7b1g6602g4e17ga60bg033585b0170a" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h24afc44bg3da3g4769g92ceg21f272b4d8bd" version="2" />
@@ -769,7 +769,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Shield of Scorching Reprisal  -->
+			<!-- Shield of Scorching Reprisal  -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="ha5c69378gbbc5g463fg9927gf61a406afd46" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h2c441baeg95ffg4d94gbe18g835c4ac7f74f" version="2" />
@@ -821,7 +821,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Shield of Shielding -->
+			<!-- Shield of Shielding -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2f6162bbg0fadg4465g8228g88ac0a33bbe3" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h21c9ab85geea6g42d9g8f84ga53a8f856a39" version="3" />
@@ -872,7 +872,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Abdel's Trusted Shield -->
+			<!-- Abdel's Trusted Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hb83e96e2g79d0g4630g9778g22d9d72acbb1" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h17c464abg5b64g41f5ga894g55a9bd76becd" version="3" />
@@ -923,7 +923,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Shield of Devotion -->
+			<!-- Shield of Devotion -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hcc6700aag3de1g4d3ag91d3gcb528e5661a4" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="ha34e266fg5d2cg4998g919ag6f0512f12854" version="1" />
@@ -974,7 +974,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Shield of the Undevout -->
+			<!-- Shield of the Undevout -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h6371b8edgacfag42f4gb3dagad207e27389e" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h9e7c801ag0f67g4744g8a75g593509f77fb4" version="2" />
@@ -1026,7 +1026,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Swires' Sledboard -->
+			<!-- Swires' Sledboard -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h462ef23eg1b11g43b4g91f5g9337742633f3" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hd7665adeg8d24g4cd7ga960gf57864afa4d6" version="2" />
@@ -1077,7 +1077,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Viconia's Walking Fortress -->
+			<!-- Viconia's Walking Fortress -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h4a8d0ffdgb939g4949ga81agb1341e608313" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="ha6bd8ba7gc772g43e3g977egc96361efdc7b" version="4" />
@@ -1131,7 +1131,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Shield +2 -->
+			<!-- Shield +2 -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hda92bfeag21cfg4778gb900gb95ac6b783b7" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h27034815g3904g49b2g9593g29af0a3db3f7" version="1" />
@@ -1235,7 +1235,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Enforcer Shield -->
+			<!-- Enforcer Shield -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hbaf1e428g8a4fg4d10gb66cg2727226df475" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h23b29551g3668g45dagb670g65e5b8094273" version="2" />

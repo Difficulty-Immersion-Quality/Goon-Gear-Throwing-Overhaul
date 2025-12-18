@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Yurgir's Shortsword -->
+			<!-- Yurgir's Shortsword -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h4decd223g1573g4f8bg9fe9gce8111cebd93" version="1" />
 					<attribute id="Icon" type="FixedString" value="Item_WPN_ORTHON_Shortsword_A" />
@@ -76,7 +76,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Vicious Shortsword -->
+			<!-- Vicious Shortsword -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h81375557g090eg4065gaee1g0f576c4d3f80" version="1" />
 					<attribute id="Icon" type="FixedString" value="Item_WPN_GTY_Shortsword_A" />
@@ -128,7 +128,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Knife of the Undermountain King -->
+			<!-- Knife of the Undermountain King -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hed4c9549gb168g4029g8e08g182847664caf" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb3066974g8a50g4fdcg86abg78c7d8e82cea" version="3" />
@@ -179,7 +179,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Crimson Mischief -->
+			<!-- Crimson Mischief -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h8ccaff71gf114g4729g995dgceb86deef6ae" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h62dcdcc5g1085g4ac6ga86fg4589de831c96" version="2" />

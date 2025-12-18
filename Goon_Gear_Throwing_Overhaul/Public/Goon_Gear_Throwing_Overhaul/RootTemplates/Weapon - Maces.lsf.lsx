@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Handmaiden's Mace -->
+			<!-- Handmaiden's Mace -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h47b29563g2e16g491fgbf2egfe3bcff66353" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hf603b674g3717g40begb7c9gf7b36697773a" version="4" />

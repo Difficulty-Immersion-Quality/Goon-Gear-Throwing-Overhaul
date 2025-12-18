@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Yurgir's Hand Crossbow -->
+			<!-- Yurgir's Hand Crossbow -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h8022ef7cgc482g45b5g86e2g37e116a17be1" version="1" />
 					<attribute id="Icon" type="FixedString" value="Item_WPN_ORTHON_HandCrossbow_A" />
@@ -27,7 +27,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Firestoker -->
+			<!-- Firestoker -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h151d1865g920bg4949g999dg0dbfb69025ba" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h0801cda4gb515g4d5cg932fg74a5ad734b27" version="2" />
@@ -79,7 +79,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Ne'er Misser -->
+			<!-- Ne'er Misser -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h5c758c58ga788g4feaga027ga9ffcd0274e0" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h0bda5dd8ga3cag405dg94d9gc1aec2dba46f" version="2" />
@@ -131,7 +131,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Hellfire Hand Crossbow -->
+			<!-- Hellfire Hand Crossbow -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h74915744gf472g4eedga2eegae028b08f338" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hc6d6367dgeb03g4604gb852g98496319b803" version="1" />
@@ -186,7 +186,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Magical Hand Crossbow -->
+			<!-- Magical Hand Crossbow -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hdd076e44g5044g4421gab4fg9e5fecbecb56" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h1c251080g5834g491fg8798g12d2cda1e3d8" version="1" />

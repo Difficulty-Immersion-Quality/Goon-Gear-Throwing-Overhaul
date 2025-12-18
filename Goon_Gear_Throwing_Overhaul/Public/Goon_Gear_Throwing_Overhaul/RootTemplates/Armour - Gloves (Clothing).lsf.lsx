@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Drow Leather Gloves (Minthara) -->
+			<!-- Drow Leather Gloves (Minthara) -->
 				<node id="GameObjects">
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="MapKey" type="FixedString" value="69e57d02-44a2-4e39-8b2a-502413761219" />
@@ -218,7 +218,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Fleetfingers -->
+			<!-- Fleetfingers -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hcd1ea854gc12dg4309gac65g7d93bf50a18f" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hafd0c943gecc1g4c3cg8072g795e51545fcb" version="1" />
@@ -462,7 +462,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Luminous Gloves -->
+			<!-- Luminous Gloves -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h169bb086g2949g4d5cg891bgf9e373f083c5" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h20c7ab52g09b1g4d05gbb01g53d0ff93e867" version="2" />
@@ -742,7 +742,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Gloves of The Duellist -->
+			<!-- Gloves of The Duellist -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2e1fb1ffg2a4bg4d07gb5abg51da20a80fef" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h6c092253g52c1g4419g9168g386710c421fd" version="2" />
@@ -998,7 +998,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Gloves of Battlemage's Power -->
+			<!-- Gloves of Battlemage's Power -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h307d5dc6gd55eg46adg9a07g2363d765159b" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h62510ec6g3314g4719g9c3cg3de055058d18" version="2" />
@@ -1214,7 +1214,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- The Sparkle Hands -->
+			<!-- The Sparkle Hands -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h3b872abeg3afbg4c81g8474g731ac264ba87" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h96e160abgb570g4507g80d8g03f4931f8ae9" version="4" />

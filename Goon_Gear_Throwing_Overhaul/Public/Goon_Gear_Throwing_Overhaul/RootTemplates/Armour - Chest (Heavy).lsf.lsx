@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Helldusk Armour -->
+			<!-- Helldusk Armour -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h0618f5b4g96e7g4151gac14g4bdeeabbfb34" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h6f3a5e38gbbfcg4807gb2c9g6fb74bdeb8da" version="2" />

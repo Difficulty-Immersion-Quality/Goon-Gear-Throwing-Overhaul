@@ -5,7 +5,7 @@
 		<node id="Templates">
 			<children>
 				<node id="GameObjects">
-					<!-- Gold Wyrmling Staff -->
+				<!-- Gold Wyrmling Staff -->
 					<attribute id="Description" type="TranslatedString" handle="hfa163cf5gcb3fg4fccga768gda427a266a25" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h1199863bgf5d1g4abag815egd19d9716182c" version="2" />
 					<attribute id="ExamineRotation" type="fvec3" value="75 180 0" />
@@ -56,7 +56,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Pale Oak -->
+			<!-- Pale Oak -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h0e68f050g069fg40a1g93a7gf5d5885bd7ac" version="1" />
@@ -106,7 +106,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Creation's Echo -->
+			<!-- Creation's Echo -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="he741545cge204g45cbg8703gfcf0c3828f75" version="5" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h583e707ag0f85g4826g86a0g3a3471fd5aec" version="3" />

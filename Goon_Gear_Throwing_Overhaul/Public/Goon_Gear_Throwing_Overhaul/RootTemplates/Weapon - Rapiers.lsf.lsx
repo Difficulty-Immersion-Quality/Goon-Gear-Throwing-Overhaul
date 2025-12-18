@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Rupturing Blade -->
+			<!-- Rupturing Blade -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h866ef8aegc63fg442cg87b5g87e290d428d9" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h7b368b28g4a1bg461dga8f6gea882f4b76a7" version="2" />
@@ -55,7 +55,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Sword of Screams -->
+			<!-- Sword of Screams -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hc88885e1gbf42g41d7g8f63gefc27b251571" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h40765d47g56bag448agb715g84485a6b74ba" version="1" />
@@ -137,7 +137,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Harmonic Dueller   -->
+			<!-- Harmonic Dueller   -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hbf928e8cgee94g4a5ag88efgc2f3a522a181" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="ha7b9b5b3g9cbbg4926g8bc1gc2e2860ede89" version="2" />
@@ -190,7 +190,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Infernal Rapier -->
+			<!-- Infernal Rapier -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2b3af78dg10d0g468bg8e0dge984d502df5a" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h4623bc1fgf5bdg46c3gb645gbace7f685b65" version="1" />
@@ -248,7 +248,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Pelorsun Blade -->
+			<!-- Pelorsun Blade -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h2daafe8bga04fg4088gad8ag31ce3e7d7a3d" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h687621cegbd79g4c70g862cgf61ccb92f8f3" version="2" />
@@ -302,7 +302,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Duellist's Prerogative -->
+			<!-- Duellist's Prerogative -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hfb953f0ag4fefg44dfgb297g1af1d9d962ce" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="he2f8c320g3559g4c87g8156g14dee27e78a1" version="3" />
@@ -385,7 +385,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Sanguine Blade -->
+			<!-- Sanguine Blade -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h6a4b9cfag7939g44baga925g3ea522275d7b" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h6f1b9af8gdf5ag4992gaf69gfa98eaea4a82" version="2" />
@@ -437,7 +437,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Verminsign -->
+			<!-- Verminsign -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h6783b30fg942dg417agbe12ga29452e67303" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h60cf083bgcf75g4c11g8bd8gf15e6b566178" version="2" />

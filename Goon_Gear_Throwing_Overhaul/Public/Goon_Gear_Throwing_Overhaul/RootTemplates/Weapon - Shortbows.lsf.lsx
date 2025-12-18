@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Bow of Awareness -->
+			<!-- Bow of Awareness -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="heae619f3g9511g45a5gac1dg317d9031e013" version="2" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -54,7 +54,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Hunting Shortbow -->
+			<!-- Hunting Shortbow -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h16a91f2cg659dg4a91gbb02g7dd759e681be" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h01dfd531g605ag4c72gb4edg3846ab351eae" version="1" />
@@ -106,7 +106,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Bow of the Banshee -->
+			<!-- Bow of the Banshee -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hc67bd25dgaf2eg40d6ga262ga05987c7c227" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="he23412a6g5474g473cgaeafgbcf8e416d4be" version="2" />
@@ -158,7 +158,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Darkfire Shortbow -->
+			<!-- Darkfire Shortbow -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h87a33fe8g11dfg4608g841dg9b9cb33fc3b0" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hc719a8f0ge48bg4f82g9c10g84c8360afc12" version="2" />
@@ -210,7 +210,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Least Expected  -->
+			<!-- Least Expected  -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hadb74fd0g3942g425dg8ffcg4bb8ad9aedf2" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h9e85636cgf95fg4aa3g8a8cg749af55c4e6c" version="2" />
@@ -263,7 +263,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Vicious Shortbow -->
+			<!-- Vicious Shortbow -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h2be9f603g543fg4a95gb9fbg1b34c6cbd361" version="1" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -314,7 +314,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Blightbringer -->
+			<!-- Blightbringer -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h391ce412g53c1g49cbgac0dgf02e054f8a8c" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="heb5a4744gec4dg408eg8467gc44c4b8ec801" version="2" />

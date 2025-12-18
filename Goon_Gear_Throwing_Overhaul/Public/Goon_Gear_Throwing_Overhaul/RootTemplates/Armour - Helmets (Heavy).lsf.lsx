@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Grymskull Helm -->
+			<!-- Grymskull Helm -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h0f6a729dgccebg4d0egac7bg7985758d19b1" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hf1fa975fg2311g4fa5g99b5gd734c1e4df7a" version="1" />

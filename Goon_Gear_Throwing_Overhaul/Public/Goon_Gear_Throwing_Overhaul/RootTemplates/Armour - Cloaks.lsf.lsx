@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Cloak of Cunning Brume -->
+			<!-- Cloak of Cunning Brume -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h52c0ea22g3c4eg4acfgb5ffg616777cb9db5" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h037d1752g470fg4219g9324g7ee9cce9027d" version="2" />
@@ -209,7 +209,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Fleshmelter Cloak -->
+			<!-- Fleshmelter Cloak -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9a404f0eg0fc6g4f5cg9072g31f4838bf622" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="ha02d5275gd29cg4a57g925fg6be73d1bb3d4" version="2" />

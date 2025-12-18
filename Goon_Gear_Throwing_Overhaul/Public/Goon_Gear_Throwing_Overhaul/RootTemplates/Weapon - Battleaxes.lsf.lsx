@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Ceremonial Battleaxe - Local template -->
+			<!-- Ceremonial Battleaxe - Local template -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h91ee0e32ge7a2g434ag9b03gc03bc4811ade" version="1" />
 					<attribute id="Flag" type="int32" value="1" />
@@ -87,7 +87,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Witchbreaker -->
+			<!-- Witchbreaker -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hefaabf96g54bcg4f3fg8da5g6396dfdcc4c4" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h199d321eg5008g47d9g81eag40b19398886f" version="2" />
@@ -138,7 +138,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Thermodynamo Axe -->
+			<!-- Thermodynamo Axe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h172d710dg2d86g454bga607g6dc0ae46380f" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb3a26b0fg1fb8g47b1gbaa5gddbd838e0bb0" version="3" />
@@ -190,7 +190,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Vicious Battleaxe -->
+			<!-- Vicious Battleaxe -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="hfa55dd2cgde7eg4fd5g8d5ag898feae3d126" version="1" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -241,7 +241,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Combination Axe -->
+			<!-- Combination Axe -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="h3ab27a39gb637g461eg8967gc3f31c4516fc" version="1" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -292,7 +292,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Rebound Battleaxe -->
+			<!-- Rebound Battleaxe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hfd17c299g860dg447ag942agd81d152ce02d" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hfcccb8cbg2bdeg4245gb623g62b6d4f5b651" version="2" />
@@ -353,7 +353,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Shadow Battleaxe -->
+			<!-- Shadow Battleaxe -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hcfb81429g71eeg49a0gb331ge2fb114ae3a4" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="ha5623dedg690ag44cdgb2ceg1d8fd53ecd5c" version="2" />

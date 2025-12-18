@@ -4,7 +4,8 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Hellbeard Halberd -->
+			<!-- Hellbeard Halberd -->
+			<!-- TODO: Throwing stuff -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hcc987f59gf2aeg43ffg94c9g14f1d0552a62" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h19a9b039g8808g4503g9b30g3aa9c172f297" version="2" />

@@ -1,3 +1,228 @@
+// ==================================== Armour of Uninhibited Kushigo ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Bided Time ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Bloodguzzler Garb ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cloth Armour ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Poisoner's Robe ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Robe of Summer ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cloth of Authority ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Drunken Cloth ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Enraging Heart Garb ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Garb of the Land and Sky ====================================
+// Bug Fix: descriptions are now consistent between the Breezeswift Speed passive and the Swift as Wind condition that it applies.
+// Bug Fix: Advantage from Swift as the Wind no longer applies to attack rolls that do not interact with the rest of the functionality.
+// Bug Fix: Swift as the Wind is now removed on misses and crital hits.
+// Changes: Both Advantage and the 1d8 Force Damage from Swift as Wind now apply to all melee and thrown attacks, instead of all attacks for Advantage and only weapon attacks for the damage.
+// TODO: Template stuff.
+
+// new entry "MAG_Monk_Magic_Armor_1"
+// type "Armor"
+// using "ARM_Cloth_Body_1"
+// data "RootTemplate" "dbe75b4c-d23a-4a19-b630-34de519750c6"
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Monk_Armor_MountainStance_Passive;MAG_Monk_Armor_WindStance_Passive"
+// data "Unique" "1"
+
+new entry "MAG_Monk_Armor_MountainStance_Passive"
+type "PassiveData"
+using "MAG_Monk_Armor_MountainStance_Passive"
+// Mountainous Poise
+// data "DisplayName" "h0d95fe10gdd02g41f8g91fcgac832eadc51c;1"
+// While using &lt;LSTag Type="Status" Tooltip="PATIENT_DEFENCE"&gt;Patient Defence&lt;/LSTag&gt;, you also benefit from the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;.
+// data "Description" "hf633200cgd324g42f1gb7efg6100e0e6bbfb;1"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "SpellId('Shout_PatientDefense')"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_MONK_MOUNTAIN_BLADE_WARD, 100, 1)"
+
+// new entry "MAG_MONK_MOUNTAIN_BLADE_WARD"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_BLADE_WARD"
+// data "TickType" ""
+// data "RemoveConditions" "HasStatus('SG_Incapacitated')"
+// data "RemoveEvents" "OnStatusApplied"
+// data "StatusGroups" ""
+
+new entry "MAG_Monk_Armor_WindStance_Passive"
+type "PassiveData"
+using "MAG_Monk_Armor_WindStance_Passive"
+// Breezeswift Speed
+// data "DisplayName" "h36797947gb3dbg4ab1gb332gf0e8ebca97ba;1"
+// While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1].
+// data "Description" "h7f19dc10gc8a6g4398g8dcbg4e7497c7f351;3"
+// While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.
+data "Description" "h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2;1"
+// data "DescriptionParams" "DealDamage(1d8, Force)"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "SpellId('Shout_Dash_StepOfTheWind') or SpellId('Shout_Disengage_StepOfTheWind')"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_MONK_SWIFT_AS_THE_WIND, 100, 1)"
+
+new entry "MAG_MONK_SWIFT_AS_THE_WIND"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_MONK_SWIFT_AS_THE_WIND"
+// Swift as Wind
+// data "DisplayName" "h9a7a20f9g1d2ag4c27ga713g209ce3e50e66;1"
+// Your next weapon attack has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. That attack deals an additional [1].
+// data "Description" "h9331a8abgc809g4991gafc7gdfd28f0a6aaa;1"
+// Your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.
+data "Description" "hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d;1"
+// data "DescriptionParams" "DealDamage(1d8, Force)"
+// data "Icon" "GenericIcon_DamageType_Force"
+// data "StackId" "MAG_MONK_SWIFT_AS_THE_WIND"
+data "BoostConditions" "IsMeleeAttack() or IsAttackType(AttackType.RangedUnarmedAttack)"
+// data "Boosts" "Advantage(AttackRoll);CharacterWeaponDamage(1d8, Force)"
+data "Boosts" "Advantage(AttackRoll);DamageBonus(1d8, Force)"
+// data "RemoveConditions" "IsWeaponAttack() and (not IsMiss() or IsCritical())"
+data "RemoveConditions" "IsMeleeAttack() or IsAttackType(AttackType.RangedUnarmedAttack)"
+// data "RemoveEvents" "OnAttack"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Icebite Robe ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Mutilated Carapace ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Obsidian Laced Robe ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Robe of Exquisite Focus ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Shelter of Athkatla ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Graceful Cloth ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== The Mighty Cloth ====================================
 // Bug Fix: Tooltip is no longer filled with misinformation inherited from Primal Stampede.
 // Note: Reference fields do not reflect otherwise changes to Primal Stampede in Goon's Spell Overhaul.
@@ -50,7 +275,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Viconia's Priestess Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -60,7 +285,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Bonespike Garb ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -70,7 +295,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Infernal Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -80,7 +305,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Moon Devotion Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -90,7 +315,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Potent Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -100,7 +325,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Robe of Supreme Defences ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -110,7 +335,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Robe of the Weave ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -120,3 +345,42 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== Veil of the Morning ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Vest of Soul Rejuvenation ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Wavemother's Robe ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Robe of Spell Resistance (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Sharran Crossbow - Local template -->
+			<!-- Sharran Crossbow - Local template -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h4cc98022gca0bg49e9g9e3bgc4b038bac79e" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hd095fb89ga6e0g45abg87e3g86669614a429" version="1" />
@@ -83,7 +83,7 @@
 						</node>
 					</children>
 				</node>
-				<!-- Light Crossbow of Speed -->
+			<!-- Light Crossbow of Speed -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hc1af971fgceebg4b3eg85dcg8c40f1d201b6" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb627cd79gfcf1g4e50gbc65g5340f81e0831" version="2" />

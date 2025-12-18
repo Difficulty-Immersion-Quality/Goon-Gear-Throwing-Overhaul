@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- The Reviving Hands -->
+			<!-- The Reviving Hands -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h5aea42b7gecfag4633gad60g26e02b1b9dfa" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h70d24a24g4fa5g41dfg8745gf66d9fa3636b" version="1" />

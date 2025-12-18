@@ -287,9 +287,10 @@ type "PassiveData"
 using "MAG_Critical_Force_Critical_Passive"
 // Craterous Wounds
 // data "DisplayName" "h14b285aag980cg4e8dg9d1fgec61e7aba0e4;2"
-// Whenever you score a <LSTag Tooltip="CriticalHit">critical hit</LSTag>, deal an additional [1].
+// Whenever you score a &lt;LSTag Tooltip="CriticalHit"&gt;critical hit&lt;/LSTag&gt;, deal an additional [1].
 // data "Description" "h485c5d37g241dg453fg8555g0406d28f1476;3"
 // data "DescriptionParams" "DealDamage(1d6, Force)"
+data "DescriptionParams" "DealDamage(2d6, Force)"
 // data "StatsFunctorContext" "OnDamage"
 // data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical)"
 data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,false)"

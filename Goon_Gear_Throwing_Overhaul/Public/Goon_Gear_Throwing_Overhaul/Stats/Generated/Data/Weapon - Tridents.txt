@@ -178,6 +178,7 @@ data "Description" "he5c48cdcg3690g4ec2ga8cbgd453b402bc17;1"
 // data "DescriptionParams" "DealDamage(3d4, Thunder);Distance(6)"
 // You may toggle this feature off. When toggled off, Nyrulna's additional [1] is dealt to the target instead of exploding. When Nyrulna returns to your hand it is toggled on again.
 data "ExtraDescription" "hb466f4f5g631cg4443g9a89g1485aad5a8a8;1"
+data "DescriptionParams" "DealDamage(3d4, Thunder)"
 data "Icon" "GenericIcon_DamageType_Thunder"
 data "Properties" "IsToggled;ToggledDefaultOn"
 data "ToggleOnFunctors" "IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_NYRULNA_EXPLOSION_TOGGLE_ON, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_NYRULNA_EXPLOSION_TOGGLE_ON, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyStatus(GOON_NYRULNA_EXPLOSION_TOGGLE_ON_CHARACTER,100,0)"

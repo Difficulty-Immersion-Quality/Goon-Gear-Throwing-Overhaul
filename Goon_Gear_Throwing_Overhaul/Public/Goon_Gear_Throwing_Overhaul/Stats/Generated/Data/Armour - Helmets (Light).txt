@@ -1,12 +1,10 @@
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Base entry ====================================
 
-// gear entry
+// 
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// ==================================== Magical variants ====================================
+
+// 
 
 // ==================================== Angelic Plume Helmet ====================================
 // TODO: Something/anything.

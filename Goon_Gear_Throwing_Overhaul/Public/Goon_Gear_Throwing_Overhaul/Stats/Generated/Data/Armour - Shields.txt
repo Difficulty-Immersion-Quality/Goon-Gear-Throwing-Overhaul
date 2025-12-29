@@ -196,17 +196,21 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Adamantine Shield ====================================
-// TODO: Something/anything.
+// Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
+// Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
 
-// new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Shield"
-// type "Armor"
+new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Shield"
+type "Armor"
 // using "_Shield_Magic"
+using "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Shield"
 // data "RootTemplate" "96907713-b560-4daf-ab32-3c1aec3f3890"
 // data "ItemGroup" ""
 // data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
 // data "Rarity" "Rare"
 // data "Boosts" "CriticalHit(AttackTarget,Success,Never)"
+data "Boosts" ""
 // data "PassivesOnEquip" "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Shield_Passive;MAG_ShieldRiposte_Passive"
+data "PassivesOnEquip" "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Shield_Passive;MAG_ShieldRiposte_Passive;Goon_Critical_Hit_Resistance"
 
 new entry "GOON_ADAMANTINESHIELD_ARMOUR_TECHNICAL"
 type "StatusData"

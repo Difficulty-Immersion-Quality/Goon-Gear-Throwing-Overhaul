@@ -8,7 +8,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Angelic Plume Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -18,7 +18,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Frayed Drow Hood ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -28,7 +28,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Leather Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -38,7 +38,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Leatherstring Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -48,7 +48,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Red Carmine Mask ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -58,7 +58,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Rich Arcanist Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -68,7 +68,76 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Scorpion Helmet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Covert Cowl ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dark Justiciar Mask ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Helmet of Arcane Acuity ====================================
+// Bug Fix: Battle Acuity now only triggers once per attack.
+// Changes: Battle Acuity applies to thrown attacks.
+
+new entry "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive"
+type "PassiveData"
+using "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive"
+// Battle Acuity
+// data "DisplayName" "he07ba98dgc5f3g479cg831fg55efe9aa49eb;3"
+// Whenever you deal damage with a weapon attack, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
+// data "Description" "h774d5e0cg0211g4875ga83bgf14cba6b2bbb;4"
+// Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
+data "Description" "h1adb1860g647fg402egb774g1ff6be448951;1"
+data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsWeaponAttack()"
+data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
+
+// ==================================== Helmet of Autonomy ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Shadow of Menzoberranzan ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Helmet of Grit ====================================
 // TODO: Something/anything.
 
 // gear entry

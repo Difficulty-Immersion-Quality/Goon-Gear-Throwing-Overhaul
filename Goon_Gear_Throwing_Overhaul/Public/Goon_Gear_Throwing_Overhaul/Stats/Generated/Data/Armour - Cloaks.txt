@@ -1,3 +1,11 @@
+// ==================================== Base entry ====================================
+
+// 
+
+// ==================================== Magical variants ====================================
+
+// 
+
 // ==================================== Cloak of Cunning Brume ====================================
 // Bug Fix: Now functions based on Disengage conditions being applied, instead of just spells being cast. 
 // Changes: Fog cloud area radius increased from 2m to 3m.

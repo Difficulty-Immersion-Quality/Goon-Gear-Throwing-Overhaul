@@ -1,3 +1,11 @@
+// ==================================== Base entry ====================================
+
+// 
+
+// ==================================== Magical variants ====================================
+
+// 
+
 // ========================== Boots of Stormy Clamour ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
 // Changes: Now applies Reverberation based on dealing damage with spell attacks, instead of applying a condition.

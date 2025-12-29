@@ -13,7 +13,9 @@ using "_Instruments"
 // data "Proficiency Group" "MusicalInstrument"
 data "DefaultBoosts" "HiddenDuringCinematic()"
 
-// ==================================== Something ====================================
+// ==================================== Magical variants ====================================
+
+// 
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.

@@ -33,21 +33,21 @@ new entry "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive"
 type "PassiveData"
 using "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive"
 // Arcane Echomalefaction
-// data "DisplayName" "hdb19f00ag6138g4bc6gb174g1dff84d45a57;2"
+data "DisplayName" "hdb19f00ag6138g4bc6gb174g1dff84d45a57;2"
 // When the wearer inflicts a condition upon a hostile creature, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
 // data "Description" "hdec25ee2gb8b0g4e21ga3f4g181253f20364;4"
-// When the wearer damages a hostile creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
+// When the wearer damages a creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
 data "Description" "h32a0f3eag3e64g4a05g9f2eg074b79b4d589;1"
 // data "DescriptionParams" "2"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can trigger &lt;b&gt;once&lt;/b&gt; per &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "f63b2f2d-b29b-40b8-86ea-9978c782c32e"
+// data "Properties" "OncePerAttack"
+data "Properties" ""
 // data "StatsFunctorContext" "OnStatusApply"
 data "StatsFunctorContext" "OnAttack"
 // data "Conditions" "Enemy() and not Self() and not StatusId('MAG_THUNDER_REVERBERATION') and not StatusDoesNotInvokeOnStatusApply()"
-data "Conditions" "Enemy() and IsSpellAttack() and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss())"
+data "Conditions" "Character() and not Self() and IsSpell() and HasSpellFlag(SpellFlags.Harmful) and TotalDamageDoneGreaterThan(0) and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss())"
 // data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
-
-// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can trigger &lt;b&gt;once&lt;/b&gt; per &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;.
-// data "TooltipPermanentWarnings" "f63b2f2d-b29b-40b8-86ea-9978c782c32e"
-// data "Properties" "OncePerAttack"
 
 // ==================================== Boots of Genial Striding ====================================
 // Bug Fix: Genial Strider now provides immunity to all Difficult Terrain, per what is implied in the description.
@@ -206,7 +206,18 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 // ==================================== Briskwind Boots ====================================
 // Bug Fix: Critical Swiftness no longer triggers when killing non-hostile creatures.
 
-// gear entry
+// new entry "MAG_Critical_CriticalSwiftness_Boots"
+// type "Armor"
+// using "_Foot_Magic"
+// data "RootTemplate" "93cc1480-9fe1-4e76-8c0b-0ad3caf35285"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Critical_CriticalSwiftness_Passive"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
@@ -220,6 +231,8 @@ using "MAG_Critical_CriticalSwiftness_Passive"
 // data "DisplayName" "h4af7448ag6a0eg4259g8114g8eb297fec991;2"
 // After scoring a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.
 // data "Description" "hb91d1e6bgf680g4749g84d9g601324202509;3"
+// After killing or scoring a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.
+data "Description" "h45c12527g48b9g4798g8ff5g08fe343d1193;1"
 // data "StatsFunctorContext" "OnDamage"
 // data "StatsFunctors" "IF(IsCritical() or IsKillingBlow()):RestoreResource(SELF, Movement, 100%, 0)"
 data "StatsFunctors" "IF((IsCritical() or IsKillingBlow()) and Enemy(context.Target)):RestoreResource(SELF, Movement, 100%, 0)"

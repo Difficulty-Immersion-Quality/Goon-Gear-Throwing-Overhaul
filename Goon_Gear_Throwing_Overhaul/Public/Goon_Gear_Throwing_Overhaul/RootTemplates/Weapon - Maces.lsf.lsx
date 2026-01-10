@@ -49,7 +49,7 @@
 						<node id="StatusList">
 							<children>
 								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_HANDMAIDENS_MACE_THROW_TECHNICAL" />
+									<attribute id="Object" type="FixedString" value="GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL" />
 								</node>
 								<!-- <node id="Status">
 									<attribute id="Object" type="FixedString" value="MAG_POISON_POISON_WEAPON" />

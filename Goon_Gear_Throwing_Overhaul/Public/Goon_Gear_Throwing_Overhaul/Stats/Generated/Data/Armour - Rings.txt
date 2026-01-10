@@ -309,8 +309,13 @@ using "MAG_ShapeshiftersBurgeon_Ring"
 // data "ValueUUID" "f0e7be35-8be4-483d-afa8-dc9a104ea758"
 // data "Rarity" "Uncommon"
 // data "PassivesOnEquip" "MAG_ShapeshiftersBurgeon_Passive"
-data "StatusOnEquip" "GOON_SHAPESHIFTERS_BOON_TECHNICAL"
+data "StatusOnEquip" "GOON_SHAPESHIFTERSBURGEON_TECHNICAL"
 // data "Unique" "1"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "MAG_ShapeshiftersBurgeon_Passive"
 type "PassiveData"
@@ -325,7 +330,7 @@ data "Conditions" "StatusHasStatusGroup(context.StatusId, 'SG_Polymorph') or Sta
 // data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph') or StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape')):ApplyStatus(MAG_SHAPESHIFTERS_BOON, 100, -1)"
 data "StatsFunctors" "ApplyStatus(MAG_SHAPESHIFTERS_BOON, 100, -1)"
 
-new entry "GOON_SHAPESHIFTERS_BOON_TECHNICAL"
+new entry "GOON_SHAPESHIFTERSBURGEON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
@@ -432,6 +437,7 @@ data "DescriptionParams" "2"
 
 // ==================================== After Death Do Us Part ====================================
 // Bug Fix: Shadow Possession no longer clears itself instantly upon exiting the downed state.
+// Bug Fix: Shadow Possession will now remove all rages, not just the base Rage condition.
 
 // new entry "LOW_KerriRing_Ring"
 // type "Armor"
@@ -441,6 +447,18 @@ data "DescriptionParams" "2"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_DeathDo_Shadow_Passive"
 // data "Unique" "1"
+
+// new entry "MAG_DeathDo_Shadow_Passive"
+// type "PassiveData"
+// After Death Do Us Part
+// data "DisplayName" "haca8f867g19f5g479bgb08fg69953db455e0;2"
+// When the wearer is &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt;, they rise once more with half their &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; restored, but are gripped by &lt;LSTag Type="Status" Tooltip="MAG_DEATH_DO_SHADOW_POSSESION"&gt;Shadow Possession&lt;/LSTag&gt;.
+// data "Description" "h9edae528g859dg42ffg8fd9ge3b00e6f3068;8"
+// data "Properties" "OncePerLongRest"
+// data "Boosts" "DownedStatus(MAG_DEATH_DO_SHADOW_POSSESION_DOWNED,5)"
+// data "StatsFunctorContext" "OnDamaged"
+// data "Conditions" "IsKillingBlow() or IsDowned()"
+// data "StatsFunctors" "ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE, 100, -1)"
 
 new entry "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
 type "StatusData"
@@ -452,6 +470,33 @@ data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexte
 // data "OnApplyFunctors" "IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
 data "OnApplyFunctors" "RemoveStatus(SG_Rage);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
 // data "OnRemoveFunctors" "ResetCombatTurn();RestoreResource(Movement, 100%, 0);RestoreResource(BonusActionPoint, 100%, 0)"
+
+// new entry "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// %%% EMPTY
+// data "DisplayName" "h95ce7632g8448g42deg8649gb543e6f9d221;1"
+// data "StackId" "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE"
+// data "StatusPropertyFlags" "ApplyToDead;DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// new entry "MAG_DEATH_DO_SHADOW_POSSESION"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "CROWN_OF_MADNESS"
+// Shadow Possession
+// data "DisplayName" "h68d0cb43gb5a2g485dgaa8eg9acb5096caa2;1"
+// Affected entity is possessed by frenzied shadows and will attack the nearest creature. Its weapon attacks deal an additional [1].
+// data "Description" "h461b853fg4ed3g44dcg8dafg03cc61b9c7e9;4"
+// data "DescriptionParams" "DealDamage(1d4, Necrotic)"
+// data "TickType" ""
+// data "Boosts" "AiArchetypeOverride(madness,99);CharacterWeaponDamage(1d4, Necrotic)"
+// data "RemoveConditions" "IsKillingBlow()"
+// data "RemoveEvents" "OnAttacked"
+// data "TooltipSave" ""
+// data "StatusPropertyFlags" "InitiateCombat;LoseControl;OverheadOnTurn;ApplyToDead"
+// data "OnApplyFunctors" "RegainHitPoints(context.Target.MaxHP/2);RemoveStatus(MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE)"
+// data "StatusGroups" "SG_Condition;SG_Mad;SG_Cursed;SG_Possessed"
+// data "StatusEffect" "d2ec72fd-2375-4999-8197-71fefc86cd72"
 
 // ==================================== Band of the Mystic Scoundrel ====================================
 // Bug Fix: Illusion Quickening no longer triggers when attacking items.

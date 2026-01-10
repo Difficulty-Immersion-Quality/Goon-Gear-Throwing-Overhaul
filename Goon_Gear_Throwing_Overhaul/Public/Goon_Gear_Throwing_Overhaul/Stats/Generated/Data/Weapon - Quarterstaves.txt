@@ -225,6 +225,11 @@ data "PassivesOnEquip" "DEN_FaithwardenStaff_Passive;Goon_FaithwardenStaff_Ensna
 data "PassivesMainHand" ""
 // data "Unique" "1"
 
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "DEN_FaithwardenStaff_Passive"
 type "PassiveData"
 using "DEN_FaithwardenStaff_Passive"
@@ -322,6 +327,11 @@ data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(
 // data "PassivesOnEquip" "MAG_StaffOFRam_KnockStun_Passive"
 // data "Unique" "1"
 
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "MAG_StaffOFRam_KnockStun_Passive"
 type "PassiveData"
 using "MAG_StaffOFRam_KnockStun_Passive"
@@ -355,20 +365,68 @@ data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC(
 // ==================================== Staff of Interruption ====================================
 // Bug Fix: Now uses the appropriate level of Counterspell, 5 instead of 3.
 // Changes: Counterspell cannot be used while under the effects of a spellcasting restricted polymorph.
+// TODO: Throwing
+// TODO: Template?
+
+// new entry "MAG_LC_Counterspell_Quarterstaff"
+// type "Weapon"
+// using "WPN_Quarterstaff_2"
+// data "RootTemplate" "fcbb2c63-ac59-42e0-ad0b-d91cf9a47b60"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Boosts" "UnlockSpell(Target_MAG_CounterSpell)"
+// data "PassivesOnEquip" "MAG_LC_Counterspell_Quarterstaff_Resource_Passive"
+// data "Unique" "1"
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "Target_MAG_CounterSpell"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_Counterspell_5"
+// data "Level" "5"
+// data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "ReactionActionPoint:1"
+// data "RootSpellID" ""
+// data "InterruptPrototype" "Interrupt_MAG_Counterspell"
+
+// new entry "Target_MAG_CounterSpell_Success"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_Counterspell_Success"
+// data "UseCosts" "ReactionActionPoint:1"
+// data "InterruptPrototype" "Interrupt_MAG_Counterspell"
 
 new entry "Interrupt_MAG_Counterspell"
 type "InterruptData"
 // using "Interrupt_Counterspell"
 using "Interrupt_Counterspell_5"
 // Counterspell
+// data "DisplayName" "h5ca745ecg0d79g4621gaa12g1fe3e6164a69;1"
+// Counterspell
 data "DisplayName" "h5ca745ecg0d79g4621gaa12g1fe3e6164a69;1"
 // data "Success" "Counterspell();UseSpell(OBSERVER_SOURCE,Target_MAG_CounterSpell_Success,true,true,true)"
+// data "Cost" "ReactionActionPoint:1;Interrupt_MAG_Counterspell:1"
 data "Cost" "ReactionActionPoint:1;Interrupt_MAG_Counterspell:1"
+// data "Cooldown" "OncePerRestPerItem"
 data "Cooldown" "OncePerRestPerItem"
 // data "EnableCondition" "HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source)"
 data "EnableCondition" "HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and (not HasStatus('SG_Polymorph') or Goon_IsUnrestrictedPolymorphStatus())"
 // data "EnableContext" "OnActionResourcesChanged"
 data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
+
+// new entry "MAG_COUNTERSPELL_RESOURCE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// %%% Counterspell Resource
+// data "DisplayName" "h40cd3b9dg7d58g49dbga766ge03217ba5c5a;1"
+// data "StackId" "MAG_COUNTERSPELL_RESOURCE"
+// data "StackPriority" "10"
+// data "StackType" "Ignore"
+// data "Boosts" "ActionResource(Interrupt_MAG_Counterspell, 1, 0)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.

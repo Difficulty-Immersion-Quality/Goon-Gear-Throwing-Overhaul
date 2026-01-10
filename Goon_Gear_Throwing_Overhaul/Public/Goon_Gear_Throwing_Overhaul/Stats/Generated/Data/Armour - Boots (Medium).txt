@@ -6,8 +6,19 @@
 
 // 
 
+// ==================================== Boots of Elemental Momentum ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Boots of Striding  ====================================
 // Bug Fix: Unmovable is removed when the boots are unequipped.
+// Bug Fix: Unmovable is now a visible condition.
 
 new entry "MAG_Paladin_MomentumOnConcentration_Boots"
 type "Armor"
@@ -24,14 +35,39 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// new entry "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
+// type "PassiveData"
+// Focused Stride
+// data "DisplayName" "h70c769c0g929dg44ceg82deg259490babe49;1"
+// When you cast a spell that requires concentration, you gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [1] turn. &lt;br&gt;&lt;br&gt;While you are concentrating, you can't get knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or be moved against your will.
+// data "Description" "h93eb41a6gbe89g48fdga5f5g6960be08339a;2"
+// data "DescriptionParams" "1"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "HasSpellFlag(SpellFlags.Concentration) "
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_MOMENTUM, 100, 1);ApplyStatus(SELF, MAG_UNMOVABLE, 100, -1);ApplyStatus(SELF, MAG_MOMENTUM_DURATION_TECHNICAL, 100, 1)"
+
+// new entry "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
+// type "PassiveData"
+// using "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
+// data "Properties" "IsHidden"
+// data "StatsFunctorContext" "OnStatusRemove;OnStatusRemoved;OnDamaged"
+// data "Conditions" "not IsConcentrating()"
+// data "StatsFunctors" "RemoveStatus(MAG_UNMOVABLE)"
+
 new entry "MAG_UNMOVABLE"
 type "StatusData"
 data "StatusType" "BOOST"
 // using "GROUNDED"
 using "MAG_UNMOVABLE"
-data "Passives" "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
+// Unmovable
+// data "DisplayName" "he35e3dbfg5aa1g4deag9147g0f2858a914d4;1"
+// While concentrating on a spell, you can't be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved against your will.
+// data "Description" "h1f5794a3gc546g4d89ga109ge240265bf937;1"
 // data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
 data "StatusPropertyFlags" ""
+// data "StackId" "MAG_UNMOVABLE"
+// data "Boosts" "Attribute(Grounded);StatusImmunity(SG_Prone)"
+data "Passives" "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
 
 new entry "GOON_UNMOVABLE_TECHNICAL"
 type "StatusData"
@@ -39,7 +75,7 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Blackguard's Greaves ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -49,7 +85,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Dark Justiciar Boots ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -59,7 +95,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== The Speedy Lightfeet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -69,7 +105,23 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Unwanted Masterwork Greaves ====================================
+// TODO: Make it not generic ass uncommon ass boots no wonder they're fucking unwanted lmaaaaaaaaaaaaaaoooooooooooooooooooooooooooooooooooooooo
+
+// new entry "MAG_DevilsBlackmith_Boots"
+// type "Armor"
+// using "ARM_Boots_Metal"
+// data "RootTemplate" "df040e30-b424-4a89-be1b-83ffd57eb5a1"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "Unique" "1"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Vital Conduit Boots ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -79,7 +131,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Boots of Persistence ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -89,7 +141,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Boots of Psionic Movement ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -99,7 +151,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Tenacious Boots (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -109,3 +161,22 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== Nightsong Boots (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Oathbreaker Knight Boots (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

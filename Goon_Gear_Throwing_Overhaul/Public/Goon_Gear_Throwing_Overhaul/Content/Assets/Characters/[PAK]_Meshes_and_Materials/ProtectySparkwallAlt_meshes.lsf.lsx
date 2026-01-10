@@ -4,6 +4,7 @@
 	<region id="VisualBank">
 		<node id="VisualBank">
 			<children>
+				<!-- Credit to The Protecty Sparkswall Alternative Model by spek7re -->
 				<node id="Resource">
 					<attribute id="AttachBone" type="FixedString" value="" />
 					<attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
@@ -25,9 +26,9 @@
 					<attribute id="SkeletonSlot" type="FixedString" value="" />
 					<attribute id="Slot" type="FixedString" value="Breast" />
 					<attribute id="SoftbodyResourceID" type="FixedString" value="" />
-					<attribute id="SourceFile" type="LSString" value="Generated/Public/ProtectySparkwallAlt/Assets/ProtectySparkwallAlt_TIF_M_ARM_ROBE_B_BODY.GR2" />
+					<attribute id="SourceFile" type="LSString" value="Generated/Public/Goon_Gear_Throwing_Overhaul/Assets/ProtectySparkwallAlt_TIF_M_ARM_ROBE_B_BODY.GR2" />
 					<attribute id="SupportsVertexColorMask" type="bool" value="False" />
-					<attribute id="Template" type="FixedString" value="Generated/Public/ProtectySparkwallAlt/Assets/ProtectySparkwallAlt_TIF_M_ARM_ROBE_B_BODY.Dummy_Root.0" />
+					<attribute id="Template" type="FixedString" value="Generated/Public/Goon_Gear_Throwing_Overhaul/Assets/ProtectySparkwallAlt_TIF_M_ARM_ROBE_B_BODY.Dummy_Root.0" />
 					<children>
 						<node id="AnimationWaterfall">
 							<attribute id="Object" type="FixedString" value="" />
@@ -95,9 +96,9 @@
 					<attribute id="SkeletonSlot" type="FixedString" value="" />
 					<attribute id="Slot" type="FixedString" value="Breast" />
 					<attribute id="SoftbodyResourceID" type="FixedString" value="" />
-					<attribute id="SourceFile" type="LSString" value="Generated/Public/ProtectySparkwallAlt/Assets/ProtectySparkwallAlt_TIF_F_ARM_ROBE_B_BODY.GR2" />
+					<attribute id="SourceFile" type="LSString" value="Generated/Public/Goon_Gear_Throwing_Overhaul/Assets/ProtectySparkwallAlt_TIF_F_ARM_ROBE_B_BODY.GR2" />
 					<attribute id="SupportsVertexColorMask" type="bool" value="False" />
-					<attribute id="Template" type="FixedString" value="Generated/Public/ProtectySparkwallAlt/Assets/ProtectySparkwallAlt_TIF_F_ARM_ROBE_B_BODY.Dummy_Root.0" />
+					<attribute id="Template" type="FixedString" value="Generated/Public/Goon_Gear_Throwing_Overhaul/Assets/ProtectySparkwallAlt_TIF_F_ARM_ROBE_B_BODY.Dummy_Root.0" />
 					<children>
 						<node id="AnimationWaterfall">
 							<attribute id="Object" type="FixedString" value="" />
@@ -168,9 +169,9 @@
 					<attribute id="SkeletonSlot" type="FixedString" value="" />
 					<attribute id="Slot" type="FixedString" value="Breast" />
 					<attribute id="SoftbodyResourceID" type="FixedString" value="" />
-					<attribute id="SourceFile" type="LSString" value="Generated/Public/ProtectySparkwallAlt/Assets/ProtectySparkwallAlt_HFL_M_ARM_ROBE_B_BODY.GR2" />
+					<attribute id="SourceFile" type="LSString" value="Generated/Public/Goon_Gear_Throwing_Overhaul/Assets/ProtectySparkwallAlt_HFL_M_ARM_ROBE_B_BODY.GR2" />
 					<attribute id="SupportsVertexColorMask" type="bool" value="False" />
-					<attribute id="Template" type="FixedString" value="Generated/Public/ProtectySparkwallAlt/Assets/ProtectySparkwallAlt_HFL_M_ARM_ROBE_B_BODY.Dummy_Root.0" />
+					<attribute id="Template" type="FixedString" value="Generated/Public/Goon_Gear_Throwing_Overhaul/Assets/ProtectySparkwallAlt_HFL_M_ARM_ROBE_B_BODY.Dummy_Root.0" />
 					<children>
 						<node id="AnimationWaterfall">
 							<attribute id="Object" type="FixedString" value="" />

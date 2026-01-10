@@ -56,6 +56,7 @@
 					</children>
 				</node>
 			<!-- The Protecty Sparkswall -->
+				<!-- Credit to The Protecty Sparkswall Alternative Model by spek7re -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="heee0e803g50efg4c00g8255g8827e025ef7d" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h7272d7bcgfb91g4022gba34g3d62146ba78f" version="6" />

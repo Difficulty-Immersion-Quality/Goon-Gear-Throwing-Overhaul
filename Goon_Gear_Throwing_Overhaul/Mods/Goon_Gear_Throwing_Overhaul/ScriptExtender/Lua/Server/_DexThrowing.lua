@@ -76,5 +76,5 @@ end)
 -- Safety: remove statuses if preview switches to another spell
 Ext.Osiris.RegisterListener("StartedPreviewingSpell", 4, "after",
 function(caster, spell, isMostPowerful, hasMultipleLevels)
-    RemovePreviewStatus(caster)
+    RemoveTechnicalStatus(caster)
 end)

@@ -6,6 +6,10 @@ local function HasStatus(character, status)
     return Osi.HasActiveStatus(character, status) == 1
 end
 
+local function HasMonkWeaponAttackOverride(character)
+    return Osi.HasPassive(character, "MartialArts_DextrousUnarmedAttacks") == 1
+end
+
 local function ApplyTechnicalStatus(character)
     if not HasStatus(character, TECHNICAL_STATUS) then
         Osi.ApplyStatus(character, TECHNICAL_STATUS, -1.0, 1, character)
@@ -18,30 +22,37 @@ local function RemoveTechnicalStatus(character)
     end
 end
 
--- Apply when previewing Throw
+-- Apply when previewing Throw (passive check only)
 Ext.Osiris.RegisterListener("StartedPreviewingSpell", 4, "after",
-function(caster, spell, isMostPowerful, hasMultipleLevels)
+function(caster, spell)
     if spell ~= THROW_SPELL then
         return
     end
+
+    if HasMonkWeaponAttackOverride(caster) then
+        return
+    end
+
     ApplyTechnicalStatus(caster)
 end)
 
 -- Remove when Throw is committed
 Ext.Osiris.RegisterListener("CastSpell", 5, "after",
-function(caster, spell, spellType, spellElement, storyActionID)
+function(caster, spell)
     if spell ~= THROW_SPELL then
         return
     end
+
     RemoveTechnicalStatus(caster)
 end)
 
 -- Remove when Throw fails
 Ext.Osiris.RegisterListener("CastSpellFailed", 5, "after",
-function(caster, spell, spellType, spellElement, storyActionID)
+function(caster, spell)
     if spell ~= THROW_SPELL then
         return
     end
+
     RemoveTechnicalStatus(caster)
 end)
 
@@ -51,5 +62,6 @@ function(caster, spell)
     if spell == THROW_SPELL then
         return
     end
+    
     RemoveTechnicalStatus(caster)
 end)

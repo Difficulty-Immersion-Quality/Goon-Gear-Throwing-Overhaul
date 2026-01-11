@@ -1,12 +1,20 @@
 // ==================================== Master passives for throwing functionality ====================================
-
 // TODO: Figure out something, because MonkWeaponAttackOverride is just ignoring the conditions in boosts, and seemingly stays forever once active.
+// TODO: This functor approach doesn't pan out either, Wailing Bard is on to something with his osiris.
+
 // new entry "Goon_Finesse_Throwing_Master_Passive"
 // type "PassiveData"
 // data "Properties" "IsHidden"
-// data "BoostConditions" "IsDexterityGreaterThanStrength()"
-// data "BoostContext" "OnAttack"
-// data "Boosts" "IF(IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):MonkWeaponAttackOverride()"
+// data "Condition" "IsDexterityGreaterThanStrength()"
+// data "StatsFunctorContext" "OnAttack"
+// data "StatsFunctors" "IF(IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):ApplyStatus(GOON_FINESSE_THROWING_MASTER_TECHNICAL,100,1)"
+
+// new entry "GOON_FINESSE_THROWING_MASTER_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
+// data "Boosts" "MonkWeaponAttackOverride()"
+// data "RemoveEvents" "OnDamage"
 
 // Damage reroll: Twist of Fortune, Knife of the Undermountain King, The Clover
 new entry "Goon_DamageReroll_Throwing_Master_Passive"

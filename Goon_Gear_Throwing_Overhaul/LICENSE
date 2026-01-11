@@ -1,22 +1,45 @@
-TLDR; Unless you're from Fextralife you're welcome to the contents of my mods, so long as the license is respected.
-Credit is preferred, one to one reuploads do not have my blessing, but the license takes precedence.
+Goon's Big Beautiful License (GBBL)
 
-The license is only applicable where Larian's Fan Content Policy does not impose restrictions, such as the selling and paywalling of mod content:
+Copyright (c) 2026 BaldursGoonsack
+
+This license applies to the contents of this software,
+except where overridden by Larian Studios’ Fan Content Policy:
 https://larian.com/fan-content-policy
 
-MIT License
-
-Copyright (c) 2025 BaldursGoonsack
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+of the software and associated documentation files, to use, study, modify, and
+create derivative works of the software for personal or community use, subject to
+the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Permitted Distribution Platforms
+Redistribution of the software, in original or modified form, is permitted only on:
+- nexusmods.com
+- mod.io
+- github.com
+- gitlab.com
+
+Mirrors, reuploads, or automated republication on other platforms are not
+permitted without explicit permission from the copyright holder.
+
+2. Attribution
+Attribution to the original author(s) is preferred and strongly
+encouraged, but not required unless otherwise mandated by applicable law or
+platform rules.
+
+3. Continuation of License (Derivative Works)
+Any derivative work that incorporates, modifies, or is based upon the software, in
+whole or in part, must be distributed under this license or a license that is
+substantially identical in rights, obligations, and restrictions.
+
+The derivative author may add additional permissions for their own original
+contributions, but may not remove, weaken, or contradict the terms of this
+license as they apply to the original software.
+
+4. Commercial Use
+Commercial use, selling, paywalling, or monetization of the software is prohibited
+to the extent restricted by Larian Studios’ Fan Content Policy. Where that
+policy allows monetization, this license does not grant additional rights
+beyond it.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,

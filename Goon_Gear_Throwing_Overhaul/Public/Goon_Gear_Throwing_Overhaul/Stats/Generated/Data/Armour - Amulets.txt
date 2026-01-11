@@ -336,7 +336,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Sentient Amulet (Rare) ====================================
+// ==================================== Sentient Amulet ====================================
 // Bug Fix: Shatter is now shown as a level 3 spell.
 
 // new entry "UND_MonkAmulet_Amulet"
@@ -349,12 +349,48 @@
 // data "Boosts" "UnlockSpell(Target_UND_MonkAmulet_Ability);UnlockSpell(Shout_UND_MonkAmulet_TalkToAmulet);Tag(UND_MONKAMULET_EQUIPPED);UnlockSpell(Shout_MAG_Monk_Restore_Ki_Lesser)"
 // data "Unique" "1"
 
-// new entry "WYR_MonkAmulet_Amulet_NoGhost"
-// type "Armor"
-// using "UND_MonkAmulet_Amulet"
-// data "RootTemplate" "14a6da9a-6689-4c70-96a1-d03319ba3278"
-// data "ValueUUID" "7da97bda-6776-4796-8b0b-d3b96ff3c9fb"
-// data "Boosts" ""
+new entry "GOON_SENTIENTAMULET_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "Target_UND_MonkAmulet_Ability"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_Shatter"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "UseCosts" "ActionPoint:1"
+
+// new entry "Shout_UND_MonkAmulet_TalkToAmulet"
+// type "SpellData"
+// data "SpellType" "Shout"
+// data "AIFlags" "CanNotUse"
+// data "Autocast" "Yes"
+// data "Icon" "Action_TalkToAmulet"
+// Talk to the Sentient Amulet
+// data "DisplayName" "h452fdfb7g2ae8g4bebga1cag7a585f1404fa;2"
+// Speak with the consciousness lingering inside the Sentient Amulet.
+// data "Description" "h074e2932g9c87g4b1agb32dg8dc05064b9b1;2"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" ""
+// data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;bcc3b0d9-f04f-4448-aab0-e0ad641167cc,,;,,;,,;,,;,,;,,;,,"
+// data "SpellFlags" "ImmediateCast"
+
+new entry "Shout_MAG_Monk_Restore_Ki_Lesser"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_MAG_Monk_Restore_Ki"
+using "Shout_MAG_Monk_Restore_Ki_Lesser"
+// data "SpellProperties" "RestoreResource(KiPoint, 2, 0)"
+// data "Icon" "Action_Mag_KiRestoration_Lesser"
+// Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;
+// data "Description" "h1a6011d2g19b6g4bdcg9531g4c0499ea0d72;2"
+// Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;.
+data "Description" "hbf40b225g9fdeg4ef4gaed9g09805d1e7737;1"
+// data "DescriptionParams" "2"
+// data "Sheathing" "Sheathed"
+
+// ==================================== Very Rare - Sentient Amulet
 
 // new entry "WYR_MonkAmulet_Amulet_AfterCombat"
 // type "Armor"
@@ -364,7 +400,7 @@
 // data "Rarity" "VeryRare"
 // data "Boosts" "UnlockSpell(Target_WYR_SentientAmulet_AmuletAfterCombat);UnlockSpell(Shout_MAG_Monk_Restore_Ki)"
 
-new entry "GOON_SENTIENTAMULET_ARMOUR_TECHNICAL"
+new entry "GOON_SENTIENTAMULET2_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -374,8 +410,40 @@ type "SpellData"
 data "SpellType" "Target"
 // using "Target_Shatter_3"
 using "Target_WYR_SentientAmulet_AmuletAfterCombat"
+// data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "ActionPoint:1"
+// data "RootSpellID" ""
+// data "PowerLevel" ""
 // data "Level" "2"
 data "Level" "3"
+
+// new entry "Shout_MAG_Monk_Restore_Ki"
+// type "SpellData"
+// data "SpellType" "Shout"
+// using "Shout_WholenessOfBody"
+// data "Cooldown" "OncePerRestPerItem"
+// data "SpellProperties" "RestoreResource(KiPoint, LevelMapValue(MartialArts), 0)"
+// data "Icon" "Action_Mag_KiRestoration"
+// Ki Restoration
+// data "DisplayName" "h7f181fe8g9ed6g4ae7gb9cdgbb749b0a9920;2"
+// Using the spiritual energy in the amulet, you restore a number of &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt; equal to your martial arts die.
+// data "Description" "h2cc84f05g48dag41f9g9202gb01b8e1a0ce7;2"
+// data "TooltipDamageList" ""
+// data "TooltipStatusApply" ""
+
+// ==================================== Ded - Sentient Amulet
+
+// new entry "WYR_MonkAmulet_Amulet_NoGhost"
+// type "Armor"
+// using "UND_MonkAmulet_Amulet"
+// data "RootTemplate" "14a6da9a-6689-4c70-96a1-d03319ba3278"
+// data "ValueUUID" "7da97bda-6776-4796-8b0b-d3b96ff3c9fb"
+// data "Boosts" ""
+
+new entry "GOON_SENTIENTAMULET3_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Spell Savant Amulet ====================================
 // TODO: Something/anything.

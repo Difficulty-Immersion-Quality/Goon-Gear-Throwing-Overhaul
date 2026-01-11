@@ -150,7 +150,7 @@
 	<!-- "MAG_Monk_Armor_WindStance_Passive" --> <content contentuid="h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2" version="1">While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
 	<!-- "MAG_MONK_SWIFT_AS_THE_WIND" --> <content contentuid="hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d" version="1">Your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
 	<!-- "MAG_LC_Nymph_Cloak_Passive" --> <content contentuid="h1707807fg321ag4ba2g9be3gd18171fda6cb" version="1">Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "Shout_MAG_Monk_Restore_Ki_Lesser" --> <content contentuid="hbf40b225g9fdeg4ef4gaed9g09805d1e7737" version="1">Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

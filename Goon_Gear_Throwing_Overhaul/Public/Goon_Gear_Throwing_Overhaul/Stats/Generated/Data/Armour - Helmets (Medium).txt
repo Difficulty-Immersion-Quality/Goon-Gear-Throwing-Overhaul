@@ -1,4 +1,12 @@
-// ==================================== Angelic Plume Helmet ====================================
+// ==================================== Base entry ====================================
+
+// 
+
+// ==================================== Magical variants ====================================
+
+// 
+
+// ==================================== Dark Justiciar Helm (Uncommon) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -8,7 +16,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Frayed Drow Hood ====================================
+// ==================================== Helmet of Smiting ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -18,7 +26,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Leather Helmet ====================================
+// ==================================== Holy Lance Helm ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -28,7 +36,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Leatherstring Helmet ====================================
+// ==================================== Flawed Helldusk Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -38,7 +46,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Red Carmine Mask ====================================
+// ==================================== Steelwatcher Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -48,7 +56,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Rich Arcanist Helmet ====================================
+// ==================================== Dark Justiciar Helmet (Very Rare) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -58,7 +66,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Scorpion Helmet ====================================
+// ==================================== Sarevok's Horned Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -68,7 +76,30 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Covert Cowl ====================================
+// ==================================== Helm of Balduran ====================================
+// Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
+// Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
+
+new entry "MAG_WYRM_OfBalduran_Helmet"
+type "Armor"
+// using "_Head_Magic_Metal"
+using "MAG_WYRM_OfBalduran_Helmet"
+// data "RootTemplate" "0a64283a-1fc4-45cd-9e5e-f463f6b762ea"
+// data "ValueUUID" "f46eb019-edd0-4216-99df-9dae89a83ce7"
+// data "Rarity" "Legendary"
+// data "Boosts" "CriticalHit(AttackTarget,Success,Never)"
+data "Boosts" ""
+// data "PassivesOnEquip" "MAG_HelmOfBalduran_MaxHP_Passive;MAG_HelmOfBalduran_Protection_Passive;MAG_StunnImmunity_Passive"
+data "PassivesOnEquip" "MAG_HelmOfBalduran_MaxHP_Passive;MAG_HelmOfBalduran_Protection_Passive;MAG_StunnImmunity_Passive;Goon_Critical_Hit_Resistance"
+// data "StatusOnEquip" "MAG_HELM_OF_BALDURAN_REGENERATION"
+// data "Unique" "1"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Enforcer Helmet (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -78,7 +109,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Dark Justiciar Mask ====================================
+// ==================================== Tightening Orbit Helm (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -88,26 +119,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Helmet of Arcane Acuity ====================================
-// Bug Fix: Battle Acuity now only triggers once per attack.
-// Changes: Battle Acuity applies to thrown attacks.
-
-new entry "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive"
-type "PassiveData"
-using "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive"
-// Battle Acuity
-// data "DisplayName" "he07ba98dgc5f3g479cg831fg55efe9aa49eb;3"
-// Whenever you deal damage with a weapon attack, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
-// data "Description" "h774d5e0cg0211g4875ga83bgf14cba6b2bbb;4"
-// Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
-data "Description" "h1adb1860g647fg402egb774g1ff6be448951;1"
-data "Properties" "OncePerAttack"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsWeaponAttack()"
-data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
-// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
-
-// ==================================== Helmet of Autonomy ====================================
+// ==================================== Nightsong Helmet (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -117,7 +129,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Shadow of Menzoberranzan ====================================
+// ==================================== Oathbreaker Knight Helmet (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -126,14 +138,3 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== Helmet of Grit ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-

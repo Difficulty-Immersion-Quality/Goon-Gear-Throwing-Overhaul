@@ -48,7 +48,7 @@
 	<!-- "Goon_Target_MAG_WeaponAction_SearingBlood_Offhand" --> <content contentuid="h363f39e6g26fbg4bd4gb638g499b914d3c41" version="1">Searing Blood (Offhand)</content>
 	<!-- "Goon_Shout_MAG_WhirlwindAttack_Offhand" --> <content contentuid="hb7d7bddag6a14g4a51g82ddg46a9c0e69d0b" version="1">Whirlwind Attack (Offhand)</content>
 	<!-- "Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand" --> <content contentuid="hef72f4dage8d5g4a3cg8ed5gf6fab5d484b2" version="1">Ensnaring Strike (Melee - Offhand)</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "MAG_BoundToBeBonded_Passive" --> <content contentuid="heee2c268g4226g464aga2f0gdf9e12a1e0f9" version="1">This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
@@ -146,9 +146,20 @@
 	<!-- MAG_ArcaneTrickster_Ring_Passive --> <content contentuid="h2042de2fgc22fg4161g9050g59fffac63c85" version="1">After a successful weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can cast Illusion or Enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
 	<!-- "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive" --> <content contentuid="h1adb1860g647fg402egb774g1ff6be448951" version="1">Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.</content>
 	<!-- "DEN_FaithwardenStaff_Passive", "GOON_FAITHWARDENSTAFF_FAITHWARDENS_STRIDE" --> <content contentuid="h1bf8e97fg830ag424cgabc6gfd17f9ea5936" version="1">Vines cannot &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnare&lt;/LSTag&gt; you and do not count as &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN"&gt;Difficult Terrain&lt;/LSTag&gt;.</content>
-	<!-- "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive" --> <content contentuid="h32a0f3eag3e64g4a05g9f2eg074b79b4d589" version="1">When the wearer damages a hostile creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.</content>
+	<!-- "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive" --> <content contentuid="h32a0f3eag3e64g4a05g9f2eg074b79b4d589" version="1">When the wearer damages a creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Monk_Armor_WindStance_Passive" --> <content contentuid="h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2" version="1">While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
 	<!-- "MAG_MONK_SWIFT_AS_THE_WIND" --> <content contentuid="hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d" version="1">Your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
+	<!-- "MAG_LC_Nymph_Cloak_Passive" --> <content contentuid="h1707807fg321ag4ba2g9be3gd18171fda6cb" version="1">Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].</content>
+	<!-- "Shout_MAG_Monk_Restore_Ki_Lesser" --> <content contentuid="hbf40b225g9fdeg4ef4gaed9g09805d1e7737" version="1">Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;.</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 

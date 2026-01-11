@@ -1,3 +1,34 @@
+// ==================================== Base entry ====================================
+
+// new entry "ARM_Cloak"
+// type "Armor"
+// using "_Back"
+// data "RootTemplate" "a1978b4d-3d93-49ec-9a8b-d19171ed35d5"
+// data "ValueLevel" "2"
+// data "ArmorType" "Cloth"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "MinLevel" "1"
+
+// ==================================== Magical variants ====================================
+
+// new entry "_Back_Magic"
+// type "Armor"
+// using "ARM_Cloak"
+// data "ValueLevel" "3"
+// data "ValueUUID" "f0e7be35-8be4-483d-afa8-dc9a104ea758"
+
+// ==================================== Cindermoth Cloak ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Cloak of Cunning Brume ====================================
 // Bug Fix: Now functions based on Disengage conditions being applied, instead of just spells being cast. 
 // Changes: Fog cloud area radius increased from 2m to 3m.
@@ -30,6 +61,216 @@ data "StatsFunctorContext" "OnStatusApplied"
 data "Conditions" "Goon_HasDisengageCondition()"
 // data "StatsFunctors" "CreateSurface(2,2,FogCloud,true)"
 data "StatsFunctors" "CreateSurface(3,3,FogCloud,true)"
+
+// ==================================== Cloak of Elemental Absorption ====================================
+// TODO: Buh...
+// TODO: Come back to this one later with a fresh brain
+
+// new entry "MAG_ElementalGish_AbsorbElements_Cloak"
+// type "Armor"
+// using "_Back_Magic"
+// data "RootTemplate" "811ab129-2fb2-49ed-af29-5042197022fe"
+// data "ValueLevel" "5"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "Absorb_Elements_Passive;Absorb_Elements_Technical_Passive;MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
+// data "Unique" "1"
+// data "MinLevel" "1"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Absorb_Elements_Passive"
+type "PassiveData"
+using "Absorb_Elements_Passive"
+// Absorb Elements
+// data "DisplayName" "h867c957ag5de7g4ae9gbaf3g443e3cfffd6e;2"
+// Absorb elemental damage once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. Take half damage from the next elemental attack targetting you, and deal an additional [1] of that element type on your next attack.
+// data "Description" "h2de0dccag2991g4e2fg8c14g852929b0d62e;4"
+// data "DescriptionParams" "1d6"
+data "Properties" "OncePerShortRest"
+// data "Icon" "PassiveFeature_AbsorbElements"
+// data "Boosts" "UnlockInterrupt(Interrupt_AbsorbElements)"
+
+// new entry "Absorb_Elements_Technical_Passive"
+// type "PassiveData"
+// using "Absorb_Elements_Passive"
+// data "Icon" ""
+// data "Properties" "IsHidden"
+// data "Boosts" ""
+// data "StatsFunctorContext" "OnDamaged"
+// data "Conditions" "HasStatus('ABSORB_ELEMENTS_ACTIVE')"
+// data "StatsFunctors" "IF(IsDamageTypeAcid()):ApplyStatus(ABSORB_ELEMENTS_ACID_DAMAGE, 100, 2);IF(IsDamageTypeCold()):ApplyStatus(ABSORB_ELEMENTS_COLD_DAMAGE, 100, 2);IF(IsDamageTypeFire()):ApplyStatus(ABSORB_ELEMENTS_FIRE_DAMAGE, 100, 2);IF(IsDamageTypeLightning()):ApplyStatus(ABSORB_ELEMENTS_LIGHTNING_DAMAGE, 100, 2);IF(IsDamageTypeThunder()):ApplyStatus(ABSORB_ELEMENTS_THUNDER_DAMAGE, 100, 2);IF(IsDamageTypeAcid() or IsDamageTypeCold() or IsDamageTypeFire() or IsDamageTypeLightning() or IsDamageTypeThunder()):ApplyStatus(ABSORB_ELEMENTS_COOLDOWN_TECHNICAL, 100, -1);IF(IsDamageTypeAcid() or IsDamageTypeCold() or IsDamageTypeFire() or IsDamageTypeLightning() or IsDamageTypeThunder()):RemoveStatus(ABSORB_ELEMENTS_ACTIVE)"
+
+// data "Boosts" "CharacterWeaponDamage(1d6, X)"
+
+// new entry "ABSORB_ELEMENTS_ACID_DAMAGE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_SPELLBLADE_ACID_ENERGY"
+// Absorb Elements: Acid Damage
+// data "DisplayName" "h7e5ae7ebg034eg4791g9624g153106fa657d;2"
+// data "DescriptionParams" "DealDamage(1d6, Acid)"
+// data "Icon" "statIcons_AbsorbElement_Acid"
+// data "StackId" "ABSORB_ELEMENTS_ACID_DAMAGE"
+// data "Boosts" "IF(IsWeaponAttack()):DamageBonus(1d6, Acid, false)"
+
+// new entry "ABSORB_ELEMENTS_COLD_DAMAGE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_SPELLBLADE_COLD_ENERGY"
+// Absorb Elements: Cold Damage
+// data "DisplayName" "h45187c88g71cdg4090ga9b5gc1b4ab1e5dc3;2"
+// data "DescriptionParams" "DealDamage(1d6, Cold)"
+// data "Icon" "statIcons_AbsorbElement_Cold"
+// data "StackId" "ABSORB_ELEMENTS_ACID_DAMAGE"
+// data "Boosts" "IF(IsWeaponAttack()):DamageBonus(1d6, Cold, false)"
+
+// new entry "ABSORB_ELEMENTS_FIRE_DAMAGE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_SPELLBLADE_FIRE_ENERGY"
+// Absorb Elements: Fire Damage
+// data "DisplayName" "h6c03468bgba88g4190gb462g4f2251f3de55;2"
+// data "DescriptionParams" "DealDamage(1d6, Fire)"
+// data "Icon" "statIcons_AbsorbElement_Fire"
+// data "StackId" "ABSORB_ELEMENTS_ACID_DAMAGE"
+// data "Boosts" "IF(IsWeaponAttack()):DamageBonus(1d6, Fire, false)"
+
+// new entry "ABSORB_ELEMENTS_LIGHTNING_DAMAGE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_SPELLBLADE_LIGHTNING_ENERGY"
+// Absorb Elements: Lightning Damage
+// data "DisplayName" "haf069834ga594g487agb5c2g67863a5a8d66;2"
+// data "DescriptionParams" "DealDamage(1d6, Lightning)"
+// data "Icon" "statIcons_AbsorbElement_Lightning"
+// data "StackId" "ABSORB_ELEMENTS_ACID_DAMAGE"
+// data "Boosts" "IF(IsWeaponAttack()):DamageBonus(1d6, Lightning, false)"
+
+// new entry "ABSORB_ELEMENTS_THUNDER_DAMAGE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_SPELLBLADE_THUNDER_ENERGY"
+// Absorb Elements: Thunder Damage
+// data "DisplayName" "h181ae604g133fg4f70ga5b0g6ed0e2bacbee;2"
+// data "DescriptionParams" "DealDamage(1d6, Thunder)"
+// data "Icon" "statIcons_AbsorbElement_Thunder"
+// data "StackId" "ABSORB_ELEMENTS_ACID_DAMAGE"
+// data "Boosts" "IF(IsWeaponAttack()):DamageBonus(1d6, Thunder, false)"
+
+// ==================================== Resources - Cloak of Elemental Absorption
+
+// new entry "MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
+// type "PassiveData"
+// using "MAG_Interrupt_MAG_Shield_Resource_Passive"
+// %%% Absorb Element Cloak Resource
+// data "DisplayName" "h5b743049g5654g443fg99a7g8083963419bd;1"
+// data "Properties" "IsHidden;OncePerShortRest"
+// data "StatsFunctorContext" "OnCreate;OnShortRest;OnLongRest"
+// data "StatsFunctors" "ApplyStatus(MAG_ABSORB_ELEMENT_RESOURCE, 100, -1)"
+
+// new entry "MAG_ABSORB_ELEMENT_RESOURCE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_SHIELD_RESOURCE"
+// %%% Absorb Element Cloak Resource
+// data "DisplayName" "ha90e7426g3ee7g4c27g844eg0274dbe3bf80;1"
+// data "StackId" "MAG_ABSORB_ELEMENT_RESOURCE"
+// data "Boosts" "ActionResource(Interrupt_AbsorbElements, 1, 0)"
+
+// ==================================== Interrupt - Cloak of Elemental Absorption
+
+new entry "Interrupt_AbsorbElements"
+type "InterruptData"
+// using "Interrupt_DampenElements"
+using "Interrupt_AbsorbElements"
+// Absorb Elements
+// data "DisplayName" "h061f2c2ag7fe0g4eafg8b0dg3a108ace358b;1"
+// Absorb elemental damage once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. Take half damage from the next elemental attack targetting you, and deal an additional [1] of that element type on your next attack.
+// data "Description" "h765aa8fbg842ag4baag9b89g352140c0b860;3"
+// data "DescriptionParams" "1d6"
+// data "Icon" "PassiveFeature_AbsorbElements"
+// data "InterruptContextScope" "Self"
+// data "Conditions" "IsAbleToReact(context.Observer) and Self(context.Target,context.Observer) and (SpellDamageTypeIs(DamageType.Acid) or SpellDamageTypeIs(DamageType.Cold) or SpellDamageTypeIs(DamageType.Fire) or SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Thunder)) and not AnyEntityIsItem()"
+// TODO: SpellDamageTypeIs isn't restrictive?
+// data "Properties" "SetDamageResistance(Acid);SetDamageResistance(Cold);SetDamageResistance(Fire);SetDamageResistance(Lightning);SetDamageResistance(Thunder);ApplyStatus(OBSERVER_TARGET, ABSORB_ELEMENTS_ACTIVE,100,1)"
+data "Properties" "ApplyStatus(OBSERVER_TARGET, ABSORB_ELEMENTS_ACTIVE,100,1);ApplyStatus(OBSERVER_TARGET,GOON_ABSORB_ELEMENTS_ACTIVE,100,1);"
+// data "Cost" "ReactionActionPoint:1;Interrupt_AbsorbElements:1"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "EnableCondition" "(not HasStatus('SG_Polymorph') or Tagged('MINDFLAYER') or HasStatus('SG_Disguise')) and HasActionResource('Interrupt_AbsorbElements', 1, 0, false, false, context.Source)"
+data "EnableCondition" "HasActionResource('Interrupt_AbsorbElements', 1, 0, false, false, context.Source) and Goon_IsNonHostilePolymorphStatus()"
+// data "EnableContext" "OnActionResourcesChanged"
+data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
+
+new entry "ABSORB_ELEMENTS_ACTIVE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ABSORB_ELEMENTS_ACTIVE"
+// Absorb Elements
+// data "DisplayName" "h7c893f57gccd6g4623g99d2gb49450694b76;2"
+// Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
+// data "Description" "hdf20dec9g0a4eg4202g9d6eg0ff791eb9526;2"
+// data "DescriptionParams" "1d6"
+// data "Icon" "PassiveFeature_AbsorbElements"
+// data "SoundStart" "Misc_Status_AbsorbElementsActive_Start"
+// data "SoundLoop" "Misc_Status_AbsorbElementsActive_MO"
+// data "SoundStop" "Misc_Status_AbsorbElementsActive_End"
+// data "StackId" "ABSORB_ELEMENTS_ACTIVE"
+// data "RemoveConditions" ""
+// data "RemoveEvents" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" ""
+// data "StatusEffect" "5119b58e-c015-445e-ba84-6cadf32379a8"
+
+new entry "GOON_ABSORB_ELEMENTS_ACTIVE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Absorb Elements
+data "DisplayName" "h7c893f57gccd6g4623g99d2gb49450694b76;2"
+// Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
+data "Description" "hdf20dec9g0a4eg4202g9d6eg0ff791eb9526;2"
+data "Icon" "PassiveFeature_AbsorbElements"
+data "Boosts" "DamageReduction(Acid,Half);DamageReduction(Cold,Half);DamageReduction(Fire,Half);DamageReduction(Lightning,Half);DamageReduction(Thunder,Half)"
+data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
+data "Passives" "Goon_Absorb_Elements_Active_Technical_Passive"
+
+new entry "Goon_Absorb_Elements_Active_Technical_Passive"
+type "PassiveData"
+// Absorb Elements
+data "DisplayName" "h7c893f57gccd6g4623g99d2gb49450694b76;2"
+// Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
+data "Description" "hdf20dec9g0a4eg4202g9d6eg0ff791eb9526;2"
+data "Icon" "PassiveFeature_AbsorbElements"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnDamaged;OnDamagedPrevented"
+data "Conditions" "HasLastAttackTriggered()"
+data "StatsFunctors" "RemoveStatus(GOON_ABSORB_ELEMENTS_ACTIVE)"
+
+// ==================================== Cloak of Protection ====================================
+// TODO: Something/anything.
+
+new entry "MAG_PHB_CloakOfProtection_Cloak"
+type "Armor"
+// using "_Back_Magic"
+using "MAG_PHB_CloakOfProtection_Cloak"
+// data "RootTemplate" "602f62dd-0fba-4438-ad68-b846f17ac538"
+// data "ValueLevel" "7"
+data "ValueScale" "1.5"
+// data "Rarity" "Uncommon"
+// data "Boosts" "AC(1);RollBonus(SavingThrow, 1)"
+// data "Unique" "1"
+
+// new entry "MAG_PHB_CloakOfProtection_Cloak"
+// type "Armor"
+// using "MAG_PHB_CloakOfProtection_Cloak"
+// data "ValueScale" "1.5"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Fleshmelter Cloak ====================================
 // Changes: Tooltip now specifies that damage is increased on a crit. The attacker no longer has to deal damage, instead the effects are triggered for landing a hit. In addition to the Acid damage, there's now a 50% chance for the attacker to be afflicted with the Acid condition for 1 turn, or have their existing Acid condition's duration increased by 1 turn.
@@ -65,7 +306,7 @@ data "StatsFunctorContext" "OnAttacked"
 // data "Conditions" "IsMeleeAttack() and not IsRedirectedDamage()"
 data "Conditions" "IsMeleeAttack() and not IsRedirectedDamage() and HasDamageEffectFlag(DamageFlags.Hit)"
 // data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical)"
-data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical);ApplyStatus(SWAP,GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID,100,0)"
+data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical,,0,,true,false);ApplyStatus(SWAP,GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID,100,0)"
 
 new entry "GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID"
 type "StatusData"
@@ -79,6 +320,84 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 data "OnApplyRoll" "RollDieAgainstDC(DiceType.d4,3)"
 data "OnApplySuccess" "IF(HasStatus('ACID')):SetStatusDuration(ACID,1,Add);IF(not HasStatus('ACID')):ApplyStatus(ACID,100,1)"
 
+// ==================================== Reverse Rain Cloak ====================================
+// TODO: Something/anything.
+
+// new entry "WYR_Circus_WetCloak"
+// type "Armor"
+// using "ARM_Cloak"
+// data "RootTemplate" "fc9f7223-6b39-4734-b600-820fad6c4a08"
+// data "ValueUUID" "f0e7be35-8be4-483d-afa8-dc9a104ea758"
+// data "ValueOverride" "1"
+// data "Rarity" "Uncommon"
+// data "StatusOnEquip" "WET"
+// data "Unique" "1"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Thunderskin Cloak ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Vivacious Cloak ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cloak of Displacement ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Derivation Cloak ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Deathstalker Mantle ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Wavemother's Cloak ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Cloak of the Weave ====================================
 // Bug Fix: Absorb Elements is now functional.
 
@@ -86,87 +405,207 @@ new entry "MAG_EndGameCaster_Cloak"
 type "Armor"
 // using "ARM_Cloak_Long_B"
 using "MAG_EndGameCaster_Cloak"
+// data "RootTemplate" "58c9bc94-b0ac-4ab9-a005-28cc445186f8"
+// data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Rarity" "VeryRare"
 // data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive"
 data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive;Absorb_Elements_Technical_Passive;MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
-
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
+// data "Unique" "1"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Mantle of the Holy Warrior ====================================
 // TODO: Something/anything.
 
-// gear entry
+// new entry "MAG_Radiant_CrusaderMantle_Cloak"
+// type "Armor"
+// using "ARM_Cloak_Long_C"
+// data "RootTemplate" "f1fdb8db-e754-4ea9-b6ce-440db6b776ac"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "Boosts" "UnlockSpell(Shout_MAG_CrusadersMantle)"
+// data "Unique" "1"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// new entry "Shout_MAG_CrusadersMantle"
+// type "SpellData"
+// data "SpellType" "Shout"
+// using "Shout_CrusadersMantle"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "UseCosts" "ActionPoint:1"
 
-// gear entry
+// ==================================== Nymph Cloak ====================================
+// Changes: Restored unused Nymphish Charm passive that increases the wearers Charisma by 1 to a maximum of 20.
+// Changes: Removed Nymphish Charm's cap of 20.
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
+new entry "MAG_LC_Nymph_Cloak"
+type "Armor"
+// using "_Back_Magic"
+using "MAG_LC_Nymph_Cloak"
+// data "RootTemplate" "6062db99-6719-44e2-9d01-9a99131d1ba7"
+// data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Rarity" "VeryRare"
+// data "Boosts" "UnlockSpell(Target_MAG_NymphCloak_Dominate_Person)"
+data "PassivesOnEquip" "MAG_LC_Nymph_Cloak_Passive"
+// data "Unique" "1"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+new entry "MAG_LC_Nymph_Cloak_Passive"
+type "PassiveData"
+using "MAG_LC_Nymph_Cloak_Passive"
+// Nymphish Charm
+// data "DisplayName" "h73b3a2begfd77g41f4g8828g639e76e91dcd;2"
+// Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1], to maximum of [2].
+// data "Description" "h98845916g5f75g4846g81c5g1cbd08bfbe10;2"
+// Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].
+data "Description" "h1707807fg321ag4ba2g9be3gd18171fda6cb;1"
+// data "DescriptionParams" "1;20"
+data "DescriptionParams" "1"
+// data "Boosts" "Ability(Charisma, 1, 20)"
+data "Boosts" "Ability(Charisma, 1)"
 
-// gear entry
+// new entry "Target_MAG_NymphCloak_Dominate_Person"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_DominatePerson"
+// data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "ActionPoint:1"
+
+// ==================================== Shade-Slayer Cloak ====================================
+// Bug Fix: Skilled Skullduggery is removed when the cloak is unequipped.
+
+new entry "MAG_Critical_HidingCritical_Cloak"
+type "Armor"
+// using "_Back_Magic"
+using "MAG_Critical_HidingCritical_Cloak"
+// data "RootTemplate" "aff94826-0ea4-42e3-8855-aa2002c01b76"
+// data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
+data "StatusOnEquip" "GOON_SHADESLAYERCLOAK_TECHNICAL"
+// data "Unique" "1"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// new entry "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
+// type "PassiveData"
+// Stealthy Critical
+// data "DisplayName" "h45c8f017g88abg43e8gbbb0gbeabc933a016;2"
+// While hiding, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
+// data "Description" "h8cbbaa63g1d97g4741gb065gc06a1647ab86;4"
+// data "DescriptionParams" "1"
+// data "StatsFunctorContext" "OnStatusApplied"
+// data "Conditions" "StatusId('SNEAKING_CLEAR') or StatusId('SNEAKING_LIGHTLY_OBSCURED') or StatusId('SNEAKING_HEAVILY_OBSCURED')"
+// data "StatsFunctors" "ApplyStatus(MAG_CRITICAL_HIDING_CRITICAL, 100, -1)"
+
+// new entry "MAG_CRITICAL_HIDING_CRITICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// Skilled Skullduggery
+// data "DisplayName" "h62406005ge05dg48b9ga380gaa57a95da8a4;2"
+// While hidden, the number the affected entity needs to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
+// data "Description" "h08b96f36gef73g4a68gb668ga4bd010b3178;6"
+// data "DescriptionParams" "1"
+// data "Icon" "PassiveFeature_Generic_Threat"
+// data "StackId" "MAG_CRITICAL_HIDING_CRITICAL"
+// data "StackType" "Overwrite"
+// data "Boosts" "ReduceCriticalAttackThreshold(1) "
+// data "RemoveConditions" "not HasStatus('SNEAKING_CLEAR') and not HasStatus('SNEAKING_LIGHTLY_OBSCURED') and not HasStatus('SNEAKING_HEAVILY_OBSCURED')"
+// data "RemoveEvents" "OnObscurityChanged;OnStatusRemoved;OnStatusApplied"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+
+new entry "GOON_SHADESLAYERCLOAK_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
+
+// ==================================== Cloak of Avarice (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
-// gear entry
+// new entry "MAG_Toll_Collector_Cloak"
+// type "Armor"
+// using "ARM_Cloak"
+// data "RootTemplate" "c7774285-21b3-44fc-bae0-0b893a6a3549"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "Unique" "1"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Phasmid Cloak (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
-// gear entry
+// Ultimate Cut Content Restoration Mod
+// new entry "MAG_Zhentarim_CloakOfDisguise_Cloak"
+// type "Armor"
+// using "_Back_Magic"
+// data "RootTemplate" "c70ae037-f787-4db6-bb16-e0bbc0fdad4a"
+// data "Rarity" "Uncommon"
+// data "Boosts" "UnlockSpell(Shout_DisguiseSelf_MaskOfManyFaces,Singular,None,OncePerShortRestPerItem)"
+// data "Unique" "1"
 
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== Minsc Cloak (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// No stat entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Braindrain Cape (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_Psychic_MentalFatigue_Cape"
+// type "Armor"
+// using "_Back_Magic"
+// data "RootTemplate" "1b4d85b9-eefd-4629-9985-db3cb5365e8f"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Psychic_MentalFatigue_Cape_Passive"
+// data "Unique" "1"
+
+// new entry "MAG_Psychic_MentalFatigue_Cape"
+// type "Armor"
+// using "MAG_Psychic_MentalFatigue_Cape"
+// data "ValueLevel" "6"
+// data "ValueScale" "1.2"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_Psychic_MentalFatigue_Cape_Passive"
+// type "PassiveData"
+// Mental Debilitation
+// data "DisplayName" "he6e8b4c6gc422g4a7dgaf96gcbdef4bf582f;2"
+// When the wearer succeeds a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against any foe's spells or actions, that foe gains &lt;LSTag Type="Status" Tooltip="MAG_PSYCHIC_MENTAL_FATIGUE"&gt;Mental Fatigue&lt;/LSTag&gt;.
+// data "Description" "hf948f80eg0c7cg4404gba31g00d465a633c0;2"
+// data "StatsFunctorContext" "OnAttacked"
+// data "Conditions" "not Item() and not Self() and not IsMiss() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow()"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_PSYCHIC_MENTAL_FATIGUE, 100, 2);ApplyStatus(SELF, MAG_PSYCHIC_MENTAL_FATIGUE_DURATION_TECHNICAL, 100, 1)"

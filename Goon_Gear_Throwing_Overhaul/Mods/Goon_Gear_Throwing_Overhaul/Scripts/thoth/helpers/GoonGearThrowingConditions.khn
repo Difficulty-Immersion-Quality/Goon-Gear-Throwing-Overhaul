@@ -245,7 +245,7 @@ end
 -- Handmaiden's Mace
 function HandmaidenThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_HANDMAIDENS_MACE_THROW_TECHNICAL'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Dwarven Thrower shortening
@@ -333,7 +333,7 @@ end
 -- Magical variant for Hellbeard Halberd & Handmaiden's Mace poison
 function d10PoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_INFERNAL_WEAPON','GOON_HANDMAIDENS_MACE_THROW_TECHNICAL'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_INFERNAL_WEAPON','GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Basic Poison

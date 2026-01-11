@@ -47,6 +47,11 @@ using "WPN_Maul_Pact"
 data "Boosts" ""
 // data "Weapon Properties" "Heavy;Twohanded;Melee;Dippable;Magical"
 
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 

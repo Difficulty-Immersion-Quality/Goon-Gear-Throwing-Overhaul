@@ -203,7 +203,7 @@ data "OnApplyFunctors" "IF(IsCritical()):ApplyStatus(SWAP, MAG_CRITICAL_DONE_CRI
 
 // ==================================== Rebound Battleaxe (Inaccessible/Cut content) ====================================
 // Bug Fix: When the weapon is not bound it loses the effects that would otherwise stay forever.
-// Bug Fix: Now also works for Hexblade's Hexed Weapon.
+// Changes: The conditional buffs now work for Hexblade's Hexed Weapon and Warlocks' Pact Weapon. (In vanilla the implemenetation only half works with Warlocks' Pact Weapon and completely working with Eldritch Knight's Weapon Bond.)
 
 // new entry "MAG_Bonded_Throwing_Battleaxe"
 // type "Weapon"
@@ -219,38 +219,116 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-new entry "MAG_BONDED_THROWING"
+// ====================================
+
+new entry "MAG_BoundToBeBonded_Passive"
+type "PassiveData"
+using "MAG_BoundToBeBonded_Passive"
+// Favoured Weapon
+// data "DisplayName" "h6733d65aga377g4052gb2e7gf10e8512c9fa;2"
+// This weapon has a +[1] bonus to damage and attack rolls.
+// data "Description" "h1f089d51gf8c4g4f13g8c86gbee87cae12f0;4"
+// This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "heee2c268g4226g464aga2f0gdf9e12a1e0f9;1"
+// data "DescriptionParams" "1"
+
+// new entry "MAG_Bound_Throwing_Passive"
+// type "PassiveData"
+// It's All In The Wrists
+// data "DisplayName" "h353f45b1ge829g47b7g81bcgf328dc10c881;1"
+// This weapon has the &lt;LSTag Tooltip="Thrown"&gt;Thrown&lt;/LSTag&gt; property and deals an additional [1] when thrown.
+// data "Description" "had1e58a5g61efg49e6gbd3cg7e0a9fb35a10;1"
+// data "DescriptionParams" "DealDamage(1d4, Thunder)"
+
+// ====================================
+
+// new entry "MAG_ATTACK_ROLL_BONUS_ELDRITCHKNIGHT_BONDED_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_ATTACK_ROLL_BONUS_BONDED_TECHNICAL"
+// data "Passives" "MAG_BoundToBeBonded_Technical_Passive_EldritchKnight;"
+
+// Note: This passive is applied to the weapon itself because the status in the template.
+new entry "MAG_BoundToBeBonded_Technical_Passive_EldritchKnight"
+type "PassiveData"
+// using "MAG_BoundToBeBonded_Technical_Passive"
+using "MAG_BoundToBeBonded_Technical_Passive_EldritchKnight"
+// data "Conditions" "StatusId('WEAPON_BOND');"
+data "Conditions" "Goon_IsBoundWeaponStatus()"
+
+new entry "MAG_WEAPON_ATTACK_ROLL_BONUS"
 type "StatusData"
 data "StatusType" "BOOST"
-using "MAG_BONDED_THROWING"
-// // Vicious Throws
-// data "DisplayName" "ha9e74333gf347g41c6g946dgef11ee1eb9fe;1"
-// // This weapon deals an additional [1] when thrown.
-// data "Description" "h1d909eadgc7d2g47d4gafadge2ac48178e40;1"
-data "DescriptionParams" "DealDamage(1d4,Thunder)"
-// data "Icon" "GenericIcon_Intent_Utility"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-// data "StackId" "MAG_BONDED_THROWING"
-// data "Boosts" "WeaponProperty(Thrown)"
+using "MAG_WEAPON_ATTACK_ROLL_BONUS"
+// Favoured Weapon
+// data "DisplayName" "h008cf7bfgb563g48e4gb10bgbc1c764e0ec3;3"
+// This weapon has +[1] bonus to damage and attack rolls.
+// data "Description" "h28e6b161g9d0ag4668gaaeeg3f3ac5e52962;3"
+// This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "heee2c268g4226g464aga2f0gdf9e12a1e0f9;1"
+// data "DescriptionParams" "1"
+// data "Icon" "GenericIcon_Intent_Buff"
+data "StatusPropertyFlags" "DisablePortraitIndicator;IgnoreResting"
+// data "StackId" "MAG_WEAPON_ATTACK_ROLL_BONUS"
+// data "Boosts" "WeaponEnchantment(1)"
 
-// TODO: Consolidate statuses into a function?
+// ====================================
+
+// new entry "MAG_BONDED_THROWING_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// %%% Bonded Throwing
+// data "DisplayName" "h288b2823g2721g45f0g8135g8f3bd37afe9c;1"
+// data "StackId" "MAG_BONDED_THROWING_TECHNICAL"
+// data "Passives" "MAG_Bound_Throwing_Technical_Passive"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
+
+// Note: This passive is applied to the weapon itself because the status in the template.
 new entry "MAG_Bound_Throwing_Technical_Passive"
 type "PassiveData"
 // using "MAG_Bound_Throwing_Passive"
 using "MAG_Bound_Throwing_Technical_Passive"
 // data "StatsFunctorContext" "OnStatusApplied"
 // data "Conditions" "StatusId('WEAPON_BOND') or StatusId('PACT_BLADE')"
-data "Conditions" "StatusId('WEAPON_BOND') or StatusId('PACT_BLADE') or StatusId('HEXBLADE_BIND')"
+data "Conditions" "Goon_IsBoundWeaponStatus()"
 // data "StatsFunctors" "ApplyStatus(MAG_BONDED_THROWING, 100, -1);ApplyStatus(MAG_THUNDER_THROW, 100, -1)"
 data "StatsFunctors" "ApplyStatus(MAG_BONDED_THROWING, 100, -1);ApplyStatus(MAG_THUNDER_THROW, 100, -1);ApplyStatus(GOON_REBOUNDBATTLEAXE_CLEANER,100,-1)"
+
+new entry "MAG_BONDED_THROWING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_BONDED_THROWING"
+// Vicious Throws
+// data "DisplayName" "ha9e74333gf347g41c6g946dgef11ee1eb9fe;1"
+// It's All In The Wrists
+data "DisplayName" "h353f45b1ge829g47b7g81bcgf328dc10c881;1"
+// This weapon deals an additional [1] when thrown.
+// data "Description" "h1d909eadgc7d2g47d4gafadge2ac48178e40;1"
+// This weapon has the &lt;LSTag Tooltip="Thrown"&gt;Thrown&lt;/LSTag&gt; property and deals an additional [1] when thrown.
+data "Description" "had1e58a5g61efg49e6gbd3cg7e0a9fb35a10;1"
+data "DescriptionParams" "DealDamage(1d4,Thunder)"
+// data "Icon" "GenericIcon_Intent_Utility"
+data "StatusPropertyFlags" "DisablePortraitIndicator;IgnoreResting"
+// data "StackId" "MAG_BONDED_THROWING"
+// data "Boosts" "WeaponProperty(Thrown)"
+
+// new entry "MAG_THUNDER_THROW"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_FIRE_THROW"
+// Throwing: Thunder Damage
+// data "DisplayName" "h4fa49185ga597g4172ga182gb6587624dc43;2"
+// data "DescriptionParams" "DealDamage(1d4, Thunder)"
+// data "Icon" "GenericIcon_DamageType_Thunder"
+// data "StackId" "MAG_THUNDER_THROW"
 
 new entry "GOON_REBOUNDBATTLEAXE_CLEANER"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-data "RemoveConditions" "not HasStatus('WEAPON_BOND') and not HasStatus('PACT_BLADE') and not HasStatus('HEXBLADE_BIND')"
+data "RemoveConditions" "not Goon_HasBoundWeaponStatus()"
 data "RemoveEvents" "OnStatusRemoved"
-data "OnRemoveFunctors" "RemoveStatus(MAG_BONDED_THROWING);RemoveStatus(MAG_THUNDER_THROW)"
+data "OnRemoveFunctors" "RemoveStatus(MAG_BONDED_THROWING);RemoveStatus(MAG_THUNDER_THROW);RemoveStatus(MAG_WEAPON_ATTACK_ROLL_BONUS)"
 
 // ==================================== Shadow Battleaxe (Inaccessible/Cut content) ====================================
 // Bug Fix: Additional 1d4 Necrotic damage works when throwing the weapon.

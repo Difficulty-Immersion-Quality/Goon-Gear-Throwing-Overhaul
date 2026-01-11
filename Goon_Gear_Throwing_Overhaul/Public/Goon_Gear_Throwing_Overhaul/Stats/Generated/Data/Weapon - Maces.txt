@@ -58,6 +58,11 @@ data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(
 // data "Unique" "1"
 data "PassivesOnEquip" "Goon_Handmaidens_Mace_Poison;Goon_Handmaidens_Mace_Frightened"
 
+new entry "GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "Goon_Handmaidens_Mace_Poison"
 type "PassiveData"
 using "MAG_Infernal_Weapon_Passive"
@@ -78,11 +83,6 @@ data "TooltipSave" "Wisdom"
 data "StatsFunctorContext" "OnDamage"
 data "Conditions" "AttackedWithPassiveSourceWeapon()"
 data "StatsFunctors" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER, 100, 0)"
-
-new entry "GOON_HANDMAIDENS_MACE_THROW_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER"
 type "StatusData"

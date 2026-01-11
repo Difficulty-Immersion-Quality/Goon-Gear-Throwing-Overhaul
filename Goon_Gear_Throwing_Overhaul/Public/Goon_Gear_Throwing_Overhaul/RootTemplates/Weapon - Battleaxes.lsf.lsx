@@ -301,8 +301,9 @@
 					<attribute id="Name" type="LSString" value="MAG_Bonded_Throwing_Battleaxe" />
 					<attribute id="ParentTemplateId" type="FixedString" value="c17ee133-cbb5-418f-88be-5ef27991cf50" />
 					<attribute id="Stats" type="FixedString" value="MAG_Bonded_Throwing_Battleaxe" />
-					<!-- This blade's magical powers only function if it's &lt;LSTag Type="Status" Tooltip="WEAPON_BOND"&gt;Bound&lt;/LSTag&gt; to an Eldritch Knight, a Warlock's &lt;LSTag Type="Status" Tooltip="PACT_BLADE"&gt;Pact Weapon&lt;/LSTag&gt;, or a Hexblade's &lt;LSTag Type="Status" Tooltip="HEXBLADE_BIND"&gt;Hexed Weapon&lt;/LSTag&gt;. -->
+					<!-- This blade's magical powers only function if it's &lt;LSTag Type="Status" Tooltip="WEAPON_BOND"&gt;Bound&lt;/LSTag&gt; to an Eldritch Knight. -->
 					<!-- <attribute id="TechnicalDescription" type="TranslatedString" handle="hd1b7e512g7c60g4cc8g9477ge1341b969de8" version="3" /> -->
+					<!-- This blade's magical powers only function if it's &lt;LSTag Type="Status" Tooltip="WEAPON_BOND"&gt;Bound&lt;/LSTag&gt; to an Eldritch Knight, a Warlock's &lt;LSTag Type="Status" Tooltip="PACT_BLADE"&gt;Pact Weapon&lt;/LSTag&gt;, or a Hexblade's &lt;LSTag Type="Status" Tooltip="HEXBLADE_BIND"&gt;Hexed Weapon&lt;/LSTag&gt;. -->
 					<attribute id="TechnicalDescription" type="TranslatedString" handle="h43a292f3gf9ffg4a30g99aagbc54c083419b" version="1" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="VisualTemplate" type="FixedString" value="6f3779fa-555a-fa61-9cdc-794f890ef30d" />

@@ -1,3 +1,51 @@
+// ==================================== Base entry ====================================
+
+// 
+
+// ==================================== Magical variants ====================================
+
+// 
+
+// ==================================== Blazer of Benevolence ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Scarlet Leather Armour ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Drow Studded Leather Armour ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Penumbral Armour ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Shadeclinger Armour ====================================
 // Bug Fix: Shadeclinger is removed when the armour is unequipped.
 
@@ -10,14 +58,48 @@ using "MAG_Harpers_ArmorOfShadows"
 // data "Rarity" "Rare"
 // data "Boosts" "Skill(Stealth, 1)"
 // data "PassivesOnEquip" "MAG_Harpers_ArmorOfShadows_Passive"
-data "StatusOnEquip" "GOON_ARMOUR_SHADECLINGER_TECHNICAL"
+data "StatusOnEquip" "GOON_SHADECLINGERARMOUR_TECHNICAL"
 // data "Unique" "1"
 
-new entry "GOON_ARMOUR_SHADECLINGER_TECHNICAL"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_Harpers_ArmorOfShadows_Passive"
+// type "PassiveData"
+// Shadeclinger 
+// data "DisplayName" "hfbfadd6ag87acg4694g8931gde1a2cc09583;2"
+// While obscured, the wearer has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h5692da17gfad8g4a3cgb912g737ae7cc11e8;3"
+// data "StatsFunctorContext" "OnObscurityChanged;OnCreate"
+// data "StatsFunctors" "IF(not HasObscuredState(ObscuredState.Clear)):ApplyStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS, 100, -1);IF(HasObscuredState(ObscuredState.Clear)):RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
+
+new entry "GOON_SHADECLINGERARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 data "OnRemoveFunctors" "RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
+
+// ==================================== Spidersilk Armour ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Armour of Landfall ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Armour of Moonbasking ====================================
 // Bug Fix: Lunar Protection status now displays the correct AC bonus.
@@ -36,9 +118,14 @@ using "MAG_Druid_Moon_Magic_Leather_Armor"
 // data "RootTemplate" "d33d71f8-f7b9-4c19-9b39-03d0b9ba8829"
 // data "ArmorClass" "11"
 // data "PassivesOnEquip" "MAG_Druid_Wildshape_TempHP_Passive;MAG_Druid_Wildshape_SpellResistance_Passive"
-data "StatusOnEquip" "GOON_ARMOUR_MOONBASKING_TECHNICAL"
+data "StatusOnEquip" "GOON_ARMOUROFMOONBASKING_TECHNICAL"
 
-new entry "GOON_ARMOUR_MOONBASKING_TECHNICAL"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "GOON_ARMOUROFMOONBASKING_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
@@ -110,8 +197,7 @@ data "RemoveConditions" "not Goon_IsDruidWildshape()"
 // data "StatusPropertyFlags" ""
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
-
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Armour of the Sporekeeper ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -121,7 +207,7 @@ data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndi
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Bhaalist Armour ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -131,57 +217,7 @@ data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndi
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Elegant Studded Leather ====================================
 // TODO: Something/anything.
 
 // gear entry

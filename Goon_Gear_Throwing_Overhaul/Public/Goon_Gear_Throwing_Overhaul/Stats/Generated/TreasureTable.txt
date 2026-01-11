@@ -3,15 +3,16 @@ CanMerge 1
 new subtable "1,1"
 object category "I_Goon_Pendant_Animal_Speech_Amulet",1,0,0,0,0,0,0,0
 
-new treasuretable "ST_SimpleMeleeWeapons"
-CanMerge 1
-new subtable "1,1"
-object category "I_WPN_Dart",1,0,0,0,0,0,0,0
+// Normal darts added to ranged tables in Ultimate Cut Content Restoration Mod
+// new treasuretable "ST_SimpleMeleeWeapons"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_WPN_Dart",1,0,0,0,0,0,0,0
 
-new treasuretable "ST_SimpleMeleeWeapons_1"
-CanMerge 1
-new subtable "1,1"
-object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
+// new treasuretable "ST_SimpleMeleeWeapons_1"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
 
 new treasuretable "ST_Finesse_MeleeWeapons_Magic"
 CanMerge 1

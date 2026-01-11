@@ -1,7 +1,9 @@
-local THROWING_TECHNICAL_STATUS = "GOON_DEXTERITY_THROWING_TECHNICAL"
+-- TODO: A more NPC friendly implementation
+-- TODO: Find things that need blacklisting
+-- TODO: Finesse weapon and light object restrictions
+-- (keep such restrictions consistent with "MartialArts_DextrousUnarmedAttacks" too, because Larian just lets it fly all DEX bby)
 
--- spellType ~= Ext_Enums.SpellType.Throw really gotta be used instead, or something more robust
-local THROW_SPELL = "Throw_Throw"
+local THROWING_TECHNICAL_STATUS = "GOON_DEXTERITY_THROWING_TECHNICAL"
 
 -- Blacklist of throw spells to ignore
 local THROW_SPELL_BLACKLIST = {
@@ -34,42 +36,28 @@ end
 -- Apply when previewing Throw (passive check only)
 Ext.Osiris.RegisterListener("StartedPreviewingSpell", 4, "after",
 function(caster, spell, isMostPowerful, hasMultipleLevels)
-    if spell ~= THROW_SPELL then
-        return
+    if THROW_SPELL_BLACKLIST[spell] then 
+        return 
     end
 
-    if HasMonkWeaponAttackOverride(caster) then
-        return
+    if HasMonkWeaponAttackOverride(caster) then 
+        return 
     end
 
-    ApplyTechnicalStatus(caster)
+    if Ext.Stats.Get(spell).SpellType == "Throw" then
+        ApplyTechnicalStatus(caster)
+    end
 end)
 
 -- Apply technical status when Throw is actually cast
 Ext.Osiris.RegisterListener("CastSpell", 5, "after",
 function(caster, spell, spellType, spellElement, storyActionID)
-    -- Only Throw-type spells
-    if spell ~= THROW_SPELL then 
-        return 
-    end
-
-    -- Skip blacklisted spell names
-    if THROW_SPELL_BLACKLIST[spell] then return end
-
-    -- Skip monk passive
-    if HasMonkWeaponAttackOverride(caster) then return end
-
-    -- Apply the real technical status
-    ApplyTechnicalStatus(caster)
+    RemoveTechnicalStatus(caster)
 end)
 
 -- Remove technical status if Throw fails
 Ext.Osiris.RegisterListener("CastSpellFailed", 5, "after",
 function(caster, spell, spellType, spellElement, storyActionID)
-    if spell ~= THROW_SPELL then
-        return
-    end
-
     RemoveTechnicalStatus(caster)
 end)
 

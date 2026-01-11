@@ -1,20 +1,20 @@
-// ==================================== Master passives for throwing functionality ====================================
-// TODO: Figure out something, because MonkWeaponAttackOverride is just ignoring the conditions in boosts, and seemingly stays forever once active.
-// TODO: This functor approach doesn't pan out either, Wailing Bard is on to something with his osiris.
+// ==================================== Dexterity throwing stat entries (Lua) ====================================
 
-// new entry "Goon_Finesse_Throwing_Master_Passive"
-// type "PassiveData"
-// data "Properties" "IsHidden"
-// data "Condition" "IsDexterityGreaterThanStrength()"
-// data "StatsFunctorContext" "OnAttack"
-// data "StatsFunctors" "IF(IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):ApplyStatus(GOON_FINESSE_THROWING_MASTER_TECHNICAL,100,1)"
-
-// new entry "GOON_FINESSE_THROWING_MASTER_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
+new entry "GOON_DEXTERITY_THROWING_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_DEXTERITY_THROWING_TECHNICAL"
 // data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
-// data "Boosts" "MonkWeaponAttackOverride()"
-// data "RemoveEvents" "OnDamage"
+data "Passives" "Goon_MonkWeaponAttackOverride"
+
+new entry "Goon_MonkWeaponAttackOverride"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "BoostContext" "OnCreate"
+data "BoostConditions" "IsDexterityGreaterThanStrength()"
+data "Boosts" "MonkWeaponAttackOverride()"
+
+// ==================================== Master passives for throwing functionality ====================================
 
 // Damage reroll: Twist of Fortune, Knife of the Undermountain King, The Clover
 new entry "Goon_DamageReroll_Throwing_Master_Passive"
@@ -138,6 +138,7 @@ data "DescriptionParams" "DealDamage(1d10,Poison)"
 // data "Boosts" "WeaponDamage(6, Poison)"
 data "Boosts" "WeaponDamage(1d10,Poison)"
 // data "Passives" "MAG_Infernal_Weapon_Passive"
+data "Passives" ""
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
 // data "StatusEffect" "11f94ff7-9c1b-431a-a26b-99e157026dee"
 

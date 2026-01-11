@@ -1,10 +1,12 @@
 // ==================================== Dexterity throwing stat entries (Lua) ====================================
+// HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)
+// WEIGHT_SMALL WEIGHT_TINY WEIGHT_MEDIUM ?
 
 new entry "GOON_DEXTERITY_THROWING_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "GOON_DEXTERITY_THROWING_TECHNICAL"
-// data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
+data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
 data "Passives" "Goon_MonkWeaponAttackOverride"
 
 new entry "Goon_MonkWeaponAttackOverride"

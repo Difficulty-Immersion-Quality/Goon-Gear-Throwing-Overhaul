@@ -1,0 +1,20 @@
+new entry "MAG_NECROTIC_NECROTIC_WEAPON_RED_Aza"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_NECROTIC_NECROTIC_WEAPON"
+// data "StatusEffect" "9c94e468-751d-4967-870a-15f368cd5e3a"
+data "StatusEffect" "d60ce7ae-f8c2-42c5-b787-6e14824acf6d"
+
+// new entry "MAG_NECROTIC_NECROTIC_WEAPON_RED_Aza"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// Withering Armament
+// data "DisplayName" "hd9095cfdg86efgba7bg5657gc508589a030e;1"
+// Deals an additional [1].
+// data "Description" "hc9224beagb02cg51d4g87e7g9c1172f1f27d;1"
+// data "DescriptionParams" "DealDamage(1d4, Necrotic)"
+// data "Icon" "GenericIcon_DamageType_Necrotic"
+// data "StackId" "MAG_NECROTIC_NECROTIC_WEAPON"
+// data "Boosts" "WeaponDamage(1d4,Necrotic)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
+// data "StatusEffect" "d60ce7ae-f8c2-42c5-b787-6e14824acf6d"

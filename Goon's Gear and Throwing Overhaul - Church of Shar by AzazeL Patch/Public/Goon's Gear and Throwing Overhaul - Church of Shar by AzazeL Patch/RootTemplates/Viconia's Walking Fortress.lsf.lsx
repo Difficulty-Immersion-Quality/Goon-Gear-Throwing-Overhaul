@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="7" revision="1" build="3" lslib_meta="v1,bswap_guids,lsf_keys_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<!-- Viconia's Walking Fortress -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h4a8d0ffdgb939g4949ga81agb1341e608313" version="3" />
+					<attribute id="DisplayName" type="TranslatedString" handle="ha6bd8ba7gc772g43e3g977egc96361efdc7b" version="4" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_TheBulwark_Shield" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="4f313dde-14bb-43a2-abdd-07b2eb38b33a" />
+					<attribute id="Name" type="LSString" value="MAG_TheBulwark_Shield" />
+					<attribute id="ParentTemplateId" type="FixedString" value="badf2418-01ac-410d-931e-72b1dac071c7" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="615cd2c2-dc34-5e02-f5c5-8741722d7c81" />
+					<attribute id="Stats" type="FixedString" value="MAG_TheBulwark_Shield" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<!-- Patched Aza's visuals over my Goon's Gear and Throwing Overhaul templates -->
+					<!-- <attribute id="VisualTemplate" type="FixedString" value="dc37c116-c43b-e9fd-4f52-b601ccff8766" /> -->
+					<attribute id="VisualTemplate" type="FixedString" value="b8b635df-dbce-21eb-407f-290bf8851486" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_VICONIASWALKINGFORTRESS_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

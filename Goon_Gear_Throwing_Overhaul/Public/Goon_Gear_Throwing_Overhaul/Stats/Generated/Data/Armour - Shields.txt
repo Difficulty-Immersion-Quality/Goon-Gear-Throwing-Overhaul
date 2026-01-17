@@ -417,15 +417,18 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Viconia's Walking Fortress ====================================
-// TODO: Something/anything.
+// TODO: Move strength buff to the shield like Aza did?
 
-// new entry "MAG_TheBulwark_Shield"
-// type "Armor"
+// Note: Edited to overwrite NPC Redesign - Orin the Red by AzazeL.
+new entry "MAG_TheBulwark_Shield"
+type "Armor"
 // using "ARM_Shield_1"
+using "MAG_TheBulwark_Shield"
 // data "RootTemplate" "4f313dde-14bb-43a2-abdd-07b2eb38b33a"
 // data "ValueUUID" "f46eb019-edd0-4216-99df-9dae89a83ce7"
 // data "Rarity" "Legendary"
 // data "Boosts" "UnlockSpell(Shout_MAG_TheBulwark_ReflectiveShell);UnlockSpell(Target_MAG_WardingBond)"
+data "Boosts" "UnlockSpell(Shout_MAG_TheBulwark_ReflectiveShell);UnlockSpell(Target_MAG_WardingBond)"
 // data "PassivesOnEquip" "MAG_Legendary_ShieldRiposte_Passive;MAG_Legendary_Spellguard_Passive"
 // data "MinAmount" "1"
 // data "MaxAmount" "1"

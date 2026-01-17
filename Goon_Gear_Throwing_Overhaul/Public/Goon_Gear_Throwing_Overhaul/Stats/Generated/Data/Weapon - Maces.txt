@@ -45,6 +45,7 @@ data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
 // Bug Fix: Poison condition application and 1d6 Poison damage works with throwing.
 // Changes: Saving throw DC for Poisoned increased from 12 to 13. Added an additional application for Frightened, with a DC of 13; both work with throwing.
 
+// Note: Edited to overwrite NPC Redesign - Orin the Red by AzazeL.
 new entry "MAG_Viconia_Mace"
 type "Weapon"
 // using "WPN_Mace_2"
@@ -53,8 +54,9 @@ using "MAG_Viconia_Mace"
 // data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
 // data "Rarity" "VeryRare"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d10, Poison)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d6, Poison)"
 // data "Boosts" "AbilityOverrideMinimum(Strength, 18)"
+data "Boosts" "AbilityOverrideMinimum(Strength, 18)"
 // data "Unique" "1"
 data "PassivesOnEquip" "Goon_Handmaidens_Mace_Poison;Goon_Handmaidens_Mace_Frightened"
 

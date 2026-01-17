@@ -61,7 +61,7 @@ end
 
 function d4NecroticThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_NECROTIC_THROW','ELEMENTAL_WEAPON_NECROTIC','MAG_NECROTIC_NECROTIC_WEAPON','MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION','GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_NECROTIC_THROW','ELEMENTAL_WEAPON_NECROTIC','MAG_NECROTIC_NECROTIC_WEAPON','MAG_NECROTIC_NECROTIC_WEAPON_RED_Aza','MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION','GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE'}, {}, {}, entity)
 end
 
 function d4ForceThrow(entity)

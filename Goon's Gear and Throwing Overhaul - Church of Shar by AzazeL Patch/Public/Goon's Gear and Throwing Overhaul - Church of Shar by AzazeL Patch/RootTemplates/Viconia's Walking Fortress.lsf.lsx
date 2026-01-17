@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Viconia's Walking Fortress -->
+			<!-- Viconia's Walking Fortress -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h4a8d0ffdgb939g4949ga81agb1341e608313" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="ha6bd8ba7gc772g43e3g977egc96361efdc7b" version="4" />

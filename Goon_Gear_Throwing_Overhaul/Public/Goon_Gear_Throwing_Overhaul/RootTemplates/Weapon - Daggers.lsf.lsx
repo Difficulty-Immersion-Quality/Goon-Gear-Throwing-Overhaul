@@ -403,6 +403,94 @@
 						</node>
 					</children>
 				</node>
+			<!-- Blade of the First Blood -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hedb18a99gd26fg4995ga388gaab39c341962" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h90423de7gc766g4bfbg96e3gec1739eb223e" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Dagger_Orin_A" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="d90abf24-3c4e-4bbf-84aa-def05ca9962a" />
+					<attribute id="Name" type="LSString" value="MAG_WYR_Orin_Bhaalist_Dagger" />
+					<attribute id="ParentTemplateId" type="FixedString" value="c68026c8-8af9-4a05-b77a-246a01bafe61" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="ab71824f-5991-c69a-089e-963a463aa039" />
+					<attribute id="Stats" type="FixedString" value="MAG_WYR_Orin_Bhaalist_Dagger" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="f67bf9d2-2bd7-4d3f-5723-6e41f8e0ee3f" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.08468789 0.031222953 0.20307142" />
+									<attribute id="Min" type="fvec3" value="-0.0843465 0.0036089737 -0.5506349" />
+									<attribute id="Radius" type="float" value="0.0833395" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.08468789 0.031222953 0.20307142" />
+									<attribute id="Min" type="fvec3" value="-0.0843465 0.0036089737 -0.5506349" />
+									<attribute id="Radius" type="float" value="0.166679" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.08468789 0.031222953 0.20307142" />
+									<attribute id="Min" type="fvec3" value="-0.0843465 0.0036089737 -0.5506349" />
+									<attribute id="Radius" type="float" value="0.166679" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_NECROTIC_NECROTIC_WEAPON" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_WEAPON_BOND" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_BLADEOFTHEFIRSTBLOOD_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 			</children>
 		</node>
 	</region>

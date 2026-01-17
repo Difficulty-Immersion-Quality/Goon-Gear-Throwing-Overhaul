@@ -312,13 +312,59 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Blade of the First Blood ====================================
 
-// weapon entry
+// new entry "MAG_WYR_Orin_Bhaalist_Dagger"
+// type "Weapon"
+// using "WPN_Dagger_2"
+// data "RootTemplate" "d90abf24-3c4e-4bbf-84aa-def05ca9962a"
+// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "Rarity" "Legendary"
+// data "Boosts" " UnlockSpell(Target_MAG_TrueStrike)"
+// data "BoostsOnEquipOffHand" " AC(1)"
+// data "PassivesOnEquip" "MAG_WYR_Orin_Bhaalist_Dagger_ImprovedCritical_Passive"
+// data "PassivesMainHand" " MAG_TheClover_Mainhand_Passive"
+// data "PassivesOffHand" " MAG_TheClover_OffHand_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_BLADEOFTHEFIRSTBLOOD_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// new entry "MAG_WYR_Orin_Bhaalist_Dagger_ImprovedCritical_Passive"
+// type "PassiveData"
+// Improved Critical
+// data "DisplayName" "h4656c3a2gca8ag4669ga84fg5d2623dacedf;1"
+// The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
+// data "Description" "h41dd65fcgfe51g4c4cg9b57g9a7371842f99;2"
+// data "DescriptionParams" "1"
+// data "Boosts" "ReduceCriticalAttackThreshold(1)"
+
+// new entry "MAG_TheClover_Mainhand_Passive"
+// type "PassiveData"
+// Exploit Weakness
+// data "DisplayName" "hcef43fa4gdfb7g4779g848ag2fcf75c16918;1"
+// Creatures hit with this weapon receive &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerability&lt;/LSTag&gt; to Piercing damage.
+// data "Description" "ha4f04b76gd89fg4110g860egf3375acb74e6;1"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "ApplyStatus(MAG_BHAALIST_AURA_OF_MURDER, 100, 1)"
+
+// new entry "MAG_TheClover_OffHand_Passive"
+// type "PassiveData"
+// True Strike Riposte
+// data "DisplayName" "h2ca5306bga010g43e6g84adg12d57d191b6e;1"
+// When a creature misses you with a melee attack, you may retaliate and gain &lt;LSTag Type="Status" Tooltip="TRUE_STRIKE"&gt;True Strike&lt;/LSTag&gt;.
+// data "Description" "h5b97d606g97d6g4685g98ecg0d265dfe0618;1"
+// data "Boosts" "UnlockInterrupt(Interrupt_TheClover_TrueStrike_Riposte)"
+
+// new entry "Interrupt_TheClover_TrueStrike_Riposte"
+// type "InterruptData"
+// using "Interrupt_Riposte"
+// True Strike Riposte
+// data "DisplayName" "hac87e9a5g95dcg4df9g92d6ga9848e3256ae;1"
+// When a creature misses you with a melee attack, you may retaliate and gain &lt;LSTag Type="Status" Tooltip="TRUE_STRIKE"&gt;True Strike&lt;/LSTag&gt;.
+// data "Description" "hb89feac4ga6b9g4139gaab8gdd531e28e52d;1"
+// data "Properties" "UseSpell(SWAP,Target_MAG_TheClover_TrueStrike_Riposte,true,true,true);ApplyStatus(OBSERVER_OBSERVER,INTERRUPT_RIPOSTE,100,0)"
+// data "Cost" "ReactionActionPoint:1"

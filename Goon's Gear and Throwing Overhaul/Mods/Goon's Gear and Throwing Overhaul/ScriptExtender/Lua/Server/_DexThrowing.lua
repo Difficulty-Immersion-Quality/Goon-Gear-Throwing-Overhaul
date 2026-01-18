@@ -1,3 +1,4 @@
+-- ==================================== Dex throwing ====================================
 -- TODO: A more NPC friendly implementation
 -- TODO: Find things that need blacklisting
 -- TODO: Finesse weapon and light object restrictions

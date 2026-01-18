@@ -82,6 +82,7 @@ data "Rarity" "Rare"
 
 // ==================================== Elven Chain ====================================
 // Bug Fix: Now properly considered Medium Armour. The absurd hidden passive "MAG_FlexibleArmor_Defense_Passive" has been removed now that the Defence fighting style actually works with the armour.
+// Changes: Instead of just granting Proficiency with the armour itself it now grants Proficiency with the armour type.
 
 new entry "MAG_PHB_ElvenChain_Armor"
 type "Armor"
@@ -101,12 +102,16 @@ data "Proficiency Group" "MediumArmor"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "MAG_PHB_ElvenChain_Armor_Passive"
-// type "PassiveData"
+new entry "MAG_PHB_ElvenChain_Armor_Passive"
+type "PassiveData"
+using "MAG_PHB_ElvenChain_Armor_Passive"
 // Elven Chain
 // data "DisplayName" "h008b56feg795fg4f0agb10dg35b1417ea276;2"
 // You are considered &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with this armour while wearing it. 
 // data "Description" "h6ee738edg2713g4840gb4f5g3d245ed7d1d5;2"
+// The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Medium Armour.
+data "Description" "he636d770g063fg4178g886fgd98b40c731cb;1"
+data "Boosts" "Proficiency(MediumArmor)"
 
 // new entry "MAG_PHB_ElvenChain_AddedEffect_Armor_Passive"
 // type "PassiveData"
@@ -116,14 +121,6 @@ data "Proficiency Group" "MediumArmor"
 // data "Description" "h5f2701a5gbac3g4e24gb50bgdcf22cd2e2df;3"
 // data "DescriptionParams" "2"
 // data "Boosts" "Initiative(2);Advantage(SavingThrow, Dexterity)"
-
-// new entry "MAG_FlexibleArmor_Defense_Passive"
-// type "PassiveData"
-// using "FightingStyle_Defense"
-// data "Icon" ""
-// data "Properties" "IsHidden"
-// data "BoostContext" "OnEquip;OnCreate"
-// data "BoostConditions" "HasPassive('FightingStyle_Defense', context.Source)"
 
 // ==================================== Psionic Ward Armour ====================================
 // TODO: Something/anything.

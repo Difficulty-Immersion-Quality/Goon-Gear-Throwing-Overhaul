@@ -161,7 +161,10 @@
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+
+	<!-- "" --> <content contentuid="hfb2f7afcgd8b7g4e70gbf22ga2efa47051e3" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Light Armour.</content>
+	<!-- "MAG_PHB_ElvenChain_Armor_Passive" --> <content contentuid="he636d770g063fg4178g886fgd98b40c731cb" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Medium Armour.</content>
+	<!-- "MAG_HellDusk_Proficiency_Passive" --> <content contentuid="h87ccb0e5g2a3bg416ag925bgfce34a7b2cb1" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Heavy Armour.</content>
 
 	<!-- NEW ENTRIES -->
 	<!-- "Goon_Pendant_Animal_Speech_Amulet" --> <content contentuid="haa29c2f4g9eecg46eeg96c9g3efbe30a1c48" version="1">Pendant Of Animal Speech</content>

@@ -67,24 +67,91 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Render of Mind and Body ====================================
-// TODO: Something/anything.
+// Changes: Forcing Honour ruleset changes.
+// TODO: Throwing support.
 
-// weapon entry
+new entry "MAG_Blindside_Shortsword"
+type "Weapon"
+// using "WPN_Shortsword_1"
+using "MAG_Blindside_Shortsword"
+// data "RootTemplate" "f06c0554-bba8-4036-ac92-1b225a578f57"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(HasAdvantage() and not HasDisadvantage()):WeaponDamage(1d8, Psychic)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(HasAdvantage() and not HasDisadvantage()):WeaponDamage(1d8, Psychic)"
+// data "PassivesOnEquip" "MAG_Blindside_Shortsword_Passive"
+// data "ValueLevel" "1"
+// data "ValueLevel" "6"
+data "ValueLevel" "6"
+// data "ValueScale" "1"
+// data "ValueScale" "1.5"
+data "ValueScale" "1.5"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_RENDEROFMINDANDBODY_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Blindside_Shortsword_Passive"
+type "PassiveData"
+using "MAG_Blindside_Shortsword_Passive"
+// Psychic Steel Virtuoso 
+data "DisplayName" "h7c6ed618g4287g476ag98ccg7a085866a266;2"
+// When the wielder attacks with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, they deal an additional [1].
+data "Description" "h9dea8b17gc5bdg406bg955cg64f97c0f3679;2"
+data "DescriptionParams" "DealDamage(1d8, Psychic)"
+// data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctorContext" ""
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasAdvantage() and not HasDisadvantage()"
+// data "Conditions" ""
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d8, Psychic,Magical)"
+// data "StatsFunctors" ""
+data "StatsFunctors" ""
 
 // ==================================== Shortsword of First Blood ====================================
-// TODO: Something/anything.
+// Changes: Forcing Honour ruleset changes.
+// TODO: Throwing support
 
-// weapon entry
+new entry "UND_Duergar_ShortswordOfFirstBlood"
+type "Weapon"
+// using "WPN_Shortsword_1"
+using "UND_Duergar_ShortswordOfFirstBlood"
+// data "RootTemplate" "1e172d76-3433-4ee7-ae1a-9e7d8ae0f12b"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "DefaultBoosts" "WeaponProperty(Magical);IF(HasMaxHPWithoutTemporaryHP(context.Target)):WeaponDamage(1d8, Piercing)"
+data "DefaultBoosts" "WeaponProperty(Magical);IF(HasMaxHPWithoutTemporaryHP(context.Target)):WeaponDamage(1d8, Piercing)"
+// data "PassivesOnEquip" "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_SHORTSWORDOFFIRSTBLOOD_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "UND_Duergar_ShortswordOfFirstBlood_Passive"
+type "PassiveData"
+using "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// Break the Unbroken
+// data "DisplayName" "h2961f1ecg362bg4945gb7a3g136a55dfc873;2"
+// Deals an additional [1] to targets that still have all their &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
+// data "Description" "he0491531g77dbg4a48g98e5gf9276ee9b0c3;2"
+// data "DescriptionParams" "DealDamage(1d8,Piercing)"
+// data "TooltipConditionalDamage" "DealDamage(1d8,Piercing)"
+// data "StatsFunctorContext" "OnAttack"
+// data "StatsFunctorContext" ""
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasMaxHP() and IsAttack() and not IsMiss()"
+// data "Conditions" ""
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d8,Piercing,Magical)"
+// data "StatsFunctors" ""
+data "StatsFunctors" ""
 
 // ==================================== Steelforged Sword ====================================
 // TODO: Something/anything.
@@ -247,9 +314,10 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Crimson Mischief ====================================
 // Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
+// Changes: Forcing Honour ruleset changes.
 // Changes: Redvein Savagery description updated for clarity.
 // TODO: Adjust "MAG_TheCrimson_TwoWeapon_Passive" with custom functionality for stacking with the "TwoWeaponFighting" function, while also removing the damage from ranged weapon offhand.
-// TODO: Throwing support!!!
+// TODO: Throwing support.
 
 new entry "MAG_TheCrimson_Shortsword"
 type "Weapon"
@@ -272,7 +340,17 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// Force Honour rules, removing DRS
+new entry "MAG_WYR_Orin_Bhaalist_Dagger_Passive"
+type "PassiveData"
+using "MAG_WYR_Orin_Bhaalist_Dagger_Passive"
+// Prey Upon the Weak
+// data "DisplayName" "hcaabd317g2323g4756gb131g5d63b7eccc53;4"
+// This weapon deals an additional [1] against targets with [2]% of their &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or fewer.
+// data "Description" "hce1e7d3eg549cg4ef8gae48g3f97a7285c3b;5"
+// data "DescriptionParams" "DealDamage(1d4, Piercing);50"
+// data "TooltipConditionalDamage" "DealDamage(1d4, Piercing)"
+data "Icon" "Action_Monster_ReaperOBhaal_MurderPrayer"
+
 new entry "MAG_TheCrimson_Vicious_Passive"
 type "PassiveData"
 using "MAG_TheCrimson_Vicious_Passive"
@@ -284,11 +362,23 @@ using "MAG_TheCrimson_Vicious_Passive"
 data "Description" "hc5b54a05g5b17g4ad2g9774g69f540a70f3a;1"
 data "DescriptionParams" "DealDamage(7,Piercing)"
 // data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctorContext" ""
 data "StatsFunctorContext" ""
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and HasAdvantage() and not HasDisadvantage()"
+// data "Conditions" ""
 data "Conditions" ""
 // data "StatsFunctors" "DealDamage(7, Piercing,Magical)"
+// data "StatsFunctors" ""
 data "StatsFunctors" ""
+
+// new entry "MAG_TheCrimson_TwoWeapon_Passive"
+// type "PassiveData"
+// using "FightingStyle_TwoWeaponFighting"
+// Crimson Weapon
+// data "DisplayName" "hc0b63acagdc17g4fe2gb59bg36692bf4fe2f;1"
+// data "Icon" ""
+// data "Properties" "Highlighted"
+// data "Boosts" "TwoWeaponFighting()"
 
 // ==================================== Executioner Sword ====================================
 // TODO: Something/anything.

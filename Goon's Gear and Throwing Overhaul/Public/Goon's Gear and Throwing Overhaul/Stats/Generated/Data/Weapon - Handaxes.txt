@@ -48,7 +48,8 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Dragon's Grasp ====================================
-// Changes: Forcing Honour ruleset changes to DRS. Additional 1d4 Slashing damage is now dealt when the target has one of many conditions or tags related to being on fire, instead of just Burning.
+// Bug Fix: Additional 1d4 Slashing damage is now dealt when the target has one of many conditions or tags related to being on fire, instead of just Burning.
+// Changes: Forcing Honour ruleset changes.
 
 new entry "MAG_Fire_IncreaseSlashingDamageToBurning_Handaxe"
 type "Weapon"
@@ -59,6 +60,7 @@ using "MAG_Fire_IncreaseSlashingDamageToBurning_Handaxe"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "Rarity" "Uncommon"
 // data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "DefaultBoosts" "WeaponProperty(Magical);IF(HasStatus('BURNING',context.Target)):WeaponDamage(1d4, Slashing)"
 data "DefaultBoosts" "WeaponProperty(Magical);IF(Goon_HasBurningConditionOrTag(context.Target)):WeaponDamage(1d4, Slashing)"
 // data "PassivesOnEquip" "MAG_Fire_IncreaseSlashingDamageToBurning_Passive"
 // data "ObjectCategory" "MagicWeapons"
@@ -81,10 +83,13 @@ data "Description" "h9e6d65f8g03f7g4899g8471g7e61ec54afa7;1"
 // data "DescriptionParams" "DealDamage(1d4,Slashing)"
 // data "TooltipConditionalDamage" "DealDamage(1d4,Slashing)"
 // data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctorContext" ""
 data "StatsFunctorContext" ""
 // data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "Conditions" ""
 data "Conditions" ""
 // data "StatsFunctors" "IF(HasStatus('BURNING',context.Target)):DealDamage(1d4,Slashing,Magical)"
+// data "StatsFunctors" ""
 data "StatsFunctors" ""
 
 // ==================================== Ritual Axe ====================================

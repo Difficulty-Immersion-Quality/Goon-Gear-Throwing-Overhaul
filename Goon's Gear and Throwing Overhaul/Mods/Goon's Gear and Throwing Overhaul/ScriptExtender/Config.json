@@ -1,0 +1,5 @@
+{
+    "RequiredVersion": 1,
+    "ModTable": "Goon's Gear and Throwing Overhaul",
+    "FeatureFlags": ["Lua"]
+}

@@ -1,5 +1,0 @@
-{
-    "RequiredVersion": 1,
-    "ModTable": "Goon_Gear_Throwing_Overhaul",
-    "FeatureFlags": ["Lua"]
-}

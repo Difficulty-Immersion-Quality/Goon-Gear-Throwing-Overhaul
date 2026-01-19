@@ -1,0 +1,417 @@
+-- ==================================== Vanilla throw stuff ====================================
+-- TODO: Check for throwing weapon property for most applications
+
+function SlingShoesThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_PROJECTILE_SHOES_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Nyrulna
+function NyrulnaOnThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_ON'}, {}, entity)
+end
+
+function NyrulnaOffThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_OFF'}, {}, entity)
+end
+
+function d4FireThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+    return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE','GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE','GOON_FLAILOFAGES_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Non-magical variant of d4FireThrow
+function d4FireThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'DIPPED_FIRE','BURNING'}, {}, {}, entity)
+end
+
+function d4ColdThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_COLD_THROW','ELEMENTAL_WEAPON_COLD','MAG_FROST_FROST_WEAPON','MAG_FROST_FROST_SMALL_WEAPON','GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL','GOON_ALLANDRASWHELM_WEAPON_TECHNICAL','GOON_FLAILOFAGES_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+function d4LightningThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_LIGHTNING_THROW','ELEMENTAL_WEAPON_LIGHTNING','GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE'}, {}, {}, entity)
+end
+
+function d4ThunderThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_THUNDER_THROW','ELEMENTAL_WEAPON_THUNDER','MAG_THUNDER_THUNDER_WEAPON'}, {}, {}, entity)
+end
+
+function d4AcidThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_ACID_THROW','ELEMENTAL_WEAPON_ACID','GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE','GOON_CORROSIVEFLAIL_WEAPON_TECHNICAL','GOON_FLAILOFAGES_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+function d4PoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_POISON_THROW'}, {}, {}, entity)
+end
+
+-- Non-magical variant of d4PoisThrow
+function d4PoisThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'DIPPED_POISON'}, {}, {}, entity)
+end
+
+function d4NecroticThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_NECROTIC_THROW','ELEMENTAL_WEAPON_NECROTIC','MAG_NECROTIC_NECROTIC_WEAPON','MAG_NECROTIC_NECROTIC_WEAPON_RED_Aza','MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION','GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE'}, {}, {}, entity)
+end
+
+function d4ForceThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_FORCE_THROW','ELEMENTAL_WEAPON_FORCE','MAG_FORCE_FORCE_WEAPON_LESSER','GOON_BREACHINGPIKESTAFF_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+function d4PsychicThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_PSYCHIC_THROW','ELEMENTAL_WEAPON_PSYCHIC','UND_NERE_SWORD_PSYCHIC_DAMAGE','GOON_SWORDOFSCREAMS_WEAPON_TECHNICAL','GOON_KETHERICSWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- TODO: Confirm that this actually sets the thrower on fire with non-light objects
+function BurnThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'BURNING','FLAMING_SPHERE_AURA'}, {}, {}, entity) & IsLightThrownObject(thrown, false) 
+end
+
+-- ==================================== Custom throw stuff beyond this point ====================================
+
+-- Jagged Spear
+function TorturousEdgesThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_JAGGEDSPEAR_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Blightbringer
+function PreyDeceleratorThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_BLIGHTBRINGER_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Bow of the Banshee
+function BloodCurdlingEmissionThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_BOWOFTHEBANSHEE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Kurwin's Cauteriser
+function CauteriserThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_KURWINSCAUTERISER_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Speedy Reply
+function SpeedyReplyThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_SPEEDYREPLY_WEAPON_TECHNICAL'}, {}, {}, entity) & Enemy(context.Target)
+end
+
+-- Monster Slayer Glaive
+function MonsterSlayerGlaiveThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_MONSTERSLAYERGLAIVE_WEAPON_TECHNICAL'}, {}, {}, entity) & Tagged('MONSTROSITY', context.Target)
+end
+
+-- The Impaler
+function TheImpalerThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_THEIMPALER_WEAPON_TECHNICAL'}, {}, {}, entity) & HasMaxHPWithoutTemporaryHP(context.Target)
+end
+
+-- Clown Hammer
+function ClownHammerThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_CLOWNHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & IsCritical()
+end
+
+-- Intransigent Warhammer
+function IntransigentWarhammerThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_INTRANSIGENTWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & (IsCritical() or IsKillingBlow())
+end
+
+-- Trident of the Waves
+function TridentOfTheWavesThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- The Undead Bane
+function TheUndeadBaneThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_THEUNDEADBANE_WEAPON_TECHNICAL'}, {}, {}, entity) & UndeadOrFiend(context.Target)
+end
+
+-- Hammer of the Just
+function HammerOfTheJustThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_HAMMEROFTHEJUST_WEAPON_TECHNICAL'}, {}, {}, entity) & UndeadOrFiend(context.Target)
+end
+
+-- Wulbren's Hammer
+function WBongleThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_WULBRENSHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & (Item(context.Target) or Tagged('CONSTRUCT', context.Target))
+end
+
+-- TODO: Fix this one.
+-- Blooded Greataxe
+function BloodedGreataxeThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_BLOODEDGREATAXE_WEAPON_TECHNICAL'}, {}, {}, entity) & HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50, context.Source)
+end
+
+-- Dragon's Grasp
+function DragonsGraspThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_DRAGONSGRASP_WEAPON_TECHNICAL'}, {}, {}, entity) & Goon_HasBurningConditionOrTag(context.Target)
+end
+
+-- Ritual Axe
+function RitualAxeThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_RITUALAXE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Sussur Weapons
+function SussurThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_SUSSURGREATSWORD_WEAPON_TECHNICAL','GOON_SUSSURDAGGER_WEAPON_TECHNICAL','GOON_SUSSURSICKLE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- TODO: Check for if damage was dealt prior to application
+-- The Sparky Points & The Jolt Shooter
+function ChargedLightningThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_THESPARKYPOINTS_WEAPON_TECHNICAL','GOON_THEJOLTSHOOTER_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- TODO: Check for if damage was dealt prior to application
+-- Thermodynamo Axe
+function ThermodynamoThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_THERMODYNAMOAXE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- TODO: Check for if damage was dealt prior to application
+-- Hellfire Greataxe
+function HellfireGreataxeThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_HELLFIREGREATAXE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Vison of the Absolute spear
+function VisionAbsoluteThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'TRUE_SOUL_SPEAR_WEAPON_BOOST','GOON_VISIONOFTHEABSOLUTE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Justiciar's Scimitar
+function ShadowBlindingThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_JUSTICIARSSCIMITAR_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Combination Axe (Cut content)
+function CriticalVirtuosoThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_COMBINATIONAXE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow
+function ViciousThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & IsCritical() & HasAnyStatus({'GOON_DOLORAMARUS_WEAPON_TECHNICAL','GOON_VICIOUSBATTLEAXE_WEAPON_TECHNICAL','GOON_VICIOUSSHORTBOW_WEAPON_TECHNICAL','GOON_VICIOUSSHORTSWORD_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Flail of Ages
+function FlailOfAgesThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_FLAILOFAGES_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Assassin's Touch
+function AssassinsTouchThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_ASSASSINSTOUCH_WEAPON_TECHNICAL'}, {}, {}, entity) & HasAnyStatus({'SG_Unconscious','SG_Stunned','SG_Incapacitated'}, {}, {}, context.Target)
+end
+
+-- Handmaiden's Mace
+function HandmaidenThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Dwarven Thrower shortening
+function IsDwarf(entity)
+	local entity = entity or context.Source
+	return Tagged('DWARF',entity)
+end
+
+function IsDwarvenThrower(entity)
+    entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_DWARVEN_THROWER_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Radiant not covered in vanilla for d4 bonuses
+function d4RadiantThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_RADIANT_RADIANCE_WEAPON','GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE','GOON_MOONLIGHTGLAIVE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Trident of the Depths
+function d6ColdThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_TRIDENTOFTHEDEPTHS_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- ==================================== Larger than d4 bonuses (and not poison) ====================================
+
+-- Decomissioned this one for the sake of rebalancing Nyrulna
+function d6ThunderThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_THUNDER_GREATER_THUNDER_WEAPON'}, {}, {}, entity)
+end
+
+function d8RadiantThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_RADIANT_STRONG_RADIANCE_WEAPON'}, {}, {}, entity)
+end
+
+function d6ForceThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_FORCE_FORCE_WEAPON'}, {}, {}, entity)
+end
+
+function d6LightningThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_CHARGED_LIGHTNING_LIGHTNING_GREATER_WEAPON'}, {}, {}, entity)
+end
+
+function d6HellfireFireThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_FIRE_DIPPED_HELLFIRE'}, {}, {}, entity)
+end
+
+function d6NecroticThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_MYRKULITESCOURGE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- ==================================== Poisons ====================================
+
+-- Serpent Fang Toxin
+function d6PoisThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'TOXIN_SERPENTVENOM_DIPPED'}, {}, {}, entity)
+end
+
+-- Magical variant for Venomous Revenge and d6 poison weapons
+function d6PoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON','MAG_LESSER_INFERNAL_WEAPON','GOON_INFERNALWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Wyvern Toxin
+function d8PoisThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'TOXIN_WYVERN_DIPPED'}, {}, {}, entity)
+end
+
+-- Purple Worm Toxin
+function d10PoisThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'TOXIN_PURPLEWORM_DIPPED'}, {}, {}, entity)
+end
+
+-- Magical variant for Hellbeard Halberd & Handmaiden's Mace poison
+function d10PoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_INFERNAL_WEAPON','GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Basic Poison
+function BPoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'POISON_SIMPLE_DIPPED'}, {}, {}, entity)
+end
+
+-- Drow Poison
+function DPoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'POISON_DROW_DIPPED'}, {}, {}, entity)
+end
+
+-- Crawler Mucus - Also covers "Karabasan's Poison"
+function CMPoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'POISON_CRAWLER_MUCUS_DIPPED'}, {}, {}, entity)
+end
+
+-- Malice
+function MPoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'POISON_MALICE_DIPPED'}, {}, {}, entity)
+end
+
+-- Simple Toxin
+function SToxThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_TOXIN_BASIC_DIPPED'}, {}, {}, entity)
+end
+
+-- Thisobald's Brewed-Up Bellyglummer
+function BGPoisThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'UNI_POISON_BREWER_DIPPED'}, {}, {}, entity)
+end
+
+-- OILS
+
+-- Arsonist's Oil
+function AOilThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_OIL_REMOVERESISTANCEFIRE_DIPPED'}, {}, {}, entity)
+end
+
+-- Oil of Bane
+function BOilThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_OIL_BANE_DIPPED'}, {}, {}, entity)
+end
+
+-- Diluted Oil of Sharpness
+function DSOilThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_OIL_DAMAGEATTACKBUFF_DIPPED'}, {}, {}, entity)
+end
+
+-- Oil of Diminution
+function DOilThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_OIL_REDUCE_DIPPED'}, {}, {}, entity)
+end
+
+-- Oil of Combustion
+function COilThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_OIL_COMBUSTION_DIPPED'}, {}, {}, entity)
+end
+
+-- Wizardsbane Oil
+function WBOilThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_OIL_WIZARDSBANE_DIPPED'}, {}, {}, entity)
+end
+
+-- Oil of Freezing
+function FOilThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'ALCH_OIL_FROST_DIPPED'}, {}, {}, entity)
+end

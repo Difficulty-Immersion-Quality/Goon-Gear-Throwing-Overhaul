@@ -67,7 +67,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Render of Mind and Body ====================================
-// Changes: Forcing Honour ruleset changes.
+// Changes: Forced Honour ruleset changes.
 // TODO: Throwing support.
 
 new entry "MAG_Blindside_Shortsword"
@@ -112,7 +112,7 @@ data "Conditions" ""
 data "StatsFunctors" ""
 
 // ==================================== Shortsword of First Blood ====================================
-// Changes: Forcing Honour ruleset changes.
+// Changes: Forced Honour ruleset changes.
 // TODO: Throwing support
 
 new entry "UND_Duergar_ShortswordOfFirstBlood"
@@ -315,7 +315,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== Crimson Mischief ====================================
 // Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
 // Bug Fix: Restored the missing Prey Upon the Weak icon.
-// Changes: Forcing Honour ruleset changes.
+// Changes: Forced Honour ruleset changes.
 // Changes: Redvein Savagery description updated for clarity.
 // TODO: Adjust "MAG_TheCrimson_TwoWeapon_Passive" with custom functionality for stacking with the "TwoWeaponFighting" function, while also removing the damage from ranged weapon offhand.
 // TODO: Throwing support.

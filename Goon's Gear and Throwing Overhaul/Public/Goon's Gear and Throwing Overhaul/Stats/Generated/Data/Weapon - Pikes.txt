@@ -116,7 +116,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== The Impaler (Inaccessible/Cut content) ====================================
 // Bug Fix: Break the Unbroken's 1d10 Piercing damage applies when thrown.
-// Changes: Forcing Honour ruleset changes.
+// Changes: Forced Honour ruleset changes.
 // TODO: Throwing support.
 
 new entry "MAG_TheImpaler_Pike"

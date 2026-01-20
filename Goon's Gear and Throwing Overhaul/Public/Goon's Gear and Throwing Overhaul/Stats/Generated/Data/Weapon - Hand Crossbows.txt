@@ -58,7 +58,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Firestoker ====================================
 // Bug Fix: Additional 1d4 Piercing damage is now dealt when the target has one of many conditions or tags related to being on fire, instead of just Burning.
-// Changes: Forcing Honour ruleset changes.
+// Changes: Forced Honour ruleset changes.
 
 new entry "MAG_Fire_IncreasePiercingDamageToBurning_HandCrossbow"
 type "Weapon"

@@ -329,9 +329,8 @@
 					<attribute id="PhysicsTemplate" type="FixedString" value="8ac37274-b0d9-484b-e10d-c7780f674d9f" />
 					<attribute id="PickupSound" type="FixedString" value="28ea7a9f-b66a-3410-7985-d7cd5cb896f0" />
 					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurDagger" />
-					<!-- Bug Fix: Description is now accurate and stats a saving throw. -->
-					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="h1c4249a3gb72dg4f30g8ce2gb48f01e7a2c0" version="1" />-->
-					<attribute id="TechnicalDescription" type="TranslatedString" handle="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1" />
+					<!-- Mechanical description moved to a passive. -->
+					<!-- <attribute id="TechnicalDescription" type="TranslatedString" handle="h1c4249a3gb72dg4f30g8ce2gb48f01e7a2c0" version="1" /> -->
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="VisualTemplate" type="FixedString" value="e3914979-3da4-6d51-39d7-58c63c07ea56" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144537400540921856" />

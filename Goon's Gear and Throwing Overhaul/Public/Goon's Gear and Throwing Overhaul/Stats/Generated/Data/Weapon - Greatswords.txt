@@ -57,14 +57,22 @@ using "MAG_Fire_AlwaysDippedInFire_Greatsword"
 data "DefaultBoosts" "WeaponProperty(Magical)"
 
 // ==================================== Sussur Greatsword ====================================
+// Bug Fix: Sussur Silence functions when the weapon is thrown.
 // Bug Fix: Description is now accurate and states a Saving Throw.
+// Changes: The push Saving Throw is now a ManeuverSaveDC +2 instead of a fixed DC of 8.
 
 new entry "FOR_IncompleteMasterwork_SussurGreatsword"
 type "Weapon"
 // using "WPN_Greatsword_1"
 using "FOR_IncompleteMasterwork_SussurGreatsword"
+// data "RootTemplate" "44dedec0-df82-4ed3-b9ca-147bd830e312"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ValueOverride" "150"
+// data "Rarity" "Rare"
 // data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
-data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" ""
+data "PassivesOnEquip" "Goon_Sussur_Silence_Passive"
+// data "Unique" "1"
 
 new entry "GOON_SUSSURGREATSWORD_WEAPON_TECHNICAL"
 type "StatusData"
@@ -73,14 +81,43 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ========================== Balduran's Giantlayer ==========================
 // Changes: Giant Form now costs a Bonus Action instead of an Action.
+// TODO: Largely redundant offhand support for Topple the Big Folk.
+// TODO: Throwing support.
+
+// new entry "MAG_Giantslayer_Greatsword"
+// type "Weapon"
+// using "WPN_Greatsword_2"
+// data "RootTemplate" "7219fca3-5f41-43a0-8253-f4c09d8b6308"
+// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "Rarity" "Legendary"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);"
+// data "Boosts" "UnlockSpell(Shout_MAG_Legendary_GiantSlayer_EnlargeSelf)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_PommelStrike);UnlockSpell(Target_Slash_New);UnlockSpell(Zone_Cleave);UnlockSpell(Target_MAG_WeaponAction_GiantSubjugation)"
+// data "PassivesOnEquip" "MAG_Giantslayer_Passive"
+// data "StatusOnEquip" "MAG_COMBAT_GIANTSLAYER_TECHNICAL"
+// data "Unique" "1"
 
 new entry "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
 type "SpellData"
 data "SpellType" "Shout"
 // using "Shout_MAG_CombatStaff_Enlarge"
 using "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
+// data "Level" ""
+// data "SpellSchool" ""
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellProperties" "ApplyStatus(MAG_GIANT_SLAYER_LEGENDARY_ENLRAGE,100,10)"
+// Giant Form
+// data "DisplayName" "h1f68b02dgf612g434egac26g5ea0d15691f8;2"
+// Grow to a fearsome size. Your weapons deal an additional [1] damage and you gain [2] and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Strength &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h65909c76g0e8eg4a71g9dd8g19c482632183;3"
+// data "DescriptionParams" "1d6;GainTemporaryHitPoints(27)"
+// data "ExtraDescription" ""
+// data "TooltipStatusApply" "ApplyStatus(MAG_GIANT_SLAYER_LEGENDARY_ENLRAGE,100,10)"
+// data "TooltipUpcastDescription" ""
+// data "TooltipUpcastDescriptionParams" ""
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
+// data "SpellFlags" "HasSomaticComponent"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.

@@ -96,7 +96,9 @@ data "StatusPropertyFlags" "IgnoreResting;ApplyToDead"
 // data "Boosts" "UseBoosts(IF(HasStatus('BLEEDING',context.Target)):Advantage(AttackRoll))"
 
 // ==================================== Sussur Sickle ====================================
+// Bug Fix: Sussur Silence functions when the weapon is thrown.
 // Bug Fix: Description is now accurate and states a Saving Throw.
+// Changes: The push Saving Throw is now a ManeuverSaveDC +2 instead of a fixed DC of 8.
 
 new entry "FOR_IncompleteMasterwork_SussurSickle"
 type "Weapon"
@@ -107,7 +109,7 @@ using "FOR_IncompleteMasterwork_SussurSickle"
 // data "ValueOverride" "120"
 // data "Rarity" "Rare"
 // data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
-data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" ""
 data "PassivesOnEquip" "Goon_Sussur_Silence_Passive"
 // data "Unique" "1"
 

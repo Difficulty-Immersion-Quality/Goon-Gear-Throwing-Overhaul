@@ -50,6 +50,7 @@ data "Cooldown" "OncePerCombat"
 // TODO: Refine approach for implementing spellcasting modifiers where relevant via functions in Library.
 // TODO: Figure out how to get accurate TooltipDamageList for spells not just using weapon information.
 // ==================================== Backbreaker ====================================
+// Bug Fix: Added missing tooltip warning stating that the target cannot be Huge in size.
 // Changes: Can target corpses.
 
 new entry "Target_PostureBreaker"
@@ -57,6 +58,8 @@ type "SpellData"
 data "SpellType" "Target"
 // using "Target_AdvancedMeleeWeaponAction"
 using "Target_PostureBreaker"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; The target can't be Huge in size.
+data "TooltipPermanentWarnings" "c4da40d6-cfc7-4148-a5e5-5b7cbc41a991"
 // data "TargetConditions" "(Character() or Item()) and not Self() and TargetSizeEqualOrSmaller(Size.Large) and not Dead()"
 data "TargetConditions" "(Character() or Item()) and not Self() and TargetSizeEqualOrSmaller(Size.Large)"
 

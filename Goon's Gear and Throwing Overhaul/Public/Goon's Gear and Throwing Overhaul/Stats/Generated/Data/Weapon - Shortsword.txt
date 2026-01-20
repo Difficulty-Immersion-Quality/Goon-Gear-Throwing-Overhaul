@@ -314,6 +314,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Crimson Mischief ====================================
 // Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
+// Bug Fix: Restored the missing Prey Upon the Weak icon.
 // Changes: Forcing Honour ruleset changes.
 // Changes: Redvein Savagery description updated for clarity.
 // TODO: Adjust "MAG_TheCrimson_TwoWeapon_Passive" with custom functionality for stacking with the "TwoWeaponFighting" function, while also removing the damage from ranged weapon offhand.

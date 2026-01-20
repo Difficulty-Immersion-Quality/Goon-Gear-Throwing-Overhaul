@@ -120,7 +120,7 @@ using "GOB_PainPriest_Axe_Passive"
 // data "DisplayName" "heae55645g011eg402dgbd4egcbda7a22eabb;3"
 // Chance to inflict upon the target a 1d4 penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, they take [1] themselves.
 // data "Description" "h285f8848g4997g4ac5gb35ag9178dd91f49c;8"
-// Attacks with this weapon inflict &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; upon the target for [1] turns. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; is inflicted on the target, they take [2].
+// &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; with this weapon inflict &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; upon the target for [1] turns. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; is inflicted on the target, they take [2].
 data "Description" "h5695a236g1ba7g4577gb2dcg5c7631abe8da;1"
 // data "DescriptionParams" "DealDamage(1d6,Piercing)"
 data "DescriptionParams" "2;DealDamage(1d6,Piercing)"
@@ -132,11 +132,11 @@ data "ExtraDescription" ""
 // data "Conditions" "AttackedWithPassiveSourceWeapon()"
 data "Conditions" "AttackedWithPassiveSourceWeapon() and not (HasHPLessThan(1) or IsKillingBlow() or IsDowned() or HasStatus('KNOCKED_OUT') or HasStatus('KNOCKED_OUT_TEMPORARILY') or HasStatus('KNOCKED_OUT_PERMANENTLY'))"
 // data "StatsFunctors" "ApplyStatus(BANE,100,2);IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source)):DealDamage(SELF,1d6,Piercing,Magical)"
-data "StatsFunctors" "IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SELF,1d6,Piercing,Magical);ApplyStatus(BANE,100,2)"
+data "StatsFunctors" "ApplyStatus(BANE,100,2);IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SELF,1d6,Piercing,Magical,,0,,true,true)"
 
 new entry "GOON_RITUALAXE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyConditions" "not HasHPLessThan(1,context.Source) or IsKillingBlow(context.Source) or IsDowned(context.Source) or HasStatus('KNOCKED_OUT',context.Source) or HasStatus('KNOCKED_OUT_TEMPORARILY',context.Source) or HasStatus('KNOCKED_OUT_PERMANENTLY',context.Source)"
-data "OnApplyFunctors" "IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SWAP,1d6,Piercing,Magical);ApplyStatus(BANE,100,2)"
+data "OnApplyFunctors" "ApplyStatus(BANE,100,2);IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SELF,1d6,Piercing,Magical,,0,,true,true)"

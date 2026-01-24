@@ -87,14 +87,38 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Enraging Heart Garb ====================================
-// TODO: Something/anything.
+// Bug Fix: Ruintamer Heart now works.
+// Changes: Ruintamer Heart grants Wrath both when initially casting Rage and the start of every turn while they have a Rage condition. Once per turn cooldown.
 
-// gear entry
+// new entry "MAG_Barbarian_Magic_Armor_1"
+// type "Armor"
+// using "ARM_Cloth_Body_1"
+// data "RootTemplate" "3a213e92-1714-4f11-9726-ca762943d2cc"
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "Rarity" "Rare"
+// data "Boosts" "Ability(Constitution, 2, 20, true)"
+// data "PassivesOnEquip" "MAG_Barbarian_Armor_RageSupport_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_ENRAGINGHEARTGARB_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Barbarian_Armor_RageSupport_Passive"
+type "PassiveData"
+using "MAG_Barbarian_Armor_RageSupport_Passive"
+// Ruintamer Heart
+// data "DisplayName" "h66afe6c4gda90g4c0bgab22g9c0c9ff03924;1"
+// While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, the wearer generates [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
+// data "Description" "h91a3da0cg3810g465dgbe35g327f87e60972;2"
+// When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; and at the start of their turns while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
+data "Description" "h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7;1"
+// data "DescriptionParams" "2"
+data "Properties" "OncePerTurn"
+data "StatsFunctorContext" "OnStatusApplied;OnTurn"
+data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusHasStatusGroup(context.StatusId,'SG_Rage')) or (context.HasContextFlag(StatsFunctorContext.OnTurn) and HasStatus('SG_Rage',context.Source))"
+data "StatsFunctors" "ApplyStatus(SELF,MAG_VIOLENCE,100,2);ApplyStatus(SELF,MAG_VIOLENCE_DURATION_TECHNICAL,100,1)"
 
 // ==================================== Garb of the Land and Sky ====================================
 // Bug Fix: descriptions are now consistent between the Breezeswift Speed passive and the Swift as Wind condition that it applies.

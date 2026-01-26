@@ -360,7 +360,7 @@ using "MAG_TheCrimson_Vicious_Passive"
 // data "DisplayName" "h73e1c4edgce5cg4baagbbb2g76f7ff37c688;1"
 // When you make an attack with <LSTag Tooltip="Advantage">Advantage</LSTag>, the target takes an additional 7 Piercing damage.
 // data "Description" "h772b28f0gd5c3g495dg8026g116269f94870;1"
-// Attacks with this weapon deal an additional [1], if you attacked  with&lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
+// Attacks with this weapon deal an additional [1], if you attacked with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
 data "Description" "hc5b54a05g5b17g4ad2g9774g69f540a70f3a;1"
 data "DescriptionParams" "DealDamage(7,Piercing)"
 // data "StatsFunctorContext" "OnDamage"

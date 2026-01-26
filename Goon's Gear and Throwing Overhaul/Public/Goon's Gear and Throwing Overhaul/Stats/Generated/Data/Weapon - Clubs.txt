@@ -160,6 +160,14 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// new entry "UND_StrengthChair_Leg_Passive"
+// type "PassiveData"
+// Splinters of a Giant's Might
+// data "DisplayName" "h870a9abeg2143g4507gbee6g4ae1cb89af0f;1"
+// Increases &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; to 19.
+// data "Description" "hc29527b5gf34eg4759g8deag0c9e1d252a47;2"
+// data "Boosts" "AbilityOverrideMinimum(Strength,19)"
+
 // ==================================== Ironwood Club ====================================
 // Changes: Backbreaker removed in place of Heartstopper, which is a base weapon ability for all clubs now.
 // TODO: Something cool.

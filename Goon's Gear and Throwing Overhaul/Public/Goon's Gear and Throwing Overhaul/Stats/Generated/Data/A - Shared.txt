@@ -274,3 +274,18 @@ data "EnableCondition" "(not HasStatus('SG_Polymorph') or Goon_IsNonHostilePolym
 // data "Cooldown" "OncePerTurn"
 // data "InterruptDefaultValue" "Enabled;Ask"
 data "InterruptFlags" "InterruptWhileInvisible"
+
+// ==================================== Nurse weapons ====================================
+// Bug Fix: Hidden Infected Strikes passive dealing the 1d6 Necrotic damage is now functional for the nurses, instead of functional against the nurses.
+// Note: Previously put the boost in the weapon entries but if this exists with a fancy name it's better.
+
+new entry "TWN_Hospital_Nurse_WeaponBoosts"
+type "PassiveData"
+using "TWN_Hospital_Nurse_WeaponBoosts"
+// Infected Strikes
+// data "DisplayName" "h5fe165dcg60c1g4c4dga568ga8f18534e6cc;2"
+// data "Icon" "GenericIcon_DamageType_Necrotic"
+// data "Properties" "IsHidden"
+// data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE');"
+data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)"
+// data "Boosts" "CharacterWeaponDamage(1d6, Necrotic);"

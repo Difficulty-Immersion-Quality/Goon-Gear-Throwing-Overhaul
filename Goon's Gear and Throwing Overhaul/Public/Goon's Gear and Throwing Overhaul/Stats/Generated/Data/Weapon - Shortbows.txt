@@ -81,6 +81,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // Bug Fix: Blood-Curdling Emission will display properly in the combat log.
 // Bug Fix: Blood-Curdling Emission applies when the weapon is thrown.
 // Changes: Blood-Curdling Emission now uses ManeuverSaveDC instead of a static DC of 12.
+// TODO: Do I need to declare content for the technical roll?
 
 new entry "MAG_BG_OfTheBanshee_Bow"
 type "Weapon"
@@ -123,7 +124,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "h18b2e6adg7043g4fbbg91e9ge40520c0cb7c;2"
 // On a hit, possibly &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frighten&lt;/LSTag&gt; your target for [1]. Gain a +[2] bonus to attack and damage against Frightened creatures.
 data "Description" "h4d85aea3g3449g4afag874bg7372c516d55c;1"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "1d4;2"
 data "OnApplyRoll" "not SavingThrow(Ability.Wisdom, ManeuverSaveDC())"
 data "OnApplySuccess" "ApplyStatus(FRIGHTENED, 100, 2)"
@@ -268,6 +269,6 @@ data "StatusType" "BOOST"
 data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
 // When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [2].
 data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "1d4;2"
 data "OnApplyFunctors" "ApplyStatus(SLOW, 100, 2)"

@@ -847,7 +847,7 @@ data "DisplayName" "hd6e187fag627eg42bbgb90eg737260214df3;3"
 data "Description" "h4855f6bfgcd92g4833ga020gd0dd642acdfc;1"
 data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic);2"
 data "TooltipSave" "Constitution"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 15)"
 data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
 

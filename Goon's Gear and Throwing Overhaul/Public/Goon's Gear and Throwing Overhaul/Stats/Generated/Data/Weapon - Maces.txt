@@ -72,7 +72,7 @@ using "MAG_Infernal_Weapon_Passive"
 // data "DisplayName" "h9e579063gc086g4828g8837g5b3067d8554d;1"
 // Spider Queen's Bite
 data "DisplayName" "hfcd23470g262egc00bg7ea1g1e61d525af6f;1"
-data "StatsFunctors" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER, 100, 0)"
+data "StatsFunctors" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_POISON, 100, 0)"
 
 new entry "Goon_Handmaidens_Mace_Frightened"
 type "PassiveData"
@@ -84,13 +84,12 @@ data "DescriptionParams" "2"
 data "TooltipSave" "Wisdom"
 data "StatsFunctorContext" "OnDamage"
 data "Conditions" "AttackedWithPassiveSourceWeapon()"
-data "StatsFunctors" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER, 100, 0)"
+data "StatsFunctors" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_FRIGHTENED, 100, 0)"
 
+// Note: This only exists for the sake of condensing in throw entries.
 new entry "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Handmaiden's Mace
-data "DisplayName" "hf603b674g3717g40begb7c9gf7b36697773a;1"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 data "OnApplySuccess" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_POISON, 100, 0);ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_FRIGHTENED, 100, 0)"
 
@@ -103,7 +102,7 @@ data "DisplayName" "hfcd23470g262egc00bg7ea1g1e61d525af6f;1"
 data "Description" "hc4d3de99ge275g4176gb149g91a4e61e5488;1"
 data "DescriptionParams" "2"
 data "TooltipSave" "Constitution"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 13, AdvantageOnPoisoned())"
 data "OnApplySuccess" "ApplyStatus(POISONED, 100, 2)"
 
@@ -116,7 +115,7 @@ data "DisplayName" "hf3d49f82gedbdg43fbga01ag1ed05f3f0ee6;1"
 data "Description" "hf83a70f0gba55g4957gacfbgfd40404f8fe9;1"
 data "DescriptionParams" "2"
 data "TooltipSave" "Wisdom"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Wisdom,13, AdvantageOnFrightened(), DisadvantageOnFrightened())"
 data "OnApplySuccess" "ApplyStatus(FRIGHTENED, 100, 2)"
 

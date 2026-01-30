@@ -6,7 +6,17 @@
 
 // 
 
-// ========================== Boots of Stormy Clamour ==========================
+// ==================================== Boots of Aid and Comfort ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Boots of Stormy Clamour ====================================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
 // Changes: Now applies Reverberation based on dealing damage with spell attacks, instead of applying a condition.
 
@@ -49,8 +59,118 @@ data "StatsFunctorContext" "OnAttack"
 data "Conditions" "Character() and not Self() and IsSpell() and HasSpellFlag(SpellFlags.Harmful) and TotalDamageDoneGreaterThan(0) and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss())"
 // data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
 
+// ==================================== Boots of Very Fast Blinking ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cinder Shoes ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Hoarfrost Boots ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Mystra's Grace ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Spiderstep Boots ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Tyrannical Jackboots ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Varsh Ko'kuu's Boots ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Acrobat Shoes ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Boots of Apparent Death ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Boots of Arcane Bolstering ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Boots of Brilliance ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Boots of Genial Striding ====================================
-// Bug Fix: Genial Strider now provides immunity to all Difficult Terrain, per what is implied in the description.
+// Bug Fix: Genial Strider now provides Immunity to all Difficult Terrain instead of a handful of specific terrains.
 
 // new entry "MAG_TerrainWalkers_Boots"
 // type "Armor"
@@ -143,7 +263,7 @@ data "Description" "h9269dec6ge278g4d82ga7ccg01814ea8bcc0;1"
 // data "Boosts" "ActionResourceMultiplier(Movement,200,0);IF(IsReactionAttack(context.Source)):Disadvantage(AttackRoll)"
 data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Boots of Uninhibited Kushigo ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -153,7 +273,7 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Evasive Shoes ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -163,7 +283,7 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Linebreaker Boots ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -173,7 +293,7 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Slinging Shoes ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -183,7 +303,7 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Spaceshunt Boots ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -193,7 +313,7 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Springstep Boots ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -203,7 +323,153 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Briskwind Boots ====================================
+// ==================================== Swiresy Shoes ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Watersparkers ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Bonespike Boots ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Helldusk Boots ====================================
+// Bug Fix: Steadfast now provides Immunity to all Difficult Terrain instead of a handful of specific terrains.
+// Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
+
+new entry "MAG_Infernal_Metal_Boots"
+type "Armor"
+// using "_Foot_Magic_Metal"
+using "MAG_Infernal_Metal_Boots"
+// data "RootTemplate" "bc82f909-ade5-4ada-9b94-cec7ca1d4a68"
+// data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Rarity" "VeryRare"
+// data "Boosts" "UnlockSpell(Target_MAG_Legendary_HellCrawler)"
+// data "PassivesOnEquip" "MAG_Infernal_Metal_Boots_AntiDisplacement_Passive;MAG_Infernal_Metal_Legendary_Resistance_Passive;MAG_Legendary_InfernalResistance_Resource_Passive"
+// data "Unique" "1"
+// data "Proficiency Group" ""
+data "Proficiency Group" "HeavyArmor"
+
+new entry "GOON_HELLDUSKBOOTS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Infernal_Metal_Boots_AntiDisplacement_Passive"
+type "PassiveData"
+using "MAG_Infernal_Metal_Boots_AntiDisplacement_Passive"
+// Steadfast
+// data "DisplayName" "h399e3d9ege1b2g4441g9805gbdb4a7502bef;2"
+// You cannot be forcibly moved by a foe's spells or actions, and you ignore the effects of &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN"&gt;Difficult Terrain&lt;/LSTag&gt;.
+// data "Description" "h9f669e92g64b2g424cg9e80g5d65620a9847;2"
+// data "Boosts" "Attribute(Grounded);StatusImmunity(DIFFICULT_TERRAIN);StatusImmunity(DIFFICULT_TERRAIN_WEB);StatusImmunity(DIFFICULT_TERRAIN_MUD);StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(DIFFICULT_TERRAIN_OVERGROWTH);StatusImmunity(DIFFICULT_TERRAIN_LAVA);StatusImmunity(SG_Prone)"
+data "Boosts" "Attribute(Grounded);StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Prone)"
+
+// new entry "MAG_Infernal_Metal_Legendary_Resistance_Passive"
+// type "PassiveData"
+// Infernal Evasion
+// data "DisplayName" "h6e190a7eg43e9g41b8ga415g273838099bec;3"
+// When you fail a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, you may use your reaction to succeed instead.
+// data "Description" "h5b6be0d0ga3ebg4033gbe02g5619cd5ff5ae;3"
+// data "Boosts" "UnlockInterrupt(Interrupt_Legendary_InfernalResistance)"
+
+// new entry "Interrupt_Legendary_InfernalResistance"
+// type "InterruptData"
+// using "Interrupt_RingOfEvasion"
+// Infernal Resistance
+// data "DisplayName" "h2468a97fg76d3g46a4g8b2agaa29ed07ae00;1"
+// Once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;, when you fail a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, you may succeed instead.
+// data "Description" "h2ddb85d2g80deg4402g9c5bgfacf4913efcc;2"
+// data "Icon" "PassiveFeature_Generic_Magical"
+// data "Conditions" "Self(context.Target,context.Observer) and IsSavingThrow() and IsSpell()"
+// data "Properties" "AdjustRoll(99)"
+// data "Cost" "ReactionActionPoint:1;Interrupt_Legendary_InfernalResistance:1"
+// data "Cooldown" "OncePerRestPerItem"
+// data "InterruptDefaultValue" "Ask;Enabled"
+// data "EnableCondition" "HasActionResource('Interrupt_Legendary_InfernalResistance', 1, 0, false, false, context.Source)"
+// data "EnableContext" "OnActionResourcesChanged"
+
+// new entry "MAG_Legendary_InfernalResistance_Resource_Passive"
+// type "PassiveData"
+// using "MAG_Interrupt_MAG_Shield_Resource_Passive"
+// %%% Infernal Resistance Resource
+// data "DisplayName" "h16e1178bg8f09g4027g83cdgf3fb00a72f66;1"
+// data "StatsFunctors" "ApplyStatus(MAG_LEGENDARY_INFERNAL_RESISTANCE_RESOURCE, 100, -1)"
+
+// new entry "Target_MAG_Legendary_HellCrawler"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_MistyStep"
+// data "Level" ""
+// data "SpellSchool" ""
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellProperties" "GROUND:CreateExplosion(Projectile_MAG_Infernal_MistyStep_Fireball);GROUND:TeleportSource()"
+// data "Icon" "Action_Mag_Hellcrawler"
+// Hellcrawler
+// data "DisplayName" "ha3a1c23bgc133g41c4gbba6ga8be11bbbfa3;3"
+// Teleport to an area and deal [1] where you land. The impact blast spreads in a [2] zone.
+// data "Description" "h0fd92a9bg2d55g4d98g8dc0g15604f5c8d89;4"
+// data "DescriptionParams" "DealDamage(2d8, Fire);Distance(3)"
+// data "PrepareSound" "Action_Prepare_Item_HellCrawler"
+// data "PrepareLoopSound" "Action_Loop_Item_HellCrawler"
+// data "CastSound" "Action_Cast_Item_HellCrawler"
+// data "TargetSound" "Action_Impact_Item_HellCrawler"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;39daf365-ec06-49a8-81f3-9032640699d7,,;5c400e93-0266-499c-a2e1-75d53358460f,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+// data "VerbalIntent" ""
+// data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold"
+// data "MemoryCost" ""
+// data "LineOfSightFlags" "AddSourceHeight"
+// data "PrepareEffect" "7efd7809-4a4a-4689-9ecb-65e49518a79d"
+// data "CastEffect" "aa6f85bc-d251-47fa-9ea1-154857d6820e"
+
+// new entry "Projectile_MAG_Infernal_MistyStep_Fireball"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Projectile_ChromaticOrb_Fire"
+// data "AreaRadius" "3"
+// data "ExplodeRadius" "3"
+// data "SpellRoll" "not SavingThrow(Ability.Dexterity, 15)"
+// data "SpellSuccess" "DealDamage(2d8,Fire,Magical)"
+// data "SpellFail" "DealDamage(1d8,Fire,Magical)"
+// data "Trajectories" "c07540e0-9581-42e0-8f4f-f2698957d171"
+// data "UseCosts" ""
+// data "SpellFlags" "IsSpell;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;CanAreaDamageEvade"
+// data "PrepareEffect" ""
+// data "CastEffect" ""
+
+// ==================================== Disintegrating Night Walkers ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Briskwind Boots (Innaccessible/cut content) ====================================
 // Bug Fix: Critical Swiftness no longer triggers when killing non-hostile creatures.
 
 // new entry "MAG_Critical_CriticalSwiftness_Boots"

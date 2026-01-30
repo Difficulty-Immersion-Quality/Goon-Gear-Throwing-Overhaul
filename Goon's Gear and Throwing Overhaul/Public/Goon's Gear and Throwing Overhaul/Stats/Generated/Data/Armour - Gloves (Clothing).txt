@@ -608,12 +608,28 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // ==================================== Stalker Gloves ====================================
 // Bug Fix: Now works with Rakish Sneak Attack.
 
-// gear entry
+// new entry "MAG_Stalker_Gloves"
+// type "Armor"
+// using "ARM_Gloves_Leather"
+// data "RootTemplate" "dd99248c-fe42-4d07-9861-853e9291ea51"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_InitiativeBonus_1_Passive;MAG_ForcefulSneakAttack_Passive"
+// data "Unique" "1"
 
 new entry "GOON_STALKERGLOVES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_InitiativeBonus_1_Passive"
+// type "PassiveData"
+// Seldom Caught Unawares
+// data "DisplayName" "h72f85fe9g3f50g4cafg9e54g7f9c8542cd7b;1"
+// You gain a +[1] bonus to Initiative Rolls.
+// data "Description" "hd96c976bg61c0g4804g8000g839a4826b923;1"
+// data "DescriptionParams" "1"
+// data "Boosts" "Initiative(1)"
 
 new entry "MAG_ForcefulSneakAttack_Passive"
 type "PassiveData"
@@ -771,14 +787,69 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Helldusk Gloves ====================================
-// TODO: Something/anything.
+// Bug Fix: Infernal Touch's Bleeding application displays properly in the combat log.
+// Changes: Infernal Touch's 1d6 Fire damage applies when throwing melee weapons.
+// Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
 
-// gear entry
+new entry "MAG_Infernal_Metal_Gloves"
+type "Armor"
+// using "_Hand_Magic_Metal"
+using "MAG_Infernal_Metal_Gloves"
+// data "RootTemplate" "ad219a90-ab3d-4821-8206-011293f5837b"
+// data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Rarity" "VeryRare"
+// data "Boosts" "RollBonus(SavingThrow, 1, Strength);UnlockSpell(Projectile_MAG_FireRay)"
+// data "PassivesOnEquip" "MAG_Infernal_Metal_AttackBonus_Passive;MAG_Infernal_Metal_Gloves_FireDamage_Passive"
+// data "Unique" "1"
+// data "MinLevel" "1"
+// data "Proficiency Group" ""
+data "Proficiency Group" "HeavyArmor"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_HELLDUSKGLOVES_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_Infernal_Metal_AttackBonus_Passive"
+// type "PassiveData"
+// Infernal Acuity
+// data "DisplayName" "h91cca6d7g0284g43a2gb588g6cdb5ab2f2ee;2"
+// You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
+// data "Description" "h46ffe4b1gd070g484eg94a4g0d14439ea36c;3"
+// data "DescriptionParams" "1"
+// data "Boosts" "RollBonus(Attack, 1);SpellSaveDC(1)"
+
+new entry "MAG_Infernal_Metal_Gloves_FireDamage_Passive"
+type "PassiveData"
+using "MAG_Infernal_Metal_Gloves_FireDamage_Passive"
+// Infernal Touch
+// data "DisplayName" "hd6e187fag627eg42bbgb90eg737260214df3;3"
+// Your weapon attacks deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;.
+// data "Description" "h901a1160gba15g47d9g9427gf970bbcb58ad;6"
+// Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.
+data "Description" "h4855f6bfgcd92g4833ga020gd0dd642acdfc;1"
+// data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic)"
+data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic);2"
+data "TooltipSave" "Constitution"
+// data "Boosts" "CharacterWeaponDamage(1d6, Fire);CharacterUnarmedDamage(1d6, Necrotic)"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsUnarmedAttack()"
+data "Conditions" ""
+// data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2,,,,not SavingThrow(Ability.Constitution,15))"
+data "StatsFunctors" "IF(IsUnarmedAttack()):ApplyStatus(GOON_INFERNALTOUCH_TECHNICAL_APPLIER, 100, 0);IF(IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Melee, context.HitDescription.ThrownObject)):DealDamage(1d6, Fire,Magical,,0,,true,false)"
+
+new entry "GOON_INFERNALTOUCH_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Infernal Touch
+data "DisplayName" "hd6e187fag627eg42bbgb90eg737260214df3;3"
+// Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.
+data "Description" "h4855f6bfgcd92g4833ga020gd0dd642acdfc;1"
+data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic);2"
+data "TooltipSave" "Constitution"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 15)"
+data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
 
 // ==================================== Hr'a'cknir Bracers ====================================
 // TODO: Something/anything.

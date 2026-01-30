@@ -152,7 +152,7 @@
 	<!-- "MAG_MONK_SWIFT_AS_THE_WIND" --> <content contentuid="hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d" version="1">Your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
 	<!-- "MAG_LC_Nymph_Cloak_Passive" --> <content contentuid="h1707807fg321ag4ba2g9be3gd18171fda6cb" version="1">Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].</content>
 	<!-- "Shout_MAG_Monk_Restore_Ki_Lesser" --> <content contentuid="hbf40b225g9fdeg4ef4gaed9g09805d1e7737" version="1">Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "MAG_Infernal_Metal_Gloves_FireDamage_Passive", "GOON_INFERNALTOUCH_TECHNICAL_APPLIER" --> <content contentuid="h4855f6bfgcd92g4833ga020gd0dd642acdfc" version="1">Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

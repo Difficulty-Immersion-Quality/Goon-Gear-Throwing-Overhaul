@@ -147,9 +147,9 @@ data "DescriptionParams" "DealDamage(2d6,Piercing);2"
 data "TooltipSave" "Dexterity"
 data "StatsFunctorContext" "OnDamage"
 data "Conditions" "AttackedWithPassiveSourceWeapon()"
-data "StatsFunctors" "ApplyStatus(GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER_MELEE, 100, 0)"
+data "StatsFunctors" "ApplyStatus(GOON_ABSOLUTENIGHT_TECHNICAL_APPLIER, 100, 0);IF((Tagged('BEHOLDER',context.Target) or Tagged('SPIDER',context.Target) or Tagged('SPIDER_PHASE',context.Target) or Tagged('ETTERCAP',context.Target))):DealDamage(2d6, Piercing,,,0,,true,false)"
 
-new entry "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER"
+new entry "GOON_ABSOLUTENIGHT_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 // Absolute Night
@@ -159,15 +159,9 @@ data "Description" "h5a6da78fged78g49f3gbf86g13874a151320;1"
 data "DescriptionParams" "DealDamage(2d6,Piercing);2"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "TooltipSave" "Dexterity"
-data "OnApplyFunctors" "IF((Tagged('BEHOLDER') or Tagged('SPIDER') or Tagged('SPIDER_PHASE') or Tagged('ETTERCAP'))):DealDamage(2d6, Piercing,,,0,,true)"
+data "OnApplyFunctors" ""
 data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, 11)"
 data "OnApplySuccess" "ApplyStatus(BLINDED, 100, 2)"
-
-new entry "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER_MELEE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER"
-data "OnApplyFunctors" ""
 
 // ==================================== Infernal Spear ====================================
 // TODO: Something/anything.

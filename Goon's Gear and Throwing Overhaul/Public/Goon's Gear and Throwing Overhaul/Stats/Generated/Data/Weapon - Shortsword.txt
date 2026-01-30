@@ -166,21 +166,22 @@ data "StatsFunctors" ""
 // ==================================== Trepan & Trepan +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
+// Bug Fix: Added missing Honour ruleset bools to Trephination to prevent damage riders acting as a damage rider source.
 // Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
-// Doesn't need throwing support.
+// Note: Doesn't need throwing support.
 
 new entry "WPN_Trepan"
 type "Weapon"
 // using "WPN_Shortsword"
 using "WPN_Trepan"
 // data "RootTemplate" "764dcd70-9206-457c-9366-7aa9e3370514"
-data "DefaultBoosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
 data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse)"
 // data "BoostsOnEquipMainHand" ""
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_OpeningAttack);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_OpeningAttack_Offhand);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 
 new entry "MAG_Surgeon_Trepan"
 type "Weapon"
@@ -188,9 +189,7 @@ type "Weapon"
 using "MAG_Surgeon_Trepan"
 // data "RootTemplate" "8fee8eb3-f16b-4b9a-85a0-d46a9cd4937e"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse);"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse)"
 // data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_OpeningAttack); IF (Tagged('PLAYABLE')):UnlockSpell(Target_PiercingThrust); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Trepan)"
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_OpeningAttack);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Trepan)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
@@ -203,13 +202,30 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "Target_MAG_WeaponAction_Trepan"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_PiercingThrust"
+using "Target_MAG_WeaponAction_Trepan"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6,Necrotic,,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_MagicItem_PierceTheWeak"
+// Trephination
+// data "DisplayName" "hc35c4b55gc2d1g458cg96f7gf29d4c8564a0;2"
+// Make a burr hole into an enemy's skull and possibly knock them &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
+// data "Description" "h76b4b7a9gec84g4f07ga0e1g31c6397f7275;2"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(PRONE,100,2)"
+
 new entry "Goon_Target_MAG_WeaponAction_Trepan_Offhand"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MAG_WeaponAction_Trepan"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6,Necrotic,,,0,,true,false);ExecuteWeaponFunctors(OffHand)"
 // Trephination (Offhand)
 data "DisplayName" "hd01cd495gc084g4630gb8bdg0f45937bebff;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"

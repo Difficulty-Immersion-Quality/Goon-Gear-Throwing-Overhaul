@@ -42,20 +42,22 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 // ==================================== Artificial Leech & Artificial Leech +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
+// Bug Fix: Added missing Honour ruleset bools to Bloodletting to prevent damage riders acting as a damage rider source.
 // Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
+// Note: Doesn't need throwing support.
 
 new entry "WPN_Leech"
 type "Weapon"
 // using "WPN_Dagger"
 using "WPN_Leech"
 // data "RootTemplate" "81158eec-1fd0-4fd7-8b02-ce7f5e45f8b5"
-data "DefaultBoosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
 data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse)"
 // data "BoostsOnEquipMainHand" ""
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 
 new entry "MAG_Surgeon_Leech"
 type "Weapon"
@@ -63,10 +65,7 @@ type "Weapon"
 using "MAG_Surgeon_Leech"
 // data "RootTemplate" "a27e3e3a-ef55-4733-9655-29c7913d26d5"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
-// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse);"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse)"
 // data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_PiercingThrust); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Leech)"
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Leech)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
@@ -79,13 +78,30 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "Target_MAG_WeaponAction_Leech"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_PiercingThrust"
+using "Target_MAG_WeaponAction_Leech"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_Slash"
+// Bloodletting
+// data "DisplayName" "h8fd0e6fegc5d8g4833gadb4g0792faaa5b49;2"
+// Pierce an enemy's flesh and possibly make them &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleed&lt;/LSTag&gt;.
+// data "Description" "ha05b83bfg9e99g4fb1g8825ga2998b322c65;2"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(BLEEDING,100,2)"
+
 new entry "Goon_Target_MAG_WeaponAction_Leech_Offhand"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MAG_WeaponAction_Leech"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(OffHand)"
 // Bloodletting (Offhand)
 data "DisplayName" "h6a9baabfg5744g4185g8084ga64e27aad1b8;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
@@ -263,20 +279,22 @@ data "SpellProperties" "GROUND:IF(not HasPassive('LOW_BloodMerchant_ExplosiveBlo
 // ==================================== Syringe & Syringe +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
+// Bug Fix: Added missing Honour ruleset bools to Inject Nostrum to prevent damage riders acting as a damage rider source.
 // Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
+// Note: Doesn't need throwing support.
 
 new entry "WPN_Syringe"
 type "Weapon"
 // using "WPN_Dagger"
 using "WPN_Syringe"
 // data "RootTemplate" "75cea463-4395-4600-ad93-7017415b16e3"
-data "DefaultBoosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
 data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse)"
 // data "BoostsOnEquipMainHand" ""
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 
 new entry "MAG_Surgeon_Syringe"
 type "Weapon"
@@ -284,9 +302,7 @@ type "Weapon"
 using "MAG_Surgeon_Syringe"
 // data "RootTemplate" "95c3af3c-83b9-4cc0-b633-1493b7daca4d"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse);"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse)"
 // data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_PiercingThrust); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Syringe)"
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Syringe)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
@@ -299,13 +315,30 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "Target_MAG_WeaponAction_Syringe"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_PiercingThrust"
+using "Target_MAG_WeaponAction_Syringe"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_DippedPoison_Melee"
+// Inject Nostrum
+// data "DisplayName" "h72dda1d6g8db9g496dg86e5g227ac174216b;2"
+// Inject an enemy with the mysterious liquid in your syringe and possibly &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poison&lt;/LSTag&gt; them.
+// data "Description" "hfb6c91e4g3461g4dd2g8283g8887f17b1316;2"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(POISONED,100,2)"
+
 new entry "Goon_Target_MAG_WeaponAction_Syringe_Offhand"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MAG_WeaponAction_Syringe"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(OffHand)"
 // Inject Nostrum (Offhand)
 data "DisplayName" "hacc2246cg8b83g4f68g9788g99629e13d9db;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"

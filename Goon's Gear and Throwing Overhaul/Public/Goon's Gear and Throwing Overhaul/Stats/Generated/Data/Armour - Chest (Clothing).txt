@@ -1,6 +1,21 @@
 // ==================================== Base entry ====================================
+// Bug Fix: Added missing "Cloth" "ArmorType".
 
-// 
+new entry "ARM_Robe_Body"
+type "Armor"
+// using "_Body"
+using "ARM_Robe_Body"
+// data "RootTemplate" "168b9099-19f5-44e4-b55c-e64ceb60b71f"
+// data "ArmorClass" "10"
+// data "ValueUUID" "4c5217d8-0232-4592-9e32-2fd729123f53"
+// data "ValueScale" "0.8"
+data "ArmorType" "Cloth"
+// data "Weight" "1.8"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "MinLevel" "1"
+// data "Armor Class Ability" "Dexterity"
 
 // ==================================== Magical variants ====================================
 

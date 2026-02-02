@@ -78,10 +78,12 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Bow of the Banshee ====================================
+// Bug Fix: Blood-Curdling Emission's Saving Throw now has the appropriate "AdvantageOnFrightened(), DisadvantageOnFrightened()" functions called, allowing it to work with stuff such as Shield of the Undevout's Dreadful Hewer and Halfling's Brave passive.
 // Bug Fix: Blood-Curdling Emission will display properly in the combat log.
 // Bug Fix: Blood-Curdling Emission applies when the weapon is thrown.
 // Changes: Blood-Curdling Emission now uses ManeuverSaveDC instead of a static DC of 12.
 // TODO: Do I need to declare content for the technical roll?
+// TODO: I need to declare Dex inside ManeuverSaveDC, this might require function editing.
 
 new entry "MAG_BG_OfTheBanshee_Bow"
 type "Weapon"
@@ -126,7 +128,7 @@ data "DisplayName" "h18b2e6adg7043g4fbbg91e9ge40520c0cb7c;2"
 data "Description" "h4d85aea3g3449g4afag874bg7372c516d55c;1"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "1d4;2"
-data "OnApplyRoll" "not SavingThrow(Ability.Wisdom, ManeuverSaveDC())"
+data "OnApplyRoll" "not SavingThrow(Ability.Wisdom, ManeuverSaveDC(), AdvantageOnFrightened(), DisadvantageOnFrightened())"
 data "OnApplySuccess" "ApplyStatus(FRIGHTENED, 100, 2)"
 
 // ==================================== Darkfire Shortbow ====================================

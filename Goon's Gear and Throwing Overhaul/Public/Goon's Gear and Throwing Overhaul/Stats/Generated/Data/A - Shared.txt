@@ -176,11 +176,6 @@ data "OnApplySuccess" "ApplyStatus(POISONED, 100, 2)"
 
 // ==================================== The Sparky Points & The Jolt Shooter ====================================
 
-new entry "GOON_CHARGEDLIGHTNING_WEAPON_THROW_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
 new entry "GOON_CHARGEDLIGHTNING_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"

@@ -352,6 +352,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // Bug Fix: Immolating Gaze now deals 4d8 Fire damage to a Burning target instead of 2d8.
 // Bug Fix: Immolating Gaze's 2d8 Fire damage dealt to targets that are not Burning is now magical damage.
 // Bug Fix: Immolating Gaze now checks for more burning conditions, instead of just Burning itself.
+// Bug Fix: Immolating Gaze now displays the conditional 2d8 Fire damage in its tooltip damage.
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
 // Note: "IgnoreSurfaceCover(SurfaceFogCloud)" is not matching with the description.
@@ -411,6 +412,7 @@ data "SpellFail" "IF(not HasStatus('SG_Burning')):DealDamage((2d8)/2, Fire,Magic
 // data "ExtraDescription" "h4c7434a3g5ae9g451fgbe6eg945a455a44c6;1"
 // data "ExtraDescriptionParams" "DealDamage(2d8, Fire)"
 // data "TooltipDamageList" "DealDamage(2d8, Fire)"
+data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
 // data "TooltipAttackSave" "Intelligence"
 // data "TooltipStatusApply" "ApplyStatus(FEARED,100,3)"
 // data "PrepareSound" "Action_Prepare_Item_HellCrawler"

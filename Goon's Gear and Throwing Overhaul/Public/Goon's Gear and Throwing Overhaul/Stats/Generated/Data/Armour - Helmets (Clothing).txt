@@ -349,6 +349,8 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // Bug Fix: The Infernal Sight passive now provides light cone VFX the same as Darkvision from other sources.
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
 // Bug Fix: Immolating Gaze now takes into account creatures with Advantage or Disdvantage on Saving Throws against being Frightened.
+// Bug Fix: Immolating Gaze now deals 4d8 Fire damage to a Burning target instead of 2d8.
+// Bug Fix: Immolating Gaze's 2d8 Fire damage dealt to targets that are not Burning is now magical damage.
 // Bug Fix: Immolating Gaze now checks for more burning conditions, instead of just Burning itself.
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
@@ -395,9 +397,9 @@ using "Target_MAG_Legendary_ImmolatingGaze"
 // data "SpellRoll" "not SavingThrow(Ability.Intelligence, SourceSpellDC())"
 data "SpellRoll" "not SavingThrow(Ability.Intelligence, SourceSpellDC(), AdvantageOnFrightened(), DisadvantageOnFrightened())"
 // data "SpellSuccess" "ApplyStatus(FEARED,100, 3);IF(not HasStatus('BURNING')):DealDamage(2d8, Fire);IF(HasStatus('BURNING')):DealDamage(2d8, Fire,Magical)"
-data "SpellSuccess" "ApplyStatus(FEARED,100, 3);IF(not HasStatus('SG_Burning')):DealDamage(2d8, Fire);IF(HasStatus('SG_Burning')):DealDamage(2d8, Fire,Magical)"
+data "SpellSuccess" "ApplyStatus(FEARED,100, 3);IF(not HasStatus('SG_Burning')):DealDamage(2d8, Fire,Magical);IF(HasStatus('SG_Burning')):DealDamage(4d8, Fire,Magical)"
 // data "SpellFail" "IF(not HasStatus('BURNING')):DealDamage((2d8)/2, Fire);IF(HasStatus('BURNING')):DealDamage((4d8)/2, Fire,Magical)"
-data "SpellFail" "IF(not HasStatus('SG_Burning')):DealDamage((2d8)/2, Fire);IF(HasStatus('SG_Burning')):DealDamage((4d8)/2, Fire,Magical)"
+data "SpellFail" "IF(not HasStatus('SG_Burning')):DealDamage((2d8)/2, Fire,Magical);IF(HasStatus('SG_Burning')):DealDamage((4d8)/2, Fire,Magical)"
 // data "TargetConditions" "Character() and not Self() and not Dead()"
 // data "Icon" "Action_Mag_ImmolatingGaze"
 // Immolating Gaze

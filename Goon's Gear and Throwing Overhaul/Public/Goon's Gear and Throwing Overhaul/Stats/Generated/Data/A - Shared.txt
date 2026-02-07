@@ -284,3 +284,16 @@ using "TWN_Hospital_Nurse_WeaponBoosts"
 // data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE');"
 data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)"
 // data "Boosts" "CharacterWeaponDamage(1d6, Necrotic);"
+
+// ==================================== Blind Immunity ====================================
+// Bug Fix: Blind Immunity no longer allows the entity to ignore Darkness clouds, being Immune to Blinded and having X-ray vision are not the same.
+
+new entry "MAG_Shadow_BlindImmunity_Ring_Passive"
+type "PassiveData"
+using "MAG_Shadow_BlindImmunity_Ring_Passive"
+// Blind Immunity
+// data "DisplayName" "hf1d1e91dg0542g40a6g93e7ge0d5e31296c7;2"
+// The wearer cannot be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.
+// data "Description" "hb00b5a9bg7c63g443fga699gb3341d39c41d;4"
+// data "Boosts" "StatusImmunity(SG_Blinded);IgnoreSurfaceCover(SurfaceDarknessCloud)"
+data "Boosts" "StatusImmunity(SG_Blinded)"

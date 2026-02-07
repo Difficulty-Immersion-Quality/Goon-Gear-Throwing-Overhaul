@@ -159,7 +159,7 @@ data "Description" "h5a6da78fged78g49f3gbf86g13874a151320;1"
 data "DescriptionParams" "DealDamage(2d6,Piercing);2"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "TooltipSave" "Dexterity"
-data "OnApplyFunctors" "IF((Tagged('BEHOLDER',context.Target) or Tagged('SPIDER',context.Target) or Tagged('SPIDER_PHASE',context.Target) or Tagged('ETTERCAP',context.Target))):DealDamage(2d6, Piercing,,,0,,true,false)"
+data "OnApplyFunctors" "IF(Tagged('BEHOLDER',context.Target) or Tagged('SPIDER',context.Target) or Tagged('SPIDER_PHASE',context.Target) or Tagged('ETTERCAP',context.Target)):DealDamage(2d6, Piercing,,,0,,true,false)"
 data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, 11)"
 data "OnApplySuccess" "ApplyStatus(BLINDED, 100, 2)"
 

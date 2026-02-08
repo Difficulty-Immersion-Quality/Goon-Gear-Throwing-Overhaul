@@ -1,3 +1,6 @@
+// TODO: This file is just a bit of a mess, needs proper comments and documentation, checks for everything.
+// TODO: Refine approach for implementing spellcasting modifiers where relevant via functions in Library.
+// TODO: Figure out how to get accurate TooltipDamageList for spells not just using weapon information.
 // ==================================== Generic and template abilities ====================================
 // Changes: Swapped from short rest cooldowns to per-combat cooldowns.
 
@@ -47,9 +50,8 @@ data "SpellType" "Projectile"
 using "Projectile_Headcrack"
 data "Cooldown" "OncePerCombat"
 
-// TODO: Refine approach for implementing spellcasting modifiers where relevant via functions in Library.
-// TODO: Figure out how to get accurate TooltipDamageList for spells not just using weapon information.
 // ==================================== Backbreaker ====================================
+// Bug Fix: Added missing tooltip warning stating that the target cannot be Huge in size.
 // Changes: Can target corpses.
 
 new entry "Target_PostureBreaker"
@@ -57,8 +59,26 @@ type "SpellData"
 data "SpellType" "Target"
 // using "Target_AdvancedMeleeWeaponAction"
 using "Target_PostureBreaker"
+// data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Strength, ManeuverSaveDC())):ApplyStatus(PRONE,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
 // data "TargetConditions" "(Character() or Item()) and not Self() and TargetSizeEqualOrSmaller(Size.Large) and not Dead()"
 data "TargetConditions" "(Character() or Item()) and not Self() and TargetSizeEqualOrSmaller(Size.Large)"
+// data "Icon" "Action_PostureBreaker"
+// Backbreaker
+// data "DisplayName" "h48b16f26g07f4g4c51gae7cg7554e9565fad;2"
+// Possibly knock your enemy &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
+// data "Description" "h069297a9g027cg4b60g88a8gd274ecca736e;4"
+// data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Strength"
+// data "TooltipStatusApply" "ApplyStatus(PRONE,100,2)"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; The target can't be Huge in size.
+data "TooltipPermanentWarnings" "c4da40d6-cfc7-4148-a5e5-5b7cbc41a991"
+// data "CastSound" "Action_Cast_PostureBreaker"
+// data "TargetSound" "Action_Impact_PostureBreaker"
+// data "SpellAnimation" "79f8640c-612a-4b13-aac7-bdc1b90458c2,,;655f5d8e-39c7-45b4-8a36-fdd3358a448c,,;c07a9d83-9a39-464a-b281-15c67c528ffb,,;32c33123-7962-4d95-b497-532b1a897e85,,;7f20e242-be7c-4fd1-a2bd-5715b2adca03,,;7465f7f7-67ea-41f2-8dd4-3c97f1089a54,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "6f9e662c-b10c-4388-9e56-d74320efa0c0,,;d668f9d6-bd9d-435c-83b5-6d46ac54761f,,;8e60eacb-12be-4711-96e2-d6d906a1ce25,,;603a7bfb-d53e-41c2-98dd-e004fdf5a0e8,,;003e58fc-f11d-41b6-90d9-ea8bc943826b,,;b850a756-6bd6-4c4d-a3fc-6c524a49a818,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "843792a5-98fd-441d-a495-c4802040a381"
+// data "TargetEffect" "646682ea-2790-4dc7-886e-5d61c9732f59"
 
 // Custom offhand version
 new entry "Goon_Target_PostureBreaker_Offhand"
@@ -85,8 +105,30 @@ data "SpellType" "Shout"
 using "Shout_Steady"
 // data "Cooldown" "OncePerShortRest"
 data "Cooldown" "OncePerCombat"
+// data "AIFlags" "CanNotUse"
+// data "SpellProperties" "ApplyStatus(STEADY,100,1)"
+// data "TargetConditions" "Self()"
+// data "Icon" "Action_Steady"
+// Brace (Melee)
+// data "DisplayName" "hb5fad65fg4751g45d2gb3f1ga6ed5085c68e;2"
+// Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt;. For the rest of your turn, roll melee damage twice and use the highest result.
+// data "Description" "hda2aa6aeg7b6cg4c74gb82ag14d462d8f358;6"
+// data "DescriptionParams" "Distance(6)"
+// data "TooltipStatusApply" "ApplyStatus(STEADY,100,1)"
+// data "CastSound" "Action_Cast_Steady"
+// data "TargetSound" "Action_Impact_Steady"
+// data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "Movement:6"
+// data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;,,;bcc3b0d9-f04f-4448-aab0-e0ad641167cc,,;bf924cc6-8b39-4c3b-b1c0-eda264cf6150,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;5fdb66be-7506-411a-a7ea-c4783288aac8,,;,,;,,"
+// data "VerbalIntent" "Buff"
+// data "SpellFlags" "IsDefaultWeaponAction"
+// data "RequirementConditions" "CanAttack(context.Target) and not HasStatus('ENCUMBERED_LIGHT') and not HasStatus('ENCUMBERED_HEAVY') and not HasStatus('ENCUMBERED_MAX') and not Immobilized() and CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "b660a683-61c5-44a0-87c6-84cac5f9201d"
 
 // ==================================== Cleave ====================================
+// Bug Fix: Tooltip no longer displays as dealing damage with your ranged main hand weapon while it is active.
 
 new entry "Zone_Cleave"
 type "SpellData"
@@ -94,6 +136,46 @@ data "SpellType" "Zone"
 using "Zone_Cleave"
 // data "Cooldown" "OncePerShortRest"
 data "Cooldown" "OncePerCombat"
+// data "SpellProperties" "GROUND:ExecuteWeaponFunctors(MainHand)"
+// data "SurfaceType" "Sentinel"
+// data "SurfaceLifetime" "0"
+// data "SurfaceGrowStep" "100"
+// data "SurfaceGrowInterval" "1"
+// data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+// data "SpellSuccess" "DealDamage(MainMeleeWeapon/2, MainWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon/2, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand)"
+// data "TargetConditions" "(Character() or Item()) and not Self() and not Dead() and not Ally()"
+// data "Icon" "Action_Cleave_New"
+// Cleave
+// data "DisplayName" "h2111e0a4g5c6ag4dfaga296g7d1cea2edb55;1"
+// Swing your weapon in a large arc to attack up to [1] enemies at once.
+// data "Description" "he4b11b90gfe70g4bc6ga15eg0edd36a31652;8"
+// data "DescriptionParams" "3"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon/2, MainWeaponDamageType)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon/2, MainMeleeWeaponDamageType)"
+// data "TooltipAttackSave" "MeleeWeaponAttack"
+// data "CastSound" "Action_Cast_Sweep"
+// data "TargetSound" "Action_Impact_SweepingAttack"
+// data "PreviewCursor" "Melee_Ground"
+// data "CastTextEvent" "Cast"
+// data "Shape" "Cone"
+// data "FrontOffset" "-2"
+// data "Range" "2"
+// data "Angle" "120"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "79e47203-3855-4837-8673-ddb708d86962,,;711781fb-5f5a-4b9a-bd8b-e0b4ff9dec46,,;a17a7bf3-7381-4191-83f4-304d37c738e0,,;1172e0b6-08d1-4f28-a651-a01681b84ee6,,;863fabe7-d990-42a3-8961-7898c207bcb1,,;0002afee-5ad9-4109-ae64-9b2571601226,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "VerbalIntent" "Damage"
+// data "WeaponTypes" "Melee"
+// data "SpellFlags" "IsHarmful;IsDefaultWeaponAction"
+// data "RechargeValues" "6"
+// data "MaximumTargets" "3"
+// data "SpellAnimationIntentType" "Aggressive"
+// data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "1d808499-eac9-408a-b5c8-219bb4f52bdc"
+// data "TargetEffect" "0444f9b9-f4a9-4c0e-8671-3bfc3e883447"
+// data "Sheathing" "Melee"
 
 // Custom offhand version
 new entry "Goon_Zone_Cleave_Offhand"
@@ -120,6 +202,22 @@ data "SpellType" "Target"
 using "Target_ConcussiveSmash"
 // data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, HybridCasterWeaponActionDC())):ApplyStatus(DAZED,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
 data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(DAZED,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_ConcussiveSmash"
+// Concussive Smash
+// data "DisplayName" "hea5b28c1gbeb4g4879gb80dgc9bd4b784efc;2"
+// Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They can't take reactions and lose the Dexterity bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+// data "Description" "h90a1c9eegce5eg4a7dgb13agd067d29b812f;7"
+// Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They can't take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+data "Description" "h7edda7a5g49fcg4c39g8943g1f19aa5d78dd;1"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+// data "TooltipStatusApply" "ApplyStatus(DAZED,100,2)"
+// data "CastSound" "Action_Cast_ConcussiveSmash"
+// data "TargetSound" "Action_Impact_ConcussiveSmash"
+// data "SpellAnimation" "79f8640c-612a-4b13-aac7-bdc1b90458c2,,;655f5d8e-39c7-45b4-8a36-fdd3358a448c,,;c07a9d83-9a39-464a-b281-15c67c528ffb,,;32c33123-7962-4d95-b497-532b1a897e85,,;7f20e242-be7c-4fd1-a2bd-5715b2adca03,,;7465f7f7-67ea-41f2-8dd4-3c97f1089a54,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "6f9e662c-b10c-4388-9e56-d74320efa0c0,,;d668f9d6-bd9d-435c-83b5-6d46ac54761f,,;8e60eacb-12be-4711-96e2-d6d906a1ce25,,;603a7bfb-d53e-41c2-98dd-e004fdf5a0e8,,;003e58fc-f11d-41b6-90d9-ea8bc943826b,,;b850a756-6bd6-4c4d-a3fc-6c524a49a818,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "2f5ddf2b-5151-4bd9-ab15-c712d2e0e823"
+// data "TargetEffect" "3283b94c-bece-4835-a62b-de3a8c34d515"
 
 // Custom offhand version
 new entry "Goon_Target_ConcussiveSmash_Offhand"
@@ -140,6 +238,27 @@ data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquipped
 // ==================================== Maiming Strike ====================================
 
 // new entry "Target_CripplingStrike"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+// data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(CRIPPLED,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_CripplingStrike"
+// Maiming Strike
+// data "DisplayName" "h8fad3ac3gf816g4c2agbd76gbbcc61598a91;2"
+// Possibly &lt;LSTag Type="Status" Tooltip="CRIPPLED"&gt;Maims&lt;/LSTag&gt; your target. They can't move.
+// data "Description" "h0d927707g90f7g455cg8233gbd3bca6e7947;5"
+// Flying creatures can't be Maimed.
+// data "ExtraDescription" "h8e344402g5cc9g4430g8343g1364ef5a48f9;3"
+// data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+// data "TooltipStatusApply" "ApplyStatus(CRIPPLED,100,2)"
+// data "CastSound" "Action_Cast_CripplingStrike"
+// data "TargetSound" "Action_Impact_CripplingStrike"
+// data "SpellAnimation" "5dbfc67e-a1f4-4a91-b398-4df1ad989c49,,;6f957f78-322e-465f-b314-27299a98add7,,;63c0501c-14aa-467c-8980-45ed023ab15d,,;e6af1757-da0b-4640-8ce5-ea559816d2b0,,;08e862c4-75d3-489d-bdb2-b2f95031373e,,;3ed0eebd-86d0-4902-bcea-e0b039e9ad1f,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "b6a6bde4-f4f3-4f10-bd8b-e642a8da4aa9,,;550c6598-8929-4071-aced-c12f5c9ad8aa,,;da4fb3e1-c9e0-4d16-ba92-aca8def437b3,,;be687d06-cb06-4fca-b977-bd2746cacc91,,;12773179-f31c-4c27-a8d5-0649df16995d,,;7bd69a21-e7f9-4c8b-aaf3-64ad999293b4,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "5999e1c6-e910-486f-ae56-5941a8b675da"
+// data "TargetEffect" "81040f01-f232-4ffb-9688-0a586683f5c1"
 
 // Custom offhand version
 new entry "Goon_Target_CripplingStrike_Offhand"
@@ -158,6 +277,7 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Disarming Strike ====================================
+// Bug Fix: Added missing TooltipStatusApply.
 
 new entry "Target_DisarmingStrike"
 type "SpellData"
@@ -166,6 +286,45 @@ data "SpellType" "Target"
 using "Target_DisarmingStrike"
 // data "Cooldown" "OncePerShortRest"
 data "Cooldown" "OncePerCombat"
+// data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(DISARM,100,0);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+// data "TargetConditions" "Character() and not Self() and HasWeaponInMainHand()"
+data "TargetConditions" "(Character() or Item()) and not Self()"
+// Disarming Strike
+// data "DisplayName" "hcce43c1fg16feg4428g9226g66eda8d49f82;2"
+// Focus your attack on your foe's hands and possibly force them to drop the weapons they are holding.
+// data "Description" "h29e8a3f7g106fg4b2bg9e32ga959590fa0c9;5"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType)"
+data "TooltipStatusApply" "ApplyStatus(DISARMED,100,1)"
+// data "TooltipOnMiss" ""
+// data "HitCosts" ""
+// data "SpellStyleGroup" ""
+// data "SpellFlags" "IsMelee;IsHarmful;IsDefaultWeaponAction"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+
+// new entry "DISARM"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// Weapon Dropped!
+// data "DisplayName" "hef7a7279g3977g496bga1a5g24be3a434868;2"
+// An enemy has made you drop your weapon to the ground.
+// data "Description" "ha50fbaf7g046bg4255g8adegeb7ea837cc46;2"
+// data "Icon" "Action_DisarmingAttack_Melee"
+// data "FormatColor" "Orange"
+// data "StatusPropertyFlags" "ForceOverhead;DisableCombatlog"
+// data "OnApplyFunctors" "DisarmWeapon()"
+
+// new entry "DISARMED"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// Disarmed
+// data "DisplayName" "hccde2a34ga191g4930gbeaegb04f6573ff53;2"
+// Affected entity has dropped its weapon to the ground.
+// data "Description" "h67ce5065gf7b5g4ad6g9b9bg0eb792722d35;2"
+// data "Icon" "statIcons_Disarmed"
+// data "StackId" "DISARMED"
+// data "StatusPropertyFlags" "InitiateCombat"
 
 new entry "Goon_Target_DisarmingStrike_Offhand"
 type "SpellData"
@@ -183,8 +342,32 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Flourish ====================================
+// Bug Fix: Attacking a target that is not eligible for being Knocked Out no longer does magical damage.
 
-// new entry "Target_OpeningAttack"
+new entry "Target_OpeningAttack"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+using "Target_OpeningAttack"
+// data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(OFF_BALANCED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(OFF_BALANCED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_OpeningAttack"
+// Flourish
+// data "DisplayName" "hc1b82997g39bfg4441gb885g4bcf14bdbd60;3"
+// Possibly throw your enemy &lt;LSTag Type="Status" Tooltip="OFF_BALANCED"&gt;Off Balance&lt;/LSTag&gt;.
+// data "Description" "h5fe95e00g6de4g4ee1g827dg73ea09058e6e;4"
+// data "TooltipDamageList" "DealDamage(1d4, Bludgeoning)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(OFF_BALANCED, 100, 2)"
+// data "CastSound" "Action_Cast_OpeningAttack"
+// data "TargetSound" "Action_Impact_OpeningAttack"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "d11b68a0-5c5c-430f-a033-90ab91e04525,,;8c5b6452-a6eb-44f3-8830-f8e1a06678ba,,;412f122d-0773-4a08-bf1c-65749e543fb6,,;87c14b90-fb0a-4cd3-8364-b38c3204dae4,,;082f9ee1-a009-4234-9fb5-412d3afba640,,;dced792c-ab29-450c-b9ec-d0c291c6c022,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "ce4e5210-46ca-436f-90c0-00ef3e9eeb29,,;f2a2f68b-8ee1-402e-a374-6cddacc16fe4,,;f63970b8-ddbe-4058-a6e4-c689ffa8f4bb,,;aec7bcca-5a0b-4f73-bddd-2f1dc3ce6f00,,;3201ba74-a4d2-428b-be90-cbef244878df,,;9946ece2-74fc-4b81-927a-4bf83503cc20,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "VerbalIntent" "Debuff"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "a289cc42-2bdb-448e-8b1c-cf375fe55120"
+// data "TargetEffect" "24ed0e06-f655-41bc-b796-f781527b8399"
 
 new entry "Goon_Target_OpeningAttack_Offhand"
 type "SpellData"
@@ -194,15 +377,36 @@ using "Target_OpeningAttack"
 data "DisplayName" "h25288e12gdec4g47c0g97e7g2a7a3f41eae5;1"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(OFF_BALANCED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(OFF_BALANCED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical);ExecuteWeaponFunctors(OffHand)"
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Heartstopper ====================================
+// TODO: LSTags.
 
 // new entry "Target_HeartStopper"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(CHEST_TRAUMA,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_HeartStopper"
+// Heartstopper
+// data "DisplayName" "he5a1a17dgecfeg4e94gbe80g3ec7cec359b8;2"
+// Possibly inflicts &lt;LSTag Type="Status" Tooltip="CHEST_TRAUMA"&gt;Chest Trauma&lt;/LSTag&gt;: target loses an action.
+// data "Description" "h73b8cd06g612fg4048g8f10g6bdbe4004532;5"
+// data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+// data "TooltipStatusApply" "ApplyStatus(CHEST_TRAUMA,100,2)"
+// data "TooltipPermanentWarnings" "2d4dc03f-c6c2-44c0-8ba9-96cda965561f"
+// data "CastSound" "Action_Cast_HeartStopper"
+// data "TargetSound" "Action_Impact_HeartStopper"
+// data "SpellAnimation" "2ba949b7-0329-4190-992c-11b0d29183c5,,;9583ecee-cf6c-4735-86db-7ebf1df15eae,,;de006e3f-70fb-4eb7-a98d-d845d15b20e8,,;50696db7-d931-4734-915d-32d038ba99a5,,;a0503ad0-c1b1-449c-b431-4ac6c39c58d7,,;c36ed247-2272-492b-99c2-2ca10b014670,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "c25d80c5-aaf3-4aba-bc1f-bb1c8534725e,,;45bcbbd4-f9ca-4b19-88c2-822c5e2b0d8b,,;466e7470-712f-4a67-8ef1-5908a20b0449,,;c1713221-163b-4bae-95de-e6681d665c76,,;dc83b386-41f5-43df-9649-788107052830,,;b63dee1e-08e1-4f7a-88ee-1e6baa38e0dd,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "14e8690f-d8a4-44ac-a8ba-197eb000acbf"
+// data "TargetEffect" "0f5b0d5e-b5ad-4ca1-8574-ec84dbae2913"
 
 new entry "Goon_Target_HeartStopper_Offhand"
 type "SpellData"
@@ -229,8 +433,32 @@ data "SpellType" "Target"
 using "Target_Slash_New"
 // data "Cooldown" "OncePerShortRest"
 data "Cooldown" "OncePerCombat"
+// data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+// data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand)"
 // data "TargetConditions" "(Character() or Item()) and not Self() and not Dead()"
 data "TargetConditions" "(Character() or Item()) and not Self()"
+// data "Icon" "Action_Slash_New"
+// Lacerate
+// data "DisplayName" "h0cc7ad9dgac8eg4676g8d66g69d50e3451dc;2"
+// Slash at your target's vital points to make it <LSTag Type="Status" Tooltip="BLEEDING">Bleed</LSTag>.
+// data "Description" "h0a928102gf114g42f6g9e27g5f04ae26c345;4"
+// Undead and Constructs can't Bleed.
+// data "ExtraDescription" "hdc9305bbg48efg4d69gb71eg25acc5b87a04;2"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+// data "TooltipStatusApply" "ApplyStatus(BLEEDING,100,2)"
+// data "CastSound" "Action_Cast_Slash"
+// data "TargetSound" "Action_Impact_Slash"
+// data "PreviewCursor" "Melee"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "5dbfc67e-a1f4-4a91-b398-4df1ad989c49,,;6f957f78-322e-465f-b314-27299a98add7,,;63c0501c-14aa-467c-8980-45ed023ab15d,,;e6af1757-da0b-4640-8ce5-ea559816d2b0,,;08e862c4-75d3-489d-bdb2-b2f95031373e,,;3ed0eebd-86d0-4902-bcea-e0b039e9ad1f,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "b6a6bde4-f4f3-4f10-bd8b-e642a8da4aa9,,;550c6598-8929-4071-aced-c12f5c9ad8aa,,;da4fb3e1-c9e0-4d16-ba92-aca8def437b3,,;be687d06-cb06-4fca-b977-bd2746cacc91,,;12773179-f31c-4c27-a8d5-0649df16995d,,;7bd69a21-e7f9-4c8b-aaf3-64ad999293b4,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "SpellFlags" "IsMelee;IsHarmful;IsDefaultWeaponAction"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "d8b20aa4-c6c5-443d-a559-0c9542edeec5"
+// data "TargetEffect" "e4ead9ba-cfda-4ec5-8fbd-5e7000420f69"
 
 new entry "Goon_Target_Slash_New_Offhand"
 type "SpellData"
@@ -250,6 +478,26 @@ data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquipped
 // ==================================== Piercing Strike ====================================
 
 // new entry "Target_PiercingThrust"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(GAPING_WOUND,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_PiercingThrust"
+// Piercing Strike
+// data "DisplayName" "h641c70b1g1555g4192gbdc1g5f8dbc5e4a60;2"
+// Deal regular damage and possibly inflict &lt;LSTag Type="Status" Tooltip="GAPING_WOUND"&gt;Gaping Wounds&lt;/LSTag&gt;, which cause extra damage on attacks.
+// data "Description" "ha5e12ff7ga87dg4777g8597g9825a26ef3f4;5"
+// Undead and Constructs can't receive Gaping Wounds.
+// data "ExtraDescription" "h26faaa62g9643g4466ga805g5a9e36096f14;2"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+// data "TooltipStatusApply" "ApplyStatus(GAPING_WOUND,100,2)"
+// data "CastSound" "Action_Cast_PiercingThrust"
+// data "TargetSound" "Action_Impact_PiercingThrust"
+// data "SpellAnimation" "2ba949b7-0329-4190-992c-11b0d29183c5,,;9583ecee-cf6c-4735-86db-7ebf1df15eae,,;de006e3f-70fb-4eb7-a98d-d845d15b20e8,,;50696db7-d931-4734-915d-32d038ba99a5,,;a0503ad0-c1b1-449c-b431-4ac6c39c58d7,,;c36ed247-2272-492b-99c2-2ca10b014670,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "c25d80c5-aaf3-4aba-bc1f-bb1c8534725e,,;45bcbbd4-f9ca-4b19-88c2-822c5e2b0d8b,,;466e7470-712f-4a67-8ef1-5908a20b0449,,;c1713221-163b-4bae-95de-e6681d665c76,,;dc83b386-41f5-43df-9649-788107052830,,;b63dee1e-08e1-4f7a-88ee-1e6baa38e0dd,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "82f51209-b58e-4d9c-a604-bd95838fd42d"
+// data "TargetEffect" "21b17422-2a0b-489e-bcc9-e3cb4e55f82b"
 
 new entry "Goon_Target_PiercingThrust_Offhand"
 type "SpellData"
@@ -267,15 +515,33 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Pommel Strike ====================================
-// Didn't change animations here
+// Didn't change animations here.
 
 new entry "Target_PommelStrike"
 type "SpellData"
 data "SpellType" "Target"
 // using "Target_AdvancedMeleeWeaponAction"
 using "Target_PommelStrike"
+// data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(DAZED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning)"
 // data "TargetConditions" "(Character() or Item()) and not Self() and not Dead() and not (not Player(context.Source) and HasStatus('DAZED'))"
 data "TargetConditions" "(Character() or Item()) and not Self() and not (not Player(context.Source) and HasStatus('DAZED'))"
+// data "Icon" "Action_PommelStrike"
+// Pommel Strike
+// data "DisplayName" "h2adff7cegc4b7g4b97g99c7g9f4db1340a9b;2"
+// Make a non-lethal attack against an enemy and possibly <LSTag Type="Status" Tooltip="DAZED">Daze</LSTag> them.
+// data "Description" "h23bf4b77ga9e3g4fe1ga439g0b3107cf8b2c;3"
+// data "TooltipDamageList" "DealDamage(1d4, Bludgeoning)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+// data "TooltipStatusApply" "ApplyStatus(DAZED, 100, 2)"
+// data "CastSound" "Action_Cast_PommelStrike"
+// data "TargetSound" "Action_Impact_PommelStrike"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "e4c33fe4-af36-47b7-9f61-51f2f6924210,,;9a52d1ad-09df-473a-bb0c-039b234a37af,,;962fa683-1f5e-46c0-8323-596af00d2954,,;ea68cfbb-960e-409f-a967-fdc27ba36378,,;6574bfb9-d601-4760-bd53-867747514006,,;66cf0be9-de93-4821-a755-32fdda2743e8,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "07fb29aa-cde0-41cc-8014-204f97eb8849,,;fe385f62-7e9b-4517-ac55-32e5fa3f2204,,;dd52220e-8435-41b3-b700-445a1c01e464,,;ff694201-8c8a-440f-99d4-d3e7abb71b49,,;25c8454a-5058-4605-a9f0-65988688eb56,,;35691af0-4345-4b6a-b4ef-ff982e6cc116,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "1fdde122-4f4b-4466-9c1c-4dd101d7101a"
+// data "TargetEffect" "7836deb8-6037-48d4-8404-6e7adb4274bc"
+// data "DamageType" "Bludgeoning"
 
 new entry "Goon_Target_PommelStrike_Offhand"
 type "SpellData"
@@ -290,6 +556,7 @@ data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquipped
 
 // ==================================== Prepare ====================================
 // Changes: The main weapon action now only buffs main hand weapon attacks.
+// Changes: Forced honour ruleset changes.
 // The custom offhand version only consumes 3m of movement speed for a theoretical scenario where someone is dual wielding weapons with Prepare and Prepare (Offhand), allowing both to be used in a turn with default movement speed of 9m.
 
 new entry "Shout_FullSwing"
@@ -298,29 +565,69 @@ data "SpellType" "Shout"
 using "Shout_FullSwing"
 // data "Cooldown" "OncePerShortRest"
 data "Cooldown" "OncePerCombat"
+// data "AIFlags" "CanNotUse"
+// data "SpellProperties" "ApplyStatus(FULL_SWING,100,1)"
+// data "TargetConditions" "Self()"
+// data "Icon" "Action_FullSwing"
+// Prepare
+// data "DisplayName" "hdaa552fdgfa13g49bdgbc02g2b63b4757bac;2"
 // Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal an additional [2] with your melee weapon this turn.
 // data "Description" "hec9b71f9g1faeg487fgaa2eg85b0b9444976;7"
 // Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal an additional [2] with your main hand melee weapon this turn.
 data "Description" "h08bcf205ge623g4d53g982cgaffb9817751e;1"
+// data "DescriptionParams" "Distance(6);DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "TooltipStatusApply" "ApplyStatus(FULL_SWING,100,1)"
+// data "CastSound" "Action_Cast_Surge"
+// data "TargetSound" "Action_Impact_Surge"
+// data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "Movement:6"
+// data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;d8b7f668-db2b-43b0-9707-5da2ed2cf27e,,;7521e279-1bb3-4105-b32d-8206234836a3,,;d172e037-7041-4352-9a20-5f4b185f9ef1,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "SpellFlags" "IsDefaultWeaponAction"
+// data "RequirementConditions" "CanAttack(context.Target) and not HasStatus('ENCUMBERED_LIGHT') and not HasStatus('ENCUMBERED_HEAVY') and not HasStatus('ENCUMBERED_MAX') and not Immobilized() and CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "c96318ca-93b5-470b-be9e-6a51c7a8ccf9"
 
 new entry "FULL_SWING"
 type "StatusData"
 data "StatusType" "BOOST"
 using "FULL_SWING"
+// Prepared
+// data "DisplayName" "hed41c98fgf1a2g43bcgaf56g463cbcc26da4;2"
 // Deals an additional [1] with melee attacks.
 // data "Description" "h2acaaedcg6333g4ff5g9dfag520ba5ad1fd1;4"
 // Deals an additional [1] with main hand melee attacks.
 data "Description" "he6838708g2ae8g48aeg83d6g53e606108898;1"
+// data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "Icon" "statIcons_FullSwing"
+// data "StackId" "FULLSWING"
+// data "TickType" "EndTurn"
+// data "Passives" "FullSwing_Passive"
+// data "StatusEffect" "321a8da6-6f2c-4798-bf0d-34c5562458c8"
 
 new entry "FullSwing_Passive"
 type "PassiveData"
 using "FullSwing_Passive"
+// Prepared
+// data "DisplayName" "h231bab7cg6576g4ff8g8b1bg6dd26756c296;2"
 // Deal an additional [1] with melee attacks.
 // data "Description" "h37f8464fg36e3g4fa3g927ag2e5995f28de6;1"
 // Deal an additional [1] with main hand melee attacks.
 data "Description" "h1984b3e7g92a6g4936gb4ceg0576d36c6b53;1"
+// data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "Icon" "unknown"
+// data "Properties" "IsHidden"
 // data "Boosts" "IF(IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
 data "Boosts" "IF(Attack(AttackType.MeleeWeaponAttack) and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
+// data "StatsFunctorContext" "OnAttack"
+// data "StatsFunctorContext" ""
+data "StatsFunctorContext" ""
+// data "Conditions" "(HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and IsMeleeAttack() and IsProficientWithEquippedWeapon() and not (IsCriticalMiss() or IsMiss())"
+// data "Conditions" ""
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType);"
+// data "StatsFunctors" ""
+data "StatsFunctors" ""
 
 // Custom offhand version
 new entry "Goon_Shout_FullSwing_Offhand"
@@ -356,7 +663,6 @@ using "FullSwing_Passive"
 data "DisplayName" "hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5;1"
 // Deal an additional [1] with off-hand melee attacks.
 data "Description" "h40c656acg09e5g48b3g84d1g05e61ec090c4;1"
-// data "Boosts" "IF(IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
 data "Boosts" "IF(Attack(AttackType.MeleeOffHandWeaponAttack) and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
 
 // ==================================== Rush Attack ====================================
@@ -369,8 +675,45 @@ data "SpellType" "Rush"
 using "Rush_SpringAttack"
 // data "Cooldown" "OncePerShortRest"
 data "Cooldown" "OncePerCombat"
+// data "TargetRadius" "9"
+// data "HitRadius" "1.5"
+// data "MovementSpeed" "40000"
+// data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+// data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Strength, ManeuverSaveDC())):ApplyStatus(OFF_BALANCED,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), Piercing);ExecuteWeaponFunctors(MainHand)"
 // data "TargetConditions" "(Character() and not Ally() and not Dead()) or Item()"
 data "TargetConditions" ""
+// data "Icon" "Action_Rush_New"
+// Rush Attack
+// data "DisplayName" "hb5df12c1gfa0ag4970ga525g0ea3925db6d9;2"
+// Charge forward and attack the first enemy in your way, possibly pushing them <LSTag Type="Status" Tooltip="OFF_BALANCED">Off Balance</LSTag>.
+// data "Description" "he15c60afgc19ag49a8g812bg9c0dc713a53e;3"
+// data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), Piercing)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Strength"
+// data "TooltipStatusApply" "ApplyStatus(OFF_BALANCED,100,2)"
+// data "TooltipPermanentWarnings" "aa8beb3b-9199-4b22-9f73-26e2ae0ab6af"
+// data "CastSound" "Action_Cast_SpringAttack"
+// data "PreviewCursor" "Melee"
+// data "CastTextEvent" "Cast"
+// data "Requirements" "!Immobile"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;7bfeb9dd-1348-45c7-bff9-ed42f8cd43a1,,;b780092c-cc12-43d5-b60e-acbac3fdceed,,;abbeb7de-2128-4b16-95e5-7b9d7b1af2f9,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "WeaponTypes" "Melee"
+// data "SpellFlags" "IsHarmful;IsDefaultWeaponAction"
+// data "SpellAnimationIntentType" "Aggressive"
+// data "RechargeValues" "4-6"
+// data "VerbalIntent" "Damage"
+// data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "4d97dc4c-0b6f-4c87-a65a-6e6f08c186b9"
+// data "TargetEffect" ""
+// data "HitEffect" "c3151383-86e9-4876-9e29-28256d6bed7d"
+// data "PreviewEffect" "1615a7f7-21d9-4dd0-849b-d3c79a57c5ff"
+// data "StopAtFirstContact" "0"
+// data "HitExtension" "1"
+// data "OnlyHit1Target" "1"
+// data "DamageType" "Piercing"
+// data "Sheathing" "Melee"
 data "CombatAIOverrideSpell" "Rush_SpringAttack_AI"
 
 new entry "Rush_SpringAttack_AI"
@@ -413,28 +756,42 @@ data "CombatAIOverrideSpell" ""
 new entry "Overwhelm"
 type "PassiveData"
 using "Overwhelm"
+// Tenacity
+// data "DisplayName" "h141b89fdgbd46g44a4g8b6fg39a9c72a3bed;2"
 // When you miss an attack, you deal [1] anyway.
 // data "Description" "hee4cc52cg793cg4dc6g81fbgead2a4da91b5;3"
 // When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.
 data "Description" "h3ff15630ga20cg4697gabaeg7909acd8b811;1"
 // data "DescriptionParams" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
 data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "TooltipUseCosts" "ReactionActionPoint:1"
+// data "Icon" "PassiveAction_Overwhelm"
+// data "Boosts" "UnlockInterrupt(Interrupt_Overwhelm)"
 
 new entry "Interrupt_Overwhelm"
 type "InterruptData"
 using "Interrupt_Overwhelm"
+// Tenacity
+// data "DisplayName" "h3c2d0bd7g2584g4e75gb23bg25ab7871d445;1"
 // When you miss an attack, deal [1] anyway.
 // data "Description" "h26f3759bg82c2g4f58g915fg893ad148c5f1;1"
 // When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.
 data "Description" "h3ff15630ga20cg4697gabaeg7909acd8b811;1"
 // data "DescriptionParams" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
 data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "Icon" "PassiveAction_Overwhelm"
+// data "InterruptContext" "OnCastHit"
+// data "InterruptContextScope" "Self"
+// data "Container" "YesNoDecision"
 // data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
 data "Conditions" "(Player(context.Observer) or not HasStatus('SG_Invisible',context.Observer)) and Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsAttackType(AttackType.MeleeWeaponAttack) and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
 // data "Properties" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
 data "Properties" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "Cost" "ReactionActionPoint:1"
+// data "InterruptDefaultValue" "Ask;Enabled"
 // data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
 data "EnableCondition" "not HasStatus('SG_Polymorph') or Goon_IsUnrestrictedPolymorphStatus() or (Tagged('MYRMIDON_AIR'))"
+// data "EnableContext" "OnStatusApplied;OnStatusRemoved"
 data "InterruptFlags" "InterruptWhileInvisible"
 
 // Custom offhand version
@@ -456,7 +813,7 @@ data "DisplayName" "h3a82ba6cgea61g4c98g8abcg07ef3cd2b315;1"
 // When you miss an offhand weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.
 data "Description" "h1110423cg3acfg4207ga238ga0770520477f;1"
 data "DescriptionParams" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
-data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsAttackType(AttackType.MeleeOffHandWeaponAttack) and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
+data "Conditions" "(Player(context.Observer) or not HasStatus('SG_Invisible',context.Observer)) and Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsAttackType(AttackType.MeleeOffHandWeaponAttack) and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
 // data "Properties" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
 data "Properties" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
 
@@ -515,8 +872,32 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Weakening Strike ====================================
+// Bug Fix: Attacking a target that is not eligible for being Knocked Out no longer does magical damage.
 
-// new entry "Target_HinderingSmash"
+new entry "Target_HinderingSmash"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+using "Target_HinderingSmash"
+// data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(HINDERED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT') ):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(HINDERED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT') ):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType, Nonmagical);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_HinderingStrike"
+// Weakening Strike
+// data "DisplayName" "h66666332g2913g4a6dga54ege0fe75d293da;2"
+// This non-lethal attack possibly inflicts <LSTag Type="Status" Tooltip="HINDERED">Weak Grip</LSTag>, hindering the target's attacks.
+// data "Description" "h025b9a3cg7e71g4562gb9d2g24307dbbf77e;5"
+// Creatures without weapons can't have Weak Grip.
+// data "ExtraDescription" "h4d8dfed7g15b4g4c2cg819bg5be9ffed4b3b;2"
+// data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType);"
+// data "TooltipAttackSave" "MeleeWeaponAttack; Strength"
+// data "TooltipStatusApply" "ApplyStatus(HINDERED,100,2)"
+// data "CastSound" "Action_Cast_HinderingStrike"
+// data "TargetSound" "Action_Impact_HinderingStrike"
+// data "SpellAnimation" "5dbfc67e-a1f4-4a91-b398-4df1ad989c49,,;6f957f78-322e-465f-b314-27299a98add7,,;63c0501c-14aa-467c-8980-45ed023ab15d,,;e6af1757-da0b-4640-8ce5-ea559816d2b0,,;08e862c4-75d3-489d-bdb2-b2f95031373e,,;3ed0eebd-86d0-4902-bcea-e0b039e9ad1f,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "b6a6bde4-f4f3-4f10-bd8b-e642a8da4aa9,,;550c6598-8929-4071-aced-c12f5c9ad8aa,,;da4fb3e1-c9e0-4d16-ba92-aca8def437b3,,;be687d06-cb06-4fca-b977-bd2746cacc91,,;12773179-f31c-4c27-a8d5-0649df16995d,,;7bd69a21-e7f9-4c8b-aaf3-64ad999293b4,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
+// data "CastEffect" "3aa0619e-f7a4-4d11-bb12-bc89297e5eb8"
+// data "TargetEffect" "57658fab-88cf-4de8-ad47-ff2aac92a78b"
 
 new entry "Goon_Target_HinderingSmash_Offhand"
 type "SpellData"
@@ -526,7 +907,7 @@ using "Target_HinderingSmash"
 data "DisplayName" "h028fa086g4c49g4408ga471g456a695559df;1"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(HINDERED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(HINDERED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType, Nonmagical);ExecuteWeaponFunctors(OffHand)"
 data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);"
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
@@ -544,6 +925,37 @@ using "Shout_MAG_WhirlwindAttack"
 data "Cooldown" "OncePerCombat"
 // data "SpellFlags" "IsMelee;IsHarmful;IsDefaultWeaponAction"
 // data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+
+// new entry "Shout_Whirlwind"
+// type "SpellData"
+// data "SpellType" "Shout"
+// data "TargetCeiling" "0"
+// data "TargetFloor" "0.25"
+// data "AreaRadius" "2"
+// data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+// data "SpellSuccess" "DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+// data "TargetConditions" "Enemy() or Item()"
+// data "Icon" "Action_Multiattack_WhirlwindAttack"
+// Whirlwind Attack
+// data "DisplayName" "ha320b97dg0f62g46a8gbf6bg983046bdc3e1;2"
+// Strike out at all nearby foes, making separate <LSTag Tooltip="AttackRoll">attack rolls</LSTag> against each target. 
+// data "Description" "h06746addg056dg43f1gada6g851e17ef5b22;5"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)"
+// data "TooltipAttackSave" "Attack"
+// data "PrepareSound" "Action_Prepare_Ranger_UmbralCloak"
+// data "PrepareLoopSound" "Action_Loop_Ranger_UmbralCloak"
+// data "CastSound" "Action_Cast_Ranger_MultiattackWhirlwindAttack"
+// data "PreviewCursor" "Melee"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;,,;bb6068f0-9e3b-4594-82fc-674f017222b3,,;d601dd48-3c70-4440-b272-1db56f735735,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "WeaponTypes" "Melee"
+// data "SpellFlags" "IsMelee;IsHarmful"
+// data "SpellAnimationIntentType" "Aggressive"
+// data "PrepareEffect" "425a1829-ba28-427f-a0e3-933ae51ac471"
+// data "CastEffect" "6c2d927f-1ddf-4048-988e-a84401528812"
+// data "TargetEffect" "62ff00e8-bfd5-4a06-97e7-c1dcf0744eb6"
+// data "Sheathing" "Melee"
 
 new entry "Goon_Shout_MAG_WhirlwindAttack_Offhand"
 type "SpellData"

@@ -112,7 +112,8 @@
 					<attribute id="PhysicsTemplate" type="FixedString" value="653a28d0-111c-be3d-78d0-3a21f5ed6988" />
 					<attribute id="ReadinessFlags" type="uint32" value="16" />
 					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurSickle" />
-					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="hee463fd8g6dedg4d6aga45cgf81509b49ca8" version="1" />-->
+					<!-- Mechanical description moved to a passive. -->
+					<!-- <attribute id="TechnicalDescription" type="TranslatedString" handle="hee463fd8g6dedg4d6aga45cgf81509b49ca8" version="1" /> -->
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="VisualTemplate" type="FixedString" value="95eff74b-1dc2-bbd4-85d3-ba2a0c4ed2e6" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144537400540921856" />

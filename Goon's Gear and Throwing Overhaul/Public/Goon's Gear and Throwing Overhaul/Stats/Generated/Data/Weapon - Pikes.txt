@@ -116,7 +116,8 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== The Impaler (Inaccessible/Cut content) ====================================
 // Bug Fix: Break the Unbroken's 1d10 Piercing damage applies when thrown.
-// Changes: Forcing Honour ruleset changes to DRS.
+// Changes: Forced Honour ruleset changes.
+// TODO: Throwing support.
 
 new entry "MAG_TheImpaler_Pike"
 type "Weapon"
@@ -125,10 +126,17 @@ using "MAG_TheImpaler_Pike"
 // data "RootTemplate" "53023726-12bd-4871-805a-66744321dfdb"
 // data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
 // data "Rarity" "VeryRare"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasMaxHPWithoutTemporaryHP(context.Target)):WeaponDamage(1d10, Piercing)"
 data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasMaxHPWithoutTemporaryHP(context.Target)):WeaponDamage(1d10, Piercing)"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Shout_Steady);UnlockSpell(Target_MAG_WeaponAction_Bloodrend)"
 // data "PassivesOnEquip" "MAG_ImpalerDamageBonus_Passive;MAG_ImpalerTempHP_Passive"
 // data "Unique" "1"
+
+new entry "GOON_THEIMPALER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "MAG_ImpalerDamageBonus_Passive"
 type "PassiveData"
@@ -137,13 +145,22 @@ using "MAG_ImpalerDamageBonus_Passive"
 // data "DescriptionParams" "DealDamage(1d10,Piercing)"
 // data "TooltipConditionalDamage" "DealDamage(1d10,Piercing)"
 // data "StatsFunctorContext" "OnAttack"
+// data "StatsFunctorContext" ""
 data "StatsFunctorContext" ""
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and HasMaxHP() and IsAttack() and not IsMiss()"
+// data "Conditions" ""
 data "Conditions" ""
 // data "StatsFunctors" "DealDamage(1d10,Piercing)"
+// data "StatsFunctors" ""
 data "StatsFunctors" ""
 
-new entry "GOON_THEIMPALER_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "MAG_ImpalerTempHP_Passive"
+// type "PassiveData"
+// Death Drinker
+// data "DisplayName" "hbd8d961agb45bg4299gac7fg348e75c17c72;1"
+// When you reduce a target to 0 &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, you gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.
+// data "Description" "hdea5e00eg55ffg49dbg9e22g7cdedd89af8e;1"
+// data "DescriptionParams" "RegainHitPoints(2d10)"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "Enemy() and AttackedWithPassiveSourceWeapon() and IsKillingBlow()"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_THE_IMPALER_TEMPORARY_HP, 100, -1)"

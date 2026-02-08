@@ -348,6 +348,11 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // Bug Fix: The Infernal Sight passive now allows the wearer to see through darkness.
 // Bug Fix: The Infernal Sight passive now provides light cone VFX the same as Darkvision from other sources.
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
+// Bug Fix: Immolating Gaze now takes into account creatures with Advantage or Disdvantage on Saving Throws against being Frightened.
+// Bug Fix: Immolating Gaze now deals 4d8 Fire damage to a Burning target instead of 2d8.
+// Bug Fix: Immolating Gaze's 2d8 Fire damage dealt to targets that are not Burning is now magical damage.
+// Bug Fix: Immolating Gaze now checks for more burning conditions, instead of just Burning itself.
+// Bug Fix: Immolating Gaze now displays the conditional 2d8 Fire damage in its tooltip damage.
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
 // Note: "IgnoreSurfaceCover(SurfaceFogCloud)" is not matching with the description.
@@ -367,6 +372,11 @@ data "PassivesOnEquip" "MAG_Infernal_Metal_Helmet_InfernalSight_Passive;MAG_Magi
 // data "Proficiency Group" ""
 data "Proficiency Group" "HeavyArmor"
 
+new entry "GOON_HELLDUSKHELMET_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "MAG_Infernal_Metal_Helmet_InfernalSight_Passive"
 type "PassiveData"
 using "MAG_Infernal_Metal_Helmet_InfernalSight_Passive"
@@ -379,10 +389,46 @@ data "Properties" "Highlighted"
 // data "Boosts" "DarkvisionRangeMin(12);ActiveCharacterLight(e278f6a0-26d7-49be-b11a-9b84bc313c3c);StatusImmunity(SG_Blinded)"
 data "Boosts" "DarkvisionRangeMin(12);ActiveCharacterLight(051648e6-f05a-e41f-e398-ffd5cd148989);StatusImmunity(SG_Blinded);IgnoreSurfaceCover(SurfaceDarknessCloud)"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Target_MAG_Legendary_ImmolatingGaze"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_Legendary_ImmolatingGaze"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "TargetRadius" "9"
+// data "SpellRoll" "not SavingThrow(Ability.Intelligence, SourceSpellDC())"
+data "SpellRoll" "not SavingThrow(Ability.Intelligence, SourceSpellDC(), AdvantageOnFrightened(), DisadvantageOnFrightened())"
+// data "SpellSuccess" "ApplyStatus(FEARED,100, 3);IF(not HasStatus('BURNING')):DealDamage(2d8, Fire);IF(HasStatus('BURNING')):DealDamage(2d8, Fire,Magical)"
+data "SpellSuccess" "ApplyStatus(FEARED,100, 3);IF(not HasStatus('SG_Burning')):DealDamage(2d8, Fire,Magical);IF(HasStatus('SG_Burning')):DealDamage(4d8, Fire,Magical)"
+// data "SpellFail" "IF(not HasStatus('BURNING')):DealDamage((2d8)/2, Fire);IF(HasStatus('BURNING')):DealDamage((4d8)/2, Fire,Magical)"
+data "SpellFail" "IF(not HasStatus('SG_Burning')):DealDamage((2d8)/2, Fire,Magical);IF(HasStatus('SG_Burning')):DealDamage((4d8)/2, Fire,Magical)"
+// data "TargetConditions" "Character() and not Self() and not Dead()"
+// data "Icon" "Action_Mag_ImmolatingGaze"
+// Immolating Gaze
+// data "DisplayName" "ha1155596g4dd8g4062gbb13gd0c711e1c387;3"
+// Sear and &lt;LSTag Type="Status" Tooltip="FEARED"&gt;Frighten&lt;/LSTag&gt; a target with nothing but your glower.
+// data "Description" "ha5ab9145gc440g4169gab3cgb650e6e956ee;5"
+// data "DescriptionParams" "DealDamage(2d8, Fire)"
+// You deal an additional [1] against &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; creatures.
+// data "ExtraDescription" "h4c7434a3g5ae9g451fgbe6eg945a455a44c6;1"
+// data "ExtraDescriptionParams" "DealDamage(2d8, Fire)"
+// data "TooltipDamageList" "DealDamage(2d8, Fire)"
+data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
+// data "TooltipAttackSave" "Intelligence"
+// data "TooltipStatusApply" "ApplyStatus(FEARED,100,3)"
+// data "PrepareSound" "Action_Prepare_Item_HellCrawler"
+// data "PrepareLoopSound" "Action_Loop_Item_HellCrawler"
+// data "CastSound" "Action_Cast_Item_ImmolatingGaze"
+// data "TargetSound" "Action_Impact_Item_ImmolatingGaze"
+// data "CastTextEvent" "Cast"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;d2c70def-10ce-46a8-9850-71377892be3f,,;20ac3c32-b461-4f3b-ba30-328e16321436,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+// data "VerbalIntent" "Damage"
+// data "SpellFlags" "HasSomaticComponent;IsHarmful"
+// data "PrepareEffect" "7efd7809-4a4a-4689-9ecb-65e49518a79d"
+// data "CastEffect" "ccbb436e-cc35-41e6-9076-99534f7b4d81"
+// data "TargetEffect" "32111bfc-925e-4e95-9f31-cddc211619fd"
+// data "BeamEffect" "a76e1745-fca0-46fd-b93b-ac4abc37a598"
 
 // ==================================== Hood of the Weave ====================================
 // TODO: Something/anything.

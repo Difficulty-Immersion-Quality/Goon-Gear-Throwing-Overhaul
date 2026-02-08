@@ -227,10 +227,10 @@ new entry "GOON_HAROLDISHDOOM_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 // Haroldish Doom
-// data "DisplayName" "h28dd03c9ge7edg4a76g8723ga7461b2190df;2"
+data "DisplayName" "h28dd03c9ge7edg4a76g8723ga7461b2190df;2"
 // &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; targets for [1] turns, unless they succeed a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
 data "Description" "hdbfec5ddg95ddg4d42gb3e6g81485251e3b0;1"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "2"
 data "TooltipSave" "Charisma"
 data "OnApplyRoll" "not SavingThrow(Ability.Charisma,ManeuverSaveDC())"

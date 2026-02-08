@@ -237,7 +237,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "hc85d5e63g2483g46begada9gebdd99d02c0a;1"
 // Whenever this weapon lands a critical hit, both target and attacker have to succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, or be affected by &lt;LSTag Type="Status" Tooltip="HIDEOUS_LAUGHTER"&gt;Hideous Laughter&lt;/LSTag&gt; for [1] turns.
 data "Description" "h2ef43338g970ag42cfga983g22037d203ff2;1"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "2"
 data "TooltipSave" "Wisdom"
 data "OnApplyRoll" "Tagged('HUMANOID') and not SavingThrow(Ability.Wisdom, 17)"

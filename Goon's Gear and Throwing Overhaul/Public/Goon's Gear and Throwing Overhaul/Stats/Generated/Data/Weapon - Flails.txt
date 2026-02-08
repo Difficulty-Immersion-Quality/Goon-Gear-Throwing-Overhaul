@@ -260,7 +260,7 @@ data "DisplayName" "h114aac4dg8341g4b93gb7a1ge7e9345cd114;1"
 // Depending on what kind of damage this weapon does, it may also inflict: &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt; condition, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; condition [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
 data "Description" "hfb2ddac5g62b0g4163g9bc9g5ce124e96ceb;1"
 data "DescriptionParams" "2;1"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "RollDieAgainstDC(DiceType.d6,5)"
 data "OnApplySuccess" "IF(HasStatus('ACID')):SetStatusDuration(ACID,1,Add);IF(not HasStatus('ACID')):ApplyStatus(ACID,100,2)"
 

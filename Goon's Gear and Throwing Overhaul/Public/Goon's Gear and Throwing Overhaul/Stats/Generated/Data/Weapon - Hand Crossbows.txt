@@ -57,7 +57,8 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Firestoker ====================================
-// Changes: Forcing Honour ruleset changes to DRS. Additional 1d4 Piercing damage is now dealt when the target has one of many conditions or tags related to being on fire, instead of just Burning.
+// Bug Fix: Additional 1d4 Piercing damage is now dealt when the target has one of many conditions or tags related to being on fire, instead of just Burning.
+// Changes: Forced Honour ruleset changes.
 
 new entry "MAG_Fire_IncreasePiercingDamageToBurning_HandCrossbow"
 type "Weapon"

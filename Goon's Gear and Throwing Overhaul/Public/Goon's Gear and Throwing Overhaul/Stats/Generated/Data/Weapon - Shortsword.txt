@@ -67,24 +67,91 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Render of Mind and Body ====================================
-// TODO: Something/anything.
+// Changes: Forced Honour ruleset changes.
+// TODO: Throwing support.
 
-// weapon entry
+new entry "MAG_Blindside_Shortsword"
+type "Weapon"
+// using "WPN_Shortsword_1"
+using "MAG_Blindside_Shortsword"
+// data "RootTemplate" "f06c0554-bba8-4036-ac92-1b225a578f57"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(HasAdvantage() and not HasDisadvantage()):WeaponDamage(1d8, Psychic)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(HasAdvantage() and not HasDisadvantage()):WeaponDamage(1d8, Psychic)"
+// data "PassivesOnEquip" "MAG_Blindside_Shortsword_Passive"
+// data "ValueLevel" "1"
+// data "ValueLevel" "6"
+data "ValueLevel" "6"
+// data "ValueScale" "1"
+// data "ValueScale" "1.5"
+data "ValueScale" "1.5"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_RENDEROFMINDANDBODY_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Blindside_Shortsword_Passive"
+type "PassiveData"
+using "MAG_Blindside_Shortsword_Passive"
+// Psychic Steel Virtuoso 
+data "DisplayName" "h7c6ed618g4287g476ag98ccg7a085866a266;2"
+// When the wielder attacks with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, they deal an additional [1].
+data "Description" "h9dea8b17gc5bdg406bg955cg64f97c0f3679;2"
+data "DescriptionParams" "DealDamage(1d8, Psychic)"
+// data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctorContext" ""
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasAdvantage() and not HasDisadvantage()"
+// data "Conditions" ""
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d8, Psychic,Magical)"
+// data "StatsFunctors" ""
+data "StatsFunctors" ""
 
 // ==================================== Shortsword of First Blood ====================================
-// TODO: Something/anything.
+// Changes: Forced Honour ruleset changes.
+// TODO: Throwing support
 
-// weapon entry
+new entry "UND_Duergar_ShortswordOfFirstBlood"
+type "Weapon"
+// using "WPN_Shortsword_1"
+using "UND_Duergar_ShortswordOfFirstBlood"
+// data "RootTemplate" "1e172d76-3433-4ee7-ae1a-9e7d8ae0f12b"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "DefaultBoosts" "WeaponProperty(Magical);IF(HasMaxHPWithoutTemporaryHP(context.Target)):WeaponDamage(1d8, Piercing)"
+data "DefaultBoosts" "WeaponProperty(Magical);IF(HasMaxHPWithoutTemporaryHP(context.Target)):WeaponDamage(1d8, Piercing)"
+// data "PassivesOnEquip" "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_SHORTSWORDOFFIRSTBLOOD_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "UND_Duergar_ShortswordOfFirstBlood_Passive"
+type "PassiveData"
+using "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// Break the Unbroken
+// data "DisplayName" "h2961f1ecg362bg4945gb7a3g136a55dfc873;2"
+// Deals an additional [1] to targets that still have all their &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
+// data "Description" "he0491531g77dbg4a48g98e5gf9276ee9b0c3;2"
+// data "DescriptionParams" "DealDamage(1d8,Piercing)"
+// data "TooltipConditionalDamage" "DealDamage(1d8,Piercing)"
+// data "StatsFunctorContext" "OnAttack"
+// data "StatsFunctorContext" ""
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasMaxHP() and IsAttack() and not IsMiss()"
+// data "Conditions" ""
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d8,Piercing,Magical)"
+// data "StatsFunctors" ""
+data "StatsFunctors" ""
 
 // ==================================== Steelforged Sword ====================================
 // TODO: Something/anything.
@@ -99,21 +166,22 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== Trepan & Trepan +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
+// Bug Fix: Added missing Honour ruleset bools to Trephination to prevent damage riders acting as a damage rider source.
 // Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
-// Doesn't need throwing support.
+// Note: Doesn't need throwing support.
 
 new entry "WPN_Trepan"
 type "Weapon"
 // using "WPN_Shortsword"
 using "WPN_Trepan"
 // data "RootTemplate" "764dcd70-9206-457c-9366-7aa9e3370514"
-data "DefaultBoosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
 data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse)"
 // data "BoostsOnEquipMainHand" ""
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_OpeningAttack);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_OpeningAttack_Offhand);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 
 new entry "MAG_Surgeon_Trepan"
 type "Weapon"
@@ -121,9 +189,7 @@ type "Weapon"
 using "MAG_Surgeon_Trepan"
 // data "RootTemplate" "8fee8eb3-f16b-4b9a-85a0-d46a9cd4937e"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse);"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Trepan_Nurse)"
 // data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_OpeningAttack); IF (Tagged('PLAYABLE')):UnlockSpell(Target_PiercingThrust); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Trepan)"
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_OpeningAttack);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Trepan)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
@@ -136,13 +202,30 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "Target_MAG_WeaponAction_Trepan"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_PiercingThrust"
+using "Target_MAG_WeaponAction_Trepan"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6,Necrotic,,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_MagicItem_PierceTheWeak"
+// Trephination
+// data "DisplayName" "hc35c4b55gc2d1g458cg96f7gf29d4c8564a0;2"
+// Make a burr hole into an enemy's skull and possibly knock them &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
+// data "Description" "h76b4b7a9gec84g4f07ga0e1g31c6397f7275;2"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(PRONE,100,2)"
+
 new entry "Goon_Target_MAG_WeaponAction_Trepan_Offhand"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MAG_WeaponAction_Trepan"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(PRONE,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6,Necrotic,,,0,,true,false);ExecuteWeaponFunctors(OffHand)"
 // Trephination (Offhand)
 data "DisplayName" "hd01cd495gc084g4630gb8bdg0f45937bebff;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
@@ -247,9 +330,12 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Crimson Mischief ====================================
 // Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
+// Bug Fix: Restored the missing Prey Upon the Weak icon.
+// Bug Fix: Crimson Weapon no longer applies to ranged offhand attacks.
+// Changes: Forced Honour ruleset changes.
 // Changes: Redvein Savagery description updated for clarity.
-// TODO: Adjust "MAG_TheCrimson_TwoWeapon_Passive" with custom functionality for stacking with the "TwoWeaponFighting" function, while also removing the damage from ranged weapon offhand.
-// TODO: Throwing support!!!
+// TODO: Adjust "MAG_TheCrimson_TwoWeapon_Passive" to have it stack with Two Weapon Fighting?
+// TODO: Throwing support.
 
 new entry "MAG_TheCrimson_Shortsword"
 type "Weapon"
@@ -272,7 +358,17 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// Force Honour rules, removing DRS
+new entry "MAG_WYR_Orin_Bhaalist_Dagger_Passive"
+type "PassiveData"
+using "MAG_WYR_Orin_Bhaalist_Dagger_Passive"
+// Prey Upon the Weak
+// data "DisplayName" "hcaabd317g2323g4756gb131g5d63b7eccc53;4"
+// This weapon deals an additional [1] against targets with [2]% of their &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or fewer.
+// data "Description" "hce1e7d3eg549cg4ef8gae48g3f97a7285c3b;5"
+// data "DescriptionParams" "DealDamage(1d4, Piercing);50"
+// data "TooltipConditionalDamage" "DealDamage(1d4, Piercing)"
+data "Icon" "Action_Monster_ReaperOBhaal_MurderPrayer"
+
 new entry "MAG_TheCrimson_Vicious_Passive"
 type "PassiveData"
 using "MAG_TheCrimson_Vicious_Passive"
@@ -280,15 +376,29 @@ using "MAG_TheCrimson_Vicious_Passive"
 // data "DisplayName" "h73e1c4edgce5cg4baagbbb2g76f7ff37c688;1"
 // When you make an attack with <LSTag Tooltip="Advantage">Advantage</LSTag>, the target takes an additional 7 Piercing damage.
 // data "Description" "h772b28f0gd5c3g495dg8026g116269f94870;1"
-// Attacks with this weapon deal an additional [1], if you attacked  with&lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
+// Attacks with this weapon deal an additional [1], if you attacked with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
 data "Description" "hc5b54a05g5b17g4ad2g9774g69f540a70f3a;1"
 data "DescriptionParams" "DealDamage(7,Piercing)"
 // data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctorContext" ""
 data "StatsFunctorContext" ""
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and HasAdvantage() and not HasDisadvantage()"
+// data "Conditions" ""
 data "Conditions" ""
 // data "StatsFunctors" "DealDamage(7, Piercing,Magical)"
+// data "StatsFunctors" ""
 data "StatsFunctors" ""
+
+new entry "MAG_TheCrimson_TwoWeapon_Passive"
+type "PassiveData"
+// using "FightingStyle_TwoWeaponFighting"
+using "MAG_TheCrimson_TwoWeapon_Passive"
+// Crimson Weapon
+// data "DisplayName" "hc0b63acagdc17g4fe2gb59bg36692bf4fe2f;1"
+// data "Icon" ""
+// data "Properties" "Highlighted"
+// data "Boosts" "TwoWeaponFighting()"
+data "Boosts" "IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):TwoWeaponFighting()"
 
 // ==================================== Executioner Sword ====================================
 // TODO: Something/anything.

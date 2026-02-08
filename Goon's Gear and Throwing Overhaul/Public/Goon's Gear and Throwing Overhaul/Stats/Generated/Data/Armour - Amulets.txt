@@ -606,14 +606,35 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Amulet of Bhaal ====================================
-// TODO: Something/anything.
+// Bug Fix: First Blood now functions with the honour ruleset.
 
-// gear entry
+// new entry "QUEST_LOW_Bhaal_Amulet"
+// type "Armor"
+// using "ARM_Amulet"
+// data "RootTemplate" "16a632e2-45b1-4ff1-8250-513eb271abea"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "LOW_BhaalAmulet_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_AMULETOFBHAAL_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "LOW_BhaalAmulet_Passive"
+type "PassiveData"
+// using "UND_Duergar_ShortswordOfFirstBlood_Passive"
+using "LOW_BhaalAmulet_Passive"
+// First Blood
+// data "DisplayName" "hdadaf99eg1673g4539gad27gf3dc1f79cec3;1"
+// On a hit, inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; upon targets that have maximum &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
+// data "Description" "h08f15931gd582g4f59g895fgdc8dc638977b;3"
+// data "DescriptionParams" ""
+// data "TooltipConditionalDamage" ""
+// data "Conditions" "HasMaxHP() and IsAttack() and not IsMiss()"
+// data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2)"
+data "StatsFunctorContext" "OnAttack"
 
 // ==================================== Bloody Amulet ====================================
 // TODO: Something/anything.

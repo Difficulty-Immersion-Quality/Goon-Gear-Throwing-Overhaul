@@ -176,11 +176,6 @@ data "OnApplySuccess" "ApplyStatus(POISONED, 100, 2)"
 
 // ==================================== The Sparky Points & The Jolt Shooter ====================================
 
-new entry "GOON_CHARGEDLIGHTNING_WEAPON_THROW_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
 new entry "GOON_CHARGEDLIGHTNING_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -274,3 +269,31 @@ data "EnableCondition" "(not HasStatus('SG_Polymorph') or Goon_IsNonHostilePolym
 // data "Cooldown" "OncePerTurn"
 // data "InterruptDefaultValue" "Enabled;Ask"
 data "InterruptFlags" "InterruptWhileInvisible"
+
+// ==================================== Nurse weapons ====================================
+// Bug Fix: Hidden Infected Strikes passive dealing the 1d6 Necrotic damage is now functional for the nurses, instead of functional against the nurses.
+// Note: Previously put the boost in the weapon entries but if this exists with a fancy name it's better.
+
+new entry "TWN_Hospital_Nurse_WeaponBoosts"
+type "PassiveData"
+using "TWN_Hospital_Nurse_WeaponBoosts"
+// Infected Strikes
+// data "DisplayName" "h5fe165dcg60c1g4c4dga568ga8f18534e6cc;2"
+// data "Icon" "GenericIcon_DamageType_Necrotic"
+// data "Properties" "IsHidden"
+// data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE');"
+data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)"
+// data "Boosts" "CharacterWeaponDamage(1d6, Necrotic);"
+
+// ==================================== Blind Immunity ====================================
+// Bug Fix: Blind Immunity no longer allows the entity to ignore Darkness clouds, being Immune to Blinded and having X-ray vision are not the same.
+
+new entry "MAG_Shadow_BlindImmunity_Ring_Passive"
+type "PassiveData"
+using "MAG_Shadow_BlindImmunity_Ring_Passive"
+// Blind Immunity
+// data "DisplayName" "hf1d1e91dg0542g40a6g93e7ge0d5e31296c7;2"
+// The wearer cannot be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.
+// data "Description" "hb00b5a9bg7c63g443fga699gb3341d39c41d;4"
+// data "Boosts" "StatusImmunity(SG_Blinded);IgnoreSurfaceCover(SurfaceDarknessCloud)"
+data "Boosts" "StatusImmunity(SG_Blinded)"

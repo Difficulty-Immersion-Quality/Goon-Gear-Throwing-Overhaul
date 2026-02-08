@@ -99,8 +99,10 @@ data "Boosts" "TemporaryHP(max(1,Cause.CharismaModifier))"
 // ==================================== Bonesaw & Bonesaw +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
+// Bug Fix: Added missing Honour ruleset bools to Incise Ligaments to prevent damage riders acting as a damage rider source.
 // Changes: Turned them from Longswords into Scimitars. It matches the model a lot better, the magical variant already has Scimitar weapon actions too.
 // Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
+// Note: Doesn't need throwing support.
 // Note: Hard overwrites of the entries instead of self-inheritence ideal for swapping to Scimitar.
 // TODO: Apply conditions for offhand weapon actions.
 // TODO: Root template inheritence changes to Scimitar.
@@ -110,18 +112,13 @@ type "Weapon"
 // using "WPN_Longsword"
 using "WPN_Scimitar"
 data "RootTemplate" "b9739be6-7c2b-4fe9-be36-13ff1094e79c"
-data "DefaultBoosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Bonesaw_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
 data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Bonesaw_Nurse)"
 // data "BoostsOnEquipMainHand" ""
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_OpeningAttack);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_Slash_New)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand)"
 data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_OpeningAttack_Offhand);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_Slash_New_Offhand)"
-
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 
 new entry "MAG_Surgeon_Bonesaw"
 type "Weapon"
@@ -130,9 +127,7 @@ using "WPN_Scimitar_1"
 data "RootTemplate" "81177d6e-6761-4f8e-9bbe-1e291dd18664"
 data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Bonesaw_Nurse);"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Bonesaw_Nurse)"
 // data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_OpeningAttack); IF (Tagged('PLAYABLE')):UnlockSpell(Target_Slash_New); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Bonesaw)"
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_OpeningAttack);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_Slash_New);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Bonesaw)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand)"
@@ -140,10 +135,27 @@ data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(G
 data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_BONESAW_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Target_MAG_WeaponAction_Bonesaw"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_Slash_New"
+using "Target_MAG_WeaponAction_Bonesaw"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(SLOW,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(SLOW,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_PinDown"
+// Incise Ligaments
+// data "DisplayName" "h4610db7bg2ca7g47fag89c1g46ba6eca395d;2"
+// Grind your saw's blackest teeth into an enemy's calves and possibly &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slow&lt;/LSTag&gt; them.
+// data "Description" "h4d70e30eg02a9g4f34g9921ga2d990ab54ce;3"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(SLOW,100,2)"
 
 new entry "Goon_Target_MAG_WeaponAction_Bonesaw_Offhand"
 type "SpellData"
@@ -151,7 +163,7 @@ data "SpellType" "Target"
 using "Target_MAG_WeaponAction_Bonesaw"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(SLOW,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(SLOW,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(OffHand)"
 // Incise Ligaments (Offhand)
 data "DisplayName" "hf40bb9f2g2211g47a5gb358g8e55abda13fc;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"

@@ -16,9 +16,8 @@
 					<attribute id="ParentTemplateId" type="FixedString" value="ecfb9f69-5bc3-402e-acd8-c91d57e28403" />
 					<attribute id="PhysicsTemplate" type="FixedString" value="74eb44d4-f1a9-c08c-fd8a-4cc98285f2c2" />
 					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurGreatsword" />
-					<!-- Bug Fix: Description is now accurate and stats a saving throw. -->
-					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="h17383768g7570g4082g80a0g075a77c7661b" version="1" />-->
-					<attribute id="TechnicalDescription" type="TranslatedString" handle="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1" />
+					<!-- Mechanical description moved to a passive. -->
+					<!-- <attribute id="TechnicalDescription" type="TranslatedString" handle="h17383768g7570g4082g80a0g075a77c7661b" version="1" /> -->
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="VisualTemplate" type="FixedString" value="7884a137-2365-2bee-c218-e75c88c7e28b" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144537400540921856" />

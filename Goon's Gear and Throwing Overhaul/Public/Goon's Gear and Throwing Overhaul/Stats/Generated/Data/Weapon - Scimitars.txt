@@ -74,7 +74,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "hbc228ac0gd7e8g4338g885eg563538390696;2"
 // Deals an additional [1].&lt;br&gt;&lt;br&gt;On a hit, the target starts &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
 data "Description" "h8cf8a632g4752g4594ga41cg1afad576ba9a;1"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "DealDamage(1d4,Fire)"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 13)"
 data "OnApplySuccess" "ApplyStatus(BURNING, 100, 2)"

@@ -42,20 +42,22 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 // ==================================== Artificial Leech & Artificial Leech +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
+// Bug Fix: Added missing Honour ruleset bools to Bloodletting to prevent damage riders acting as a damage rider source.
 // Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
+// Note: Doesn't need throwing support.
 
 new entry "WPN_Leech"
 type "Weapon"
 // using "WPN_Dagger"
 using "WPN_Leech"
 // data "RootTemplate" "81158eec-1fd0-4fd7-8b02-ce7f5e45f8b5"
-data "DefaultBoosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
 data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse)"
 // data "BoostsOnEquipMainHand" ""
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 
 new entry "MAG_Surgeon_Leech"
 type "Weapon"
@@ -63,10 +65,7 @@ type "Weapon"
 using "MAG_Surgeon_Leech"
 // data "RootTemplate" "a27e3e3a-ef55-4733-9655-29c7913d26d5"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
-// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
 // data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse);"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Leech_Nurse)"
 // data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_PiercingThrust); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Leech)"
 data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Leech)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
@@ -79,69 +78,32 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "Target_MAG_WeaponAction_Leech"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_PiercingThrust"
+using "Target_MAG_WeaponAction_Leech"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_Slash"
+// Bloodletting
+// data "DisplayName" "h8fd0e6fegc5d8g4833gadb4g0792faaa5b49;2"
+// Pierce an enemy's flesh and possibly make them &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleed&lt;/LSTag&gt;.
+// data "Description" "ha05b83bfg9e99g4fb1g8825ga2998b322c65;2"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(BLEEDING,100,2)"
+
 new entry "Goon_Target_MAG_WeaponAction_Leech_Offhand"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MAG_WeaponAction_Leech"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(OffHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(OffHand)"
 // Bloodletting (Offhand)
 data "DisplayName" "h6a9baabfg5744g4185g8084ga64e27aad1b8;1"
-data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
-data "CastTextEvent" "CastOffhand"
-data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
-data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
-
-// ==================================== Syringe & Syringe +1 ====================================
-// Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
-// Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
-// Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
-
-new entry "WPN_Syringe"
-type "Weapon"
-// using "WPN_Dagger"
-using "WPN_Syringe"
-// data "RootTemplate" "75cea463-4395-4600-ad93-7017415b16e3"
-data "DefaultBoosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
-// data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse)"
-// data "BoostsOnEquipMainHand" ""
-data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust)"
-// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
-data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
-
-new entry "MAG_Surgeon_Syringe"
-type "Weapon"
-// using "WPN_Dagger_1"
-using "MAG_Surgeon_Syringe"
-// data "RootTemplate" "95c3af3c-83b9-4cc0-b633-1493b7daca4d"
-// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):WeaponDamage(1d6,Necrotic)"
-// data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse);"
-data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse)"
-// data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_PiercingThrust); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Syringe)"
-data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Syringe)"
-// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
-data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_MAG_WeaponAction_Syringe_Offhand)"
-// data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
-// data "Unique" "1"
-
-new entry "GOON_SYRINGEMAGICAL_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-new entry "Goon_Target_MAG_WeaponAction_Syringe_Offhand"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_MAG_WeaponAction_Syringe"
-data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
-data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(OffHand)"
-// Inject Nostrum (Offhand)
-data "DisplayName" "hacc2246cg8b83g4f68g9788g99629e13d9db;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
@@ -232,27 +194,233 @@ data "DisplayName" "hb035c3e1g199bg4175g9d5ag6c0652fc55b1;3"
 data "Description" "hf38c5a04g2bb3g4a65g9cbdg3ee366e57242;1"
 data "DescriptionParams" "3"
 data "TooltipSave" "Constitution"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "StackId" "PASSIVE_RUPTURING"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)"
 data "OnApplySuccess" "ApplyStatus(BARBED_ARROW, 100, 3)"
 
+// ==================================== Murderous Cut ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ritual Dagger ====================================
+// Bug Fix: The Pain Maiden's Blessing now applies Bless for the correct duration.
+// Bug Fix: Blood Sacrifice now creates an Unstable Blood surface instead of a regular Blood surface if the caster has the Unstable Blood passive.
+// TODO: Throwing support.
+
+// new entry "GOB_PainPriest_Dagger"
+// type "Weapon"
+// using "WPN_Dagger_1"
+// data "RootTemplate" "11aa209f-6e42-40bd-a12c-aa33445c21ea"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "ValueOverride" "320"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "Boosts" "UnlockSpell(Shout_GOB_PainPriest_DaggerSpell) "
+// data "PassivesOnEquip" "GOB_PainPriest_Dagger_Passive"
+// data "Unique" "1"
+
+new entry "GOON_RITUALDAGGER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "GOB_PainPriest_Dagger_Passive"
+type "PassiveData"
+using "GOB_PainPriest_Dagger_Passive"
+// The Pain Maiden's Blessing
+// data "DisplayName" "hd9721db9gf3a1g4b29g9667g02fea4f4b0f0;3"
+// After a successful attack with this dagger, the wielder receives a +1d4 bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; until the end of their next turn.
+// data "Description" "hee1dc4f7g0a8fg4c6bg890ag5d65995224ed;5"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
+data "StatsFunctors" "ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,2)"
+
+new entry "Shout_GOB_PainPriest_DaggerSpell"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_GOB_PainPriest_DaggerSpell"
+// data "SpellProperties" "GROUND:CreateSurface(1,-1,Blood);DealDamage(1d4,Slashing);ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
+data "SpellProperties" "GROUND:IF(not HasPassive('LOW_BloodMerchant_ExplosiveBlood',context.Source)):CreateSurface(1,-1,Blood);GROUND:IF(HasPassive('LOW_BloodMerchant_ExplosiveBlood',context.Source)):CreateSurface(1,-1,BloodExploding);DealDamage(1d4,Slashing);ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
+// data "TargetConditions" "Self()"
+// data "Icon" "Action_SacrificeToLoviatar"
+// Blood Sacrifice
+// data "DisplayName" "h8dd636c7g37a8g4d40gb0afga1722fbaa09c;2"
+// Pain is a path to power. Take [1] to receive a +[2] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h79bb4af0g3ca6g4817ga157g8679fde3dae8;4"
+// data "DescriptionParams" "DealDamage(1d4,Slashing);1d4"
+// data "TooltipStatusApply" "ApplyStatus(GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
+// data "CastSound" "CrSpell_Cast_BloodSacrifice"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;d8b7f668-db2b-43b0-9707-5da2ed2cf27e,,;7521e279-1bb3-4105-b32d-8206234836a3,,;d172e037-7041-4352-9a20-5f4b185f9ef1,,;,,;,,;,,;,,;,,"
+// data "VerbalIntent" "Buff"
+// data "SpellFlags" "Stealth;IgnoreSilence"
+// data "PrepareEffect" "e4abb54b-8d1a-4940-a6e0-71cd6a895831"
+// data "CastEffect" "c3c4ce67-c06b-42ef-84d6-d4f6eb205805"
+
+// ==================================== Ritual Dagger of Shar ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Syringe & Syringe +1 ====================================
+// Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
+// Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
+// Bug Fix: Added missing Honour ruleset bools to Inject Nostrum to prevent damage riders acting as a damage rider source.
+// Changes: Base main hand weapon actions added to the regular variant, with the same conditions as the magical variant.
+// Note: Doesn't need throwing support.
+
+new entry "WPN_Syringe"
+type "Weapon"
+// using "WPN_Dagger"
+using "WPN_Syringe"
+// data "RootTemplate" "75cea463-4395-4600-ad93-7017415b16e3"
+// data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse); IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):CharacterWeaponDamage(1d6,Necrotic)"
+data "Boosts" "IF(Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse)"
+// data "BoostsOnEquipMainHand" ""
+data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust)"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
+
+new entry "MAG_Surgeon_Syringe"
+type "Weapon"
+// using "WPN_Dagger_1"
+using "MAG_Surgeon_Syringe"
+// data "RootTemplate" "95c3af3c-83b9-4cc0-b633-1493b7daca4d"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Boosts" "IF (Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)):UnlockSpell(Target_SurgeryEnabler_Syringe_Nurse);"
+// data "BoostsOnEquipMainHand" "IF (Tagged('PLAYABLE')):UnlockSpell(Target_PiercingThrust); IF (Tagged('PLAYABLE')):UnlockSpell(Target_MAG_WeaponAction_Syringe)"
+data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_PiercingThrust);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Target_MAG_WeaponAction_Syringe)"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_MAG_WeaponAction_Syringe_Offhand)"
+// data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
+// data "Unique" "1"
+
+new entry "GOON_SYRINGEMAGICAL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Target_MAG_WeaponAction_Syringe"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_PiercingThrust"
+using "Target_MAG_WeaponAction_Syringe"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+// data "Icon" "Action_DippedPoison_Melee"
+// Inject Nostrum
+// data "DisplayName" "h72dda1d6g8db9g496dg86e5g227ac174216b;2"
+// Inject an enemy with the mysterious liquid in your syringe and possibly &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poison&lt;/LSTag&gt; them.
+// data "Description" "hfb6c91e4g3461g4dd2g8283g8887f17b1316;2"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(POISONED,100,2)"
+
+new entry "Goon_Target_MAG_WeaponAction_Syringe_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_WeaponAction_Syringe"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(POISONED,100,2);DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic,,,0,,true,false);ExecuteWeaponFunctors(OffHand)"
+// Inject Nostrum (Offhand)
+data "DisplayName" "hacc2246cg8b83g4f68g9788g99629e13d9db;1"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Necrotic)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Worgfang ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cold Snap ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dolor Amarus ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dread Iron Dagger ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gleamdance Dagger ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Sussur Dagger ====================================
+// Bug Fix: Sussur Silence functions when the weapon is thrown.
 // Bug Fix: Description is now accurate and states a Saving Throw.
+// Changes: The push Saving Throw is now a ManeuverSaveDC +2 instead of a fixed DC of 8.
 
 new entry "FOR_IncompleteMasterwork_SussurDagger"
 type "Weapon"
 // using "WPN_Dagger_1"
 using "FOR_IncompleteMasterwork_SussurDagger"
+// data "RootTemplate" "8733edb7-f04e-4b6d-ad48-7d49fb782bef"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ValueOverride" "80"
+// data "Rarity" "Rare"
 // data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
-data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" ""
+data "PassivesOnEquip" "Goon_Sussur_Silence_Passive"
+// data "Unique" "1"
 
 new entry "GOON_SUSSURDAGGER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Rhapsody ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -262,7 +430,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Stillmaker ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -272,47 +440,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// weapon entry
-
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// weapon entry
-
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// weapon entry
-
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// weapon entry
-
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== Blade of the First Blood ====================================
+// ==================================== Bloodthirst (Blade of the First Blood) ====================================
 
 // new entry "MAG_WYR_Orin_Bhaalist_Dagger"
 // type "Weapon"
@@ -368,3 +496,73 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "Description" "hb89feac4ga6b9g4139gaab8gdd531e28e52d;1"
 // data "Properties" "UseSpell(SWAP,Target_MAG_TheClover_TrueStrike_Riposte,true,true,true);ApplyStatus(OBSERVER_OBSERVER,INTERRUPT_RIPOSTE,100,0)"
 // data "Cost" "ReactionActionPoint:1"
+
+// ==================================== Arcane Absorption Dagger (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dagger of Shar (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Goblinbane Dagger (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Mind Sundering Dagger (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Promise (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Shar's Sting (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Vampiric Dagger (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

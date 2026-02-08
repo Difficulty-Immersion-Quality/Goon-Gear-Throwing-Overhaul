@@ -41,7 +41,8 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_Topple_Offhand)"
 
 // ==================================== Creation's Echo ====================================
 // Bug Fix: Damage resistances no longer share a stack with damage resistance elixirs.
-// Changes: Added +1 weapon enchantment. The weapon gain 1d4 additional damage matching the resistance gained by the wielder; works with throwing.
+// Changes: Added +1 weapon enchantment.
+// Changes: The weapon gain 1d4 additional damage matching the resistance gained by the wielder; works with throwing.
 
 new entry "UND_SocietyOfBrilliance_ResonanceStaff"
 type "Weapon"
@@ -187,7 +188,9 @@ data "Boosts" "WeaponDamage(1d4,Radiant)"
 data "StatusEffect" "8a4c7e6e-a629-4765-9c5d-d354838703d8"
 
 // ==================================== Gold Wyrmling Staff ====================================
+// Changes: Forced Honour ruleset changes.
 // Changes: The staff is now visible in cutscenes.
+// TODO: Throwing support?
 
 new entry "MAG_Fire_FireDamage_Quarterstaff"
 type "Weapon"
@@ -195,6 +198,9 @@ type "Weapon"
 using "MAG_Fire_FireDamage_Quarterstaff"
 // data "RootTemplate" "8aaf86a8-c884-4368-bcc5-1f91fd210624"
 // data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ValueScale" "1"
+// data "ValueScale" "1.3"
+data "ValueScale" "1.3"
 // data "Rarity" "Rare"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);HiddenDuringCinematic()"
 data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
@@ -202,11 +208,23 @@ data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "Unique" "1"
 // data "Weapon Properties" "Melee;Versatile;Magical"
 
+new entry "GOON_GOLDWYRMLINGSTAFF_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "Projectile_MAG_FireBolt_Staff"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Projectile_FireBolt"
+// data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;38cdb41c-2eec-4e03-bb31-83cff0346c35,,;85414f5f-b448-4dda-9370-1b6c4b38b561,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+
 // ==================================== Pale Oak ====================================
 // Changes: Rarity swapped from Rare to Very Rare.
 // Changes: Added a +1 weapon enchantment.
 // Changes: Added Ensnaring Strike immunity to the Faithwarden's Stride passive.
 // Changes: Added a new custom passive Ensnaring Defence, which gives a chance to Ensnare targets that lands hits on a Druid wielder while under the effects of a Druid Polymorph. The Ensnaring Strike condition scales with the Druid's level.
+// TODO: Throwing support.
 
 new entry "DEN_FaithwardenStaff"
 type "Weapon"
@@ -225,10 +243,10 @@ data "PassivesOnEquip" "DEN_FaithwardenStaff_Passive;Goon_FaithwardenStaff_Ensna
 data "PassivesMainHand" ""
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_PALEOAK_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "DEN_FaithwardenStaff_Passive"
 type "PassiveData"
@@ -312,8 +330,10 @@ data "StatsFunctors" "IF(not ClassLevelHigherOrEqualThan(3,'Druid',context.Targe
 // ==================================== Staff of the Ram ====================================
 // Bug Fix: Missing 1d6 Force damage is now present.
 // Bug Fix: Saving Throws for the knockback now only triggered on hits and not misses.
-// Changes: Added adjustable push trajectory. Split the stun from the push, when you successfully push a target they will get to roll an additional saving throw to avoid the stun. To account for it now being 2 save DCs they're both ManeuverSaveDC +2 instead of a fixed DC of 8, as they both have to be failed to stun.
-// TODO: Throwing
+// Changes: Can now slightly control the trajectory of the push based on cursor position on the target entity.
+// Changes: The push Saving Throw is now a ManeuverSaveDC +2 instead of a fixed DC of 8.
+// Changes: Split the stun from the push. When you successfully push a target they will get to roll an additional ManeuverSaveDC +2 DC Saving Throw to avoid becoming Stunned. 
+// TODO: Throwing support.
 
 new entry "MAG_LC_OfTheRam_Quarterstaff"
 type "Weapon"
@@ -327,10 +347,10 @@ data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(
 // data "PassivesOnEquip" "MAG_StaffOFRam_KnockStun_Passive"
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_STAFFOFTHERAM_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "MAG_StaffOFRam_KnockStun_Passive"
 type "PassiveData"
@@ -349,7 +369,7 @@ data "TooltipSave" "Constitution"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and not Ally() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON') and not SavingThrow(Ability.Constitution, 8, false, false, context.Target)"
 data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON')"
 // data "StatsFunctors" "IF(not Ally()):Force(2,OriginToEntity,Aggressive);IF(Ally()):Force(2,OriginToEntity,Friendly);ApplyStatus(STUNNED, 100, 1)"
-data "StatsFunctors" "IF(not Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Aggressive);IF(Ally()):Force(2,OriginToTarget,Friendly);ApplyStatus(STUNNED, 100, 1)"
+data "StatsFunctors" "IF(not Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Aggressive);IF(Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Friendly);ApplyStatus(GOON_STAFFOFRAM_STUN_TECHNICAL, 100, 0)"
 
 new entry "GOON_STAFFOFRAM_STUN_TECHNICAL"
 type "StatusData"
@@ -365,7 +385,7 @@ data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC(
 // ==================================== Staff of Interruption ====================================
 // Bug Fix: Now uses the appropriate level of Counterspell, 5 instead of 3.
 // Changes: Counterspell cannot be used while under the effects of a spellcasting restricted polymorph.
-// TODO: Throwing
+// TODO: Throwing support.
 // TODO: Template?
 
 // new entry "MAG_LC_Counterspell_Quarterstaff"

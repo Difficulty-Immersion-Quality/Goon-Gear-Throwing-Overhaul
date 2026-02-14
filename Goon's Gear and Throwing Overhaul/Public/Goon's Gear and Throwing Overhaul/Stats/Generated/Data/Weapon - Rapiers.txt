@@ -197,6 +197,7 @@ data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL',GetAttackWeapo
 // Bug Fix: Challenge to Duel is no longer considered level 1 or of the Enchantment School. (The IsSpell SpellFlag was already removed though.)
 // Bug Fix: Like other critical hit threshold sources, Elegant Duellist now states that it stacks.
 // Bug Fix: Withering Cut applies to thrown attacks, description overhauled.
+// Bug Fix: Added missing Honour ruleset bools to Withering Cut to prevent damage riders acting as a damage rider source.
 
 // new entry "MAG_TheDueller_Rapier"
 // type "Weapon"
@@ -231,6 +232,14 @@ data "Description" "hf1abc2bfg8c26g4622ga84cga2bf91f45dac;1"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and not HasStatus('BLEEDING') and HasStatus('MAG_LEGENDARY_COMPELLED_DUEL')"
 // data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 3,,,,not SavingThrow(Ability.Constitution,15))"
 
+// new entry "MAG_TheDueller_WitheringCut_Passive"
+// type "PassiveData"
+// Withering Cut
+// data "DisplayName" "h74969443gf85bg45b4ga2b3g40a4fe7911ba;1"
+// On a hit with a melee weapon, use a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+// data "Description" "h1c73d482ga6f3g4c33g90edg4b33345cb51d;1"
+// data "Boosts" "UnlockInterrupt(Interrupt_TheDueller_WitheringCut)"
+
 new entry "Target_MAG_Legendary_CompelledDuel"
 type "SpellData"
 data "SpellType" "Target"
@@ -261,7 +270,7 @@ using "Interrupt_TheDueller_WitheringCut"
 // data "DisplayName" "hc61596f9gc801g4933gaf73g13269717f10e;1"
 // When you hit a creature with melee weapon, you can spend a reaction to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
 // data "Description" "h5ea742a7g0d9cg447cga012g95679912ce86;1"
-// When you hit a creature with melee or thrown weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can spend a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to deal additional [1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+// When you hit a creature with melee or thrown weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt;, you can spend a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
 data "Description" "h5868da46g8004g4201g9772gb8219c021e1b;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "DealDamage(,Necrotic)"
@@ -271,6 +280,7 @@ data "DescriptionParams" "DealDamage(,Necrotic)"
 // data "Conditions" "IsAbleToReact(context.Observer) and not Item() and IsMeleeAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack()"
 data "Conditions" "IsAbleToReact(context.Observer) and not Item() and (IsMeleeAttack() and IsWeaponAttack() or IsRangedUnarmedAttack()) and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit)"
 // data "Properties" "DealDamage(ProficiencyBonus, Necrotic);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
+data "Properties" "DealDamage(ProficiencyBonus, Necrotic, Magical,,0,,true,false);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
 // data "Cost" "ReactionActionPoint:1"
 // data "Stack" ""
 // data "InterruptDefaultValue" "Enabled;Ask"

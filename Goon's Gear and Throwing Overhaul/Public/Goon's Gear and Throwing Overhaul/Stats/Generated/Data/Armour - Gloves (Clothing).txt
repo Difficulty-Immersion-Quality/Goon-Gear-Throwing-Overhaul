@@ -373,7 +373,7 @@ using "MAG_Gish_ArcaneAcuity_Gloves_Passive"
 // data "DisplayName" "haab50542gb3f3g41c5g9ee9gefb50accc757;3"
 // When you hit a target with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that uses a weapon, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 // data "Description" "hbae6c94bg09c9g45e6ga267gef7984d501be;11"
-// When you hit a target with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt;, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// When you hit a target with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt; or a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;Melee Weapon Attack&lt;/LSTag&gt; that is also a spell, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 data "Description" "hf583b6a7g93e9g4024g849fge9c76241e0ab;1"
 // data "Properties" "OncePerAttack"
 // data "StatsFunctorContext" "OnDamage"

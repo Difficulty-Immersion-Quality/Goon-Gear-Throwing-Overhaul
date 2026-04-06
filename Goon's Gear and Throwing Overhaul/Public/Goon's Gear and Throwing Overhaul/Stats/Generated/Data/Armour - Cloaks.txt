@@ -181,6 +181,7 @@ data "Properties" "OncePerShortRest"
 // data "Boosts" "ActionResource(Interrupt_AbsorbElements, 1, 0)"
 
 // ==================================== Interrupt - Cloak of Elemental Absorption
+// TODO: 5e Spells does a dodgy ass overwrite of the vanilla interrupt.
 
 new entry "Interrupt_AbsorbElements"
 type "InterruptData"

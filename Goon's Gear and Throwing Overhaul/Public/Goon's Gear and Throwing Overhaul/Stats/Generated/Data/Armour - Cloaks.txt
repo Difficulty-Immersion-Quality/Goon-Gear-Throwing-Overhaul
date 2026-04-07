@@ -297,10 +297,10 @@ using "MAG_Acid_AcidMeleeCounter_Cloak_Passive"
 // data "DisplayName" "hd28a7380g40ddg4b02gb51fg41c0d8605589;2"
 // Whenever a creature deals melee damage to the wearer, that creature takes [1].
 // data "Description" "h4ce1ee75g0b87g4e07gb859gd18b27cede6d;3"
-// Whenever a creature lands a melee attack on the wearer, that creature takes [1] ([2] on a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;) and may be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn. If the attacking creature already has the Acid condition, the duration is instead increased by [1].
+// Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; on the wearer it takes [1], or [2] if landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;. The attacker has a 50% chance to be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn, if the attacker already has the Acid condition the duration is instead increased by [3].
 data "Description" "he96e9841g3c7fg479fga83bg1a766b65e545;1"
 // data "DescriptionParams" "DealDamage(1d4, Acid)"
-data "DescriptionParams" "DealDamage(1d4, Acid);DealDamage(2d4, Acid)"
+data "DescriptionParams" "DealDamage(1d4, Acid);DealDamage(2d4, Acid);1"
 // data "Properties" "OncePerAttack"
 // data "StatsFunctorContext" "OnDamaged"
 data "StatsFunctorContext" "OnAttacked"
@@ -314,7 +314,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 // Caustic Reprisal
 data "DisplayName" "hd28a7380g40ddg4b02gb51fg41c0d8605589;2"
-// Whenever a creature lands a melee attack on the wearer, that creature takes [1] ([2] on a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;) and may be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn. If the attacking creature already has the Acid condition, the duration is instead increased by [1].
+// Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; on the wearer it takes [1], or [2] if landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;. The attacker has a 50% chance to be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn, if the attacker already has the Acid condition the duration is instead increased by [3].
 data "Description" "he96e9841g3c7fg479fga83bg1a766b65e545;1"
 data "DescriptionParams" "DealDamage(1d4, Acid);DealDamage(2d4, Acid);1"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"

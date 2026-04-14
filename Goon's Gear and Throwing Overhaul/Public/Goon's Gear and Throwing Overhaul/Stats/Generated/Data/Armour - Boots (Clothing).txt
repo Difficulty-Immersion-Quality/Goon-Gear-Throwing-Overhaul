@@ -18,7 +18,8 @@
 
 // ==================================== Boots of Stormy Clamour ====================================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
-// Changes: Now applies Reverberation based on dealing damage with spell attacks, instead of applying a condition.
+// Changes: Now applies Reverberation based on dealing damage with spells, instead of when applying a condition; but only with a once per action cooldown.
+// TODO: Try putting the custom cooldown into the actual conditions, just don't want to test it rn that I got it working as intended.
 
 new entry "MAG_Thunder_ReverberationOnStatusApply_Boots"
 type "Armor"
@@ -46,18 +47,19 @@ using "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive"
 data "DisplayName" "hdb19f00ag6138g4bc6gb174g1dff84d45a57;2"
 // When the wearer inflicts a condition upon a hostile creature, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
 // data "Description" "hdec25ee2gb8b0g4e21ga3f4g181253f20364;4"
-// When the wearer damages a creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
+// When the wearer damages a creature with a harmful spell, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
 data "Description" "h32a0f3eag3e64g4a05g9f2eg074b79b4d589;1"
 // data "DescriptionParams" "2"
-// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can trigger &lt;b&gt;once&lt;/b&gt; per &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;.
-data "TooltipPermanentWarnings" "f63b2f2d-b29b-40b8-86ea-9978c782c32e"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
 // data "Properties" "OncePerAttack"
 data "Properties" ""
 // data "StatsFunctorContext" "OnStatusApply"
-data "StatsFunctorContext" "OnAttack"
+data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "Enemy() and not Self() and not StatusId('MAG_THUNDER_REVERBERATION') and not StatusDoesNotInvokeOnStatusApply()"
 data "Conditions" "Character() and not Self() and IsSpell() and HasSpellFlag(SpellFlags.Harmful) and TotalDamageDoneGreaterThan(0) and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss())"
 // data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
+data "StatsFunctors" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN')):ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN')):ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN')):ApplyStatus(GOON_ONCEPERACTION_COOLDOWN, 100, 1)"
 
 // ==================================== Boots of Very Fast Blinking ====================================
 // TODO: Something/anything.
@@ -497,7 +499,7 @@ using "MAG_Critical_CriticalSwiftness_Passive"
 // data "DisplayName" "h4af7448ag6a0eg4259g8114g8eb297fec991;2"
 // After scoring a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.
 // data "Description" "hb91d1e6bgf680g4749g84d9g601324202509;3"
-// After killing or scoring a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.
+// After killing or landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.
 data "Description" "h45c12527g48b9g4798g8ff5g08fe343d1193;1"
 // data "StatsFunctorContext" "OnDamage"
 // data "StatsFunctors" "IF(IsCritical() or IsKillingBlow()):RestoreResource(SELF, Movement, 100%, 0)"

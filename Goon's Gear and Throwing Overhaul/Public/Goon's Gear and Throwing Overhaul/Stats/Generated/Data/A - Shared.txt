@@ -94,22 +94,24 @@ data "OnApplyFail" ""
 // Goon's Spell Overhaul level 2 - Commented out and to be revisited.
 
 // ==================================== Vicious weapons - Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow ====================================
-// Bug Fix: The Dolor Amarus passive no longer states that it applies to melee attacks when it doesn't.
+// Bug Fix: The Dolor Amarus passive no longer states that it applies to unarmed attacks when it doesn't.
 // Bug Fix: The additional damage only applies to attacking with or throwing the weapon itself.
 // Changes: Dolor Amarus passive now works when thrown.
 
 new entry "MAG_Vicious_Weapon_Passive"
 type "PassiveData"
 using "MAG_Vicious_Weapon_Passive"
+// Dolor Amarus
+// data "DisplayName" "h14bb2ed0gfdfcg41d1g8f4fg7616054f5657;2"
 // When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a weapon or unarmed attack, it deals an additional [1] damage.
 // data "Description" "hbea31881gb41cg4adagbd4cg6fc6bd561bf2;4"
 // When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, it deals an additional [1] damage.
 data "Description" "hc6c42992g8252g42bdg98d0ge95b7eebf1f9;1"
-data "DescriptionParams" "7"
+// data "DescriptionParams" "7"
 // data "BoostContext" "OnCreate"
 data "BoostContext" ""
 data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
-data "Boosts" "IF(IsWeaponAttack() and IsCritical()):DamageBonus(7,,false)"
+// data "Boosts" "IF(IsWeaponAttack() and IsCritical()):DamageBonus(7,,false)"
 
 // ==================================== Infernal weapons ====================================
 // Changes: Lesser infernal weapons deal 1d6 Poison damage instead of a flat 3. 

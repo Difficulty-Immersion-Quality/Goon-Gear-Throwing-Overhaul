@@ -39,6 +39,116 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_Topple_Offhand)"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
 
+// ==================================== Staff of the Moonmaiden ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Corellon's Grace ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Melf's First Staff ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Nature's Snare ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Rain Dancer ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Staff of a Mumbling Wizard ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Staff of Arcane Blessing ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Staff of Crones ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Bigboy's Chew Toy ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cacophony ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Caitiff Staff ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Creation's Echo ====================================
 // Bug Fix: Damage resistances no longer share a stack with damage resistance elixirs.
 // Changes: Added +1 weapon enchantment.
@@ -187,6 +297,16 @@ data "TickType" "StartTurn"
 data "Boosts" "WeaponDamage(1d4,Radiant)"
 data "StatusEffect" "8a4c7e6e-a629-4765-9c5d-d354838703d8"
 
+// ==================================== Despair of Athkatla ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Gold Wyrmling Staff ====================================
 // Changes: Forced Honour ruleset changes.
 // Changes: The staff is now visible in cutscenes.
@@ -218,6 +338,26 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "SpellType" "Projectile"
 // using "Projectile_FireBolt"
 // data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;38cdb41c-2eec-4e03-bb31-83cff0346c35,,;85414f5f-b448-4dda-9370-1b6c4b38b561,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+
+// ==================================== Harper Sacredstriker ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Hollow's Staff ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Pale Oak ====================================
 // Changes: Rarity swapped from Rare to Very Rare.
@@ -327,61 +467,6 @@ data "Properties" "OncePerTurn"
 data "Conditions" "Enemy() and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and RollDieAgainstDC(DiceType.d6,5)"
 data "StatsFunctors" "IF(not ClassLevelHigherOrEqualThan(3,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE,100,2);IF(ClassLevelHigherOrEqualThan(3,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(5,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_2,100,2);IF(ClassLevelHigherOrEqualThan(5,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(7,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_3,100,2);IF(ClassLevelHigherOrEqualThan(7,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(9,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_4,100,2);IF(ClassLevelHigherOrEqualThan(9,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(11,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_5,100,2);IF(ClassLevelHigherOrEqualThan(11,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(13,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_6,100,2);IF(ClassLevelHigherOrEqualThan(13,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(15,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_7,100,2);IF(ClassLevelHigherOrEqualThan(15,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(17,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_8,100,2);IF(ClassLevelHigherOrEqualThan(17,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_9,100,2)"
 
-// ==================================== Staff of the Ram ====================================
-// Bug Fix: Missing 1d6 Force damage is now present.
-// Bug Fix: Saving Throws for the knockback now only triggered on hits and not misses.
-// Changes: Can now slightly control the trajectory of the push based on cursor position on the target entity.
-// Changes: The push Saving Throw is now a ManeuverSaveDC +2 instead of a fixed DC of 8.
-// Changes: Split the stun from the push. When you successfully push a target they will get to roll an additional ManeuverSaveDC +2 DC Saving Throw to avoid becoming Stunned. 
-// TODO: Throwing support.
-
-new entry "MAG_LC_OfTheRam_Quarterstaff"
-type "Weapon"
-// using "WPN_Quarterstaff_2"
-using "MAG_LC_OfTheRam_Quarterstaff"
-// data "RootTemplate" "be48362b-f8f7-499d-ae64-156374852387"
-// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
-// data "Rarity" "VeryRare"
-// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d6,Force)"
-// data "PassivesOnEquip" "MAG_StaffOFRam_KnockStun_Passive"
-// data "Unique" "1"
-
-new entry "GOON_STAFFOFTHERAM_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-new entry "MAG_StaffOFRam_KnockStun_Passive"
-type "PassiveData"
-using "MAG_StaffOFRam_KnockStun_Passive"
-// Staff of the Ram
-// data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
-// Once per turn, the blow possibly knocks a foe back [1] and &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; them. This has no effect on dragons or Huge creatures.
-// data "Description" "h30031d03gc514g4b3bgbe22g85ef148cc2e7;6"
-// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
-data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
-// data "DescriptionParams" "Distance(2)"
-data "DescriptionParams" "Distance(2);1"
-data "TooltipSave" "Constitution"
-// data "Properties" "OncePerTurn"
-// data "StatsFunctorContext" "OnAttack"
-// data "Conditions" "AttackedWithPassiveSourceWeapon() and not Ally() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON') and not SavingThrow(Ability.Constitution, 8, false, false, context.Target)"
-data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON')"
-// data "StatsFunctors" "IF(not Ally()):Force(2,OriginToEntity,Aggressive);IF(Ally()):Force(2,OriginToEntity,Friendly);ApplyStatus(STUNNED, 100, 1)"
-data "StatsFunctors" "IF(not Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Aggressive);IF(Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Friendly);ApplyStatus(GOON_STAFFOFRAM_STUN_TECHNICAL, 100, 0)"
-
-new entry "GOON_STAFFOFRAM_STUN_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-// Staff of the Ram
-data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
-// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
-data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
-data "DescriptionParams" "Distance(2);1"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(STUNNED, 100, 1)"
-
 // ==================================== Staff of Interruption ====================================
 // Bug Fix: Now uses the appropriate level of Counterspell, 5 instead of 3.
 // Changes: Counterspell cannot be used while under the effects of a spellcasting restricted polymorph.
@@ -448,7 +533,7 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "Boosts" "ActionResource(Interrupt_MAG_Counterspell, 1, 0)"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Staff of the Emperor ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -458,7 +543,7 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== The Spellsparkler ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -468,7 +553,7 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Incandescent Staff ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -478,7 +563,7 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Mourning Frost ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -488,7 +573,95 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Staff of Cherished Necromancy ====================================
+// Changes: Life Essence Harvest's Consume Life Essence passive no longer consumes the Life Essence Active condition, when a Necromancy spell without a spell slot cost is cast.
+// Changes: Consolidated the Life Essence Active condition's functionality into the Life Essence Condition, and made the toggleable passive Consume Life Essence hidden and static; all functionality in tact, just not bloated and weird.
+// TODO: Per the GreaterNecromancySpellFilter() .khn script, this effect is intended to allow the casting of an extra Necromancy spell only if the spell level is equal to or lower than the number of Life Essence turns the wielder has. However, this restriction is currently non-functional, and any level of Necromancy spell can be cast using the effect. Though none of the tooltips explicitly mention this functionality, Life Essence displays the number of turns the wielder has on its tooltip.
+// TODO: Template.
+
+// new entry "MAG_GreaterNecromancy_Staff"
+// type "Weapon"
+// using "WPN_Quarterstaff_2"
+// data "RootTemplate" "ecb02247-a407-445e-8046-856133d198bf"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_Heightened_Necromancy_Passive;MAG_GreaterNecromancyStaff_LifeEssenceHarvest_Passive"
+// data "Unique" "1"
+
+new entry "GOON_STAFFOFCHERISHEDNECROMANCY_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_Heightened_Necromancy_Passive"
+// type "PassiveData"
+// Heightened Necromancy
+// data "DisplayName" "ha45e3bf5gc5e4g4578g8584g96ef8f82cab6;2"
+// Creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against your Necromancy spells.
+// data "Description" "h552bbd99gec93g4c06g9fb1g8525647cf48c;2"
+// data "Boosts" "UnlockSpellVariant(HeightenedNecromancySpellCheck(),ModifySavingThrowDisadvantage(),ModifyTooltipDescription())"
+
+// new entry "MAG_GreaterNecromancyStaff_LifeEssenceHarvest_Passive"
+// type "PassiveData"
+// Life Essence Harvest
+// data "DisplayName" "hc78d53a5g6507g4176ga5begbbc16f57f543;2"
+// When the wielder kills a hostile creature with a spell, they greedily absorb its energy and gain &lt;LSTag Type="Status" Tooltip="MAG_GREATER_NECROMANCY_LIFE_ESSENCE"&gt;Life Essence&lt;/LSTag&gt; until their next &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
+// data "Description" "h0dfae69cg1f47g43e1g8cabg1ca03a28dbbb;2"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "not Item() and Enemy() and IsKillingBlow() and IsSpell()"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GREATER_NECROMANCY_LIFE_ESSENCE,100, -1)"
+
+new entry "MAG_GREATER_NECROMANCY_LIFE_ESSENCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_GREATER_NECROMANCY_LIFE_ESSENCE"
+// Life Essence
+// data "DisplayName" "ha2654c3eg6985g4d5eg8619g9120754e233b;2"
+// Affected entity has absorbed a creature's essence. It can use that essence to cast any Necromancy spell without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
+// data "Description" "hb72b3606g64cfg4ff5g9a17g7b82496f7f03;2"
+// Affected entity has absorbed a creature's essence. It can use that essence to cast its next Necromancy spell that consumes a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; without consuming a spell slot.
+data "Description" "haa5631e9gfc72g47e3gb563gac681088dbef;1"
+// data "Icon" "PassiveFeature_Generic_Death"
+// data "StackId" "MAG_GREATER_NECROMANCY_LIFE_ESSENCE"
+// data "StackType" "Additive"
+data "StackType" ""
+// data "Passives" "MAG_GreaterNecromancyStaff_CosumeLifeEssence_Passive"
+// data "StatusPropertyFlags" "FreezeDuration"
+data "Boosts" "UnlockSpellVariant(GreaterNecromancySpellFilter(),ModifyIconGlow(),ModifyTooltipDescription(),ModifyUseCosts(Replace,SpellSlot,0,-1,SpellSlot),ModifyUseCosts(Replace,WarlockSpellSlot,0,-1,WarlockSpellSlot),ModifyUseCosts(Replace,SpellSlotsGroup,0,-1,SpellSlotsGroup))"
+
+new entry "MAG_GreaterNecromancyStaff_CosumeLifeEssence_Passive"
+type "PassiveData"
+using "MAG_GreaterNecromancyStaff_CosumeLifeEssence_Passive"
+// Consume Life Essence
+// data "DisplayName" "h974fc825gc350g4ff9ga318g215bdd53309f;2"
+// Consume the life essence that you have collected to cast any Necromancy spell without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
+// data "Description" "h5ccf6135g91e6g451fg8c31g1fb16b8570ea;2"
+// data "Icon" "PassiveFeature_Generic_Death"
+// data "Properties" "IsToggled;Temporary;Highlighted;ToggledDefaultAddToHotbar"
+data "Properties" "Temporary;IsHidden"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "IsSpell() and IsSpellSchool(SpellSchool.Necromancy)"
+data "Conditions" "IsSpell() and IsSpellSchool(SpellSchool.Necromancy) and (HasUseCosts('SpellSlot') or HasUseCosts('WarlockSpellSlot'))"
+// data "StatsFunctors" "RemoveStatus(SELF, MAG_GREATER_NECROMANCY_LIFE_ESSENCE);RemoveStatus(SELF, MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE)"
+// data "ToggleOnFunctors" "ApplyStatus(MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE, 100, -1)"
+data "ToggleOnFunctors" ""
+// data "ToggleOffFunctors" "RemoveStatus(MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE)"
+data "ToggleOffFunctors" ""
+// data "ToggleOffContext" "OnCastResolved"
+data "ToggleOffContext" ""
+
+// new entry "MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// Life Essence Active
+// data "DisplayName" "h0940d6a4ge061g406cga072ge1ff4069aafd;2"
+// Affected entity next Necromancy spell can be cast without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
+// data "Description" "ha8b3b258g2b80g4b7agad85gc847ae3cd258;2"
+// data "Icon" "PassiveFeature_Generic_Death"
+// data "StackId" "MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE"
+// data "Boosts" "UnlockSpellVariant(GreaterNecromancySpellFilter(),ModifyIconGlow(),ModifyTooltipDescription(),ModifyUseCosts(Replace,SpellSlot,0,-1,SpellSlot),ModifyUseCosts(Replace,WarlockSpellSlot,0,-1,WarlockSpellSlot),ModifyUseCosts(Replace,SpellSlotsGroup,0,-1,SpellSlotsGroup))"
+
+// ==================================== Staff of Spellpower ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -498,7 +671,62 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Staff of the Ram ====================================
+// Bug Fix: Missing 1d6 Force damage is now present.
+// Bug Fix: Saving Throws for the knockback now only triggered on hits and not misses.
+// Changes: Can now slightly control the trajectory of the push based on cursor position on the target entity.
+// Changes: The push Saving Throw is now a ManeuverSaveDC +2 instead of a fixed DC of 8.
+// Changes: Split the stun from the push. When you successfully push a target they will get to roll an additional ManeuverSaveDC +2 DC Saving Throw to avoid becoming Stunned. 
+// TODO: Throwing support.
+
+new entry "MAG_LC_OfTheRam_Quarterstaff"
+type "Weapon"
+// using "WPN_Quarterstaff_2"
+using "MAG_LC_OfTheRam_Quarterstaff"
+// data "RootTemplate" "be48362b-f8f7-499d-ae64-156374852387"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d6,Force)"
+// data "PassivesOnEquip" "MAG_StaffOFRam_KnockStun_Passive"
+// data "Unique" "1"
+
+new entry "GOON_STAFFOFTHERAM_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_StaffOFRam_KnockStun_Passive"
+type "PassiveData"
+using "MAG_StaffOFRam_KnockStun_Passive"
+// Staff of the Ram
+// data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
+// Once per turn, the blow possibly knocks a foe back [1] and &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; them. This has no effect on dragons or Huge creatures.
+// data "Description" "h30031d03gc514g4b3bgbe22g85ef148cc2e7;6"
+// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
+data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
+// data "DescriptionParams" "Distance(2)"
+data "DescriptionParams" "Distance(2);1"
+data "TooltipSave" "Constitution"
+// data "Properties" "OncePerTurn"
+// data "StatsFunctorContext" "OnAttack"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and not Ally() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON') and not SavingThrow(Ability.Constitution, 8, false, false, context.Target)"
+data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON')"
+// data "StatsFunctors" "IF(not Ally()):Force(2,OriginToEntity,Aggressive);IF(Ally()):Force(2,OriginToEntity,Friendly);ApplyStatus(STUNNED, 100, 1)"
+data "StatsFunctors" "IF(not Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Aggressive);IF(Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Friendly);ApplyStatus(GOON_STAFFOFRAM_STUN_TECHNICAL, 100, 0)"
+
+new entry "GOON_STAFFOFRAM_STUN_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// Staff of the Ram
+data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
+// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
+data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
+data "DescriptionParams" "Distance(2);1"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(STUNNED, 100, 1)"
+
+// ==================================== Woe ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -508,7 +736,7 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Markoheshkir ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -518,7 +746,7 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Rod of Resurrection (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // weapon entry
@@ -528,3 +756,22 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== Spiderstep Staff (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Staff of Accretion (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

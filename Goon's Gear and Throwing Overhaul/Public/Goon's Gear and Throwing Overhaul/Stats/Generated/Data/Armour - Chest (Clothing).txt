@@ -151,9 +151,8 @@ data "StatsFunctors" "ApplyStatus(SELF,MAG_VIOLENCE,100,2);ApplyStatus(SELF,MAG_
 // data "PassivesOnEquip" "MAG_Monk_Armor_MountainStance_Passive;MAG_Monk_Armor_WindStance_Passive"
 // data "Unique" "1"
 
-new entry "MAG_Monk_Armor_MountainStance_Passive"
-type "PassiveData"
-using "MAG_Monk_Armor_MountainStance_Passive"
+// new entry "MAG_Monk_Armor_MountainStance_Passive"
+// type "PassiveData"
 // Mountainous Poise
 // data "DisplayName" "h0d95fe10gdd02g41f8g91fcgac832eadc51c;1"
 // While using &lt;LSTag Type="Status" Tooltip="PATIENT_DEFENCE"&gt;Patient Defence&lt;/LSTag&gt;, you also benefit from the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;.
@@ -363,14 +362,48 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Potent Robe ====================================
-// TODO: Something/anything.
+// Bug Fix: Prevent Celes' Homebrew Spells from doing its stuff, and do my stuff instead.
+// TODO: This is broken ass shit somehow. "Tried to create FixedString of length 2409 - this will crash!" for my boosts, but it's clearly just 1045 characters long.
 
-// gear entry
+// new entry "MAG_CharismaCaster_Robe"
+// type "Armor"
+// using "ARM_Robe_Body_2"
+// data "RootTemplate" "1e64badf-4898-4169-9b02-3910518dc73d"
+// data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
+// data "Rarity" "VeryRare"
+// data "Boosts" "AC(1)"
+// data "PassivesOnEquip" "MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
+// data "StatusOnEquip" "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_POTENTROBE_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_CharismaCaster_CantripBooster_Passive"
+type "PassiveData"
+// using "MAG_ElementalGish_CantripBooster_Amulet_Passive"
+using "MAG_CharismaCaster_CantripBooster_Passive"
+// Gregarious Caster
+// data "DisplayName" "h1a478e3cg6b90g439fgb50fg113a8b8a3e44;1"
+// Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// data "BoostContext" "OnCreate"
+data "BoostContext" ""
+// data "Description" "hc5cd47f0g25f7g4b7fgadafg90c0b05b6b3b;2"
+data "BoostConditions" "IsCantrip() and Goon_IsCharismaModifierPositive() and Goon_IsSpellDealingFunctorDamage()"
+// data "Boosts" "IF(IsCantrip()):DamageBonus(max(1,CharismaModifier))"
+data "Boosts" "IF(not Goon_IsSpellWithDamageType()):DamageBonus(max(1,CharismaModifier));IF(Goon_IsSpellDamageTypeAcid()):DamageBonus(CharismaModifier,Acid);IF(Goon_IsSpellDamageTypeCold()):DamageBonus(CharismaModifier,Cold);IF(Goon_IsSpellDamageTypeFire()):DamageBonus(CharismaModifier,Fire);IF(Goon_IsSpellDamageTypeLightning()):DamageBonus(CharismaModifier,Lightning);IF(Goon_IsSpellDamageTypeThunder()):DamageBonus(CharismaModifier,Thunder);IF(Goon_IsSpellDamageTypeRadiant()):DamageBonus(CharismaModifier,Radiant);IF(Goon_IsSpellDamageTypePoison()):DamageBonus(CharismaModifier,Poison);IF(Goon_IsSpellDamageTypePsychic()):DamageBonus(CharismaModifier,Psychic);IF(Goon_IsSpellDamageTypeNecrotic()):DamageBonus(CharismaModifier,Necrotic);IF(Goon_IsSpellDamageTypeForce()):DamageBonus(CharismaModifier,Force);IF(Goon_IsSpellDamageTypeSlashing()):DamageBonus(CharismaModifier,Slashing);IF(Goon_IsSpellDamageTypePiercing()):DamageBonus(CharismaModifier,Piercing);IF(Goon_IsSpellDamageTypeBludgeoning()):DamageBonus(CharismaModifier,Bludgeoning)"
+data "StatsFunctorContext" ""
+data "StatsFunctors" ""
+
+// Homebrew Spells
+// new entry "MAG_CharismaCaster_CantripBooster_Passive"
+// type "PassiveData"
+// using "MAG_CharismaCaster_CantripBooster_Passive"
+// data "Boosts" "IF(IsCantrip() and not IsWeaponAttack()):DamageBonus(max(1,CharismaModifier))"
+// data "StatsFunctors" "IF(SparkingBladeSpellCheck() and CharacterLevelGreaterThan(4)):DealDamage(CharismaModifier,Lightning,Magical,,0,,true,true)"
+// data "StatsFunctorContext" "OnDamage"
 
 // ==================================== Robe of Supreme Defences ====================================
 // TODO: Something/anything.

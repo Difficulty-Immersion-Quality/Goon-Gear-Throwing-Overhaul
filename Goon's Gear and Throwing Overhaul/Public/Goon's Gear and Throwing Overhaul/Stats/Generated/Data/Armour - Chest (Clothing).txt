@@ -362,17 +362,21 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Potent Robe ====================================
-// Bug Fix: Prevent Celes' Homebrew Spells from doing its stuff, and do my stuff instead.
-// TODO: This is broken ass shit somehow. "Tried to create FixedString of length 2409 - this will crash!" for my boosts, but it's clearly just 1045 characters long.
+// Changes: Gregarious Caster's Charisma modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, the Charisma modifier damage bonus will instead apply to the base weapon damage, e.g. if you are using Booming Blade prior to being level 5.
+// Note: Cantrips are manually supported in the "Goon_IsConditionalDamageSpellEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
+// Note: 5e Spells and Homebrew Spells make edits to "MAG_CharismaCaster_CantripBooster_Passive", so it's replaced with a custom copy.
+// TODO: Template.
 
-// new entry "MAG_CharismaCaster_Robe"
-// type "Armor"
+new entry "MAG_CharismaCaster_Robe"
+type "Armor"
 // using "ARM_Robe_Body_2"
+using "MAG_CharismaCaster_Robe"
 // data "RootTemplate" "1e64badf-4898-4169-9b02-3910518dc73d"
 // data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
 // data "Rarity" "VeryRare"
 // data "Boosts" "AC(1)"
 // data "PassivesOnEquip" "MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
+data "PassivesOnEquip" "Goon_MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
 // data "StatusOnEquip" "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
 // data "Unique" "1"
 
@@ -381,29 +385,34 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-new entry "MAG_CharismaCaster_CantripBooster_Passive"
-type "PassiveData"
+// new entry "MAG_CharismaCaster_CantripBooster_Passive"
+// type "PassiveData"
 // using "MAG_ElementalGish_CantripBooster_Amulet_Passive"
-using "MAG_CharismaCaster_CantripBooster_Passive"
 // Gregarious Caster
 // data "DisplayName" "h1a478e3cg6b90g439fgb50fg113a8b8a3e44;1"
 // Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
-// data "BoostContext" "OnCreate"
-data "BoostContext" ""
 // data "Description" "hc5cd47f0g25f7g4b7fgadafg90c0b05b6b3b;2"
-data "BoostConditions" "IsCantrip() and Goon_IsCharismaModifierPositive() and Goon_IsSpellDealingFunctorDamage()"
 // data "Boosts" "IF(IsCantrip()):DamageBonus(max(1,CharismaModifier))"
-data "Boosts" "IF(not Goon_IsSpellWithDamageType()):DamageBonus(max(1,CharismaModifier));IF(Goon_IsSpellDamageTypeAcid()):DamageBonus(CharismaModifier,Acid);IF(Goon_IsSpellDamageTypeCold()):DamageBonus(CharismaModifier,Cold);IF(Goon_IsSpellDamageTypeFire()):DamageBonus(CharismaModifier,Fire);IF(Goon_IsSpellDamageTypeLightning()):DamageBonus(CharismaModifier,Lightning);IF(Goon_IsSpellDamageTypeThunder()):DamageBonus(CharismaModifier,Thunder);IF(Goon_IsSpellDamageTypeRadiant()):DamageBonus(CharismaModifier,Radiant);IF(Goon_IsSpellDamageTypePoison()):DamageBonus(CharismaModifier,Poison);IF(Goon_IsSpellDamageTypePsychic()):DamageBonus(CharismaModifier,Psychic);IF(Goon_IsSpellDamageTypeNecrotic()):DamageBonus(CharismaModifier,Necrotic);IF(Goon_IsSpellDamageTypeForce()):DamageBonus(CharismaModifier,Force);IF(Goon_IsSpellDamageTypeSlashing()):DamageBonus(CharismaModifier,Slashing);IF(Goon_IsSpellDamageTypePiercing()):DamageBonus(CharismaModifier,Piercing);IF(Goon_IsSpellDamageTypeBludgeoning()):DamageBonus(CharismaModifier,Bludgeoning)"
-data "StatsFunctorContext" ""
-data "StatsFunctors" ""
 
-// Homebrew Spells
-// new entry "MAG_CharismaCaster_CantripBooster_Passive"
+// BUG: It appears that DamageBonus is refusing to ride on "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)" when a "DamageType" is specified. "CharacterWeaponDamage" works instead well enough, though I'm not 100% on if it stacks onto the damage dealt if the damage type is the same rn (pretty sure it does).
+// Note: So something else that's interesting is that in cases where additional damage done via CharacterWeaponDamage is not being added to the main damage instance (when the damage types are different) and 0 damage is done with the base weapon damage, the new instance of damage will never exist. 
+new entry "Goon_MAG_CharismaCaster_CantripBooster_Passive"
+type "PassiveData"
+// Gregarious Caster
+data "DisplayName" "h1a478e3cg6b90g439fgb50fg113a8b8a3e44;1"
+// Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+data "Description" "hc5cd47f0g25f7g4b7fgadafg90c0b05b6b3b;2"
+data "BoostContext" "OnAttack"
+data "BoostConditions" "IsCantrip()"
+data "Boosts" "IF(not Goon_IsConditionalDamageSpellEligible()):DamageBonus(max(1,CharismaModifier));IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, CharismaModifier),Acid);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, CharismaModifier),Cold);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, CharismaModifier),Fire);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, CharismaModifier),Lightning);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, CharismaModifier),Thunder);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeRadiant()):CharacterWeaponDamage(max(1, CharismaModifier),Radiant);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypePoison()):CharacterWeaponDamage(max(1, CharismaModifier),Poison);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypePsychic()):CharacterWeaponDamage(max(1, CharismaModifier),Psychic);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeNecrotic()):CharacterWeaponDamage(max(1, CharismaModifier),Necrotic);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeForce()):CharacterWeaponDamage(max(1, CharismaModifier),Force);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeSlashing()):CharacterWeaponDamage(max(1, CharismaModifier),Slashing);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypePiercing()):CharacterWeaponDamage(max(1, CharismaModifier),Piercing);IF(Goon_IsConditionalDamageSpellEligible() and Goon_IsSpellDamageTypeBludgeoning()):CharacterWeaponDamage(max(1, CharismaModifier),Bludgeoning)"
+
+// new entry "MAG_CharismaCaster_TempHP_Passive"
 // type "PassiveData"
-// using "MAG_CharismaCaster_CantripBooster_Passive"
-// data "Boosts" "IF(IsCantrip() and not IsWeaponAttack()):DamageBonus(max(1,CharismaModifier))"
-// data "StatsFunctors" "IF(SparkingBladeSpellCheck() and CharacterLevelGreaterThan(4)):DealDamage(CharismaModifier,Lightning,Magical,,0,,true,true)"
-// data "StatsFunctorContext" "OnDamage"
+// using "MAG_PHB_Displacement_Cloak_Passive"
+// Well-Liked and Well-Fortified
+// data "DisplayName" "hf29c2ac9gea2eg4f2bg9ef8g84032470ed90;1"
+// At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// data "Description" "h884d0adcgad56g4731g8318g7d15a267ec4a;2"
 
 // ==================================== Robe of Supreme Defences ====================================
 // TODO: Something/anything.

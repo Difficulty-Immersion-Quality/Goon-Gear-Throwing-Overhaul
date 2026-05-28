@@ -1,3 +1,10 @@
+-- ==================================== Condensed functions ====================================
+
+-- Potent Robe: Gregarious Caster
+function Goon_IsConditionalDamageCantripEligible_Greg()
+    return Goon_IsConditionalDamageCantripEligible() & ~HasStatus('GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER',context.Target)
+end
+
 -- ==================================== Vanilla throw stuff ====================================
 -- TODO: Check for throwing weapon property for most applications
 

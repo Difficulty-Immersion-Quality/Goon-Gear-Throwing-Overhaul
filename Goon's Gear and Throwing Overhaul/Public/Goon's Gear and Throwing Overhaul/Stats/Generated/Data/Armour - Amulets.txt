@@ -167,14 +167,56 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Necklace of Elemental Augmentation ====================================
-// TODO: Something/anything.
+// Changes: Elemental Augmentation's spellcasting modifier damage bonus now only triggers once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
+// Changes: Elemental Augmentation's spellcasting modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, per RAW the weapon damage will not benefit from the damage bonus, e.g. if you are using Booming Blade prior to being level 5.
+// Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
+// Note: 5e Spells and Homebrew Spells make edits to "MAG_ElementalGish_CantripBooster_Amulet_Passive", so it's replaced with a custom copy.
+// TODO: Template.
 
-// gear entry
+new entry "MAG_ElementalGish_CantripBooster_Amulet"
+type "Armor"
+// using "_Amulet_Magic"
+using "MAG_ElementalGish_CantripBooster_Amulet"
+// data "RootTemplate" "a92cec2f-3a86-4aa1-a7e9-1d6dc9e12957"
+// data "Rarity" "Uncommon"
+data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_ElementalGish_CantripBooster_Amulet_Passive"
+data "PassivesOnEquip" "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_NECKLACEOFELEMENTALAUGMENTATION_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_ElementalGish_CantripBooster_Amulet_Passive"
+// type "PassiveData"
+// // Elemental Augmentation
+// data "DisplayName" "hc4ad4d92gba57g4cecgbb82g5b31a68306e9;2"
+// // When one of your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deals Acid, Cold, Fire, Lightning, or Thunder damage, add your &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Modifier&lt;/LSTag&gt; to the damage dealt.
+// data "Description" "h8325974bg580bg4efdgb968g23048f4c24aa;10"
+// data "DescriptionParams" "DealDamage(SpellcastingAbilityModifier, Bludgeoning)"
+// data "BoostContext" "OnCreate"
+// data "Boosts" "IF(IsCantrip() and (SpellDamageTypeIs(DamageType.Fire) or SpellDamageTypeIs(DamageType.Cold) or SpellDamageTypeIs(DamageType.Thunder) or SpellDamageTypeIs(DamageType.Acid) or SpellDamageTypeIs(DamageType.Lightning))):DamageBonus(max(1,SpellCastingAbilityModifier))"
+
+new entry "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive"
+type "PassiveData"
+// Elemental Augmentation
+data "DisplayName" "hc4ad4d92gba57g4cecgbb82g5b31a68306e9;2"
+// When one of your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal[1],[2],[3],[4], or[5], add your &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Modifier&lt;/LSTag&gt; to the damage dealt.
+data "Description" "he174f3d5gc439g49a5gb028gc21b99d921b0;1"
+data "DescriptionParams" "DealDamage(,Acid);DealDamage(,Cold);DealDamage(,Fire);DealDamage(,Lightning);DealDamage(,Thunder)"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+data "Boosts" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and IsCantrip() and not Goon_IsConditionalDamageCantrip()):DamageBonus(max(1,SpellCastingAbilityModifier));IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Acid);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Cold);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Fire);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Lightning);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Thunder)"
+data "StatsFunctorContext" "OnDamage"
+data "StatsFunctors" "ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION, 100, 1)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== Pearl of Power Amulet ====================================
 // TODO: Something/anything.

@@ -17,8 +17,10 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Boots of Stormy Clamour ====================================
+// Changes: Arcane Echomalefaction will only apply Reverberation once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
+// Changes: Arcane Echomalefaction now applies Reverberation based on dealing damage with spells, instead of when applying a condition.
+// Changes: Arcane Echomalefaction's "OncePerAttack" cooldown is removed, allowing Reverberation to be applied from AOE to more than a single target.
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
-// Changes: Now applies Reverberation based on dealing damage with spells, instead of when applying a condition; but only with a once per action cooldown.
 // TODO: Try putting the custom cooldown into the actual conditions, just don't want to test it rn that I got it working as intended.
 
 new entry "MAG_Thunder_ReverberationOnStatusApply_Boots"
@@ -57,9 +59,15 @@ data "Properties" ""
 // data "StatsFunctorContext" "OnStatusApply"
 data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "Enemy() and not Self() and not StatusId('MAG_THUNDER_REVERBERATION') and not StatusDoesNotInvokeOnStatusApply()"
-data "Conditions" "Character() and not Self() and IsSpell() and HasSpellFlag(SpellFlags.Harmful) and TotalDamageDoneGreaterThan(0) and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss())"
+data "Conditions" "Character() and not Self() and IsSpell() and HasSpellFlag(SpellFlags.Harmful) and TotalDamageDoneGreaterThan(0) and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss()) and not HasStatus('GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION',context.Target)"
 // data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
-data "StatsFunctors" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN')):ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN')):ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN')):ApplyStatus(GOON_ONCEPERACTION_COOLDOWN, 100, 1)"
+data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);ApplyStatus(GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION, 100, 1)"
+
+new entry "GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== Boots of Very Fast Blinking ====================================
 // TODO: Something/anything.

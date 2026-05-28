@@ -67,14 +67,59 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Hat of Storm Scion's Power ====================================
-// TODO: Something/anything.
+// Changes: Thunderous Acuity's Arcane Acuity condition application will now only apply once per action, meaning multi-attack or AOE spells will not apply it more than once.
+// Changes: Thunderous Acuity can no longer be triggered from dealing damage to yourself or entities that aren't characters.
+// Changes: Forced Honour ruleset changes.
+// TODO: Caster based cooldown
+// TODO: Template.
 
-// gear entry
+new entry "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat"
+type "Armor"
+// using "_Head_Magic"
+using "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat"
+// data "RootTemplate" "fa68c8ad-67d7-4680-88bc-f0b066e71761"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
+// data "ValueLevel" "6"
+data "ValueLevel" "6"
+// data "ValueScale" "2.3"
+data "ValueScale" "2.3"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_HATOFSTORMSCIONSPOWER_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
+type "PassiveData"
+using "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
+// Thunderous Acuity
+// data "DisplayName" "h427b53ccgf9dbg45b9gb081gf11c93739b85;2"
+// When the wearer deals Thunder damage, they gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// data "Description" "hd49505ddgcd93g4a25ga7edgdcea8965e792;4"
+// When the wearer deals[1], they gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+data "Description" "h1a045f3cg3524g41dag863agab4d40bd991b;1"
+data "DescriptionParams" "DealDamage(,Thunder);2"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
+// data "Properties" "OncePerAttack"
+data "Properties" ""
+data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsDamageTypeThunder() "
+data "Conditions" "IsDamageTypeThunder() and not Self() and Character() and not HasStatus('GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY',context.Source)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
+data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1);ApplyStatus(SELF,GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY, 100, 1)"
+
+new entry "GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== Infernal Mask ====================================
 // TODO: Something/anything.

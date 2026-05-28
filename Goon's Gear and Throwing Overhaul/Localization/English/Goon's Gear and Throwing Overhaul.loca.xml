@@ -155,10 +155,10 @@
 	<!-- "MAG_Infernal_Metal_Gloves_FireDamage_Passive", "GOON_INFERNALTOUCH_TECHNICAL_APPLIER" --> <content contentuid="h4855f6bfgcd92g4833ga020gd0dd642acdfc" version="1">Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.</content>
 	<!-- "MAG_Critical_CriticalSwiftness_Passive" --> <content contentuid="h45c12527g48b9g4798g8ff5g08fe343d1193" version="1">After killing or landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.</content>
 	<!-- "MAG_GREATER_NECROMANCY_LIFE_ESSENCE" --> <content contentuid="haa5631e9gfc72g47e3gb563gac681088dbef" version="1">Affected entity has absorbed a creature's essence. It can use that essence to cast its next Necromancy spell that consumes a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; without consuming a spell slot.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive" --> <content contentuid="he174f3d5gc439g49a5gb028gc21b99d921b0" version="1">When one of your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal[1],[2],[3],[4], or[5], add your &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Modifier&lt;/LSTag&gt; to the damage dealt.</content>
+	<!-- "Goon_MAG_ElementalGish_ElementalInfusion_Ring_Passive" --> <content contentuid="hcf3df843gde89g4fa3gbf5bga968594221eb" version="1">When one of your spells deal[1],[2],[3],[4], or[5], that element infuses your weapon.&lt;br&gt;&lt;br&gt;Until the end of your next turn, you deal an additional 1d4 damage of that element on your first successful weapon attack.</content>
+	<!-- "Goon_MAG_Thunder_Reverberation_Gloves_Passive" --> <content contentuid="hc720dc2bge923g41degac3bge73b82b035cb" version="1">When the wearer deals[1],[2], or[3], inflict [4] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).</content>
+	<!-- "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive" --> <content contentuid="h1a045f3cg3524g41dag863agab4d40bd991b" version="1">When the wearer deals[1] to another creature, they gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

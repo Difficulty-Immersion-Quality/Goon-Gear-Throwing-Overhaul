@@ -163,14 +163,56 @@ data "Rarity" "Rare"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Ring of Elemental Infusion ====================================
-// TODO: Something/anything.
+// Bug Fix: Elemental Infusion no longer only checks for damage being dealt, but also the "DamageType" of the spell being cast. E.g. If you cast Booming Blade you can only trigger Thunder Infusion, and you must deal Thunder damage.
+// Changes: Elemental Infusion's infusion condition application will now only apply once per action, meaning multi-attack or AOE spells will not apply it more than once.
+// Changes: Elemental Infusion's infusion condition application will now apply for spells that deal conditional damage (e.g. Booming Blade), if they have a "DamageType" and the conditions are not met for the conditional damage. E.g. if you are using Booming Blade when level 5 or above. If the conditions are not met, then you are not considered to be dealing the elemental damage with the spell itself. E.g. you deal Thunder damage via a damage rider when casting Booming Blade when below level 5, you do not recieve Thunder Infusion.
+// Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
+// Note: 5e Spells and Homebrew Spells make edits to "MAG_ElementalGish_ElementalInfusion_Ring_Passive", so it's replaced with a custom copy.
+// TODO: Template.
 
-// gear entry
+new entry "MAG_ElementalGish_ElementalInfusion_Ring"
+type "Armor"
+// using "_Ring_Magic"
+using "MAG_ElementalGish_ElementalInfusion_Ring"
+// data "RootTemplate" "9ce563ca-82b0-4c28-bd82-8640fd0a5be3"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "MAG_ElementalGish_ElementalInfusion_Ring_Passive"
+data "PassivesOnEquip" "Goon_MAG_ElementalGish_ElementalInfusion_Ring_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_RINGOFELEMENTALINFUSION_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_ElementalGish_ElementalInfusion_Ring_Passive"
+// type "PassiveData"
+// // Elemental Infusion
+// data "DisplayName" "h7b7b9730g59f5g45caga971gfee565e95829;3"
+// // When you deal Acid, Cold, Fire, Lightning, or Thunder damage using a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt;, that element infuses your weapon.&lt;br&gt;&lt;br&gt;Until the end of your next turn, you deal an additional 1d4 damage of that element on your first successful weapon attack.
+// data "Description" "h83112ce8g445eg47fcga947ga4b669012fee;4"
+// data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctors" "IF(IsSpell() and IsDamageTypeAcid()):ApplyStatus(SELF,MAG_SPELLBLADE_ACID_ENERGY, 100, 2);IF(IsSpell() and IsDamageTypeCold()):ApplyStatus(SELF,MAG_SPELLBLADE_COLD_ENERGY, 100, 2);IF(IsSpell() and IsDamageTypeFire()):ApplyStatus(SELF,MAG_SPELLBLADE_FIRE_ENERGY, 100, 2);IF(IsSpell() and IsDamageTypeLightning()):ApplyStatus(SELF,MAG_SPELLBLADE_LIGHTNING_ENERGY, 100, 2);IF(IsSpell() and IsDamageTypeThunder()):ApplyStatus(SELF,MAG_SPELLBLADE_THUNDER_ENERGY, 100, 2);"
+
+new entry "Goon_MAG_ElementalGish_ElementalInfusion_Ring_Passive"
+type "PassiveData"
+// Elemental Infusion
+data "DisplayName" "h7b7b9730g59f5g45caga971gfee565e95829;3"
+// When one of your spells deal[1],[2],[3],[4], or[5], that element infuses your weapon.&lt;br&gt;&lt;br&gt;Until the end of your next turn, you deal an additional 1d4 damage of that element on your first successful weapon attack.
+data "Description" "hcf3df843gde89g4fa3gbf5bga968594221eb;1"
+data "DescriptionParams" "DealDamage(,Acid);DealDamage(,Cold);DealDamage(,Fire);DealDamage(,Lightning);DealDamage(,Thunder)"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
+data "Properties" ""
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "((IsSpell() and not Goon_IsConditionalDamageSpell()) or Goon_IsConditionalDamageSpellEligible()) and not HasStatus('GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION',context.Target)"
+data "StatsFunctors" "IF(IsDamageTypeAcid() and Goon_IsSpellDamageTypeAcid()):ApplyStatus(SELF,MAG_SPELLBLADE_ACID_ENERGY, 100, 2);IF(IsDamageTypeCold() and Goon_IsSpellDamageTypeCold()):ApplyStatus(SELF,MAG_SPELLBLADE_COLD_ENERGY, 100, 2);IF(IsDamageTypeFire() and Goon_IsSpellDamageTypeFire()):ApplyStatus(SELF,MAG_SPELLBLADE_FIRE_ENERGY, 100, 2);IF(IsDamageTypeLightning() and Goon_IsSpellDamageTypeLightning()):ApplyStatus(SELF,MAG_SPELLBLADE_LIGHTNING_ENERGY, 100, 2);IF(IsDamageTypeThunder() and Goon_IsSpellDamageTypeThunder()):ApplyStatus(SELF,MAG_SPELLBLADE_THUNDER_ENERGY, 100, 2);ApplyStatus(GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION, 100, 1)"
+
+new entry "GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== Ring of Flinging ====================================
 // TODO: Something/anything.

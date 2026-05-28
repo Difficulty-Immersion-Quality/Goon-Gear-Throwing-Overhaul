@@ -362,7 +362,8 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Potent Robe ====================================
-// Changes: Gregarious Caster's Charisma modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, the Charisma modifier damage bonus will instead apply to the base weapon damage, e.g. if you are using Booming Blade prior to being level 5.
+// Changes: Gregarious Caster's Charisma modifier damage bonus now only triggers once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
+// Changes: Gregarious Caster's Charisma modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, per RAW the weapon damage will not benefit from the damage bonus, e.g. if you are using Booming Blade prior to being level 5.
 // Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
 // Note: 5e Spells and Homebrew Spells make edits to "MAG_CharismaCaster_CantripBooster_Passive", so it's replaced with a custom copy.
 // TODO: Template.
@@ -388,9 +389,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // new entry "MAG_CharismaCaster_CantripBooster_Passive"
 // type "PassiveData"
 // using "MAG_ElementalGish_CantripBooster_Amulet_Passive"
-// Gregarious Caster
+// // Gregarious Caster
 // data "DisplayName" "h1a478e3cg6b90g439fgb50fg113a8b8a3e44;1"
-// Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// // Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "hc5cd47f0g25f7g4b7fgadafg90c0b05b6b3b;2"
 // data "Boosts" "IF(IsCantrip()):DamageBonus(max(1,CharismaModifier))"
 
@@ -402,14 +403,25 @@ type "PassiveData"
 data "DisplayName" "h1a478e3cg6b90g439fgb50fg113a8b8a3e44;1"
 // Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 data "Description" "hc5cd47f0g25f7g4b7fgadafg90c0b05b6b3b;2"
-data "Boosts" "IF(not Goon_IsConditionalDamageCantripEligible()):DamageBonus(max(1,CharismaModifier));IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, CharismaModifier),Acid);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, CharismaModifier),Cold);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, CharismaModifier),Fire);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, CharismaModifier),Lightning);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, CharismaModifier),Thunder);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeRadiant()):CharacterWeaponDamage(max(1, CharismaModifier),Radiant);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypePoison()):CharacterWeaponDamage(max(1, CharismaModifier),Poison);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypePsychic()):CharacterWeaponDamage(max(1, CharismaModifier),Psychic);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeNecrotic()):CharacterWeaponDamage(max(1, CharismaModifier),Necrotic);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeForce()):CharacterWeaponDamage(max(1, CharismaModifier),Force);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeSlashing()):CharacterWeaponDamage(max(1, CharismaModifier),Slashing);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypePiercing()):CharacterWeaponDamage(max(1, CharismaModifier),Piercing);IF(Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeBludgeoning()):CharacterWeaponDamage(max(1, CharismaModifier),Bludgeoning)"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+data "Boosts" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER',context.Target) and IsCantrip() and not Goon_IsConditionalDamageCantrip()):DamageBonus(max(1,CharismaModifier));IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, CharismaModifier),Acid);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, CharismaModifier),Cold);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, CharismaModifier),Fire);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, CharismaModifier),Lightning);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, CharismaModifier),Thunder);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeRadiant()):CharacterWeaponDamage(max(1, CharismaModifier),Radiant);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePoison()):CharacterWeaponDamage(max(1, CharismaModifier),Poison);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePsychic()):CharacterWeaponDamage(max(1, CharismaModifier),Psychic);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeNecrotic()):CharacterWeaponDamage(max(1, CharismaModifier),Necrotic);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeForce()):CharacterWeaponDamage(max(1, CharismaModifier),Force);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeSlashing()):CharacterWeaponDamage(max(1, CharismaModifier),Slashing);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePiercing()):CharacterWeaponDamage(max(1, CharismaModifier),Piercing);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeBludgeoning()):CharacterWeaponDamage(max(1, CharismaModifier),Bludgeoning)"
+data "Conditions" "not HasStatus('GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER',context.Target)"
+data "StatsFunctorContext" "OnDamage"
+data "StatsFunctors" "ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER, 100, 1)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // new entry "MAG_CharismaCaster_TempHP_Passive"
 // type "PassiveData"
 // using "MAG_PHB_Displacement_Cloak_Passive"
-// Well-Liked and Well-Fortified
+// // Well-Liked and Well-Fortified
 // data "DisplayName" "hf29c2ac9gea2eg4f2bg9ef8g84032470ed90;1"
-// At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// // At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "h884d0adcgad56g4731g8318g7d15a267ec4a;2"
 
 // ==================================== Robe of Supreme Defences ====================================

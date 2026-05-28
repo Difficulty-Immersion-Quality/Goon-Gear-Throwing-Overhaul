@@ -100,14 +100,59 @@ data "RemoveConditions" "IsStatusEvent(StatusEvent.OnSpellCast) and SpellCategor
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Gloves of Belligerent Skies ====================================
-// TODO: Something/anything.
+// Changes: Thunderous Conversion will only apply Reverberation once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
+// Changes: Thunderous Conversion's "OncePerAttack" cooldown is removed, allowing Reverberation to be applied from AOE to more than a single target.
+// TODO: Template.
 
-// gear entry
+new entry "MAG_Thunder_Reverberation_Gloves"
+type "Armor"
+// using "_Hand_Magic"
+using "MAG_Thunder_Reverberation_Gloves"
+// data "RootTemplate" "c987b6e4-adcb-47d6-8dfd-6d4d2f15a381"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "MAG_Thunder_Reverberation_Gloves_Passive"
+data "PassivesOnEquip" "Goon_MAG_Thunder_Reverberation_Gloves_Passive"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_GLOVESOFBELLIGERENTSKIES_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_Thunder_Reverberation_Gloves_Passive"
+// type "PassiveData"
+// // Thunderous Conversion
+// data "DisplayName" "h65bd774ag9b29g4d15g8f57gea9f48ff2dc0;3"
+// // When the wearer deals [1], [2], or [3], inflict [4] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).
+// data "Description" "h8da1229fgbbf8g41adg90f9g346ca37af828;5"
+// data "DescriptionParams" "DealDamage(,Thunder);DealDamage(,Lightning);DealDamage(,Radiant);2"
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsDamageTypeLightning() or IsDamageTypeThunder() or IsDamageTypeRadiant()"
+// data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
+
+new entry "Goon_MAG_Thunder_Reverberation_Gloves_Passive"
+type "PassiveData"
+// Thunderous Conversion
+data "DisplayName" "h65bd774ag9b29g4d15g8f57gea9f48ff2dc0;3"
+// When the wearer deals[1],[2], or[3], inflict [4] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).
+data "Description" "hc720dc2bge923g41degac3bge73b82b035cb;1"
+data "DescriptionParams" "DealDamage(,Lightning);DealDamage(,Radiant);DealDamage(,Thunder);2"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "(IsDamageTypeLightning() or IsDamageTypeThunder() or IsDamageTypeRadiant()) and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION',context.Target)"
+data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION, 100, 1)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== Gloves of Hail of Thorns ====================================
 // TODO: Something/anything.

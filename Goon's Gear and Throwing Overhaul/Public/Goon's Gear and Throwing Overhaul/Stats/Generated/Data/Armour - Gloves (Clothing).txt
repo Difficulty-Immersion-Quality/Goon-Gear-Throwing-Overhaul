@@ -151,8 +151,8 @@ data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus
 new entry "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 type "StatusData"
 data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== Gloves of Hail of Thorns ====================================
 // TODO: Something/anything.

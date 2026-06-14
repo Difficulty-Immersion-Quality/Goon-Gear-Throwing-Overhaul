@@ -97,6 +97,8 @@ data "OnApplyFail" ""
 // Bug Fix: The Dolor Amarus passive no longer states that it applies to unarmed attacks when it doesn't.
 // Bug Fix: The additional damage only applies to attacking with or throwing the weapon itself.
 // Changes: Dolor Amarus passive now works when thrown.
+// TODO: Bullshit... aint no way that works when thrown, no boosts from the weapon work when thrown like that.
+// data "Boosts" "IF((IsWeaponAttack() or IsMeleeUnarmedAttack() or IsRangedUnarmedAttack()) and IsCritical()):DamageBonus(7,,false);"
 
 new entry "MAG_Vicious_Weapon_Passive"
 type "PassiveData"

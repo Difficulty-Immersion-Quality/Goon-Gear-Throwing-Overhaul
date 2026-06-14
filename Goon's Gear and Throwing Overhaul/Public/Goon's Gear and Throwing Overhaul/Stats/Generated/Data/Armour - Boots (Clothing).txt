@@ -59,15 +59,15 @@ data "Properties" ""
 // data "StatsFunctorContext" "OnStatusApply"
 data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "Enemy() and not Self() and not StatusId('MAG_THUNDER_REVERBERATION') and not StatusDoesNotInvokeOnStatusApply()"
-data "Conditions" "Character() and not Self() and IsSpell() and HasSpellFlag(SpellFlags.Harmful) and TotalDamageDoneGreaterThan(0) and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss()) and not HasStatus('GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION',context.Target)"
+data "Conditions" "Character() and not Self() and IsSpell() and HasSpellFlag(SpellFlags.Harmful) and TotalDamageDoneGreaterThan(0) and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss()) and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ARCANEECHOMALEFACTION',context.Target)"
 // data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
-data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);ApplyStatus(GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION, 100, 1)"
+data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_ARCANEECHOMALEFACTION, 100, 1)"
 
-new entry "GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION"
+new entry "GOON_ONCEPERACTION_COOLDOWN_ARCANEECHOMALEFACTION"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StackId" "GOON_ONCEPERACTIONCOOLDOWN_ARCANEECHOMALEFACTION"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ARCANEECHOMALEFACTION"
 
 // ==================================== Boots of Very Fast Blinking ====================================
 // TODO: Something/anything.

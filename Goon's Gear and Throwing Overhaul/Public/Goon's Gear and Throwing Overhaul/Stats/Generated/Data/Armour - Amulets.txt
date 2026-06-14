@@ -210,13 +210,13 @@ data "DescriptionParams" "DealDamage(,Acid);DealDamage(,Cold);DealDamage(,Fire);
 data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
 data "Boosts" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and IsCantrip() and not Goon_IsConditionalDamageCantrip()):DamageBonus(max(1,SpellCastingAbilityModifier));IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Acid);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Cold);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Fire);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Lightning);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Thunder)"
 data "StatsFunctorContext" "OnDamage"
-data "StatsFunctors" "ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION, 100, 1)"
+data "StatsFunctors" "IF(IsCantrip()):ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION, 100, 1)"
 
 new entry "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 type "StatusData"
 data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== Pearl of Power Amulet ====================================
 // TODO: Something/anything.

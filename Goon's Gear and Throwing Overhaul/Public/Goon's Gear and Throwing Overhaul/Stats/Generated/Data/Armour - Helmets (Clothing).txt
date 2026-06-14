@@ -111,15 +111,15 @@ data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
 data "Properties" ""
 data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsDamageTypeThunder() "
-data "Conditions" "IsDamageTypeThunder() and not Self() and Character() and not HasStatus('GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY',context.Source)"
+data "Conditions" "IsDamageTypeThunder() and not Self() and Character() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY',context.Source)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
-data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1);ApplyStatus(SELF,GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY, 100, 1)"
+data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1);ApplyStatus(SELF,GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY, 100, 1)"
 
-new entry "GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY"
+new entry "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StackId" "GOON_ONCEPERACTIONCOOLDOWN_THUNDEROUSACUITY"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 
 // ==================================== Infernal Mask ====================================
 // TODO: Something/anything.

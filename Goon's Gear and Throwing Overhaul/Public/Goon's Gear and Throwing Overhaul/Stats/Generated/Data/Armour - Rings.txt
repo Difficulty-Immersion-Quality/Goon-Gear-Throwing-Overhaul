@@ -205,14 +205,14 @@ data "DescriptionParams" "DealDamage(,Acid);DealDamage(,Cold);DealDamage(,Fire);
 data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
 data "Properties" ""
 data "StatsFunctorContext" "OnDamage"
-data "Conditions" "((IsSpell() and not Goon_IsConditionalDamageSpell()) or Goon_IsConditionalDamageSpellEligible()) and not HasStatus('GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION',context.Target)"
-data "StatsFunctors" "IF(IsDamageTypeAcid() and Goon_IsSpellDamageTypeAcid()):ApplyStatus(SELF,MAG_SPELLBLADE_ACID_ENERGY, 100, 2);IF(IsDamageTypeCold() and Goon_IsSpellDamageTypeCold()):ApplyStatus(SELF,MAG_SPELLBLADE_COLD_ENERGY, 100, 2);IF(IsDamageTypeFire() and Goon_IsSpellDamageTypeFire()):ApplyStatus(SELF,MAG_SPELLBLADE_FIRE_ENERGY, 100, 2);IF(IsDamageTypeLightning() and Goon_IsSpellDamageTypeLightning()):ApplyStatus(SELF,MAG_SPELLBLADE_LIGHTNING_ENERGY, 100, 2);IF(IsDamageTypeThunder() and Goon_IsSpellDamageTypeThunder()):ApplyStatus(SELF,MAG_SPELLBLADE_THUNDER_ENERGY, 100, 2);ApplyStatus(GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION, 100, 1)"
+data "Conditions" "((IsSpell() and not Goon_IsConditionalDamageSpell()) or Goon_IsConditionalDamageSpellEligible()) and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION',context.Target)"
+data "StatsFunctors" "IF(IsDamageTypeAcid() and Goon_IsSpellDamageTypeAcid()):ApplyStatus(SELF,MAG_SPELLBLADE_ACID_ENERGY, 100, 2);IF(IsDamageTypeCold() and Goon_IsSpellDamageTypeCold()):ApplyStatus(SELF,MAG_SPELLBLADE_COLD_ENERGY, 100, 2);IF(IsDamageTypeFire() and Goon_IsSpellDamageTypeFire()):ApplyStatus(SELF,MAG_SPELLBLADE_FIRE_ENERGY, 100, 2);IF(IsDamageTypeLightning() and Goon_IsSpellDamageTypeLightning()):ApplyStatus(SELF,MAG_SPELLBLADE_LIGHTNING_ENERGY, 100, 2);IF(IsDamageTypeThunder() and Goon_IsSpellDamageTypeThunder()):ApplyStatus(SELF,MAG_SPELLBLADE_THUNDER_ENERGY, 100, 2);ApplyStatus(SELF,GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION, 100, 1)"
 
-new entry "GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION"
+new entry "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StackId" "GOON_ONCEPERACTIONCOOLDOWN_ELEMENTALINFUSION"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 
 // ==================================== Ring of Flinging ====================================
 // TODO: Something/anything.
@@ -285,14 +285,67 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Ring of Spiteful Thunder ====================================
-// TODO: Something/anything.
+// Bug Fix: Spiteful Thunder Dazed condition application now only triggers on Thunder damage, instead of all damage.
+// Changes: Spiteful Thunder Dazed condition application now only triggers once per action, per target.
+// Changes: Forced Honour ruleset changes.
+// TODO: Template.
 
-// gear entry
+new entry "MAG_Thunder_InflictDazeOnThunderDamage_Ring"
+type "Armor"
+// using "_Ring_Magic"
+using "MAG_Thunder_InflictDazeOnThunderDamage_Ring"
+// data "RootTemplate" "5c05ff73-9d0d-4d58-b93a-e4b448a1e388"
+// data "Rarity" "Uncommon"
+// data "ValueLevel" "1"
+// data "ValueLevel" "6"
+data "ValueLevel" "6"
+// data "ValueScale" "1"
+// data "ValueScale" "1.5"
+data "ValueScale" "1.5"
+// data "PassivesOnEquip" "MAG_Thunder_InflictDazeOnThunderDamage_Ring_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_RINGOFSPITEFULTHUNDER_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Thunder_InflictDazeOnThunderDamage_Ring_Passive"
+type "PassiveData"
+using "MAG_Thunder_InflictDazeOnThunderDamage_Ring_Passive"
+// Spiteful Thunder
+// data "DisplayName" "h7ade8bedg3b12g4e9ega0c0g39ac4561ec63;2"
+// When the wearer deals Thunder damage to a &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberating&lt;/LSTag&gt; creature, it becomes &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt; unless it succeeds a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+// data "Description" "h6434a385g471bg4729g9d4bgb51b42a05f2b;7"
+// When the wearer deals[1] to a &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberating&lt;/LSTag&gt; creature, it becomes &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt; unless it succeeds a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h6434a385g471bg4729g9d4bgb51b42a05f2b;7"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+data "DescriptionParams" "DealDamage(,Thunder)"
+data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "HasStatus('MAG_THUNDER_REVERBERATION') and not HasStatus('DAZED')"
+data "Conditions" "HasDamageDoneForType(DamageType.Thunder) and HasStatus('MAG_THUNDER_REVERBERATION') and not HasStatus('DAZED')"
+// data "StatsFunctors" "ApplyStatus(DAZED, 100, 2,,,,not SavingThrow(Ability.Constitution,13))"
+data "StatsFunctors" "ApplyStatus(GOON_SPITEFULTHUNDER_TECHNICAL_APPLIER, 100, 0);ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_SPITEFULTHUNDER, 100, 1)"
+
+new entry "GOON_SPITEFULTHUNDER_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Spiteful Thunder
+data "DisplayName" "h7ade8bedg3b12g4e9ega0c0g39ac4561ec63;2"
+// When the wearer deals[1] to a &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberating&lt;/LSTag&gt; creature, it becomes &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt; unless it succeeds a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h6434a385g471bg4729g9d4bgb51b42a05f2b;7"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "DescriptionParams" "DealDamage(,Thunder)"
+data "TooltipSave" "Constitution"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution,13)"
+data "OnApplySuccess" "ApplyStatus(DAZED, 100, 2)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_SPITEFULTHUNDER"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER"
 
 // ==================================== Seemingly Gleaming Ring ====================================
 // TODO: Something/anything.

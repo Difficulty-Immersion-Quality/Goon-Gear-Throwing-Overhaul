@@ -92,6 +92,8 @@ data "Boosts" "IF(HasStatus('GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL',GetAttackWeap
 
 // ==================================== The Sacred Star ====================================
 // Bug Fix: 1d4 Radiant damage applies when thrown.
+// Bug Fix: Added missing Honour ruleset bools to Dawnburst Strike to prevent damage riders acting as a damage rider source.
+// Bug Fix: Dawnburst Strike now has the Radiant "DamageType".
 // Changes: Dawnburst Strike is now single target, with an increased save DC for Blindness.
 // Cahoot: (original AoE wasn't working, hit allies and couldn't fix it myself so just changed the effect)
 // TODO: Offhand variant?
@@ -119,7 +121,7 @@ using "Target_MAG_WeaponAction_FlashingDawn"
 // data "AreaRadius" "3"
 data "AreaRadius" ""
 // data "SpellSuccess" "TARGET:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); TARGET:DealDamage(ProficiencyBonus, Radiant);AOE:IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
-data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+4)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant, Magical,,0,,true,false);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+4)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
 // data "Icon" "Action_Mag_FlashingDawn"
 // // Dawnburst Strike
 // data "DisplayName" "h78cb566dg1b86g44c3g805cg3282813f6627;2"
@@ -135,6 +137,7 @@ data "DescriptionParams" "DealDamage(,Radiant);3
 // data "TooltipPermanentWarnings" ""
 // data "TargetEffect" "aec6edb7-b1ae-4e42-808e-4968b9783242"
 // data "HitEffect" "d7941630-009c-442f-bc1c-650b2691ced6"
+data "DamageType" "Radiant"
 
 // ==================================== Tough Sunrises (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.

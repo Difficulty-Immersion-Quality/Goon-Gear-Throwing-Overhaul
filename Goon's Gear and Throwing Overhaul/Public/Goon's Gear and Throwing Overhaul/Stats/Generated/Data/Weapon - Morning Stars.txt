@@ -94,6 +94,7 @@ data "Boosts" "IF(HasStatus('GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL',GetAttackWeap
 // Bug Fix: 1d4 Radiant damage applies when thrown.
 // Changes: Dawnburst Strike is now single target, with an increased save DC for Blindness.
 // Cahoot: (original AoE wasn't working, hit allies and couldn't fix it myself so just changed the effect)
+// TODO: Offhand variant?
 
 // new entry "MAG_RadiantLight_Morningstar"
 // type "Weapon"
@@ -119,10 +120,21 @@ using "Target_MAG_WeaponAction_FlashingDawn"
 data "AreaRadius" ""
 // data "SpellSuccess" "TARGET:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); TARGET:DealDamage(ProficiencyBonus, Radiant);AOE:IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
 data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+4)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
-// Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.
+// data "Icon" "Action_Mag_FlashingDawn"
+// // Dawnburst Strike
+// data "DisplayName" "h78cb566dg1b86g44c3g805cg3282813f6627;2"
+// // Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts around you in a [1] area. Enemies in the light must succeed a &lt;LSTag Tooltip="DifficultyClass"&gt; DC&lt;/LSTag&gt; 13 Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.
+// data "Description" "hf140e50bg68dag4893g84eeg84cc0566e0b7;2"
+// Deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.
 data "Description" "h5a6970b0g1f2dg4060g9e88g4ecc1899c571;1"
 // data "DescriptionParams" "Distance(3)"
-data "DescriptionParams" "3"
+data "DescriptionParams" "DealDamage(,Radiant);3
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant)"
+// data "TooltipStatusApply" "ApplyStatus(BLINDED,100,3)"
+// data "TooltipPermanentWarnings" ""
+// data "TargetEffect" "aec6edb7-b1ae-4e42-808e-4968b9783242"
+// data "HitEffect" "d7941630-009c-442f-bc1c-650b2691ced6"
 
 // ==================================== Tough Sunrises (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.

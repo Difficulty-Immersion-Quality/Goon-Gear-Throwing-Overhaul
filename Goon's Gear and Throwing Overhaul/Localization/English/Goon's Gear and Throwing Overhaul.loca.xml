@@ -63,7 +63,7 @@
 	<!-- "GOON_UNWIELDY" --> <content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
 	<!-- "GOON_UNWIELDY" --> <content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
 
-	<!-- "Target_MAG_WeaponAction_FlashingDawn" --> <content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.</content>
+	<!-- "Target_MAG_WeaponAction_FlashingDawn" --> <content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.</content>
 
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

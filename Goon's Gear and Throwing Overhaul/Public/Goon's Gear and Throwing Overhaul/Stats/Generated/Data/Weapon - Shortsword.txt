@@ -97,10 +97,12 @@ new entry "MAG_Blindside_Shortsword_Passive"
 type "PassiveData"
 using "MAG_Blindside_Shortsword_Passive"
 // Psychic Steel Virtuoso 
-data "DisplayName" "h7c6ed618g4287g476ag98ccg7a085866a266;2"
+// data "DisplayName" "h7c6ed618g4287g476ag98ccg7a085866a266;2"
+// Psychic Steel Virtuoso
+data "DisplayName" "h11e87f4cg6dafg4236g81f8gbfd5fb6817c1;1"
 // When the wielder attacks with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, they deal an additional [1].
-data "Description" "h9dea8b17gc5bdg406bg955cg64f97c0f3679;2"
-data "DescriptionParams" "DealDamage(1d8, Psychic)"
+// data "Description" "h9dea8b17gc5bdg406bg955cg64f97c0f3679;2"
+// data "DescriptionParams" "DealDamage(1d8, Psychic)"
 // data "StatsFunctorContext" "OnDamage"
 // data "StatsFunctorContext" ""
 data "StatsFunctorContext" ""

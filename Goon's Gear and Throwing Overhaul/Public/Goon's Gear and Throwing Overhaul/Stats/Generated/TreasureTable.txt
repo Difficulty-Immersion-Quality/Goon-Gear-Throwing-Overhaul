@@ -20,3 +20,36 @@ new subtable "1,1"
 StartLevel "4"
 object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
 object category "I_WPN_Dart_2",1,0,0,0,0,0,0,0
+
+new treasuretable "TT_Goon_GearOverhaul_Mega_Container"
+// Armour - Boots (Clothing)
+new subtable "1,1"
+object category "I_Goon_MAG_Healer_TempHPOnHeal_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Thunder_ReverberationOnStatusApply_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_WYR_Circus_TeleportBoots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Fire_HeatOnInflictBurning_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Frost_IceSurfaceProneImmunity_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_UND_Tower_BootsFeatherFall_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_FOR_SpiderstepBoots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Gortash_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_CRE_Hatchery_AcidPoisonImmunity_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Acrobat_Shoes_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_TWN_BootsOfApparentDeath_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_CQCaster_ArcaneChargeAfterDash_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0

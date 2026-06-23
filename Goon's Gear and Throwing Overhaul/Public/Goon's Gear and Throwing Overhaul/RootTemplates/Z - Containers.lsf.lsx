@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+        <!-- Goon's Gear and Throwing Overhaul Mega Container -->
+            <!-- TODO: Fix and make it spawnable kek - has to be an inventory item -->
+            <node id="GameObjects">
+                <attribute id="CanClickThrough" type="bool" value="False" />
+                <attribute id="CanClimbOn" type="bool" value="False" />
+                <attribute id="CanShootThrough" type="bool" value="False" />
+                <attribute id="CoverAmount" type="uint8" value="1" />
+                <!-- Goon's Gear and Throwing Overhaul Mega Container -->
+                <attribute id="DisplayName" type="TranslatedString" handle="h042d44c2g8096g4cb0gbbd7g453fbd64867d" version="1" />
+				<!--  -->
+				<attribute id="Description" type="TranslatedString" handle="" version="1" />
+				<!--  -->
+				<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="1" />
+                <attribute id="Icon" type="FixedString" value="Interactitem_Cupboard" />
+                <attribute id="InventoryType" type="uint8" value="29" />
+                <attribute id="IsPointerBlocker" type="bool" value="False" />
+                <attribute id="MapKey" type="FixedString" value="8d18700d-d709-4696-a7e1-da794f87a630" />
+                <attribute id="Name" type="LSString" value="Goon_GearOverhaul_Mega_Container" />
+	            <attribute id="Stats" type="FixedString" value="Goon_GearOverhaul_Mega_Container" />
+				<attribute id="Tooltip" type="uint8" value="2" />
+                <attribute id="ParentTemplateId" type="FixedString" value="aec2e4a7-a11f-4265-a92a-536b2239c38e" />
+                <attribute id="TreasureOnDestroy" type="bool" value="True" />
+                <attribute id="Type" type="FixedString" value="item" />
+                <attribute id="VisualTemplate" type="FixedString" value="1c619718-7ead-de66-1f31-9817253fb1a0" />
+                <attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+                <children>
+                    <node id="InventoryList">
+                        <children>
+                            <node id="InventoryItem">
+                                <attribute id="Object" type="FixedString" value="TT_Goon_GearOverhaul_Mega_Container" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

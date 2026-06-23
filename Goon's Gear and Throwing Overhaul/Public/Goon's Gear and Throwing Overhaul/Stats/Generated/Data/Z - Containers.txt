@@ -1,0 +1,8 @@
+// ==================================== Containers ====================================
+
+new entry "Goon_GearOverhaul_Mega_Container"
+type "Object"
+using "OBJ_Wardrobe"
+data "RootTemplate" "8d18700d-d709-4696-a7e1-da794f87a630"
+data "GameSize" "Large"
+data "Vitality" "50"

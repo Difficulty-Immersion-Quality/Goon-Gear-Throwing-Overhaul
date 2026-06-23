@@ -1,9 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentList>
+<!-- ==================================== Containers ==================================== -->
+
+	<!-- "Goon's Gear and Throwing Overhaul Mega Container" -  -->
+	<content contentuid="h042d44c2g8096g4cb0gbbd7g453fbd64867d" version="1">Goon's Gear and Throwing Overhaul Mega Container</content>
+	<content contentuid="" version="1"></content>
+
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
+<!-- ==================================== Huh? ==================================== -->
 	<!-- Nyrulna toggle -->
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="h654b96b4geadfg46aag99c2g2af9f15cd5b6" version="1">Nyrulna: Zephyr Connection</content>
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="he5c48cdcg3690g4ec2ga8cbgd453b402bc17" version="1">This weapon will return to your hand when thrown. You cannot be forced to drop the trident. When thrown, Nyrulna's additional [1] explodes outward in a [2] blast centred on the target.</content>
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="hb466f4f5g631cg4443g9a89g1485aad5a8a8" version="1">You may toggle this feature off. When toggled off, Nyrulna's additional [1] is dealt to the target instead of exploding. When Nyrulna returns to your hand it is toggled on again.</content>
+
+<!-- ==================================== Aaaaaaah? ==================================== -->
 
 	<!-- Half-Orc racial - Savage Attacks -->
 	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; you roll an extra damage die.</content>
@@ -11,7 +23,7 @@
 	<!-- Barbarian - Enraged Throw -->
 	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 
-	<!-- WEAPON ACTIONS -->
+<!-- ==================================== WEAPON ACTIONS ==================================== -->
 	<!-- "Goon_Target_PostureBreaker_Offhand" --> <content contentuid="haad96815g5d0dg4285ga31eg0da094df82d1" version="1">Backbreaker (Offhand)</content>
 	<!-- "Goon_Zone_Cleave_Offhand" --> <content contentuid="h046d806egc13fg403fgb220g8cdbd04778c0" version="1">Cleave (Offhand)</content>
 	<!-- "Interrupt_Overwhelm", "Overwhelm" --> <content contentuid="h3ff15630ga20cg4697gabaeg7909acd8b811" version="1">When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.</content>
@@ -49,7 +61,7 @@
 	<!-- "Goon_Shout_MAG_WhirlwindAttack_Offhand" --> <content contentuid="hb7d7bddag6a14g4a51g82ddg46a9c0e69d0b" version="1">Whirlwind Attack (Offhand)</content>
 	<!-- "Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand" --> <content contentuid="hef72f4dage8d5g4a3cg8ed5gf6fab5d484b2" version="1">Ensnaring Strike (Melee - Offhand)</content>
 	<!-- "MAG_BoundToBeBonded_Passive" --> <content contentuid="heee2c268g4226g464aga2f0gdf9e12a1e0f9" version="1">This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
-	<!-- "MAG_Barbarian_Armor_RageSupport_Passive" --> <content contentuid="h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7" version="1">When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; and at the start of their turns while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.</content>
+	<!-- "MAG_Barbarian_Armor_RageSupport_Passive" --> <content contentuid="h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; or starts their turn while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt; in combat, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.</content>
 	<!-- "Target_ConcussiveSmash" --> <content contentuid="h7edda7a5g49fcg4c39g8943g1f19aa5d78dd" version="1">Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They can't take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Blindside_Shortsword_Passive" --> <content contentuid="h11e87f4cg6dafg4236g81f8gbfd5fb6817c1" version="1">Psychic Steel Virtuoso</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
@@ -66,11 +78,44 @@
 
 	<!-- "Target_MAG_WeaponAction_FlashingDawn" --> <content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.</content>
 
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
 
-	<!-- GEAR -->
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
+<!-- ==================================== Armour - Boots (Clothing) ==================================== -->
+
+	<!-- Boots of Stormy Clamour -->
+	<!-- "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive" -->
+	<content contentuid="h32a0f3eag3e64g4a05g9f2eg074b79b4d589" version="1">When the wearer damages a creature with a harmful spell, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.</content>
+
+	<!-- Spiderstep Boots -->
+	<!-- "FOR_WebStaff_Passive" -->
+	<content contentuid="h8ebe1e53g11e2g4f24gbd99g0279fbab722e" version="1">&lt;LSTag Tooltip="Immune"&gt;Immune&lt;/LSTag&gt; to being &lt;LSTag Type="Status" Tooltip="WEB"&gt;Enwebbed&lt;/LSTag&gt;. Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is not affected by web surfaces.</content>
+
+	<!-- Varsh Ko'kuu's Boots -->
+	<!-- "CRE_HatcheryBoots_Passive" -->
+	<content contentuid="h69972e62gcb51g425ega801gc5b5c7febce2" version="1">&lt;LSTag Type="Status" Tooltip="ACID"&gt;Acidic&lt;/LSTag&gt; conditions and surfaces don't affect you, and you are &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to[1].</content>
+
+	<!-- Acrobat Shoes -->
+	<!-- "Goon_AcrobatShoes_WellBalanced" -->
+	<content contentuid="h38bfe165g7674g4ca9gbb83g1bda66cfb903" version="1">Well Balanced</content>
+	<content contentuid="hecb03e9bgcd97g42f2gbe50gd581663ab180" version="1">You gain a +[1] bonus to your &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt; &lt;LSTag Tooltip="Skill"&gt;Skill&lt;/LSTag&gt;, and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
+
+	<!-- Boots of Arcane Bolstering -->
+	<!-- "MAG_CQCaster_ArcaneChargeAfterDash_Boots_Passive" -->
+	<content contentuid="" version="1">Each time they &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt;, the wearer gains &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_CHARGE"&gt;Arcane Charge&lt;/LSTag&gt; for [1] turns.</content>
+
+	<!-- Boots of Speed -->
+	<!-- "Goon_BootsOfSpeed_Passive" -->
+	<content contentuid="hb44ebebcg2452g49c9gb2dcgb5bba4fc83dc" version="1">Speedy Escape</content>
+	<content contentuid="h025770eagf8e2g4bb4g8066g2b54bdd818ef" version="1">When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt;, they gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.</content>
+	<!-- "Shout_BootsOfSpeed" --> 
+	<content contentuid="h08ad2972g6548g48a1gbed1gfc5a0f49c42d" version="1">Click the heels of your boots to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;.</content>
+	<!-- "CLICK_HEELS" -->
+	<content contentuid="h9269dec6ge278g4d82ga7ccg01814ea8bcc0" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; against this creature.</content>
+
+<!-- ==================================== GEAR ==================================== -->
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
 	<!-- "MAG_ShadowBlinding_Weapon_Passive", "GOON_SHADOW_BLINDING_TECHNICAL" --> <content contentuid="h2c526f46g60f2g4c49g9262g26baa6b6af4a" version="1">If you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, you have a chance of &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; your target for [1] turns.</content>
@@ -125,8 +170,6 @@
 	<!-- "MAG_TheHunters_Dagger_Passive", "GOON_HUNTERSDAGGER_RUPTURE_TECHNICAL_APPLIER" --> <content contentuid="hf38c5a04g2bb3g4a65g9cbdg3ee366e57242" version="1">When you deal damage with this weapon, possibly &lt;LSTag Type="Status" Tooltip="BARBED_ARROW"&gt;Rupture&lt;/LSTag&gt; your target for [1] turns.</content>
 	<!-- "MAG_TheCrimson_Vicious_Passive" --> <content contentuid="hc5b54a05g5b17g4ad2g9774g69f540a70f3a" version="1">Attacks with this weapon deal an additional [1], if you attacked with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Mobility_JumpOnDash_Passive", "MAG_MOBILITY_JUMPONDASH_TECHNICAL" --> <content contentuid="h7cfb0f31geb19g48afgb7b6g5560f3bf9e9d" version="1">Once per turn, after the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they can &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; without using a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;.</content>
-	<!-- "Shout_BootsOfSpeed" --> <content contentuid="h08ad2972g6548g48a1gbed1gfc5a0f49c42d" version="1">Click the heels of your boots to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;. You gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.</content>
-	<!-- "CLICK_HEELS" --> <content contentuid="h9269dec6ge278g4d82ga7ccg01814ea8bcc0" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; against this creature.</content>
 	<!-- "UND_DuergarRaft_Hammer_Passive" --> <content contentuid="h03de4225g96deg49aag9a14gd1a3af9b0986" version="1">Knock nearby foes &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turns, after killing a hostile target or landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon.</content>
 	<!-- "UNI_WYR_Circus_ClownHammer_Passive", "GOON_GRIM_IRONY_TECHNICAL_APPLIER" --> <content contentuid="h2ef43338g970ag42cfga983g22037d203ff2" version="1">Whenever this weapon lands a critical hit, both target and attacker have to succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, or be affected by &lt;LSTag Type="Status" Tooltip="HIDEOUS_LAUGHTER"&gt;Hideous Laughter&lt;/LSTag&gt; for [1] turns.</content>
 	<!-- "Goon_Redcap_Sickle_Bonus" --> <content contentuid="hd50a1576gf04ag4d04gab36g2a0353418307" version="1">Feyvourite Weapon</content>
@@ -148,7 +191,7 @@
 	<!-- MAG_ArcaneTrickster_Ring_Passive --> <content contentuid="h2042de2fgc22fg4161g9050g59fffac63c85" version="1">After a successful weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can cast Illusion or Enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
 	<!-- "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive" --> <content contentuid="h1adb1860g647fg402egb774g1ff6be448951" version="1">Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.</content>
 	<!-- "DEN_FaithwardenStaff_Passive", "GOON_FAITHWARDENSTAFF_FAITHWARDENS_STRIDE" --> <content contentuid="h1bf8e97fg830ag424cgabc6gfd17f9ea5936" version="1">Vines cannot &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnare&lt;/LSTag&gt; you and do not count as &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN"&gt;Difficult Terrain&lt;/LSTag&gt;.</content>
-	<!-- "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive" --> <content contentuid="h32a0f3eag3e64g4a05g9f2eg074b79b4d589" version="1">When the wearer damages a creature with a harmful spell, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.</content>
+
 	<!-- "MAG_Monk_Armor_WindStance_Passive" --> <content contentuid="h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2" version="1">While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
 	<!-- "MAG_MONK_SWIFT_AS_THE_WIND" --> <content contentuid="hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d" version="1">Your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
 	<!-- "MAG_LC_Nymph_Cloak_Passive" --> <content contentuid="h1707807fg321ag4ba2g9be3gd18171fda6cb" version="1">Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].</content>

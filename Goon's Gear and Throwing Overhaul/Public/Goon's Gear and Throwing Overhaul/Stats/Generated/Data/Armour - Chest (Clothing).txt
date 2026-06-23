@@ -42,14 +42,39 @@ data "ArmorType" "Cloth"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Bloodguzzler Garb ====================================
-// TODO: Something/anything.
+// TODO: loca
+// TODO: Template
 
-// gear entry
+// new entry "MAG_Violence_LowHP_Violence_Clothes"
+// type "Armor"
+// using "_Armor_Magic_Robe"
+// data "RootTemplate" "5fc2fcce-810d-47d2-824c-f6acf7b81a22"
+// data "ItemGroup" ""
+// data "ValueUUID" "be545ee9-311c-4ab8-ab14-fefcc552cace"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "MAG_Violence_ViolenceOnDamaged_Passive"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_BLOODGUZZLERGARB_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Violence_ViolenceOnDamaged_Passive"
+type "PassiveData"
+using "MAG_Violence_ViolenceOnDamaged_Passive"
+// // Grievous Retribution
+// data "DisplayName" "h422ede82g0401g4897gbd92gb159321b6308;2"
+// // When an enemy damages the wearer, the wearer gains &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for 1 turn.
+// data "Description" "h61122704g0f3cg4122g8b4dg7b670e40d5c0;6"
+// // Once per turn, when an enemy damages the wearer, the wearer gains &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.
+data "Description" "ha5c5728dg959bg4dc6gacffg913ec1817938;1"
+// data "DescriptionParams" "2"
+// data "Properties" "OncePerTurn"
+data "Properties" "Highlighted;OncePerTurn"
+// data "StatsFunctorContext" "OnDamaged"
+// data "Conditions" "Enemy()"
+// data "StatsFunctors" "ApplyStatus(MAG_VIOLENCE,100, 2);ApplyStatus(MAG_VIOLENCE_DURATION_TECHNICAL, 100, 1)"
 
 // ==================================== Cloth Armour ====================================
 // TODO: Something/anything.
@@ -123,16 +148,16 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_Barbarian_Armor_RageSupport_Passive"
 type "PassiveData"
 using "MAG_Barbarian_Armor_RageSupport_Passive"
-// Ruintamer Heart
+// // Ruintamer Heart
 // data "DisplayName" "h66afe6c4gda90g4c0bgab22g9c0c9ff03924;1"
-// While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, the wearer generates [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
+// // While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, the wearer generates [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
 // data "Description" "h91a3da0cg3810g465dgbe35g327f87e60972;2"
-// When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; and at the start of their turns while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
+// // Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; or starts their turn while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt; in combat, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
 data "Description" "h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7;1"
 // data "DescriptionParams" "2"
-data "Properties" "OncePerTurn"
+data "Properties" "Highlighted;OncePerTurn"
 data "StatsFunctorContext" "OnStatusApplied;OnTurn"
-data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusHasStatusGroup(context.StatusId,'SG_Rage')) or (context.HasContextFlag(StatsFunctorContext.OnTurn) and HasStatus('SG_Rage',context.Source))"
+data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusHasStatusGroup(context.StatusId,'SG_Rage')) or (context.HasContextFlag(StatsFunctorContext.OnTurn) and HasStatus('SG_Rage',context.Source)) and Combat()"
 data "StatsFunctors" "ApplyStatus(SELF,MAG_VIOLENCE,100,2);ApplyStatus(SELF,MAG_VIOLENCE_DURATION_TECHNICAL,100,1)"
 
 // ==================================== Garb of the Land and Sky ====================================
@@ -150,6 +175,11 @@ data "StatsFunctors" "ApplyStatus(SELF,MAG_VIOLENCE,100,2);ApplyStatus(SELF,MAG_
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Monk_Armor_MountainStance_Passive;MAG_Monk_Armor_WindStance_Passive"
 // data "Unique" "1"
+
+new entry "GOON_GARBOFTHELANDANDSKY_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // new entry "MAG_Monk_Armor_MountainStance_Passive"
 // type "PassiveData"
@@ -197,17 +227,11 @@ data "Description" "hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d;1"
 // data "DescriptionParams" "DealDamage(1d8, Force)"
 // data "Icon" "GenericIcon_DamageType_Force"
 // data "StackId" "MAG_MONK_SWIFT_AS_THE_WIND"
-data "BoostConditions" "IsMeleeAttack() or IsAttackType(AttackType.RangedUnarmedAttack)"
 // data "Boosts" "Advantage(AttackRoll);CharacterWeaponDamage(1d8, Force)"
-data "Boosts" "Advantage(AttackRoll);DamageBonus(1d8, Force)"
+data "Boosts" "IF(IsMeleeWeaponAttack() or IsUnarmedAttack()):Advantage(AttackRoll);IF(IsMeleeWeaponAttack()):CharacterWeaponDamage(1d8, Force);IF(IsUnarmedAttack()):CharacterUnarmedDamage(1d8, Force)"
 // data "RemoveConditions" "IsWeaponAttack() and (not IsMiss() or IsCritical())"
-data "RemoveConditions" "IsMeleeAttack() or IsAttackType(AttackType.RangedUnarmedAttack)"
+data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
 // data "RemoveEvents" "OnAttack"
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Icebite Robe ====================================
 // TODO: Something/anything.
@@ -365,6 +389,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // Changes: Gregarious Caster's Charisma modifier damage bonus now only triggers once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
 // Changes: Gregarious Caster's Charisma modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, per RAW the weapon damage will not benefit from the damage bonus, e.g. if you are using Booming Blade prior to being level 5.
 // Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
+// TODO: Well-Liked and Well-Fortified polymorph.
 // Note: 5e Spells and Homebrew Spells make edits to "MAG_CharismaCaster_CantripBooster_Passive", so it's replaced with a custom copy.
 // TODO: Template.
 
@@ -379,12 +404,21 @@ using "MAG_CharismaCaster_Robe"
 // data "PassivesOnEquip" "MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
 data "PassivesOnEquip" "Goon_MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
 // data "StatusOnEquip" "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
+data "StatusOnEquip" "GOON_POTENTROBE_TECHNICAL"
 // data "Unique" "1"
 
 new entry "GOON_POTENTROBE_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "GOON_POTENTROBE_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" "RemoveStatus(MAG_CHARISMA_CASTER_TEMP_HP)"
+
+// ==================
 
 // new entry "MAG_CharismaCaster_CantripBooster_Passive"
 // type "PassiveData"
@@ -399,16 +433,17 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // Bug: For some reason, at least with damage reduction from Arcane Ward, the damage meant to ride on Booming Blade at level 5 and above triggers inconsistently when 0 damage is dealt from the weapon itself. Expected to be niche and not that big of a deal.
 new entry "Goon_MAG_CharismaCaster_CantripBooster_Passive"
 type "PassiveData"
-// Gregarious Caster
+// // Gregarious Caster
 data "DisplayName" "h1a478e3cg6b90g439fgb50fg113a8b8a3e44;1"
-// Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// // Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 data "Description" "hc5cd47f0g25f7g4b7fgadafg90c0b05b6b3b;2"
-// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
 data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+data "Properties" "Highlighted"
 data "Boosts" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER',context.Target) and IsCantrip() and not Goon_IsConditionalDamageCantrip()):DamageBonus(max(1,CharismaModifier));IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, CharismaModifier),Acid);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, CharismaModifier),Cold);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, CharismaModifier),Fire);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, CharismaModifier),Lightning);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, CharismaModifier),Thunder);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeRadiant()):CharacterWeaponDamage(max(1, CharismaModifier),Radiant);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePoison()):CharacterWeaponDamage(max(1, CharismaModifier),Poison);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePsychic()):CharacterWeaponDamage(max(1, CharismaModifier),Psychic);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeNecrotic()):CharacterWeaponDamage(max(1, CharismaModifier),Necrotic);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeForce()):CharacterWeaponDamage(max(1, CharismaModifier),Force);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeSlashing()):CharacterWeaponDamage(max(1, CharismaModifier),Slashing);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePiercing()):CharacterWeaponDamage(max(1, CharismaModifier),Piercing);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeBludgeoning()):CharacterWeaponDamage(max(1, CharismaModifier),Bludgeoning)"
 data "Conditions" "not HasStatus('GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER',context.Target)"
 data "StatsFunctorContext" "OnDamage"
-data "StatsFunctors" "IF(IsCantrip())ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER, 100, 1)"
+data "StatsFunctors" "IF(IsCantrip()):ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER, 100, 1)"
 
 new entry "GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER"
 type "StatusData"
@@ -416,13 +451,40 @@ data "StatusType" "BOOST"
 using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER"
 
-// new entry "MAG_CharismaCaster_TempHP_Passive"
-// type "PassiveData"
+// ==================
+
+new entry "MAG_CharismaCaster_TempHP_Passive"
+type "PassiveData"
 // using "MAG_PHB_Displacement_Cloak_Passive"
+using "MAG_CharismaCaster_TempHP_Passive"
 // // Well-Liked and Well-Fortified
 // data "DisplayName" "hf29c2ac9gea2eg4f2bg9ef8g84032470ed90;1"
 // // At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "h884d0adcgad56g4731g8318g7d15a267ec4a;2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect continues to function while under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPHED"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+data "StatsFunctorContext" "OnTurn"
+data "StatsFunctors" "IF(Combat() and not Dead()):ApplyStatus(MAG_CHARISMA_CASTER_TEMP_HP, 100, -1)"
+
+// new entry "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+// data "StackId" "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
+// data "TickFunctors" "IF(Combat() and not Dead()):ApplyStatus(MAG_CHARISMA_CASTER_TEMP_HP, 100, -1)"
+// data "OnRemoveFunctors" "RemoveStatus(MAG_CHARISMA_CASTER_TEMP_HP)"
+
+new entry "MAG_CHARISMA_CASTER_TEMP_HP"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_TEMPORARY_HP"
+using "MAG_CHARISMA_CASTER_TEMP_HP"
+// // Well-Liked and Well-Fortified: instead of dying, you have gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit point&lt;/LSTag&gt; equal to your Charisma modifier.
+// data "Description" "hab545a26g9fbag40cegb609g326de9b210df;1"
+// // Well-Liked and Well-Fortified: instead of dying, you have gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit point&lt;/LSTag&gt; equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+data "Description" "hacb82f5fgb298g461cga022gc06cc95eceba;1"
+// data "Boosts" "TemporaryHP(CharismaModifier)"
 
 // ==================================== Robe of Supreme Defences ====================================
 // TODO: Something/anything.

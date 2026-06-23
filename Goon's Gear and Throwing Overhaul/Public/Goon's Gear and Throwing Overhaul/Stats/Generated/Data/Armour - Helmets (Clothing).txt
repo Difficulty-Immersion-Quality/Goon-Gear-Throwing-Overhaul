@@ -70,7 +70,6 @@
 // Changes: Thunderous Acuity's Arcane Acuity condition application will now only apply once per action, meaning multi-attack or AOE spells will not apply it more than once.
 // Changes: Thunderous Acuity can no longer be triggered from dealing damage to yourself or entities that aren't characters.
 // Changes: Forced Honour ruleset changes.
-// TODO: Caster based cooldown
 // TODO: Template.
 
 new entry "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat"
@@ -98,14 +97,14 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
 type "PassiveData"
 using "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
-// Thunderous Acuity
+// // Thunderous Acuity
 // data "DisplayName" "h427b53ccgf9dbg45b9gb081gf11c93739b85;2"
-// When the wearer deals Thunder damage, they gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// // When the wearer deals Thunder damage, they gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 // data "Description" "hd49505ddgcd93g4a25ga7edgdcea8965e792;4"
-// When the wearer deals[1], they gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// // When the wearer deals[1], they gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 data "Description" "h1a045f3cg3524g41dag863agab4d40bd991b;1"
 data "DescriptionParams" "DealDamage(,Thunder);2"
-// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
 // data "Properties" "OncePerAttack"
 data "Properties" ""
@@ -192,14 +191,51 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Cap of Wrath ====================================
-// TODO: Something/anything.
+// Bug Fix: ...
+// TODO: Template
+// TODO: loca
+// TODO: polymorph.
 
-// gear entry
+// new entry "MAG_Violence_ViolenceOnDamaged_Helmet"
+// type "Armor"
+// using "_Head_Magic"
+// data "RootTemplate" "b2ac96aa-5f04-49fb-800c-ab51a2bdb3c6"
+// data "ItemGroup" ""
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Violence_LowHP_Violence_Passive"
+// data "StatusOnEquip" "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_CAPOFWRATH_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_Violence_LowHP_Violence_Passive"
+// type "PassiveData"
+// // Last Stand
+// data "DisplayName" "hc9ee68f2g9cb1g496cg9dceg0bb5acb2cebe;2"
+// // During combat, when the wearer starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.
+// data "Description" "hbe48470eg0881g4036g89c8g5a290c83162a;4"
+// data "DescriptionParams" "2"
+
+new entry "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
+// // Last Stand
+// data "DisplayName" "hb86457edg7402g4de9g86a3gbf035a3bae95;2"
+// // During combat, when the creature starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for 1 turn.
+// data "Description" "h924abaebg4147g456cg93b3g1e72df079c76;2"
+// // During combat, when the creature starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.
+data "Description" "hfce80e86g4c97g46b7gb01fg16e5a6368eb1;1"
+data "DescriptionParams" "2"
+// data "StackId" "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
+// data "TickType" "StartTurn"
+// data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50)):ApplyStatus(MAG_VIOLENCE,100,1)"
+data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50)):ApplyStatus(MAG_VIOLENCE,100,2);IF(not Dead() and Combat() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50)):ApplyStatus(MAG_VIOLENCE_DURATION_TECHNICAL,100,1)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
 
 // ==================================== Circle of Bones ====================================
 // TODO: Something/anything.

@@ -360,14 +360,73 @@ data "OnApplySuccess" "IF(HasStatus('ACID')):SetStatusDuration(ACID,1,Add);IF(no
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Cloak of Displacement ====================================
-// TODO: Something/anything.
+// Changes: Forced honour ruleset changes.
+// TODO: template
+// TODO: polymorph.
 
-// gear entry
+new entry "MAG_PHB_CloakOfDisplacement_Cloak"
+type "Armor"
+// using "_Back_Magic"
+using "MAG_PHB_CloakOfDisplacement_Cloak"
+// data "RootTemplate" "257aed3e-370d-40b3-b464-de10257dd82b"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "ValueLevel" "3"
+// data "ValueLevel" "5"
+data "ValueLevel" "5"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_PHB_Displacement_Cloak_Passive"
+// data "StatusOnEquip" "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+new entry "GOON_CLOAKOFDISPLACEMENT_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_PHB_Displacement_Cloak_Passive"
+type "PassiveData"
+using "MAG_PHB_Displacement_Cloak_Passive"
+// // Displacement
+// data "DisplayName" "h30dfd004g2e7dg49feg8e91gb062ecaf2520;2"
+// // At the beginning of the wearer's turn, the cloak activates, granting enemies &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; that target the wearer. This effect lasts until the wearer takes damage.
+// data "Description" "h22f785a3g6a73g4939gaa55gcd54c9f49a43;3"
+data "Properties" "Highlighted"
+
+// TODO: Multiple yucky inheritances
+// new entry "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// // %%%|Cloak of Dispalcement Technical|
+// data "DisplayName" "h83f77d95ga2a7g405bgb335gb410d56891ad;1"
+// // %%%|Technical status to add the displacement status effect at the start of the turn|
+// data "Description" "h03006389g343cg4dc3gab0fgff9de272e46f;1"
+// data "StackId" "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+// data "TickType" "StartTurn"
+// data "TickFunctors" "IF(Combat() and not Dead()):ApplyStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT, 100, 2)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+// data "OnRemoveFunctors" "RemoveStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT)"
+
+// TODO: awful inheritance
+// new entry "MAG_PHB_CLOAK_OF_DISPLACEMENT"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "BLUR"
+// // Displaced
+// data "DisplayName" "hf0a2cd38gb975g40ffg9787g99ae6ae1ce58;2"
+// // Until you take damage, foes have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against you.
+// data "Description" "h957e994cgb2bdg4e97gbe82gad62540534fc;5"
+// data "SoundStart" "MAG_Status_CloakOfDisplacement_Start"
+// data "SoundLoop" "MAG_Status_CloakOfDisplacement_MO"
+// data "SoundStop" "MAG_Status_CloakOfDisplacement_End"
+// data "StackId" "MAG_PHB_CLOAK_OF_DISPLACEMENT"
+// data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnAttacked) and IsHit() and not IsCriticalMiss() and TotalAttackDamageDoneGreaterThan(0)) or IsStatusEvent(StatusEvent.OnCombatEnded)"
+// data "RemoveEvents" "OnCombatEnded;OnAttacked"
+// data "StatusPropertyFlags" "DisableOverhead"
+// data "StatusGroups" ""
+
+
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect continues to function while under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPHED"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 // ==================================== Derivation Cloak ====================================
 // TODO: Something/anything.
@@ -401,6 +460,7 @@ data "OnApplySuccess" "IF(HasStatus('ACID')):SetStatusDuration(ACID,1,Add);IF(no
 
 // ==================================== Cloak of the Weave ====================================
 // Bug Fix: Absorb Elements is now functional.
+// TODO: polymorph.
 
 new entry "MAG_EndGameCaster_Cloak"
 type "Armor"
@@ -485,6 +545,7 @@ data "Boosts" "Ability(Charisma, 1)"
 
 // ==================================== Shade-Slayer Cloak ====================================
 // Bug Fix: Skilled Skullduggery is removed when the cloak is unequipped.
+// TODO: polymorph.
 
 new entry "MAG_Critical_HidingCritical_Cloak"
 type "Armor"
@@ -579,34 +640,52 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Braindrain Cape (Innaccessible/cut content) ====================================
-// TODO: Something/anything.
+// Bug Fix: Mental Debilitation no longer applies Mental Fatigue to creatures that are not enemies.
+// Bug Fix: Mental Debilitation will no longer attempt to apply Mental Fatigure to the wearer.
+// Changes: Mental Debilitation's Mental Fatigue condition application will now only apply once per action.
+// Changes: Forced honour ruleset changes.
+// TODO: Template
+// TODO: Check for the harmful flag, but maybe in the future after I bug fix the shit out of all the missing flags...
+// TODO: polymorph.
 
-// new entry "MAG_Psychic_MentalFatigue_Cape"
-// type "Armor"
+new entry "MAG_Psychic_MentalFatigue_Cape"
+type "Armor"
 // using "_Back_Magic"
+using "MAG_Psychic_MentalFatigue_Cape"
 // data "RootTemplate" "1b4d85b9-eefd-4629-9985-db3cb5365e8f"
 // data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "ValueLevel" "3"
+// data "ValueLevel" "6"
+data "ValueLevel" "6"
+// data "ValueScale" "1"
+// data "ValueScale" "1.2"
+data "ValueScale" "1.2"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Psychic_MentalFatigue_Cape_Passive"
 // data "Unique" "1"
 
-// new entry "MAG_Psychic_MentalFatigue_Cape"
-// type "Armor"
-// using "MAG_Psychic_MentalFatigue_Cape"
-// data "ValueLevel" "6"
-// data "ValueScale" "1.2"
+new entry "GOON_BRAINDRAINCAPE_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// new entry "MAG_Psychic_MentalFatigue_Cape_Passive"
-// type "PassiveData"
-// Mental Debilitation
+new entry "MAG_Psychic_MentalFatigue_Cape_Passive"
+type "PassiveData"
+using "MAG_Psychic_MentalFatigue_Cape_Passive"
+// // Mental Debilitation
 // data "DisplayName" "he6e8b4c6gc422g4a7dgaf96gcbdef4bf582f;2"
-// When the wearer succeeds a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against any foe's spells or actions, that foe gains &lt;LSTag Type="Status" Tooltip="MAG_PSYCHIC_MENTAL_FATIGUE"&gt;Mental Fatigue&lt;/LSTag&gt;.
+// // When the wearer succeeds a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against any foe's spells or actions, that foe gains &lt;LSTag Type="Status" Tooltip="MAG_PSYCHIC_MENTAL_FATIGUE"&gt;Mental Fatigue&lt;/LSTag&gt;.
 // data "Description" "hf948f80eg0c7cg4404gba31g00d465a633c0;2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
 // data "StatsFunctorContext" "OnAttacked"
 // data "Conditions" "not Item() and not Self() and not IsMiss() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow()"
+data "Conditions" "not Item() and not Self() and Enemy() and not IsMiss() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION',context.Source)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_PSYCHIC_MENTAL_FATIGUE, 100, 2);ApplyStatus(SELF, MAG_PSYCHIC_MENTAL_FATIGUE_DURATION_TECHNICAL, 100, 1)"
+data "StatsFunctors" "ApplyStatus(SWAP, MAG_PSYCHIC_MENTAL_FATIGUE, 100, 2);ApplyStatus(SWAP, MAG_PSYCHIC_MENTAL_FATIGUE_DURATION_TECHNICAL, 100, 1);ApplyStatus(SWAP,GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION, 100, 1)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION"

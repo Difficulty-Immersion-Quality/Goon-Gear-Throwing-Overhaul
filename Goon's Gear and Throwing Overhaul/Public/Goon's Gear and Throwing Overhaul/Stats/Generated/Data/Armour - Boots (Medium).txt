@@ -1,10 +1,29 @@
 // ==================================== Base entry ====================================
 
-// 
+// new entry "ARM_Boots_Metal"
+// type "Armor"
+// using "_Foot"
+// data "RootTemplate" "689e8d3e-b79b-417b-8cd2-9d08b2f5e618"
+// data "ValueLevel" "4"
+// data "Weight" "2"
+// data "Boosts" "Skill(Athletics,1)"
+// data "ArmorType" "Plate"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "MinLevel" "1"
+// data "Proficiency Group" "MediumArmor"
 
 // ==================================== Magical variants ====================================
 
-// 
+// new entry "_Foot_Magic_Metal"
+// type "Armor"
+// using "ARM_Boots_Metal"
+// // AccessoryUncommon
+// data "ValueUUID" "f0e7be35-8be4-483d-afa8-dc9a104ea758"
+// data "ValueScale" "1"
+// data "Rarity" "Uncommon"
+// data "Boosts" "Skill(Athletics,1)"
 
 // ==================================== Boots of Elemental Momentum ====================================
 // TODO: Something/anything.
@@ -17,8 +36,10 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Boots of Striding  ====================================
+// Bug Fix: Focused Stride now only functions with spells that require concentration, instead of any action requiring concentration.
 // Bug Fix: Unmovable is removed when the boots are unequipped.
 // Bug Fix: Unmovable is now a visible condition.
+// TODO: polymorph.
 
 new entry "MAG_Paladin_MomentumOnConcentration_Boots"
 type "Armor"
@@ -37,13 +58,14 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // new entry "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
 // type "PassiveData"
-// Focused Stride
+// // Focused Stride
 // data "DisplayName" "h70c769c0g929dg44ceg82deg259490babe49;1"
-// When you cast a spell that requires concentration, you gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [1] turn. &lt;br&gt;&lt;br&gt;While you are concentrating, you can't get knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or be moved against your will.
+// // When you cast a spell that requires concentration, you gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [1] turn. &lt;br&gt;&lt;br&gt;While you are concentrating, you can't get knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or be moved against your will.
 // data "Description" "h93eb41a6gbe89g48fdga5f5g6960be08339a;2"
 // data "DescriptionParams" "1"
 // data "StatsFunctorContext" "OnCast"
 // data "Conditions" "HasSpellFlag(SpellFlags.Concentration) "
+data "Conditions" "IsSpell() and HasSpellFlag(SpellFlags.Concentration)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_MOMENTUM, 100, 1);ApplyStatus(SELF, MAG_UNMOVABLE, 100, -1);ApplyStatus(SELF, MAG_MOMENTUM_DURATION_TECHNICAL, 100, 1)"
 
 // new entry "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
@@ -59,9 +81,9 @@ type "StatusData"
 data "StatusType" "BOOST"
 // using "GROUNDED"
 using "MAG_UNMOVABLE"
-// Unmovable
+// // Unmovable
 // data "DisplayName" "he35e3dbfg5aa1g4deag9147g0f2858a914d4;1"
-// While concentrating on a spell, you can't be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved against your will.
+// // While concentrating on a spell, you can't be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved against your will.
 // data "Description" "h1f5794a3gc546g4d89ga109ge240265bf937;1"
 // data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
 data "StatusPropertyFlags" ""

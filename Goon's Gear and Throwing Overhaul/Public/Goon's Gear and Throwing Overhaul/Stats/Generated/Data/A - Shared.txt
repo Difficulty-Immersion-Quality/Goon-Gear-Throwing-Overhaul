@@ -22,13 +22,13 @@ data "Boosts" "MonkWeaponAttackOverride()"
 new entry "Goon_DamageReroll_Throwing_Master_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Boosts" "IF(HasAnyStatus({'GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL','GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL','GOON_THECLOVER_WEAPON_TECHNICAL'}, {}, {},context.HitDescription.ThrownObject)):Reroll(Damage,2,true)"
+data "Boosts" "IF(HasAnyStatus({ 'GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL','GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL','GOON_THECLOVER_WEAPON_TECHNICAL' }, {}, {}, context.HitDescription.ThrownObject)):Reroll(Damage,2,true)"
 
 // Ignore Resistance: Adamantine Scimitar, Adamantine Longsword
 new entry "Goon_IgnoreResistance_Throwing_Master_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Boosts" "IF(HasAnyStatus({'MAG_BYPASS_SLASHING_RESISTANCE_TECHNICAL'}, {}, {},context.HitDescription.ThrownObject)):IgnoreResistance(Slashing, Resistant)"
+data "Boosts" "IF(HasAnyStatus({ 'MAG_BYPASS_SLASHING_RESISTANCE_TECHNICAL' }, {}, {}, context.HitDescription.ThrownObject)):IgnoreResistance(Slashing, Resistant)"
 
 // TODO: Figure out how to allow advantage for throwing specific weapons
 // Advantage: Pelorsun Blade, Gandrel's Aspiration, Hunting Shortbow
@@ -291,13 +291,18 @@ data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)"
 
 // ==================================== Blind Immunity ====================================
 // Bug Fix: Blind Immunity no longer allows the entity to ignore Darkness clouds, being Immune to Blinded and having X-ray vision are not the same.
+// TODO: Blind Immunity polymorph.
+
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect continues to function while under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPHED"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 new entry "MAG_Shadow_BlindImmunity_Ring_Passive"
 type "PassiveData"
 using "MAG_Shadow_BlindImmunity_Ring_Passive"
-// Blind Immunity
+// // Blind Immunity
 // data "DisplayName" "hf1d1e91dg0542g40a6g93e7ge0d5e31296c7;2"
-// The wearer cannot be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.
+// // The wearer cannot be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.
 // data "Description" "hb00b5a9bg7c63g443fga699gb3341d39c41d;4"
+data "Properties" "Highlighted"
 // data "Boosts" "StatusImmunity(SG_Blinded);IgnoreSurfaceCover(SurfaceDarknessCloud)"
 data "Boosts" "StatusImmunity(SG_Blinded)"

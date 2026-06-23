@@ -103,6 +103,7 @@ data "RemoveConditions" "IsStatusEvent(StatusEvent.OnSpellCast) and SpellCategor
 // Changes: Thunderous Conversion will only apply Reverberation once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
 // Changes: Thunderous Conversion's "OncePerAttack" cooldown is removed, allowing Reverberation to be applied from AOE to more than a single target.
 // TODO: Template.
+// TODO: polymorph.
 
 new entry "MAG_Thunder_Reverberation_Gloves"
 type "Armor"
@@ -144,6 +145,7 @@ data "Description" "hc720dc2bge923g41degac3bge73b82b035cb;1"
 data "DescriptionParams" "DealDamage(,Lightning);DealDamage(,Radiant);DealDamage(,Thunder);2"
 // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
 data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+data "Properties" "Highlighted"
 data "StatsFunctorContext" "OnDamage"
 data "Conditions" "(IsDamageTypeLightning() or IsDamageTypeThunder() or IsDamageTypeRadiant()) and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION',context.Target)"
 data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION, 100, 1)"
@@ -235,7 +237,10 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Luminous Gloves ====================================
+// Changes: Radiating Orb Gloves will only apply Radiating Orb once per action, for each target damaged.
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
+// TODO: loca.
+// TODO: polymorph.
 
 new entry "MAG_Radiant_RadiatingOrb_Gloves"
 type "Armor"
@@ -251,6 +256,31 @@ new entry "GOON_LUMINOUSGLOVES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Radiant_RadiatingOrb_Gloves_Passive"
+type "PassiveData"
+using "MAG_Radiant_RadiatingOrb_Gloves_Passive"
+// // Radiating Orb Gloves
+// data "DisplayName" "h357b2758gcd31g451dga7f0g8da7cde736c1;2"
+// // When the wearer deals [1], the target receives [2] turn of &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt;.
+// data "Description" "hb6cd4447ge729g41ffg8496g85ac5a4e8b9e;6"
+// // When the wearer deals[1], the target receives [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt;.
+data "Description" "hd28abf48gca2dg4c46g9428g818a5869b075;1"
+// data "DescriptionParams" "DealDamage(,Radiant);2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "HasDamageDoneForType(DamageType.Radiant) and not Item()"
+data "Conditions" "HasDamageDoneForType(DamageType.Radiant) and not Item() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES',context.Target)"
+// data "StatsFunctors" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2);ApplyStatus(MAG_RADIANT_RADIATING_ORB_DURATION_TECHNICAL, 100, 1)"
+data "StatsFunctors" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2);ApplyStatus(MAG_RADIANT_RADIATING_ORB_DURATION_TECHNICAL, 100, 1);ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES, 100, 1)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 
 // ==================================== Reason's Grasp ====================================
 // TODO: Something/anything.
@@ -700,7 +730,7 @@ data "Conditions" "Goon_IsSneakAttack()"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== The Sparkle Hands ====================================
-// Changes: Extra description added to Conductive Strikes, stating that it works while Polymorphed.
+// TODO: polymorph.
 
 // new entry "MAG_ChargedLightning_AbilityCheckBoost_Gloves"
 // type "Armor"
@@ -720,16 +750,25 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_ChargedLightning_Charge_OnUnarmedDamage_Passive"
 type "PassiveData"
 using "MAG_ChargedLightning_Charge_OnUnarmedDamage_Passive"
-// Conductive Strikes
+// // Conductive Strikes
 // data "DisplayName" "hac8abcf8g463dg4248g9d55gffed09bed9c2;1"
-// On a hit with an unarmed attack, the wearer gains [1] <LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING">Lightning Charges</LSTag>.
+// // On a hit with an unarmed attack, the wearer gains [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
 // data "Description" "hdad11166g75bfg4f45gb1c7g14af36afffc5;1"
 // data "DescriptionParams" "2"
+data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsUnarmedAttack()"
 // data "StatsFunctors" "IF(not HasStatus('MAG_CHARGED_LIGHTNING', context.Source)):ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_LIGHTNING_DAMAGE_ONCE_TECHNICAL,100, 0);IF(Character()):ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_GENERATE_CHARGE_FX, 100, 0);IF(Character() and not IsDischargingLightning(context.Source)):ApplyStatus(SELF, MAG_CHARGED_LIGHTNING,100, 2);ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_DURATION_TECHNICAL, 100, 1)"
-// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect is &lt;b&gt;also&lt;/b&gt; active while Polymorphed, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
-data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+new entry "MAG_ChargedLightning_UnarmedAttackAdvantage_Passive"
+type "PassiveData"
+using "MAG_ChargedLightning_UnarmedAttackAdvantage_Passive"
+// // Effective Transmitter
+// data "DisplayName" "hf40271e5g32dfg4c20ga383g511bed0866a4;1"
+// // While imbued with &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;, attacks against metal constructs and foes wearing metal armour gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
+// data "Description" "ha6044224g7830g44ffg8562gf9b75cdd58db;4"
+data "Properties" "Highlighted"
+// data "Boosts" "IF(HasStatus('MAG_CHARGED_LIGHTNING', context.Source) and (HasMetalArmor(context.Target) or IsMetalCharacter(context.Target))):Advantage(AttackRoll)"
 
 // ==================================== Thunderpalm Strikers ====================================
 // TODO: Something/anything.
@@ -835,6 +874,8 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // Bug Fix: Infernal Touch's Bleeding application displays properly in the combat log.
 // Changes: Infernal Touch's 1d6 Fire damage applies when throwing melee weapons.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
+// TODO: polymorph.
+// TODO: Item spell inherits from NPC spell that inherits from regular spell, fuck me lol.
 
 new entry "MAG_Infernal_Metal_Gloves"
 type "Armor"
@@ -855,27 +896,30 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "MAG_Infernal_Metal_AttackBonus_Passive"
-// type "PassiveData"
-// Infernal Acuity
+new entry "MAG_Infernal_Metal_AttackBonus_Passive"
+type "PassiveData"
+using "MAG_Infernal_Metal_AttackBonus_Passive"
+// // Infernal Acuity
 // data "DisplayName" "h91cca6d7g0284g43a2gb588g6cdb5ab2f2ee;2"
-// You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
+// // You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
 // data "Description" "h46ffe4b1gd070g484eg94a4g0d14439ea36c;3"
 // data "DescriptionParams" "1"
+data "Properties" "Highlighted"
 // data "Boosts" "RollBonus(Attack, 1);SpellSaveDC(1)"
 
 new entry "MAG_Infernal_Metal_Gloves_FireDamage_Passive"
 type "PassiveData"
 using "MAG_Infernal_Metal_Gloves_FireDamage_Passive"
-// Infernal Touch
+// // Infernal Touch
 // data "DisplayName" "hd6e187fag627eg42bbgb90eg737260214df3;3"
-// Your weapon attacks deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;.
+// // Your weapon attacks deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;.
 // data "Description" "h901a1160gba15g47d9g9427gf970bbcb58ad;6"
-// Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.
+// // Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.
 data "Description" "h4855f6bfgcd92g4833ga020gd0dd642acdfc;1"
 // data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic)"
 data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic);2"
 data "TooltipSave" "Constitution"
+data "Properties" "Highlighted"
 // data "Boosts" "CharacterWeaponDamage(1d6, Fire);CharacterUnarmedDamage(1d6, Necrotic)"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsUnarmedAttack()"
@@ -895,6 +939,24 @@ data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 15)"
 data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
+
+// new entry "Projectile_MAG_FireRay"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Projectile_FireRay_Cambion"
+// data "Level" ""
+// data "SpellSchool" ""
+// data "Cooldown" "OncePerShortRestPerItem"
+
+// TODO: Cut content for Hellgloom Gloves
+// new entry "MAG_Lesser_Infernal_Metal_Gloves_FireDamage_Passive"
+// type "PassiveData"
+// using "MAG_Infernal_Metal_Gloves_FireDamage_Passive"
+// // Lesser Infernal Touch
+// data "DisplayName" "hbf52342cg00ebg41e1g8cc5g1919e5f812a2;2"
+// data "DescriptionParams" "DealDamage(1d4, Fire);DealDamage(1d4, Necrotic)"
+// data "Boosts" "CharacterWeaponDamage(1d4, Fire);CharacterUnarmedDamage(1d4, Necrotic)"
+// data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2,,,,not SavingThrow(Ability.Constitution,13))"
 
 // ==================================== Hr'a'cknir Bracers ====================================
 // TODO: Something/anything.

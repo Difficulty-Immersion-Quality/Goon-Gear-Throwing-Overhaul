@@ -268,234 +268,6 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Genial Striding  -->
-				<node id="GameObjects">
-					<!-- The soles of these boots warp and shift like warm clay manipulated by an unseen sculptor's hands. -->
-					<attribute id="Description" type="TranslatedString" handle="h9ed760d9g3277g4aebgb63ag8c51e81942df" version="1" />
-					<attribute id="DisplayName" type="TranslatedString" handle="h23f5a39cg6ed3g442fga86dg1c28e8db4878" version="2" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_TerrainWalkers_Boots_Magic" />
-					<attribute id="LevelName" type="FixedString" value="" />
-					<attribute id="MapKey" type="FixedString" value="0624ccf0-1b77-448f-8da9-d8a04efa4935" />
-					<attribute id="Name" type="LSString" value="MAG_TerrainWalkers_Boots" />
-					<attribute id="ParentTemplateId" type="FixedString" value="38f78b0a-4f55-406f-8b28-7c0ec8220905" />
-					<attribute id="Stats" type="FixedString" value="MAG_TerrainWalkers_Boots" />
-					<!-- <attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" /> -->
-					<attribute id="Type" type="FixedString" value="item" />
-					<attribute id="VisualTemplate" type="FixedString" value="f49ccc5d-a63a-f236-0cc4-5ea30fd69f14" />
-					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
-					<children>
-						<!-- Changes: All different from here down, incorporated edits from "Boots of Genial Striding (Bug Fix)" by Joell560. -->
-						<node id="Equipment">
-							<children>
-								<node id="AfroLongHair" />
-								<node id="AfroShortHair" />
-								<node id="CurlyLongHair" />
-								<node id="CurlyShortHair" />
-								<node id="DreadLongHair" />
-								<node id="DreadShortHair" />
-								<node id="LongHair" />
-								<node id="ParentRace">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-									</children>
-								</node>
-								<node id="ShortHair" />
-								<node id="Slot">
-									<attribute id="Object" type="FixedString" value="Footwear" />
-								</node>
-								<node id="VisualSet">
-									<attribute id="BodySetVisual" type="FixedString" value="" />
-									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
-									<children>
-										<node id="MaterialOverrides">
-											<attribute id="MaterialResource" type="FixedString" value="" />
-											<children>
-												<node id="MaterialPresets">
-													<children>
-														<node id="Object">
-															<attribute id="ForcePresetValues" type="bool" value="False" />
-															<attribute id="GroupName" type="FixedString" value="02 Colour" />
-															<attribute id="MapKey" type="FixedString" value="02 Colour" />
-															<attribute id="MaterialPresetResource" type="FixedString" value="f9f539d5-1092-5372-5656-ded8cd68dc82" />
-														</node>
-													</children>
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Primary" />
-													<attribute id="Value" type="fvec3" value="0.1658955 0.1353234 0.1228682" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Secondary" />
-													<attribute id="Value" type="fvec3" value="0.1137255 0.1215686 0.1176471" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Tertiary" />
-													<attribute id="Value" type="fvec3" value="0.08820807 0.09527057 0.06383235" />
-												</node>
-											</children>
-										</node>
-										<node id="RealMaterialOverrides" />
-									</children>
-								</node>
-								<node id="Visuals">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="1a1123ad-e605-1b5d-0334-2a45b0b921cd" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="71180b76-5752-4a97-b71f-911a69197f58" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="926a6d63-6c30-5fa5-90e5-06a189e93e0f" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="e39505f7-f576-4e70-a99e-8e29cd381a11" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="e2784d4f-f1c2-c064-630b-04ddd4ea21de" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="47c0315c-7dc6-4862-b39b-8bf3a10f8b54" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="36f73192-8c60-67ab-de47-45377255e061" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="e3e0151e-8819-65ca-29f3-0957c609529c" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="431aa3ee-bb7c-270f-0145-b25b28a510c9" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="abf674d2-2ea4-4a74-ade0-125429f69f83" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="3a9b7f36-a515-e4e8-94ca-d08b663c2733" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="b4a34ce7-41be-44d9-8486-938fe1472149" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="d5b82f09-46d0-722f-9bc6-4cb96588f236" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="a933e2a8-aee1-4ecb-80d2-8f47b706f024" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="39f4d04b-6d73-97ca-1e4e-82ca89e8e865" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="8f00cf38-4588-433a-8175-8acdbbf33f33" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="0b25dabd-bd8b-70d9-cf10-9810731260c9" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="5640e766-aa53-428d-815b-6a0b4ef95aca" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="da1be998-ca2e-48e4-a21f-9b31dbc4d0e5" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="c491d027-4332-4fda-948f-4a3df6772baa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="38898ef5-178b-f66c-14ca-82e7f8f71cb8" />
-												</node>
-											</children>
-										</node>
-									</children>
-								</node>
-								<node id="WavyLongHair" />
-								<node id="WavyShortHair" />
-							</children>
-						</node>
-						<!-- Changes: Gale can eat it -->
-						<node id="OnUsePeaceActions">
-							<children>
-								<node id="Action">
-									<attribute id="ActionType" type="int32" value="7" />
-									<children>
-										<node id="Attributes">
-											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
-											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
-											<attribute id="Consume" type="bool" value="True" />
-											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
-											<attribute id="StatusDuration" type="int32" value="0" />
-										</node>
-									</children>
-								</node>
-							</children>
-						</node>
-						<node id="Tags">
-							<children>
-								<node id="Tag">
-									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
-									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
-								</node>
-								<node id="Tag">
-									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
-									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
-								</node>
-							</children>
-						</node>
-						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
-						<node id="StatusList">
-							<children>
-								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_BOOTSOFGENIALSTRIDING_ARMOUR_TECHNICAL" />
-								</node>
-							</children>
-						</node>
-					</children>
-				</node>
 			<!-- Boots of Very Fast Blinking -->
 				<node id="GameObjects">
 					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
@@ -2697,322 +2469,6 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Speed -->
-				<node id="GameObjects">
-					<attribute id="CanClickThrough" type="bool" value="False" />
-					<attribute id="CanClimbOn" type="bool" value="False" />
-					<attribute id="CanShootThrough" type="bool" value="True" />
-					<attribute id="CoverAmount" type="uint8" value="0" />
-					<!-- Featherlaced and flexible of sole, these boots have been used to round up - and outrun - many a foe. -->
-					<attribute id="Description" type="TranslatedString" handle="hfe7c91afg23fbg4c5cga71dg26f9786d0b2a" version="6" />
-					<attribute id="DisplayName" type="TranslatedString" handle="h48964774g3413g4bc6g8810gda1a28f3cf97" version="1" />
-					<attribute id="Icon" type="FixedString" value="Generated_ARM_BootsOfSpeed_Magic" />
-					<attribute id="IsPointerBlocker" type="bool" value="False" />
-					<attribute id="LevelName" type="FixedString" value="" />
-					<attribute id="LoopSound" type="FixedString" value="" />
-					<attribute id="MapKey" type="FixedString" value="8b22d15a-85bb-4c8d-90cf-a773fc451eac" />
-					<attribute id="Name" type="LSString" value="ARM_BootsOfSpeed" />
-					<attribute id="ParentTemplateId" type="FixedString" value="85d78eab-e4ad-4f56-bfb3-87c6368f5b17" />
-					<attribute id="PhysicsTemplate" type="FixedString" value="8be0d494-a364-5ec6-6ee9-5ac30fa8cf49" />
-					<attribute id="ReadinessFlags" type="uint32" value="128" />
-					<attribute id="SoundAttenuation" type="int16" value="-1" />
-					<attribute id="SoundInitEvent" type="FixedString" value="" />
-					<attribute id="Stats" type="FixedString" value="ARM_BootsOfSpeed" />
-					<attribute id="Type" type="FixedString" value="item" />
-					<attribute id="VisualTemplate" type="FixedString" value="28efb600-a2e9-3cfa-ce83-323219ed6378" />
-					<attribute id="Wadable" type="bool" value="False" />
-					<attribute id="WalkOn" type="bool" value="False" />
-					<attribute id="WalkThrough" type="bool" value="True" />
-					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
-					<children>
-						<node id="Bounds">
-							<children>
-								<node id="Bound">
-									<attribute id="Height" type="float" value="0.438493" />
-									<attribute id="Max" type="fvec3" value="0.15109797 0.29022923 0.10204773" />
-									<attribute id="Min" type="fvec3" value="-0.14264913 -0.00011408329 -0.16295673" />
-									<attribute id="Radius" type="float" value="0.1775075" />
-									<attribute id="Shape" type="uint8" value="1" />
-									<attribute id="Type" type="uint8" value="0" />
-								</node>
-								<node id="Bound">
-									<attribute id="Height" type="float" value="0.438493" />
-									<attribute id="Max" type="fvec3" value="0.30219594 0.29022923 0.20409545" />
-									<attribute id="Min" type="fvec3" value="-0.28529826 -0.00011408329 -0.32591346" />
-									<attribute id="Radius" type="float" value="0.355015" />
-									<attribute id="Shape" type="uint8" value="1" />
-									<attribute id="Type" type="uint8" value="1" />
-								</node>
-								<node id="Bound">
-									<attribute id="Height" type="float" value="0.438493" />
-									<attribute id="Max" type="fvec3" value="0.30219594 0.29022923 0.20409545" />
-									<attribute id="Min" type="fvec3" value="-0.28529826 -0.00011408329 -0.32591346" />
-									<attribute id="Radius" type="float" value="0.355015" />
-									<attribute id="Shape" type="uint8" value="1" />
-									<attribute id="Type" type="uint8" value="2" />
-								</node>
-							</children>
-						</node>
-						<node id="Equipment">
-							<children>
-								<node id="AfroLongHair" />
-								<node id="AfroShortHair" />
-								<node id="CurlyLongHair" />
-								<node id="CurlyShortHair" />
-								<node id="DreadLongHair" />
-								<node id="DreadShortHair" />
-								<node id="LongHair" />
-								<node id="ParentRace">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-									</children>
-								</node>
-								<node id="ShortHair" />
-								<node id="Slot">
-									<attribute id="Object" type="FixedString" value="Footwear" />
-								</node>
-								<node id="VisualSet">
-									<attribute id="BodySetVisual" type="FixedString" value="" />
-									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
-									<children>
-										<node id="MaterialOverrides">
-											<attribute id="MaterialResource" type="FixedString" value="" />
-											<children>
-												<node id="MaterialPresets">
-													<children>
-														<node id="Object">
-															<attribute id="ForcePresetValues" type="bool" value="False" />
-															<attribute id="GroupName" type="FixedString" value="02 Colour" />
-															<attribute id="MapKey" type="FixedString" value="02 Colour" />
-															<attribute id="MaterialPresetResource" type="FixedString" value="00000000-0000-0000-0000-000000000000" />
-														</node>
-													</children>
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Tertiary" />
-													<attribute id="Value" type="fvec3" value="0.1950897 0.17542206 0.17225143" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Cloth_Primary" />
-													<attribute id="Value" type="fvec3" value="0.2900979 0.053777825 0.053777825" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Primary" />
-													<attribute id="Value" type="fvec3" value="0.1914143 0.101850264 0.0804916" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Primary" />
-													<attribute id="Value" type="fvec3" value="0.659224 0.659224 0.659224" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Cloth_Secondary" />
-													<attribute id="Value" type="fvec3" value="0.09447074 0.12893265 0.09339183" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Secondary" />
-													<attribute id="Value" type="fvec3" value="0.15105805 0.09151835 0.071761444" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Secondary" />
-													<attribute id="Value" type="fvec3" value="0.18354899 0.0824142 0.04777575" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Cloth_Tertiary" />
-													<attribute id="Value" type="fvec3" value="0.23919433 0.23783028 0.19347945" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Tertiary" />
-													<attribute id="Value" type="fvec3" value="0.18354899 0.0824142 0.04777575" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Accent_Color" />
-													<attribute id="Value" type="fvec3" value="0.18354899 0.0824142 0.04777575" />
-												</node>
-											</children>
-										</node>
-										<node id="RealMaterialOverrides" />
-									</children>
-								</node>
-								<node id="Visuals">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="5ddccea6-47e6-bcdb-199d-fe3e6233097b" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="71180b76-5752-4a97-b71f-911a69197f58" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="44960d3a-f5f9-5eb5-c7b5-9a618be8784d" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="e39505f7-f576-4e70-a99e-8e29cd381a11" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="66326c46-17a2-a3aa-721a-a0fd5925a79d" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="47c0315c-7dc6-4862-b39b-8bf3a10f8b54" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="1e3c9d1e-c7c4-ddd3-6287-bde4d2bf9179" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="ca0484a4-22f5-df43-5e77-c81b5f950ed5" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="fe091ce5-0828-cf9a-44b7-d2e1560fc3ed" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="abf674d2-2ea4-4a74-ade0-125429f69f83" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="1148d459-bc30-c15f-d788-1ab6a46f87c8" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="b4a34ce7-41be-44d9-8486-938fe1472149" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="dab0fac4-3fb3-9e8b-44dc-2c4c64bf3fc1" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="a933e2a8-aee1-4ecb-80d2-8f47b706f024" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="0166c119-19d6-f941-a00e-08ae9699a57a" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="8f00cf38-4588-433a-8175-8acdbbf33f33" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="568bcce1-1e69-2a4c-db81-5a3cb04989e6" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="5640e766-aa53-428d-815b-6a0b4ef95aca" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="214d4b88-f262-d5d2-5345-6395dff72720" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="c491d027-4332-4fda-948f-4a3df6772baa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="10b131bb-603a-f05a-a951-b6fe2aeaa71e" />
-												</node>
-											</children>
-										</node>
-									</children>
-								</node>
-								<node id="WavyLongHair" />
-								<node id="WavyShortHair" />
-							</children>
-						</node>
-						<!-- Changes: Gale can eat it, Tressym can trade for it -->
-						<node id="OnUsePeaceActions">
-							<children>
-								<node id="Action">
-									<attribute id="ActionType" type="int32" value="7" />
-									<children>
-										<node id="Attributes">
-											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
-											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
-											<attribute id="Consume" type="bool" value="True" />
-											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
-											<attribute id="StatusDuration" type="int32" value="0" />
-										</node>
-									</children>
-								</node>
-							</children>
-						</node>
-						<node id="Tags">
-							<children>
-								<node id="Tag">
-									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
-									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
-								</node>
-								<node id="Tag">
-									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
-									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
-								</node>
-							</children>
-						</node>
-						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
-						<node id="StatusList">
-							<children>
-								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_BOOTSOFSPEED_ARMOUR_TECHNICAL" />
-								</node>
-							</children>
-						</node>
-					</children>
-				</node>
 			<!-- Boots of Arcane Bolstering -->
 				<node id="GameObjects">
 					<!-- Fizzling barbs of enchantment magic crackle from the laces of these boots. -->
@@ -3537,7 +2993,552 @@
 						</node>
 					</children>
 				</node>
-			<!-- Next -->
+			<!-- Boots of Genial Striding  -->
+				<node id="GameObjects">
+					<!-- The soles of these boots warp and shift like warm clay manipulated by an unseen sculptor's hands. -->
+					<attribute id="Description" type="TranslatedString" handle="h9ed760d9g3277g4aebgb63ag8c51e81942df" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h23f5a39cg6ed3g442fga86dg1c28e8db4878" version="2" />
+					<attribute id="Icon" type="FixedString" value="Generated_MAG_TerrainWalkers_Boots_Magic" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="0624ccf0-1b77-448f-8da9-d8a04efa4935" />
+					<attribute id="Name" type="LSString" value="MAG_TerrainWalkers_Boots" />
+					<attribute id="ParentTemplateId" type="FixedString" value="38f78b0a-4f55-406f-8b28-7c0ec8220905" />
+					<attribute id="Stats" type="FixedString" value="MAG_TerrainWalkers_Boots" />
+					<!-- <attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" /> -->
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="f49ccc5d-a63a-f236-0cc4-5ea30fd69f14" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
+					<children>
+						<!-- Changes: All different from here down, incorporated edits from "Boots of Genial Striding (Bug Fix)" by Joell560. -->
+						<node id="Equipment">
+							<children>
+								<node id="AfroLongHair" />
+								<node id="AfroShortHair" />
+								<node id="CurlyLongHair" />
+								<node id="CurlyShortHair" />
+								<node id="DreadLongHair" />
+								<node id="DreadShortHair" />
+								<node id="LongHair" />
+								<node id="ParentRace">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
+											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
+											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
+										</node>
+									</children>
+								</node>
+								<node id="ShortHair" />
+								<node id="Slot">
+									<attribute id="Object" type="FixedString" value="Footwear" />
+								</node>
+								<node id="VisualSet">
+									<attribute id="BodySetVisual" type="FixedString" value="" />
+									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
+									<children>
+										<node id="MaterialOverrides">
+											<attribute id="MaterialResource" type="FixedString" value="" />
+											<children>
+												<node id="MaterialPresets">
+													<children>
+														<node id="Object">
+															<attribute id="ForcePresetValues" type="bool" value="False" />
+															<attribute id="GroupName" type="FixedString" value="02 Colour" />
+															<attribute id="MapKey" type="FixedString" value="02 Colour" />
+															<attribute id="MaterialPresetResource" type="FixedString" value="f9f539d5-1092-5372-5656-ded8cd68dc82" />
+														</node>
+													</children>
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Primary" />
+													<attribute id="Value" type="fvec3" value="0.1658955 0.1353234 0.1228682" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Secondary" />
+													<attribute id="Value" type="fvec3" value="0.1137255 0.1215686 0.1176471" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Tertiary" />
+													<attribute id="Value" type="fvec3" value="0.08820807 0.09527057 0.06383235" />
+												</node>
+											</children>
+										</node>
+										<node id="RealMaterialOverrides" />
+									</children>
+								</node>
+								<node id="Visuals">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="1a1123ad-e605-1b5d-0334-2a45b0b921cd" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="71180b76-5752-4a97-b71f-911a69197f58" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="926a6d63-6c30-5fa5-90e5-06a189e93e0f" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="e39505f7-f576-4e70-a99e-8e29cd381a11" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="e2784d4f-f1c2-c064-630b-04ddd4ea21de" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="47c0315c-7dc6-4862-b39b-8bf3a10f8b54" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="36f73192-8c60-67ab-de47-45377255e061" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="e3e0151e-8819-65ca-29f3-0957c609529c" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="431aa3ee-bb7c-270f-0145-b25b28a510c9" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="abf674d2-2ea4-4a74-ade0-125429f69f83" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="3a9b7f36-a515-e4e8-94ca-d08b663c2733" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="b4a34ce7-41be-44d9-8486-938fe1472149" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="d5b82f09-46d0-722f-9bc6-4cb96588f236" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="a933e2a8-aee1-4ecb-80d2-8f47b706f024" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="39f4d04b-6d73-97ca-1e4e-82ca89e8e865" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="8f00cf38-4588-433a-8175-8acdbbf33f33" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="0b25dabd-bd8b-70d9-cf10-9810731260c9" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="5640e766-aa53-428d-815b-6a0b4ef95aca" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="da1be998-ca2e-48e4-a21f-9b31dbc4d0e5" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="c491d027-4332-4fda-948f-4a3df6772baa" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="38898ef5-178b-f66c-14ca-82e7f8f71cb8" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="WavyLongHair" />
+								<node id="WavyShortHair" />
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_BOOTSOFGENIALSTRIDING_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			<!-- Boots of Speed -->
+				<node id="GameObjects">
+					<attribute id="CanClickThrough" type="bool" value="False" />
+					<attribute id="CanClimbOn" type="bool" value="False" />
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="CoverAmount" type="uint8" value="0" />
+					<!-- Featherlaced and flexible of sole, these boots have been used to round up - and outrun - many a foe. -->
+					<attribute id="Description" type="TranslatedString" handle="hfe7c91afg23fbg4c5cga71dg26f9786d0b2a" version="6" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h48964774g3413g4bc6g8810gda1a28f3cf97" version="1" />
+					<attribute id="Icon" type="FixedString" value="Generated_ARM_BootsOfSpeed_Magic" />
+					<attribute id="IsPointerBlocker" type="bool" value="False" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="LoopSound" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="8b22d15a-85bb-4c8d-90cf-a773fc451eac" />
+					<attribute id="Name" type="LSString" value="ARM_BootsOfSpeed" />
+					<attribute id="ParentTemplateId" type="FixedString" value="85d78eab-e4ad-4f56-bfb3-87c6368f5b17" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="8be0d494-a364-5ec6-6ee9-5ac30fa8cf49" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="SoundAttenuation" type="int16" value="-1" />
+					<attribute id="SoundInitEvent" type="FixedString" value="" />
+					<attribute id="Stats" type="FixedString" value="ARM_BootsOfSpeed" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="28efb600-a2e9-3cfa-ce83-323219ed6378" />
+					<attribute id="Wadable" type="bool" value="False" />
+					<attribute id="WalkOn" type="bool" value="False" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.438493" />
+									<attribute id="Max" type="fvec3" value="0.15109797 0.29022923 0.10204773" />
+									<attribute id="Min" type="fvec3" value="-0.14264913 -0.00011408329 -0.16295673" />
+									<attribute id="Radius" type="float" value="0.1775075" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.438493" />
+									<attribute id="Max" type="fvec3" value="0.30219594 0.29022923 0.20409545" />
+									<attribute id="Min" type="fvec3" value="-0.28529826 -0.00011408329 -0.32591346" />
+									<attribute id="Radius" type="float" value="0.355015" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.438493" />
+									<attribute id="Max" type="fvec3" value="0.30219594 0.29022923 0.20409545" />
+									<attribute id="Min" type="fvec3" value="-0.28529826 -0.00011408329 -0.32591346" />
+									<attribute id="Radius" type="float" value="0.355015" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<node id="Equipment">
+							<children>
+								<node id="AfroLongHair" />
+								<node id="AfroShortHair" />
+								<node id="CurlyLongHair" />
+								<node id="CurlyShortHair" />
+								<node id="DreadLongHair" />
+								<node id="DreadShortHair" />
+								<node id="LongHair" />
+								<node id="ParentRace">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
+											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
+											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
+										</node>
+									</children>
+								</node>
+								<node id="ShortHair" />
+								<node id="Slot">
+									<attribute id="Object" type="FixedString" value="Footwear" />
+								</node>
+								<node id="VisualSet">
+									<attribute id="BodySetVisual" type="FixedString" value="" />
+									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
+									<children>
+										<node id="MaterialOverrides">
+											<attribute id="MaterialResource" type="FixedString" value="" />
+											<children>
+												<node id="MaterialPresets">
+													<children>
+														<node id="Object">
+															<attribute id="ForcePresetValues" type="bool" value="False" />
+															<attribute id="GroupName" type="FixedString" value="02 Colour" />
+															<attribute id="MapKey" type="FixedString" value="02 Colour" />
+															<attribute id="MaterialPresetResource" type="FixedString" value="00000000-0000-0000-0000-000000000000" />
+														</node>
+													</children>
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Tertiary" />
+													<attribute id="Value" type="fvec3" value="0.1950897 0.17542206 0.17225143" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Cloth_Primary" />
+													<attribute id="Value" type="fvec3" value="0.2900979 0.053777825 0.053777825" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Primary" />
+													<attribute id="Value" type="fvec3" value="0.1914143 0.101850264 0.0804916" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Primary" />
+													<attribute id="Value" type="fvec3" value="0.659224 0.659224 0.659224" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Cloth_Secondary" />
+													<attribute id="Value" type="fvec3" value="0.09447074 0.12893265 0.09339183" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Secondary" />
+													<attribute id="Value" type="fvec3" value="0.15105805 0.09151835 0.071761444" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Secondary" />
+													<attribute id="Value" type="fvec3" value="0.18354899 0.0824142 0.04777575" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Cloth_Tertiary" />
+													<attribute id="Value" type="fvec3" value="0.23919433 0.23783028 0.19347945" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Tertiary" />
+													<attribute id="Value" type="fvec3" value="0.18354899 0.0824142 0.04777575" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Accent_Color" />
+													<attribute id="Value" type="fvec3" value="0.18354899 0.0824142 0.04777575" />
+												</node>
+											</children>
+										</node>
+										<node id="RealMaterialOverrides" />
+									</children>
+								</node>
+								<node id="Visuals">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="5ddccea6-47e6-bcdb-199d-fe3e6233097b" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="71180b76-5752-4a97-b71f-911a69197f58" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="44960d3a-f5f9-5eb5-c7b5-9a618be8784d" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="e39505f7-f576-4e70-a99e-8e29cd381a11" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="66326c46-17a2-a3aa-721a-a0fd5925a79d" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="47c0315c-7dc6-4862-b39b-8bf3a10f8b54" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="1e3c9d1e-c7c4-ddd3-6287-bde4d2bf9179" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="ca0484a4-22f5-df43-5e77-c81b5f950ed5" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="fe091ce5-0828-cf9a-44b7-d2e1560fc3ed" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="abf674d2-2ea4-4a74-ade0-125429f69f83" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="1148d459-bc30-c15f-d788-1ab6a46f87c8" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="b4a34ce7-41be-44d9-8486-938fe1472149" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="dab0fac4-3fb3-9e8b-44dc-2c4c64bf3fc1" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="a933e2a8-aee1-4ecb-80d2-8f47b706f024" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="0166c119-19d6-f941-a00e-08ae9699a57a" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="8f00cf38-4588-433a-8175-8acdbbf33f33" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="568bcce1-1e69-2a4c-db81-5a3cb04989e6" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="5640e766-aa53-428d-815b-6a0b4ef95aca" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="214d4b88-f262-d5d2-5345-6395dff72720" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="c491d027-4332-4fda-948f-4a3df6772baa" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="10b131bb-603a-f05a-a951-b6fe2aeaa71e" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="WavyLongHair" />
+								<node id="WavyShortHair" />
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_BOOTSOFSPEED_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+
 			</children>
 		</node>
 	</region>

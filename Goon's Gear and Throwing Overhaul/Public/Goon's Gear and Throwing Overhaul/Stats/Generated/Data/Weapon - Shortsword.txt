@@ -326,7 +326,7 @@ using "MAG_TheClover_Rearrangement_Passive"
 data "Description" "h6785480bgb484g4861g859bg367c5772247d;1"
 // data "DescriptionParams" "2;19;18"
 data "DescriptionParams" "2"
-// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect continues to function while under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPHED"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "ReduceCriticalAttackThreshold(1);IF(AttackingWithMeleeWeapon(context.Source)):Reroll(Damage,2,true)"

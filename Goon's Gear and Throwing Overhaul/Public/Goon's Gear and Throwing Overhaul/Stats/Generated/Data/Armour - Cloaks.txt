@@ -425,7 +425,7 @@ data "Properties" "Highlighted"
 // data "StatusGroups" ""
 
 
-// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect continues to function while under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPHED"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 // data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 // ==================================== Derivation Cloak ====================================

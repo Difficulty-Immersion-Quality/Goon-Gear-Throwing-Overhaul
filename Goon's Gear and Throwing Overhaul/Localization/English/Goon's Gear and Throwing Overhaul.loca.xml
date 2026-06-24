@@ -62,7 +62,7 @@
 	<!-- "Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand" --> <content contentuid="hef72f4dage8d5g4a3cg8ed5gf6fab5d484b2" version="1">Ensnaring Strike (Melee - Offhand)</content>
 	<!-- "MAG_BoundToBeBonded_Passive" --> <content contentuid="heee2c268g4226g464aga2f0gdf9e12a1e0f9" version="1">This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Barbarian_Armor_RageSupport_Passive" --> <content contentuid="h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; or starts their turn while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt; in combat, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.</content>
-	<!-- "Target_ConcussiveSmash" --> <content contentuid="h7edda7a5g49fcg4c39g8943g1f19aa5d78dd" version="1">Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They can't take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
+	<!-- "Target_ConcussiveSmash" --> <content contentuid="h7edda7a5g49fcg4c39g8943g1f19aa5d78dd" version="1">Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They cannot take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Blindside_Shortsword_Passive" --> <content contentuid="h11e87f4cg6dafg4236g81f8gbfd5fb6817c1" version="1">Psychic Steel Virtuoso</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
@@ -104,16 +104,59 @@
 
 	<!-- Boots of Arcane Bolstering -->
 	<!-- "MAG_CQCaster_ArcaneChargeAfterDash_Boots_Passive" -->
-	<content contentuid="" version="1">Each time they &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt;, the wearer gains &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_CHARGE"&gt;Arcane Charge&lt;/LSTag&gt; for [1] turns.</content>
+	<content contentuid="h0bab57e1gbbe5g45d5g98bfg1e9ca1cc7d6a" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_CHARGE"&gt;Arcane Charge&lt;/LSTag&gt; for [1] turns.</content>
+
+	<!-- Boots of Brilliance -->
+	<!-- "Shout_MAG_Restore_BardicInspiration" -->
+	<content contentuid="h562901afge2c6g4762g82fcg5acc7940b65e" version="1">Play your instrument to restore one of your &lt;LSTag Type="Status" Tooltip="BARDIC_INSPIRATION"&gt;Bardic Inspiration&lt;/LSTag&gt; slots.</content>
 
 	<!-- Boots of Speed -->
 	<!-- "Goon_BootsOfSpeed_Passive" -->
 	<content contentuid="hb44ebebcg2452g49c9gb2dcgb5bba4fc83dc" version="1">Speedy Escape</content>
-	<content contentuid="h025770eagf8e2g4bb4g8066g2b54bdd818ef" version="1">When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt;, they gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.</content>
+	<content contentuid="h025770eagf8e2g4bb4g8066g2b54bdd818ef" version="1">When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.</content>
 	<!-- "Shout_BootsOfSpeed" --> 
 	<content contentuid="h08ad2972g6548g48a1gbed1gfc5a0f49c42d" version="1">Click the heels of your boots to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;.</content>
 	<!-- "CLICK_HEELS" -->
 	<content contentuid="h9269dec6ge278g4d82ga7ccg01814ea8bcc0" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; against this creature.</content>
+
+	<!-- Boots of Uninhibited Kushigo -->
+	<!-- "MAG_Monk_Magic_Boots_Passive" -->
+	<content contentuid="h69f81f74ge9f3g41a5ga91bgfdc49451b278" version="1">The wearer deals additional damage equal to their &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; with unarmed strikes.</content>
+
+	<!-- Evasive Shoes -->
+	<!-- "Goon_EvasiveShoes_WellBalanced" -->
+	<content contentuid="h303e5dcfgf989g45c5gb944gb595a523e360" version="1">Quick Feet</content>
+	<content contentuid="hb7727fb0g37c2g4b97g91d0g556ad98924bd" version="1">You gain a +[1] bonus to your &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt; &lt;LSTag Tooltip="Skill"&gt;Skill&lt;/LSTag&gt; and &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
+
+	<!-- Linebreaker Boots -->
+	<!-- "MAG_Violence_ViolenceOnDash_Passive" -->
+	<content contentuid="h90a17e46g5abdg453cgadf4gdb988d12069c" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.</content>
+
+	<!-- Springstep Boots -->
+	<!-- "MAG_Mobility_MomentumOnDash_Passive" -->
+	<content contentuid="hf42a9b93g180dg49efgb18dg1915b9732eec" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [1] turns.</content>
+
+	<!-- The Watersparkers -->
+	<!-- "MAG_ChargedLightning_ElectrifyWater_Boots_Passive" -->
+	<content contentuid="ha7da76b8gbddfg4017ga21fg4773684ad1c5" version="1">Surfaces the wearer stands in during combat become electrified.</content>
+	<!-- "MAG_ChargedLightning_ElectricSurface_Boots_Passive" -->
+	<content contentuid="ha7e15530g8d15g4979g9af1g8efa629107ae" version="1">If the wearer starts their turn on an electrified surface in combat, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.</content>
+
+	<!-- Helldusk Boots -->
+	<!-- "MAG_Infernal_Metal_Boots_AntiDisplacement_Passive" -->
+	<content contentuid="hdbf88a2dg4161g4eceg83b8gd259f31867ef" version="1">The wearer's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is unimpeded by &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN"&gt;Difficult Terrain&lt;/LSTag&gt;, and they cannot be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved by any external force - be it magical or mundane.</content>
+	<!-- "MAG_Infernal_Metal_Legendary_Resistance_Passive", "Interrupt_Legendary_InfernalResistance" -->
+	<content contentuid="h9734193ag89abg4495g8c97g98b78f2cc969" version="1">Once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;, when you fail a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against a spell, you may use your &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to succeed instead.</content>
+	<!-- "Target_MAG_Legendary_HellCrawler", "Projectile_MAG_Infernal_MistyStep_Fireball" -->
+	<content contentuid="h02ac8df8g0eaeg4ee4gbd70g1aa37002a878" version="1">Teleport to an area and deal [1] where you land. The impact blast spreads a &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; surface in a [2] radius.</content>
+
+	<!-- Disintegrating Night Walkers -->
+	<!-- "FOR_NightWalkers_WebImmunity" -->
+	<content contentuid="h5b04e9aag7680g4004ga589g68c0d06fcf37" version="1">Immune to being &lt;LSTag Type="Status" Tooltip="WEB"&gt;Enwebbed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="ENSNARED_VINES"&gt;Entangled&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnared&lt;/LSTag&gt;, and cannot slip on grease or ice surfaces.</content>
+
+	<!-- Briskwind Boots (Innaccessible/cut content) -->
+	<!-- "MAG_Critical_CriticalSwiftness_Passive" -->
+	<content contentuid="h45c12527g48b9g4798g8ff5g08fe343d1193" version="1">When the wearer kills a hostile creature or lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against one, their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to its maximum.</content>
 
 <!-- ==================================== GEAR ==================================== -->
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
@@ -197,7 +240,6 @@
 	<!-- "MAG_LC_Nymph_Cloak_Passive" --> <content contentuid="h1707807fg321ag4ba2g9be3gd18171fda6cb" version="1">Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].</content>
 	<!-- "Shout_MAG_Monk_Restore_Ki_Lesser" --> <content contentuid="hbf40b225g9fdeg4ef4gaed9g09805d1e7737" version="1">Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Infernal_Metal_Gloves_FireDamage_Passive", "GOON_INFERNALTOUCH_TECHNICAL_APPLIER" --> <content contentuid="h4855f6bfgcd92g4833ga020gd0dd642acdfc" version="1">Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.</content>
-	<!-- "MAG_Critical_CriticalSwiftness_Passive" --> <content contentuid="h45c12527g48b9g4798g8ff5g08fe343d1193" version="1">After killing or landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.</content>
 	<!-- "MAG_GREATER_NECROMANCY_LIFE_ESSENCE" --> <content contentuid="haa5631e9gfc72g47e3gb563gac681088dbef" version="1">Affected entity has absorbed a creature's essence. It can use that essence to cast its next Necromancy spell that consumes a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; without consuming a spell slot.</content>
 	<!-- "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive" --> <content contentuid="he174f3d5gc439g49a5gb028gc21b99d921b0" version="1">When one of your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal[1],[2],[3],[4], or[5], add your &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Modifier&lt;/LSTag&gt; to the damage dealt.</content>
 	<!-- "Goon_MAG_ElementalGish_ElementalInfusion_Ring_Passive" --> <content contentuid="hcf3df843gde89g4fa3gbf5bga968594221eb" version="1">When one of your spells deal[1],[2],[3],[4], or[5], that element infuses your weapon.&lt;br&gt;&lt;br&gt;Until the end of your next turn, you deal an additional 1d4 damage of that element on your first successful weapon attack.</content>

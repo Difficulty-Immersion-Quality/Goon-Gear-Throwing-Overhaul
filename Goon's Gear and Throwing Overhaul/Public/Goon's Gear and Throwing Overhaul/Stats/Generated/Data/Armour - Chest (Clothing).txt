@@ -461,7 +461,7 @@ using "MAG_CharismaCaster_TempHP_Passive"
 // data "DisplayName" "hf29c2ac9gea2eg4f2bg9ef8g84032470ed90;1"
 // // At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "h884d0adcgad56g4731g8318g7d15a267ec4a;2"
-// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect continues to function while under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPHED"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 data "StatsFunctorContext" "OnTurn"

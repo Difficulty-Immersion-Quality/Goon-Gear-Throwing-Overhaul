@@ -362,7 +362,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== Pale Oak ====================================
 // Changes: Rarity swapped from Rare to Very Rare.
 // Changes: Added a +1 weapon enchantment.
-// Changes: Added Ensnaring Strike immunity to the Faithwarden's Stride passive.
+// Changes: Added Ensnaring Strike and Grasping Arrow: Entangled immunity to the Faithwarden's Stride passive.
 // Changes: Added a new custom passive Ensnaring Defence, which gives a chance to Ensnare targets that lands hits on a Druid wielder while under the effects of a Druid Polymorph. The Ensnaring Strike condition scales with the Druid's level.
 // TODO: Throwing support.
 
@@ -398,7 +398,7 @@ using "DEN_FaithwardenStaff_Passive"
 // Vines cannot &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnare&lt;/LSTag&gt; you and do not count as &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN"&gt;Difficult Terrain&lt;/LSTag&gt;.
 data "Description" "h1bf8e97fg830ag424cgabc6gfd17f9ea5936;1"
 // data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(ENSNARED_VINES)"
-data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(ENSNARED_VINES);StatusImmunity(ENSNARING_STRIKE);StatusImmunity(ENSNARING_STRIKE_2);StatusImmunity(ENSNARING_STRIKE_3);StatusImmunity(ENSNARING_STRIKE_4);StatusImmunity(ENSNARING_STRIKE_5);StatusImmunity(ENSNARING_STRIKE_6);StatusImmunity(ENSNARING_STRIKE_7);StatusImmunity(ENSNARING_STRIKE_8);StatusImmunity(ENSNARING_STRIKE_9)"
+data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(ENSNARED_VINES);StatusImmunity(ENSNARING_STRIKE);StatusImmunity(ENSNARING_STRIKE_2);StatusImmunity(ENSNARING_STRIKE_3);StatusImmunity(ENSNARING_STRIKE_4);StatusImmunity(ENSNARING_STRIKE_5);StatusImmunity(ENSNARING_STRIKE_6);StatusImmunity(ENSNARING_STRIKE_7);StatusImmunity(ENSNARING_STRIKE_8);StatusImmunity(ENSNARING_STRIKE_9);StatusImmunity(GRASPINGARROW)"
 data "StatsFunctorContext" "OnStatusApplied"
 data "StatsFunctors" "IF(Goon_IsWildshapeDruidPolymorph() and not HasStatus('GOON_FAITHWARDENSTAFF_FAITHWARDENS_STRIDE')):ApplyStatus(GOON_FAITHWARDENSTAFF_FAITHWARDENS_STRIDE, 100, -1)"
 
@@ -415,7 +415,7 @@ data "RemoveConditions" "not Goon_IsWildshapeDruidPolymorph()"
 data "RemoveEvents" "OnStatusRemoved"
 data "StatusGroups" "SG_RemoveOnRespec"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(ENSNARED_VINES);StatusImmunity(ENSNARING_STRIKE);StatusImmunity(ENSNARING_STRIKE_2);StatusImmunity(ENSNARING_STRIKE_3);StatusImmunity(ENSNARING_STRIKE_4);StatusImmunity(ENSNARING_STRIKE_5);StatusImmunity(ENSNARING_STRIKE_6);StatusImmunity(ENSNARING_STRIKE_7);StatusImmunity(ENSNARING_STRIKE_8);StatusImmunity(ENSNARING_STRIKE_9)"
+data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(ENSNARED_VINES);StatusImmunity(ENSNARING_STRIKE);StatusImmunity(ENSNARING_STRIKE_2);StatusImmunity(ENSNARING_STRIKE_3);StatusImmunity(ENSNARING_STRIKE_4);StatusImmunity(ENSNARING_STRIKE_5);StatusImmunity(ENSNARING_STRIKE_6);StatusImmunity(ENSNARING_STRIKE_7);StatusImmunity(ENSNARING_STRIKE_8);StatusImmunity(ENSNARING_STRIKE_9);StatusImmunity(GRASPINGARROW)"
 
 new entry "Target_DEN_Entangle_Staff"
 type "SpellData"

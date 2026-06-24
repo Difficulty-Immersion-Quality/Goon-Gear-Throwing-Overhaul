@@ -207,7 +207,7 @@ data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, Ma
 // data "DisplayName" "hea5b28c1gbeb4g4879gb80dgc9bd4b784efc;2"
 // Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They can't take reactions and lose the Dexterity bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 // data "Description" "h90a1c9eegce5eg4a7dgb13agd067d29b812f;7"
-// Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They can't take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+// Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They cannot take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 data "Description" "h7edda7a5g49fcg4c39g8943g1f19aa5d78dd;1"
 // data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
 // data "TooltipStatusApply" "ApplyStatus(DAZED,100,2)"

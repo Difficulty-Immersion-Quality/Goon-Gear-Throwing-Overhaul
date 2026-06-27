@@ -94,6 +94,7 @@ data "Properties" "Highlighted"
 // Changes: Arcane Echomalefaction's "OncePerAttack" cooldown is removed, allowing Reverberation to be applied from AOE to more than a single target.
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
 // Changes: Arcane Echomalefaction now functions while under the effects of non-humanoid polymorphs.
+// TODO: Test reports - "Boots of stormy clamor is having on and off effect for reverberation (Revision 148 sort of)"
 
 new entry "MAG_Thunder_ReverberationOnStatusApply_Boots"
 type "Armor"
@@ -1534,6 +1535,7 @@ data "SpellFlags" "IsJump;AddFallDamageOnLand;HasHighGroundRangeExtension;Ignore
 // Changes: Steadfast now functions while under the effects of non-humanoid polymorphs.
 // Changes: Infernal Resistance has been renamed to Infernal Evasion, so the interrupts matches the passive.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
+// TODO: Pretty sure I got lost in the sauce here and stopped documenting half of what I did.
 
 new entry "MAG_Infernal_Metal_Boots"
 type "Armor"
@@ -1804,6 +1806,36 @@ data "Boosts" "StatusImmunity(WEB);StatusImmunity(ENSNARED);StatusImmunity(PRONE
 // data "MemoryCost" ""
 // data "Sheathing" ""
 
+// ==================================== Featherlight Boots (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Wavemother's Boots (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gargoyle Boots (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Briskwind Boots (Innaccessible/cut content) ====================================
 // Bug Fix: Critical Swiftness no longer triggers when killing non-hostile creatures.
 // Bug Fix: Critical Swiftness no longer triggers when dealing damage on a Critical Miss.
@@ -1866,3 +1898,29 @@ data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnDamage"
 // data "StatsFunctors" "IF(IsCritical() or IsKillingBlow()):RestoreResource(SELF, Movement, 100%, 0)"
 data "StatsFunctors" "IF(((IsCritical() and IsHit()) or IsKillingBlow()) and Enemy(context.Target)):RestoreResource(SELF, Movement, 100%, 0)"
+
+// ==================================== Shadowstep Boots (Innaccessible/cut content) ====================================
+// Note: "Target_MAG_Shadow_Shadowstep" edited under Dark Justiciar Boots.
+
+// new entry "MAG_Shadow_Shadowstep_Boots"
+// type "Armor"
+// using "_Foot_Magic"
+// data "RootTemplate" "6cae9a98-b75d-408e-ac59-d6bde6e4ab13"
+// data "Rarity" "Uncommon"
+// data "Boosts" "UnlockSpell(Target_MAG_Shadow_Shadowstep)"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
+
+new entry "Goon_MAG_Shadow_Shadowstep_Boots_NotUnique"
+type "Armor"
+using "MAG_Shadow_Shadowstep_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_SHADOWSTEPBOOTS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

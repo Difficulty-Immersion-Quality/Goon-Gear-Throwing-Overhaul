@@ -72,7 +72,15 @@ object category "I_Goon_MAG_Infernal_Metal_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_FOR_NightWalkers_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
 object category "I_Goon_MAG_Critical_CriticalSwiftness_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Shadow_Shadowstep_Boots_NotUnique",1,0,0,0,0,0,0,0
 // Armour - Boots (Medium)
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0

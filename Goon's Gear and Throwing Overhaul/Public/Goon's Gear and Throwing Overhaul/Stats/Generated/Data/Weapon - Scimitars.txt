@@ -252,7 +252,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Justiciar's Scimitar ====================================
 // Bug Fix: Shadow Blinding works with the Honour Ruleset.
-// Bug Fix: The Shadow Blade passive is now visible.
+// Bug Fix: The Shadow Blade passive is now visible, it will also inherit all changes to the main Shadow Blade passive which it inherits from.
 // Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
 // Bug Fix: The weapon is now considered a Scimitar, the wielder gets innate proficiency with Scimitars.
 // Changes: Shadow-Blinding applies when thrown.
@@ -279,9 +279,8 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_IllusionBlade_Passive"
 type "PassiveData"
 // using "ShadowBlade_Passive"
-using "MAG_IllusionBlade_Passive"
+using "ShadowBlade_Passive"
 // data "Properties" "IsHidden"
-data "Properties" ""
 
 new entry "Goon_IllusionBlade_Proficiency_Passive"
 type "PassiveData"

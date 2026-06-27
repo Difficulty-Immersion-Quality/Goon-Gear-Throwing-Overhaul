@@ -30,7 +30,9 @@ type "PassiveData"
 data "Properties" "IsHidden"
 data "Boosts" "IF(HasAnyStatus({ 'MAG_BYPASS_SLASHING_RESISTANCE_TECHNICAL' }, {}, {}, context.HitDescription.ThrownObject)):IgnoreResistance(Slashing, Resistant)"
 
-// TODO: Figure out how to allow advantage for throwing specific weapons
+// TODO: Figure out how to allow advantage for throwing specific weapons. Could do it via scripting when previewing the throw.
+// Also relevant for Shadow Blade and shit, will be for a few things... Goon_IsShadowBladeWeapon()
+
 // Advantage: Pelorsun Blade, Gandrel's Aspiration, Hunting Shortbow
 // new entry "Goon_Advantage_Throwing_Master_Passive"
 // type "PassiveData"

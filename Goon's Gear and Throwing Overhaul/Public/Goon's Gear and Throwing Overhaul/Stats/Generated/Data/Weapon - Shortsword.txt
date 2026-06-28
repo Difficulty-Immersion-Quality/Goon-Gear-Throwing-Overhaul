@@ -322,8 +322,8 @@ using "MAG_TheClover_Rearrangement_Passive"
 // data "DisplayName" "h15c46cc7g164fg41ffga02ege59329268c58;2"
 // // Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack. When you roll [1] damage or less, reroll the dice, taking the highest result.
 // data "Description" "h6984b8aagbb23g46b3g8c29g1a65974e4bcb;4"
-// // Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack. When you roll [1] damage or less with this weapon, reroll the dice, taking the highest result.
-data "Description" "h6785480bgb484g4861g859bg367c5772247d;1"
+// // Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack.&lt;br&gt;&lt;br&gt;When you roll [1] damage or less with this weapon, reroll the dice, taking the highest result.
+data "Description" "h7c477753gd60bg412fg8cebg19dce4be5840;1"
 // data "DescriptionParams" "2;19;18"
 data "DescriptionParams" "2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.

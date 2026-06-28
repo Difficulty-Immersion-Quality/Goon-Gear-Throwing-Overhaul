@@ -158,6 +158,38 @@
 	<!-- "MAG_Critical_CriticalSwiftness_Passive" -->
 	<content contentuid="h45c12527g48b9g4798g8ff5g08fe343d1193" version="1">When the wearer kills a hostile creature or lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against one, their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to its maximum.</content>
 
+<!-- ==================================== Armour - Boots (Medium) ==================================== -->
+
+	<!-- Boots of Elemental Momentum -->
+	<!-- "MAG_ElementalGish_MomentumOnElementalDamage_Boots_Passive" -->
+	<content contentuid="hfb213b58gb931g4afag8c3cg39e14edec712" version="1">Whenever the wearer deals[1],[2],[3],[4], or[5] with a spell, they gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [6] turns.</content>
+
+	<!-- Boots of Striding -->
+	<!-- "MAG_Paladin_MomentumOnConcentration_Boots_Passive" -->
+	<content contentuid="h7dc40331gb275g476dg810bg4f2738861839" version="1">When the wearer casts a spell that requires &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt;, they gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [1] turn.&lt;br&gt;&lt;br&gt;While the wearer is concentrating, they cannot be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved by any external force - be it magical or mundane.</content>
+	<!-- "MAG_UNMOVABLE" -->
+	<content contentuid="h90c149cbg6ae9g4654g87b8g323fcdd8381e" version="1">While concentrating on a spell, you cannot be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved by any external force - be it magical or mundane.</content>
+
+	<!-- The Speedy Lightfeet -->
+	<!-- "MAG_ChargedLightning_Dash_Boots_Passive" -->
+	<content contentuid="" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.</content>
+
+	<!-- Boots of Psionic Movement -->
+	<!-- "MAG_Githborn_PsionicMovement_Boots_Passive" -->
+	<content contentuid="h010feb7agbe2fg4f0cg99e8g7417c35b3f0f" version="1">When a githyanki wearer &lt;LSTag Type="Spell" Tooltip="Projectile_Fly"&gt;Flies&lt;/LSTag&gt; or a takes a similar action, they can deal an additional [1] with their next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;, until the end of their turn.</content>
+	<!-- "MAG_GITHBORN_FLYING_STRIKE" -->
+	<content contentuid="h3592e5d9gec9fg40aeg9386g18e5ecb7abdb" version="1">Affected githyanki has &lt;LSTag Type="Spell" Tooltip="Projectile_Fly"&gt;Flown&lt;/LSTag&gt; this turn. Until the end of its turn, its next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deals an additional [1].</content>
+
+	<!-- Tenacious Boots (Innaccessible/cut content) -->
+	<!-- "MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive" -->
+	<content contentuid="h2dabe5bag9164g41d2ga3bcgaf29bb3c1c58" version="1">At the end of the wearer's turn, they gain [1] round of &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; if they are &lt;LSTag Type="Status" Tooltip="FLANKED"&gt;Threatened&lt;/LSTag&gt; while surrounded by [2] or more enemies within [3].&lt;br&gt;&lt;br&gt;If the wearer does not already have &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt;, they gain [4] rounds instead.</content>
+	<!-- "MAG_ZOC_FORCE_CONDUIT_IMMOVABLE" -->
+	<content contentuid="h111db567g3a5bg4ed3gac4cgd4741dade707" version="1">Affected entity can't be moved by any external force - be it magical or mundane.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
 <!-- ==================================== GEAR ==================================== -->
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
@@ -245,7 +277,8 @@
 	<!-- "Goon_MAG_ElementalGish_ElementalInfusion_Ring_Passive" --> <content contentuid="hcf3df843gde89g4fa3gbf5bga968594221eb" version="1">When one of your spells deal[1],[2],[3],[4], or[5], that element infuses your weapon.&lt;br&gt;&lt;br&gt;Until the end of your next turn, you deal an additional 1d4 damage of that element on your first successful weapon attack.</content>
 	<!-- "Goon_MAG_Thunder_Reverberation_Gloves_Passive" --> <content contentuid="hc720dc2bge923g41degac3bge73b82b035cb" version="1">When the wearer deals[1],[2], or[3], inflict [4] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).</content>
 	<!-- "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive" --> <content contentuid="h1a045f3cg3524g41dag863agab4d40bd991b" version="1">When the wearer deals[1] to another creature, they gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "MAG_TheClover_Rearrangement_Passive" --> <content contentuid="h7c477753gd60bg412fg8cebg19dce4be5840" version="1">Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack.&lt;br&gt;&lt;br&gt;When you roll [1] damage or less with this weapon, reroll the dice, taking the highest result.</content>
+
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

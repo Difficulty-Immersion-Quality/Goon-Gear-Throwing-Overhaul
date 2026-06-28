@@ -1,11 +1,14 @@
 // ==================================== Base entry ====================================
+// Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
 
-// new entry "ARM_Boots_Metal"
-// type "Armor"
+new entry "ARM_Boots_Metal"
+type "Armor"
 // using "_Foot"
+using "ARM_Boots_Metal"
 // data "RootTemplate" "689e8d3e-b79b-417b-8cd2-9d08b2f5e618"
 // data "ValueLevel" "4"
 // data "Weight" "2"
+data "PassivesOnEquip" "Goon_Gear_Polymorph_BaseBootsMetal"
 // data "Boosts" "Skill(Athletics,1)"
 // data "ArmorType" "Plate"
 // data "MinAmount" "1"
@@ -13,6 +16,21 @@
 // data "Priority" "1"
 // data "MinLevel" "1"
 // data "Proficiency Group" "MediumArmor"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_BaseBootsMetal"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BASEBOOTSMETAL, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BASEBOOTSMETAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BASEBOOTSMETAL"
+data "Boosts" "Skill(Athletics,1)"
+data "Passives" ""
 
 // ==================================== Magical variants ====================================
 
@@ -26,20 +44,91 @@
 // data "Boosts" "Skill(Athletics,1)"
 
 // ==================================== Boots of Elemental Momentum ====================================
-// TODO: Something/anything.
+// Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
+// Changes: Elemental Momentum now functions while under the effects of non-humanoid polymorphs.
+// Changes: Elemental Momentum's Momentum condition application will now only apply once per action.
+// Changes: Elemental Momentum description improved.
+// Changes: Forced honour ruleset changes.
 
-// gear entry
+new entry "MAG_ElementalGish_MomentumOnElementalDamage_Boots"
+type "Armor"
+// using "_Foot_Magic_Metal"
+using "MAG_ElementalGish_MomentumOnElementalDamage_Boots"
+// data "RootTemplate" "cf8e6826-9133-425a-be21-79a41e1f7add"
+// data "ValueLevel" "4"
+// data "ValueLevel" "5"
+data "ValueLevel" "5"
+// data "ValueScale" "1"
+// data "ValueScale" "1.1"
+data "ValueScale" "1.1"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "MAG_ElementalGish_MomentumOnElementalDamage_Boots_Passive"
+data "PassivesOnEquip" "MAG_ElementalGish_MomentumOnElementalDamage_Boots_Passive;Goon_Gear_Polymorph_BootsOfElementalMomentum"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_ElementalGish_MomentumOnElementalDamage_Boots_NotUnique"
+type "Armor"
+using "MAG_ElementalGish_MomentumOnElementalDamage_Boots"
+// data "Unique" "1"
+data "Unique" "0"
 
-// ==================================== Boots of Striding  ====================================
+new entry "GOON_BOOTSOFELEMENTALMOMENTUM_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_BootsOfElementalMomentum"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BOOTSOFELEMENTALMOMENTUM, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BOOTSOFELEMENTALMOMENTUM"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BOOTSOFELEMENTALMOMENTUM"
+data "Boosts" "Skill(Athletics,1)"
+data "Passives" "MAG_ElementalGish_MomentumOnElementalDamage_Boots_Passive"
+
+// ==================
+
+new entry "MAG_ElementalGish_MomentumOnElementalDamage_Boots_Passive"
+type "PassiveData"
+using "MAG_ElementalGish_MomentumOnElementalDamage_Boots_Passive"
+// // Elemental Momentum
+// data "DisplayName" "h46674db7g5b8ag4bddga9b3gf9c837144fc6;3"
+// // Whenever the wearer deals Acid, Cold, Fire, Lightning or Thunder damage with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt;, they gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for 2 turns.
+// data "Description" "h81ea88e6gef57g4a69g8d0cg1af089f7826b;6"
+// // Whenever the wearer deals[1],[2],[3],[4], or[5] with a spell, they gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [6] turns.
+data "Description" "hfb213b58gb931g4afag8c3cg39e14edec712;1"
+data "DescriptionParams" "DealDamage(,Acid);DealDamage(,Cold);DealDamage(,Fire);DealDamage(,Lightning);DealDamage(,Thunder);2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsSpell() and IsEnergyDamage()"
+data "Conditions" "IsSpell() and IsEnergyDamage() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM',context.Source)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_MOMENTUM, 100, 2);ApplyStatus(SELF, MAG_MOMENTUM_DURATION_TECHNICAL, 100, 1)"
+data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);ApplyStatus(SELF,GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM, 100, 1)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM"
+
+// ==================================== Boots of Striding ====================================
 // Bug Fix: Focused Stride now only functions with spells that require concentration, instead of any action requiring concentration.
 // Bug Fix: Unmovable is removed when the boots are unequipped.
 // Bug Fix: Unmovable is now a visible condition.
-// TODO: polymorph.
+// Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
+// Changes: Focused Stride now functions while under the effects of non-humanoid polymorphs.
+// TODO: There is no status application directly associated with removal of concentration, "OnStatusApplied;OnStatusRemoved;OnDamaged" events are just close enough, good enough, type shit.
+// TODO: Goon's Library, just have loss of concentration apply a status to kick shit into gear.
+// TODO: There could also be a failsafe for if Unmovable is removed but the caster is still concentrating on a spell... apply a technical on the cast matching the expected duration.
 
 new entry "MAG_Paladin_MomentumOnConcentration_Boots"
 type "Armor"
@@ -47,88 +136,294 @@ type "Armor"
 using "MAG_Paladin_MomentumOnConcentration_Boots"
 // data "RootTemplate" "8770f821-38bc-41cc-aae9-02988d46df02"
 // data "PassivesOnEquip" "MAG_Paladin_MomentumOnConcentration_Boots_Passive;MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
-data "PassivesOnEquip" "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
-data "StatusOnEquip" "GOON_UNMOVABLE_TECHNICAL"
+data "PassivesOnEquip" "MAG_Paladin_MomentumOnConcentration_Boots_Passive;Goon_Gear_Polymorph_BootsOfStriding"
+data "StatusOnEquip" ""
 // data "Unique" "1"
+
+new entry "Goon_MAG_Paladin_MomentumOnConcentration_Boots_NotUnique"
+type "Armor"
+using "MAG_Paladin_MomentumOnConcentration_Boots"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_BOOTSOFSTRIDING_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
-// type "PassiveData"
+// ==================
+
+new entry "Goon_Gear_Polymorph_BootsOfStriding"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BOOTSOFSTRIDING, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BOOTSOFSTRIDING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BOOTSOFSTRIDING"
+data "Boosts" "Skill(Athletics,1)"
+data "Passives" "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
+
+// ==================
+
+new entry "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
+type "PassiveData"
+using "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
 // // Focused Stride
 // data "DisplayName" "h70c769c0g929dg44ceg82deg259490babe49;1"
 // // When you cast a spell that requires concentration, you gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [1] turn. &lt;br&gt;&lt;br&gt;While you are concentrating, you can't get knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or be moved against your will.
 // data "Description" "h93eb41a6gbe89g48fdga5f5g6960be08339a;2"
+// // When the wearer casts a spell that requires &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt;, they gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for [1] turn.&lt;br&gt;&lt;br&gt;While the wearer is concentrating, they cannot be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved by any external force - be it magical or mundane.
+data "Description" "h7dc40331gb275g476dg810bg4f2738861839;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "DescriptionParams" "1"
 // data "StatsFunctorContext" "OnCast"
 // data "Conditions" "HasSpellFlag(SpellFlags.Concentration) "
 data "Conditions" "IsSpell() and HasSpellFlag(SpellFlags.Concentration)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_MOMENTUM, 100, 1);ApplyStatus(SELF, MAG_UNMOVABLE, 100, -1);ApplyStatus(SELF, MAG_MOMENTUM_DURATION_TECHNICAL, 100, 1)"
 
-// new entry "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
-// type "PassiveData"
-// using "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
-// data "Properties" "IsHidden"
-// data "StatsFunctorContext" "OnStatusRemove;OnStatusRemoved;OnDamaged"
-// data "Conditions" "not IsConcentrating()"
-// data "StatsFunctors" "RemoveStatus(MAG_UNMOVABLE)"
-
 new entry "MAG_UNMOVABLE"
 type "StatusData"
 data "StatusType" "BOOST"
 // using "GROUNDED"
-using "MAG_UNMOVABLE"
 // // Unmovable
 // data "DisplayName" "he35e3dbfg5aa1g4deag9147g0f2858a914d4;1"
+data "DisplayName" "he35e3dbfg5aa1g4deag9147g0f2858a914d4;1"
 // // While concentrating on a spell, you can't be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved against your will.
 // data "Description" "h1f5794a3gc546g4d89ga109ge240265bf937;1"
+// // While concentrating on a spell, you cannot be knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; or moved by any external force - be it magical or mundane. 
+data "Description" "h90c149cbg6ae9g4654g87b8g323fcdd8381e;1"
+// data "Icon" "statIcons_Grounded"
+data "Icon" "statIcons_Grounded"
 // data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
-data "StatusPropertyFlags" ""
+data "StatusPropertyFlags" "IgnoreResting"
 // data "StackId" "MAG_UNMOVABLE"
+data "StackId" "MAG_UNMOVABLE"
 // data "Boosts" "Attribute(Grounded);StatusImmunity(SG_Prone)"
+data "Boosts" "Attribute(Grounded);StatusImmunity(SG_Prone)"
 data "Passives" "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
 
-new entry "GOON_UNMOVABLE_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
+// Note: It's 100% needed to check for the status here, as the passive does not exist in time to be caught by these conditions.
+new entry "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
+type "PassiveData"
+// using "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
+using "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
+// data "Properties" "IsHidden"
+// data "StatsFunctorContext" "OnStatusRemove;OnStatusRemoved;OnDamaged"
+data "StatsFunctorContext" "OnStatusApplied;OnStatusRemoved;OnDamaged"
+// data "Conditions" "not IsConcentrating()"
+data "Conditions" "not IsConcentrating() or (not HasPassive('MAG_Paladin_MomentumOnConcentration_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFSTRIDING'))"
+// data "StatsFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 
 // ==================================== Blackguard's Greaves ====================================
-// TODO: Something/anything.
+// Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
+// Changes: Strider Movement now functions while under the effects of non-humanoid polymorphs.
+// TODO: Longstrider can't seem to see when its own boots are unequipped, other removal is fine though.
 
-// gear entry
+new entry "MAG_OB_Paladin_DeathKnight_Boots"
+type "Armor"
+// using "ARM_Boots_Metal"
+using "MAG_OB_Paladin_DeathKnight_Boots"
+// data "RootTemplate" "bc3c8375-bad5-4f02-b1f3-2261cea690aa"
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Longstrider_Passive"
+data "PassivesOnEquip" "MAG_Longstrider_Passive;Goon_Gear_Polymorph_BlackguardsGreaves"
+// data "StatusOnEquip" "MAG_END_GAME_LONGSTRIDER"
+data "StatusOnEquip" ""
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_OB_Paladin_DeathKnight_Boots_NotUnique"
+type "Armor"
+using "MAG_OB_Paladin_DeathKnight_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_BLACKGUARDSGREAVES_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_BlackguardsGreaves"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BLACKGUARDSGREAVES, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BLACKGUARDSGREAVES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BLACKGUARDSGREAVES"
+data "Boosts" "Skill(Athletics,1)"
+data "Passives" "MAG_Longstrider_Passive"
+
+// ==================
+
+new entry "MAG_Longstrider_Passive"
+type "PassiveData"
+using "MAG_Longstrider_Passive"
+// // Strider Movement
+// data "DisplayName" "h3ae9810fg8fcbg4ea0g9f78g6f980082af6f;1"
+// // You gain &lt;LSTag Type="Status" Tooltip="LONGSTRIDER"&gt;Longstrider&lt;/LSTag&gt;.
+// data "Description" "hdf8d6ed1ge78cg497dgb6d9gc6859d4bda3f;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+data "StatsFunctorContext" "OnCreate"
+data "StatsFunctors" "IF(not HasStatus('MAG_END_GAME_LONGSTRIDER')):ApplyStatus(GOON_FX_LONGSTRIDER,100,1);ApplyStatus(MAG_END_GAME_LONGSTRIDER,100,-1)"
+
+new entry "MAG_END_GAME_LONGSTRIDER"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "LONGSTRIDER"
+using "MAG_END_GAME_LONGSTRIDER"
+// data "SoundLoop" ""
+// data "SoundStop" ""
+// data "StackPriority" "10"
+// data "StackType" "Ignore"
+// data "StatusPropertyFlags" "IgnoreResting;ApplyToDead"
+// data "StatusEffect" ""
+data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
+data "RemoveConditions" "not HasPassive('MAG_Longstrider_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BLACKGUARDSGREAVES') and not HasPassive('MAG_EndGame_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE')"
 
 // ==================================== Dark Justiciar Boots ====================================
-// TODO: Something/anything.
+// Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
 
-// gear entry
+new entry "UNI_SHA_DarkJusticiar_Boots"
+type "Armor"
+// using "ARM_Boots_Metal"
+using "UNI_SHA_DarkJusticiar_Boots"
+// data "RootTemplate" "e33850ba-f697-40f5-abec-2951077f2cef"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+data "PassivesOnEquip" "Goon_Gear_Polymorph_DarkJusticiarBoots"
+// data "Boosts" "RollBonus(SavingThrow, 1, Dexterity);UnlockSpell(Target_MAG_Shadow_Shadowstep)"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_UNI_SHA_DarkJusticiar_Boots_NotUnique"
+type "Armor"
+using "UNI_SHA_DarkJusticiar_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_DARKJUSTICIARBOOTS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_DarkJusticiarBoots"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_DARKJUSTICIARBOOTS, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_DARKJUSTICIARBOOTS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_DARKJUSTICIARBOOTS"
+data "Boosts" "RollBonus(SavingThrow, 1, Dexterity)"
+data "Passives" ""
+
+// ==================
+
+// new entry "Target_MAG_Shadow_Shadowstep"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_ShadowStep"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellProperties" "GROUND:TeleportSource()"
+// data "RequirementConditions" ""
+// data "RequirementEvents" ""
+// data "TargetConditions" "CanStand('') and not HasObscuredStateAtPosition(ObscuredState.Clear, context.TargetPosition)"
+// // Shadow Teleportation
+// data "DisplayName" "hf064ae27gb25fg465fg873ag71d607645537;2"
+// // Teleport to an unoccupied, obscured spot.
+// data "Description" "h6d0569a6gc0bcg4419ga552gd3c81c9babce;2"
+// data "TooltipStatusApply" ""
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;39daf365-ec06-49a8-81f3-9032640699d7,,;5c400e93-0266-499c-a2e1-75d53358460f,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
+// data "SpellFlags" "IsSpell;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;Invisible"
+// data "PrepareEffect" "7121a488-7c9a-4ba1-a585-f79aaa77e97c"
+// data "CastEffect" "71859b27-bdda-44c3-8c65-7f142a1a2f60"
 
 // ==================================== The Speedy Lightfeet ====================================
-// TODO: Something/anything.
+// Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
+// Changes: Speedy Sparks now functions while under the effects of non-humanoid polymorphs.
 
-// gear entry
+new entry "MAG_ChargedLightning_Dash_Boots"
+type "Armor"
+// using "_Foot_Magic_Metal"
+using "MAG_ChargedLightning_Dash_Boots"
+// data "RootTemplate" "66be4e91-933b-44e8-a73c-3b8a9c6b14a8"
+// data "ItemGroup" ""
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_ChargedLightning_Dash_Boots_Passive"
+data "PassivesOnEquip" "MAG_ChargedLightning_Dash_Boots_Passive;Goon_Gear_Polymorph_TheSpeedyLightfeet"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_ChargedLightning_Dash_Boots_NotUnique"
+type "Armor"
+using "MAG_ChargedLightning_Dash_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_THESPEEDYLIGHTFEET_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_TheSpeedyLightfeet"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_THESPEEDYLIGHTFEET, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_THESPEEDYLIGHTFEET"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_THESPEEDYLIGHTFEET"
+data "Boosts" "Skill(Athletics,1)"
+data "Passives" "MAG_ChargedLightning_Dash_Boots_Passive"
+
+// ==================
+
+new entry "MAG_ChargedLightning_Dash_Boots_Passive"
+type "PassiveData"
+using "MAG_ChargedLightning_Dash_Boots_Passive"
+// // Speedy Sparks
+// data "DisplayName" "h82746573g2c64g4602g935dg192158832439;2"
+// // When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
+// data "Description" "h733c3534g834fg4acbg8571g3524ba24046e;6"
+// // Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
+data "Description" "h5f2c6a3ag1a1bg4b58g91b9g6ef6be1a1c68;1"
+// data "DescriptionParams" "3"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+// data "Properties" "OncePerTurn"
+data "Properties" "Highlighted;OncePerTurn"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "SpellCategoryIs(SpellCategory.Dash) and Combat()"
+data "Conditions" "Goon_IsDashSpellCategory() and Combat()"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_CHARGED_LIGHTNING,100, 3);ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_DURATION_TECHNICAL, 100, 1)"
 
 // ==================================== Unwanted Masterwork Greaves ====================================
 // TODO: Make it not generic ass uncommon ass boots no wonder they're fucking unwanted lmaaaaaaaaaaaaaaoooooooooooooooooooooooooooooooooooooooo
+
+// new entry "ARM_Boots_Metal_Karlach"
+// type "Armor"
+// using "ARM_Boots_Metal"
+// data "RootTemplate" "df040e30-b424-4a89-be1b-83ffd57eb5a1"
 
 // new entry "MAG_DevilsBlackmith_Boots"
 // type "Armor"
@@ -138,33 +433,271 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "Rarity" "Rare"
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_DevilsBlackmith_Boots_NotUnique"
+type "Armor"
+using "MAG_DevilsBlackmith_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_UNWANTEDMASTERWORKGREAVES_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Vital Conduit Boots ====================================
-// TODO: Something/anything.
+// Bug Fix: Vital Conduit now only functions with spells that require concentration, instead of any action requiring concentration.
+// Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
+// Changes: Vital Conduit now functions while under the effects of non-humanoid polymorphs.
 
-// gear entry
+new entry "MAG_Gish_TempHPWhileConcentrating_Boots"
+type "Armor"
+// using "_Foot_Magic_Metal"
+using "MAG_Gish_TempHPWhileConcentrating_Boots"
+// data "RootTemplate" "306d3417-5e12-499e-832e-86b602a075de"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Gish_TempHPWhileConcentrating_Boots_Passive"
+data "PassivesOnEquip" "MAG_Gish_TempHPWhileConcentrating_Boots_Passive;Goon_Gear_Polymorph_VitalConduitBoots"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_Gish_TempHPWhileConcentrating_Boots_NotUnique"
+type "Armor"
+using "MAG_Gish_TempHPWhileConcentrating_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_VITALCONDUITBOOTS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_VitalConduitBoots"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_VITALCONDUITBOOTS, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_VITALCONDUITBOOTS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_VITALCONDUITBOOTS"
+data "Boosts" "Skill(Athletics,1)"
+data "Passives" "MAG_Gish_TempHPWhileConcentrating_Boots_Passive"
+
+// ==================
+
+new entry "MAG_Gish_TempHPWhileConcentrating_Boots_Passive"
+type "PassiveData"
+using "MAG_Gish_TempHPWhileConcentrating_Boots_Passive"
+// // Vital Conduit
+// data "DisplayName" "h38425377g14fdg4de8ga70bge28191946472;2"
+// // When the wearer casts a spell that requires &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt;, they gain [1].
+// data "Description" "hd1938c2egffd4g4d6cg99c7g5029c582ecf6;4"
+// data "DescriptionParams" "GainTemporaryHitPoints(8)"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Can only have &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; from one source.
+// data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "HasSpellFlag(SpellFlags.Concentration) "
+data "Conditions" "IsSpell() and HasSpellFlag(SpellFlags.Concentration)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_TEMPORARY_HP_8, 100, -1)"
 
 // ==================================== Boots of Persistence ====================================
-// TODO: Something/anything.
+// Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
+// Changes: Legendary Mobility now functions while under the effects of non-humanoid polymorphs.
+// Note: "MAG_END_GAME_LONGSTRIDER" found under Blackguard's Greaves.
+// TODO: Freedom of Movement (same as Longstrider) can't seem to see when its own boots are unequipped, other removal is fine though.
 
-// gear entry
+new entry "MAG_EndGame_Metal_Boots"
+type "Armor"
+// using "ARM_Boots_Metal"
+using "MAG_EndGame_Metal_Boots"
+// data "RootTemplate" "f3d8ff49-eaac-4c10-9421-3fd2180c7b39"
+// data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
+// data "Rarity" "VeryRare"
+// data "Boosts" "RollBonus(SavingThrow, 1, Dexterity)"
+// data "PassivesOnEquip" "MAG_EndGame_Boots_Passive"
+data "PassivesOnEquip" "MAG_EndGame_Boots_Passive;Goon_Gear_Polymorph_BootsOfPersistence"
+// data "StatusOnEquip" "MAG_FREEDOM_OF_MOVEMENT;MAG_END_GAME_LONGSTRIDER"
+data "StatusOnEquip" ""
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_EndGame_Metal_Boots_NotUnique"
+type "Armor"
+using "MAG_EndGame_Metal_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_BOOTSOFPERSISTENCE_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_BootsOfPersistence"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE"
+data "Boosts" "RollBonus(SavingThrow, 1, Dexterity)"
+data "Passives" "MAG_EndGame_Boots_Passive"
+
+// ==================
+
+new entry "MAG_EndGame_Boots_Passive"
+type "PassiveData"
+using "MAG_EndGame_Boots_Passive"
+// // Legendary Mobility
+// data "DisplayName" "h834acf70gb421g4dafgbb71g91eb65aebccf;1"
+// // You gain &lt;LSTag Type="Status" Tooltip="FREEDOM_OF_MOVEMENT"&gt;Freedom of Movement&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="LONGSTRIDER"&gt;Longstrider&lt;/LSTag&gt;.
+// data "Description" "h30ee5014g6b37g4df4gaa8fg12af107b128d;4"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+data "StatsFunctorContext" "OnCreate"
+data "StatsFunctors" "IF(not HasStatus('MAG_END_GAME_LONGSTRIDER')):ApplyStatus(GOON_FX_LONGSTRIDER,100,1);ApplyStatus(MAG_END_GAME_LONGSTRIDER,100,-1);IF(not HasStatus('MAG_FREEDOM_OF_MOVEMENT')):ApplyStatus(GOON_FX_FREEDOM_OF_MOVEMENT,100,1);ApplyStatus(MAG_FREEDOM_OF_MOVEMENT,100,-1)"
+
+new entry "MAG_FREEDOM_OF_MOVEMENT"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "FREEDOM_OF_MOVEMENT"
+using "MAG_FREEDOM_OF_MOVEMENT"
+// data "StackPriority" "10"
+// data "StackType" "Ignore"
+// data "StatusPropertyFlags" "IgnoreResting;ApplyToDead"
+// data "StatusGroups" ""
+// data "ManagedStatusEffectType" ""
+// data "ManagedStatusEffectGroup" ""
+// data "StatusEffect" "ac4aaa41-0e86-4bb9-b8b7-34cb619ea86c"
+data "StatusEffect" ""
+data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
+data "RemoveConditions" "not HasPassive('MAG_EndGame_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE')"
 
 // ==================================== Boots of Psionic Movement ====================================
-// TODO: Something/anything.
+// Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
+// Changes: Flying Strike condition now adds 1d4 Psychic damage as weapon damage, instead of a standalone damage bonus.
+// Changes: Flying Strike descriptions improved.
+// TODO: Flying Strike needs a khn function for finding all the fly actions... but I'm not seeing a way to aggregate them short of just doing a phat fucking list.
+
+new entry "MAG_Githborn_PsionicMovement_Boots"
+type "Armor"
+// using "_Foot_Magic_Metal"
+using "MAG_Githborn_PsionicMovement_Boots"
+// data "RootTemplate" "18919a04-67a0-4321-82ff-ce2b64a27589"
+// data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Rarity" "VeryRare"
+// data "Boosts" "RollBonus(SavingThrow, 1, Dexterity);UnlockSpell(Shout_MAG_Shout_Fly)"
+// data "PassivesOnEquip" "MAG_Githborn_PsionicMovement_Boots_Passive"
+data "PassivesOnEquip" "MAG_Githborn_PsionicMovement_Boots_Passive;Goon_Gear_Polymorph_BootsOfPsionicMovement"
+// data "Unique" "1"
+
+new entry "Goon_MAG_Githborn_PsionicMovement_Boots_NotUnique"
+type "Armor"
+using "MAG_Githborn_PsionicMovement_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_BOOTSOFPSIONICMOVEMENT_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_BootsOfPsionicMovement"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BOOTSOFPSIONICMOVEMENT, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BOOTSOFPSIONICMOVEMENT"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BOOTSOFPSIONICMOVEMENT"
+data "Boosts" "RollBonus(SavingThrow, 1, Dexterity)"
+data "Passives" "MAG_Githborn_PsionicMovement_Boots_Passive"
+
+// ==================
+
+new entry "MAG_Githborn_PsionicMovement_Boots_Passive"
+type "PassiveData"
+using "MAG_Githborn_PsionicMovement_Boots_Passive"
+// // Flying Strike
+// data "DisplayName" "ha21d14a0g455cg41c5gb4dfg6ddc0c6bec13;2"
+// // When a githyanki casts &lt;LSTag Type="Spell" Tooltip="Projectile_Fly_Spell"&gt;Fly&lt;/LSTag&gt;, their next melee weapon attack deals an additional [1].
+// data "Description" "ha787fc9fg3417g4c7agb340gb69c68defff6;8"
+// // When a githyanki wearer &lt;LSTag Type="Spell" Tooltip="Projectile_Fly"&gt;Flies&lt;/LSTag&gt; or a takes a similar action, they can deal an additional [1] with their next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;, until the end of their turn.
+data "Description" "h010feb7agbe2fg4f0cg99e8g7417c35b3f0f;1"
+// data "DescriptionParams" "DealDamage(1d4, Psychic)"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "Tagged('GITHYANKI', context.Source) and (SpellId('Projectile_Fly') or SpellId('Projectile_Fly_Spell'))"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GITHBORN_FLYING_STRIKE, 100, 1)"
+
+new entry "MAG_GITHBORN_FLYING_STRIKE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_GITHBORN_FLYING_STRIKE"
+// // Flying Strike
+// data "DisplayName" "hb6874d86gdf77g46b9g836fg9c25a41e1f14;2"
+// // Affected entity has flown this turn. Its next melee weapon attack deals an additional [1].
+// data "Description" "h7f2aa96agb67cg43e4gb13ag0e1004f52b25;2"
+// // Affected githyanki has &lt;LSTag Type="Spell" Tooltip="Projectile_Fly"&gt;Flown&lt;/LSTag&gt; this turn. Until the end of its turn, its next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deals an additional [1].
+data "Description" "h3592e5d9gec9fg40aeg9386g18e5ecb7abdb;1"
+// data "DescriptionParams" "DealDamage(1d4, Psychic)"
+// data "Icon" "GenericIcon_DamageType_Psychic"
+// data "StackId" "MAG_GITHBORN_FLYING_STRIKE"
+// data "TickType" "EndTurn"
+// data "Boosts" "IF(IsMeleeWeaponAttack()):DamageBonus(1d4, Psychic, false)"
+data "Boosts" "IF(IsMeleeWeaponAttack()):CharacterWeaponDamage(1d4, Psychic)"
+// data "RemoveConditions" "IsMeleeWeaponAttack()"
+// data "RemoveEvents" "OnAttack"
+
+new entry "Shout_MAG_Shout_Fly"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_Blink"
+using "Shout_MAG_Shout_Fly"
+// data "Level" "3"
+// data "SpellSchool" "Transmutation"
+// data "SpellContainerID" ""
+// data "Cooldown" "OncePerRestPerItem"
+// data "SpellProperties" "ApplyStatus(FLY,100,10)"
+// data "Icon" "Action_Fly"
+// // Githborn: Flying Boots
+// data "DisplayName" "h8a9bb5b3g81ceg4b4fga52eg252abfbf4ee7;2"
+// // Bestow the ability to &lt;LSTag Type="Spell" Tooltip="Projectile_Fly"&gt;Fly&lt;/LSTag&gt; upon yourself.
+// data "Description" "hbd3c635egcec1g44ebgbd47g77f5c79480ef;2"
+// data "ExtraDescription" ""
+// data "ExtraDescriptionParams" ""
+// data "TooltipStatusApply" "ApplyStatus(FLY,100,10)"
+// data "PrepareSound" "Spell_Prepare_Fly_L4to5_01"
+// data "PrepareLoopSound" "Spell_Loop_Fly_L4to5"
+// data "CastSound" "Spell_Cast_Fly_L4to5"
+// data "TargetSound" "Spell_Impact_Fly_L4to5"
+// data "VocalComponentSound" "Vocal_Component_GrantFly"
+data "PreviewCursor" "Cast"
+// data "UseCosts" "BonusActionPoint:1"
+// data "Requirements" ""
+// data "RequirementConditions" ""
+// data "PrepareEffect" "f1ba15e1-93c4-4c94-a6d4-2b1b3934ce44"
+// data "CastEffect" "bcd66fb0-b0bc-41d0-abba-ad443d63dd72"
+// data "TargetEffect" "8cd6c669-ded1-476a-aa5e-d7dd055381d7"
+
+// ==================================== Nightsong Boots (Innaccessible/cut content) ====================================
+// TODO: ???
 
 // gear entry
 
@@ -174,27 +707,122 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Tenacious Boots (Innaccessible/cut content) ====================================
-// TODO: Something/anything.
+// TODO: FX for the application at the end of turn.
 
-// gear entry
+new entry "MAG_ZOC_ForceConduitWhileSurounded_Boots"
+type "Armor"
+// using "_Foot_Magic_Metal"
+using "MAG_ZOC_ForceConduitWhileSurounded_Boots"
+// data "RootTemplate" "cde75746-e209-433b-838c-300e3c7d8306"
+// data "Rarity" "Uncommon"
+data "PassivesOnEquip" "MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive;Goon_Gear_Polymorph_TenaciousBoots"
+// data "Boosts" "Skill(Athletics,1);UnlockSpell(Shout_MAG_ZOC_ImmovableShout)"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_ZOC_ForceConduitWhileSurounded_Boots_NotUnique"
+type "Armor"
+using "MAG_ZOC_ForceConduitWhileSurounded_Boots"
+// data "Unique" "1"
+data "Unique" "0"
 
-// ==================================== Nightsong Boots (Innaccessible/cut content) ====================================
-// TODO: Something/anything.
+new entry "GOON_TENACIOUSBOOTS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// gear entry
+// ==================
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_Gear_Polymorph_TenaciousBoots"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_TENACIOUSBOOTS, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_TENACIOUSBOOTS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_TENACIOUSBOOTS"
+data "Boosts" "Skill(Athletics,1)"
+data "Passives" "MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive"
+
+// ==================
+
+new entry "MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive"
+type "PassiveData"
+using "MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive"
+// // Force Bravado
+// data "DisplayName" "h3cf8d0c4g9bc6g42f3g889dgaef403c123a5;1"
+// // At the end of your turn, generate &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; while surrounded by [1] or more enemies.
+// data "Description" "hf7507ef0gd477g44f9gbe07ge1ce76fa894b;4"
+// // At the end of the wearer's turn, they gain [1] round of &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; if they are &lt;LSTag Type="Status" Tooltip="FLANKED"&gt;Threatened&lt;/LSTag&gt; while surrounded by [2] or more enemies within [3].&lt;br&gt;&lt;br&gt;If the wearer does not already have &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt;, they gain [4] rounds instead.
+data "Description" "h2dabe5bag9164g41d2ga3bcgaf29bb3c1c58;1"
+// data "DescriptionParams" "2"
+data "DescriptionParams" "1;2;Distance(3);2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+data "BoostContext" "OnCreate;OnTurn;OnCombatStarted;OnMovedDistance;OnEnterAttackRange;OnLeaveAttackRange;OnSurfaceEnter;OnPushed"
+data "BoostConditions" "Combat() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED')"
+data "Boosts" "Tag(GOON_FORCEBRAVADO)"
+data "StatsFunctorContext" "OnTurn;OnStatusRemoved"
+data "Conditions" "Combat()"
+data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnTurn)):ApplyStatus(GOON_FORCEBRAVADO_TECHNICAL,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('GOON_FORCEBRAVADO_TECHNICAL') and Tagged('GOON_FORCEBRAVADO') and HasStatus('MAG_ZOC_FORCE_CONDUIT')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('GOON_FORCEBRAVADO_TECHNICAL') and Tagged('GOON_FORCEBRAVADO') and not HasStatus('MAG_ZOC_FORCE_CONDUIT')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('GOON_FORCEBRAVADO_TECHNICAL') and Tagged('GOON_FORCEBRAVADO')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT_DURATION_TECHNICAL, 100, 1)"
+
+new entry "GOON_FORCEBRAVADO_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead;IgnoreResting"
+data "TickType" "EndTurn"
+
+new entry "Shout_MAG_ZOC_ImmovableShout"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_ActionSurge"
+using "Shout_MAG_ZOC_ImmovableShout"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "AIFlags" ""
+// data "SpellProperties" "ApplyStatus(MAG_ZOC_FORCE_CONDUIT_IMMOVABLE,100,1);SetStatusDuration(MAG_ZOC_FORCE_CONDUIT,-1,Add)"
+// data "Icon" "Action_MagicItem_ImmovableShout"
+// // Stand Like Stone
+// data "DisplayName" "h29f3e2b3g5853g4842g9309gb166dcb8bd02;2"
+// // Spend [1] turn of &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; to become a strong bulwark that cannot be moved unwillingly.
+// data "Description" "hb266a4d0gd6a8g4824g984cg5a2bfc782acc;7"
+// data "DescriptionParams" "1"
+// data "TooltipStatusApply" "ApplyStatus(MAG_ZOC_FORCE_CONDUIT_IMMOVABLE,100,1)"
+// data "PrepareSound" "Action_Prepare_Item_ImmovableShout"
+// data "PrepareLoopSound" "Action_Loop_Item_ImmovableShout"
+// data "CastSound" "Action_Cast_Item_ImmovableShout"
+// data "TargetSound" "Action_Impact_Item_ImmovableShout"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;,,;2f5d8e0b-35f3-416f-99e9-1cc9d942204e,,;f2ec369f-4a3b-451e-b954-2ab0a53d51d6,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;5fdb66be-7506-411a-a7ea-c4783288aac8,,;,,;,,"
+// data "VerbalIntent" "Buff"
+// data "SpellStyleGroup" "Intent"
+// data "SpellFlags" "IsSpell"
+data "SpellFlags" ""
+// data "Requirements" ""
+// data "RequirementConditions" "HasStatus('MAG_ZOC_FORCE_CONDUIT')"
+// data "PrepareEffect" "9e2dd4fe-f294-4f02-8ce8-eb5aa7725b34"
+// data "CastEffect" "79f7a0fb-c6d1-4558-8c48-3962f43c3eb4"
+
+new entry "MAG_ZOC_FORCE_CONDUIT_IMMOVABLE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_ZOC_FORCE_CONDUIT_IMMOVABLE"
+// // Force Steadfast
+// data "DisplayName" "he374db9egd89bg40ebg9997g4e57c80e8b4d;2"
+// // Affected entity can't be moved against its will.
+// data "Description" "ha1b13973gef91g4696ga339gd9deb963b5b4;5"
+// // Affected entity can't be moved by any external force - be it magical or mundane.
+data "Description" "h111db567g3a5bg4ed3gac4cgd4741dade707;1"
+// data "Icon" "statIcons_ForceSteadfast"
+// data "SoundLoop" "MAG_Status_ForceConduitImmovable_Start"
+// data "SoundStop" "MAG_Status_ForceConduitImmovable_End"
+// data "StackId" "MAG_ZOC_FORCE_CONDUIT_IMMOVABLE"
+// data "Boosts" "Attribute(Grounded)"
+// data "StatusEffect" "a5d3ddd3-e541-45ee-ba6d-4bb78a4a8966"
 
 // ==================================== Oathbreaker Knight Boots (Innaccessible/cut content) ====================================
-// TODO: Something/anything.
+// TODO: ???
 
 // gear entry
 

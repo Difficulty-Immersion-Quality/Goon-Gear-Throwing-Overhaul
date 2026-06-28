@@ -7,9 +7,10 @@
 			<!-- Pendant Of Animal Speech -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="haa29c2f4g9eecg46eeg96c9g3efbe30a1c48" version="1" />
+					<!-- An Amulet in the shape of a small paw, adorned by a simple gemstone. -->
 					<attribute id="Description" type="TranslatedString" handle="h1276696cg0997g4e4bg8b7cg9312f9039a84" version="1" />
 					<attribute id="MapKey" type="FixedString" value="970d17f4-3d9d-4df8-bdda-4fde3c6d112c" />
-					<attribute id="Name" type="LSString" value="Goon_Pendant_Animal_Speech_Amulet" />
+					<attribute id="Name" type="LSString" value="Goon_PendantOfAnimalSpeech_Amulet" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="72837a82-6dcd-41bb-a657-2a395744b499" />

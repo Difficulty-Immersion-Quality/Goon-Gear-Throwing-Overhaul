@@ -1,7 +1,7 @@
 new treasuretable "DEN_Entrance_Trade"
 CanMerge 1
 new subtable "1,1"
-object category "I_Goon_Pendant_Animal_Speech_Amulet",1,0,0,0,0,0,0,0
+object category "I_Goon_PendantOfAnimalSpeech_Amulet",1,0,0,0,0,0,0,0
 
 // Normal darts added to ranged tables in Ultimate Cut Content Restoration Mod
 // new treasuretable "ST_SimpleMeleeWeapons"
@@ -22,6 +22,9 @@ object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
 object category "I_WPN_Dart_2",1,0,0,0,0,0,0,0
 
 new treasuretable "TT_Goon_GearOverhaul_Mega_Container"
+// Armour - Amulets - Custom
+new subtable "1,1"
+object category "I_Goon_PendantOfAnimalSpeech_Amulet_NotUnique",1,0,0,0,0,0,0,0
 // Armour - Boots (Clothing)
 new subtable "1,1"
 object category "I_Goon_MAG_Healer_TempHPOnHeal_Boots_NotUnique",1,0,0,0,0,0,0,0
@@ -71,12 +74,12 @@ new subtable "1,1"
 object category "I_Goon_MAG_Infernal_Metal_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_FOR_NightWalkers_NotUnique",1,0,0,0,0,0,0,0
-new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
-new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
-new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_MAG_Critical_CriticalSwiftness_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
@@ -100,12 +103,12 @@ new subtable "1,1"
 object category "I_Goon_MAG_EndGame_Metal_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_MAG_Githborn_PsionicMovement_Boots_NotUnique",1,0,0,0,0,0,0,0
-new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_MAG_ZOC_ForceConduitWhileSurounded_Boots_NotUnique",1,0,0,0,0,0,0,0
-new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
 //
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0

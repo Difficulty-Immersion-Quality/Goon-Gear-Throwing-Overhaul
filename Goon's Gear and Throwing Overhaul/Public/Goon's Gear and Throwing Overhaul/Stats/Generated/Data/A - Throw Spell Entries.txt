@@ -1,4 +1,5 @@
 // ==================================== Throw overhaul ====================================
+// Bug Fix: Removed CombatLogSetSingleLineRoll because it makes a mess of the combat log, can't remember specifics but it sucks.
 // TODO: Offhand throwing variants.
 // TODO: Trajectory variants.
 // Vanilla: data "Trajectories" "rules:861d0046-1858-401e-b97b-28f7b3e3e89a,d5e54f29-f80f-4105-96b2-23b5af9321c7,bac38aab-dfa7-4a5a-9c2a-552b0b626ee3"
@@ -37,6 +38,7 @@ data "SpellSuccess" "TARGET:IF(IsLightThrownObject(context.HitDescription.Thrown
 // data "SpellAnimation" "b1befe57-ee3e-4126-8c9d-3b6cec7eb3f4,,;f2803838-31cf-471b-85d1-92fa2d0eb7c2,,;4be0751c-9fca-4c35-9337-6bf8a321c516,,;86b52093-596c-4054-bb1d-2dbdfcdc4347,,;5b4905be-03fd-42fb-9652-c2d1c772f4d3,,;9673b7c5-9928-44ce-ae4f-a85be2683981,,;e81ffae4-6be0-47fd-8502-48b9961004e9,,;,,;,,"
 // data "VerbalIntent" "Utility"
 // data "SpellFlags" "InventorySelection;RangeIgnoreVerticalThreshold;IsHarmful;HasHighGroundRangeExtension;IgnoreSilence;IgnoreVisionBlock;AddFallDamageOnLand;AbortOnSecondarySpellRollFail;CombatLogSetSingleLineRoll"
+data "SpellFlags" "InventorySelection;RangeIgnoreVerticalThreshold;IsHarmful;HasHighGroundRangeExtension;IgnoreSilence;IgnoreVisionBlock;AddFallDamageOnLand;AbortOnSecondarySpellRollFail"
 // data "SpellActionType" "Throw"
 // data "HitAnimationType" "MagicalDamage_External"
 // data "PrepareEffect" "ede0c318-7f5d-43b4-bc73-a50e0a528d55"
@@ -70,6 +72,7 @@ data "TooltipAttackSave" "Dexterity"
 // data "UseCosts" "BonusActionPoint:1"
 // data "SpellAnimation" "b1befe57-ee3e-4126-8c9d-3b6cec7eb3f4,,;697d5963-13d6-4737-8de7-80b97dfe2216,,;f8baa5a0-4c8d-4cab-8fc1-04d3e2fba478,,;29f1f751-fd05-429f-9e67-4368c63623af,,;5b4905be-03fd-42fb-9652-c2d1c772f4d3,,;5d37434a-b746-4eb9-9bdb-487e9a21ff7f,,;e81ffae4-6be0-47fd-8502-48b9961004e9,,;,,;,,"
 // data "SpellFlags" "RangeIgnoreVerticalThreshold;IsHarmful;HasHighGroundRangeExtension;IgnoreSilence;IgnoreVisionBlock;AddFallDamageOnLand;InventorySelection;CombatLogSetSingleLineRoll"
+data "SpellFlags" "RangeIgnoreVerticalThreshold;IsHarmful;HasHighGroundRangeExtension;IgnoreSilence;IgnoreVisionBlock;AddFallDamageOnLand;InventorySelection"
 // data "PrepareEffect" "adfdab5b-a3df-4415-86b5-01ff9d541564"
 // data "CastEffect" "7a553dd4-06bf-4092-b211-8de50aabed0f"
 // data "RequirementConditions" "HasStatus('SG_Rage')"

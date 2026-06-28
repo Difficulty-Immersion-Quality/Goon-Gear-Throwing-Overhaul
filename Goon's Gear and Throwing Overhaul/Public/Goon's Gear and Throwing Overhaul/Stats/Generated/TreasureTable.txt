@@ -83,15 +83,30 @@ new subtable "1,1"
 object category "I_Goon_MAG_Shadow_Shadowstep_Boots_NotUnique",1,0,0,0,0,0,0,0
 // Armour - Boots (Medium)
 new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
+object category "I_Goon_MAG_ElementalGish_MomentumOnElementalDamage_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Paladin_MomentumOnConcentration_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_OB_Paladin_DeathKnight_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_UNI_SHA_DarkJusticiar_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_ChargedLightning_Dash_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_DevilsBlackmith_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Gish_TempHPWhileConcentrating_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_EndGame_Metal_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Githborn_PsionicMovement_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0
 new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
+object category "I_Goon_MAG_ZOC_ForceConduitWhileSurounded_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0
-new subtable "1,1"
-object category "I_XXX",1,0,0,0,0,0,0,0
+//
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0
 new subtable "1,1"

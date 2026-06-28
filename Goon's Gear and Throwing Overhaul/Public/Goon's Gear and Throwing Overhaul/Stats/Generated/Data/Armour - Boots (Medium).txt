@@ -127,8 +127,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM"
 // Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
 // Changes: Focused Stride now functions while under the effects of non-humanoid polymorphs.
 // TODO: There is no status application directly associated with removal of concentration, "OnStatusApplied;OnStatusRemoved;OnDamaged" events are just close enough, good enough, type shit.
-// TODO: Goon's Library, just have loss of concentration apply a status to kick shit into gear.
-// TODO: There could also be a failsafe for if Unmovable is removed but the caster is still concentrating on a spell... apply a technical on the cast matching the expected duration.
+// In Goon's Library, just have loss of concentration apply a status to kick shit into gear. There could also be a failsafe for if Unmovable is removed but the caster is still concentrating on a spell... apply a technical on the cast matching the expected duration.
 
 new entry "MAG_Paladin_MomentumOnConcentration_Boots"
 type "Armor"
@@ -585,6 +584,7 @@ data "RemoveConditions" "not HasPassive('MAG_EndGame_Boots_Passive') and not Has
 
 // ==================================== Boots of Psionic Movement ====================================
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
+// Changes: Flying Strike now functions while under the effects of non-humanoid polymorphs.
 // Changes: Flying Strike condition now adds 1d4 Psychic damage as weapon damage, instead of a standalone damage bonus.
 // Changes: Flying Strike descriptions improved.
 // TODO: Flying Strike needs a khn function for finding all the fly actions... but I'm not seeing a way to aggregate them short of just doing a phat fucking list.
@@ -707,7 +707,16 @@ data "PreviewCursor" "Cast"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Tenacious Boots (Innaccessible/cut content) ====================================
+// Bug Fix: Force Bravado is attached to the item.
+// Bug Fix: Force Bravado actually has functionality.
+// Bug Fix: Stand Like Stone is no longer flagged as a spell.
+// Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
+// Changes: Force Bravado now functions while under the effects of non-humanoid polymorphs.
+// Changes: Force Bravado requires that the wearer is both Threatened and has 2 non-incapacitated enemies within 3 meters.
+// Changes: Force Bravado gives 2 rounds of Force Conduit if the wearer does now have any, but only 1 round if they do.
+// Changes: Descriptions improved.
 // TODO: FX for the application at the end of turn.
+// TODO: If the boots are equipped mid-combat the technical Force Bravado won't be applied, and the affects will not trigger that turn.
 
 new entry "MAG_ZOC_ForceConduitWhileSurounded_Boots"
 type "Armor"

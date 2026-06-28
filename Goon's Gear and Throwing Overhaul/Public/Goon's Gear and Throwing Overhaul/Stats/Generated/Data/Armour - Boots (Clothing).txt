@@ -94,7 +94,6 @@ data "Properties" "Highlighted"
 // Changes: Arcane Echomalefaction's "OncePerAttack" cooldown is removed, allowing Reverberation to be applied from AOE to more than a single target.
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
 // Changes: Arcane Echomalefaction now functions while under the effects of non-humanoid polymorphs.
-// TODO: Test reports - "Boots of stormy clamor is having on and off effect for reverberation (Revision 148 sort of)" - Removing TotalDamageDoneGreaterThan is a potential fix.
 
 new entry "MAG_Thunder_ReverberationOnStatusApply_Boots"
 type "Armor"

@@ -1,3 +1,117 @@
+-- ==================================== Core vanilla function overwrites ====================================
+-- Call custom functions that handle edge cases for attack type conditions, in Goon's Library.
+-- Worst case scenario with this broad implementation of shoving edge cases in to everything, is that there might be a few cases of getting multiple triggers from things with a lot of IF.
+-- TODO: Goon_IsThrownWeaponAttack() being implemented the way it is here inspires a change in the way I do tooltips when adding throwing support. 
+-- Could make a passive and link to it explaining the "thrown weapon attack". Stuff would read like "when you deal damage with a thrown weapon attack", to distinguish from throwing anything.
+-- Previous stuff has read like "Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]." which is actually just awful. Replace that wherever I've checked for HasWeaponProperty(WeaponProperties.Melee, context.HitDescription.ThrownObject).
+
+-- function IsAttack()
+--     return IsMeleeAttack() | IsRangedAttack()
+-- end
+
+function IsWeaponAttack()
+    result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
+          or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
+          or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+          or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	return ConditionResult(result) | IsMainHandWeaponAttack() | IsOffHandAttack() | Goon_IsThrownWeaponAttack() -- Added
+end
+
+function IsWeaponAttackAttackDescription()
+    result = context.AttackDescription.AttackType == AttackType.RangedWeaponAttack
+          or context.AttackDescription.AttackType == AttackType.MeleeWeaponAttack
+          or context.AttackDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+          or context.AttackDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	return ConditionResult(result) | IsMainHandWeaponAttack() | IsOffHandAttack() | Goon_IsThrownWeaponAttack() -- Added
+end
+
+function IsMainHandWeaponAttack()
+    result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack 
+          or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
+	return ConditionResult(result) | Goon_IsMeleeMainhandWeaponAttack() | Goon_IsRangedMainhandWeaponAttack() -- Added
+end
+
+function IsOffHandAttack()
+    result = context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack 
+          or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	return ConditionResult(result) | Goon_IsMeleeOffhandWeaponAttack() | Goon_IsRangedOffhandWeaponAttack() -- Added
+end
+
+-- function IsSpellAttack()
+--     return IsMeleeSpellAttack() | IsRangedSpellAttack()
+-- end
+
+-- ==================================== Melee
+
+function IsMeleeAttack()
+    result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack 
+          or context.HitDescription.AttackType == AttackType.MeleeSpellAttack 
+          or context.HitDescription.AttackType == AttackType.MeleeUnarmedAttack 
+          or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	return ConditionResult(result) | IsMeleeWeaponAttack() | IsMeleeUnarmedAttack() | IsMeleeSpellAttack() -- Added
+end
+
+function IsMeleeWeaponAttack()
+    result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
+          or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+    return ConditionResult(result) | Goon_IsMeleeMainhandWeaponAttack() | Goon_IsMeleeOffhandWeaponAttack() -- Added
+end
+
+-- function IsMeleeUnarmedAttack()
+--     result = context.HitDescription.AttackType == AttackType.MeleeUnarmedAttack
+--     return ConditionResult(result)
+-- end
+
+-- function IsMeleeSpellAttack()
+--     result = context.HitDescription.AttackType == AttackType.MeleeSpellAttack
+--     return ConditionResult(result)
+-- end
+
+-- ==================================== Ranged
+
+function IsRangedAttack()
+    result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack 
+          or context.HitDescription.AttackType == AttackType.RangedSpellAttack 
+          or context.HitDescription.AttackType == AttackType.RangedUnarmedAttack 
+          or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	return ConditionResult(result) | IsRangedWeaponAttack() | IsRangedUnarmedAttack() | IsRangedSpellAttack() -- Added
+end
+
+function IsRangedWeaponAttack()
+    result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
+          or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+    return ConditionResult(result) | Goon_IsRangedMainhandWeaponAttack() | Goon_IsRangedOffhandWeaponAttack() -- Added
+end
+
+-- function IsRangedUnarmedAttack()   
+--     result = context.HitDescription.AttackType == AttackType.RangedUnarmedAttack
+--     return ConditionResult(result)
+-- end
+
+-- function IsRangedSpellAttack()
+--     result = context.HitDescription.AttackType == AttackType.RangedSpellAttack
+--     return ConditionResult(result)
+-- end
+
+-- ==================================== AttackedWithPassiveSourceWeapon expanding
+-- Credit to Xiphias Rex: Handle edge cases where spells and actions using a weapon don't have an Attack Roll, but should still function with item passives etc.
+
+function AttackedWithPassiveSourceWeapon()
+    local weaponToCheck = nil
+
+    if Goon_IsWeaponActionWithoutAttackRoll().Result then
+        weaponToCheck = GetActiveWeapon()
+    else
+        weaponToCheck = GetAttackWeapon()
+    end
+
+    -- result = IsPassiveSource(context.Passive, GetAttackWeapon(), context.Source) | IsPassiveSource(context.Passive, GetAttackWeapon(), GetAttackWeapon()) 
+    --        | IsPassiveOwner(context.Passive, GetAttackWeapon(), context.Source)  | IsPassiveOwner(context.Passive, GetAttackWeapon(), GetAttackWeapon())
+    -- return result
+    return IsPassiveSource(context.Passive, weaponToCheck, context.Source) | IsPassiveSource(context.Passive, weaponToCheck, weaponToCheck) 
+         | IsPassiveOwner(context.Passive, weaponToCheck, context.Source)  | IsPassiveOwner(context.Passive, weaponToCheck, weaponToCheck)
+end
+
 -- ==================================== Condensed functions ====================================
 
 -- Potent Robe: Gregarious Caster
@@ -6,6 +120,7 @@ function Goon_IsConditionalDamageCantripEligible_Greg()
 end
 
 -- ==================================== Vanilla throw stuff ====================================
+-- Even if things are made more strict, the weapon itself should always benefit from its own stuff, Thrown property or not.
 -- TODO: Check for throwing weapon property for most applications?
 -- TODO: Move all this shit to new passives.
 -- TODO: Run individual functors for most conditions.

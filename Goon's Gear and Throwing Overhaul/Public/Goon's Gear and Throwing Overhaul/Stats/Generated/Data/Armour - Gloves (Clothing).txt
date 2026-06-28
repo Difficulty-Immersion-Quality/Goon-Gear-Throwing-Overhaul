@@ -876,6 +876,7 @@ data "Properties" "Highlighted"
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
 // TODO: polymorph.
 // TODO: Item spell inherits from NPC spell that inherits from regular spell, fuck me lol.
+// TODO: The bleeding applies to thrown, but probably wasn't intended.
 
 new entry "MAG_Infernal_Metal_Gloves"
 type "Armor"
@@ -923,9 +924,8 @@ data "Properties" "Highlighted"
 // data "Boosts" "CharacterWeaponDamage(1d6, Fire);CharacterUnarmedDamage(1d6, Necrotic)"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsUnarmedAttack()"
-data "Conditions" ""
 // data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2,,,,not SavingThrow(Ability.Constitution,15))"
-data "StatsFunctors" "IF(IsUnarmedAttack()):ApplyStatus(GOON_INFERNALTOUCH_TECHNICAL_APPLIER, 100, 0);IF(IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Melee, context.HitDescription.ThrownObject)):DealDamage(1d6, Fire,Magical,,0,,true,false)"
+data "StatsFunctors" "ApplyStatus(GOON_INFERNALTOUCH_TECHNICAL_APPLIER, 100, 0)"
 
 new entry "GOON_INFERNALTOUCH_TECHNICAL_APPLIER"
 type "StatusData"

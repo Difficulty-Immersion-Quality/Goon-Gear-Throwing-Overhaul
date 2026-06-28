@@ -5,15 +5,17 @@
 -- Could make a passive and link to it explaining the "thrown weapon attack". Stuff would read like "when you deal damage with a thrown weapon attack", to distinguish from throwing anything.
 -- Previous stuff has read like "Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]." which is actually just awful. Replace that wherever I've checked for HasWeaponProperty(WeaponProperties.Melee, context.HitDescription.ThrownObject).
 
--- function IsAttack()
---     return IsMeleeAttack() | IsRangedAttack()
--- end
+function IsAttack()
+    -- return IsMeleeAttack() | IsRangedAttack()
+    return IsMeleeAttack() | IsRangedAttack() | IsWeaponAttack()
+end
 
 function IsWeaponAttack()
     result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
           or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
           or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
           or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	-- return ConditionResult(result)
 	return ConditionResult(result) | IsMainHandWeaponAttack() | IsOffHandAttack() | Goon_IsThrownWeaponAttack() -- Added
 end
 
@@ -22,18 +24,21 @@ function IsWeaponAttackAttackDescription()
           or context.AttackDescription.AttackType == AttackType.MeleeWeaponAttack
           or context.AttackDescription.AttackType == AttackType.RangedOffHandWeaponAttack
           or context.AttackDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	-- return ConditionResult(result)
 	return ConditionResult(result) | IsMainHandWeaponAttack() | IsOffHandAttack() | Goon_IsThrownWeaponAttack() -- Added
 end
 
 function IsMainHandWeaponAttack()
     result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack 
           or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
+	-- return ConditionResult(result)
 	return ConditionResult(result) | Goon_IsMeleeMainhandWeaponAttack() | Goon_IsRangedMainhandWeaponAttack() -- Added
 end
 
 function IsOffHandAttack()
     result = context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack 
           or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	-- return ConditionResult(result)
 	return ConditionResult(result) | Goon_IsMeleeOffhandWeaponAttack() | Goon_IsRangedOffhandWeaponAttack() -- Added
 end
 
@@ -48,12 +53,14 @@ function IsMeleeAttack()
           or context.HitDescription.AttackType == AttackType.MeleeSpellAttack 
           or context.HitDescription.AttackType == AttackType.MeleeUnarmedAttack 
           or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	-- return ConditionResult(result)
 	return ConditionResult(result) | IsMeleeWeaponAttack() | IsMeleeUnarmedAttack() | IsMeleeSpellAttack() -- Added
 end
 
 function IsMeleeWeaponAttack()
     result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
           or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	-- return ConditionResult(result)
     return ConditionResult(result) | Goon_IsMeleeMainhandWeaponAttack() | Goon_IsMeleeOffhandWeaponAttack() -- Added
 end
 
@@ -74,12 +81,14 @@ function IsRangedAttack()
           or context.HitDescription.AttackType == AttackType.RangedSpellAttack 
           or context.HitDescription.AttackType == AttackType.RangedUnarmedAttack 
           or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	-- return ConditionResult(result)
 	return ConditionResult(result) | IsRangedWeaponAttack() | IsRangedUnarmedAttack() | IsRangedSpellAttack() -- Added
 end
 
 function IsRangedWeaponAttack()
     result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
           or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	-- return ConditionResult(result)
     return ConditionResult(result) | Goon_IsRangedMainhandWeaponAttack() | Goon_IsRangedOffhandWeaponAttack() -- Added
 end
 

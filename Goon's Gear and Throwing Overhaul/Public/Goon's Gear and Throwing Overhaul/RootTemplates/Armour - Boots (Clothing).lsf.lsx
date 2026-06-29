@@ -5,7 +5,7 @@
 		<node id="Templates">
 			<children>
 		<!-- Armour - Boots (Clothing) -->
-			<!-- Boots of Aid and Comfort -->
+			<!-- 1. Boots of Aid and Comfort -->
 				<node id="GameObjects">
 					<!-- Sturdy and well-worn, these boots make a snug fit on any wearer. -->
 					<attribute id="Description" type="TranslatedString" handle="hf76c3cd1g89d6g4d67g9b14g6584bf52fd79" version="1" />
@@ -214,7 +214,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Stormy Clamour -->
+			<!-- 2. Boots of Stormy Clamour -->
 				<node id="GameObjects">
 					<!-- Peals of thunder rumble at the back of your skull with every step taken in these boots. -->
 					<attribute id="Description" type="TranslatedString" handle="h5f5d0090gd37ag4d8dga9e5gdc08ee29d42c" version="1" />
@@ -268,7 +268,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Very Fast Blinking -->
+			<!-- 3. Boots of Very Fast Blinking -->
 				<node id="GameObjects">
 					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
 					<attribute id="Archetype" type="FixedString" value="base" />
@@ -621,7 +621,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Cinder Shoes -->
+			<!-- 4. Cinder Shoes -->
 				<node id="GameObjects">
 					<!-- Despite the many scorch marks, these leather boots are somehow still supple and intact. -->
 					<attribute id="Description" type="TranslatedString" handle="h3659d4eeg7617g40c7g8ecdgde553cdb8cd3" version="1" />
@@ -844,7 +844,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Hoarfrost Boots -->
+			<!-- 5. Hoarfrost Boots -->
 				<node id="GameObjects">
 					<!-- A smattering of tiny ice crystals have formed cleats on the soles of these hardy boots. -->
 					<attribute id="Description" type="TranslatedString" handle="hb3dcda0eg3c10g4466gb116g0fe7c6cacb0b" version="1" />
@@ -1117,7 +1117,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Mystra's Grace -->
+			<!-- 6. Mystra's Grace -->
 				<node id="GameObjects">
 					<attribute id="CanClickThrough" type="bool" value="False" />
 					<attribute id="CanClimbOn" type="bool" value="False" />
@@ -1453,7 +1453,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Spiderstep Boots -->
+			<!-- 7. Spiderstep Boots -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<!-- Slightly sticky to the touch, these boots have excellent grip. -->
@@ -1730,7 +1730,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Tyrannical Jackboots -->
+			<!-- 8. Tyrannical Jackboots -->
 				<node id="GameObjects">
 					<!-- Each step taken in Gortash's shoes is a reflection of the man himself: quick, sharp, and terrible. -->
 					<attribute id="Description" type="TranslatedString" handle="h805ae848g66f4g4fe4gad5egf71b24dcfbb2" version="1" />
@@ -1783,7 +1783,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Varsh Ko'kuu's Boots -->
+			<!-- 9. Varsh Ko'kuu's Boots -->
 				<node id="GameObjects">
 					<!-- Though the leather is slick with acid, the corrosive liquid doesn't seem to damage the boots - nor does it penetrate. -->
 					<attribute id="Description" type="TranslatedString" handle="ha159ea57gdcc0g4a5ag8dc3g6c32f3f01c8f" version="2" />
@@ -1999,7 +1999,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Acrobat Shoes -->
+			<!-- 10. Acrobat Shoes -->
 				<node id="GameObjects">
 					<!-- These flexible shoes were once owned by Audreyne Willoughs, who, in a somewhat ironic twist of fate, ran away from the circus to join her parents back home. -->
 					<attribute id="Description" type="TranslatedString" handle="hd79e2acagea3ag4858g9c9cg6b38a1cfd363" version="1" />
@@ -2257,7 +2257,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Apparent Death -->
+			<!-- 11. Boots of Apparent Death -->
 				<node id="GameObjects">
 					<!-- Practical jokes with these boots often involve all your stuff being stolen by opportunistic cousins. -->
 					<attribute id="Description" type="TranslatedString" handle="h7b45a72cge380g43e2g8df3g33042674e601" version="4" />
@@ -2469,7 +2469,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Arcane Bolstering -->
+			<!-- 12. Boots of Arcane Bolstering -->
 				<node id="GameObjects">
 					<!-- Fizzling barbs of enchantment magic crackle from the laces of these boots. -->
 					<attribute id="Description" type="TranslatedString" handle="he98e3250g436cg4175g854cg22e3ef83e0cb" version="1" />
@@ -2674,7 +2674,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Brilliance -->
+			<!-- 13. Boots of Brilliance -->
 				<node id="GameObjects">
 					<!-- Tiny bells are sewn into the boots' cuffs. They jingle subtly with every step. -->
 					<attribute id="Description" type="TranslatedString" handle="h6b81f633g3d0cg4d44g8f12gd94fa17d4dd3" version="1" />
@@ -2993,7 +2993,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Genial Striding  -->
+			<!-- 14. Boots of Genial Striding  -->
 				<node id="GameObjects">
 					<!-- The soles of these boots warp and shift like warm clay manipulated by an unseen sculptor's hands. -->
 					<attribute id="Description" type="TranslatedString" handle="h9ed760d9g3277g4aebgb63ag8c51e81942df" version="1" />
@@ -3221,7 +3221,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Speed -->
+			<!-- 15. Boots of Speed -->
 				<node id="GameObjects">
 					<attribute id="CanClickThrough" type="bool" value="False" />
 					<attribute id="CanClimbOn" type="bool" value="False" />
@@ -3537,7 +3537,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Uninhibited Kushigo -->
+			<!-- 16. Boots of Uninhibited Kushigo -->
 				<node id="GameObjects">
 					<!-- During a hilltop battle that soaked the slopes in gore, Kushigo's best friend Irishi was scalped before he could help her.<br><br>The enemy held up the bloody wig, and Kushigo fell upon one, and then another, until he had killed so many that they hung from his antlered shoulders like skewered effigies. -->
 					<attribute id="Description" type="TranslatedString" handle="h61bf47e4ged5ag443agaf2ag461722ded5a6" version="1" />
@@ -3764,7 +3764,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Evasive Shoes -->
+			<!-- 17. Evasive Shoes -->
 				<node id="GameObjects">
 					<!-- Rogues in Waterdeep prefer these spring-loaded boots that make evading the city watch a breeze. -->
 					<attribute id="Description" type="TranslatedString" handle="h48333dd4g00fdg4b75ga474g1f0ee8197606" version="1" />
@@ -4043,7 +4043,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Linebreaker Boots -->
+			<!-- 18. Linebreaker Boots -->
 				<node id="GameObjects">
 					<!-- Lightweight fur and leather, designed to speed the wearer's charge into battle. -->
 					<attribute id="Description" type="TranslatedString" handle="hb5bb79a1g117dg45b3g8f10g5e2ddc50cacd" version="2" />
@@ -4374,7 +4374,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Slinging Shoes -->
+			<!-- 19. Slinging Shoes -->
 				<node id="GameObjects">
 					<!-- These shoes were formerly enchanted to return to their owner's feet. This caused a great deal of trouble for owners, who, while wearing a slipper or a nice heeled number, kept being kicked in the ankles by jealous footwear. -->
 					<attribute id="Description" type="TranslatedString" handle="hbcea31a9g177cg4c40gb678g25209f05d75a" version="1" />
@@ -4636,7 +4636,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Spaceshunt Boots -->
+			<!-- 20. Spaceshunt Boots -->
 				<node id="GameObjects">
 					<!-- TODO: Doesn't have a unique description. -->
 					<attribute id="DisplayName" type="TranslatedString" handle="h08e8fb31geb4fg4eecg812egd872e58c4b49" version="1" />
@@ -4894,7 +4894,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Springstep Boots -->
+			<!-- 21. Springstep Boots -->
 				<node id="GameObjects">
 					<!-- Supple leather rebounds with every step, as if urging the wearer on. -->
 					<attribute id="Description" type="TranslatedString" handle="h33b3f41ag01e0g4ccagb3e4g9283b9848018" version="1" />
@@ -5102,7 +5102,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Swiresy Shoes -->
+			<!-- 22. Swiresy Shoes -->
 				<node id="GameObjects">
 					<!-- Likely fashioned in tribute to the extremely small, high-vaulting rascal who pillaged many a hen house - Lupperdiddle Swires. -->
 					<attribute id="Description" type="TranslatedString" handle="hfb951994gf7ceg4c91g8833gad57ef4b6dbb" version="1" />
@@ -5338,7 +5338,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- The Watersparkers -->
+			<!-- 23. The Watersparkers -->
 				<node id="GameObjects">
 					<!-- An enormous storm was raging the first time Yrre the Sparkstruck left the Underdark. The deep gnome's interest in lightning became at once an all-consuming obsession, and they would spend the rest of their years striving to recreate that storm's power themselves. -->
 					<attribute id="Description" type="TranslatedString" handle="h649a9864g05e8g4d6fg9de1gacc654ac887f" version="1" />
@@ -5598,7 +5598,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Bonespike Boots -->
+			<!-- 24. Bonespike Boots -->
 				<node id="GameObjects">
 					<!-- Armour designed for the aerodynamic leaping and striking and general screaming of your standard barbarian. -->
 					<attribute id="Description" type="TranslatedString" handle="h1ddc39abg7e90g4fd8g8fdegf4fc4223dee5" version="1" />
@@ -5852,7 +5852,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Helldusk Boots -->
+			<!-- 25. Helldusk Boots -->
 				<node id="GameObjects">
 					<!-- No ore takes better to being forged than the infernal iron of Avernus, where the archdevil Zariel presides. -->
 					<attribute id="Description" type="TranslatedString" handle="h842dc834g3b20g485egb2eeg054f29276cf9" version="2" />
@@ -6036,7 +6036,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Disintegrating Night Walkers -->
+			<!-- 26. Disintegrating Night Walkers -->
 				<node id="GameObjects">
 					<!-- Darker than a starless night, Night Walkers are made for secrecy in the honour of Shar.<br>This particular pair was found deep in the ruins of an Underdark fortress. Though the leather is old and the magic is fading, the boots were recently cleaned and oiled with care. -->
 					<attribute id="Description" type="TranslatedString" handle="hd7db0b70g8989g45e0g8af1gc6a9fd7827cc" version="5" />
@@ -6117,7 +6117,13 @@
 						</node>
 					</children>
 				</node>
-			<!-- Briskwind Boots (Innaccessible/cut content) -->
+			<!-- 27. Featherlight Boots (Innaccessible/cut content) -->
+
+			<!-- 28. Wavemother's Boots (Innaccessible/cut content) -->
+
+			<!-- 29. Gargoyle Boots (Innaccessible/cut content) -->
+
+			<!-- 30. Briskwind Boots (Innaccessible/cut content) -->
 				<node id="GameObjects">
 					<!-- The wind seems to lap encouragingly at the heels of these boots, no matter which direction they take. -->
 					<attribute id="Description" type="TranslatedString" handle="h2913aa23g1038g4c5eg818fg16c7296ed92a" version="1" />
@@ -6351,10 +6357,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Featherlight Boots (Innaccessible/cut content) -->
-			<!-- Wavemother's Boots (Innaccessible/cut content) -->
-			<!-- Gargoyle Boots (Innaccessible/cut content) -->
-			<!-- Shadowstep Boots (Innaccessible/cut content) -->
+			<!-- 31. Shadowstep Boots (Innaccessible/cut content) -->
 				<node id="GameObjects">
 					<!-- One of the relics of Deep Duerra's rebellious children. A mean-minded parent, Duerra quickly earned her children's enmity. In secret, the children devised a plan to escape their mother forever. -->
 					<attribute id="Description" type="TranslatedString" handle="haf102078g16f6g434ag82f7g4ad2f81bc579" version="2" />

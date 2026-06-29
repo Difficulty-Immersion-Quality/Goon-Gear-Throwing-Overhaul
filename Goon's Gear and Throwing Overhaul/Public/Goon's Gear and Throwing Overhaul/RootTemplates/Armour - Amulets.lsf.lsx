@@ -4,7 +4,124 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-			<!-- Sentient Amulet -->
+			<!-- 1. Aberration Hunters' Amulet -->
+
+			<!-- 2. Absolute Confidence Amulet -->
+
+			<!-- 3. Absolute's Talisman -->
+
+			<!-- 4. Amulet of Elemental Torment -->
+
+			<!-- 5. Amulet of Misty Step -->
+
+			<!-- 6. Amulet of Selûne's Chosen -->
+
+			<!-- 7. Amulet of Silvanus -->
+
+			<!-- 8. Amulet of the Unworthy -->
+
+			<!-- 9. Beastmaster's Chain -->
+
+			<!-- 10. Broodmother's Revenge -->
+
+			<!-- 11. Fireheart -->
+
+			<!-- 12. Frost Prince -->
+
+			<!-- 13. Hammergrim Mist Amulet -->
+
+			<!-- 14. Kill Collar -->
+
+			<!-- 15. Komira's Locket -->
+
+			<!-- 16. Moondrop Pendant -->
+
+			<!-- 17. Necklace of Elemental Augmentation -->
+				<node id="GameObjects">
+					<!-- The tourmaline in this necklace is almost uncomfortably hot, warmed by a heat all its own. -->
+					<attribute id="Description" type="TranslatedString" handle="hc7015ec7g874bg4dcdg9e66gd6696f89ec2d" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hb3a1ef86gc377g482agabb4g47de32e0c05d" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="a92cec2f-3a86-4aa1-a7e9-1d6dc9e12957" />
+					<attribute id="Name" type="LSString" value="MAG_ElementalGish_CantripBooster_Amulet" />
+					<attribute id="ParentTemplateId" type="FixedString" value="1bbbc944-19a4-4001-8be3-edb2d8784828" />
+					<attribute id="Stats" type="FixedString" value="MAG_ElementalGish_CantripBooster_Amulet" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="IsHiddenStatus" type="bool" value="False" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_NECKLACEOFELEMENTALAUGMENTATION_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			<!-- 18. Pearl of Power Amulet -->
+
+			<!-- 19. Psychic Spark -->
+
+			<!-- 20. Shar's Temptation -->
+
+			<!-- 21. Silver Pendant -->
+
+			<!-- 22. Spineshudder Amulet -->
+
+			<!-- 23. Tarnished Charm -->
+
+			<!-- 24. The Blast Pendant -->
+
+			<!-- 25. The Ever-Seeing Eye -->
+
+			<!-- 26. Amulet of Branding -->
+
+			<!-- 27. Amulet of Restoration -->
+
+			<!-- 28. Amulet of the Drunkard -->
+
+			<!-- 29. Amulet of the Harpers -->
+
+			<!-- 30. Champion's Chain -->
+
+			<!-- 31. Chancer's Carcanet -->
+
+			<!-- 32. Envoy's Amulet -->
+
+			<!-- 33. Periapt of Wound Closure -->
+
+			<!-- 34. Sentient Amulet -->
 				<node id="GameObjects">
 					<attribute id="CanClickThrough" type="bool" value="False" />
 					<attribute id="CanClimbOn" type="bool" value="False" />
@@ -122,6 +239,209 @@
 						</node>
 					</children>
 				</node>
+				<!-- Non-unique -->
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="8a61de95-7857-4f79-a0a0-7a6aeaa2255f" />
+					<attribute id="Name" type="LSString" value="Goon_UND_MonkAmulet_Amulet_NotUnique" />
+					<attribute id="ParentTemplateId" type="FixedString" value="086ae8fd-c44e-43a7-b8be-777b551a06d6" />
+					<attribute id="Stats" type="FixedString" value="Goon_UND_MonkAmulet_Amulet_NotUnique" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144818875517632512" />
+					<children>
+						<node id="SpeakerGroupList">
+							<children>
+							</children>
+						</node>
+					</children>
+				</node>
+			<!-- 34. Sentient Amulet - Very Rare -->
+				<!-- <node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="7eaa1331-877c-40d7-9811-8238aee09f68" />
+					<attribute id="Name" type="LSString" value="UNI_WYR_MonkAmulet_AfterCombat" />
+					<attribute id="ParentTemplateId" type="FixedString" value="086ae8fd-c44e-43a7-b8be-777b551a06d6" />
+					<attribute id="Stats" type="FixedString" value="WYR_MonkAmulet_Amulet_AfterCombat" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115205255725659" />
+				</node> -->
+				<!-- Non-unique -->
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="1948bdc5-5863-49e5-953c-10cd832b90b1" />
+					<attribute id="Name" type="LSString" value="Goon_WYR_MonkAmulet_Amulet_AfterCombat_NotUnique" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7eaa1331-877c-40d7-9811-8238aee09f68" />
+					<attribute id="Stats" type="FixedString" value="Goon_WYR_MonkAmulet_Amulet_AfterCombat_NotUnique" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115205255725659" />
+					<children>
+						<node id="SpeakerGroupList">
+							<children>
+							</children>
+						</node>
+					</children>
+				</node>
+			<!-- 34. Sentient Amulet - Ded -->
+				<!-- <node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="14a6da9a-6689-4c70-96a1-d03319ba3278" />
+					<attribute id="Name" type="LSString" value="UNI_WYR_MonkAmulet_NoGhost" />
+					<attribute id="ParentTemplateId" type="FixedString" value="086ae8fd-c44e-43a7-b8be-777b551a06d6" />
+					<attribute id="Stats" type="FixedString" value="WYR_MonkAmulet_Amulet_NoGhost" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115205255725658" />
+				</node> -->
+				<!-- Non-unique -->
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="6dc93355-6209-4db5-8427-645ef41c4244" />
+					<attribute id="Name" type="LSString" value="Goon_WYR_MonkAmulet_Amulet_NoGhost_NotUnique" />
+					<attribute id="ParentTemplateId" type="FixedString" value="14a6da9a-6689-4c70-96a1-d03319ba3278" />
+					<attribute id="Stats" type="FixedString" value="Goon_WYR_MonkAmulet_Amulet_NoGhost_NotUnique" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115205255725658" />
+					<children>
+						<node id="SpeakerGroupList">
+							<children>
+							</children>
+						</node>
+					</children>
+				</node>
+			<!-- 35. Spell Savant Amulet -->
+
+			<!-- 36. Strange Tendril Amulet -->
+
+			<!-- 37. Surgeon's Subjugation Amulet -->
+
+			<!-- 38. The Amulet of Lost Voices -->
+
+			<!-- 39. Uncovered Mysteries -->
+
+			<!-- 40. Amulet of Greater Health -->
+
+			<!-- 41. Amulet of the Devout -->
+
+			<!-- 42. Amulet of Windrider -->
+
+			<!-- 43. Corvid Token -->
+
+			<!-- 44. Fey Semblance Amulet -->
+
+			<!-- 45. Khalid's Gift -->
+
+			<!-- 46. Spellcrux Amulet -->
+
+			<!-- 47. The Spectator Eyes -->
+
+			<!-- 48. Tressym Collar -->
+
+			<!-- 49. Unflinching Protector Amulet -->
+
+			<!-- 50. Amulet of Bhaal -->
+				<node id="GameObjects">
+					<!-- A silver amulet depicting the symbol of Bhaal. -->
+					<attribute id="Description" type="TranslatedString" handle="hecfe7235ga792g4e11g9c7fgded63a9a2ad7" version="2" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h7188dfd9g8298g4f6dg84dbged0f48cf5086" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Amulet_of_Bhaal_A" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="16a632e2-45b1-4ff1-8250-513eb271abea" />
+					<attribute id="Name" type="LSString" value="LOOT_GEN_Amulet_of_Bhaal_A" />
+					<attribute id="ParentTemplateId" type="FixedString" value="303990e3-5546-44a3-9c5a-f9aa1702ad51" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="84a96556-7907-eb42-d0b5-4a168b953ef9" />
+					<attribute id="Stats" type="FixedString" value="QUEST_LOW_Bhaal_Amulet" />
+					<attribute id="StoryItem" type="bool" value="True" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="a2e240c1-c75b-a77e-00cd-e2323c312255" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209021" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="1" />
+									<attribute id="Max" type="fvec3" value="0.04587318 0.019708747 0.44187042" />
+									<attribute id="Min" type="fvec3" value="-0.0506872 0 -0.058353573" />
+									<attribute id="Radius" type="float" value="0.2165065" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="1" />
+									<attribute id="Max" type="fvec3" value="0.04587318 0.019708747 0.44187042" />
+									<attribute id="Min" type="fvec3" value="-0.0506872 0 -0.058353573" />
+									<attribute id="Radius" type="float" value="0.433013" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="1" />
+									<attribute id="Max" type="fvec3" value="0.04587318 0.019708747 0.44187042" />
+									<attribute id="Min" type="fvec3" value="-0.0506872 0 -0.058353573" />
+									<attribute id="Radius" type="float" value="0.433013" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="IsHiddenStatus" type="bool" value="False" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_AMULETOFBHAAL_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			<!-- 51. Bloody Amulet -->
+
+			<!-- 52. Brass Locket -->
+
+			<!-- 53. Mayrina's Locket -->
+
+			<!-- 54. Dauntless Amulet (Inaccessible/Cut content) -->
+
+			<!-- 55. Synaptic Needle Amulet (Inaccessible/Cut content) -->
+
+			<!-- 56. Scarab of Protection (Inaccessible/Cut content) -->
+
+			<!-- 57. Treacleflow Amulet (Inaccessible/Cut content) -->
+
+			<!-- 58. Lofty Sorcerer's Amulet (Inaccessible/Cut content) -->
+
+			<!-- 59. Ilmater's Aid (Inaccessible/Cut content) -->
+
+			<!-- 60. Kruznabir's Asylum Amulet (Inaccessible/Cut content) -->
+
 			</children>
 		</node>
 	</region>

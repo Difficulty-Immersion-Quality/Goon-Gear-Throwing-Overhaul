@@ -1,3 +1,12 @@
+// ==================================== Non-unique items with redacted story features ====================================
+
+new entry "Goon_Gear_StoryRedacted"
+type "PassiveData"
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; Redacted Features
+data "DisplayName" "h9fd93b0ag9449g4882g9d76g32e85f14b1f9;1"
+// // Story-related features have been removed from this non-unique version of the original item.
+data "Description" "h3db5494bgbaa6g48d0gb4edg38933f73cca4;1"
+
 // ==================================== Dexterity throwing stat entries (Lua) ====================================
 // HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)
 // WEIGHT_SMALL WEIGHT_TINY WEIGHT_MEDIUM ?

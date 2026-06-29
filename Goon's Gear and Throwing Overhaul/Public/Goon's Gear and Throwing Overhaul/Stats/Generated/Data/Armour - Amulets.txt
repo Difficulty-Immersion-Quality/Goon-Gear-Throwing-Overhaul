@@ -1,12 +1,31 @@
 // ==================================== Base entry ====================================
 
-// 
+// new entry "_Amulet"
+// type "Armor"
+// using "_Body"
+// data "Level" "1"
+// data "Slot" "Amulet"
+// data "ValueLevel" "1"
+// data "ValueUUID" "6d47141f-ec77-4d69-b37b-b065a667ed1c"
+// data "Weight" "0.05"
+// data "ComboCategory" ""
+// data "InventoryTab" "Equipment"
+// data "Armor Class Ability" "None"
 
 // ==================================== Magical variants ====================================
 
-// 
+// new entry "_Amulet_Magic"
+// type "Armor"
+// using "_Amulet"
+// data "Level" "1"
+// data "Slot" "Amulet"
+// data "ValueUUID" "12dbd881-5b36-4679-930e-c1ce5be5bb48"
+// data "Rarity" "Uncommon"
+// data "Weight" "0.05"
+// data "InventoryTab" "Equipment"
+// data "Armor Class Ability" "None"
 
-// ==================================== Aberration Hunters' Amulet ====================================
+// ==================================== 1. Aberration Hunters' Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -16,7 +35,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Absolute Confidence Amulet ====================================
+// ==================================== 2. Absolute Confidence Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -26,7 +45,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Absolute's Talisman ====================================
+// ==================================== 3. Absolute's Talisman ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -36,7 +55,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Elemental Torment ====================================
+// ==================================== 4. Amulet of Elemental Torment ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -46,7 +65,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Misty Step ====================================
+// ==================================== 5. Amulet of Misty Step ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -56,7 +75,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Selûne's Chosen ====================================
+// ==================================== 6. Amulet of Selûne's Chosen ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -66,7 +85,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Silvanus ====================================
+// ==================================== 7. Amulet of Silvanus ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -76,7 +95,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of the Unworthy ====================================
+// ==================================== 8. Amulet of the Unworthy ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -86,7 +105,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Beastmaster's Chain ====================================
+// ==================================== 9. Beastmaster's Chain ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -96,7 +115,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Broodmother's Revenge ====================================
+// ==================================== 10. Broodmother's Revenge ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -106,7 +125,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Fireheart ====================================
+// ==================================== 11. Fireheart ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -116,7 +135,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Frost Prince ====================================
+// ==================================== 12. Frost Prince ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -126,7 +145,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Hammergrim Mist Amulet ====================================
+// ==================================== 13. Hammergrim Mist Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -136,7 +155,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Kill Collar ====================================
+// ==================================== 14. Kill Collar ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -146,7 +165,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Komira's Locket ====================================
+// ==================================== 15. Komira's Locket ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -156,7 +175,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Moondrop Pendant ====================================
+// ==================================== 16. Moondrop Pendant ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -166,12 +185,12 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Necklace of Elemental Augmentation ====================================
+// ==================================== 17. Necklace of Elemental Augmentation ====================================
 // Changes: Elemental Augmentation's spellcasting modifier damage bonus now only triggers once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
 // Changes: Elemental Augmentation's spellcasting modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, per RAW the weapon damage will not benefit from the damage bonus, e.g. if you are using Booming Blade prior to being level 5.
+// Changes: Elemental Augmentation now functions while under the effects of non-humanoid polymorphs.
 // Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
 // Note: 5e Spells and Homebrew Spells make edits to "MAG_ElementalGish_CantripBooster_Amulet_Passive", so it's replaced with a custom copy.
-// TODO: Template.
 
 new entry "MAG_ElementalGish_CantripBooster_Amulet"
 type "Armor"
@@ -181,13 +200,36 @@ using "MAG_ElementalGish_CantripBooster_Amulet"
 // data "Rarity" "Uncommon"
 data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_ElementalGish_CantripBooster_Amulet_Passive"
-data "PassivesOnEquip" "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive"
+data "PassivesOnEquip" "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive;Goon_Gear_Polymorph_NecklaceOfElementalAugmentation"
 // data "Unique" "1"
+
+new entry "Goon_MAG_ElementalGish_CantripBooster_Amulet_NotUnique"
+type "Armor"
+using "MAG_ElementalGish_CantripBooster_Amulet"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_NECKLACEOFELEMENTALAUGMENTATION_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_NecklaceOfElementalAugmentation"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_NECKLACEOFELEMENTALAUGMENTATION, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_NECKLACEOFELEMENTALAUGMENTATION"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_NECKLACEOFELEMENTALAUGMENTATION"
+data "Boosts" ""
+data "Passives" "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive"
+
+// ==================
 
 // new entry "MAG_ElementalGish_CantripBooster_Amulet_Passive"
 // type "PassiveData"
@@ -201,12 +243,12 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 new entry "Goon_MAG_ElementalGish_CantripBooster_Amulet_Passive"
 type "PassiveData"
-// Elemental Augmentation
+// // Elemental Augmentation
 data "DisplayName" "hc4ad4d92gba57g4cecgbb82g5b31a68306e9;2"
-// When one of your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal[1],[2],[3],[4], or[5], add your &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Modifier&lt;/LSTag&gt; to the damage dealt.
+// // When one of your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal[1],[2],[3],[4], or[5], add your &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Modifier&lt;/LSTag&gt; to the damage dealt.
 data "Description" "he174f3d5gc439g49a5gb028gc21b99d921b0;1"
 data "DescriptionParams" "DealDamage(,Acid);DealDamage(,Cold);DealDamage(,Fire);DealDamage(,Lightning);DealDamage(,Thunder)"
-// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
 data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
 data "Boosts" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and IsCantrip() and not Goon_IsConditionalDamageCantrip()):DamageBonus(max(1,SpellCastingAbilityModifier));IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Acid);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Cold);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Fire);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Lightning);IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION',context.Target) and Goon_IsConditionalDamageCantripEligible() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, SpellCastingAbilityModifier),Thunder)"
 data "StatsFunctorContext" "OnDamage"
@@ -218,7 +260,7 @@ data "StatusType" "BOOST"
 using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 
-// ==================================== Pearl of Power Amulet ====================================
+// ==================================== 18. Pearl of Power Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -228,7 +270,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Psychic Spark ====================================
+// ==================================== 19. Psychic Spark ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -238,7 +280,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Shar's Temptation ====================================
+// ==================================== 20. Shar's Temptation ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -248,7 +290,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Silver Pendant ====================================
+// ==================================== 21. Silver Pendant ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -258,7 +300,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Spineshudder Amulet ====================================
+// ==================================== 22. Spineshudder Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -268,7 +310,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Tarnished Charm ====================================
+// ==================================== 23. Tarnished Charm ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -278,7 +320,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== The Blast Pendant ====================================
+// ==================================== 24. The Blast Pendant ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -288,7 +330,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== The Ever-Seeing Eye ====================================
+// ==================================== 25. The Ever-Seeing Eye ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -298,7 +340,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Branding ====================================
+// ==================================== 26. Amulet of Branding ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -308,7 +350,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Restoration ====================================
+// ==================================== 27. Amulet of Restoration ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -318,7 +360,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of the Drunkard ====================================
+// ==================================== 28. Amulet of the Drunkard ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -328,7 +370,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of the Harpers ====================================
+// ==================================== 29. Amulet of the Harpers ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -338,7 +380,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Champion's Chain ====================================
+// ==================================== 30. Champion's Chain ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -348,7 +390,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Chancer's Carcanet ====================================
+// ==================================== 31. Chancer's Carcanet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -358,7 +400,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Envoy's Amulet ====================================
+// ==================================== 32. Envoy's Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -368,7 +410,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Periapt of Wound Closure ====================================
+// ==================================== 33. Periapt of Wound Closure ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -378,23 +420,59 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALAUGMENTATION"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Sentient Amulet ====================================
-// Bug Fix: Shatter is now shown as a level 3 spell.
+// ==================================== 34. Sentient Amulet ====================================
+// Bug Fix: Shatter is now shown as a level 3 spell, for the very rare amulet.
+// Changes: Ki Restoration now functions while under the effects of non-humanoid polymorphs.
+// Changes: Ki Restoration renamed to "Lesser" for the rare amulent, and "Greater" Ki Restoration for the very rare amulet.
+// Changes: (Lesser) Ki Restoration description improved.
+// Note: Don't need the "UND_MONKAMULET_EQUIPPED" tag while polymorphed, but there's likely no harm in adding it either. It's just there for dialogue, dialogue you can't have as a bear. Bears only sex no talk.
 
-// new entry "UND_MonkAmulet_Amulet"
-// type "Armor"
+new entry "UND_MonkAmulet_Amulet"
+type "Armor"
 // using "_Amulet_Magic"
+using "UND_MonkAmulet_Amulet"
 // data "RootTemplate" "086ae8fd-c44e-43a7-b8be-777b551a06d6"
-// data "ItemGroup" ""
+// data "ItemGroup" "8a61de95-7857-4f79-a0a0-7a6aeaa2255f"
 // data "ValueUUID" "7da97bda-6776-4796-8b0b-d3b96ff3c9fb"
 // data "Rarity" "Rare"
+data "PassivesOnEquip" "Goon_Gear_Polymorph_SentientAmulet"
 // data "Boosts" "UnlockSpell(Target_UND_MonkAmulet_Ability);UnlockSpell(Shout_UND_MonkAmulet_TalkToAmulet);Tag(UND_MONKAMULET_EQUIPPED);UnlockSpell(Shout_MAG_Monk_Restore_Ki_Lesser)"
 // data "Unique" "1"
+
+// Note: Removed Talk with Sentient Amulet and UND_MONKAMULET_EQUIPPED tag from non-unique version.
+new entry "Goon_UND_MonkAmulet_Amulet_NotUnique"
+type "Armor"
+using "UND_MonkAmulet_Amulet"
+// data "RootTemplate" "086ae8fd-c44e-43a7-b8be-777b551a06d6"
+data "RootTemplate" "8a61de95-7857-4f79-a0a0-7a6aeaa2255f"
+// data "PassivesOnEquip" "Goon_Gear_Polymorph_SentientAmulet"
+data "PassivesOnEquip" "Goon_Gear_Polymorph_SentientAmulet;Goon_Gear_StoryRedacted"
+// data "Boosts" "UnlockSpell(Target_UND_MonkAmulet_Ability);UnlockSpell(Shout_UND_MonkAmulet_TalkToAmulet);Tag(UND_MONKAMULET_EQUIPPED);UnlockSpell(Shout_MAG_Monk_Restore_Ki_Lesser)"
+data "Boosts" "UnlockSpell(Target_UND_MonkAmulet_Ability);UnlockSpell(Shout_MAG_Monk_Restore_Ki_Lesser)"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_SENTIENTAMULET_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_SentientAmulet"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_SENTIENTAMULET, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_SENTIENTAMULET"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_SENTIENTAMULET"
+data "Boosts" "UnlockSpell(Goon_Shout_MAG_Monk_Restore_Ki_Lesser_Wildshape)"
+data "Passives" ""
+
+// ==================
 
 // new entry "Target_UND_MonkAmulet_Ability"
 // type "SpellData"
@@ -409,9 +487,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "AIFlags" "CanNotUse"
 // data "Autocast" "Yes"
 // data "Icon" "Action_TalkToAmulet"
-// Talk to the Sentient Amulet
+// // Talk to the Sentient Amulet
 // data "DisplayName" "h452fdfb7g2ae8g4bebga1cag7a585f1404fa;2"
-// Speak with the consciousness lingering inside the Sentient Amulet.
+// // Speak with the consciousness lingering inside the Sentient Amulet.
 // data "Description" "h074e2932g9c87g4b1agb32dg8dc05064b9b1;2"
 // data "CastTextEvent" "Cast"
 // data "UseCosts" ""
@@ -425,55 +503,106 @@ data "SpellType" "Shout"
 using "Shout_MAG_Monk_Restore_Ki_Lesser"
 // data "SpellProperties" "RestoreResource(KiPoint, 2, 0)"
 // data "Icon" "Action_Mag_KiRestoration_Lesser"
-// Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;
+// Ki Restoration
+// data "DisplayName" "h7f181fe8g9ed6g4ae7gb9cdgbb749b0a9920;2"
+// Lesser Ki Restoration
+data "DisplayName" "hab08087fg725cg436bg9169g4c82c15bd81c;1"
+// // Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;
 // data "Description" "h1a6011d2g19b6g4bdcg9531g4c0499ea0d72;2"
-// Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;.
+// // Using the spiritual energy in the amulet, you restore [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt;.
 data "Description" "hbf40b225g9fdeg4ef4gaed9g09805d1e7737;1"
 // data "DescriptionParams" "2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "Sheathing" "Sheathed"
 
-// ==================================== Very Rare - Sentient Amulet
+new entry "Goon_Shout_MAG_Monk_Restore_Ki_Lesser_Wildshape"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_Monk_Restore_Ki_Lesser"
+// data "SpellAnimation" "355a5479-07c9-4a34-9ab6-3b2669fdd248,,;,,;032e057c-c5af-47a8-b65a-bf297ba03601,,;c6ba268f-f7a2-4710-aed2-dcd241b078e9,,;1c5627cb-6352-454b-9b84-c5b10ef2d201,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;925779e7-8bf6-4d56-8c4d-42c3bc01c60c,,;50398f4e-dd82-4d6a-ad43-aedd578543d9,,;1c343e00-7e6c-4f53-b588-074a3cdb9c7d,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;5fdb66be-7506-411a-a7ea-c4783288aac8,,;,,;,,"
+data "SpellFlags" "Wildshape"
 
-// new entry "WYR_MonkAmulet_Amulet_AfterCombat"
-// type "Armor"
+// ==================================== 34. Sentient Amulet - Upgraded
+
+new entry "WYR_MonkAmulet_Amulet_AfterCombat"
+type "Armor"
 // using "UND_MonkAmulet_Amulet"
+using "WYR_MonkAmulet_Amulet_AfterCombat"
 // data "RootTemplate" "7eaa1331-877c-40d7-9811-8238aee09f68"
 // data "ValueUUID" "ccaceafa-6dc1-41c7-bd43-db6d4da8a3d8"
 // data "Rarity" "VeryRare"
+data "PassivesOnEquip" "Goon_Gear_Polymorph_SentientAmulet_AfterCombat"
 // data "Boosts" "UnlockSpell(Target_WYR_SentientAmulet_AmuletAfterCombat);UnlockSpell(Shout_MAG_Monk_Restore_Ki)"
 
-new entry "GOON_SENTIENTAMULET2_ARMOUR_TECHNICAL"
+new entry "Goon_WYR_MonkAmulet_Amulet_AfterCombat_NotUnique"
+type "Armor"
+using "WYR_MonkAmulet_Amulet_AfterCombat"
+// data "RootTemplate" "7eaa1331-877c-40d7-9811-8238aee09f68"
+data "RootTemplate" "1948bdc5-5863-49e5-953c-10cd832b90b1"
+// data "PassivesOnEquip" "Goon_Gear_Polymorph_SentientAmulet_AfterCombat"
+data "PassivesOnEquip" "Goon_Gear_Polymorph_SentientAmulet_AfterCombat;Goon_Gear_StoryRedacted"
+// data "Unique" "1"
+data "Unique" "0"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_SentientAmulet_AfterCombat"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_SENTIENTAMULET_AFTERCOMBAT, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_SENTIENTAMULET_AFTERCOMBAT"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_SENTIENTAMULET_AFTERCOMBAT"
+data "Boosts" "UnlockSpell(Goon_Shout_MAG_Monk_Restore_Ki_Wildshape)"
+data "Passives" ""
+
+// ==================
 
 new entry "Target_WYR_SentientAmulet_AmuletAfterCombat"
 type "SpellData"
 data "SpellType" "Target"
 // using "Target_Shatter_3"
 using "Target_WYR_SentientAmulet_AmuletAfterCombat"
+// data "Level" "2"
+data "Level" "3"
 // data "Cooldown" "OncePerRestPerItem"
 // data "UseCosts" "ActionPoint:1"
 // data "RootSpellID" ""
 // data "PowerLevel" ""
-// data "Level" "2"
-data "Level" "3"
 
-// new entry "Shout_MAG_Monk_Restore_Ki"
-// type "SpellData"
-// data "SpellType" "Shout"
+new entry "Shout_MAG_Monk_Restore_Ki"
+type "SpellData"
+data "SpellType" "Shout"
 // using "Shout_WholenessOfBody"
+using "Shout_MAG_Monk_Restore_Ki"
 // data "Cooldown" "OncePerRestPerItem"
 // data "SpellProperties" "RestoreResource(KiPoint, LevelMapValue(MartialArts), 0)"
 // data "Icon" "Action_Mag_KiRestoration"
-// Ki Restoration
+// // Ki Restoration
 // data "DisplayName" "h7f181fe8g9ed6g4ae7gb9cdgbb749b0a9920;2"
-// Using the spiritual energy in the amulet, you restore a number of &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt; equal to your martial arts die.
+// // Greater Ki Restoration
+data "DisplayName" "h002598e3gc0c3g4b73gaf2fg576897b592ff;1"
+// // Using the spiritual energy in the amulet, you restore a number of &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Points&lt;/LSTag&gt; equal to your martial arts die.
 // data "Description" "h2cc84f05g48dag41f9g9202gb01b8e1a0ce7;2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "TooltipDamageList" ""
 // data "TooltipStatusApply" ""
 
-// ==================================== Ded - Sentient Amulet
+new entry "Goon_Shout_MAG_Monk_Restore_Ki_Wildshape"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_Monk_Restore_Ki"
+// data "SpellAnimation" "355a5479-07c9-4a34-9ab6-3b2669fdd248,,;,,;032e057c-c5af-47a8-b65a-bf297ba03601,,;c6ba268f-f7a2-4710-aed2-dcd241b078e9,,;1c5627cb-6352-454b-9b84-c5b10ef2d201,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;925779e7-8bf6-4d56-8c4d-42c3bc01c60c,,;50398f4e-dd82-4d6a-ad43-aedd578543d9,,;1c343e00-7e6c-4f53-b588-074a3cdb9c7d,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;5fdb66be-7506-411a-a7ea-c4783288aac8,,;,,;,,"
+data "SpellFlags" "Wildshape"
+
+// ==================================== 34. Sentient Amulet - Ded
 
 // new entry "WYR_MonkAmulet_Amulet_NoGhost"
 // type "Armor"
@@ -482,12 +611,16 @@ data "Level" "3"
 // data "ValueUUID" "7da97bda-6776-4796-8b0b-d3b96ff3c9fb"
 // data "Boosts" ""
 
-new entry "GOON_SENTIENTAMULET3_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_WYR_MonkAmulet_Amulet_NoGhost_NotUnique"
+type "Armor"
+using "WYR_MonkAmulet_Amulet_NoGhost"
+// data "RootTemplate" "14a6da9a-6689-4c70-96a1-d03319ba3278"
+data "RootTemplate" "6dc93355-6209-4db5-8427-645ef41c4244"
+data "PassivesOnEquip" "Goon_Gear_StoryRedacted"
+// data "Unique" "1"
+data "Unique" "0"
 
-// ==================================== Spell Savant Amulet ====================================
+// ==================================== 35. Spell Savant Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -497,7 +630,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Strange Tendril Amulet ====================================
+// ==================================== 36. Strange Tendril Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -507,7 +640,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Surgeon's Subjugation Amulet ====================================
+// ==================================== 37. Surgeon's Subjugation Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -517,7 +650,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== The Amulet of Lost Voices ====================================
+// ==================================== 38. The Amulet of Lost Voices ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -527,7 +660,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Uncovered Mysteries ====================================
+// ==================================== 39. Uncovered Mysteries ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -537,7 +670,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Greater Health ====================================
+// ==================================== 40. Amulet of Greater Health ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -547,7 +680,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of the Devout ====================================
+// ==================================== 41. Amulet of the Devout ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -557,7 +690,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Amulet of Windrider ====================================
+// ==================================== 42. Amulet of Windrider ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -567,7 +700,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Corvid Token ====================================
+// ==================================== 43. Corvid Token ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -577,7 +710,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Fey Semblance Amulet ====================================
+// ==================================== 44. Fey Semblance Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -587,7 +720,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Khalid's Gift ====================================
+// ==================================== 45. Khalid's Gift ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -597,7 +730,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Sentient Amulet (Very Rare) ====================================
+// ==================================== 46. Spellcrux Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -607,7 +740,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Spellcrux Amulet ====================================
+// ==================================== 47. The Spectator Eyes ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -617,7 +750,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== The Spectator Eyes ====================================
+// ==================================== 48. Tressym Collar ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -627,7 +760,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Tressym Collar ====================================
+// ==================================== 49. Unflinching Protector Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -637,48 +770,73 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Unflinching Protector Amulet ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== Amulet of Bhaal ====================================
+// ==================================== 50. Amulet of Bhaal ====================================
 // Bug Fix: First Blood now functions with the honour ruleset.
+// Changes: First Blood now functions while under the effects of non-humanoid polymorphs.
+// TODO: This item really sucks, could be given something else to make it more of a full meal.
+// Something that's inverse, either when the wearer or target reach 0 hitpoints, perhaps.
 
-// new entry "QUEST_LOW_Bhaal_Amulet"
-// type "Armor"
+new entry "QUEST_LOW_Bhaal_Amulet"
+type "Armor"
 // using "ARM_Amulet"
+using "QUEST_LOW_Bhaal_Amulet"
 // data "RootTemplate" "16a632e2-45b1-4ff1-8250-513eb271abea"
 // data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "LOW_BhaalAmulet_Passive"
+data "PassivesOnEquip" "LOW_BhaalAmulet_Passive;Goon_Gear_Polymorph_AmuletOfBhaal"
 // data "Unique" "1"
+
+new entry "Goon_QUEST_LOW_Bhaal_Amulet_NotUnique"
+type "Armor"
+using "QUEST_LOW_Bhaal_Amulet"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_AMULETOFBHAAL_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================
+
+new entry "Goon_Gear_Polymorph_AmuletOfBhaal"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_AMULETOFBHAAL, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_AMULETOFBHAAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_AMULETOFBHAAL"
+data "Boosts" ""
+data "Passives" "LOW_BhaalAmulet_Passive"
+
+// ==================
+
 new entry "LOW_BhaalAmulet_Passive"
 type "PassiveData"
 // using "UND_Duergar_ShortswordOfFirstBlood_Passive"
 using "LOW_BhaalAmulet_Passive"
-// First Blood
+// // First Blood
 // data "DisplayName" "hdadaf99eg1673g4539gad27gf3dc1f79cec3;1"
-// On a hit, inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; upon targets that have maximum &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
+// // On a hit, inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; upon targets that have maximum &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
 // data "Description" "h08f15931gd582g4f59g895fgdc8dc638977b;3"
+// // On a hit, inflict [1] rounds of &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; upon targets that have maximum &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
+data "Description" "hd3983f55geda1g424dg9b6dg5afdab59e4c4;1"
 // data "DescriptionParams" ""
+data "DescriptionParams" "2"
 // data "TooltipConditionalDamage" ""
-// data "Conditions" "HasMaxHP() and IsAttack() and not IsMiss()"
-// data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2)"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 data "StatsFunctorContext" "OnAttack"
+// data "Conditions" "HasMaxHP() and IsAttack() and not IsMiss()"
+data "Conditions" "HasMaxHP() and IsAttack() and IsHit()"
+// data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2)"
 
-// ==================================== Bloody Amulet ====================================
+// ==================================== 51. Bloody Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -688,7 +846,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Brass Locket ====================================
+// ==================================== 52. Brass Locket ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -698,7 +856,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Mayrina's Locket ====================================
+// ==================================== 53. Mayrina's Locket ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -708,7 +866,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Dauntless Amulet (Inaccessible/Cut content) ====================================
+// ==================================== 54. Dauntless Amulet (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -718,7 +876,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Synaptic Needle Amulet (Inaccessible/Cut content) ====================================
+// ==================================== 55. Synaptic Needle Amulet (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -728,7 +886,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Scarab of Protection (Inaccessible/Cut content) ====================================
+// ==================================== 56. Scarab of Protection (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -738,7 +896,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Treacleflow Amulet (Inaccessible/Cut content) ====================================
+// ==================================== 57. Treacleflow Amulet (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -748,7 +906,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Lofty Sorcerer's Amulet (Inaccessible/Cut content) ====================================
+// ==================================== 58. Lofty Sorcerer's Amulet (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -758,7 +916,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Ilmater's Aid (Inaccessible/Cut content) ====================================
+// ==================================== 59. Ilmater's Aid (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -768,7 +926,7 @@ data "StatsFunctorContext" "OnAttack"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Kruznabir's Asylum Amulet (Inaccessible/Cut content) ====================================
+// ==================================== 60. Kruznabir's Asylum Amulet (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry

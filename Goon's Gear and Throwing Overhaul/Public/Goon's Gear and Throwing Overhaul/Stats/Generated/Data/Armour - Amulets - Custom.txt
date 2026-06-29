@@ -1,4 +1,4 @@
-// ==================================== Pendant Of Animal Speech ====================================
+// ==================================== 1. Pendant Of Animal Speech ====================================
 // Simple amulet providing a once per long rest Speak with Animals. Attainable from Arron in the Grove.
 
 new entry "Goon_PendantOfAnimalSpeech_Amulet"
@@ -35,7 +35,7 @@ new entry "Goon_Pendant_Animal_Speech_Amulet"
 type "Armor"
 using "Goon_PendantOfAnimalSpeech_Amulet"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== 2. XXXXXXXXXXXX ====================================
 // 
 
 // gear entry

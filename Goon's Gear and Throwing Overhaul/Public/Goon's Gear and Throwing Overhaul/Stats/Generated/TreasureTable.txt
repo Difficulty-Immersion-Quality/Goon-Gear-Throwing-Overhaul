@@ -22,10 +22,135 @@ object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
 object category "I_WPN_Dart_2",1,0,0,0,0,0,0,0
 
 new treasuretable "TT_Goon_GearOverhaul_Mega_Container"
-// Armour - Amulets - Custom
+// ==================================== Armour - Amulets - Custom
 new subtable "1,1"
 object category "I_Goon_PendantOfAnimalSpeech_Amulet_NotUnique",1,0,0,0,0,0,0,0
-// Armour - Boots (Clothing)
+// ==================================== Armour - Amulets
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 10
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_ElementalGish_CantripBooster_Amulet_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 20
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 30
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_UND_MonkAmulet_Amulet_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_WYR_MonkAmulet_Amulet_AfterCombat_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_WYR_MonkAmulet_Amulet_NoGhost_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 35
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 40
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_QUEST_LOW_Bhaal_Amulet_NotUnique",1,0,0,0,0,0,0,0 
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 60
+// ==================================== Armour - Boots (Clothing)
 new subtable "1,1"
 object category "I_Goon_MAG_Healer_TempHPOnHeal_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
@@ -84,7 +209,7 @@ new subtable "1,1"
 object category "I_Goon_MAG_Critical_CriticalSwiftness_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_MAG_Shadow_Shadowstep_Boots_NotUnique",1,0,0,0,0,0,0,0
-// Armour - Boots (Medium)
+// ==================================== Armour - Boots (Medium)
 new subtable "1,1"
 object category "I_Goon_MAG_ElementalGish_MomentumOnElementalDamage_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
@@ -109,7 +234,7 @@ new subtable "1,1"
 object category "I_Goon_MAG_ZOC_ForceConduitWhileSurounded_Boots_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-//
+// ==================================== 
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0
 new subtable "1,1"

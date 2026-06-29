@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-			<!-- Boots of Elemental Momentum -->
+			<!-- 1. Boots of Elemental Momentum -->
 				<node id="GameObjects">
 					<!-- Toughened metal boots, highly insulated with heavy leather and padding for use in any and all elements. -->
 					<attribute id="Description" type="TranslatedString" handle="hf832d2aeg005cg477dg9418g9719e5227a33" version="2" />
@@ -284,7 +284,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Striding (Minthara) -->
+			<!-- 2. Boots of Striding (Minthara) -->
 				<node id="GameObjects">
 					<!-- The metal of these greaves is comfortably warm against your shins, as though heated by your mere presence. -->
 					<attribute id="Description" type="TranslatedString" handle="h3c1a772age8bag4d5bgb7c6gc28bc48175d6" version="3" />
@@ -582,7 +582,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Blackguard's Greaves -->
+			<!-- 3. Blackguard's Greaves -->
 				<node id="GameObjects">
 					<attribute id="CinematicArenaFlags" type="uint32" value="3" />
 					<!-- Clad on the desiccated feet of a death knight, these boots have walked a long and terrible path. They strode through the tattered remains of their owner's oath. With every heavy footstep, they have sounded pure fear into the hearts of men. -->
@@ -814,7 +814,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Dark Justiciar Boots -->
+			<!-- 4. Dark Justiciar Boots -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="hdb66374egb921g480dgb2aeg64d82ba34e60" version="1" />
 					<attribute id="Icon" type="FixedString" value="Item_ARM_Boots_Metal_1" />
@@ -866,7 +866,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- The Speedy Lightfeet -->
+			<!-- 5. The Speedy Lightfeet -->
 				<node id="GameObjects">
 					<!-- It is said the Speedy Lightfeet were the first of many lightning inventions made by Yrre the Sparkstruck. The boots' old, frayed edges zap and crackle with even the slightest movement. -->
 					<attribute id="Description" type="TranslatedString" handle="h59c08f00g590ag4ce8ga29agf0427677e181" version="1" />
@@ -1147,7 +1147,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Unwanted Masterwork Greaves -->
+			<!-- 6. Unwanted Masterwork Greaves -->
 				<node id="GameObjects">
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<!-- These boots are stamped with the marks of a cancelled commission. Despite their discarded fate, they still hum with complex infernal arcana. -->
@@ -1356,7 +1356,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Vital Conduit Boots -->
+			<!-- 7. Vital Conduit Boots -->
 				<node id="GameObjects">
 					<!-- Tenser's notes on arcane displacement were not only read by wizards - other avid readers included enterprising smiths eager to break into the magic items market. -->
 					<attribute id="Description" type="TranslatedString" handle="h8303d923ga7c5g4dd2g87b7ge9d2f525c5ff" version="1" />
@@ -1730,7 +1730,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Persistence -->
+			<!-- 8. Boots of Persistence -->
 				<node id="GameObjects">
 					<!-- ''If I had a copper for all the adventurin folk I seen gutted or cut up, or clawed like they was made of wet paper, just cause they couldn't move quick enough when speed might have saved em... well, I'd be suckin good brandy from crystal rather than this fuckin swill.'' - Overheard in a tavern in Baldur's Gate. -->
 					<attribute id="Description" type="TranslatedString" handle="h3e0cc8afgc3b6g4311g8cf1gef90ca2e53e4" version="1" />
@@ -1913,7 +1913,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Boots of Psionic Movement -->
+			<!-- 9. Boots of Psionic Movement -->
 				<node id="GameObjects">
 					<!-- When not atop their dragons, gith are not particularly air-worthy. This is probably for the best. The imposition of downward gravity tends to put most people in a mood. -->
 					<attribute id="Description" type="TranslatedString" handle="h032784feg6514g4686gbaf3g940b5b59b0ae" version="1" />
@@ -2242,9 +2242,9 @@
 						</node>
 					</children>
 				</node>
-			<!-- Nightsong Boots (Innaccessible/cut content) -->
+			<!-- 10. Nightsong Boots (Innaccessible/cut content) -->
 
-			<!-- Tenacious Boots (Innaccessible/cut content) -->
+			<!-- 11. Tenacious Boots (Innaccessible/cut content) -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h07402cc5g3c52g48f3gbe3cg663e30053b3b" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="he66a505fge353g4e2bgb8ecgf699ada0cfd7" version="3" />
@@ -2299,7 +2299,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- Oathbreaker Knight Boots (Innaccessible/cut content) -->
+			<!-- 12. Oathbreaker Knight Boots (Innaccessible/cut content) -->
 
 			</children>
 		</node>

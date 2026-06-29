@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-			<!-- Pendant Of Animal Speech -->
+			<!-- 1. Pendant Of Animal Speech -->
 				<node id="GameObjects">
 					<attribute id="DisplayName" type="TranslatedString" handle="haa29c2f4g9eecg46eeg96c9g3efbe30a1c48" version="1" />
 					<!-- An Amulet in the shape of a small paw, adorned by a simple gemstone. -->
@@ -55,6 +55,8 @@
 						</node>
 					</children>
 				</node>
+			<!-- 2. X -->
+
 			</children>
 		</node>
 	</region>

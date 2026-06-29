@@ -43,7 +43,7 @@ data "Passives" ""
 // data "Rarity" "Uncommon"
 // data "Boosts" "Skill(Athletics,1)"
 
-// ==================================== Boots of Elemental Momentum ====================================
+// ==================================== 1. Boots of Elemental Momentum ====================================
 // Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
 // Changes: Elemental Momentum now functions while under the effects of non-humanoid polymorphs.
 // Changes: Elemental Momentum's Momentum condition application will now only apply once per action.
@@ -120,7 +120,7 @@ data "StatusType" "BOOST"
 using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM"
 
-// ==================================== Boots of Striding ====================================
+// ==================================== 2. Boots of Striding (Minthara) ====================================
 // Bug Fix: Focused Stride now only functions with spells that require concentration, instead of any action requiring concentration.
 // Bug Fix: Unmovable is removed when the boots are unequipped.
 // Bug Fix: Unmovable is now a visible condition.
@@ -218,7 +218,7 @@ data "StatsFunctorContext" "OnStatusApplied;OnStatusRemoved;OnDamaged"
 data "Conditions" "not IsConcentrating() or (not HasPassive('MAG_Paladin_MomentumOnConcentration_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFSTRIDING'))"
 // data "StatsFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 
-// ==================================== Blackguard's Greaves ====================================
+// ==================================== 3. Blackguard's Greaves ====================================
 // Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
 // Changes: Strider Movement now functions while under the effects of non-humanoid polymorphs.
 // TODO: Longstrider can't seem to see when its own boots are unequipped, other removal is fine though.
@@ -291,7 +291,7 @@ using "MAG_END_GAME_LONGSTRIDER"
 data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
 data "RemoveConditions" "not HasPassive('MAG_Longstrider_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BLACKGUARDSGREAVES') and not HasPassive('MAG_EndGame_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE')"
 
-// ==================================== Dark Justiciar Boots ====================================
+// ==================================== 4. Dark Justiciar Boots ====================================
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
 
 new entry "UNI_SHA_DarkJusticiar_Boots"
@@ -353,7 +353,7 @@ data "Passives" ""
 // data "PrepareEffect" "7121a488-7c9a-4ba1-a585-f79aaa77e97c"
 // data "CastEffect" "71859b27-bdda-44c3-8c65-7f142a1a2f60"
 
-// ==================================== The Speedy Lightfeet ====================================
+// ==================================== 5. The Speedy Lightfeet ====================================
 // Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
 // Changes: Speedy Sparks now functions while under the effects of non-humanoid polymorphs.
 
@@ -405,7 +405,7 @@ using "MAG_ChargedLightning_Dash_Boots_Passive"
 // // When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
 // data "Description" "h733c3534g834fg4acbg8571g3524ba24046e;6"
 // // Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action during combat, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
-data "Description" "h5f2c6a3ag1a1bg4b58g91b9g6ef6be1a1c68;1"
+data "Description" "h6830bf97g1401g4100gb1e8g7f0ba9ff03fd;1"
 // data "DescriptionParams" "3"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
@@ -416,7 +416,7 @@ data "Properties" "Highlighted;OncePerTurn"
 data "Conditions" "Goon_IsDashSpellCategory() and Combat()"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_CHARGED_LIGHTNING,100, 3);ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_DURATION_TECHNICAL, 100, 1)"
 
-// ==================================== Unwanted Masterwork Greaves ====================================
+// ==================================== 6. Unwanted Masterwork Greaves ====================================
 // TODO: Make it not generic ass uncommon ass boots no wonder they're fucking unwanted lmaaaaaaaaaaaaaaoooooooooooooooooooooooooooooooooooooooo
 
 // new entry "ARM_Boots_Metal_Karlach"
@@ -443,7 +443,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Vital Conduit Boots ====================================
+// ==================================== 7. Vital Conduit Boots ====================================
 // Bug Fix: Vital Conduit now only functions with spells that require concentration, instead of any action requiring concentration.
 // Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
 // Changes: Vital Conduit now functions while under the effects of non-humanoid polymorphs.
@@ -505,7 +505,7 @@ data "Properties" "Highlighted"
 data "Conditions" "IsSpell() and HasSpellFlag(SpellFlags.Concentration)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_TEMPORARY_HP_8, 100, -1)"
 
-// ==================================== Boots of Persistence ====================================
+// ==================================== 8. Boots of Persistence ====================================
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
 // Changes: Legendary Mobility now functions while under the effects of non-humanoid polymorphs.
 // Note: "MAG_END_GAME_LONGSTRIDER" found under Blackguard's Greaves.
@@ -582,7 +582,7 @@ data "StatusEffect" ""
 data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
 data "RemoveConditions" "not HasPassive('MAG_EndGame_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE')"
 
-// ==================================== Boots of Psionic Movement ====================================
+// ==================================== 9. Boots of Psionic Movement ====================================
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
 // Changes: Flying Strike now functions while under the effects of non-humanoid polymorphs.
 // Changes: Flying Strike condition now adds 1d4 Psychic damage as weapon damage, instead of a standalone damage bonus.
@@ -696,7 +696,7 @@ data "PreviewCursor" "Cast"
 // data "CastEffect" "bcd66fb0-b0bc-41d0-abba-ad443d63dd72"
 // data "TargetEffect" "8cd6c669-ded1-476a-aa5e-d7dd055381d7"
 
-// ==================================== Nightsong Boots (Innaccessible/cut content) ====================================
+// ==================================== 10. Nightsong Boots (Innaccessible/cut content) ====================================
 // TODO: ???
 
 // gear entry
@@ -706,7 +706,7 @@ data "PreviewCursor" "Cast"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Tenacious Boots (Innaccessible/cut content) ====================================
+// ==================================== 11. Tenacious Boots (Innaccessible/cut content) ====================================
 // Bug Fix: Force Bravado is attached to the item.
 // Bug Fix: Force Bravado actually has functionality.
 // Bug Fix: Stand Like Stone is no longer flagged as a spell.
@@ -830,7 +830,7 @@ data "Description" "h111db567g3a5bg4ed3gac4cgd4741dade707;1"
 // data "Boosts" "Attribute(Grounded)"
 // data "StatusEffect" "a5d3ddd3-e541-45ee-ba6d-4bb78a4a8966"
 
-// ==================================== Oathbreaker Knight Boots (Innaccessible/cut content) ====================================
+// ==================================== 12. Oathbreaker Knight Boots (Innaccessible/cut content) ====================================
 // TODO: ???
 
 // gear entry

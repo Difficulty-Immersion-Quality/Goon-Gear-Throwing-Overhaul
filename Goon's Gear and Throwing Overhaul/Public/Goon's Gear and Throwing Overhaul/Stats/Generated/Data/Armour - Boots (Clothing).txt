@@ -30,7 +30,7 @@
 // data "ValueUUID" "f0e7be35-8be4-483d-afa8-dc9a104ea758"
 // data "Rarity" "Uncommon"
 
-// ==================================== Boots of Aid and Comfort ====================================
+// ==================================== 1. Boots of Aid and Comfort ====================================
 // Changes: The Comeback now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_Healer_TempHPOnHeal_Boots"
@@ -88,7 +88,7 @@ data "Properties" "Highlighted"
 // data "Conditions" "Character()"
 // data "StatsFunctors" "ApplyStatus(MAG_TEMPORARY_HP_3,100,-1)"
 
-// ==================================== Boots of Stormy Clamour ====================================
+// ==================================== 2. Boots of Stormy Clamour ====================================
 // Changes: Arcane Echomalefaction will only apply Reverberation once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
 // Changes: Arcane Echomalefaction now applies Reverberation based on dealing damage with spells, instead of when applying a condition.
 // Changes: Arcane Echomalefaction's "OncePerAttack" cooldown is removed, allowing Reverberation to be applied from AOE to more than a single target.
@@ -166,7 +166,7 @@ data "StatusType" "BOOST"
 using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ARCANEECHOMALEFACTION"
 
-// ==================================== Boots of Very Fast Blinking ====================================
+// ==================================== 3. Boots of Very Fast Blinking ====================================
 // TODO: I think giving away the gimmick in item and spell descriptions ruins the fun. 
 
 // new entry "WYR_Circus_TeleportBoots"
@@ -206,7 +206,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "UseCosts" "BonusActionPoint:1"
 // data "Sheathing" ""
 
-// ==================================== Cinder Shoes ====================================
+// ==================================== 4. Cinder Shoes ====================================
 // Changes: Cinders now functions while under the effects of non-humanoid polymorphs.
 // TODO: Track SG_Burning instead of BURNING, but need to confirm/edit code to ensure source is attributed.
 // TODO: Once per action cooldown.
@@ -267,7 +267,7 @@ data "Properties" "Highlighted;OncePerAttack"
 // data "StatsFunctorContext" "OnStatusApply"
 // data "StatsFunctors" "IF(not Self() and StatusId('BURNING')):ApplyStatus(SELF, MAG_FIRE_HEAT, 100, 2);IF(not HasStatus('MAG_FIRE_HEAT_ONCE_TECHNICAL', context.Source) and not Self() and StatusId('BURNING')):ApplyStatus(SELF, MAG_FIRE_HEAT_CHARGE_UP_TECHNICAL, 100, 2);ApplyStatus(SELF,MAG_FIRE_HEAT_ONCE_TECHNICAL, 100, 0);ApplyStatus(SELF, MAG_FIRE_HEAT_DURATION_TECHNICAL, 100, 1)"
 
-// ==================================== Hoarfrost Boots ====================================
+// ==================================== 5. Hoarfrost Boots ====================================
 // Changes: Hoarfrost Balance now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_Frost_IceSurfaceProneImmunity_Boots"
@@ -338,7 +338,7 @@ data "Boosts" "StatusImmunity(PRONE_ICE)"
 // data "Boosts" "StatusImmunity(PRONE_ICE)"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 
-// ==================================== Mystra's Grace ====================================
+// ==================================== 6. Mystra's Grace ====================================
 // TODO: Replace the spell with a status on the wearer? Maybe a 9m aura on allies too.
 // TODO: Could keep the spell and make it until long rest, tickingwithsource to remove on unequip.
 
@@ -370,7 +370,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // using "Shout_FeatherFall"
 // data "UseCosts" "BonusActionPoint:1"
 
-// ==================================== Spiderstep Boots ====================================
+// ==================================== 7. Spiderstep Boots ====================================
 // Changes: Spider Step now functions while under the effects of non-humanoid polymorphs.
 // Changes: Spider Step description improved.
 
@@ -427,7 +427,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "StatusImmunity(WEB);StatusImmunity(DIFFICULT_TERRAIN_WEB)"
 
-// ==================================== Tyrannical Jackboots ====================================
+// ==================================== 8. Tyrannical Jackboots ====================================
 // Changes: Scintillating now functions while under the effects of non-humanoid polymorphs.
 // TODO: These really suck lmao, make them cooler.
 
@@ -488,7 +488,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "RollBonus(RawAbility, 1, Charisma);RollBonus(SavingThrow, 1, Charisma);RollBonus(SkillCheck, 1, Deception);RollBonus(SkillCheck, 1, Intimidation);RollBonus(SkillCheck, 1, Performance);RollBonus(SkillCheck, 1, Persuasion)"
 
-// ==================================== Varsh Ko'kuu's Boots ====================================
+// ==================================== 9. Varsh Ko'kuu's Boots ====================================
 // Changes: Scintillating now functions while under the effects of non-humanoid polymorphs.
 // Changes: Caretaker's Care description improved.
 // TODO: Could do with an SG_Acid psuedo status group I suppose.
@@ -551,7 +551,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "StatusImmunity(MAG_ACID_NOXIOUS_FUMES);StatusImmunity(CRE_HATCHERY_GAS_NEGATIVE);StatusImmunity(CRE_HATCHERY_ACIDPOOL);StatusImmunity(ACID);Resistance(Acid, Resistant)"
 
-// ==================================== Acrobat Shoes ====================================
+// ==================================== 10. Acrobat Shoes ====================================
 // Bug Fix: "In what is likely a typo, the in-game description states these shoes grant "Advantage on Dexterity Saving Throws Checks"." is no longer a thing if it was at all.
 // Changes: Boosts moved to a new passive, Well Balanced.
 // Changes: Well Balanced now functions while under the effects of non-humanoid polymorphs.
@@ -609,7 +609,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 data "Boosts" "Skill(Acrobatics,1);Advantage(SavingThrow, Dexterity)"
 
-// ==================================== Boots of Apparent Death ====================================
+// ==================================== 11. Boots of Apparent Death ====================================
 // Bug Fix: Is now a unique item.
 
 new entry "TWN_BootsOfApparentDeath"
@@ -642,7 +642,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "Cooldown" "OncePerShortRestPerItem"
 // data "UseCosts" "ActionPoint:1"
 
-// ==================================== Boots of Arcane Bolstering ====================================
+// ==================================== 12. Boots of Arcane Bolstering ====================================
 // Changes: Rapid Caster now only triggers in combat, and once per turn.
 // Changes: Rapid Caster now functions while under the effects of non-humanoid polymorphs.
 // Changes: Rapid Caster description improved.
@@ -716,7 +716,7 @@ data "Properties" "Highlighted;OncePerTurn"
 data "Conditions" "Goon_IsDashSpellCategory() and Combat()"
 // data "StatsFunctors" "ApplyStatus(MAG_GISH_ARCANE_CHARGE, 100, 2)"
 
-// ==================================== Boots of Brilliance ====================================
+// ==================================== 13. Boots of Brilliance ====================================
 // Changes: Restore Bardic Inspiration description improved.
 // Note: "Shout_MAG_Restore_BardicInspiration" included in Goon's Inheritance Fixes.
 // TODO: Spell kinda sucks, better off with a passive that sees you perform.
@@ -771,7 +771,7 @@ data "Description" "h562901afge2c6g4762g82fcg5acc7940b65e;1"
 // data "SpellFlags" "HasSomaticComponent;HasVerbalComponent"
 // data "Requirements" ""
 
-// ==================================== Boots of Genial Striding ====================================
+// ==================================== 14. Boots of Genial Striding ====================================
 // Bug Fix: Genial Strider now provides Immunity to all Difficult Terrain instead of a handful of specific terrains.
 // Changes: Genial Strider now functions while under the effects of non-humanoid polymorphs.
 
@@ -825,7 +825,7 @@ data "Properties" "Highlighted"
 // data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN);StatusImmunity(DIFFICULT_TERRAIN_WEB);StatusImmunity(DIFFICULT_TERRAIN_MUD);StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(DIFFICULT_TERRAIN_OVERGROWTH);StatusImmunity(DIFFICULT_TERRAIN_LAVA);"
 data "Boosts" "StatusImmunity(SG_DifficultTerrain)"
 
-// ==================================== Boots of Speed ====================================
+// ==================================== 15. Boots of Speed ====================================
 // Bug Fix: Click Heels no longer gives the wearer Disadvantage on their Reaction attacks for the status duration, and instead attackers have Disadvantage as was intended.
 // Bug Fix: Click Heels no longer multiplies the Movement Speed granted from Dash, instead stacking exactly as Dash does when used multiple times in a turn.
 // Bug Fix: The Click Heels condition description now states that attackers have Disadvantage to all attacks using Reactions, not just Opportunity Attacks specifically.
@@ -896,6 +896,8 @@ data "DisplayName" "h477b3130ge61dg4619g9f20g4e2f90643f12;1"
 data "Description" "h08ad2972g6548g48a1gbed1gfc5a0f49c42d;1"
 // // Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; doubles, and enemies have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against you.
 // data "ExtraDescription" "ha17a6ea5g8276g472dg8624g3f4188bc4ec7;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "Icon" "Action_Dash_Bonus"
 data "Icon" "Action_Dash_Bonus"
 // data "TooltipStatusApply" "ApplyStatus(CLICK_HEELS,100,1)"
@@ -924,7 +926,7 @@ data "Description" "h9269dec6ge278g4d82ga7ccg01814ea8bcc0;1"
 // data "Boosts" "ActionResourceMultiplier(Movement,200,0);IF(IsReactionAttack(context.Source)):Disadvantage(AttackRoll)"
 data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 
-// ==================================== Boots of Uninhibited Kushigo ====================================
+// ==================================== 16. Boots of Uninhibited Kushigo ====================================
 // Changes: Experienced And Deadly now functions while under the effects of non-humanoid polymorphs.
 // Changes: Experienced And Deadly description improved.
 
@@ -985,8 +987,8 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "IF(IsMeleeUnarmedAttack() and not HasStatus('INT_ORPHEUSGUARDS_FAKECOMBAT')):CharacterUnarmedDamage(WisdomModifier)"
 
-// ==================================== Evasive Shoes ====================================
-// Changes: 
+// ==================================== 17. Evasive Shoes ====================================
+// Changes: Quick Feet now functions while under the effects of non-humanoid polymorphs.
 // Changes: Forced honour ruleset changes.
 
 new entry "MAG_Evasive_Shoes"
@@ -1047,7 +1049,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 data "Boosts" "Skill(Acrobatics,1);AC(1)"
 
-// ==================================== Linebreaker Boots ====================================
+// ==================================== 18. Linebreaker Boots ====================================
 // Bug Fix: Adrenaline Rush can only trigger once per turn, per its description.
 // Bug Fix: The Adrenaline Rush tooltip properly states that it applies 3 turns of Wrath, instead of 2.
 // Changes: Adrenaline Rush description improved.
@@ -1112,7 +1114,7 @@ data "Properties" "Highlighted;OncePerTurn"
 data "Conditions" "Goon_IsDashSpellCategory() and Combat()"
 // data "StatsFunctors" "ApplyStatus(MAG_VIOLENCE,100,3);ApplyStatus(MAG_VIOLENCE_DURATION_TECHNICAL, 100, 1)"
 
-// ==================================== Slinging Shoes ====================================
+// ==================================== 19. Slinging Shoes ====================================
 // Changes: +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
 // TODO: I think these need support added in the returning weapon script stuff.
 
@@ -1176,7 +1178,7 @@ using "MAG_Projectile_Shoes_Passive"
 // data "StackId" "MAG_PROJECTILE_SHOES_TECHNICAL"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
 
-// ==================================== Spaceshunt Boots ====================================
+// ==================================== 20. Spaceshunt Boots ====================================
 
 // new entry "ARM_BootsOfDimensionalDoor"
 // type "Armor"
@@ -1205,7 +1207,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "Cooldown" "OncePerRestPerItem"
 // data "UseCosts" "ActionPoint:1"
 
-// ==================================== Springstep Boots ====================================
+// ==================================== 21. Springstep Boots ====================================
 // Changes: Swift Strides now functions while under the effects of non-humanoid polymorphs.
 // Changes: Swift Strides description improved.
 
@@ -1268,7 +1270,7 @@ data "Properties" "Highlighted;OncePerTurn"
 data "Conditions" "Goon_IsDashSpellCategory() and Combat()"
 // data "StatsFunctors" "ApplyStatus(MAG_MOMENTUM,100,3);ApplyStatus(MAG_MOMENTUM_DURATION_TECHNICAL, 100, 1)"
 
-// ==================================== Swiresy Shoes ====================================
+// ==================================== 22. Swiresy Shoes ====================================
 // Changes: Refined Vaulting now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_Jumping_Shoes"
@@ -1323,7 +1325,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "JumpMaxDistanceBonus(1.5)"
 
-// ==================================== The Watersparkers ====================================
+// ==================================== 23. The Watersparkers ====================================
 // Bug Fix: Electrify Water will now electrify surfaces consistently.
 // Changes: All functionality is now inside the passives themselves, instead of detached conditions.
 // Changes: Electrify Water now functions while under the effects of non-humanoid polymorphs.
@@ -1440,7 +1442,7 @@ data "StatsFunctors" "ApplyStatus(MAG_CHARGED_LIGHTNING,100, 3);ApplyStatus(MAG_
 // data "RemoveEvents" "OnTurn;OnCombatEnded"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
 
-// ==================================== Bonespike Boots ====================================
+// ==================================== 24. Bonespike Boots ====================================
 // Changes: Evasive Instinct now functions while under the effects of non-humanoid polymorphs.
 // Changes: Brutal Leap now functions while under the effects of non-humanoid polymorphs.
 // Changes: Brutal Leap is no longer flagged as a "temporary" spell.
@@ -1526,7 +1528,7 @@ using "Projectile_MAG_Barbarian_BrutalLeap"
 // data "SpellFlags" "IsJump;AddFallDamageOnLand;HasHighGroundRangeExtension;IgnoreVisionBlock;Stealth;Invisible;CannotTargetCharacter;CannotTargetItems"
 data "SpellFlags" "IsJump;AddFallDamageOnLand;HasHighGroundRangeExtension;IgnoreVisionBlock;Stealth;Invisible;CannotTargetCharacter;CannotTargetItems;Wildshape"
 
-// ==================================== Helldusk Boots ====================================
+// ==================================== 25. Helldusk Boots ====================================
 // Bug Fix: Steadfast now provides Immunity to all Difficult Terrain, instead of a handful of specific terrains.
 // Bug Fix: Infernal Resistance/Infernal Evasion no longer triggers on succeeded Saving Throws.
 // Bug Fix: Infernal Resistance/Infernal Evasion no longer grants a bonus to an attacker's Attack Roll instead of the wearer's Saving Throw, in cases where the spell has both an Attack Roll and triggers a Saving Throw.
@@ -1732,7 +1734,7 @@ data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHa
 // data "PrepareEffect" ""
 // data "CastEffect" ""
 
-// ==================================== Disintegrating Night Walkers ====================================
+// ==================================== 26. Disintegrating Night Walkers ====================================
 // Bug Fix: Night Walker's immunity to Ensnaring Strike expanded to cover all upcasts, instead of just levels 1 and 2.
 // Bug Fix: Night Walker's immunity now covers Grasping Arrow: Entangled.
 // Changes: Night Walker now functions while under the effects of non-humanoid polymorphs.
@@ -1805,7 +1807,7 @@ data "Boosts" "StatusImmunity(WEB);StatusImmunity(ENSNARED);StatusImmunity(PRONE
 // data "MemoryCost" ""
 // data "Sheathing" ""
 
-// ==================================== Featherlight Boots (Innaccessible/cut content) ====================================
+// ==================================== 27. Featherlight Boots (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -1815,7 +1817,7 @@ data "Boosts" "StatusImmunity(WEB);StatusImmunity(ENSNARED);StatusImmunity(PRONE
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Wavemother's Boots (Innaccessible/cut content) ====================================
+// ==================================== 28. Wavemother's Boots (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -1825,7 +1827,7 @@ data "Boosts" "StatusImmunity(WEB);StatusImmunity(ENSNARED);StatusImmunity(PRONE
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Gargoyle Boots (Innaccessible/cut content) ====================================
+// ==================================== 29. Gargoyle Boots (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -1835,7 +1837,7 @@ data "Boosts" "StatusImmunity(WEB);StatusImmunity(ENSNARED);StatusImmunity(PRONE
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Briskwind Boots (Innaccessible/cut content) ====================================
+// ==================================== 30. Briskwind Boots (Innaccessible/cut content) ====================================
 // Bug Fix: Critical Swiftness no longer triggers when killing non-hostile creatures.
 // Bug Fix: Critical Swiftness no longer triggers when dealing damage on a Critical Miss.
 // Changes: Critical Swiftness now functions while under the effects of non-humanoid polymorphs.
@@ -1898,7 +1900,7 @@ data "Properties" "Highlighted"
 // data "StatsFunctors" "IF(IsCritical() or IsKillingBlow()):RestoreResource(SELF, Movement, 100%, 0)"
 data "StatsFunctors" "IF(((IsCritical() and IsHit()) or IsKillingBlow()) and Enemy(context.Target)):RestoreResource(SELF, Movement, 100%, 0)"
 
-// ==================================== Shadowstep Boots (Innaccessible/cut content) ====================================
+// ==================================== 31. Shadowstep Boots (Innaccessible/cut content) ====================================
 // Note: "Target_MAG_Shadow_Shadowstep" edited under Dark Justiciar Boots.
 
 // new entry "MAG_Shadow_Shadowstep_Boots"

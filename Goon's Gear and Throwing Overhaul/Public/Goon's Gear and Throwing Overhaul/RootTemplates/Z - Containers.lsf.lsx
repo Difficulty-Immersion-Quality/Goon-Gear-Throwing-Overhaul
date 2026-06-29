@@ -5,7 +5,6 @@
 		<node id="Templates">
 			<children>
         <!-- Goon's Gear and Throwing Overhaul Mega Container -->
-            <!-- TODO: Fix and make it spawnable kek - has to be an inventory item -->
             <node id="GameObjects">
                 <attribute id="CanClickThrough" type="bool" value="False" />
                 <attribute id="CanClimbOn" type="bool" value="False" />
@@ -24,6 +23,8 @@
                 <attribute id="Name" type="LSString" value="Goon_GearOverhaul_Mega_Container" />
 	            <attribute id="Stats" type="FixedString" value="Goon_GearOverhaul_Mega_Container" />
 				<attribute id="Tooltip" type="uint8" value="2" />
+                <attribute id="ContainerAutoAddOnPickup" type="bool" value="True" />
+                <attribute id="CanBePickedUp" type="bool" value="True" />
                 <attribute id="ParentTemplateId" type="FixedString" value="aec2e4a7-a11f-4265-a92a-536b2239c38e" />
                 <attribute id="TreasureOnDestroy" type="bool" value="True" />
                 <attribute id="Type" type="FixedString" value="item" />

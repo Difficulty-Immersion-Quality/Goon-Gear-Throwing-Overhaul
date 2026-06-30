@@ -221,7 +221,6 @@ data "Conditions" "not IsConcentrating() or (not HasPassive('MAG_Paladin_Momentu
 // ==================================== 3. Blackguard's Greaves ====================================
 // Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.
 // Changes: Strider Movement now functions while under the effects of non-humanoid polymorphs.
-// TODO: Longstrider can't seem to see when its own boots are unequipped, other removal is fine though.
 
 new entry "MAG_OB_Paladin_DeathKnight_Boots"
 type "Armor"
@@ -233,7 +232,7 @@ using "MAG_OB_Paladin_DeathKnight_Boots"
 // data "PassivesOnEquip" "MAG_Longstrider_Passive"
 data "PassivesOnEquip" "MAG_Longstrider_Passive;Goon_Gear_Polymorph_BlackguardsGreaves"
 // data "StatusOnEquip" "MAG_END_GAME_LONGSTRIDER"
-data "StatusOnEquip" ""
+data "StatusOnEquip" "GOON_BLACKGUARDSGREAVES_TECHNICAL"
 // data "Unique" "1"
 
 new entry "Goon_MAG_OB_Paladin_DeathKnight_Boots_NotUnique"
@@ -290,6 +289,12 @@ using "MAG_END_GAME_LONGSTRIDER"
 // data "StatusEffect" ""
 data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
 data "RemoveConditions" "not HasPassive('MAG_Longstrider_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BLACKGUARDSGREAVES') and not HasPassive('MAG_EndGame_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE')"
+
+// To trigger removal because OnUnequip doesn't seem to get the job done.
+new entry "GOON_BLACKGUARDSGREAVES_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead;IgnoreResting"
 
 // ==================================== 4. Dark Justiciar Boots ====================================
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
@@ -509,7 +514,6 @@ data "Conditions" "IsSpell() and HasSpellFlag(SpellFlags.Concentration)"
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
 // Changes: Legendary Mobility now functions while under the effects of non-humanoid polymorphs.
 // Note: "MAG_END_GAME_LONGSTRIDER" found under Blackguard's Greaves.
-// TODO: Freedom of Movement (same as Longstrider) can't seem to see when its own boots are unequipped, other removal is fine though.
 
 new entry "MAG_EndGame_Metal_Boots"
 type "Armor"
@@ -522,7 +526,7 @@ using "MAG_EndGame_Metal_Boots"
 // data "PassivesOnEquip" "MAG_EndGame_Boots_Passive"
 data "PassivesOnEquip" "MAG_EndGame_Boots_Passive;Goon_Gear_Polymorph_BootsOfPersistence"
 // data "StatusOnEquip" "MAG_FREEDOM_OF_MOVEMENT;MAG_END_GAME_LONGSTRIDER"
-data "StatusOnEquip" ""
+data "StatusOnEquip" "GOON_BOOTSOFPERSISTENCE_TECHNICAL"
 // data "Unique" "1"
 
 new entry "Goon_MAG_EndGame_Metal_Boots_NotUnique"
@@ -581,6 +585,12 @@ using "MAG_FREEDOM_OF_MOVEMENT"
 data "StatusEffect" ""
 data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
 data "RemoveConditions" "not HasPassive('MAG_EndGame_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFPERSISTENCE')"
+
+// To trigger removal because OnUnequip doesn't seem to get the job done.
+new entry "GOON_BOOTSOFPERSISTENCE_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead;IgnoreResting"
 
 // ==================================== 9. Boots of Psionic Movement ====================================
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.

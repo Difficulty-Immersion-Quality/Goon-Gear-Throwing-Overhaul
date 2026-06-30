@@ -19,46 +19,99 @@ data "ArmorType" "Cloth"
 
 // ==================================== Magical variants ====================================
 
-// 
-
-// ==================================== Armour of Uninhibited Kushigo ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== Bided Time ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== Bloodguzzler Garb ====================================
-// TODO: loca
-// TODO: Template
-
-// new entry "MAG_Violence_LowHP_Violence_Clothes"
+// new entry "_Armor_Magic_Robe"
 // type "Armor"
+// using "ARM_Robe_Body"
+// data "ValueLevel" "5"
+// data "ValueUUID" "be545ee9-311c-4ab8-ab14-fefcc552cace"
+// data "ValueScale" "1"
+// data "Rarity" "Uncommon"
+
+// new entry "ARM_Robe_Body_1"
+// type "Armor"
+// using "ARM_Robe_Body"
+// data "RootTemplate" "7ec40cde-4d96-4352-b93e-cdcab6383337"
+// data "ArmorClass" "10"
+// data "ValueLevel" "5"
+// data "ValueUUID" "4024ce6c-f02d-4d7c-8033-869ada06ef82"
+// data "ValueScale" "1"
+// data "Rarity" "Uncommon"
+// data "Boosts" "AC(1)"
+
+// new entry "ARM_Robe_Body_2"
+// type "Armor"
+// using "ARM_Robe_Body"
+// data "RootTemplate" "467cca20-42bb-45cd-8eac-6ed49bbc2707"
+// data "ArmorClass" "10"
+// data "ValueLevel" "5"
+// data "ValueUUID" "f0307da3-feb7-40b0-bd62-18eea9167021"
+// data "ValueScale" "1"
+// data "Rarity" "Rare"
+// data "Boosts" "AC(2)"
+
+// ==================================== 1. Armour of Uninhibited Kushigo ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== 2. Bided Time ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== 3. Bloodguzzler Garb ====================================
+// Bug Fix: Grievous Retribution's description states the correct duration for the Wrath condition application.
+// Changes: Grievous Retribution now functions while under the effects of non-humanoid polymorphs.
+
+new entry "MAG_Violence_LowHP_Violence_Clothes"
+type "Armor"
 // using "_Armor_Magic_Robe"
+using "MAG_Violence_LowHP_Violence_Clothes"
 // data "RootTemplate" "5fc2fcce-810d-47d2-824c-f6acf7b81a22"
 // data "ItemGroup" ""
 // data "ValueUUID" "be545ee9-311c-4ab8-ab14-fefcc552cace"
 // data "Rarity" "Uncommon"
 // data "PassivesOnEquip" "MAG_Violence_ViolenceOnDamaged_Passive"
+data "PassivesOnEquip" "MAG_Violence_ViolenceOnDamaged_Passive;Goon_Gear_Polymorph_BloodguzzlerGarb"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Violence_LowHP_Violence_Clothes_NotUnique"
+type "Armor"
+using "MAG_Violence_LowHP_Violence_Clothes"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_BLOODGUZZLERGARB_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_BloodguzzlerGarb"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BLOODGUZZLERGARB, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BLOODGUZZLERGARB"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BLOODGUZZLERGARB"
+data "Boosts" ""
+data "Passives" "MAG_Violence_ViolenceOnDamaged_Passive"
+
+// ==================
 
 new entry "MAG_Violence_ViolenceOnDamaged_Passive"
 type "PassiveData"
@@ -70,13 +123,40 @@ using "MAG_Violence_ViolenceOnDamaged_Passive"
 // // Once per turn, when an enemy damages the wearer, the wearer gains &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.
 data "Description" "ha5c5728dg959bg4dc6gacffg913ec1817938;1"
 // data "DescriptionParams" "2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "Properties" "OncePerTurn"
 data "Properties" "Highlighted;OncePerTurn"
 // data "StatsFunctorContext" "OnDamaged"
 // data "Conditions" "Enemy()"
 // data "StatsFunctors" "ApplyStatus(MAG_VIOLENCE,100, 2);ApplyStatus(MAG_VIOLENCE_DURATION_TECHNICAL, 100, 1)"
 
-// ==================================== Cloth Armour ====================================
+// ==================================== 4. Cloth Armour ====================================
+// Changes: The item  template no longer inherits from Bloodguzzler Garb.
+// Changes: The item is now true to its name, it's just cloth armour and no longer just a second Bloodguzzler Garb.
+
+new entry "Goon_Barbarian_ClothArmour"
+type "Armor"
+using "_Armor_Magic_Robe"
+data "RootTemplate" "11efdb40-8246-4707-b40c-1e57635dfbc1"
+// // BaseArmor
+data "ValueUUID" "9495e96a-7e7c-4e3a-8d81-51611908908c"
+data "Rarity" "Uncommon"
+data "Proficiency Group" "LightArmor"
+data "Unique" "1"
+
+new entry "Goon_Barbarian_ClothArmour_NotUnique"
+type "Armor"
+using "Goon_Barbarian_ClothArmour"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_CLOTHARMOUR_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== 5. Poisoner's Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -86,7 +166,7 @@ data "Properties" "Highlighted;OncePerTurn"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Poisoner's Robe ====================================
+// ==================================== 6. Robe of Summer ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -96,7 +176,7 @@ data "Properties" "Highlighted;OncePerTurn"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Robe of Summer ====================================
+// ==================================== 7. Cloth of Authority ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -106,7 +186,7 @@ data "Properties" "Highlighted;OncePerTurn"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Cloth of Authority ====================================
+// ==================================== 8. Drunken Cloth ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -116,34 +196,53 @@ data "Properties" "Highlighted;OncePerTurn"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Drunken Cloth ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== Enraging Heart Garb ====================================
+// ==================================== 9. Enraging Heart Garb ====================================
 // Bug Fix: Ruintamer Heart now works.
 // Changes: Ruintamer Heart grants Wrath both when initially casting Rage and the start of every turn while they have a Rage condition. Once per turn cooldown.
+// Changes: Ruintamer Heart now functions while under the effects of non-humanoid polymorphs.
+// Changes: The item template no longer inherits from Cloth Armour.
 
-// new entry "MAG_Barbarian_Magic_Armor_1"
-// type "Armor"
+new entry "MAG_Barbarian_Magic_Armor_1"
+type "Armor"
 // using "ARM_Cloth_Body_1"
+using "MAG_Barbarian_Magic_Armor_1"
 // data "RootTemplate" "3a213e92-1714-4f11-9726-ca762943d2cc"
 // data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
 // data "Rarity" "Rare"
 // data "Boosts" "Ability(Constitution, 2, 20, true)"
 // data "PassivesOnEquip" "MAG_Barbarian_Armor_RageSupport_Passive"
+data "PassivesOnEquip" "MAG_Barbarian_Armor_RageSupport_Passive;Goon_Gear_Polymorph_EnragingHeartGarb"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Barbarian_Magic_Armor_1_NotUnique"
+type "Armor"
+using "MAG_Barbarian_Magic_Armor_1"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_ENRAGINGHEARTGARB_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_EnragingHeartGarb"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_ENRAGINGHEARTGARB, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_ENRAGINGHEARTGARB"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+// // Enraging Heart Garb
+// data "DisplayName" "h5def886egaa2bg495dg84ddgeab1aa65b380;2"
+data "StackId" "GOON_GEAR_POLYMORPH_ENRAGINGHEARTGARB"
+data "Boosts" "Ability(Constitution, 2, 20, true)"
+data "Passives" "MAG_Barbarian_Armor_RageSupport_Passive"
+
+// ==================
 
 new entry "MAG_Barbarian_Armor_RageSupport_Passive"
 type "PassiveData"
@@ -155,61 +254,102 @@ using "MAG_Barbarian_Armor_RageSupport_Passive"
 // // Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; or starts their turn while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt; in combat, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
 data "Description" "h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7;1"
 // data "DescriptionParams" "2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted;OncePerTurn"
 data "StatsFunctorContext" "OnStatusApplied;OnTurn"
 data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusHasStatusGroup(context.StatusId,'SG_Rage')) or (context.HasContextFlag(StatsFunctorContext.OnTurn) and HasStatus('SG_Rage',context.Source)) and Combat()"
 data "StatsFunctors" "ApplyStatus(SELF,MAG_VIOLENCE,100,2);ApplyStatus(SELF,MAG_VIOLENCE_DURATION_TECHNICAL,100,1)"
 
-// ==================================== Garb of the Land and Sky ====================================
-// Bug Fix: descriptions are now consistent between the Breezeswift Speed passive and the Swift as Wind condition that it applies.
-// Bug Fix: Advantage from Swift as the Wind no longer applies to attack rolls that do not interact with the rest of the functionality.
-// Bug Fix: Swift as the Wind is now removed on misses and crital hits.
-// Changes: Both Advantage and the 1d8 Force Damage from Swift as Wind now apply to all melee and thrown attacks, instead of all attacks for Advantage and only weapon attacks for the damage.
-// TODO: Template stuff.
+// ==================================== 10. Garb of the Land and Sky ====================================
+// Bug Fix: Swift as the Wind now only applies to weapon attacks, per the description.
+// Bug Fix: Swift as the Wind is now properly removed after making a weapon attack.
+// Bug Fix: Descriptions are now consistent between the Breezeswift Speed passive and the Swift as Wind condition that it applies.
+// Changes: Mountainous Poise and Breezeswift Speed now functions while under the effects of non-humanoid polymorphs.
+// Changes: Descriptions improved.
+// Changes: The item template no longer inherits from Armour of Uninhibited Kushigo.
 
-// new entry "MAG_Monk_Magic_Armor_1"
-// type "Armor"
+new entry "MAG_Monk_Magic_Armor_1"
+type "Armor"
 // using "ARM_Cloth_Body_1"
+using "MAG_Monk_Magic_Armor_1"
 // data "RootTemplate" "dbe75b4c-d23a-4a19-b630-34de519750c6"
 // data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Monk_Armor_MountainStance_Passive;MAG_Monk_Armor_WindStance_Passive"
+data "PassivesOnEquip" "MAG_Monk_Armor_MountainStance_Passive;MAG_Monk_Armor_WindStance_Passive;Goon_Gear_Polymorph_GarbOfTheLandAndSky"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Monk_Magic_Armor_1_NotUnique"
+type "Armor"
+using "MAG_Monk_Magic_Armor_1"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_GARBOFTHELANDANDSKY_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "MAG_Monk_Armor_MountainStance_Passive"
-// type "PassiveData"
-// Mountainous Poise
+// ==================
+
+new entry "Goon_Gear_Polymorph_GarbOfTheLandAndSky"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_GARBOFTHELANDANDSKY, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_GARBOFTHELANDANDSKY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_GARBOFTHELANDANDSKY"
+data "Boosts" ""
+data "Passives" "MAG_Monk_Armor_MountainStance_Passive;MAG_Monk_Armor_WindStance_Passive"
+
+// ==================
+
+new entry "MAG_Monk_Armor_MountainStance_Passive"
+type "PassiveData"
+using "MAG_Monk_Armor_MountainStance_Passive"
+// // Mountainous Poise
 // data "DisplayName" "h0d95fe10gdd02g41f8g91fcgac832eadc51c;1"
-// While using &lt;LSTag Type="Status" Tooltip="PATIENT_DEFENCE"&gt;Patient Defence&lt;/LSTag&gt;, you also benefit from the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;.
+// // While using &lt;LSTag Type="Status" Tooltip="PATIENT_DEFENCE"&gt;Patient Defence&lt;/LSTag&gt;, you also benefit from the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;.
 // data "Description" "hf633200cgd324g42f1gb7efg6100e0e6bbfb;1"
+// // The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_Dash_StepOfTheWind"&gt;Step of the Wind: Dash&lt;/LSTag&gt;.
+data "Description" "h1102c1e8g60f5g455ag8e9egd72b54ef3afc;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnCast"
 // data "Conditions" "SpellId('Shout_PatientDefense')"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_MONK_MOUNTAIN_BLADE_WARD, 100, 1)"
 
-// new entry "MAG_MONK_MOUNTAIN_BLADE_WARD"
-// type "StatusData"
-// data "StatusType" "BOOST"
+new entry "MAG_MONK_MOUNTAIN_BLADE_WARD"
+type "StatusData"
+data "StatusType" "BOOST"
 // using "MAG_BLADE_WARD"
+using "MAG_MONK_MOUNTAIN_BLADE_WARD"
 // data "TickType" ""
 // data "RemoveConditions" "HasStatus('SG_Incapacitated')"
+data "RemoveConditions" "not HasStatus('PATIENT_DEFENCE')"
 // data "RemoveEvents" "OnStatusApplied"
+data "RemoveEvents" "OnStatusRemoved"
 // data "StatusGroups" ""
 
 new entry "MAG_Monk_Armor_WindStance_Passive"
 type "PassiveData"
 using "MAG_Monk_Armor_WindStance_Passive"
-// Breezeswift Speed
+// // Breezeswift Speed
 // data "DisplayName" "h36797947gb3dbg4ab1gb332gf0e8ebca97ba;1"
-// While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1].
+// // While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1].
 // data "Description" "h7f19dc10gc8a6g4398g8dcbg4e7497c7f351;3"
-// While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.
+// // The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="MAG_MONK_SWIFT_AS_THE_WIND"&gt;Swift as Wind&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_Dash_StepOfTheWind"&gt;Step of the Wind: Dash&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Disengage_StepOfTheWind"&gt;Step of the Wind: Disengage&lt;/LSTag&gt;.
 data "Description" "h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2;1"
 // data "DescriptionParams" "DealDamage(1d8, Force)"
+data "DescriptionParams" "1;DealDamage(1d8, Force)"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnCast"
 // data "Conditions" "SpellId('Shout_Dash_StepOfTheWind') or SpellId('Shout_Disengage_StepOfTheWind')"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_MONK_SWIFT_AS_THE_WIND, 100, 1)"
@@ -218,22 +358,32 @@ new entry "MAG_MONK_SWIFT_AS_THE_WIND"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MAG_MONK_SWIFT_AS_THE_WIND"
-// Swift as Wind
+// // Swift as Wind
 // data "DisplayName" "h9a7a20f9g1d2ag4c27ga713g209ce3e50e66;1"
-// Your next weapon attack has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. That attack deals an additional [1].
+// // Your next weapon attack has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. That attack deals an additional [1].
 // data "Description" "h9331a8abgc809g4991gafc7gdfd28f0a6aaa;1"
-// Your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.
+// // Your next weapon &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1].
 data "Description" "hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d;1"
 // data "DescriptionParams" "DealDamage(1d8, Force)"
 // data "Icon" "GenericIcon_DamageType_Force"
 // data "StackId" "MAG_MONK_SWIFT_AS_THE_WIND"
 // data "Boosts" "Advantage(AttackRoll);CharacterWeaponDamage(1d8, Force)"
-data "Boosts" "IF(IsMeleeWeaponAttack() or IsUnarmedAttack()):Advantage(AttackRoll);IF(IsMeleeWeaponAttack()):CharacterWeaponDamage(1d8, Force);IF(IsUnarmedAttack()):CharacterUnarmedDamage(1d8, Force)"
+data "Boosts" "IF(IsWeaponAttack()):Advantage(AttackRoll);IF(IsWeaponAttack()):CharacterWeaponDamage(1d8, Force)"
 // data "RemoveConditions" "IsWeaponAttack() and (not IsMiss() or IsCritical())"
-data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
+data "RemoveConditions" ""
 // data "RemoveEvents" "OnAttack"
+data "RemoveEvents" ""
+data "Passives" "Goon_SwiftAsTheWind_Technical_Passive"
 
-// ==================================== Icebite Robe ====================================
+// Note: Removal that allows the 1d8 Force damage to go through when the weapon is thrown.
+new entry "Goon_SwiftAsTheWind_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnDamage;OnAttack"
+data "Conditions" "IsWeaponAttack()"
+data "StatsFunctors" "IF((context.HasContextFlag(StatsFunctorContext.OnDamage)) or (context.HasContextFlag(StatsFunctorContext.OnAttack) and IsMiss())):RemoveStatus(SELF,MAG_MONK_SWIFT_AS_THE_WIND)"
+
+// ==================================== 11. Icebite Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -243,7 +393,7 @@ data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Mutilated Carapace ====================================
+// ==================================== 12. Mutilated Carapace ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -253,7 +403,7 @@ data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Obsidian Laced Robe ====================================
+// ==================================== 13. Obsidian Laced Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -263,7 +413,7 @@ data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Robe of Exquisite Focus ====================================
+// ==================================== 14. Robe of Exquisite Focus ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -273,7 +423,7 @@ data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Shelter of Athkatla ====================================
+// ==================================== 15. Shelter of Athkatla ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -283,7 +433,7 @@ data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== The Graceful Cloth ====================================
+// ==================================== 16. The Graceful Cloth ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -293,59 +443,248 @@ data "RemoveConditions" "IsMeleeWeaponAttack() or IsUnarmedAttack()"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== The Mighty Cloth ====================================
+// ==================================== 17. The Mighty Cloth ====================================
 // Bug Fix: Tooltip is no longer filled with misinformation inherited from Primal Stampede.
-// Note: Reference fields do not reflect otherwise changes to Primal Stampede in Goon's Spell Overhaul.
+// Changes: Bull Rush now functions while under the effects of non-humanoid polymorphs.
+// Changes: Bull's Strength now functions while under the effects of non-humanoid polymorphs.
+// Changes: Unwavering Bull now functions while under the effects of non-humanoid polymorphs.
+// Note: Reference fields do not reflect other changes to Primal Stampede from Goon's Barbarian Overhaul.
 
-// new entry "MAG_BarbMonk_Offensive_Cloth"
-// type "Armor"
+new entry "MAG_BarbMonk_Offensive_Cloth"
+type "Armor"
 // using "ARM_Cloth_Body_1"
+using "MAG_BarbMonk_Offensive_Cloth"
 // data "RootTemplate" "48215bcb-b4a2-48cb-bfbe-8b601e678032"
 // data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
 // data "Rarity" "Rare"
 // data "Boosts" "UnlockSpell(Rush_MAG_Barbarian_Armor_Trample)"
 // data "PassivesOnEquip" "MAG_BarbMonk_Armor_Offensive_Passive;MAG_BarbMonk_Strength_Passive"
+data "PassivesOnEquip" "MAG_BarbMonk_Armor_Offensive_Passive;MAG_BarbMonk_Strength_Passive;Goon_Gear_Polymorph_TheMightyCloth"
 // data "StatusOnEquip" "MAG_BULLS_STRENGTH"
+data "StatusOnEquip" "GOON_THEMIGHTYCLOTH_EQUIP_TECHNICAL"
 // data "Unique" "1"
+
+new entry "Goon_MAG_BarbMonk_Offensive_Cloth_NotUnique"
+type "Armor"
+using "MAG_BarbMonk_Offensive_Cloth"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_THEMIGHTYCLOTH_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "GOON_THEMIGHTYCLOTH_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_TheMightyCloth"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_THEMIGHTYCLOTHL, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_THEMIGHTYCLOTHL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_THEMIGHTYCLOTHL"
+data "Boosts" "UnlockSpell(Goon_Rush_MAG_Barbarian_Armor_Trample_Wildshape)"
+data "Passives" "MAG_BarbMonk_Armor_Offensive_Passive;MAG_BarbMonk_Strength_Passive"
+
+// ==================
+
 new entry "Rush_MAG_Barbarian_Armor_Trample"
 type "SpellData"
 data "SpellType" "Rush"
 // using "Rush_Primal_Stampede"
 using "Rush_MAG_Barbarian_Armor_Trample"
-// Available only when Raging.
+// data "Cooldown" "OncePerTurn"
+// data "SpellRoll" "not SavingThrow(Ability.Strength, ManeuverSaveDC())"
+// data "SpellSuccess" "Force(3)"
+// data "SpellFail" "ApplyStatus(SAVED_AGAINST_HOSTILE_SPELL, 100, 0)"
+// data "Icon" "Action_Monster_Minotaur_Charge"
+// // Bull Rush
+// data "DisplayName" "h5acbc5aagb6d1g47a2g9807g5b29dfb111c3;2"
+// // Charge forward and possibly knock your foes back [1].
+// data "Description" "h574ea0acg1936g4e66g97d9gfd8861c7f406;4"
+// data "DescriptionParams" "Distance(3)"
+// // Available only when Raging.
 // data "ExtraDescription" "hcb74ea6eg4a48g4668g9436g24e53a98b02b;1"
 data "ExtraDescription" ""
 // data "TooltipDamageList" "DealDamage(1d4+StrengthModifier, Bludgeoning)"
 data "TooltipDamageList" ""
 // data "TooltipStatusApply" "ApplyStatus(PRONE,100,2)"
 data "TooltipStatusApply" ""
+// // Doesn't provoke Opportunity Attacks.
+// data "TooltipPermanentWarnings" "aa8beb3b-9199-4b22-9f73-26e2ae0ab6af"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d;aa8beb3b-9199-4b22-9f73-26e2ae0ab6af"
+// data "TooltipAttackSave" "Strength"
+// data "SpellFlags" "IsHarmful;AddFallDamageOnLand;CanAreaDamageEvade"
+// data "RequirementConditions" "CanUseWeaponActions()"
+// data "PrepareEffect" "9342eaf4-6a20-44c6-a740-863b0f9c2475"
 
-// ==================================== The Protecty Sparkswall ====================================
-// TODO: Something/anything.
+new entry "Goon_Rush_MAG_Barbarian_Armor_Trample_Wildshape"
+type "SpellData"
+data "SpellType" "Rush"
+using "Rush_MAG_Barbarian_Armor_Trample"
+// data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;b282bbfb-76a9-40d0-8282-c3bc67e8f13e,,;f22d3078-3975-4f4d-be7f-f2e9cd604840,,;8e621489-71f7-4b47-9b11-c3d3c987dcfe,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;,,;,,;,,"
+data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;925779e7-8bf6-4d56-8c4d-42c3bc01c60c,,;50398f4e-dd82-4d6a-ad43-aedd578543d9,,;1c343e00-7e6c-4f53-b588-074a3cdb9c7d,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;5fdb66be-7506-411a-a7ea-c4783288aac8,,;,,;,,"
+// data "SpellFlags" "IsHarmful;AddFallDamageOnLand;CanAreaDamageEvade"
+data "SpellFlags" "IsHarmful;AddFallDamageOnLand;CanAreaDamageEvade;Wildshape"
+// data "RequirementConditions" "CanUseWeaponActions()"
+data "RequirementConditions" ""
 
-// new entry "MAG_ChargedLightning_BonusAC_Robe"
-// type "Armor"
+new entry "MAG_BarbMonk_Armor_Offensive_Passive"
+type "PassiveData"
+using "MAG_BarbMonk_Armor_Offensive_Passive"
+// // Bull's Strength
+// data "DisplayName" "h2311e227gdde1g424eg9e48g16d6a7e639e7;1"
+// // You gain &lt;LSTag Type="Status" Tooltip="MAG_BULLS_STRENGTH"&gt;Bull's Strength&lt;/LSTag&gt; and increase your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; score by [1], to a maximum [2].
+// data "Description" "h2c511b04gd6b7g4a1cgaef0ga06ece2f2561;3"
+// data "DescriptionParams" "2;20"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "Boosts" "Ability(Strength, 2, 20)"
+data "StatsFunctorContext" "OnCreate"
+data "StatsFunctors" "IF(not HasStatus('MAG_BULLS_STRENGTH')):ApplyStatus(MAG_BULLS_STRENGTH,100,-1)"
+
+new entry "MAG_BULLS_STRENGTH"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "BULLS_STRENGTH"
+using "MAG_BULLS_STRENGTH"
+// data "StackPriority" "10"
+// data "StackType" "Ignore"
+// data "StatusPropertyFlags" "IgnoreResting;ApplyToDead"
+// data "StatusGroups" ""
+// data "ManagedStatusEffectType" ""
+// data "ManagedStatusEffectGroup" ""
+data "Passives" "Goon_TheMightyCloth_BullsStrength_Technical_Passive"
+
+new entry "Goon_TheMightyCloth_BullsStrength_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_BarbMonk_Armor_Offensive_Passive')"
+data "StatsFunctors" "RemoveStatus(MAG_BULLS_STRENGTH)"
+
+new entry "MAG_BarbMonk_Strength_Passive"
+type "PassiveData"
+using "MAG_BarbMonk_Strength_Passive"
+// // Unwavering Bull
+// data "DisplayName" "h1f8f4992ge642g4467gb701gf06ba4c304ae;2"
+// // You cannot be pushed against your will and you have an &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against being &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt;.
+// data "Description" "ha949757fgd645g4f7bgaa2eg3eeb1c638446;3"
+// // You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against being &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt;, and cannot be moved by any external force - be it magical or mundane.
+data "Description" "h5fb29242g0f1dg4323g959fg0fc121b655cb;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "Boosts" "Attribute(Grounded);Tag(RESTRAINED_ADV)"
+
+// ==================================== 18. The Protecty Sparkswall ====================================
+// Bug Fix: Sparkswall Armour now applies its hidden condition when the wearer has Lightning Charges prior to equiping the robe, instead of just functioning after the application of Lightning Charges.
+// Changes: Sparkswall Armour now functions while under the effects of non-humanoid polymorphs.
+// Changes: High Spellcasting now functions while under the effects of non-humanoid polymorphs.
+
+new entry "MAG_ChargedLightning_BonusAC_Robe"
+type "Armor"
 // using "ARM_Robe_Body"
+using "MAG_ChargedLightning_BonusAC_Robe"
 // data "RootTemplate" "f28c3264-8cdb-46c1-800f-a47a01e49efc"
 // data "ItemGroup" ""
 // data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Lesser_Passive;MAG_ChargedLightning_ArmorMagicBoost_Passive"
+data "PassivesOnEquip" "Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph;MAG_ChargedLightning_ArmorMagicBoost_Passive;Goon_Gear_Polymorph_TheProtectySparkswall"
 // data "StatusOnEquip" "MAG_CHARGED_LIGHTNING_AC_BONUS_TECHNICAL"
 // data "Unique" "1"
+
+new entry "Goon_MAG_ChargedLightning_BonusAC_Robe_NotUnique"
+type "Armor"
+using "MAG_ChargedLightning_BonusAC_Robe"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_THEPROTECTYSPARKSWALL_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Viconia's Priestess Robe ====================================
+// ==================
+
+new entry "Goon_Gear_Polymorph_TheProtectySparkswall"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_THEPROTECTYSPARKSWALL, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_THEPROTECTYSPARKSWALL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_THEPROTECTYSPARKSWALL"
+data "Boosts" ""
+data "Passives" "Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph;MAG_ChargedLightning_ArmorMagicBoost_Passive"
+
+// ==================
+
+new entry "MAG_ChargedLightning_ArmorMagicBoost_Passive"
+type "PassiveData"
+using "MAG_ChargedLightning_ArmorMagicBoost_Passive"
+// // Sparkswall Armour
+// data "DisplayName" "h582c8880g8dbbg4674g8979g97dd8e38d323;2"
+// // The wearer has a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; as long as they have &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
+// data "Description" "hf4ef52c0g3664g47d0gb2b7gf45e119b4392;6"
+// data "DescriptionParams" "1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnStatusApplied;OnStatusRemoved"
+data "StatsFunctorContext" "OnCreate;OnStatusApplied"
+// data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and not HasStatus('MAG_CHARGED_LIGHTNING')):RemoveStatus(MAG_CHARGED_LIGHTNING_AC_BONUS);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusId('MAG_CHARGED_LIGHTNING')):ApplyStatus(MAG_CHARGED_LIGHTNING_AC_BONUS,100,-1)"
+data "StatsFunctors" "IF(HasStatus('MAG_CHARGED_LIGHTNING') and not HasStatus('MAG_CHARGED_LIGHTNING_AC_BONUS')):ApplyStatus(MAG_CHARGED_LIGHTNING_AC_BONUS,100,-1)"
+
+new entry "MAG_CHARGED_LIGHTNING_AC_BONUS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_CHARGED_LIGHTNING_AC_BONUS"
+// // Sparkswall Armour
+// data "DisplayName" "h4871b471g84a3g4b3fga378gca15adf233d2;2"
+// // You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; as long as you have &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
+// data "Description" "h050df1adg83a7g4443g8e4bg1477bcb8e408;3"
+// data "DescriptionParams" "1"
+// data "StackId" "MAG_CHARGED_LIGHTNING_AC_BONUS"
+// data "Boosts" "AC(1);RollBonus(SavingThrow, 1)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "Passives" "Goon_SparksWallArmour_Technical_Passive"
+
+new entry "Goon_SparksWallArmour_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_ChargedLightning_ArmorMagicBoost_Passive') or not HasStatus('MAG_CHARGED_LIGHTNING')"
+data "StatsFunctors" "RemoveStatus(MAG_CHARGED_LIGHTNING_AC_BONUS)"
+
+new entry "MAG_CHARGED_LIGHTNING_AC_BONUS_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_CHARGED_LIGHTNING_AC_BONUS"
+// data "StackId" "MAG_CHARGED_LIGHTNING_AC_BONUS_TECHNICAL"
+data "StackId" "MAG_CHARGED_LIGHTNING_AC_BONUS_TECHNICAL"
+// data "Boosts" ""
+data "Boosts" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+// data "OnRemoveFunctors" "RemoveStatus(MAG_CHARGED_LIGHTNING_AC_BONUS)"
+data "OnRemoveFunctors" ""
+
+// ==================================== 19. Viconia's Priestess Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -355,7 +694,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Bonespike Garb ====================================
+// ==================================== 20. Bonespike Garb ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -365,7 +704,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Infernal Robe ====================================
+// ==================================== 21. Infernal Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -375,7 +714,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Moon Devotion Robe ====================================
+// ==================================== 22. Moon Devotion Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -385,13 +724,14 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Potent Robe ====================================
+// ==================================== 23. Potent Robe ====================================
 // Changes: Gregarious Caster's Charisma modifier damage bonus now only triggers once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
 // Changes: Gregarious Caster's Charisma modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, per RAW the weapon damage will not benefit from the damage bonus, e.g. if you are using Booming Blade prior to being level 5.
 // Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
-// TODO: Well-Liked and Well-Fortified polymorph.
 // Note: 5e Spells and Homebrew Spells make edits to "MAG_CharismaCaster_CantripBooster_Passive", so it's replaced with a custom copy.
-// TODO: Template.
+// Changes: +1 Armour Class bonus now functions while under the effects of non-humanoid polymorphs.
+// Changes: Gregarious Caster now functions while under the effects of non-humanoid polymorphs.
+// Changes: Well-Liked and Well-Fortified now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_CharismaCaster_Robe"
 type "Armor"
@@ -402,21 +742,43 @@ using "MAG_CharismaCaster_Robe"
 // data "Rarity" "VeryRare"
 // data "Boosts" "AC(1)"
 // data "PassivesOnEquip" "MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
-data "PassivesOnEquip" "Goon_MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
+data "PassivesOnEquip" "Goon_MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive;Goon_Gear_Polymorph_PotentRobe"
 // data "StatusOnEquip" "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
-data "StatusOnEquip" "GOON_POTENTROBE_TECHNICAL"
+data "StatusOnEquip" "GOON_POTENTROBE_EQUIP_TECHNICAL"
 // data "Unique" "1"
+
+new entry "Goon_MAG_CharismaCaster_Robe_NotUnique"
+type "Armor"
+using "MAG_CharismaCaster_Robe"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_POTENTROBE_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-new entry "GOON_POTENTROBE_TECHNICAL"
+new entry "GOON_POTENTROBE_EQUIP_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-data "OnRemoveFunctors" "RemoveStatus(MAG_CHARISMA_CASTER_TEMP_HP)"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_PotentRobe"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_POTENTROBE, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_POTENTROBE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+// // Potent Robe
+data "DisplayName" "h81a90768g04a1g428fg97e6g96edd1d0958d;1"
+data "StackId" "GOON_GEAR_POLYMORPH_POTENTROBE"
+data "Boosts" "AC(1)"
+data "Passives" "Goon_MAG_CharismaCaster_CantripBooster_Passive;MAG_CharismaCaster_TempHP_Passive"
 
 // ==================
 
@@ -430,15 +792,15 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_CHARISMA_CASTER_TEMP_HP)"
 // data "Boosts" "IF(IsCantrip()):DamageBonus(max(1,CharismaModifier))"
 
 // BUG: "DealDamage" functor takes place before "OnAttack" event, so "CharacterWeaponDamage" gets cooked when we try using "BoostConditions" and "BoostContext".
-// Bug: For some reason, at least with damage reduction from Arcane Ward, the damage meant to ride on Booming Blade at level 5 and above triggers inconsistently when 0 damage is dealt from the weapon itself. Expected to be niche and not that big of a deal.
 new entry "Goon_MAG_CharismaCaster_CantripBooster_Passive"
 type "PassiveData"
 // // Gregarious Caster
 data "DisplayName" "h1a478e3cg6b90g439fgb50fg113a8b8a3e44;1"
-// // Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
-data "Description" "hc5cd47f0g25f7g4b7fgadafg90c0b05b6b3b;2"
+// // Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+data "Description" "h76164b54gf7feg4a03gb3beg35b2ffcd2d59;1"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
-data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55;28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 data "Boosts" "IF(not HasStatus('GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER',context.Target) and IsCantrip() and not Goon_IsConditionalDamageCantrip()):DamageBonus(max(1,CharismaModifier));IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeAcid()):CharacterWeaponDamage(max(1, CharismaModifier),Acid);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeCold()):CharacterWeaponDamage(max(1, CharismaModifier),Cold);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeFire()):CharacterWeaponDamage(max(1, CharismaModifier),Fire);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeLightning()):CharacterWeaponDamage(max(1, CharismaModifier),Lightning);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeThunder()):CharacterWeaponDamage(max(1, CharismaModifier),Thunder);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeRadiant()):CharacterWeaponDamage(max(1, CharismaModifier),Radiant);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePoison()):CharacterWeaponDamage(max(1, CharismaModifier),Poison);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePsychic()):CharacterWeaponDamage(max(1, CharismaModifier),Psychic);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeNecrotic()):CharacterWeaponDamage(max(1, CharismaModifier),Necrotic);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeForce()):CharacterWeaponDamage(max(1, CharismaModifier),Force);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeSlashing()):CharacterWeaponDamage(max(1, CharismaModifier),Slashing);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypePiercing()):CharacterWeaponDamage(max(1, CharismaModifier),Piercing);IF(Goon_IsConditionalDamageCantripEligible_Greg() and Goon_IsSpellDamageTypeBludgeoning()):CharacterWeaponDamage(max(1, CharismaModifier),Bludgeoning)"
 data "Conditions" "not HasStatus('GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER',context.Target)"
@@ -451,8 +813,6 @@ data "StatusType" "BOOST"
 using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER"
 
-// ==================
-
 new entry "MAG_CharismaCaster_TempHP_Passive"
 type "PassiveData"
 // using "MAG_PHB_Displacement_Cloak_Passive"
@@ -461,6 +821,8 @@ using "MAG_CharismaCaster_TempHP_Passive"
 // data "DisplayName" "hf29c2ac9gea2eg4f2bg9ef8g84032470ed90;1"
 // // At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "h884d0adcgad56g4731g8318g7d15a267ec4a;2"
+// // At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+data "Description" "hf118b3e0g9056g484fg96e6g14e7c6233ff9;1"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
@@ -482,11 +844,20 @@ data "StatusType" "BOOST"
 using "MAG_CHARISMA_CASTER_TEMP_HP"
 // // Well-Liked and Well-Fortified: instead of dying, you have gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit point&lt;/LSTag&gt; equal to your Charisma modifier.
 // data "Description" "hab545a26g9fbag40cegb609g326de9b210df;1"
-// // Well-Liked and Well-Fortified: instead of dying, you have gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit point&lt;/LSTag&gt; equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// // Affected entity has gained [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; from &lt;LSTag Type="Passive" Tooltip="MAG_CharismaCaster_TempHP_Passive"&gt;Well-Liked and Well-Fortified&lt;/LSTag&gt;.
 data "Description" "hacb82f5fgb298g461cga022gc06cc95eceba;1"
+data "DescriptionParams" "CharismaModifier"
 // data "Boosts" "TemporaryHP(CharismaModifier)"
+data "Passives" "Goon_WellLikedAndWellFortified_Technical_Passive"
 
-// ==================================== Robe of Supreme Defences ====================================
+new entry "Goon_WellLikedAndWellFortified_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_CharismaCaster_TempHP_Passive')"
+data "StatsFunctors" "RemoveStatus(MAG_CHARISMA_CASTER_TEMP_HP)"
+
+// ==================================== 24. Robe of Supreme Defences ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -496,7 +867,7 @@ data "Description" "hacb82f5fgb298g461cga022gc06cc95eceba;1"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Robe of the Weave ====================================
+// ==================================== 25. Robe of the Weave ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -506,7 +877,7 @@ data "Description" "hacb82f5fgb298g461cga022gc06cc95eceba;1"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Veil of the Morning ====================================
+// ==================================== 26. Veil of the Morning ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -516,7 +887,7 @@ data "Description" "hacb82f5fgb298g461cga022gc06cc95eceba;1"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Vest of Soul Rejuvenation ====================================
+// ==================================== 27. Vest of Soul Rejuvenation ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -526,7 +897,7 @@ data "Description" "hacb82f5fgb298g461cga022gc06cc95eceba;1"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Wavemother's Robe ====================================
+// ==================================== 28. Wavemother's Robe ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -536,7 +907,7 @@ data "Description" "hacb82f5fgb298g461cga022gc06cc95eceba;1"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Robe of Spell Resistance (Innaccessible/cut content) ====================================
+// ==================================== 29. Robe of Spell Resistance (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry

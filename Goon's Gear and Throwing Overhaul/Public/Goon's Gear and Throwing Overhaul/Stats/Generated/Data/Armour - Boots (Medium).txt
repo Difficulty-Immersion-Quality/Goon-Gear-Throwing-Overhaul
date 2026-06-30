@@ -831,7 +831,7 @@ using "MAG_ZOC_FORCE_CONDUIT_IMMOVABLE"
 // data "DisplayName" "he374db9egd89bg40ebg9997g4e57c80e8b4d;2"
 // // Affected entity can't be moved against its will.
 // data "Description" "ha1b13973gef91g4696ga339gd9deb963b5b4;5"
-// // Affected entity can't be moved by any external force - be it magical or mundane.
+// // Affected entity cannot be moved by any external force - be it magical or mundane.
 data "Description" "h111db567g3a5bg4ed3gac4cgd4741dade707;1"
 // data "Icon" "statIcons_ForceSteadfast"
 // data "SoundLoop" "MAG_Status_ForceConduitImmovable_Start"

@@ -222,8 +222,42 @@
 	<!-- "MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive" -->
 	<content contentuid="h2dabe5bag9164g41d2ga3bcgaf29bb3c1c58" version="1">At the end of the wearer's turn, they gain [1] round of &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; if they are &lt;LSTag Type="Status" Tooltip="FLANKED"&gt;Threatened&lt;/LSTag&gt; while surrounded by [2] or more enemies within [3].&lt;br&gt;&lt;br&gt;If the wearer does not already have &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt;, they gain [4] rounds instead.</content>
 	<!-- "MAG_ZOC_FORCE_CONDUIT_IMMOVABLE" -->
-	<content contentuid="h111db567g3a5bg4ed3gac4cgd4741dade707" version="1">Affected entity can't be moved by any external force - be it magical or mundane.</content>
+	<content contentuid="h111db567g3a5bg4ed3gac4cgd4741dade707" version="1">Affected entity cannot be moved by any external force - be it magical or mundane.</content>
 
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
+<!-- ==================================== Armour - Chest (Clothing) ==================================== -->
+
+	<!-- 3. Bloodguzzler Garb -->
+	<!-- "MAG_Violence_ViolenceOnDamaged_Passive" -->
+	<content contentuid="ha5c5728dg959bg4dc6gacffg913ec1817938" version="1">Once per turn, when an enemy damages the wearer, the wearer gains &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.</content>
+
+	<!-- 4. Cloth Armour -->
+	<!-- "ARM_Cloth_B_2" - "11efdb40-8246-4707-b40c-1e57635dfbc1" -->
+	<content contentuid="hb7d610d5g7fb7g4f47gaea6g21c9d47723eb" version="1">True to its name, this armour is most certainly hewn of cloth.</content>
+
+	<!-- 10. Garb of the Land and Sky -->
+	<!-- "MAG_Monk_Armor_MountainStance_Passive" -->
+	<content contentuid="h1102c1e8g60f5g455ag8e9egd72b54ef3afc" version="1">The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_Dash_StepOfTheWind"&gt;Step of the Wind: Dash&lt;/LSTag&gt;.</content>
+	<!-- "MAG_Monk_Armor_WindStance_Passive" -->
+	<content contentuid="h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2" version="1">The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="MAG_MONK_SWIFT_AS_THE_WIND"&gt;Swift as Wind&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_Dash_StepOfTheWind"&gt;Step of the Wind: Dash&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Disengage_StepOfTheWind"&gt;Step of the Wind: Disengage&lt;/LSTag&gt;.</content>
+	<!-- "MAG_MONK_SWIFT_AS_THE_WIND" -->
+	<content contentuid="hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d" version="1">Your next weapon &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1].</content>
+
+	<!-- 17. The Mighty Cloth -->
+	<!-- "MAG_BarbMonk_Strength_Passive" -->
+	<content contentuid="h5fb29242g0f1dg4323g959fg0fc121b655cb" version="1">You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against being &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt;, and cannot be moved by any external force - be it magical or mundane.</content>
+
+	<!-- 23. Potent Robe -->
+	<!-- "Goon_MAG_CharismaCaster_CantripBooster_Passive" -->
+	<content contentuid="h76164b54gf7feg4a03gb3beg35b2ffcd2d59" version="1">Your &lt;LSTag Tooltip="Cantrip"&gt;cantrips&lt;/LSTag&gt; deal additional damage equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.</content>
+	<!-- "MAG_CharismaCaster_TempHP_Passive" -->
+	<content contentuid="hf118b3e0g9056g484fg96e6g14e7c6233ff9" version="1">At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.</content>
+	<!-- "MAG_CHARISMA_CASTER_TEMP_HP" -->
+	<content contentuid="hacb82f5fgb298g461cga022gc06cc95eceba" version="1">Affected entity has gained [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; from &lt;LSTag Type="Passive" Tooltip="MAG_CharismaCaster_TempHP_Passive"&gt;Well-Liked and Well-Fortified&lt;/LSTag&gt;.</content>
+	
 	<!--  -->
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
@@ -304,9 +338,6 @@
 	<!-- MAG_ArcaneTrickster_Ring_Passive --> <content contentuid="h2042de2fgc22fg4161g9050g59fffac63c85" version="1">After a successful weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can cast Illusion or Enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
 	<!-- "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive" --> <content contentuid="h1adb1860g647fg402egb774g1ff6be448951" version="1">Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.</content>
 	<!-- "DEN_FaithwardenStaff_Passive", "GOON_FAITHWARDENSTAFF_FAITHWARDENS_STRIDE" --> <content contentuid="h1bf8e97fg830ag424cgabc6gfd17f9ea5936" version="1">Vines cannot &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnare&lt;/LSTag&gt; you and do not count as &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN"&gt;Difficult Terrain&lt;/LSTag&gt;.</content>
-
-	<!-- "MAG_Monk_Armor_WindStance_Passive" --> <content contentuid="h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2" version="1">While using &lt;LSTag Type="Status" Tooltip="STEP_OF_THE_WIND"&gt;Step of The Wind&lt;/LSTag&gt;, your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
-	<!-- "MAG_MONK_SWIFT_AS_THE_WIND" --> <content contentuid="hb84d9f3dg2065g4b5eg9c1bg3e8662eed14d" version="1">Your next melee or &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and deals an additional [1] on a hit.</content>
 	<!-- "MAG_LC_Nymph_Cloak_Passive" --> <content contentuid="h1707807fg321ag4ba2g9be3gd18171fda6cb" version="1">Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].</content>
 	<!-- "MAG_Infernal_Metal_Gloves_FireDamage_Passive", "GOON_INFERNALTOUCH_TECHNICAL_APPLIER" --> <content contentuid="h4855f6bfgcd92g4833ga020gd0dd642acdfc" version="1">Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.</content>
 	<!-- "MAG_GREATER_NECROMANCY_LIFE_ESSENCE" --> <content contentuid="haa5631e9gfc72g47e3gb563gac681088dbef" version="1">Affected entity has absorbed a creature's essence. It can use that essence to cast its next Necromancy spell that consumes a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; without consuming a spell slot.</content>

@@ -109,13 +109,22 @@ using "MAG_SpellSaveDC_Enchantment_Passive"
 // // You gain a +[1] bonus to &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
 // data "Description" "he8570ff2gec84g4da0g8d6bg69ecd4d10a39;2"
 // data "DescriptionParams" "2"
-// &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; This effect does &lt;b&gt;not&lt;/b&gt; stack with similar effects.
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; This effect does &lt;b&gt;not&lt;/b&gt; stack with similar effects.
 data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f"
+data "Properties" "Highlighted"
 // data "Boosts" "SpellSaveDC(2)"
 data "Boosts" ""
 data "StatsFunctorContext" "OnCreate;OnEquip;OnStatusApplied;OnStatusRemoved"
 data "Conditions" "not HasStatus('GOON_SPELLSAVEDC_ENCHANTMENT_2')"
 data "StatsFunctors" "ApplyStatus(SELF,GOON_SPELLSAVEDC_ENCHANTMENT_2,100,-1)"
+
+new entry "Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph"
+type "PassiveData"
+using "MAG_SpellSaveDC_Enchantment_Passive"
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; This effect does &lt;b&gt;not&lt;/b&gt; stack with similar effects.
+// data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f;28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 new entry "GOON_SPELLSAVEDC_ENCHANTMENT_2"
 type "StatusData"
@@ -127,10 +136,10 @@ data "Description" "he8570ff2gec84g4da0g8d6bg69ecd4d10a39;2"
 data "DescriptionParams" "2"
 data "StackId" "GOON_SPELLSAVEDC_ENCHANTMENT"
 data "StackPriority" "2"
-// data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
 data "Boosts" "SpellSaveDC(2)"
 data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
-data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Passive')"
+data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Passive') and not HasPassive('Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph')"
 data "OnRemoveFunctors" "IF(HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive')):ApplyStatus(GOON_SPELLSAVEDC_ENCHANTMENT_1,100,-1)"
 
 new entry "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
@@ -143,6 +152,14 @@ data "Boosts" ""
 data "Conditions" "not HasStatus('GOON_SPELLSAVEDC_ENCHANTMENT_1') and not HasStatus('GOON_SPELLSAVEDC_ENCHANTMENT_2')"
 data "StatsFunctors" "ApplyStatus(SELF,GOON_SPELLSAVEDC_ENCHANTMENT_1,100,-1)"
 
+new entry "Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph"
+type "PassiveData"
+using "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; This effect does &lt;b&gt;not&lt;/b&gt; stack with similar effects.
+// data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
 new entry "GOON_SPELLSAVEDC_ENCHANTMENT_1"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -150,7 +167,7 @@ using "GOON_SPELLSAVEDC_ENCHANTMENT_2"
 data "DescriptionParams" "1"
 data "StackPriority" "1"
 data "Boosts" "SpellSaveDC(1)"
-data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive')"
+data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive') and not HasPassive('Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph')"
 data "OnRemoveFunctors" ""
 
 // ==================================== Shadow Blade - Knife of the Undermountain King, Justiciar's Scimitar ====================================

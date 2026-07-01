@@ -1,3 +1,5 @@
+// ==================================== World ====================================
+
 new treasuretable "DEN_Entrance_Trade"
 CanMerge 1
 new subtable "1,1"
@@ -20,6 +22,8 @@ new subtable "1,1"
 StartLevel "4"
 object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
 object category "I_WPN_Dart_2",1,0,0,0,0,0,0,0
+
+// ==================================== MEGA CONTAINER ====================================
 
 new treasuretable "TT_Goon_GearOverhaul_Mega_Container"
 // ==================================== Armour - Amulets - Custom
@@ -110,8 +114,8 @@ object category "I_Goon_WYR_MonkAmulet_Amulet_NoGhost_NotUnique",1,0,0,0,0,0,0,0
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0 40
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_OfTheDevout_Amulet_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"

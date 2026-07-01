@@ -113,6 +113,10 @@
 	<!-- "Shout_MAG_Monk_Restore_Ki" -->
 	<content contentuid="h002598e3gc0c3g4b73gaf2fg576897b592ff" version="1">Greater Ki Restoration</content>
 
+	<!-- 41. Amulet of the Devout -->
+	<!-- "MAG_OfTheDevout_Amulet_Passive" -->
+	<content contentuid="h065712c6g5111g4df8ga9a0g3ed70e134b93" version="1">The wearer gains an additional use of &lt;LSTag Type="ActionResource" Tooltip="ChannelDivinity"&gt;Channel Divinity&lt;/LSTag&gt;. Once used, it is restored upon taking a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.</content>
+
 	<!-- 50. Amulet of Bhaal -->
 	<!-- "LOW_BhaalAmulet_Passive" -->
 	<content contentuid="hd3983f55geda1g424dg9b6dg5afdab59e4c4" version="1">On a hit, inflict [1] rounds of &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; upon targets that have maximum &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.</content>

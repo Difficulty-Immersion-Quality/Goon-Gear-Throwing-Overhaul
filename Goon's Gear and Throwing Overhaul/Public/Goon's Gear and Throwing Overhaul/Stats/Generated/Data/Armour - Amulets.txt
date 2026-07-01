@@ -212,7 +212,7 @@ data "Unique" "0"
 new entry "GOON_NECKLACEOFELEMENTALAUGMENTATION_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -455,7 +455,7 @@ data "Unique" "0"
 new entry "GOON_SENTIENTAMULET_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -681,14 +681,93 @@ data "Unique" "0"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== 41. Amulet of the Devout ====================================
-// TODO: Something/anything.
+// Bug Fix: Godswill now just works, it's not complete jank using 500 technical statuses and passives without success.
+// Changes: Godswill now functions while under the effects of non-humanoid polymorphs.
+// TODO: There's an exploit where wildshapes are able to get the boost while the amulet is depleted because GetItemInEquipmentSlot doesn't work for them. GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL exists solely as a band-aid to prevent this, but it's only doing so for the wearer who depleted the amulet, for other characters the exploit still exists.
 
-// gear entry
+new entry "MAG_OfTheDevout_Amulet"
+type "Armor"
+// using "_Amulet_Magic"
+using "MAG_OfTheDevout_Amulet"
+// data "RootTemplate" "1acf71e6-6bca-4d9b-9d24-739823e10723"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Passive;MAG_OfTheDevout_Amulet_Passive;MAG_OfTheDevout_Amulet_Cooldown_Passive"
+data "PassivesOnEquip" "Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph;MAG_OfTheDevout_Amulet_Passive;Goon_Gear_Polymorph_AmuletOfTheDevout"
+// data "StatusOnEquip" "MAG_OF_DEVOUT_AMULET_TECHNICAL"
+data "StatusOnEquip" "GOON_AMULETOFTHEDEVOUT_EQUIP_TECHNICAL"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+new entry "Goon_MAG_OfTheDevout_Amulet_NotUnique"
+type "Armor"
+using "MAG_OfTheDevout_Amulet"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_AMULETOFTHEDEVOUT_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+new entry "GOON_AMULETOFTHEDEVOUT_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" "IF(not HasActionResource('ChannelDivinity', 100, 0, true)):UseActionResource(ChannelDivinity, 1)"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_AmuletOfTheDevout"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_AMULETOFTHEDEVOUT, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_AMULETOFTHEDEVOUT"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_AMULETOFTHEDEVOUT"
+data "Boosts" ""
+data "Passives" "Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph;MAG_OfTheDevout_Amulet_Passive"
+
+// ==================
+
+new entry "MAG_OfTheDevout_Amulet_Passive"
+type "PassiveData"
+using "MAG_OfTheDevout_Amulet_Passive"
+// // Godswill
+// data "DisplayName" "h9fb92fedg46ecg481fg9ed8gb796dd33576f;2"
+// // You gain an additional use of Channel Divinity. Once used, it is restored upon taking a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
+// data "Description" "h63c69034gd629g4510g866ag8d39b6105762;5"
+// // The wearer gains an additional use of &lt;LSTag Type="ActionResource" Tooltip="ChannelDivinity"&gt;Channel Divinity&lt;/LSTag&gt;. Once used, it is restored upon taking a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
+data "Description" "h065712c6g5111g4df8ga9a0g3ed70e134b93;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted;OncePerLongRest"
+// data "BoostContext" "OnCreate;OnEquip;OnStatusApplied;OnStatusRemoved;OnCast;OnAttack"
+data "BoostContext" "OnCreate;OnActionResourcesChanged"
+data "BoostConditions" "not HasStatus('MAG_DEVOUT_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Amulet, context.Target)) and not HasStatus('GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL', context.Source)"
+data "Boosts" "ActionResource(ChannelDivinity, 1, 0)"
+// data "StatsFunctorContext" "OnCast;OnAttack"
+data "StatsFunctorContext" "OnActionResourcesChanged"
+// data "Conditions" "HasUseCosts('ChannelDivinity')"
+data "Conditions" "not HasActionResource('ChannelDivinity', 1, 0, false, false, context.Source)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_OF_DEVOUT_AMULET_TRACKER, 100, -1);ApplyEquipmentStatus(Amulet, MAG_DEVOUT_DEPLETED_TECHNICAL, 100, -1)"
+data "StatsFunctors" "ApplyEquipmentStatus(SELF, Amulet, MAG_DEVOUT_DEPLETED_TECHNICAL, 100, -1);ApplyStatus(SELF, GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL, 100, -1)"
+
+// new entry "MAG_DEVOUT_DEPLETED_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// using "MAG_DEVOTION_SPELL_SLOT_DEPLETED_TECHNICAL"
+// // Amulet of The Devout: Channel Divinity Depleted
+// data "DisplayName" "h809a243bgd61ag4d49g80bag608d4315dbfb;2"
+// // The Channel Divinity charge granted from this amulet is depleted. A &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt; will restore it.
+// data "Description" "h87437123gba7bg4cbag99b2gbc5b4feea57e;3"
+// data "StackId" "MAG_DEVOUT_DEPLETED_TECHNICAL"
+
+new entry "GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
 
 // ==================================== 42. Amulet of Windrider ====================================
 // TODO: Something/anything.
@@ -796,7 +875,7 @@ data "Unique" "0"
 new entry "GOON_AMULETOFBHAAL_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 

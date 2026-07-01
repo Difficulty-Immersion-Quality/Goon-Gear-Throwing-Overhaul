@@ -320,7 +320,89 @@
 			<!-- 40. Amulet of Greater Health -->
 
 			<!-- 41. Amulet of the Devout -->
-
+				<node id="GameObjects">
+					<!-- Otto, a member of the powerful arcane organisation the Circle of Eight, had a penchant for amulets. So much so that they announced his arrival before he ever needed to. -->
+					<attribute id="Description" type="TranslatedString" handle="h917c9c5cg9679g44c4gbec6g6bb8d4f6df34" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hb33061b9gb205g483agbd8egf1006970c7ae" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_OfTheDevout_Amulet" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="1acf71e6-6bca-4d9b-9d24-739823e10723" />
+					<attribute id="Name" type="LSString" value="MAG_OfTheDevout_Amulet" />
+					<attribute id="ParentTemplateId" type="FixedString" value="6b572a46-c70a-49fe-ac56-a68eb186ca9c" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="1aa1c75f-01a0-99a5-01d7-a7fa4b59e281" />
+					<attribute id="Stats" type="FixedString" value="MAG_OfTheDevout_Amulet" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="e21071ac-f6c2-6015-6e5e-b1cc52c17c2f" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="1" />
+									<attribute id="Max" type="fvec3" value="0.12155892 0.036610633 0.53568757" />
+									<attribute id="Min" type="fvec3" value="-0.09530522 -0.0017472953 -0.13249719" />
+									<attribute id="Radius" type="float" value="0.2165065" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="1" />
+									<attribute id="Max" type="fvec3" value="0.12155892 0.036610633 0.53568757" />
+									<attribute id="Min" type="fvec3" value="-0.09530522 -0.0017472953 -0.13249719" />
+									<attribute id="Radius" type="float" value="0.433013" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="1" />
+									<attribute id="Max" type="fvec3" value="0.12155892 0.036610633 0.53568757" />
+									<attribute id="Min" type="fvec3" value="-0.09530522 -0.0017472953 -0.13249719" />
+									<attribute id="Radius" type="float" value="0.433013" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="IsHiddenStatus" type="bool" value="False" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_AMULETOFTHEDEVOUT_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 			<!-- 42. Amulet of Windrider -->
 
 			<!-- 43. Corvid Token -->

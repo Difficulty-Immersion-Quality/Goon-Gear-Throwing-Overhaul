@@ -83,6 +83,8 @@ data "Rarity" "Rare"
 // ==================================== Elven Chain ====================================
 // Bug Fix: Now properly considered Medium Armour. The absurd hidden passive "MAG_FlexibleArmor_Defense_Passive" has been removed now that the Defence fighting style actually works with the armour.
 // Changes: Instead of just granting Proficiency with the armour itself it now grants Proficiency with the armour type.
+// TODO: data "Flags" "ReallyArmor" works with any condition that calls WearingArmor. - JooW
+// HasMediumArmor() could be modified to support a change, mirroring HasHeavyArmor()... I think it would still just lead to an ugly ass tooltip though, I want that proficiency group there.
 
 new entry "MAG_PHB_ElvenChain_Armor"
 type "Armor"
@@ -97,10 +99,10 @@ data "PassivesOnEquip" "MAG_PHB_ElvenChain_Armor_Passive;MAG_PHB_ElvenChain_Adde
 // data "Proficiency Group" ""
 data "Proficiency Group" "MediumArmor"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_ELVENCHAIN_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "MAG_PHB_ElvenChain_Armor_Passive"
 type "PassiveData"

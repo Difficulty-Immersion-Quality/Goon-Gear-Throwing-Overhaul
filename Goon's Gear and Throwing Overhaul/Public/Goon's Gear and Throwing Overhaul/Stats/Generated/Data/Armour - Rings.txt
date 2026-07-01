@@ -280,6 +280,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 
 // ==================================== Ring of Mental Inhibition ====================================
 // Bug Fix: Mental Inhibition no longer applies Mental Fatigue to creatures that are not enemies.
+// Bug Fix: Mental Inhibition can now trigger on missed Attack Rolls that still have a relevant Saving Throw.
 // Changes: Mental Inhibition can only be applied once per action, per target.
 // TODO: Template
 // TODO: polymorph.
@@ -308,7 +309,7 @@ using "MAG_Psychic_MentalFatigue_Ring_Passive"
 data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
 // data "StatsFunctorContext" "OnAttack"
 // data "Conditions" "not Item() and not Self() and not IsMiss() and not IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow()"
-data "Conditions" "not Item() and not Self() and Enemy() and not IsMiss() and not IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION',context.Target)"
+data "Conditions" "not Item() and not Self() and Enemy() and not IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION',context.Target)"
 // data "StatsFunctors" "ApplyStatus(MAG_PSYCHIC_MENTAL_FATIGUE, 100, 2);ApplyStatus(MAG_PSYCHIC_MENTAL_FATIGUE_DURATION_TECHNICAL, 100, 1)"
 data "StatsFunctors" "ApplyStatus(MAG_PSYCHIC_MENTAL_FATIGUE, 100, 2);ApplyStatus(MAG_PSYCHIC_MENTAL_FATIGUE_DURATION_TECHNICAL, 100, 1);ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION, 100, 1)"
 

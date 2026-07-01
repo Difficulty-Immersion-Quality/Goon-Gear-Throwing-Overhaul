@@ -238,9 +238,90 @@ new subtable "1,1"
 object category "I_Goon_MAG_ZOC_ForceConduitWhileSurounded_Boots_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// ==================================== 
+// ==================================== Armour - Chest (Clothing)
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Violence_LowHP_Violence_Clothes_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_Cloth_Armour_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Barbarian_Magic_Armor_1_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Monk_Magic_Armor_1_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_BarbMonk_Offensive_Cloth_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_ChargedLightning_BonusAC_Robe_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 20
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_CharismaCaster_Robe_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// ==================================== Armour - Chest (Heavy)
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_MAG_MeleeDebuff_AttackDebuff2_OnDamage_SplintMail",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Infernal_Plate_Armor_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_XXX",1,0,0,0,0,0,0,0
 new subtable "1,1"

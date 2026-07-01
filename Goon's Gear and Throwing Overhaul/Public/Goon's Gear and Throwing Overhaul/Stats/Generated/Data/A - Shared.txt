@@ -170,6 +170,39 @@ data "Boosts" "SpellSaveDC(1)"
 data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive') and not HasPassive('Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph')"
 data "OnRemoveFunctors" ""
 
+// ==================================== Magical Plate ====================================
+
+new entry "ARM_MagicalPlate_1_Passive"
+type "PassiveData"
+using "ARM_MagicalPlate_1_Passive"
+// // Magical Plate
+// data "DisplayName" "h05e94d9eg15feg4151gae95g17ba0c3c39c7;2"
+// // All incoming damage is reduced by [1].
+// data "Description" "hcfffddb5g33c6g45c7gb3e8g153bd1bcbf70;3"
+// data "DescriptionParams" "1"
+data "Properties" "Highlighted"
+// data "Boosts" "DamageReduction(All, Flat, 1)"
+
+new entry "ARM_MagicalPlate_1_Passive_Polymorph"
+type "PassiveData"
+using "ARM_MagicalPlate_1_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+new entry "ARM_MagicalPlate_2_Passive"
+type "PassiveData"
+// using "ARM_MagicalPlate_1_Passive"
+using "ARM_MagicalPlate_2_Passive"
+// data "DescriptionParams" "2"
+data "Properties" "Highlighted"
+// data "Boosts" "DamageReduction(All, Flat, 2)"
+
+new entry "ARM_MagicalPlate_2_Passive_Polymorph"
+type "PassiveData"
+using "ARM_MagicalPlate_2_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
 // ==================================== Shadow Blade - Knife of the Undermountain King, Justiciar's Scimitar ====================================
 // Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
 // Note: Necessary to include here as it's a passive used by multiple weapons and not just the summon itself.

@@ -49,9 +49,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_Shadow_FogOfCloudDisengage_Cloak_Passive"
 type "PassiveData"
 using "MAG_Shadow_FogOfCloudDisengage_Cloak_Passive"
-// Cunning Brume
+// // Cunning Brume
 // data "DisplayName" "h978147f5g586dg4572g9b6bg2623555009a3;2"
-// When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengages&lt;/LSTag&gt;, they also create a foggy cloud with [1] radius that last for [2] turns.
+// // When the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengages&lt;/LSTag&gt;, they also create a foggy cloud with [1] radius that last for [2] turns.
 // data "Description" "h3c318747gdbe2g4a62g9b06g88d2ecfeb1e1;4"
 // data "DescriptionParams" "Distance(2);1"
 data "DescriptionParams" "Distance(3);1"
@@ -84,9 +84,9 @@ data "StatsFunctors" "CreateSurface(3,3,FogCloud,true)"
 new entry "Absorb_Elements_Passive"
 type "PassiveData"
 using "Absorb_Elements_Passive"
-// Absorb Elements
+// // Absorb Elements
 // data "DisplayName" "h867c957ag5de7g4ae9gbaf3g443e3cfffd6e;2"
-// Absorb elemental damage once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. Take half damage from the next elemental attack targetting you, and deal an additional [1] of that element type on your next attack.
+// // Absorb elemental damage once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. Take half damage from the next elemental attack targetting you, and deal an additional [1] of that element type on your next attack.
 // data "Description" "h2de0dccag2991g4e2fg8c14g852929b0d62e;4"
 // data "DescriptionParams" "1d6"
 data "Properties" "OncePerShortRest"
@@ -109,7 +109,7 @@ data "Properties" "OncePerShortRest"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // using "MAG_SPELLBLADE_ACID_ENERGY"
-// Absorb Elements: Acid Damage
+// // Absorb Elements: Acid Damage
 // data "DisplayName" "h7e5ae7ebg034eg4791g9624g153106fa657d;2"
 // data "DescriptionParams" "DealDamage(1d6, Acid)"
 // data "Icon" "statIcons_AbsorbElement_Acid"
@@ -120,7 +120,7 @@ data "Properties" "OncePerShortRest"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // using "MAG_SPELLBLADE_COLD_ENERGY"
-// Absorb Elements: Cold Damage
+// // Absorb Elements: Cold Damage
 // data "DisplayName" "h45187c88g71cdg4090ga9b5gc1b4ab1e5dc3;2"
 // data "DescriptionParams" "DealDamage(1d6, Cold)"
 // data "Icon" "statIcons_AbsorbElement_Cold"
@@ -131,7 +131,7 @@ data "Properties" "OncePerShortRest"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // using "MAG_SPELLBLADE_FIRE_ENERGY"
-// Absorb Elements: Fire Damage
+// // Absorb Elements: Fire Damage
 // data "DisplayName" "h6c03468bgba88g4190gb462g4f2251f3de55;2"
 // data "DescriptionParams" "DealDamage(1d6, Fire)"
 // data "Icon" "statIcons_AbsorbElement_Fire"
@@ -142,7 +142,7 @@ data "Properties" "OncePerShortRest"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // using "MAG_SPELLBLADE_LIGHTNING_ENERGY"
-// Absorb Elements: Lightning Damage
+// // Absorb Elements: Lightning Damage
 // data "DisplayName" "haf069834ga594g487agb5c2g67863a5a8d66;2"
 // data "DescriptionParams" "DealDamage(1d6, Lightning)"
 // data "Icon" "statIcons_AbsorbElement_Lightning"
@@ -153,7 +153,7 @@ data "Properties" "OncePerShortRest"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // using "MAG_SPELLBLADE_THUNDER_ENERGY"
-// Absorb Elements: Thunder Damage
+// // Absorb Elements: Thunder Damage
 // data "DisplayName" "h181ae604g133fg4f70ga5b0g6ed0e2bacbee;2"
 // data "DescriptionParams" "DealDamage(1d6, Thunder)"
 // data "Icon" "statIcons_AbsorbElement_Thunder"
@@ -165,7 +165,7 @@ data "Properties" "OncePerShortRest"
 // new entry "MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
 // type "PassiveData"
 // using "MAG_Interrupt_MAG_Shield_Resource_Passive"
-// %%% Absorb Element Cloak Resource
+// // %%% Absorb Element Cloak Resource
 // data "DisplayName" "h5b743049g5654g443fg99a7g8083963419bd;1"
 // data "Properties" "IsHidden;OncePerShortRest"
 // data "StatsFunctorContext" "OnCreate;OnShortRest;OnLongRest"
@@ -175,21 +175,21 @@ data "Properties" "OncePerShortRest"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // using "MAG_SHIELD_RESOURCE"
-// %%% Absorb Element Cloak Resource
+// // %%% Absorb Element Cloak Resource
 // data "DisplayName" "ha90e7426g3ee7g4c27g844eg0274dbe3bf80;1"
 // data "StackId" "MAG_ABSORB_ELEMENT_RESOURCE"
 // data "Boosts" "ActionResource(Interrupt_AbsorbElements, 1, 0)"
 
 // ==================================== Interrupt - Cloak of Elemental Absorption
-// TODO: 5e Spells does a dodgy ass overwrite of the vanilla interrupt.
+// Note: 5e Spells previously did a dodgy overwrite.
 
 new entry "Interrupt_AbsorbElements"
 type "InterruptData"
 // using "Interrupt_DampenElements"
 using "Interrupt_AbsorbElements"
-// Absorb Elements
+// // Absorb Elements
 // data "DisplayName" "h061f2c2ag7fe0g4eafg8b0dg3a108ace358b;1"
-// Absorb elemental damage once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. Take half damage from the next elemental attack targetting you, and deal an additional [1] of that element type on your next attack.
+// // Absorb elemental damage once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. Take half damage from the next elemental attack targetting you, and deal an additional [1] of that element type on your next attack.
 // data "Description" "h765aa8fbg842ag4baag9b89g352140c0b860;3"
 // data "DescriptionParams" "1d6"
 // data "Icon" "PassiveFeature_AbsorbElements"
@@ -209,9 +209,9 @@ new entry "ABSORB_ELEMENTS_ACTIVE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "ABSORB_ELEMENTS_ACTIVE"
-// Absorb Elements
+// // Absorb Elements
 // data "DisplayName" "h7c893f57gccd6g4623g99d2gb49450694b76;2"
-// Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
+// // Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
 // data "Description" "hdf20dec9g0a4eg4202g9d6eg0ff791eb9526;2"
 // data "DescriptionParams" "1d6"
 // data "Icon" "PassiveFeature_AbsorbElements"
@@ -228,9 +228,9 @@ data "StatusPropertyFlags" ""
 new entry "GOON_ABSORB_ELEMENTS_ACTIVE"
 type "StatusData"
 data "StatusType" "BOOST"
-// Absorb Elements
+// // Absorb Elements
 data "DisplayName" "h7c893f57gccd6g4623g99d2gb49450694b76;2"
-// Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
+// // Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
 data "Description" "hdf20dec9g0a4eg4202g9d6eg0ff791eb9526;2"
 data "Icon" "PassiveFeature_AbsorbElements"
 data "Boosts" "DamageReduction(Acid,Half);DamageReduction(Cold,Half);DamageReduction(Fire,Half);DamageReduction(Lightning,Half);DamageReduction(Thunder,Half)"
@@ -239,9 +239,9 @@ data "Passives" "Goon_Absorb_Elements_Active_Technical_Passive"
 
 new entry "Goon_Absorb_Elements_Active_Technical_Passive"
 type "PassiveData"
-// Absorb Elements
+// // Absorb Elements
 data "DisplayName" "h7c893f57gccd6g4623g99d2gb49450694b76;2"
-// Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
+// // Absorbing elemental damage.&lt;br&gt;&lt;br&gt; The first time the affected entity is hit with Acid, Cold, Fire, Lightning, or Thunder damage, it only takes half damage. &lt;br&gt;&lt;br&gt;The next time it lands a hit with a melee attack, it deals an additional [1] damage of the element that hit it.
 data "Description" "hdf20dec9g0a4eg4202g9d6eg0ff791eb9526;2"
 data "Icon" "PassiveFeature_AbsorbElements"
 data "Properties" "IsHidden"
@@ -250,7 +250,7 @@ data "Conditions" "HasLastAttackTriggered()"
 data "StatsFunctors" "RemoveStatus(GOON_ABSORB_ELEMENTS_ACTIVE)"
 
 // ==================================== Cloak of Protection ====================================
-// TODO: Something/anything.
+// Changes: Forced honour ruleset changes.
 
 new entry "MAG_PHB_CloakOfProtection_Cloak"
 type "Armor"
@@ -258,10 +258,16 @@ type "Armor"
 using "MAG_PHB_CloakOfProtection_Cloak"
 // data "RootTemplate" "602f62dd-0fba-4438-ad68-b846f17ac538"
 // data "ValueLevel" "7"
+// data "ValueScale" "1.5"
 data "ValueScale" "1.5"
 // data "Rarity" "Uncommon"
 // data "Boosts" "AC(1);RollBonus(SavingThrow, 1)"
 // data "Unique" "1"
+
+new entry "GOON_CLOAKOFPROTECTION_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // new entry "MAG_PHB_CloakOfProtection_Cloak"
 // type "Armor"
@@ -293,11 +299,11 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_Acid_AcidMeleeCounter_Cloak_Passive"
 type "PassiveData"
 using "MAG_Acid_AcidMeleeCounter_Cloak_Passive"
-// Caustic Reprisal
+// // Caustic Reprisal
 // data "DisplayName" "hd28a7380g40ddg4b02gb51fg41c0d8605589;2"
-// Whenever a creature deals melee damage to the wearer, that creature takes [1].
+// // Whenever a creature deals melee damage to the wearer, that creature takes [1].
 // data "Description" "h4ce1ee75g0b87g4e07gb859gd18b27cede6d;3"
-// Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; on the wearer it takes [1], or [2] if landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;. The attacker has a 50% chance to be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn, if the attacker already has the Acid condition the duration is instead increased by [3].
+// // Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; on the wearer it takes [1], or [2] if landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;. The attacker has a 50% chance to be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn, if the attacker already has the Acid condition the duration is instead increased by [3].
 data "Description" "he96e9841g3c7fg479fga83bg1a766b65e545;1"
 // data "DescriptionParams" "DealDamage(1d4, Acid)"
 data "DescriptionParams" "DealDamage(1d4, Acid);DealDamage(2d4, Acid);1"
@@ -312,9 +318,9 @@ data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical,,0,,true,false);ApplySt
 new entry "GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID"
 type "StatusData"
 data "StatusType" "BOOST"
-// Caustic Reprisal
+// // Caustic Reprisal
 data "DisplayName" "hd28a7380g40ddg4b02gb51fg41c0d8605589;2"
-// Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; on the wearer it takes [1], or [2] if landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;. The attacker has a 50% chance to be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn, if the attacker already has the Acid condition the duration is instead increased by [3].
+// // Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; on the wearer it takes [1], or [2] if landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;. The attacker has a 50% chance to be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn, if the attacker already has the Acid condition the duration is instead increased by [3].
 data "Description" "he96e9841g3c7fg479fga83bg1a766b65e545;1"
 data "DescriptionParams" "DealDamage(1d4, Acid);DealDamage(2d4, Acid);1"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -525,11 +531,11 @@ data "PassivesOnEquip" "MAG_LC_Nymph_Cloak_Passive"
 new entry "MAG_LC_Nymph_Cloak_Passive"
 type "PassiveData"
 using "MAG_LC_Nymph_Cloak_Passive"
-// Nymphish Charm
+// // Nymphish Charm
 // data "DisplayName" "h73b3a2begfd77g41f4g8828g639e76e91dcd;2"
-// Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1], to maximum of [2].
+// // Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1], to maximum of [2].
 // data "Description" "h98845916g5f75g4846g81c5g1cbd08bfbe10;2"
-// Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].
+// // Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].
 data "Description" "h1707807fg321ag4ba2g9be3gd18171fda6cb;1"
 // data "DescriptionParams" "1;20"
 data "DescriptionParams" "1"
@@ -555,19 +561,25 @@ using "MAG_Critical_HidingCritical_Cloak"
 // data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
 // data "Rarity" "VeryRare"
 // data "PassivesOnEquip" "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
-data "StatusOnEquip" "GOON_SHADESLAYERCLOAK_TECHNICAL"
+data "StatusOnEquip" "GOON_SHADESLAYERCLOAK_EQUIP_TECHNICAL"
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "GOON_SHADESLAYERCLOAK_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+new entry "GOON_SHADESLAYERCLOAK_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 
 // new entry "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
 // type "PassiveData"
-// Stealthy Critical
+// // Stealthy Critical
 // data "DisplayName" "h45c8f017g88abg43e8gbbb0gbeabc933a016;2"
-// While hiding, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
+// // While hiding, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
 // data "Description" "h8cbbaa63g1d97g4741gb065gc06a1647ab86;4"
 // data "DescriptionParams" "1"
 // data "StatsFunctorContext" "OnStatusApplied"
@@ -577,9 +589,9 @@ data "StatusOnEquip" "GOON_SHADESLAYERCLOAK_TECHNICAL"
 // new entry "MAG_CRITICAL_HIDING_CRITICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// Skilled Skullduggery
+// // Skilled Skullduggery
 // data "DisplayName" "h62406005ge05dg48b9ga380gaa57a95da8a4;2"
-// While hidden, the number the affected entity needs to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
+// // While hidden, the number the affected entity needs to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
 // data "Description" "h08b96f36gef73g4a68gb668ga4bd010b3178;6"
 // data "DescriptionParams" "1"
 // data "Icon" "PassiveFeature_Generic_Threat"
@@ -589,12 +601,6 @@ data "StatusOnEquip" "GOON_SHADESLAYERCLOAK_TECHNICAL"
 // data "RemoveConditions" "not HasStatus('SNEAKING_CLEAR') and not HasStatus('SNEAKING_LIGHTLY_OBSCURED') and not HasStatus('SNEAKING_HEAVILY_OBSCURED')"
 // data "RemoveEvents" "OnObscurityChanged;OnStatusRemoved;OnStatusApplied"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
-
-new entry "GOON_SHADESLAYERCLOAK_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 
 // ==================================== Cloak of Avarice (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -641,6 +647,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 
 // ==================================== Braindrain Cape (Innaccessible/cut content) ====================================
 // Bug Fix: Mental Debilitation no longer applies Mental Fatigue to creatures that are not enemies.
+// Bug Fix: Mental Debilitation can now trigger on missed Attack Rolls that still have a relevant Saving Throw.
 // Bug Fix: Mental Debilitation will no longer attempt to apply Mental Fatigure to the wearer.
 // Changes: Mental Debilitation's Mental Fatigue condition application will now only apply once per action.
 // Changes: Forced honour ruleset changes.
@@ -680,7 +687,7 @@ using "MAG_Psychic_MentalFatigue_Cape_Passive"
 data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
 // data "StatsFunctorContext" "OnAttacked"
 // data "Conditions" "not Item() and not Self() and not IsMiss() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow()"
-data "Conditions" "not Item() and not Self() and Enemy() and not IsMiss() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION',context.Source)"
+data "Conditions" "not Item() and not Self() and Enemy() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION',context.Source)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_PSYCHIC_MENTAL_FATIGUE, 100, 2);ApplyStatus(SELF, MAG_PSYCHIC_MENTAL_FATIGUE_DURATION_TECHNICAL, 100, 1)"
 data "StatsFunctors" "ApplyStatus(SWAP, MAG_PSYCHIC_MENTAL_FATIGUE, 100, 2);ApplyStatus(SWAP, MAG_PSYCHIC_MENTAL_FATIGUE_DURATION_TECHNICAL, 100, 1);ApplyStatus(SWAP,GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION, 100, 1)"
 

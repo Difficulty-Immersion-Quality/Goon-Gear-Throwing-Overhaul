@@ -4,9 +4,34 @@
 
 // ==================================== Magical variants ====================================
 
-// 
+// new entry "ARM_Splint_Body_1"
+// type "Armor"
+// using "ARM_Splint_Body"
+// data "RootTemplate" "ecfb1364-b1a0-4d0e-b82a-0becd8c291fd"
+// data "ArmorClass" "18"
+// data "ValueUUID" "4024ce6c-f02d-4d7c-8033-869ada06ef82"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "ARM_SuperiorPlate_1_Passive"
 
-// ==================================== Protective Plate ====================================
+// new entry "ARM_Plate_Body_1"
+// type "Armor"
+// using "ARM_Plate_Body"
+// data "RootTemplate" "dd905194-9a67-4c61-b26d-5b4da4725cde"
+// data "ArmorClass" "19"
+// data "ValueUUID" "4024ce6c-f02d-4d7c-8033-869ada06ef82"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "ARM_SuperiorPlate_1_Passive"
+
+// new entry "ARM_Plate_Body_2"
+// type "Armor"
+// using "ARM_Plate_Body"
+// data "RootTemplate" "fdb8ce53-51dc-4ccb-9e29-d1d99040e60b"
+// data "ArmorClass" "20"
+// data "ValueUUID" "f0307da3-feb7-40b0-bd62-18eea9167021"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "ARM_ExceptionalPlate_2_Passive"
+
+// ==================================== 1. Protective Plate ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -16,7 +41,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Armour of Devotion ====================================
+// ==================================== 2. Armour of Devotion ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -26,7 +51,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Cerebral Citadel Armour ====================================
+// ==================================== 3. Cerebral Citadel Armour ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -36,7 +61,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Dwarven Splintmail ====================================
+// ==================================== 4. Dwarven Splintmail ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -46,7 +71,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Flawed Helldusk Armour ====================================
+// ==================================== 5. Flawed Helldusk Armour ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -56,7 +81,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Rippling Force Mail ====================================
+// ==================================== 6. Rippling Force Mail ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -66,9 +91,12 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Adamantine Splint Armour ====================================
+// ==================================== 7. Adamantine Splint Armour ====================================
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
+// Changes: Intense Adamantine Backlash now functions while under the effects of non-humanoid polymorphs.
+// Changes: Magical Plate now functions while under the effects of non-humanoid polymorphs.
+// Changes: Critical Hit Resistance now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_MeleeDebuff_AttackDebuff2_OnDamage_SplintMail"
 type "Armor"
@@ -81,14 +109,50 @@ using "MAG_MeleeDebuff_AttackDebuff2_OnDamage_SplintMail"
 // data "Boosts" "Disadvantage(Skill,Stealth);CriticalHit(AttackTarget,Success,Never)"
 data "Boosts" "Disadvantage(Skill,Stealth)"
 // data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive"
-data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive;Goon_Critical_Hit_Resistance"
+data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph;Goon_Gear_Polymorph_AdamantineSplintArmour"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// Not unique
 
-// ==================================== Armour of Persistence ====================================
+new entry "GOON_ADAMANTINESPLINTARMOUR_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_AdamantineSplintArmour"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_ADAMANTINESPLINTARMOUR, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_ADAMANTINESPLINTARMOUR"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_ADAMANTINESPLINTARMOUR"
+data "Boosts" "Disadvantage(Skill,Stealth)"
+data "Passives" "ARM_MagicalPlate_2_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph"
+
+// ==================
+
+new entry "MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive"
+type "PassiveData"
+using "MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive"
+// // Intense Adamantine Backlash
+// data "DisplayName" "hae95c613g833bg4640ga9aag9e1fabb75223;2"
+// // When a melee attack hits you, the attacker is sent &lt;LSTag Type="Status" Tooltip="MAG_ATTACK_DEBUFF"&gt;Reeling&lt;/LSTag&gt; for 3 turns.
+// data "Description" "ha6140669g8d54g4831g965bg2c3c1abc77b7;4"
+// // Reeling creatures have a -1 penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; for every turn remaining.
+// data "ExtraDescription" "h7c5dc480ga856g4599g9b17gbc9387b221a4;3"
+data "ExtraDescription" ""
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnDamaged"
+// data "Conditions" "IsMeleeAttack() and Character()"
+// data "StatsFunctors" "ApplyStatus(SWAP,MAG_ATTACK_DEBUFF,100,3);ApplyStatus(SWAP, MAG_ATTACK_DEBUFF_DURATION_TECHNICAL, 100, 1)"
+
+// ==================================== 8. Armour of Persistence ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -98,7 +162,7 @@ data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive;MAG_MeleeDebuff_AttackDebuff2
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Blackguard's Plate ====================================
+// ==================================== 9. Blackguard's Plate ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -108,7 +172,7 @@ data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive;MAG_MeleeDebuff_AttackDebuff2
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Emblazoned Plate of the Marshal ====================================
+// ==================================== 10. Emblazoned Plate of the Marshal ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -118,7 +182,7 @@ data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive;MAG_MeleeDebuff_AttackDebuff2
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Reaper's Embrace ====================================
+// ==================================== 11. Reaper's Embrace ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -128,9 +192,13 @@ data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive;MAG_MeleeDebuff_AttackDebuff2
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Helldusk Armour ====================================
+// ==================================== 12. Helldusk Armour ====================================
 // Bug Fix: Now properly considered Heavy Armour. The absurd hidden passive "MAG_FlexibleArmor_Defense_Passive" has been removed now that the Defence fighting style actually works with the armour.
-// Changes: Instead of just granting Proficiency with the armour itself it now grants Proficiency with the armour type.
+// Bug Fix: Infernal Retribution no longer applies Burning to creatures that are not enemies.
+// Changes: Infernal Retribution's Burning condition application will now only apply once per action.
+// Changes: Infernal Retribution now functions while under the effects of non-humanoid polymorphs.
+// Changes: Prime Aegis of Fire now functions while under the effects of non-humanoid polymorphs.
+// Changes: Instead of granting "Proficiency" with the armour itself, it now grants Proficiency with the armour type.
 
 new entry "MAG_Infernal_Plate_Armor"
 type "Armor"
@@ -142,48 +210,95 @@ using "MAG_Infernal_Plate_Armor"
 // data "Rarity" "Legendary"
 // data "Boosts" "UnlockSpell(Shout_MAG_Infernal_Fly)"
 // data "PassivesOnEquip" "MAG_HellDusk_Proficiency_Passive;MAG_Infernal_Plate_Armor_Passive;MAG_Infernal_Plate_Armor_DamageThreshold_Passive;MAG_FlexibleArmor_Defense_Passive"
-data "PassivesOnEquip" "MAG_HellDusk_Proficiency_Passive;MAG_Infernal_Plate_Armor_Passive;MAG_Infernal_Plate_Armor_DamageThreshold_Passive"
+data "PassivesOnEquip" "MAG_HellDusk_Proficiency_Passive;MAG_Infernal_Plate_Armor_Passive;MAG_Infernal_Plate_Armor_DamageThreshold_Passive;Goon_Gear_Polymorph_HellduskArmour"
 // data "Unique" "1"
 // data "MinLevel" "1"
 // data "Proficiency Group" ""
 data "Proficiency Group" "HeavyArmor"
+
+new entry "Goon_MAG_Infernal_Plate_Armor_NotUnique"
+type "Armor"
+using "MAG_Infernal_Plate_Armor"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_HELLDUSKARMOUR_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================
+
+new entry "Goon_Gear_Polymorph_HellduskArmour"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_HELLDUSKARMOUR, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_HELLDUSKARMOUR"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_HELLDUSKARMOUR"
+data "Boosts" ""
+data "Passives" "MAG_HellDusk_Proficiency_Passive;MAG_Infernal_Plate_Armor_Passive;MAG_Infernal_Plate_Armor_DamageThreshold_Passive"
+
+// ==================
+
 new entry "MAG_HellDusk_Proficiency_Passive"
 type "PassiveData"
 using "MAG_HellDusk_Proficiency_Passive"
 // using "MAG_PHB_ElvenChain_Armor_Passive"
-// Helldusk Armour
+// // Helldusk Armour
 // data "DisplayName" "ha92ec59eg7282g4c4bga663g310b1f9b8986;2"
-// The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Heavy Armour.
+// // The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Heavy Armour.
 data "Description" "h87ccb0e5g2a3bg416ag925bgfce34a7b2cb1;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 data "Boosts" "Proficiency(HeavyArmor)"
 
-// new entry "MAG_Infernal_Plate_Armor_Passive"
-// type "PassiveData"
-// Infernal Retribution
+new entry "MAG_Infernal_Plate_Armor_Passive"
+type "PassiveData"
+using "MAG_Infernal_Plate_Armor_Passive"
+// // Infernal Retribution
 // data "DisplayName" "h0c7f25f3g7f9cg44d3ga2c3g0a853ee5d6ef;3"
-// When you succeed a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, the caster receives &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [1] turns.
+// // When you succeed a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, the caster receives &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [1] turns.
 // data "Description" "h20e3e442g18e2g448dg9730g64b0f492110c;4"
+// // When the wearer succeeds a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against an enemy's spell or action, the enemy is afflicted with &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [1] rounds.
+data "Description" "ha2e8b9ebg2f8ag4548gbfa8g9191da3545d8;1"
 // data "DescriptionParams" "3"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnAttacked"
 // data "Conditions" "IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and not Self() and IsSavingThrow()"
+data "Conditions" "not Item() and not Self() and Enemy() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_INFERNALRETRIBUTION',context.Source)"
 // data "StatsFunctors" "ApplyStatus(SWAP, MAG_INFERNAL_BURNING, 100, 3)"
+data "StatsFunctors" "ApplyStatus(SWAP, MAG_INFERNAL_BURNING, 100, 3);ApplyStatus(SWAP,GOON_ONCEPERACTION_COOLDOWN_INFERNALRETRIBUTION, 100, 1)"
 
-// new entry "MAG_Infernal_Plate_Armor_DamageThreshold_Passive"
-// type "PassiveData"
-// Prime Aegis of Fire
+new entry "GOON_ONCEPERACTION_COOLDOWN_INFERNALRETRIBUTION"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_INFERNALRETRIBUTION"
+
+new entry "MAG_Infernal_Plate_Armor_DamageThreshold_Passive"
+type "PassiveData"
+using "MAG_Infernal_Plate_Armor_DamageThreshold_Passive"
+// // Prime Aegis of Fire
 // data "DisplayName" "ha2e6afcbga851g4e2ag9549g76cc692e371b;2"
-// You have &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to Fire damage and cannot be &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burned&lt;/LSTag&gt;. You take [1] less damage from all sources.
+// // You have &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to Fire damage and cannot be &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burned&lt;/LSTag&gt;. You take [1] less damage from all sources.
 // data "Description" "hec8a356bg9a34g47e3g9718g33bf490de21a;5"
+// // The wearer is &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to[1] and cannot be &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burned&lt;/LSTag&gt;. They take [2] less damage from all sources.
+data "Description" "h5db7b450ge2f1g4a6bg992cgb818d9f05adf;1"
 // data "DescriptionParams" "3"
+data "DescriptionParams" "DealDamage(,Fire);3"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "Boosts" "Resistance(Fire, Resistant);StatusImmunity(BURNING);DamageReduction(All, Flat, 3)"
 
-// ==================================== Sarevok's Wretched Armour (Innaccessible/cut content) ====================================
+// ==================================== 13. Sarevok's Wretched Armour (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -193,7 +308,7 @@ data "Boosts" "Proficiency(HeavyArmor)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Oathbreaker Knight Armour (Innaccessible/cut content) ====================================
+// ==================================== 14. Oathbreaker Knight Armour (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry

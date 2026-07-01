@@ -1508,7 +1508,7 @@ data "Properties" "Highlighted"
 // data "BoostContext" "OnEquip;OnCreate"
 data "BoostContext" "OnEquip;OnCreate"
 // data "BoostConditions" "not WearingArmor(context.Source) and not HasShieldEquipped(context.Source)"
-data "BoostConditions" "(not WearingArmor(context.Source) and not HasShieldEquipped(context.Source)) or Goon_IsRestrictedPolymorphStatus()"
+data "BoostConditions" "Goon_NotWearingArmorOrHasShieldEquipped()"
 // data "Boosts" "AC(1);RollBonus(SavingThrow, 1)"
 data "Boosts" "AC(1);RollBonus(SavingThrow, 1)"
 

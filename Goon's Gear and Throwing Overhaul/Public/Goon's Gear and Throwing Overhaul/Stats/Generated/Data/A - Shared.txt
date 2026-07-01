@@ -197,11 +197,48 @@ using "ARM_MagicalPlate_2_Passive"
 data "Properties" "Highlighted"
 // data "Boosts" "DamageReduction(All, Flat, 2)"
 
-new entry "ARM_MagicalPlate_2_Passive_Polymorph"
+new entry "Goon_ARM_MagicalPlate_2_Passive_Polymorph"
 type "PassiveData"
 using "ARM_MagicalPlate_2_Passive"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+// ==================================== Stealthy ====================================
+
+new entry "ARM_Stealthy_1_Passive"
+type "PassiveData"
+using "ARM_Stealthy_1_Passive"
+// // Stealthy
+// data "DisplayName" "h1ef55a95g7073g4a06g82feg1cb443bce5a8;2"
+// // Gain a +[1] bonus to Stealth &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
+// data "Description" "h3e1bf121gff26g45fbg8fcdgcc2b96ca7298;2"
+// // Gain a +[1] bonus to &lt;LSTag Tooltip="Stealth"&gt;Stealth&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
+data "Description" "h2a1426e3g5bb6g4ca4g9b96g7c676ef74be8;1"
+// data "DescriptionParams" "1"
+// data "Boosts" "RollBonus(SkillCheck, 1, Stealth)"
+
+new entry "Goon_ARM_Stealthy_1_Passive_Polymorph"
+type "PassiveData"
+using "ARM_Stealthy_1_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+// new entry "ARM_Stealthy_2_Passive"
+// type "PassiveData"
+// using "ARM_Stealthy_1_Passive"
+// data "DescriptionParams" "2"
+// data "Boosts" "RollBonus(SkillCheck, 2, Stealth)"
+
+new entry "Goon_ARM_Stealthy_2_Passive_Polymorph"
+type "PassiveData"
+using "ARM_Stealthy_2_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+// ==================================== Advantage ====================================
+// TODO: All items with Advantage boosts directly on them have a wack ass tooltip referring to "Saving Throws Checks". Do as passives instead.
+
+// data "Boosts" "Advantage(SavingThrow, Constitution)"
 
 // ==================================== Shadow Blade - Knife of the Undermountain King, Justiciar's Scimitar ====================================
 // Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.

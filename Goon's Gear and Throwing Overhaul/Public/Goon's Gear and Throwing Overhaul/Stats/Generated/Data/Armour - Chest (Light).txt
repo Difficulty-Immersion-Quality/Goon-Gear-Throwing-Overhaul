@@ -6,7 +6,7 @@
 
 // 
 
-// ==================================== Blazer of Benevolence ====================================
+// ==================================== 1. Blazer of Benevolence ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -16,7 +16,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Scarlet Leather Armour ====================================
+// ==================================== 2. Scarlet Leather Armour ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -26,7 +26,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Drow Studded Leather Armour ====================================
+// ==================================== 3. Drow Studded Leather Armour ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -36,7 +36,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Penumbral Armour ====================================
+// ==================================== 4. Penumbral Armour ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -46,7 +46,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Shadeclinger Armour ====================================
+// ==================================== 5. Shadeclinger Armour ====================================
 // Bug Fix: Shadeclinger is removed when the armour is unequipped.
 
 new entry "MAG_Harpers_ArmorOfShadows"
@@ -81,7 +81,52 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 data "OnRemoveFunctors" "RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
 
-// ==================================== Spidersilk Armour ====================================
+// ==================================== 6. Spidersilk Armour ====================================
+// Bug Fix: The template now points to the correct stat entry. Spawning the item via UUID will now give the correct item, dismissing a hireling that was wearing the item doesn't get re-hired with a different item.
+// Changes: Advantage on Constitution Saving Throws now functions while under the effects of non-humanoid polymorphs.
+// Changes: Stealthy now functions while under the effects of non-humanoid polymorphs.
+// Changes: The colour is now much darker.
+
+new entry "GOB_DrowCommander_Leather_Armor"
+type "Armor"
+// using "ARM_StuddedLeather_Body_Drow"
+using "GOB_DrowCommander_Leather_Armor"
+// data "RootTemplate" "c0c0534c-b7fc-4d0b-a335-b8f4c548852d"
+// data "ItemGroup" ""
+// data "ValueScale" "1.1"
+// data "Rarity" "Rare"
+// data "Boosts" "Advantage(SavingThrow, Constitution)"
+// data "PassivesOnEquip" "ARM_Stealthy_1_Passive"
+data "PassivesOnEquip" "Goon_ARM_Stealthy_1_Passive_Polymorph;Goon_Gear_Polymorph_SpidersilkArmour"
+// data "Unique" "1"
+
+new entry "Goon_GOB_DrowCommander_Leather_Armor_NotUnique"
+type "Armor"
+using "GOB_DrowCommander_Leather_Armor"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_SPIDERSILKARMOUR_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_SpidersilkArmour"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_SPIDERSILKARMOUR, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_SPIDERSILKARMOUR"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_SPIDERSILKARMOUR"
+data "Boosts" "Advantage(SavingThrow, Constitution)"
+data "Passives" "Goon_ARM_Stealthy_1_Passive_Polymorph"
+
+// ==================================== 7. Armour of Landfall ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -91,17 +136,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Armour of Landfall ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== Armour of Moonbasking ====================================
+// ==================================== 8. Armour of Moonbasking ====================================
 // Bug Fix: Lunar Protection status now displays the correct AC bonus.
 // Bug Fix: Lunar Protection and Lunar Bestial Vitality can no longer cause an infinite status application loop and crash the game.
 // Bug Fix: Descriptions now specify that the effects work with Starry Form, in addition to Wild Shape.
@@ -197,7 +232,7 @@ data "RemoveConditions" "not Goon_IsDruidWildshape()"
 // data "StatusPropertyFlags" ""
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
-// ==================================== Armour of the Sporekeeper ====================================
+// ==================================== 9. Armour of the Sporekeeper ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -207,7 +242,7 @@ data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndi
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Bhaalist Armour ====================================
+// ==================================== 10. Bhaalist Armour ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -217,7 +252,7 @@ data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndi
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Elegant Studded Leather ====================================
+// ==================================== 11. Elegant Studded Leather ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -227,3 +262,22 @@ data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndi
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== 12. Torment Drinker Armour (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== 13. Druidic Armour variants (Innaccessible/cut content) ====================================
+// TODO: That one druid class mod is basically filling this void, patch them.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

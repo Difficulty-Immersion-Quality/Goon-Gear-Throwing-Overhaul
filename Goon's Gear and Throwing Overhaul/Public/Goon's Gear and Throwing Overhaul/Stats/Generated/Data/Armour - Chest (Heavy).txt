@@ -109,7 +109,7 @@ using "MAG_MeleeDebuff_AttackDebuff2_OnDamage_SplintMail"
 // data "Boosts" "Disadvantage(Skill,Stealth);CriticalHit(AttackTarget,Success,Never)"
 data "Boosts" "Disadvantage(Skill,Stealth)"
 // data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive"
-data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph;Goon_Gear_Polymorph_AdamantineSplintArmour"
+data "PassivesOnEquip" "Goon_ARM_MagicalPlate_2_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph;Goon_Gear_Polymorph_AdamantineSplintArmour"
 
 // Not unique
 
@@ -131,7 +131,7 @@ data "StatusType" "BOOST"
 using "GOON_GEAR_POLYMORPH_TEMPLATE"
 data "StackId" "GOON_GEAR_POLYMORPH_ADAMANTINESPLINTARMOUR"
 data "Boosts" "Disadvantage(Skill,Stealth)"
-data "Passives" "ARM_MagicalPlate_2_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph"
+data "Passives" "Goon_ARM_MagicalPlate_2_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff2_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph"
 
 // ==================
 
@@ -308,7 +308,17 @@ data "Properties" "Highlighted"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== 14. Oathbreaker Knight Armour (Innaccessible/cut content) ====================================
+// ==================================== 14. Nightsong's Armour (Innaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== 15. Oathbreaker Knight Armour (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry

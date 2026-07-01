@@ -4,333 +4,49 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-			<!-- Spidersilk Armour -->
-			<!-- TODO: More than just cosmetic changes -->
+			<!-- 1. Dark Justiciar Mail -->
 				<node id="GameObjects">
-					<attribute id="Description" type="TranslatedString" handle="h6d13c83cg1ab4g46d3ga3bcg8de349ce185d" version="1" />
-					<attribute id="DisplayName" type="TranslatedString" handle="h0d36c182gd7acg4e02gacdcg8b6094f22408" version="1" />
-					<attribute id="Icon" type="FixedString" value="Item_GOB_DrowCommander_Leather_Armor_GLOW" />
-					<attribute id="LevelName" type="FixedString" value="" />
-					<attribute id="MapKey" type="FixedString" value="c0c0534c-b7fc-4d0b-a335-b8f4c548852d" />
-					<attribute id="Name" type="LSString" value="GOB_DrowCommander_Armor_Leather" />
-					<attribute id="ParentTemplateId" type="FixedString" value="19451420-13f6-444c-a15b-7abb6dde3f91" />
-					<attribute id="Stats" type="FixedString" value="ARM_StuddedLeather_Body_Drow" />
-					<attribute id="Type" type="FixedString" value="item" />
-					<attribute id="VisualTemplate" type="FixedString" value="b81997b7-91ee-3c84-5ff4-e0abf8919d9a" />
-					<attribute id="_OriginalFileVersion_" type="int64" value="144818875517632512" />
-					<children>
-						<node id="Equipment">
-							<children>
-								<node id="AfroLongHair" />
-								<node id="AfroShortHair" />
-								<node id="CurlyLongHair" />
-								<node id="CurlyShortHair" />
-								<node id="DreadLongHair" />
-								<node id="DreadShortHair" />
-								<node id="LongHair" />
-								<node id="ParentRace">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="9a8bbeba-850c-402f-bac5-ff15696e6497" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="6d38f246-15cb-48b5-9b85-378016a7a78e" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-									</children>
-								</node>
-								<node id="ShortHair" />
-								<node id="Slot">
-									<attribute id="Object" type="FixedString" value="Body" />
-								</node>
-								<node id="VisualSet">
-									<attribute id="BodySetVisual" type="FixedString" value="" />
-									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
-									<children>
-										<node id="MaterialOverrides">
-											<attribute id="MaterialResource" type="FixedString" value="" />
-											<children>
-												<!-- Make her armour black start -->
-												<!-- <node id="MaterialPresets">
-													<children>
-														<node id="Object">
-															<attribute id="ForcePresetValues" type="bool" value="True" />
-															<attribute id="GroupName" type="FixedString" value="02 Colour" />
-															<attribute id="MapKey" type="FixedString" value="02 Colour" />
-															<attribute id="MaterialPresetResource" type="FixedString" value="5f589191-2691-45d8-0cce-31542a102bc2" />
-														</node>
-													</children> -->
-												<node id="MaterialPresets" />
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="False" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Cloth_Primary" />
-													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="False" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Primary" />
-													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="False" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Secondary" />
-													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="False" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Leather_Tertiary" />
-													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="False" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Primary" />
-													<attribute id="Value" type="fvec3" value="0.28 0.28 0.3" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="False" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Secondary" />
-													<attribute id="Value" type="fvec3" value="0.2 0.2 0.2" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="False" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Custom_2" />
-													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
-												<!-- Make her armour black end -->
-												</node>
-											</children>
-										</node>
-										<node id="RealMaterialOverrides" />
-									</children>
-								</node>
-								<node id="Visuals">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="f74aa09c-69ed-dd7f-6d3e-f36a0cde8537" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="2a18843f-4f50-a738-fbf4-97734d7b4b76" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="094c2bf5-a465-9395-86f4-91e3978b55ea" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="71180b76-5752-4a97-b71f-911a69197f58" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="aba6f4a5-c062-6481-afd8-7be4c19e3877" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="eee49ed4-6498-d170-da59-46b1cedcefbc" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="09137964-1018-8e4e-d809-441343ff9b69" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="e39505f7-f576-4e70-a99e-8e29cd381a11" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="efc5b4a4-d543-0a6a-fef3-28a6c246158c" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="e3f0541c-69e7-276c-773f-4181c616d7b7" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="bacf1afc-f0d2-2fdd-fa46-b462b30d1f89" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="47c0315c-7dc6-4862-b39b-8bf3a10f8b54" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="219f65b4-dcdd-b2a1-8e0d-e4257f4aaccb" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="2b5ec5b7-ba82-0575-30ee-711815fdf8f3" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="651c369d-7743-dd71-cfd7-6f0ede6324dc" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="08fbce4e-1074-6543-8350-256256d60ea8" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="f8e8d6f4-b23c-3bf2-3b31-806db6a4cd7c" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="a04b2596-4f05-e3a1-d278-979f7f9c9372" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="b8ea2c9e-7ad8-7cb1-4af4-c0532f6a7b77" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="eae53184-1829-9464-76de-16fa7b254c30" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="d8a42a58-b5fd-2819-a022-616ab4cae0c2" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="abf674d2-2ea4-4a74-ade0-125429f69f83" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="9ab0de43-fb8d-1b33-a38c-6f96efe6431a" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="9dde9aa2-b2ea-1c5a-a640-e063f91be501" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="58fce492-a0bd-9b43-4f17-26ada43321de" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="b4a34ce7-41be-44d9-8486-938fe1472149" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="81d4accd-5048-ae7a-a1dd-e5c4c660d199" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="ba495eda-d958-2f39-9182-1d101892a5d0" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="c04cc61d-7e87-e08e-3e81-66c5e305e3b1" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="a933e2a8-aee1-4ecb-80d2-8f47b706f024" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="bbb4b88c-a6e1-9dfb-ba9e-b661f2b4af7c" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="8daf8858-9616-102e-384d-d76059abbf5d" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="1b32ab59-22ae-8222-6871-01e4020af4f3" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="8f00cf38-4588-433a-8175-8acdbbf33f33" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="017f7f90-8376-58e6-e67d-5f7a97f753ed" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="a6e3ae09-5c86-152b-23a2-183993a418ad" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="52e48b69-7760-9686-7839-daee378051b4" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="5640e766-aa53-428d-815b-6a0b4ef95aca" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="efde35d1-6325-6d5a-30e4-c74e758ad47a" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="5dd627c0-4b2e-72ca-e40d-2c0e4e1bda73" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="381df663-62da-9d8e-c4b5-b053b3d623c8" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="c491d027-4332-4fda-948f-4a3df6772baa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="a1e929a3-bf3c-6301-008e-ef546a2812ea" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="f0090bc3-5ea2-6976-6e06-adfd77ea1b3a" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="f008aaa9-31c8-2029-29f2-5a6e088d0f0c" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="9a8bbeba-850c-402f-bac5-ff15696e6497" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="ef8bceb4-e5d1-9ab5-94f7-738e27ed9df7" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="c32ea07c-3b06-4410-faf0-81647aceeb65" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="2797fcb7-c969-7d8f-69fa-bd6e7cd32626" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="6d38f246-15cb-48b5-9b85-378016a7a78e" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="431582e7-974b-28e1-2e48-81fe5807dfee" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="6bc49c2d-de52-0097-25cc-38f727d2b0fa" />
-												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="6c3d2cb1-48da-0db1-5fa6-414aade9fe3f" />
-												</node>
-											</children>
-										</node>
-									</children>
-								</node>
-								<node id="WavyLongHair" />
-								<node id="WavyShortHair" />
-							</children>
-						</node>
-					</children>
 				</node>
+			<!-- 2. Hedge Wanderer Armour -->
+
+			<!-- 3. Luminous Armour -->
+
+			<!-- 4. Slippery Chain Shirt -->
+
+			<!-- 5. The Oak Father's Embrace -->
+
+			<!-- 7. Dark Justiciar Half-Plate (Rare) -->
+
+			<!-- 8. Elven Chain -->
+
+			<!-- 9. Psionic Ward Armour -->
+
+			<!-- 10. The Jolty Vest -->
+
+			<!-- 11. Unwanted Masterwork Scalemail -->
+
+			<!-- 12. Yuan-Ti Scale Mail -->
+
+			<!-- 13. Adamantine Scale Mail -->
+
+			<!-- 14. Armour of Agility -->
+
+			<!-- 15. Dark Justiciar Half-Plate (Very Rare) -->
+
+			<!-- 16. Flame Enamelled Armour -->
+
+			<!-- 17. Sharpened Snare Cuirass -->
+
+			<!-- 18. Githyanki Breastplate (Innaccessible/cut content) -->
+
+			<!-- 19. Ironwood Breastplate (Innaccessible/cut content) -->
+
+			<!-- 20. Nightsinger's Half-Plate (Innaccessible/cut content) -->
+
+			<!-- 21. Chain of Liberation (Innaccessible/cut content) -->
+
+			<!-- 22. Robust Chain Shirt (Innaccessible/cut content) -->
+
 			</children>
 		</node>
 	</region>

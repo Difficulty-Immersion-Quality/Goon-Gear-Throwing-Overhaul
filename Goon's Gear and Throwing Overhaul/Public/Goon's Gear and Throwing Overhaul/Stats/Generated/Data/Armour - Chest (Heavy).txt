@@ -39,7 +39,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 2. Armour of Devotion ====================================
 // TODO: Something/anything.
@@ -49,7 +49,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 3. Cerebral Citadel Armour ====================================
 // TODO: Something/anything.
@@ -59,7 +59,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 4. Dwarven Splintmail ====================================
 // TODO: Something/anything.
@@ -69,7 +69,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 5. Flawed Helldusk Armour ====================================
 // TODO: Something/anything.
@@ -79,7 +79,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 6. Rippling Force Mail ====================================
 // TODO: Something/anything.
@@ -89,7 +89,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 7. Adamantine Splint Armour ====================================
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
@@ -117,7 +117,7 @@ data "PassivesOnEquip" "Goon_ARM_MagicalPlate_2_Passive_Polymorph;MAG_MeleeDebuf
 new entry "GOON_ADAMANTINESPLINTARMOUR_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -161,7 +161,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 9. Blackguard's Plate ====================================
 // TODO: Something/anything.
@@ -171,7 +171,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 10. Emblazoned Plate of the Marshal ====================================
 // TODO: Something/anything.
@@ -181,7 +181,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 11. Reaper's Embrace ====================================
 // TODO: Something/anything.
@@ -191,7 +191,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 12. Helldusk Armour ====================================
 // Bug Fix: Now properly considered Heavy Armour. The absurd hidden passive "MAG_FlexibleArmor_Defense_Passive" has been removed now that the Defence fighting style actually works with the armour.
@@ -226,7 +226,7 @@ data "Unique" "0"
 new entry "GOON_HELLDUSKARMOUR_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -307,7 +307,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 14. Nightsong's Armour (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -317,7 +317,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 15. Oathbreaker Knight Armour (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -327,4 +327,4 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"

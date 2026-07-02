@@ -14,7 +14,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 2. Hedge Wanderer Armour ====================================
 // TODO: Something/anything.
@@ -24,7 +24,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 3. Luminous Armour ====================================
 // Bug Fix: Radiant Shockwave's tooltip now shows the duration it applies Radiant Orb for.
@@ -134,7 +134,7 @@ data "TooltipStatusApply" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 5. The Oak Father's Embrace ====================================
 // TODO: Something/anything.
@@ -144,7 +144,7 @@ data "TooltipStatusApply" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 6. Barkskin Armour ====================================
 // TODO: Something/anything.
@@ -154,7 +154,7 @@ data "TooltipStatusApply" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 7. Dark Justiciar Half-Plate (Rare) ====================================
 // TODO: Something/anything.
@@ -164,7 +164,7 @@ data "TooltipStatusApply" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 8. Elven Chain ====================================
 // Bug Fix: Now properly considered Medium Armour. The absurd hidden passive "MAG_FlexibleArmor_Defense_Passive" has been removed now that the Defence fighting style actually works with the armour.
@@ -196,7 +196,7 @@ data "Unique" "0"
 new entry "GOON_ELVENCHAIN_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -246,7 +246,7 @@ data "Description" "h01690207g33c5g472fg8572ga539576c8dbe;1"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 10. The Jolty Vest ====================================
 // TODO: Something/anything.
@@ -256,7 +256,7 @@ data "Description" "h01690207g33c5g472fg8572ga539576c8dbe;1"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 11. Unwanted Masterwork Scalemail ====================================
 // TODO: Something/anything.
@@ -266,7 +266,7 @@ data "Description" "h01690207g33c5g472fg8572ga539576c8dbe;1"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 12. Yuan-Ti Scale Mail ====================================
 // TODO: Something/anything.
@@ -276,7 +276,7 @@ data "Description" "h01690207g33c5g472fg8572ga539576c8dbe;1"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 13. Adamantine Scale Mail ====================================
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
@@ -304,7 +304,7 @@ data "PassivesOnEquip" "Goon_ARM_MagicalPlate_1_Passive_Polymorph;MAG_MeleeDebuf
 new entry "GOON_ADAMANTINESCALEMAIL_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -348,7 +348,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 15. Dark Justiciar Half-Plate (Very Rare) ====================================
 // TODO: Something/anything.
@@ -358,7 +358,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 16. Flame Enamelled Armour ====================================
 // TODO: Something/anything.
@@ -376,7 +376,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // new entry "MAG_LesserFlamingDispersion_Passive"
 // type "PassiveData"
@@ -421,7 +421,7 @@ data "Unique" "0"
 new entry "GOON_SHARPENEDSNARECUIRASS_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -465,7 +465,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 19. Ironwood Breastplate (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -475,7 +475,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 20. Nightsinger's Half-Plate (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -485,7 +485,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 21. Chain of Liberation (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -495,7 +495,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 22. Robust Chain Shirt (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -505,4 +505,4 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"

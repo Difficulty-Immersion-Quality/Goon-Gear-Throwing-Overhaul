@@ -14,7 +14,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Dark Justiciar Gauntlets (Uncommon) ====================================
 // TODO: Something/anything.
@@ -24,7 +24,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ========================== Fleetfingers ==========================
 // Bug Fix: Tooltip hyperlinks.
@@ -46,7 +46,7 @@ data "Boosts" "Advantage(Skill,Acrobatics)"
 new entry "GOON_FLEETFINGERS_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Mobility_JumpOnDash_Passive"
 type "PassiveData"
@@ -87,7 +87,7 @@ data "RemoveConditions" "IsStatusEvent(StatusEvent.OnSpellCast) and SpellCategor
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Baneful Striking ====================================
 // TODO: Something/anything.
@@ -97,7 +97,7 @@ data "RemoveConditions" "IsStatusEvent(StatusEvent.OnSpellCast) and SpellCategor
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Belligerent Skies ====================================
 // Changes: Thunderous Conversion will only apply Reverberation once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
@@ -122,7 +122,7 @@ data "PassivesOnEquip" "Goon_MAG_Thunder_Reverberation_Gloves_Passive"
 new entry "GOON_GLOVESOFBELLIGERENTSKIES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // new entry "MAG_Thunder_Reverberation_Gloves_Passive"
 // type "PassiveData"
@@ -164,7 +164,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Heroism ====================================
 // TODO: Something/anything.
@@ -174,9 +174,11 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of the Growling Underdog ====================================
+// Bug Fix: Underdog's Bravery now properly checks the range of enemies from the wearer, instead of the target.
+// Bug Fix: Underdog's Bravery now functions with melee attacks that aren't weapon attacks.
 // TODO: Something/anything.
 
 // gear entry
@@ -184,7 +186,18 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+new entry "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive"
+type "PassiveData"
+using "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive"
+// // Underdog's Bravery
+// data "DisplayName" "ha23a6fc0g00a3g432cg8b7ag7afca6adf044;2"
+// // The wearer gains &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;melee attack rolls&lt;/LSTag&gt; while surrounded by [1] or more foes.
+// data "Description" "h924148a4gc14ag4b1egb8dcg47f47a5ea62a;4"
+// data "DescriptionParams" "2"
+// data "Boosts" "IF(IsMeleeAttack() and IsWeaponAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Target, context.Source)):Advantage(AttackRoll);"
+data "Boosts" "IF(IsMeleeAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source)):Advantage(AttackRoll)"
 
 // ==================================== Gloves of Thievery ====================================
 // TODO: Something/anything.
@@ -194,7 +207,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Hellrider's Pride ====================================
 // TODO: Something/anything.
@@ -204,7 +217,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Herbalist's Gloves ====================================
 // TODO: Something/anything.
@@ -214,7 +227,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ichorous Gloves ====================================
 // TODO: Something/anything.
@@ -224,7 +237,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Knock Knuckle Gloves ====================================
 // TODO: Something/anything.
@@ -234,7 +247,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Luminous Gloves ====================================
 // Changes: Radiating Orb Gloves will only apply Radiating Orb once per action, for each target damaged.
@@ -255,7 +268,7 @@ data "Rarity" "Rare"
 new entry "GOON_LUMINOUSGLOVES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Radiant_RadiatingOrb_Gloves_Passive"
 type "PassiveData"
@@ -290,7 +303,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Thermoarcanic Gloves ====================================
 // TODO: Something/anything.
@@ -300,7 +313,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Unlucky Thief's Gloves ====================================
 // TODO: Something/anything.
@@ -310,7 +323,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Winter's Clutches ====================================
 // TODO: Something/anything.
@@ -320,7 +333,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Bracers of Defence ====================================
 // TODO: Something/anything.
@@ -330,7 +343,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Cerebral Citadel Gloves ====================================
 // TODO: Something/anything.
@@ -340,7 +353,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Cindersnap Gloves ====================================
 // TODO: Something/anything.
@@ -350,7 +363,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Craterflesh Gloves ====================================
 // Bug Fix: No longer a damage rider that functions as a damage rider source.
@@ -381,7 +394,7 @@ data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,fa
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Daredevil Gloves ====================================
 // TODO: Something/anything.
@@ -391,7 +404,7 @@ data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,fa
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Dark Displacement Gloves ====================================
 // TODO: Something/anything.
@@ -401,7 +414,7 @@ data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,fa
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Dark Justiciar Gauntlets (Rare) ====================================
 // TODO: Something/anything.
@@ -411,7 +424,7 @@ data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,fa
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Flawed Helldusk Gloves ====================================
 // TODO: Something/anything.
@@ -421,7 +434,7 @@ data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,fa
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Battlemage's Power ====================================
 // Bug Fix: Inadvertently fix every issue with Larian's Patch #8 implementation, such as Shadow Blade and Flame Blade triggering the effect with every successful attack.
@@ -439,7 +452,7 @@ data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,fa
 new entry "GOON_GLOVESOFBATTLEMAGESPOWER_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
 type "PassiveData"
@@ -464,7 +477,7 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Crushing ====================================
 // TODO: Something/anything.
@@ -474,7 +487,7 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Missile Snaring ====================================
 // TODO: Something/anything.
@@ -484,7 +497,7 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of the Automaton ====================================
 // TODO: Something/anything.
@@ -494,7 +507,7 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of the Balanced Hands ====================================
 // TODO: Something/anything.
@@ -504,7 +517,7 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of The Duellist ====================================
 // Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
@@ -521,7 +534,7 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 new entry "GOON_GLOVESOFTHEDUELLIST_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_OfTheDuelist_Gloves_Passive"
 type "PassiveData"
@@ -545,7 +558,7 @@ data "ExtraDescription" "hebb849acge25fg4a37g821cga5092f299d70;1"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Jhannyl's Gloves ====================================
 // Bug Fix: Description now states that it triggers from diseases and Bloodless being applied, matching the functionality.
@@ -569,7 +582,7 @@ data "ExtraDescription" "hebb849acge25fg4a37g821cga5092f299d70;1"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Harpers_JhannylGloves_Passive"
 type "PassiveData"
@@ -608,7 +621,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Nimblefinger Gloves ====================================
 // TODO: Something/anything.
@@ -618,7 +631,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Poisoner's Gloves ====================================
 // TODO: Something/anything.
@@ -628,7 +641,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Raven Gloves ====================================
 // TODO: Something/anything.
@@ -638,7 +651,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Seraphic Pugilist Gloves ====================================
 // TODO: Something/anything.
@@ -648,7 +661,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Servitor of the Black Hand Gloves ====================================
 // TODO: Something/anything.
@@ -658,7 +671,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Snow-Dusted Monastery Gloves ====================================
 // TODO: Something/anything.
@@ -668,7 +681,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Spellseeking Gloves ====================================
 // TODO: Something/anything.
@@ -678,7 +691,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Stalker Gloves ====================================
 // Bug Fix: Now works with Rakish Sneak Attack.
@@ -695,7 +708,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 new entry "GOON_STALKERGLOVES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // new entry "MAG_InitiativeBonus_1_Passive"
 // type "PassiveData"
@@ -727,7 +740,7 @@ data "Conditions" "Goon_IsSneakAttack()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== The Sparkle Hands ====================================
 // TODO: polymorph.
@@ -745,7 +758,7 @@ data "Conditions" "Goon_IsSneakAttack()"
 new entry "GOON_THESPRAKLEHANDS_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_ChargedLightning_Charge_OnUnarmedDamage_Passive"
 type "PassiveData"
@@ -778,7 +791,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Winkling Gloves ====================================
 // TODO: Something/anything.
@@ -788,7 +801,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Wondrous Gloves ====================================
 // TODO: Something/anything.
@@ -798,7 +811,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Abyss Beckoners ====================================
 // TODO: Something/anything.
@@ -808,7 +821,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Bhaalist Gloves ====================================
 // TODO: Something/anything.
@@ -818,7 +831,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Bonespike Gloves ====================================
 // TODO: Something/anything.
@@ -828,7 +841,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gauntlet of the Tyrant ====================================
 // TODO: Something/anything.
@@ -838,7 +851,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gauntlets of Hill Giant Strength ====================================
 // TODO: Something/anything.
@@ -848,7 +861,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gemini Gloves ====================================
 // TODO: Something/anything.
@@ -858,7 +871,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Dexterity ====================================
 // TODO: Something/anything.
@@ -868,7 +881,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Helldusk Gloves ====================================
 // Bug Fix: Infernal Touch's Bleeding application displays properly in the combat log.
@@ -895,7 +908,7 @@ data "Proficiency Group" "HeavyArmor"
 new entry "GOON_HELLDUSKGLOVES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Infernal_Metal_AttackBonus_Passive"
 type "PassiveData"
@@ -966,7 +979,7 @@ data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Quickspell Gloves ====================================
 // TODO: Something/anything.
@@ -976,7 +989,7 @@ data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Spellmight Gloves ====================================
 // TODO: Something/anything.
@@ -986,7 +999,7 @@ data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Gloves of Soul Catching ====================================
 // TODO: Something/anything.
@@ -996,7 +1009,7 @@ data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // TODO:
 // Legacy content

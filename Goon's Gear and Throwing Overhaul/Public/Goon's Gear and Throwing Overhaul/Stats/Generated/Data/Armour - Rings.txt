@@ -14,7 +14,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ========================== Callous Glow Ring ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
@@ -33,7 +33,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // new entry "MAG_Radiant_DamageBonusOnIlluminatedTarget_Ring_Passive"
 // type "PassiveData"
@@ -53,7 +53,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ========================== Coruscation Ring ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
@@ -72,7 +72,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // new entry "MAG_Radiant_RadiatingOrb_Ring_Passive"
 // type "PassiveData"
@@ -93,7 +93,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Djinni Ring ====================================
 // TODO: Something/anything.
@@ -103,7 +103,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Eversight Ring ====================================
 // TODO: Something/anything.
@@ -113,7 +113,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Explorer's Ring ====================================
 // TODO: Something/anything.
@@ -123,7 +123,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Family Ring ====================================
 // TODO: Something/anything.
@@ -133,7 +133,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Firzu's Ring of Trading ====================================
 // TODO: Something/anything.
@@ -143,7 +143,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Guild Ring ====================================
 // TODO: Something/anything.
@@ -153,7 +153,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Mage's Friend ====================================
 // TODO: Something/anything.
@@ -163,7 +163,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Poisoner's Ring ====================================
 // TODO: Something/anything.
@@ -173,7 +173,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Absolute Force ====================================
 // TODO: Something/anything.
@@ -183,7 +183,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Colour Spray ====================================
 // TODO: Something/anything.
@@ -193,7 +193,7 @@ data "Rarity" "Rare"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Elemental Infusion ====================================
 // Bug Fix: Elemental Infusion no longer only checks for damage being dealt, but also the "DamageType" of the spell being cast. E.g. If you cast Booming Blade you can only trigger Thunder Infusion, and you must deal Thunder damage.
@@ -217,7 +217,7 @@ data "PassivesOnEquip" "Goon_MAG_ElementalGish_ElementalInfusion_Ring_Passive"
 new entry "GOON_RINGOFELEMENTALINFUSION_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // new entry "MAG_ElementalGish_ElementalInfusion_Ring_Passive"
 // type "PassiveData"
@@ -256,7 +256,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Geniality ====================================
 // TODO: Something/anything.
@@ -266,7 +266,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Jumping ====================================
 // TODO: Something/anything.
@@ -276,7 +276,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Mental Inhibition ====================================
 // Bug Fix: Mental Inhibition no longer applies Mental Fatigue to creatures that are not enemies.
@@ -296,7 +296,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 new entry "GOON_RINGOFMENTALINHIBITION_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Psychic_MentalFatigue_Ring_Passive"
 type "PassiveData"
@@ -327,7 +327,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Self Immolation ====================================
 // TODO: Something/anything.
@@ -337,7 +337,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Shadows ====================================
 // TODO: Something/anything.
@@ -347,7 +347,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Spiteful Thunder ====================================
 // Bug Fix: Spiteful Thunder Dazed condition application now only triggers on Thunder damage, instead of all damage.
@@ -375,7 +375,7 @@ data "ValueScale" "1.5"
 new entry "GOON_RINGOFSPITEFULTHUNDER_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Thunder_InflictDazeOnThunderDamage_Ring_Passive"
 type "PassiveData"
@@ -422,7 +422,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_SPITEFULTHUNDER"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Shadow Blade Ring ====================================
 // Bug Fix: Shadow Blade Ring no longer needlessly breaks concentration when unequipped.
@@ -457,7 +457,7 @@ data "OnRemoveFunctors" ""
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Shapeshifter's Boon Ring ====================================
 // Bug Fix: Mark of the Shifter is removed when the ring is unequipped.
@@ -477,7 +477,7 @@ data "StatusOnEquip" "GOON_SHAPESHIFTERSBURGEON_TECHNICAL"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_ShapeshiftersBurgeon_Passive"
 type "PassiveData"
@@ -507,7 +507,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_SHAPESHIFTERS_BOON)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Snowburst Ring ====================================
 // TODO: Something/anything.
@@ -517,7 +517,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_SHAPESHIFTERS_BOON)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Spurred Band ====================================
 // TODO: Something/anything.
@@ -527,7 +527,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_SHAPESHIFTERS_BOON)"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Strange Conduit Ring ====================================
 // TODO: Template
@@ -544,7 +544,7 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_SHAPESHIFTERS_BOON)"
 new entry "GOON_STRANGECONDUITRING_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_Gish_PsychicDamageBonusWhileConcentrating_Ring_Passive"
 type "PassiveData"
@@ -570,7 +570,7 @@ data "Properties" "Highlighted"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== "Tarnished Ring" > "Magic Ring" ====================================
 // Bug Fix: Now uses its appropriate template, recieving its proper name "Magic Ring".
@@ -592,7 +592,7 @@ data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== The Whispering Promise ====================================
 // Bug Fix: Blessed Mercy now specifies that it applies Bless, instead of describing the functionality of Bless.
@@ -719,7 +719,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Keepsake Ring ====================================
 // TODO: Something/anything.
@@ -729,7 +729,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Arcane Synergy ====================================
 // TODO: Something/anything.
@@ -739,7 +739,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Blink ====================================
 // TODO: Something/anything.
@@ -749,7 +749,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Exalted Marrow ====================================
 // TODO: Something/anything.
@@ -759,7 +759,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Free Action ====================================
 // Bug Fix: Unwavering now provides Immunity to all Difficult Terrain instead of a handful of specific terrains.
@@ -777,7 +777,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
 new entry "GOON_RINGOFFREEACTION_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 new entry "MAG_FreeAction_AntiDisplacement_Passive"
 type "PassiveData"
@@ -797,7 +797,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Poison Resistance ====================================
 // TODO: Something/anything.
@@ -807,7 +807,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Protection ====================================
 // TODO: Something/anything.
@@ -817,7 +817,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Truthfulness ====================================
 // TODO: Something/anything.
@@ -827,7 +827,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Twilight ====================================
 // TODO: Something/anything.
@@ -837,7 +837,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Risky Ring ====================================
 // TODO: Something/anything.
@@ -847,7 +847,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Shifting Corpus Ring ====================================
 // TODO: Something/anything.
@@ -857,7 +857,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Till Death Do Us Part ====================================
 // TODO: Something/anything.
@@ -867,7 +867,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== True Love's Caress ====================================
 // TODO: Something/anything.
@@ -877,7 +877,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== True Love's Embrace ====================================
 // TODO: Something/anything.
@@ -887,7 +887,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Burnished Ring ====================================
 // TODO: Something/anything.
@@ -897,7 +897,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Crypt Lord Ring ====================================
 // TODO: Something/anything.
@@ -907,7 +907,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Killer's Sweetheart ====================================
 // Bug Fix: Executioner now works with all attacks as the tooltip states.
@@ -938,7 +938,7 @@ data "Conditions" "IsAbleToReact(context.Observer) and not Item() and Self(conte
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Evasion ====================================
 // TODO: Something/anything.
@@ -948,7 +948,7 @@ data "Conditions" "IsAbleToReact(context.Observer) and not Item() and Self(conte
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Ring of Feywild Sparks ====================================
 // Bug Fix: The +1 Spell Save DC is now visible.
@@ -976,7 +976,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Guiding Light ====================================
 // TODO: Something/anything.
@@ -986,7 +986,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Guild Ring ====================================
 // TODO: Something/anything.
@@ -996,7 +996,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Szarr Family Ring ====================================
 // TODO: Something/anything.
@@ -1006,7 +1006,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1016,7 +1016,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1026,7 +1026,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1036,7 +1036,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1046,7 +1046,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1056,7 +1056,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1066,7 +1066,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1076,7 +1076,7 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
@@ -1086,4 +1086,4 @@ data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Encha
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"

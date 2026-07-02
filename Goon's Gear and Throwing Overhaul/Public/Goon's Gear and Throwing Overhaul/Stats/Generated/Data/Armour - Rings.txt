@@ -197,7 +197,7 @@ data "Rarity" "Rare"
 
 // ==================================== Ring of Elemental Infusion ====================================
 // Bug Fix: Elemental Infusion no longer only checks for damage being dealt, but also the "DamageType" of the spell being cast. E.g. If you cast Booming Blade you can only trigger Thunder Infusion, and you must deal Thunder damage.
-// Changes: Elemental Infusion's infusion condition application will now only apply once per action, meaning multi-attack or AOE spells will not apply it more than once.
+// Changes: Elemental Infusion's infusion condition application will now only apply once per action.
 // Changes: Elemental Infusion's infusion condition application will now apply for spells that deal conditional damage (e.g. Booming Blade), if they have a "DamageType" and the conditions are not met for the conditional damage. E.g. if you are using Booming Blade when level 5 or above. If the conditions are not met, then you are not considered to be dealing the elemental damage with the spell itself. E.g. you deal Thunder damage via a damage rider when casting Booming Blade when below level 5, you do not recieve Thunder Infusion.
 // Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
 // Note: 5e Spells and Homebrew Spells make edits to "MAG_ElementalGish_ElementalInfusion_Ring_Passive", so it's replaced with a custom copy.

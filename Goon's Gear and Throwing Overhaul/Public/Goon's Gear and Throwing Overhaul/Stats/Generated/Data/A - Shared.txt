@@ -183,7 +183,7 @@ using "ARM_MagicalPlate_1_Passive"
 data "Properties" "Highlighted"
 // data "Boosts" "DamageReduction(All, Flat, 1)"
 
-new entry "ARM_MagicalPlate_1_Passive_Polymorph"
+new entry "Goon_ARM_MagicalPlate_1_Passive_Polymorph"
 type "PassiveData"
 using "ARM_MagicalPlate_1_Passive"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.

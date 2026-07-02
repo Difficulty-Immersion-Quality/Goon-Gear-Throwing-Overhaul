@@ -94,6 +94,7 @@
 // ==================================== 7. Adamantine Splint Armour ====================================
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
+// Changes: Disadvantage on Stealth now functions while under the effects of non-humanoid polymorphs.
 // Changes: Intense Adamantine Backlash now functions while under the effects of non-humanoid polymorphs.
 // Changes: Magical Plate now functions while under the effects of non-humanoid polymorphs.
 // Changes: Critical Hit Resistance now functions while under the effects of non-humanoid polymorphs.

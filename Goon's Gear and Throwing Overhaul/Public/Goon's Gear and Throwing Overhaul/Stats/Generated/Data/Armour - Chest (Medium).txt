@@ -27,7 +27,11 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== 3. Luminous Armour ====================================
+// Bug Fix: Radiant Shockwave's tooltip now shows the duration it applies Radiant Orb for.
+// Changes: Radiating Shockwave's Radiant Shockwave will now only trigger once per action.
+// Changes: Radiating Shockwave now functions while under the effects of non-humanoid polymorphs.
 // Changes: Rarity set to Rare to reflect it being BiS endgame gear for some builds.
+// Changes: Descriptions improved.
 
 new entry "MAG_Radiant_RadiatingOrb_Armor"
 type "Armor"
@@ -38,7 +42,89 @@ using "MAG_Radiant_RadiatingOrb_Armor"
 // data "Rarity" "Uncommon"
 data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Armor_Passive"
+data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Armor_Passive;Goon_Gear_Polymorph_LuminousArmour"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Radiant_RadiatingOrb_Armor_NotUnique"
+type "Armor"
+using "MAG_Radiant_RadiatingOrb_Armor"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_LUMINOUSARMOUR_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+new entry "GOON_LUMINOUSARMOUR_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_LuminousArmour"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_LUMINOUSARMOUR, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_LUMINOUSARMOUR"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_LUMINOUSARMOUR"
+data "Boosts" ""
+data "Passives" "MAG_Radiant_RadiatingOrb_Armor_Passive"
+
+// ==================
+
+new entry "MAG_Radiant_RadiatingOrb_Armor_Passive"
+type "PassiveData"
+using "MAG_Radiant_RadiatingOrb_Armor_Passive"
+// // Radiating Shockwave
+// data "DisplayName" "h68d20c89gdee8g401cg8e4fgf78938be5a55;2"
+// // When the wearer deals Radiant damage, they cause a &lt;LSTag Type="Spell" Tooltip="Projectile_MAG_Radiant_RadiatingOrb_Explosion"&gt;Radiant Shockwave&lt;/LSTag&gt;. 
+// data "Description" "h2a251881g1cdcg4696g9d36g697d7ac71994;6"
+// // When the wearer deals[1], they cause a &lt;LSTag Type="Spell" Tooltip="Projectile_MAG_Radiant_RadiatingOrb_Explosion"&gt;Radiant Shockwave&lt;/LSTag&gt;.
+data "Description" "hfe50798egdbadg4a51ga301gd8be432a7230;1"
+data "DescriptionParams" "DealDamage(,Radiant)"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "HasDamageDoneForType(DamageType.Radiant) and not Item()"
+data "Conditions" "HasDamageDoneForType(DamageType.Radiant) and not Item() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_RADIATINGSHOCKWAVE',context.Source)"
+// data "StatsFunctors" "CreateExplosion(Projectile_MAG_Radiant_RadiatingOrb_Explosion)"
+data "StatsFunctors" "CreateExplosion(Projectile_MAG_Radiant_RadiatingOrb_Explosion);ApplyStatus(SELF,GOON_ONCEPERACTION_COOLDOWN_RADIATINGSHOCKWAVE, 100, 1)"
+
+new entry "GOON_ONCEPERACTION_COOLDOWN_RADIATINGSHOCKWAVE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGSHOCKWAVE"
+
+new entry "Projectile_MAG_Radiant_RadiatingOrb_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_MAG_Radiant_RadiatingOrb_Explosion"
+// data "SpellProperties" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2);ApplyStatus(MAG_RADIANT_RADIATING_ORB_DURATION_TECHNICAL, 100, 1)"
+// data "TargetFloor" "-1"
+// data "AreaRadius" "3"
+// data "ExplodeRadius" "3"
+// data "TargetConditions" "not Item() and not Self() and not Ally() and not Dead()"
+// data "ProjectileCount" "1"
+// data "Trajectories" "f346b284-854e-4dd9-b87c-3938f5178265,78f998fb-2bb4-c8bd-c170-fcd899abc905,a62c27e3-86c0-db69-8f04-0ea3074cae7a "
+// data "Icon" "GenericIcon_DamageType_Radiant"
+// // Radiant Shockwave
+// data "DisplayName" "h65339466g10dfg4659g9ee5gaa6a20365cdb;2"
+// // Inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; in a [1] radius.
+// data "Description" "h9aa6ab8fg0ea6g4e14g91f7g0505f9837748;2"
+// // Inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; on creatures within a [1] radius of the spell or action that triggered the shockwave.
+data "Description" "h45f0642eg5a41g4b16g9fbcg861450992ba6;1"
+// data "DescriptionParams" "Distance(3)"
+data "TooltipStatusApply" "ApplyStatus(MAG_RADIANT_RADIATING_ORB, 100, 2)"
+// data "SpellFlags" "IsTrap"
 
 // ==================================== 4. Slippery Chain Shirt ====================================
 // TODO: Something/anything.
@@ -83,6 +169,8 @@ data "Rarity" "Rare"
 // ==================================== 8. Elven Chain ====================================
 // Bug Fix: Now properly considered Medium Armour. The absurd hidden passive "MAG_FlexibleArmor_Defense_Passive" has been removed now that the Defence fighting style actually works with the armour.
 // Changes: Instead of just granting Proficiency with the armour itself it now grants Proficiency with the armour type.
+// Changes: Elven Chain passive now functions while under the effects of non-humanoid polymorphs.
+// Changes: Elven Agility now functions while under the effects of non-humanoid polymorphs.
 // TODO: data "Flags" "ReallyArmor" works with any condition that calls WearingArmor. - JooW
 // HasMediumArmor() could be modified to support a change, mirroring HasHeavyArmor()... I think it would still just lead to an ugly ass tooltip though, I want that proficiency group there.
 
@@ -94,33 +182,59 @@ using "MAG_PHB_ElvenChain_Armor"
 // data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_PHB_ElvenChain_Armor_Passive;MAG_PHB_ElvenChain_AddedEffect_Armor_Passive;MAG_FlexibleArmor_Defense_Passive"
-data "PassivesOnEquip" "MAG_PHB_ElvenChain_Armor_Passive;MAG_PHB_ElvenChain_AddedEffect_Armor_Passive"
+data "PassivesOnEquip" "MAG_PHB_ElvenChain_Armor_Passive;MAG_PHB_ElvenChain_AddedEffect_Armor_Passive;Goon_Gear_Polymorph_ElvenChain"
 // data "Unique" "1"
 // data "Proficiency Group" ""
 data "Proficiency Group" "MediumArmor"
+
+new entry "Goon_MAG_PHB_ElvenChain_Armor_NotUnique"
+type "Armor"
+using "MAG_PHB_ElvenChain_Armor"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_ELVENCHAIN_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================
+
+new entry "Goon_Gear_Polymorph_ElvenChain"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_ELVENCHAIN, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_ELVENCHAIN"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_ELVENCHAIN"
+data "Boosts" ""
+data "Passives" "MAG_PHB_ElvenChain_Armor_Passive;MAG_PHB_ElvenChain_AddedEffect_Armor_Passive"
+
+// ==================
+
 new entry "MAG_PHB_ElvenChain_Armor_Passive"
 type "PassiveData"
 using "MAG_PHB_ElvenChain_Armor_Passive"
-// Elven Chain
+// // Elven Chain
 // data "DisplayName" "h008b56feg795fg4f0agb10dg35b1417ea276;2"
-// You are considered &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with this armour while wearing it. 
+// // You are considered &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with this armour while wearing it. 
 // data "Description" "h6ee738edg2713g4840gb4f5g3d245ed7d1d5;2"
-// The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Medium Armour.
+// // The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Medium Armour.
 data "Description" "he636d770g063fg4178g886fgd98b40c731cb;1"
 data "Boosts" "Proficiency(MediumArmor)"
 
-// new entry "MAG_PHB_ElvenChain_AddedEffect_Armor_Passive"
-// type "PassiveData"
-// Elven Agility
+new entry "MAG_PHB_ElvenChain_AddedEffect_Armor_Passive"
+type "PassiveData"
+using "MAG_PHB_ElvenChain_AddedEffect_Armor_Passive"
+// // Elven Agility
 // data "DisplayName" "hc9c6cb89g1d33g45fdgaa18g27bf16c51ca3;2"
-// The wearer has a +[1] bonus to Initiative Rolls and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// // The wearer has a +[1] bonus to Initiative Rolls and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
 // data "Description" "h5f2701a5gbac3g4e24gb50bgdcf22cd2e2df;3"
+// // The wearer has a +[1] bonus to Initiative Rolls and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+data "Description" "h01690207g33c5g472fg8572ga539576c8dbe;1"
 // data "DescriptionParams" "2"
 // data "Boosts" "Initiative(2);Advantage(SavingThrow, Dexterity)"
 
@@ -167,6 +281,10 @@ data "Boosts" "Proficiency(MediumArmor)"
 // ==================================== 13. Adamantine Scale Mail ====================================
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
+// Changes: Disadvantage on Stealth now functions while under the effects of non-humanoid polymorphs.
+// Changes: Adamantine Backlash now functions while under the effects of non-humanoid polymorphs.
+// Changes: Magical Plate now functions while under the effects of non-humanoid polymorphs.
+// Changes: Critical Hit Resistance now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamage_ScaleMail"
 type "Armor"
@@ -179,12 +297,48 @@ using "MAG_MeleeDebuff_AttackDebuff1_OnDamage_ScaleMail"
 // data "Boosts" "IF(not HasPassive('MediumArmorMaster', context.Source)):Disadvantage(Skill,Stealth);CriticalHit(AttackTarget,Success,Never)"
 data "Boosts" "IF(not HasPassive('MediumArmorMaster', context.Source)):Disadvantage(Skill,Stealth)"
 // data "PassivesOnEquip" "ARM_MagicalPlate_1_Passive;MAG_MeleeDebuff_AttackDebuff1_OnDamaged_Passive"
-data "PassivesOnEquip" "ARM_MagicalPlate_1_Passive;MAG_MeleeDebuff_AttackDebuff1_OnDamaged_Passive;Goon_Critical_Hit_Resistance"
+data "PassivesOnEquip" "Goon_ARM_MagicalPlate_1_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff1_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph;Goon_Gear_Polymorph_AdamantineScaleMail"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// Not unique
+
+new entry "GOON_ADAMANTINESCALEMAIL_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_AdamantineScaleMail"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_ADAMANTINESCALEMAIL, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_ADAMANTINESCALEMAIL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_ADAMANTINESCALEMAIL"
+data "Boosts" "IF(not HasPassive('MediumArmorMaster', context.Source)):Disadvantage(Skill,Stealth)"
+data "Passives" "Goon_ARM_MagicalPlate_1_Passive_Polymorph;MAG_MeleeDebuff_AttackDebuff1_OnDamaged_Passive;Goon_Critical_Hit_Resistance_Polymorph"
+
+// ==================
+
+new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamaged_Passive"
+type "PassiveData"
+using "MAG_MeleeDebuff_AttackDebuff1_OnDamaged_Passive"
+// // Adamantine Backlash
+// data "DisplayName" "hc5e102d2gb35cg4c0cg843eg599866ecded6;2"
+// // When a melee attack hits you, the attacker is sent &lt;LSTag Type="Status" Tooltip="MAG_ATTACK_DEBUFF"&gt;Reeling&lt;/LSTag&gt; for 2 turns.
+// data "Description" "h5699b70ag63fbg4ce9g97a9g756d7f55d030;4"
+// // Reeling creatures have a -1 penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; for every turn remaining.
+// data "ExtraDescription" "h93810861gfa83g41f2g98b1gf2574b779925;3"
+data "ExtraDescription" ""
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnDamaged"
+// data "Conditions" "IsMeleeAttack() and Character()"
+// data "StatsFunctors" "ApplyStatus(SWAP,MAG_ATTACK_DEBUFF,100,2);ApplyStatus(SWAP, MAG_ATTACK_DEBUFF_DURATION_TECHNICAL, 100, 1)"
 
 // ==================================== 14. Armour of Agility ====================================
 // TODO: Something/anything.
@@ -242,7 +396,8 @@ data "PassivesOnEquip" "ARM_MagicalPlate_1_Passive;MAG_MeleeDebuff_AttackDebuff1
 // data "UseCosts" "ActionPoint:1"
 
 // ==================================== 17. Sharpened Snare Cuirass ====================================
-// Bug Fix: Now works with Medium Armour Master.
+// Bug Fix: Now works with the Medium Armour Master feat.
+// Changes: Sharpened Snare now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_Druid_Late_Hide_Armor_2"
 type "Armor"
@@ -252,22 +407,55 @@ using "MAG_Druid_Late_Hide_Armor_2"
 // data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
 // data "Rarity" "VeryRare"
 // data "PassivesOnEquip" "MAG_ExoticMaterial_Druid_Passive;MAG_RestrainingAdvantage_Passive"
+data "PassivesOnEquip" "MAG_ExoticMaterial_Druid_Passive;MAG_RestrainingAdvantage_Passive;Goon_Gear_Polymorph_SharpenedSnareCuirass"
 data "StatusOnEquip" "MAG_EXOTIC_MATERIAL_ARMOR_TECHNICAL"
 // data "Unique" "1"
 // data "Ability Modifier Cap" ""
 
+new entry "Goon_MAG_Druid_Late_Hide_Armor_2_NotUnique"
+type "Armor"
+using "MAG_Druid_Late_Hide_Armor_2"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_SHARPENEDSNARECUIRASS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_SharpenedSnareCuirass"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_SHARPENEDSNARECUIRASS, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_SHARPENEDSNARECUIRASS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_SHARPENEDSNARECUIRASS"
+data "Boosts" ""
+data "Passives" "MAG_ExoticMaterial_Druid_Passive;MAG_RestrainingAdvantage_Passive"
+
+// ==================
+
 // new entry "MAG_ExoticMaterial_Druid_Passive"
 // type "PassiveData"
 // using "MAG_ExoticMaterial_MediumArmor_Passive"
-// Add your full Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+// // Add your full Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 // data "Description" "h38489231gcd0eg4f03gbfa2g50c8183b44ac;2"
 
-// new entry "MAG_RestrainingAdvantage_Passive"
-// type "PassiveData"
-// Sharpened Snare
+new entry "MAG_RestrainingAdvantage_Passive"
+type "PassiveData"
+using "MAG_RestrainingAdvantage_Passive"
+// // Sharpened Snare
 // data "DisplayName" "h46ecfcf8g86aag4e80gaa8egf74117d40060;2"
-// Creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; when resisting your attacks and spells that inflict &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt;.
+// // Creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; when resisting your attacks and spells that inflict &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt;.
 // data "Description" "h959646e7g1c2eg4ac7gb68ag8ba364746eb7;2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 
 // ==================================== 18. Githyanki Breastplate (Innaccessible/cut content) ====================================
 // TODO: Something/anything.

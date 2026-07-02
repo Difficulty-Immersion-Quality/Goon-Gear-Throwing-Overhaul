@@ -360,6 +360,8 @@ object category "I_Goon_MAG_Druid_Moon_Magic_Leather_Armor_NotUnique",1,0,0,0,0,
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Radiant_RadiatingOrb_Armor_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
@@ -368,10 +370,8 @@ object category "I_Goon_MAG_Druid_Moon_Magic_Leather_Armor_NotUnique",1,0,0,0,0,
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_PHB_ElvenChain_Armor_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
@@ -380,16 +380,16 @@ object category "I_Goon_MAG_Druid_Moon_Magic_Leather_Armor_NotUnique",1,0,0,0,0,
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_MAG_MeleeDebuff_AttackDebuff1_OnDamage_ScaleMail",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Druid_Late_Hide_Armor_2_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"

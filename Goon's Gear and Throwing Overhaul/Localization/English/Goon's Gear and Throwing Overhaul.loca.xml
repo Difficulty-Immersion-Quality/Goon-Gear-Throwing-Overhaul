@@ -302,6 +302,24 @@
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
 
+<!-- ==================================== Armour - Chest (Medium) ==================================== -->
+
+	<!-- 3. Luminous Armour -->
+	<!-- "MAG_Radiant_RadiatingOrb_Armor_Passive" -->
+	<content contentuid="hfe50798egdbadg4a51ga301gd8be432a7230" version="1">When the wearer deals[1], they cause a &lt;LSTag Type="Spell" Tooltip="Projectile_MAG_Radiant_RadiatingOrb_Explosion"&gt;Radiant Shockwave&lt;/LSTag&gt;.</content>
+	<!-- "Projectile_MAG_Radiant_RadiatingOrb_Explosion" -->
+	<content contentuid="h45f0642eg5a41g4b16g9fbcg861450992ba6" version="1">Inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; on creatures within a [1] radius of the spell or action that triggered the shockwave.</content>
+
+	<!-- 8. Elven Chain -->
+	<!-- "MAG_PHB_ElvenChain_Armor_Passive" -->
+	<content contentuid="he636d770g063fg4178g886fgd98b40c731cb" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Medium Armour.</content>
+	<!-- "MAG_PHB_ElvenChain_AddedEffect_Armor_Passive" -->
+	<content contentuid="h01690207g33c5g472fg8572ga539576c8dbe" version="1">The wearer has a +[1] bonus to Initiative Rolls and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
 <!-- ==================================== GEAR ==================================== -->
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
@@ -394,8 +412,6 @@
 
 	<!-- "" -->
 	<content contentuid="hfb2f7afcgd8b7g4e70gbf22ga2efa47051e3" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Light Armour.</content>
-	<!-- "MAG_PHB_ElvenChain_Armor_Passive" -->
-	<content contentuid="he636d770g063fg4178g886fgd98b40c731cb" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Medium Armour.</content>
 
 	<!-- NEW ENTRIES -->
 	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h2768d915g07aag486dga7e9g53ddcaa5adf0" version="1">Lethal Swiftness</content>

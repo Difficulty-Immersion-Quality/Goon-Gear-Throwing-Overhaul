@@ -67,7 +67,7 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Hat of Storm Scion's Power ====================================
-// Changes: Thunderous Acuity's Arcane Acuity condition application will now only apply once per action, meaning multi-attack or AOE spells will not apply it more than once.
+// Changes: Thunderous Acuity's Arcane Acuity condition application will now only apply once per action.
 // Changes: Thunderous Acuity can no longer be triggered from dealing damage to yourself or entities that aren't characters.
 // Changes: Forced Honour ruleset changes.
 // TODO: Template.
@@ -106,6 +106,7 @@ data "Description" "h1a045f3cg3524g41dag863agab4d40bd991b;1"
 data "DescriptionParams" "DealDamage(,Thunder);2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
+data "Properties" "Highlighted"
 // data "Properties" "OncePerAttack"
 data "Properties" ""
 data "StatsFunctorContext" "OnDamage"

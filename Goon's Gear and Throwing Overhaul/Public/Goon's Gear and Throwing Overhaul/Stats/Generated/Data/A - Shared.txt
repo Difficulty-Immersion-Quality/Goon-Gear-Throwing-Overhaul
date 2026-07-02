@@ -194,7 +194,6 @@ type "PassiveData"
 // using "ARM_MagicalPlate_1_Passive"
 using "ARM_MagicalPlate_2_Passive"
 // data "DescriptionParams" "2"
-data "Properties" "Highlighted"
 // data "Boosts" "DamageReduction(All, Flat, 2)"
 
 new entry "Goon_ARM_MagicalPlate_2_Passive_Polymorph"
@@ -215,6 +214,7 @@ using "ARM_Stealthy_1_Passive"
 // // Gain a +[1] bonus to &lt;LSTag Tooltip="Stealth"&gt;Stealth&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
 data "Description" "h2a1426e3g5bb6g4ca4g9b96g7c676ef74be8;1"
 // data "DescriptionParams" "1"
+data "Properties" "Highlighted"
 // data "Boosts" "RollBonus(SkillCheck, 1, Stealth)"
 
 new entry "Goon_ARM_Stealthy_1_Passive_Polymorph"

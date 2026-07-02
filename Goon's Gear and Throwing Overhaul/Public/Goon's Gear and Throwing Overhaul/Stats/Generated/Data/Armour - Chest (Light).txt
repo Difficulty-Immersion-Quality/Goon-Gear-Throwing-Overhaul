@@ -3,8 +3,15 @@
 // 
 
 // ==================================== Magical variants ====================================
+// TODO: Kinda weird to inherit this stuff for the stuff that's actually unique.
 
-// 
+// new entry "MAG_Druid_Magic_Leather_Armor"
+// type "Armor"
+// using "ARM_Leather_Body_2"
+// data "RootTemplate" "10338c7e-39c8-44b3-a0a2-2a76af453718"
+// data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
+// data "Rarity" "VeryRare"
+// data "Unique" "1"
 
 // ==================================== 1. Blazer of Benevolence ====================================
 // TODO: Something/anything.
@@ -47,7 +54,12 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== 5. Shadeclinger Armour ====================================
-// Bug Fix: Shadeclinger is removed when the armour is unequipped.
+// Bug Fix: Clinging Shadows is now removed when the armour is unequipped.
+// Bug Fix: Shadeclinger will no longer re-apply Clinging Shadows if it already exists.
+// Changes: Shadeclinger now functions while under the effects of non-humanoid polymorphs.
+// Changes: The +1 to Stealth has been replaced with a +2 to Stealth Checks, via the Stealthy passive.
+// Changes: Stealthy now functions while under the effects of non-humanoid polymorphs.
+// TODO: Shadeclinger/Clinging Shadows LSTag for Obscured. Make new statuses in library or something. SNEAKING_LIGHTLY_OBSCURED and SNEAKING_HEAVILY_OBSCURED refer to the character actually sneaking.
 
 new entry "MAG_Harpers_ArmorOfShadows"
 type "Armor"
@@ -55,31 +67,84 @@ type "Armor"
 using "MAG_Harpers_ArmorOfShadows"
 // data "RootTemplate" "2077fe9a-991d-4763-9b1a-fff843efd705"
 // data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
-// data "Rarity" "Rare"
+// data "Rarity" "Rare"MAG_Harpers_ArmorOfShadows
 // data "Boosts" "Skill(Stealth, 1)"
+data "Boosts" ""
 // data "PassivesOnEquip" "MAG_Harpers_ArmorOfShadows_Passive"
-data "StatusOnEquip" "GOON_SHADECLINGERARMOUR_TECHNICAL"
+data "PassivesOnEquip" "Goon_ARM_Stealthy_2_Passive_Polymorph;MAG_Harpers_ArmorOfShadows_Passive;Goon_Gear_Polymorph_ShadeclingerArmour"
+data "StatusOnEquip" "GOON_SHADECLINGERARMOUR_EQUIP_TECHNICAL"
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_Harpers_ArmorOfShadows_NotUnique"
+type "Armor"
+using "MAG_Harpers_ArmorOfShadows"
+// data "Unique" "1"
+data "Unique" "0"
 
-// new entry "MAG_Harpers_ArmorOfShadows_Passive"
-// type "PassiveData"
-// Shadeclinger 
-// data "DisplayName" "hfbfadd6ag87acg4694g8931gde1a2cc09583;2"
-// While obscured, the wearer has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
-// data "Description" "h5692da17gfad8g4a3cgb912g737ae7cc11e8;3"
-// data "StatsFunctorContext" "OnObscurityChanged;OnCreate"
-// data "StatsFunctors" "IF(not HasObscuredState(ObscuredState.Clear)):ApplyStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS, 100, -1);IF(HasObscuredState(ObscuredState.Clear)):RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
-
-new entry "GOON_SHADECLINGERARMOUR_TECHNICAL"
+new entry "GOON_SHADECLINGERARMOUR_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-data "OnRemoveFunctors" "RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
+
+new entry "GOON_SHADECLINGERARMOUR_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+// data "OnRemoveFunctors" "IF(not HasStatus('GOON_GEAR_POLYMORPH_SHADECLINGERARMOUR')):RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_ShadeclingerArmour"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_SHADECLINGERARMOUR, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_SHADECLINGERARMOUR"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_SHADECLINGERARMOUR"
+data "Boosts" ""
+data "Passives" "Goon_ARM_Stealthy_2_Passive_Polymorph;MAG_Harpers_ArmorOfShadows_Passive"
+
+// ==================
+
+new entry "MAG_Harpers_ArmorOfShadows_Passive"
+type "PassiveData"
+using "MAG_Harpers_ArmorOfShadows_Passive"
+// // Shadeclinger 
+// data "DisplayName" "hfbfadd6ag87acg4694g8931gde1a2cc09583;2"
+// // Shadeclinger
+data "DisplayName" "he39a64dcg046eg4059gb220g836ab4c06651;1"
+// // While obscured, the wearer has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h5692da17gfad8g4a3cgb912g737ae7cc11e8;3"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnObscurityChanged;OnCreate"
+// data "StatsFunctors" "IF(not HasObscuredState(ObscuredState.Clear)):ApplyStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS, 100, -1);IF(HasObscuredState(ObscuredState.Clear)):RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
+data "StatsFunctors" "IF(not HasObscuredState(ObscuredState.Clear) and not HasStatus('MAG_HARPERS_OBSCURITY_SAVING_THROWS')):ApplyStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS, 100, -1);IF(HasObscuredState(ObscuredState.Clear)):RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
+
+new entry "MAG_HARPERS_OBSCURITY_SAVING_THROWS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_HARPERS_OBSCURITY_SAVING_THROWS"
+// // Clinging Shadows
+// data "DisplayName" "h1616466bge638g4397g9fc1g4d72fcf46ebf;2"
+// // While remaining obscured, affected entity has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "ha02e23c9g0562g43bbg80dag00807b7a78bd;3"
+// data "Icon" "GenericIcon_Intent_Buff"
+// data "StackId" "MAG_HARPERS_OBSCURITY_SAVING_THROWS"
+// data "Boosts" "Advantage(AllSavingThrows)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+data "Passives" "Goon_ShadeclingerArmour_ClingingShadows_Technical_Passive"
+
+new entry "Goon_ShadeclingerArmour_ClingingShadows_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_Harpers_ArmorOfShadows_Passive')"
+data "StatsFunctors" "RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
 
 // ==================================== 6. Spidersilk Armour ====================================
 // Bug Fix: The template now points to the correct stat entry. Spawning the item via UUID will now give the correct item, dismissing a hireling that was wearing the item doesn't get re-hired with a different item.
@@ -109,7 +174,7 @@ data "Unique" "0"
 new entry "GOON_SPIDERSILKARMOUR_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 
 // ==================
 
@@ -137,14 +202,12 @@ data "Passives" "Goon_ARM_Stealthy_1_Passive_Polymorph"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== 8. Armour of Moonbasking ====================================
-// Bug Fix: Lunar Protection status now displays the correct AC bonus.
+// Bug Fix: Lunar Protection condition now displays the correct Armour Class bonus.
 // Bug Fix: Lunar Protection and Lunar Bestial Vitality can no longer cause an infinite status application loop and crash the game.
-// Bug Fix: Descriptions now specify that the effects work with Starry Form, in addition to Wild Shape.
-// Bug Fix: Lunar Protection and Lunar Bestial Vitality are removed when the armour is unequipped.
-// Bug Fix: The AC bonus is no longer applied twice while in Starry Form.
-// Changes: 
-// TODO: Prevent swapping Starry Form and speaking to characters while in Wild Shape from reapplying temp HP?
-// TODO: Move "MAG_Druid_Wildshape_SpellResistance_Passive" boosts to a status?
+// Bug Fix: Lunar Protection and Lunar Bestial Vitality are appropriately removed when the passives no longer exist, or the wearer is no longer affected by a druidic form.
+// Bug Fix: Lunar Bestial Fortitude no longer grants a +2 bonus to Armour Class unconditionally, therefore no longer stacking with the conditional bonus from Lunar Protection. 
+// Changes: Descriptions improved.
+// TODO: Lunar Bestial Vitality: Goon_IsDruidWildshapeOrStatus could be replaced with StatusId checks, so the temporary HP can be reapplied. This would be consistent with mechanics across the game.
 
 new entry "MAG_Druid_Moon_Magic_Leather_Armor"
 type "Armor"
@@ -153,74 +216,128 @@ using "MAG_Druid_Moon_Magic_Leather_Armor"
 // data "RootTemplate" "d33d71f8-f7b9-4c19-9b39-03d0b9ba8829"
 // data "ArmorClass" "11"
 // data "PassivesOnEquip" "MAG_Druid_Wildshape_TempHP_Passive;MAG_Druid_Wildshape_SpellResistance_Passive"
-data "StatusOnEquip" "GOON_ARMOUROFMOONBASKING_TECHNICAL"
+data "PassivesOnEquip" "MAG_Druid_Wildshape_TempHP_Passive;MAG_Druid_Wildshape_SpellResistance_Passive;Goon_Gear_Polymorph_ArmourOfMoonbasking"
+data "StatusOnEquip" "GOON_ARMOUROFMOONBASKING_EQUIP_TECHNICAL"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+new entry "Goon_MAG_Druid_Moon_Magic_Leather_Armor_NotUnique"
+type "Armor"
+using "MAG_Druid_Moon_Magic_Leather_Armor"
+// data "Unique" "1"
+data "Unique" "0"
 
-new entry "GOON_ARMOUROFMOONBASKING_TECHNICAL"
+new entry "GOON_ARMOUROFMOONBASKING_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "GOON_ARMOUROFMOONBASKING_EQUIP_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-data "OnRemoveFunctors" "RemoveStatus(MAG_DRUID_WILDSHAPE_TEMP_HP);RemoveStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE)"
+// data "OnRemoveFunctors" "RemoveStatus(MAG_DRUID_WILDSHAPE_TEMP_HP);RemoveStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE)"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_ArmourOfMoonbasking"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_ARMOUROFMOONBASKING, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_ARMOUROFMOONBASKING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_ARMOUROFMOONBASKING"
+data "Boosts" ""
+data "Passives" "MAG_Druid_Wildshape_TempHP_Passive;MAG_Druid_Wildshape_SpellResistance_Passive"
+
+// ==================
 
 new entry "MAG_Druid_Wildshape_TempHP_Passive"
 type "PassiveData"
 // using "MAG_ShapeshiftersBurgeon_Passive"
 using "MAG_Druid_Wildshape_TempHP_Passive"
-// Lunar Bestial Vitality
+// // Lunar Bestial Vitality
 // data "DisplayName" "h2cdf4116g2c4cg4a51g9c7fg1424a9ec52bd;3"
-// You gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; after casting &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;. While those temporary hit points are active reduce all incoming damage by [2].
+// // You gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; after casting &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;. While those temporary hit points are active reduce all incoming damage by [2].
 // data "Description" "hfae13d66gc6d9g48abgb6edg6ca4f93dd253;2"
-// You gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; after becoming affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, or other druidic forms including &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;. While those temporary hit points are active reduce all incoming damage by [2].
+// // You gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; when you become affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms. While you are affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms, and have &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;, all incoming damage is reduced by [2].
 data "Description" "hade54759gd9d3g414bg9afdg4dc995574cea;1"
 // data "DescriptionParams" "22;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Can only have &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; from one source.
 // data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33"
+// &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; Only functions while willingly under the effects of druidic forms, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33;f1b808d9-9442-4269-a2f3-1bc5de0f0a00"
+data "Boosts" "IF(HasTemporaryHP() and Goon_IsDruidWildshapeOrStatus()):DamageReduction(All, Flat, 1)"
 // data "Conditions" "StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or StatusId('WILDSHAPE_STARRY_ARCHER_PLAYER') or StatusId('WILDSHAPE_STARRY_CHALICE_PLAYER') or StatusId('WILDSHAPE_STARRY_DRAGON_PLAYER')"
 data "Conditions" "Goon_IsDruidWildshapeOrStatus()"
 // data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or HasAnyStatus({'WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'},{},{'MAG_DRUID_WILDSHAPE_TEMP_HP'},context.Source)):ApplyStatus(MAG_DRUID_WILDSHAPE_TEMP_HP, 100, -1)"
-data "StatsFunctors" "ApplyStatus(MAG_DRUID_WILDSHAPE_TEMP_HP, 100, -1)"
+data "StatsFunctors" "IF(not HasStatus('MAG_DRUID_WILDSHAPE_TEMP_HP')):ApplyStatus(MAG_DRUID_WILDSHAPE_TEMP_HP, 100, -1)"
 
-new entry "MAG_DRUID_WILDSHAPE_TEMP_HP_TECHNICAL"
+new entry "MAG_DRUID_WILDSHAPE_TEMP_HP"
 type "StatusData"
 data "StatusType" "BOOST"
-// using "MAG_SHAPESHIFTERS_BOON"
-using "MAG_DRUID_WILDSHAPE_TEMP_HP_TECHNICAL"
-// data "StackId" "MAG_DRUID_WILDSHAPE_TEMP_HP_TECHNICAL"
-// data "Boosts" ""
-// data "RemoveConditions" "StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or StatusId('WILDSHAPE_STARRY_ARCHER_PLAYER') or StatusId('WILDSHAPE_STARRY_CHALICE_PLAYER') or StatusId('WILDSHAPE_STARRY_DRAGON_PLAYER')"
-data "RemoveConditions" "not Goon_IsDruidWildshapeOrStatus()"
-// data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
-// data "OnRemoveFunctors" "RemoveStatus(MAG_DRUID_WILDSHAPE_TEMP_HP)"
+// using "FALSE_LIFE_4"
+using "MAG_DRUID_WILDSHAPE_TEMP_HP"
+// // Lunar Vitality
+// data "DisplayName" "h988e346agac66g4744gb06eg213b479dee08;3"
+// // You have [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;. While having the &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;, all incoming damage is reduced by [2].
+// data "Description" "h7ef436c4g147ag4c41g8aa2g8081d22225f7;2"
+// // Kept from death's door by a brief magical boost. Gained [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; that persist while affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms.
+data "Description" "hcddb6d5dgc2a2g465bgbfe6g660f8acbf9eb;1"
+// data "DescriptionParams" "22;1"
+// data "Icon" "Spell_Necromancy_FalseLife"
+data "Icon" "statIcons_MAG_TemporaryHP"
+data "SoundLoop" "Spell_Status_Buff_MO"
+// data "Boosts" "TemporaryHP(22);DamageReduction(All, Flat, 1)"
+data "Boosts" "TemporaryHP(22)"
+// data "OnApplyFunctors" "ApplyStatus(MAG_DRUID_WILDSHAPE_TEMP_HP_TECHNICAL, 100, -1)"
+data "OnApplyFunctors" ""
+// data "StatusGroups" ""
+data "ManagedStatusEffectType" "Positive"
+data "ManagedStatusEffectGroup" "6435c10a-c67d-4f79-8813-b84b0762f92b"
+data "Passives" "Goon_ArmourOfMoonbasking_LunarVitality_Technical_Passive"
+
+new entry "Goon_ArmourOfMoonbasking_LunarVitality_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_Druid_Wildshape_TempHP_Passive') or not Goon_IsDruidWildshapeOrStatus()"
+data "StatsFunctors" "RemoveStatus(MAG_DRUID_WILDSHAPE_TEMP_HP)"
 
 new entry "MAG_Druid_Wildshape_SpellResistance_Passive"
 type "PassiveData"
 // using "MAG_SpellResistance_Passive"
 using "MAG_Druid_Wildshape_SpellResistance_Passive"
-// Lunar Bestial Fortitude
+// // Lunar Bestial Fortitude
 // data "DisplayName" "h9c84f7a8gdd50g4a36g8281gd1ba6cebe344;3"
-// You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;. You also have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This effect persists while using your druidic Wild Shape ability.
+// // You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;. You also have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This effect persists while using your druidic Wild Shape ability.
 // data "Description" "h64d8133fg293eg426cg8518gd5ba4a57a9c0;3"
-// You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;. You also have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This effect persists while under the effects of &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// // While you are affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms, you have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells.
 data "Description" "h96b20d85gadc0g4416gbd8eg12a712ad4bf9;1"
 // data "DescriptionParams" "2"
+// &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; Only functions while willingly under the effects of druidic forms, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "f1b808d9-9442-4269-a2f3-1bc5de0f0a00"
+// data "Boosts" "IF(IsSpell()):Advantage(AllSavingThrows);AC(2)"
+data "Boosts" ""
 // data "StatsFunctorContext" "OnStatusApplied"
-data "Conditions" "Goon_IsDruidWildshape()"
+data "Conditions" "Goon_IsDruidWildshapeOrStatus()"
 // data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or HasAnyStatus({'WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'},{},{'MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE'},context.Source)):ApplyStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE, 100, -1)"
-data "StatsFunctors" "ApplyStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE, 100, -1)"
+data "StatsFunctors" "IF(not HasStatus('MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE')):ApplyStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE, 100, -1)"
 
 new entry "MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE"
 type "StatusData"
 data "StatusType" "BOOST"
 // using "MAG_SHAPESHIFTERS_BOON"
 using "MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE"
-// Lunar Protection
+// // Lunar Protection
 // data "DisplayName" "h8d9c8c56g2ad0g445bg8b89g1d83bfb504fd;3"
-// You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells - even when Wild-Shaped.
-// data "Description" "hfae13d66gc6d9g48abgb6edg6ca4f93dd253;2"// You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;. You also have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This effect persists while under the effects of &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
-data "Description" "h96b20d85gadc0g4416gbd8eg12a712ad4bf9;1"
+// // Lunar Fortitude
+data "DisplayName" "h7604bcbcg26d9g4d52gad9dg7c2bbebc4999;1"
+// // You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells - even when Wild-Shaped.
+// data "Description" "hfae13d66gc6d9g48abgb6edg6ca4f93dd253;2"
+// // While you are affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms, you have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells.
+data "Description" "h5e593119g86d8g488ag9e8dg1ced33b3736f;1"
 // data "DescriptionParams" "1d4"
 data "DescriptionParams" "2"
 // data "Icon" "GenericIcon_Intent_Buff"
@@ -228,9 +345,16 @@ data "DescriptionParams" "2"
 // data "StatusPropertyFlags" ""
 // data "Boosts" "IF(IsSpell()):Advantage(AllSavingThrows);AC(2)"
 // data "RemoveConditions" "StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or StatusId('WILDSHAPE_STARRY_ARCHER_PLAYER') or StatusId('WILDSHAPE_STARRY_CHALICE_PLAYER') or StatusId('WILDSHAPE_STARRY_DRAGON_PLAYER')"
-data "RemoveConditions" "not Goon_IsDruidWildshape()"
+data "RemoveConditions" "not Goon_IsDruidWildshapeOrStatus()"
 // data "StatusPropertyFlags" ""
-data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "Passives" "Goon_ArmourOfMoonbasking_LunarProtection_Technical_Passive"
+
+new entry "Goon_ArmourOfMoonbasking_LunarProtection_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_Druid_Wildshape_SpellResistance_Passive') or not Goon_IsDruidWildshapeOrStatus()"
+data "StatsFunctors" "RemoveStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE)"
 
 // ==================================== 9. Armour of the Sporekeeper ====================================
 // TODO: Something/anything.

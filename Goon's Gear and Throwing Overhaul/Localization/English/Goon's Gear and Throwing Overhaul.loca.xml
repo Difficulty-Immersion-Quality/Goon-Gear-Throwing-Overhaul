@@ -22,6 +22,7 @@
 	<content contentuid="" version="1"></content>
 
 <!-- ==================================== Huh? ==================================== -->
+
 	<!-- Nyrulna toggle -->
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="h654b96b4geadfg46aag99c2g2af9f15cd5b6" version="1">Nyrulna: Zephyr Connection</content>
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="he5c48cdcg3690g4ec2ga8cbgd453b402bc17" version="1">This weapon will return to your hand when thrown. You cannot be forced to drop the trident. When thrown, Nyrulna's additional [1] explodes outward in a [2] blast centred on the target.</content>
@@ -36,6 +37,7 @@
 	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 
 <!-- ==================================== WEAPON ACTIONS ==================================== -->
+
 	<!-- "Goon_Target_PostureBreaker_Offhand" --> <content contentuid="haad96815g5d0dg4285ga31eg0da094df82d1" version="1">Backbreaker (Offhand)</content>
 	<!-- "Goon_Zone_Cleave_Offhand" --> <content contentuid="h046d806egc13fg403fgb220g8cdbd04778c0" version="1">Cleave (Offhand)</content>
 	<!-- "Interrupt_Overwhelm", "Overwhelm" --> <content contentuid="h3ff15630ga20cg4697gabaeg7909acd8b811" version="1">When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.</content>
@@ -75,10 +77,7 @@
 	<!-- "MAG_BoundToBeBonded_Passive" --> <content contentuid="heee2c268g4226g464aga2f0gdf9e12a1e0f9" version="1">This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Barbarian_Armor_RageSupport_Passive" --> <content contentuid="h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; or starts their turn while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt; in combat, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.</content>
 	<!-- "Target_ConcussiveSmash" --> <content contentuid="h7edda7a5g49fcg4c39g8943g1f19aa5d78dd" version="1">Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They cannot take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
-	<!-- "MAG_Blindside_Shortsword_Passive" --> <content contentuid="h11e87f4cg6dafg4236g81f8gbfd5fb6817c1" version="1">Psychic Steel Virtuoso</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+
 
 	<!-- "Target_Bash" --> <content contentuid="h497fe29fg16bbg4e99gbc14g25a76f87c9c8" version="1">Bash your shield against a target to knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
 	<!-- "Target_ShieldBlow_Riposte", "Interrupt_ShieldBlow" --> <content contentuid="h0c55dbc7gccedg4ae3g94efg17167ffc09f9" version="1">When struck by a melee attack you may bash your shield against the attacker. They must succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or fall &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
@@ -282,13 +281,32 @@
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
 
+<!-- ==================================== Armour - Chest (Light) ==================================== -->
+
+	<!-- 5. Shadeclinger Armour -->
+	<!-- "MAG_Harpers_ArmorOfShadows_Passive" -->
+	<content contentuid="he39a64dcg046eg4059gb220g836ab4c06651" version="1">Shadeclinger</content>
+
+	<!-- 8. Armour of Moonbasking -->
+	<!-- "MAG_Druid_Wildshape_TempHP_Passive" -->
+	<content contentuid="hade54759gd9d3g414bg9afdg4dc995574cea" version="1">You gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; when you become affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms. While you are affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms, and have &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;, all incoming damage is reduced by [2].</content>
+	<!-- "MAG_DRUID_WILDSHAPE_TEMP_HP" -->
+	<content contentuid="hcddb6d5dgc2a2g465bgbfe6g660f8acbf9eb" version="1">Kept from death's door by a brief magical boost. Gained [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; that persist while affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms.</content>
+	<!-- "MAG_Druid_Wildshape_SpellResistance_Passive" -->
+	<content contentuid="h96b20d85gadc0g4416gbd8eg12a712ad4bf9" version="1">While you are affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms, you have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells.</content>
+	<!-- "MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE" -->
+	<content contentuid="h7604bcbcg26d9g4d52gad9dg7c2bbebc4999" version="1">Lunar Fortitude</content>
+	<content contentuid="h5e593119g86d8g488ag9e8dg1ced33b3736f" version="1">While you are affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; or other druidic forms, you have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
 <!-- ==================================== GEAR ==================================== -->
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
 	<!-- "MAG_ShadowBlinding_Weapon_Passive", "GOON_SHADOW_BLINDING_TECHNICAL" --> <content contentuid="h2c526f46g60f2g4c49g9262g26baa6b6af4a" version="1">If you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, you have a chance of &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; your target for [1] turns.</content>
 	<!-- "MAG_Revivify_Gloves_Passive" --> <content contentuid="h30f1a9acg7a77g46e0g824bg8037eb98bf98" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] turns. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] turns.</content>
-	<!-- "MAG_Druid_Wildshape_TempHP_Passive" --> <content contentuid="hade54759gd9d3g414bg9afdg4dc995574cea" version="1">You gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; after becoming affected by &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, or other druidic forms including &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;. While those temporary hit points are active reduce all incoming damage by [2].</content>
-	<!-- "MAG_Druid_Wildshape_SpellResistance_Passive", "MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE" --> <content contentuid="h96b20d85gadc0g4416gbd8eg12a712ad4bf9" version="1">You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;. You also have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This effect persists while under the effects of &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.</content>
 	<!-- , &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Archer"&gt;Starry Form: Archer&lt;/LSTag&gt;, &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Chalice"&gt;Starry Form: Chalice&lt;/LSTag&gt;, or &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Dragon"&gt;Starry Form: Dragon&lt;/LSTag&gt;. -->
 	<!-- "MAG_Gish_ArcaneAcuity_Gloves_Passive" --> <content contentuid="hf583b6a7g93e9g4024g849fge9c76241e0ab" version="1">When you hit a target with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt; or a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;Melee Weapon Attack&lt;/LSTag&gt; that is also a spell, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
 	<!-- "UNI_MassHealRing_Passive" --> <content contentuid="h1585ed41g588ag4ff4gad07gb09acc5e3792" version="1">Whenever you heal a creature it becomes &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [1] turns.</content>
@@ -365,10 +383,14 @@
 	<!-- "Goon_MAG_Thunder_Reverberation_Gloves_Passive" --> <content contentuid="hc720dc2bge923g41degac3bge73b82b035cb" version="1">When the wearer deals[1],[2], or[3], inflict [4] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).</content>
 	<!-- "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive" --> <content contentuid="h1a045f3cg3524g41dag863agab4d40bd991b" version="1">When the wearer deals[1] to another creature, they gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
 	<!-- "MAG_TheClover_Rearrangement_Passive" --> <content contentuid="h7c477753gd60bg412fg8cebg19dce4be5840" version="1">Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack.&lt;br&gt;&lt;br&gt;When you roll [1] damage or less with this weapon, reroll the dice, taking the highest result.</content>
+	<!-- "MAG_Blindside_Shortsword_Passive" --> <content contentuid="h11e87f4cg6dafg4236g81f8gbfd5fb6817c1" version="1">Psychic Steel Virtuoso</content>
 
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
 
 	<!-- "" -->
 	<content contentuid="hfb2f7afcgd8b7g4e70gbf22ga2efa47051e3" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Light Armour.</content>
@@ -380,16 +402,11 @@
 	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h565e4a63g2355g46bfgb4c5g0a650b7704a7" version="1">After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.</content>
 	<!-- "Goon_WulbrenHammer_Structural_Decommission_Passive" --> <content contentuid="hef699771g3a4cg40edg9a7cg0dd3c7bc229d" version="1">Structural Decommission</content>
 	<!-- "Goon_WulbrenHammer_Structural_Decommission_Passive" --> <content contentuid="h5be62e5dgc35ag4cb6g8336g32028740eb62" version="1">Deals an additional [1] to Constructs, and inanimate objects.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
 </contentList>

@@ -337,14 +337,14 @@ object category "I_Goon_MAG_Infernal_Plate_Armor_NotUnique",1,0,0,0,0,0,0,0
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Harpers_ArmorOfShadows_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_GOB_DrowCommander_Leather_Armor_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Druid_Moon_Magic_Leather_Armor_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"

@@ -121,6 +121,9 @@
 	<!-- 41. Amulet of the Devout -->
 	<!-- "MAG_OfTheDevout_Amulet_Passive" -->
 	<content contentuid="h065712c6g5111g4df8ga9a0g3ed70e134b93" version="1">The wearer gains an additional use of &lt;LSTag Type="ActionResource" Tooltip="ChannelDivinity"&gt;Channel Divinity&lt;/LSTag&gt;. Once used, it is restored upon taking a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.</content>
+	<!-- "GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL" -->
+	<content contentuid="h5845b821g61dbg49cegb41bg71b29d278639" version="1">Channel Divinity Depleted</content>
+	<content contentuid="ha357795ag2587g470cgb59fg00eae0f49708" version="1">The &lt;LSTag Type="ActionResource" Tooltip="ChannelDivinity"&gt;Channel Divinity&lt;/LSTag&gt; charge granted from this amulet is depleted. A &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt; will restore it.</content>
 
 	<!-- 50. Amulet of Bhaal -->
 	<!-- "LOW_BhaalAmulet_Passive" -->
@@ -320,7 +323,33 @@
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
 
+<!-- ==================================== Armour - Cloaks ==================================== -->
+
+	<!-- 2. Cloak of Cunning Brume -->
+	<!-- "MAG_Shadow_FogOfCloudDisengage_Cloak_Passive" -->
+	<content contentuid="h2b571a22g3a87g4d22g851cg6c1f8e09a213" version="1">When the wearer gains &lt;LSTag Type="Status" Tooltip="DISENGAGE"&gt;Disengage&lt;/LSTag&gt; or a similar condition, they create a foggy cloud with [1] radius that last for [2] rounds.</content>
+
+	<!-- 3. Cloak of Elemental Absorption -->
+	<!-- "Absorb_Elements_Passive", "Interrupt_AbsorbElements", {} -->
+	<content contentuid="hd5a79e33gbf99g4dcag8e87g3f134abba2d0" version="1">Absorb elemental damage. When you are about to be hit by an elemental spell or attack, you can take half damage from[1],[2],[3],[4], and[5].&lt;br&gt;&lt;br&gt;After absorbing the spell or attack, your next unarmed or weapon attack deals an additional [6], [7], [8], [9], or [10], matching the absorbed element.&lt;br&gt;&lt;br&gt;Once used, it is restored upon taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content>
+	<!-- "GOON_CLOAKOFELEMENTALABSORPTION_DEPLETED_TECHNICAL" -->
+	<content contentuid="hee079109ga7bfg4ea4g85f3ge15b9100193a" version="1">Absorb Elements Depleted</content>
+	<content contentuid="ha58f3051gd9f7g49ccgab94g1a09b9961508" version="1">The Absorb Elements charge granted from this cloak is depleted. A &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; will restore it.</content>
+	<!-- "ABSORB_ELEMENTS_ACID_DAMAGE", "ABSORB_ELEMENTS_COLD_DAMAGE", "ABSORB_ELEMENTS_FIRE_DAMAGE", "ABSORB_ELEMENTS_LIGHTNING_DAMAGE", "ABSORB_ELEMENTS_THUNDER_DAMAGE" -->
+	<content contentuid="h124c29d6g1233g412ag9272g98193429bdcb" version="1">The affected entity deals an additional [1] the next time it deals damage with an unarmed or weapon attack.</content>
+	<!-- "GOON_ABSORB_ELEMENTS_ACTIVE", "Goon_CloakOfElementalAbsorption_AbsorbElementsActive_Technical_Passive" -->
+	<content contentuid="haaf34877ga740g4d0dg9210g9f587fcd26b6" version="1">Absorbing elemental damage. Take half damage from[1],[2],[3],[4], and[5].</content>
+
+	<!-- 5. Fleshmelter Cloak -->
+	<!-- "MAG_Acid_AcidMeleeCounter_Cloak_Passive", "GOON_FLESHMELTERCLOAK_ACID_TECHNICAL" -->
+	<content contentuid="he96e9841g3c7fg479fga83bg1a766b65e545" version="1">Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; against the wearer, it takes [1], or [2] if the attack is a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The attacker has a 50% chance to be afflicted with &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; for [3] round. If already afflicted, the duration is increased by [3] round instead.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
 <!-- ==================================== GEAR ==================================== -->
+
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
 	<!-- "MAG_ShadowBlinding_Weapon_Passive", "GOON_SHADOW_BLINDING_TECHNICAL" --> <content contentuid="h2c526f46g60f2g4c49g9262g26baa6b6af4a" version="1">If you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, you have a chance of &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; your target for [1] turns.</content>
@@ -366,7 +395,6 @@
 	<!-- "GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE", "GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE", "GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE", "GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE", "GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE", --> <content contentuid="h6c1412b2g9757g41f2gbe27g6092c2f4c790" version="1">Creation's Echo deals an additional [1].</content>
 	<!-- "Goon_FaithwardenStaff_Ensnaring_Defence_Passive", "GOON_FAITHWARDENSTAFF_ENSNARING_DEFENCE", "Goon_FaithwardenStaff_Ensnaring_Defence_Active_Passive" --> <content contentuid="habd70a09g3052g4020gb116g0ad574340dd5" version="1">Ensnaring Defence</content>
 	<!-- "Goon_FaithwardenStaff_Ensnaring_Defence_Passive", "GOON_FAITHWARDENSTAFF_ENSNARING_DEFENCE", "Goon_FaithwardenStaff_Ensnaring_Defence_Active_Passive" --> <content contentuid="he48b5f11geeaag4480g8762g5fb6513fc0c9" version="1">While under the effects of &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, or other druidic forms including &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;, enemies that hit the wielder may be &lt;LSTag Type="Status" Tooltip="ENSNARING_STRIKE"&gt;Ensnared&lt;/LSTag&gt; for [1] turns if they are not a plant or a beast. This effect scales with your Druid level.</content>
-	<!-- "MAG_Acid_AcidMeleeCounter_Cloak_Passive", "GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID" --> <content contentuid="he96e9841g3c7fg479fga83bg1a766b65e545" version="1">Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; on the wearer it takes [1], or [2] if landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;. The attacker has a 50% chance to be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn, if the attacker already has the Acid condition the duration is instead increased by [3].</content>
 	<!-- "MAG_Bonded_Throwing_Battleaxe" --> <content contentuid="h43a292f3gf9ffg4a30g99aagbc54c083419b" version="1">This blade's magical powers only function if it's &lt;LSTag Type="Status" Tooltip="WEAPON_BOND"&gt;Bound&lt;/LSTag&gt; to an Eldritch Knight, a Warlock's &lt;LSTag Type="Status" Tooltip="PACT_BLADE"&gt;Pact Weapon&lt;/LSTag&gt;, or a Hexblade's &lt;LSTag Type="Status" Tooltip="HEXBLADE_BIND"&gt;Hexed Weapon&lt;/LSTag&gt;.</content>
 	<!-- "DEN_CapturedGoblin_MurderDagger_Passive" --> <content contentuid="h6588a557g31bcg45c4g95e0g7d32ebd9968a" version="1">Deals an additional [1] to creatures that are &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="UNCONSCIOUS"&gt;Unconscious&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Spellbreaker_Battleaxe_Passive	" --> <content contentuid="h6c9f3c93g7e68g4969gb60cg809a96ce9a65" version="1">You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against &lt;LSTag Tooltip="Concentration"&gt;concentrating&lt;/LSTag&gt; creatures.</content>

@@ -683,7 +683,6 @@ data "Unique" "0"
 // ==================================== 41. Amulet of the Devout ====================================
 // Bug Fix: Godswill now just works, it's not complete jank using 500 technical statuses and passives without success.
 // Changes: Godswill now functions while under the effects of non-humanoid polymorphs.
-// TODO: There's an exploit where wildshapes are able to get the boost while the amulet is depleted because GetItemInEquipmentSlot doesn't work for them. GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL exists solely as a band-aid to prevent this, but it's only doing so for the wearer who depleted the amulet, for other characters the exploit still exists.
 
 new entry "MAG_OfTheDevout_Amulet"
 type "Armor"
@@ -742,32 +741,37 @@ using "MAG_OfTheDevout_Amulet_Passive"
 data "Description" "h065712c6g5111g4df8ga9a0g3ed70e134b93;1"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
-data "Properties" "Highlighted;OncePerLongRest"
+data "Properties" "Highlighted;OncePerLongRestPerItem"
 // data "BoostContext" "OnCreate;OnEquip;OnStatusApplied;OnStatusRemoved;OnCast;OnAttack"
-data "BoostContext" "OnCreate;OnActionResourcesChanged"
-data "BoostConditions" "not HasStatus('MAG_DEVOUT_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Amulet, context.Target)) and not HasStatus('GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL', context.Source)"
+data "BoostContext" "OnCreate;OnActionResourcesChanged;OnShortRest;OnLongRest"
+data "BoostConditions" "not HasStatus('GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Amulet, context.Target)) and not HasStatus('GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL', context.Source)"
 data "Boosts" "ActionResource(ChannelDivinity, 1, 0)"
 // data "StatsFunctorContext" "OnCast;OnAttack"
-data "StatsFunctorContext" "OnActionResourcesChanged"
+data "StatsFunctorContext" "OnCreate;OnActionResourcesChanged"
 // data "Conditions" "HasUseCosts('ChannelDivinity')"
-data "Conditions" "not HasActionResource('ChannelDivinity', 1, 0, false, false, context.Source)"
-// data "StatsFunctors" "ApplyStatus(SELF, MAG_OF_DEVOUT_AMULET_TRACKER, 100, -1);ApplyEquipmentStatus(Amulet, MAG_DEVOUT_DEPLETED_TECHNICAL, 100, -1)"
-data "StatsFunctors" "ApplyEquipmentStatus(SELF, Amulet, MAG_DEVOUT_DEPLETED_TECHNICAL, 100, -1);ApplyStatus(SELF, GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL, 100, -1)"
+data "Conditions" ""
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_OF_DEVOUT_AMULET_TRACKER, 100, -1);ApplyEquipmentStatus(Amulet, GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL, 100, -1)"
+data "StatsFunctors" "IF((context.HasContextFlag(StatsFunctorContext.OnCreate)) and HasStatus('GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Amulet, context.Target)) and not HasStatus('GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL', context.Source)):ApplyStatus(SELF, GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL, 100, -1);IF((context.HasContextFlag(StatsFunctorContext.OnCreate)) and not HasStatus('GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Amulet, context.Target)) and HasStatus('GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL', context.Source) and not HasStatus('GOON_GEAR_POLYMORPH_AMULETOFTHEDEVOUT', context.Source)):RemoveStatus(SELF, GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL);IF((context.HasContextFlag(StatsFunctorContext.OnActionResourcesChanged)) and not HasActionResource('ChannelDivinity', 1, 0, false, false, context.Source)):ApplyEquipmentStatus(SELF, Amulet, GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL, 100, -1);IF((context.HasContextFlag(StatsFunctorContext.OnActionResourcesChanged)) and not HasActionResource('ChannelDivinity', 1, 0, false, false, context.Source)):ApplyStatus(SELF, GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL, 100, -1)"
 
-// new entry "MAG_DEVOUT_DEPLETED_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// using "MAG_DEVOTION_SPELL_SLOT_DEPLETED_TECHNICAL"
-// // Amulet of The Devout: Channel Divinity Depleted
-// data "DisplayName" "h809a243bgd61ag4d49g80bag608d4315dbfb;2"
-// // The Channel Divinity charge granted from this amulet is depleted. A &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt; will restore it.
-// data "Description" "h87437123gba7bg4cbag99b2gbc5b4feea57e;3"
-// data "StackId" "MAG_DEVOUT_DEPLETED_TECHNICAL"
+new entry "GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// // Channel Divinity Depleted
+data "DisplayName" "h5845b821g61dbg49cegb41bg71b29d278639;1"
+// // The &lt;LSTag Type="ActionResource" Tooltip="ChannelDivinity"&gt;Channel Divinity&lt;/LSTag&gt; charge granted from this amulet is depleted. A &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt; will restore it.
+data "Description" "ha357795ag2587g470cgb59fg00eae0f49708;1"
+data "Icon" "Status_Incapacitated"
+data "StackId" "GOON_AMULETOFTHEDEVOUT_DEPLETED_TECHNICAL"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;ApplyToDead;TickingWithSource"
+data "RemoveEvents" "OnSourceStatusApplied"
+data "RemoveConditions" "HasStatus('LONG_REST', context.Source)"
 
 new entry "GOON_AMULETOFTHEDEVOUT_GODSWILL_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead"
+data "RemoveEvents" "OnStatusApplied"
+data "RemoveConditions" "HasStatus('LONG_REST')"
 
 // ==================================== 42. Amulet of Windrider ====================================
 // TODO: Something/anything.

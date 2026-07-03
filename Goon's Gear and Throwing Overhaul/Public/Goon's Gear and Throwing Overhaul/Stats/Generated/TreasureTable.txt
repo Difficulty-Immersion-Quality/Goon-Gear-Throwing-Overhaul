@@ -26,6 +26,7 @@ object category "I_WPN_Dart_2",1,0,0,0,0,0,0,0
 // ==================================== MEGA CONTAINER ====================================
 
 new treasuretable "TT_Goon_GearOverhaul_Mega_Container"
+CanMerge 1
 // ==================================== Armour - Amulets - Custom
 new subtable "1,1"
 object category "I_Goon_PendantOfAnimalSpeech_Amulet_NotUnique",1,0,0,0,0,0,0,0
@@ -400,6 +401,44 @@ object category "I_Goon_MAG_Druid_Late_Hide_Armor_2_NotUnique",1,0,0,0,0,0,0,0
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// ==================================== XXX
+// ==================================== Armour - Cloaks
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Shadow_FogOfCloudDisengage_Cloak_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_ElementalGish_AbsorbElements_Cloak_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_PHB_CloakOfProtection_Cloak_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Acid_AcidMeleeCounter_Cloak_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 10
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 20

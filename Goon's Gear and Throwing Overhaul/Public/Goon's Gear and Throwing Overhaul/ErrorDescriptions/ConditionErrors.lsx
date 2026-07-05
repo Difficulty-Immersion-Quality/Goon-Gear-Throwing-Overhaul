@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="6" revision="0" build="1"/>
+    <region id="ConditionErrors">
+        <node id="root">
+            <children>
+            <!-- Absorb Elements -->
+                <!-- Must take a Short Rest. -->
+                <!-- <node id="ConditionErrors">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h7e18ca75g6839g48cfg8d9fg6da0713875b3" version="1"/>
+                    <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
+                    <attribute id="Identifier" type="FixedString" value="CE_ActionResource_Interrupt_AbsorbElements_False"/>
+                    <attribute id="UUID" type="guid" value="b15e85c9-20a6-460d-a3bb-f83218ef6cad"/>
+                </node> -->
+            <!-- Absorb Elements 2 Electric Boogaloo -->
+                <!-- Must take a Short Rest. -->
+                <node id="ConditionErrors">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h7e18ca75g6839g48cfg8d9fg6da0713875b3" version="1"/>
+                    <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
+                    <attribute id="Identifier" type="FixedString" value="CE_ActionResource_Goon_Interrupt_AbsorbElements_CloakOfTheWeave_False"/>
+                    <attribute id="UUID" type="guid" value="7c1cc593-ae6c-445d-9c01-00e08f19a5d2"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

@@ -344,6 +344,12 @@
 	<!-- "MAG_Acid_AcidMeleeCounter_Cloak_Passive", "GOON_FLESHMELTERCLOAK_ACID_TECHNICAL" -->
 	<content contentuid="he96e9841g3c7fg479fga83bg1a766b65e545" version="1">Whenever an entity lands a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; against the wearer, it takes [1], or [2] if the attack is a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The attacker has a 50% chance to be afflicted with &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; for [3] round. If already afflicted, the duration is increased by [3] round instead.</content>
 
+	<!-- 9. Cloak of Displacement -->
+	<!-- "MAG_PHB_Displacement_Cloak_Passive" -->
+	<content contentuid="hecb73ab8gca12g41f6g92f7ge3feabe587eb" version="1">At the start of the wearer's turn in combat, the cloak activates, &lt;LSTag Type="Status" Tooltip="MAG_PHB_CLOAK_OF_DISPLACEMENT"&gt;Displacing&lt;/LSTag&gt; the wearer. This effect lasts until the wearer takes damage or is no longer in combat.</content>
+	<!-- "MAG_PHB_CLOAK_OF_DISPLACEMENT" -->
+	<content contentuid="h3de2b022g4520g45f4gb989g3cea3f3d9159" version="1">Attackers have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against this creature, unless they do not rely on sight or can see through illusions.&lt;br&gt;&lt;br&gt;Removed by taking damage or exiting combat.</content>
+
 	<!--  -->
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
@@ -406,7 +412,6 @@
 	<!-- "Goon_Redcap_Sickle_Bonus" --> <content contentuid="hd50a1576gf04ag4d04gab36g2a0353418307" version="1">Feyvourite Weapon</content>
 	<!-- "Goon_Redcap_Sickle_Bonus" --> <content contentuid="h56660f2ag14bag46abgb5f3gf55d976e2bbc" version="1">Redcaps deal an additional [1] with this weapon.</content>
 	<!-- "MAG_MonsterSlayer_Passive" --> <content contentuid="ha182c382g58c5g4428g97c1g5a07c761aaa8" version="1">Attacks with this weapon gain an additional [1] to attack and damage rolls against Monstrosities.</content>
-	<!-- "MAG_LC_RadiantLight_Rapier_Passive" --> <content contentuid="h0eabeda1gcbb7g40e1g9fbcgb723d25f613e" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Fiends and Undead.</content>
 	<!-- "MAG_TheDueller_ImprovedDuelist_Passive" --> <content contentuid="hf1abc2bfg8c26g4622ga84cga2bf91f45dac" version="1">While your off-hand is empty, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.</content>
 	<!-- "Interrupt_TheDueller_WitheringCut" --> <content contentuid="h5868da46g8004g4201g9772gb8219c021e1b" version="1">When you hit a creature with melee or thrown weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt;, you can spend a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.</content>
 	<!-- "MAG_LC_BurnOnDamage_Scimitar_Passive", "GOON_CAUTERISER_TECHNICAL_APPLIER" --> <content contentuid="h8cf8a632g4752g4594ga41cg1afad576ba9a" version="1">Deals an additional [1].&lt;br&gt;&lt;br&gt;On a hit, the target starts &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>

@@ -137,7 +137,7 @@ new entry "GOON_CLOAKOFELEMENTALABSORPTION_EQUIP_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
-data "OnRemoveFunctors" "IF(not HasActionResource('Interrupt_AbsorbElements', 100, 0, true)):UseActionResource(ChannelDivinity, 1)"
+// data "OnRemoveFunctors" "IF(not HasActionResource('Interrupt_AbsorbElements', 100, 0, true)):UseActionResource(Interrupt_AbsorbElements, 1)"
 
 // ==================
 
@@ -514,6 +514,8 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_CAUSTICREPRISAL"
 
 // ==================================== 9. Cloak of Displacement ====================================
 // Changes: Forced honour ruleset changes.
+// Changes: Displacement now functions while under the effects of non-humanoid polymorphs.
+// Changes: Descriptions improved.
 // TODO: template
 // TODO: polymorph.
 
@@ -528,13 +530,43 @@ using "MAG_PHB_CloakOfDisplacement_Cloak"
 data "ValueLevel" "5"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_PHB_Displacement_Cloak_Passive"
+data "PassivesOnEquip" "MAG_PHB_Displacement_Cloak_Passive;Goon_Gear_Polymorph_CloakOfDisplacement"
 // data "StatusOnEquip" "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+data "StatusOnEquip" "GOON_CLOAKOFDISPLACEMENT_EQUIP_TECHNICAL"
 // data "Unique" "1"
+
+new entry "Goon_MAG_PHB_CloakOfDisplacement_Cloak_NotUnique"
+type "Armor"
+using "MAG_PHB_CloakOfDisplacement_Cloak"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_CLOAKOFDISPLACEMENT_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+new entry "GOON_CLOAKOFDISPLACEMENT_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_CloakOfDisplacement"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_CLOAKOFDISPLACEMENT, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_CLOAKOFDISPLACEMENT"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_CLOAKOFDISPLACEMENT"
+data "Boosts" ""
+data "Passives" "MAG_PHB_Displacement_Cloak_Passive"
+
+// ==================
 
 new entry "MAG_PHB_Displacement_Cloak_Passive"
 type "PassiveData"
@@ -543,43 +575,43 @@ using "MAG_PHB_Displacement_Cloak_Passive"
 // data "DisplayName" "h30dfd004g2e7dg49feg8e91gb062ecaf2520;2"
 // // At the beginning of the wearer's turn, the cloak activates, granting enemies &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; that target the wearer. This effect lasts until the wearer takes damage.
 // data "Description" "h22f785a3g6a73g4939gaa55gcd54c9f49a43;3"
+// // At the start of the wearer's turn in combat, the cloak activates, &lt;LSTag Type="Status" Tooltip="MAG_PHB_CLOAK_OF_DISPLACEMENT"&gt;Displacing&lt;/LSTag&gt; the wearer. This effect lasts until the wearer takes damage or is no longer in combat.
+data "Description" "hecb73ab8gca12g41f6g92f7ge3feabe587eb;1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
+data "StatsFunctorContext" "OnTurn"
+data "StatsFunctors" "IF(Combat() and not Dead()):ApplyStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT, 100, 2)"
 
-// TODO: Multiple yucky inheritances
-// new entry "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// // %%%|Cloak of Dispalcement Technical|
-// data "DisplayName" "h83f77d95ga2a7g405bgb335gb410d56891ad;1"
-// // %%%|Technical status to add the displacement status effect at the start of the turn|
-// data "Description" "h03006389g343cg4dc3gab0fgff9de272e46f;1"
-// data "StackId" "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
-// data "TickType" "StartTurn"
-// data "TickFunctors" "IF(Combat() and not Dead()):ApplyStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT, 100, 2)"
-// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-// data "OnRemoveFunctors" "RemoveStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT)"
-
-// TODO: awful inheritance
-// new entry "MAG_PHB_CLOAK_OF_DISPLACEMENT"
-// type "StatusData"
-// data "StatusType" "BOOST"
+new entry "MAG_PHB_CLOAK_OF_DISPLACEMENT"
+type "StatusData"
+data "StatusType" "BOOST"
 // using "BLUR"
+using "MAG_PHB_CLOAK_OF_DISPLACEMENT"
 // // Displaced
 // data "DisplayName" "hf0a2cd38gb975g40ffg9787g99ae6ae1ce58;2"
-// // Until you take damage, foes have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against you.
+// // Until you take damage or exit combat, foes have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against you.
 // data "Description" "h957e994cgb2bdg4e97gbe82gad62540534fc;5"
+// // Attackers have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against this creature, unless they do not rely on sight or can see through illusions.&lt;br&gt;&lt;br&gt;Removed by taking damage or exiting combat.
+data "Description" "h3de2b022g4520g45f4gb989g3cea3f3d9159;1"
 // data "SoundStart" "MAG_Status_CloakOfDisplacement_Start"
 // data "SoundLoop" "MAG_Status_CloakOfDisplacement_MO"
 // data "SoundStop" "MAG_Status_CloakOfDisplacement_End"
 // data "StackId" "MAG_PHB_CLOAK_OF_DISPLACEMENT"
+// data "Boosts" "IF(not Tagged('BLINDSIGHT', context.Source)):Disadvantage(AttackTarget)"
+data "Boosts" "IF(not Goon_CanIgnoreIllusions()):Disadvantage(AttackTarget)"
 // data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnAttacked) and IsHit() and not IsCriticalMiss() and TotalAttackDamageDoneGreaterThan(0)) or IsStatusEvent(StatusEvent.OnCombatEnded)"
 // data "RemoveEvents" "OnCombatEnded;OnAttacked"
 // data "StatusPropertyFlags" "DisableOverhead"
 // data "StatusGroups" ""
+data "Passives" "Goon_CloakOfDisplacement_Displaced_Technical_Passive"
 
-
-// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
-// data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+new entry "Goon_CloakOfDisplacement_Displaced_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_PHB_Displacement_Cloak_Passive')"
+data "StatsFunctors" "RemoveStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT)"
 
 // ==================================== 10. Derivation Cloak ====================================
 // TODO: Something/anything.
@@ -613,7 +645,10 @@ data "Properties" "Highlighted"
 
 // ==================================== 13. Cloak of the Weave ====================================
 // Bug Fix: Absorb Elements is now functional.
-// TODO: polymorph.
+// Bug Fix: All the same Absorb Elements fixes found on the Cloak of Elemental Absorption.
+// Changes: Absorb Elements now has custom entries that inherit from those found on the Cloak of Elemental Absorption; as to not have any overlap with cooldown conditions, resources, etc.
+// Changes: Absorb Elements now functions while under the effects of non-humanoid polymorphs.
+// Changes: High Spellcasting now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_EndGameCaster_Cloak"
 type "Armor"
@@ -623,16 +658,76 @@ using "MAG_EndGameCaster_Cloak"
 // data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
 // data "Rarity" "VeryRare"
 // data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive"
-data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive;Absorb_Elements_Technical_Passive;MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
+data "PassivesOnEquip" "Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph;Goon_CloakOfTheWeave_Absorb_Elements_Passive;Goon_Gear_Polymorph_CloakOfTheWeave"
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+new entry "Goon_MAG_EndGameCaster_Cloak_NotUnique"
+type "Armor"
+// using "ARM_Cloak_Long_B"
+using "MAG_EndGameCaster_Cloak"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_CLOAKOFTHEWEAVE_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+new entry "GOON_CLOAKOFTHEWEAVE_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+// data "OnRemoveFunctors" "IF(not HasActionResource('Goon_Interrupt_AbsorbElements_CloakOfTheWeave', 100, 0, true)):UseActionResource(Goon_Interrupt_AbsorbElements_CloakOfTheWeave, 1)"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_CloakOfTheWeave"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_CLOAKOFTHEWEAVE, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_CLOAKOFTHEWEAVE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_CLOAKOFTHEWEAVE"
+data "Boosts" ""
+data "Passives" "Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph;Goon_CloakOfTheWeave_Absorb_Elements_Passive"
+
+// ==================
+
+new entry "Goon_CloakOfTheWeave_Absorb_Elements_Passive"
+type "PassiveData"
+using "Absorb_Elements_Passive"
+// data "Boosts" "UnlockInterrupt(Interrupt_AbsorbElements);IF(not HasStatus('GOON_CLOAKOFELEMENTALABSORPTION_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Cloak, context.Target)) and not HasStatus('GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL', context.Source)):ActionResource(Interrupt_AbsorbElements, 1, 0)"
+data "Boosts" "UnlockInterrupt(Goon_Interrupt_AbsorbElements_CloakOfTheWeave);IF(not HasStatus('GOON_CLOAKOFTHEWEAVE_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Cloak, context.Target)) and not HasStatus('GOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICAL', context.Source)):ActionResource(Goon_Interrupt_AbsorbElements_CloakOfTheWeave, 1, 0)"
+// data "StatsFunctors" "IF((context.HasContextFlag(StatsFunctorContext.OnCreate)) and HasStatus('GOON_CLOAKOFELEMENTALABSORPTION_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Cloak, context.Target)) and not HasStatus('GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL', context.Source)):ApplyStatus(SELF, GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL, 100, -1);IF((context.HasContextFlag(StatsFunctorContext.OnCreate)) and not HasStatus('GOON_CLOAKOFELEMENTALABSORPTION_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Cloak, context.Target)) and HasStatus('GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL', context.Source) and not HasStatus('GOON_GEAR_POLYMORPH_CLOAKOFELEMENTALABSORPTION', context.Source)):RemoveStatus(SELF, GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusId('GOON_ABSORB_ELEMENTS_ACTIVE')):ApplyEquipmentStatus(SELF, Cloak, GOON_CLOAKOFELEMENTALABSORPTION_DEPLETED_TECHNICAL, 100, -1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusId('GOON_ABSORB_ELEMENTS_ACTIVE')):ApplyStatus(SELF, GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL, 100, -1);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeAcid()):ApplyStatus(ABSORB_ELEMENTS_ACID_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeCold()):ApplyStatus(ABSORB_ELEMENTS_COLD_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeFire()):ApplyStatus(ABSORB_ELEMENTS_FIRE_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeLightning()):ApplyStatus(ABSORB_ELEMENTS_LIGHTNING_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeThunder()):ApplyStatus(ABSORB_ELEMENTS_THUNDER_DAMAGE, 100, 2)"
+data "StatsFunctors" "IF((context.HasContextFlag(StatsFunctorContext.OnCreate)) and HasStatus('GOON_CLOAKOFTHEWEAVE_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Cloak, context.Target)) and not HasStatus('GOON_CLOAKOFELEMGOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICALENTALABSORPTION_ABSORBELEMENTS_TECHNICAL', context.Source)):ApplyStatus(SELF, GOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICAL, 100, -1);IF((context.HasContextFlag(StatsFunctorContext.OnCreate)) and not HasStatus('GOON_CLOAKOFTHEWEAVE_DEPLETED_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.Cloak, context.Target)) and HasStatus('GOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICAL', context.Source) and not HasStatus('GOON_GEAR_POLYMORPH_CLOAKOFELEMENTALABSORPTION', context.Source)):RemoveStatus(SELF, GOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICAL);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusId('GOON_ABSORB_ELEMENTS_ACTIVE')):ApplyEquipmentStatus(SELF, Cloak, GOON_CLOAKOFTHEWEAVE_DEPLETED_TECHNICAL, 100, -1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusId('GOON_ABSORB_ELEMENTS_ACTIVE')):ApplyStatus(SELF, GOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICAL, 100, -1);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeAcid()):ApplyStatus(ABSORB_ELEMENTS_ACID_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeCold()):ApplyStatus(ABSORB_ELEMENTS_COLD_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeFire()):ApplyStatus(ABSORB_ELEMENTS_FIRE_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeLightning()):ApplyStatus(ABSORB_ELEMENTS_LIGHTNING_DAMAGE, 100, 2);IF(context.HasContextFlag(StatsFunctorContext.OnDamaged) and HasStatus('GOON_ABSORB_ELEMENTS_ACTIVE') and Goon_IsSpellDamageTypeThunder()):ApplyStatus(ABSORB_ELEMENTS_THUNDER_DAMAGE, 100, 2)"
+
+new entry "GOON_CLOAKOFTHEWEAVE_DEPLETED_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_CLOAKOFELEMENTALABSORPTION_DEPLETED_TECHNICAL"
+// data "StackId" "GOON_CLOAKOFELEMENTALABSORPTION_DEPLETED_TECHNICAL"
+data "StackId" "GOON_CLOAKOFTHEWEAVE_DEPLETED_TECHNICAL"
+
+new entry "GOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL"
+// data "StackId" "GOON_CLOAKOFELEMENTALABSORPTION_ABSORBELEMENTS_TECHNICAL"
+data "StackId" "GOON_CLOAKOFTHEWEAVE_ABSORBELEMENTS_TECHNICAL"
+
+new entry "Goon_Interrupt_AbsorbElements_CloakOfTheWeave"
+type "InterruptData"
+using "Interrupt_AbsorbElements"
+// data "Cost" "ReactionActionPoint:1;Interrupt_AbsorbElements:1"
+data "Cost" "ReactionActionPoint:1;Goon_Interrupt_AbsorbElements_CloakOfTheWeave:1"
+// data "EnableCondition" "HasActionResource('Interrupt_AbsorbElements', 1, 0, false, false, context.Source) and Goon_IsNonHostilePolymorphStatus()"
+data "EnableCondition" "HasActionResource('Goon_Interrupt_AbsorbElements_CloakOfTheWeave', 1, 0, false, false, context.Source) and Goon_IsNonHostilePolymorphStatus()"
 
 // ==================================== 14. Mantle of the Holy Warrior ====================================
-// TODO: Something/anything.
+// TODO: Kinda lame?
 
 // new entry "MAG_Radiant_CrusaderMantle_Cloak"
 // type "Armor"
@@ -643,10 +738,17 @@ data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Pas
 // data "Boosts" "UnlockSpell(Shout_MAG_CrusadersMantle)"
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+new entry "Goon_MAG_Radiant_CrusaderMantle_Cloak_NotUnique"
+type "Armor"
+// using "ARM_Cloak_Long_C"
+using "MAG_Radiant_CrusaderMantle_Cloak"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_MANTLEOFTHEHOLYWARRIOR_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // new entry "Shout_MAG_CrusadersMantle"
 // type "SpellData"

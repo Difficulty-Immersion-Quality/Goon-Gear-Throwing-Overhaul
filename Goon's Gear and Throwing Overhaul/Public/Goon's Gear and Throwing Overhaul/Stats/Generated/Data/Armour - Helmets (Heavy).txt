@@ -9,6 +9,8 @@
 // ==================================== Grymskull Helm ====================================
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
+// Changes: Fire Resistance now functions while under the effects of non-humanoid polymorphs.
+// Changes: Critical Hit Resistance now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet"
 type "Armor"
@@ -20,11 +22,47 @@ using "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet"
 // data "Rarity" "VeryRare"
 // data "Boosts" "CriticalHit(AttackTarget,Success,Never);Resistance(Fire, Resistant);UnlockSpell(Target_MAG_HuntersMark_Grymskull)"
 data "Boosts" "Resistance(Fire, Resistant);UnlockSpell(Target_MAG_HuntersMark_Grymskull)"
-data "PassivesOnEquip" "Goon_Critical_Hit_Resistance"
+data "PassivesOnEquip" "Goon_Critical_Hit_Resistance_Polymorph;Goon_Gear_Polymorph_GrymskullHelm"
 // data "Unique" "1"
 // data "Proficiency Group" "HeavyArmor"
+
+new entry "Goon_MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet_NotUnique"
+type "Armor"
+// using "_Head_Magic_Metal"
+using "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_GRYMSKULLHELM_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+new entry "GOON_GRYMSKULLHELM_EQUIP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_GrymskullHelm"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_GRYMSKULLHELM, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_GRYMSKULLHELM"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_GRYMSKULLHELM"
+data "Boosts" "Resistance(Fire, Resistant)"
+data "Passives" "Goon_Critical_Hit_Resistance_Polymorph"
+
+// ==================
+
+// new entry "Target_MAG_HuntersMark_Grymskull"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_HuntersMark"
+// data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "BonusActionPoint:1"

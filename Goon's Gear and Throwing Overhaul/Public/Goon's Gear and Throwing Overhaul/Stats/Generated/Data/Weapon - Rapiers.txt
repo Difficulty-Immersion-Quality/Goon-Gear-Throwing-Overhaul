@@ -165,7 +165,8 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Pelorsun Blade ====================================
 // Bug Fix: 1d4 Radiant damage applies when thrown.
-// Changes: Undead Bane only grants Advantage to Attacks made with the weapon itself. // TODO: Including when thrown. - Master passives for throwing functionality
+// Changes: Undead Bane only grants Advantage to Attacks made with the weapon itself.
+// TODO: ... Including when thrown. - Master passives for throwing functionality
 
 // new entry "MAG_LC_RadiantLight_Rapier"
 // type "Weapon"
@@ -184,20 +185,19 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_LC_RadiantLight_Rapier_Passive"
 type "PassiveData"
 using "MAG_LC_RadiantLight_Rapier_Passive"
-// Undead Bane
+// // Undead Bane
 // data "DisplayName" "h4b7e93b4g7d69g4ef8g8fa2g69d785cd46e2;3"
-// &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against undead.
+// // &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against undead.
 // data "Description" "hfb1a2ddfg4516g4fbfg9763gd7b24424317a;2"
-// &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Fiends and Undead.
-data "Description" "h0eabeda1gcbb7g40e1g9fbcgb723d25f613e;1"
 // data "Boosts" "IF(Tagged('UNDEAD', context.Target)):Advantage(AttackRoll)"
-data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL',GetAttackWeapon(context.Source)) and UndeadOrFiend()):Advantage(AttackRoll)"
+data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL', GetAttackWeapon(context.Source)) and Tagged('UNDEAD', context.Target)):Advantage(AttackRoll)"
 
 // ==================================== Duellist's Prerogative ====================================
 // Bug Fix: Challenge to Duel is no longer considered level 1 or of the Enchantment School. (The IsSpell SpellFlag was already removed though.)
 // Bug Fix: Like other critical hit threshold sources, Elegant Duellist now states that it stacks.
 // Bug Fix: Withering Cut applies to thrown attacks, description overhauled.
 // Bug Fix: Added missing Honour ruleset bools to Withering Cut to prevent damage riders acting as a damage rider source.
+// Changes: Withering Cut can now be used by Invisible character.
 
 // new entry "MAG_TheDueller_Rapier"
 // type "Weapon"
@@ -266,11 +266,11 @@ new entry "Interrupt_TheDueller_WitheringCut"
 type "InterruptData"
 // using "Interrupt_Smite_Divine"
 using "Interrupt_TheDueller_WitheringCut"
-// Withering Cut
+// // Withering Cut
 // data "DisplayName" "hc61596f9gc801g4933gaf73g13269717f10e;1"
-// When you hit a creature with melee weapon, you can spend a reaction to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+// // When you hit a creature with melee weapon, you can spend a reaction to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
 // data "Description" "h5ea742a7g0d9cg447cga012g95679912ce86;1"
-// When you hit a creature with melee or thrown weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt;, you can spend a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+// // When you hit a creature with melee or thrown weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt;, you can spend a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
 data "Description" "h5868da46g8004g4201g9772gb8219c021e1b;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "DealDamage(,Necrotic)"
@@ -284,6 +284,7 @@ data "Properties" "DealDamage(ProficiencyBonus, Necrotic, Magical,,0,,true,false
 // data "Cost" "ReactionActionPoint:1"
 // data "Stack" ""
 // data "InterruptDefaultValue" "Enabled;Ask"
+data "InterruptFlags" "InterruptWhileInvisible"
 
 // ==================================== Sanguine Blade (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.

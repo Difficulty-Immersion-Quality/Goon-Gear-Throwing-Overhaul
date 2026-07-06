@@ -197,7 +197,7 @@ data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL', GetAttackWeap
 // Bug Fix: Like other critical hit threshold sources, Elegant Duellist now states that it stacks.
 // Bug Fix: Withering Cut applies to thrown attacks, description overhauled.
 // Bug Fix: Added missing Honour ruleset bools to Withering Cut to prevent damage riders acting as a damage rider source.
-// Changes: Withering Cut can now be used by Invisible character.
+// Changes: Withering Cut can now be used by Invisible characters.
 
 // new entry "MAG_TheDueller_Rapier"
 // type "Weapon"

@@ -469,7 +469,7 @@ data "StatsFunctors" "IF(not ClassLevelHigherOrEqualThan(3,'Druid',context.Targe
 
 // ==================================== Staff of Interruption ====================================
 // Bug Fix: Now uses the appropriate level of Counterspell, 5 instead of 3.
-// Changes: Counterspell cannot be used while under the effects of a spellcasting restricted polymorph.
+// Changes: Counterspell can now be used by Invisible characters.
 // TODO: Throwing support.
 // TODO: Template?
 
@@ -508,9 +508,9 @@ new entry "Interrupt_MAG_Counterspell"
 type "InterruptData"
 // using "Interrupt_Counterspell"
 using "Interrupt_Counterspell_5"
-// Counterspell
+// // Counterspell
 // data "DisplayName" "h5ca745ecg0d79g4621gaa12g1fe3e6164a69;1"
-// Counterspell
+// // Counterspell
 data "DisplayName" "h5ca745ecg0d79g4621gaa12g1fe3e6164a69;1"
 // data "Success" "Counterspell();UseSpell(OBSERVER_SOURCE,Target_MAG_CounterSpell_Success,true,true,true)"
 // data "Cost" "ReactionActionPoint:1;Interrupt_MAG_Counterspell:1"
@@ -521,6 +521,7 @@ data "Cooldown" "OncePerRestPerItem"
 data "EnableCondition" "HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and (not HasStatus('SG_Polymorph') or Goon_IsUnrestrictedPolymorphStatus())"
 // data "EnableContext" "OnActionResourcesChanged"
 data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
+data "InterruptFlags" "InterruptWhileInvisible"
 
 // new entry "MAG_COUNTERSPELL_RESOURCE"
 // type "StatusData"

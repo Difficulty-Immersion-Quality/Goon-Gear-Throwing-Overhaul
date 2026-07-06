@@ -911,6 +911,7 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 
 // ==================================== Killer's Sweetheart ====================================
 // Bug Fix: Executioner now works with all attacks as the tooltip states.
+// Changes: Executioner can now be used by Invisible characters.
 
 // new entry "MAG_Critical_CriticalExecution_Ring"
 // type "Armor"
@@ -922,13 +923,24 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain);StatusImmunity(SG_Paralyzed);
 // data "StatusOnEquip" "MAG_CRITICAL_CRITICAL_EXECUTION_OWNER"
 // data "Unique" "1"
 
-// Killer's Sweetheart - Executioner
 new entry "Interrupt_MAG_CriticalExecution"
 type "InterruptData"
 // using "Interrupt_MAG_ParalyzingCritical"
 using "Interrupt_MAG_CriticalExecution"
+// // Executioner
+// data "DisplayName" "h77de1da7g55f4g4db6g91d3g925efbe58e3e;1"
+// // Once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt; when you kill a creature, your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.
+// data "Description" "h3794c885gdfd1g493bg8970gf88743e19139;1"
+// data "DescriptionParams" ""
+// data "Icon" "statIcons_ExterminateThreat"
+// data "InterruptContext" "OnPostRoll"
 // data "Conditions" "IsAbleToReact(context.Observer) and not Item() and Self(context.Source,context.Observer) and IsWeaponAttack() and not IsCritical()"
 data "Conditions" "IsAbleToReact(context.Observer) and not Item() and Self(context.Source,context.Observer) and IsAttack() and not IsCritical()"
+// data "Properties" "SetRoll(20);RemoveStatus(SELF, MAG_CRITICAL_CRITICAL_EXECUTION)"
+// data "Cost" ""
+// data "EnableCondition" ""
+// data "EnableContext" ""
+data "InterruptFlags" "InterruptWhileInvisible"
 
 // ==================================== Orphic Ring ====================================
 // TODO: Something/anything.

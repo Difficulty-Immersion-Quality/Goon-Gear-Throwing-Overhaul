@@ -441,6 +441,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Bloodthirst (Blade of the First Blood) ====================================
+// Changes: True Strike Riposte can now be used by Invisible characters.
 
 // new entry "MAG_WYR_Orin_Bhaalist_Dagger"
 // type "Weapon"
@@ -487,15 +488,17 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "Description" "h5b97d606g97d6g4685g98ecg0d265dfe0618;1"
 // data "Boosts" "UnlockInterrupt(Interrupt_TheClover_TrueStrike_Riposte)"
 
-// new entry "Interrupt_TheClover_TrueStrike_Riposte"
-// type "InterruptData"
+new entry "Interrupt_TheClover_TrueStrike_Riposte"
+type "InterruptData"
 // using "Interrupt_Riposte"
-// True Strike Riposte
+using "Interrupt_TheClover_TrueStrike_Riposte"
+// // True Strike Riposte
 // data "DisplayName" "hac87e9a5g95dcg4df9g92d6ga9848e3256ae;1"
-// When a creature misses you with a melee attack, you may retaliate and gain &lt;LSTag Type="Status" Tooltip="TRUE_STRIKE"&gt;True Strike&lt;/LSTag&gt;.
+// //When a creature misses you with a melee attack, you may retaliate and gain &lt;LSTag Type="Status" Tooltip="TRUE_STRIKE"&gt;True Strike&lt;/LSTag&gt;.
 // data "Description" "hb89feac4ga6b9g4139gaab8gdd531e28e52d;1"
 // data "Properties" "UseSpell(SWAP,Target_MAG_TheClover_TrueStrike_Riposte,true,true,true);ApplyStatus(OBSERVER_OBSERVER,INTERRUPT_RIPOSTE,100,0)"
 // data "Cost" "ReactionActionPoint:1"
+data "InterruptFlags" "InterruptWhileInvisible"
 
 // ==================================== Arcane Absorption Dagger (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.

@@ -1533,10 +1533,12 @@ data "SpellFlags" "IsJump;AddFallDamageOnLand;HasHighGroundRangeExtension;Ignore
 // Bug Fix: Infernal Resistance/Infernal Evasion no longer triggers on succeeded Saving Throws.
 // Bug Fix: Infernal Resistance/Infernal Evasion no longer grants a bonus to an attacker's Attack Roll instead of the wearer's Saving Throw, in cases where the spell has both an Attack Roll and triggers a Saving Throw.
 // Bug Fix: Infernal Resistance/Infernal Evasion's tooltip no longer fails to mention the feature only works on spells.
+// Changes: Infernal Resistance can now be used by Invisible characters.
 // Changes: Steadfast now functions while under the effects of non-humanoid polymorphs.
 // Changes: Infernal Resistance has been renamed to Infernal Evasion, so the interrupts matches the passive.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
 // TODO: Pretty sure I got lost in the sauce here and stopped documenting half of what I did.
+// TODO: Action resource stuff needs to be better for wildshapes not double dipping and such.
 
 new entry "MAG_Infernal_Metal_Boots"
 type "Armor"
@@ -1633,6 +1635,7 @@ data "Properties" "AdjustRoll(99)"
 // data "InterruptDefaultValue" "Ask;Enabled"
 // data "EnableCondition" "HasActionResource('Interrupt_Legendary_InfernalResistance', 1, 0, false, false, context.Source)"
 // data "EnableContext" "OnActionResourcesChanged"
+data "InterruptFlags" "InterruptWhileInvisible"
 
 // new entry "MAG_Legendary_InfernalResistance_Resource_Passive"
 // type "PassiveData"

@@ -152,7 +152,8 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Magical Hand Crossbow ====================================
-// TODO: Something/anything.
+// Bug Fix: Cunning Combo now works while under the effects of more non-hostile and non-spellcasting restricted Polymorphs.
+// Changes: Cunning Combo can now be used by Invisible characters.
 
 // new entry "MAG_Cunning_HandCrossbow"
 // type "Weapon"
@@ -172,24 +173,29 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // type "PassiveData"
 // // Cunning Combo
 // data "DisplayName" "h409a130eg0873g41b9gbee5g1142c6cc85a5;1"
-// // When you shoot a target at close range, you can make an additional melee attack against it as a <LSTag Type="ActionResource" Tooltip="ReactionActionPoint">reaction</LSTag>.
+// // When you shoot a target at close range, you can make an additional melee attack against it as a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
 // data "Description" "h86247aa2gc661g4301g8201g47849046268d;2"
 // data "Boosts" "UnlockInterrupt(Interrupt_MAG_Cunning_Combo_HandCrossbow)"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "AttackedWithPassiveSourceWeapon()"
 // data "StatsFunctors" "UseSpell(Target_Sentinel_AttackOfOpportunity,true,true,true);DealDamage(1d4, Force,Magical)"
 
-// new entry "Interrupt_MAG_Cunning_Combo_HandCrossbow"
-// type "InterruptData"
+new entry "Interrupt_MAG_Cunning_Combo_HandCrossbow"
+type "InterruptData"
 // using "Interrupt_Smite_Divine"
+using "Interrupt_MAG_Cunning_Combo_HandCrossbow"
 // // Cunning Combo
 // data "DisplayName" "h1220008ag2888g4a19g8e37g2af50c2dd807;1"
-// // When you shoot a target at close range, you can make an additional melee attack against it as a <LSTag Type="ActionResource" Tooltip="ReactionActionPoint">reaction</LSTag>.
+// // When you shoot a target at close range, you can make an additional melee attack against it as a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
 // data "Description" "h2b3e8e83gb749g4739gb87bg7cf3f2eeada5;1"
 // data "DescriptionParams" ""
 // data "ExtraDescriptionParams" ""
 // data "InterruptContext" "OnCastHit"
 // data "Conditions" "not DistanceToEntityGreaterThan(2, context.ObserverPosition, context.Target) and IsAbleToReact(context.Observer) and not Item() and IsRangedAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack() and not IsKillingBlow() and HasLastAttackTriggered()"
+data "Conditions" "not DistanceToEntityGreaterThan(2, context.ObserverPosition, context.Target) and IsAbleToReact(context.Observer) and not Item() and IsRangedAttack() and Self(context.Source,context.Observer) and IsHit() and IsWeaponAttack() and not IsKillingBlow() and HasLastAttackTriggered()"
 // data "Properties" "UseAttack()"
 // data "Cost" "ReactionActionPoint:1"
 // data "Stack" ""
+// data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+data "EnableCondition" "not HasStatus('SG_Polymorph') or Goon_IsUnrestrictedPolymorphStatus()"
+data "InterruptFlags" "InterruptWhileInvisible"

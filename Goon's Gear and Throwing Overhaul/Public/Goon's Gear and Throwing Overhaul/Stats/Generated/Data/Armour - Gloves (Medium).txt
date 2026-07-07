@@ -6,35 +6,133 @@
 
 // 
 
-// ==================================== The Reviving Hands ====================================
-// Bug Fix: Aegis Palms now applies Death Ward to revived targets.
+// ==================================== 1. Blackguard's Gauntlets ====================================
+// TODO: Something/anything.
 
-// new entry "MAG_OfRevivify_Gloves"
-// type "Armor"
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================================== 2. Gauntlets of Surging Accuracy ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================================== 3. Unwanted Masterwork Gauntlets ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================================== 4. Gauntlets of the Warmaster ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================================== 5. Legacy of the Masters ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================================== 6. The Reviving Hands ====================================
+// Bug Fix: Aegis Palms now applies Death Ward to revived targets.
+// Changes: Aegis Palms now functions while under the effects of non-humanoid polymorphs.
+// Changes: The +1 bonus to Strength Saving Throws now functions while under the effects of non-humanoid polymorphs.
+// Changes: Aegis Palms now functions with level 7-9 Revivify upcasting.
+
+new entry "MAG_OfRevivify_Gloves"
+type "Armor"
 // using "ARM_Gloves_Metal"
+using "MAG_OfRevivify_Gloves"
 // data "RootTemplate" "0e94335a-bf4d-47b9-bde7-85ee2f01102f"
 // data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
 // data "Rarity" "VeryRare"
 // data "Boosts" "RollBonus(SavingThrow, 1, Strength);UnlockSpell(Teleportation_MAG_Revivify)"
 // data "PassivesOnEquip" "MAG_Revivify_Gloves_Passive"
+data "PassivesOnEquip" "MAG_Revivify_Gloves_Passive;Goon_Gear_Polymorph_TheRevivingHands"
 // data "Unique" "1"
+
+new entry "Goon_MAG_OfRevivify_Gloves_NotUnique"
+type "Armor"
+using "MAG_OfRevivify_Gloves"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_THEREVIVINGHANDS_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
+// ==================
+
+new entry "Goon_Gear_Polymorph_TheRevivingHands"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_THEREVIVINGHANDS, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_THEREVIVINGHANDS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_THEREVIVINGHANDS"
+data "Boosts" "RollBonus(SavingThrow, 1, Strength)"
+data "Passives" "MAG_Revivify_Gloves_Passive"
+
+// ==================
+
 new entry "MAG_Revivify_Gloves_Passive"
 type "PassiveData"
 // using "ARM_Gloves_Metal"
 using "MAG_Revivify_Gloves_Passive"
-// Aegis Palms
+// // Aegis Palms
 // data "DisplayName" "h2d49b835g1466g4935g930ag6904dc1abbf6;1"
-// When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt;.
+// // When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt;.
 // data "Description" "ha1f9a714g92c3g4d83g8092gf281102e6794;2"
-// When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] turns. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] turns.
+// // When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] rounds. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] rounds.
 data "Description" "h30f1a9acg7a77g46e0g824bg8037eb98bf98;1"
 data "DescriptionParams" "2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnAttack;OnHeal"
 // data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and Character() and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
-data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
+data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and Goon_IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
+
+// new entry "Teleportation_MAG_Revivify"
+// type "SpellData"
+// data "SpellType" "Teleportation"
+// using "Teleportation_Revivify"
+// data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "ActionPoint:1"
+
+// ==================================== 7. XXXXXXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"

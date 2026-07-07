@@ -218,8 +218,13 @@
 						</node>
 					</children>
 				</node>
-			<!-- Fleetfingers -->
+			<!-- 1. Braindrain Gloves -->
+
+			<!-- 2. Dark Justiciar Gauntlets (Uncommon) -->
+
+			<!-- 3. Fleetfingers -->
 				<node id="GameObjects">
+					<!-- Plain leather with a faint but unmistakable buzz - as if eager to put idle hands to work. -->
 					<attribute id="Description" type="TranslatedString" handle="hcd1ea854gc12dg4309gac65g7d93bf50a18f" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hafd0c943gecc1g4c3cg8072g795e51545fcb" version="1" />
 					<attribute id="Icon" type="FixedString" value="Item_MAG_Mobility_JumpOnDash_Gloves" />
@@ -462,8 +467,31 @@
 						</node>
 					</children>
 				</node>
-			<!-- Luminous Gloves -->
+			<!-- 4. Gloves of Archery -->
+
+			<!-- 5. Gloves of Baneful Striking -->
+
+			<!-- 6. Gloves of Belligerent Skies -->
+
+			<!-- 7. Gloves of Hail of Thorns -->
+
+			<!-- 8. Gloves of Heroism -->
+
+			<!-- 9. Gloves of the Growling Underdog -->
+
+			<!-- 10. Gloves of Thievery -->
+
+			<!-- 11. Hellrider's Pride -->
+
+			<!-- 12. Herbalist's Gloves -->
+
+			<!-- 13. Ichorous Gloves -->
+
+			<!-- 14. Knock Knuckle Gloves -->
+
+			<!-- 15. Luminous Gloves -->
 				<node id="GameObjects">
+					<!-- The pads of each fingertip shine from the fabric with a garish glow.  -->
 					<attribute id="Description" type="TranslatedString" handle="h169bb086g2949g4d5cg891bgf9e373f083c5" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h20c7ab52g09b1g4d05gbb01g53d0ff93e867" version="2" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -742,8 +770,260 @@
 						</node>
 					</children>
 				</node>
-			<!-- Gloves of The Duellist -->
+			<!-- 16. Reason's Grasp -->
+
+			<!-- 17. Thermoarcanic Gloves -->
+
+			<!-- 18. Unlucky Thief's Gloves -->
+
+			<!-- 19. Winter's Clutches -->
+
+			<!-- 20. Bracers of Defence -->
+
+			<!-- 21. Cerebral Citadel Gloves -->
+
+			<!-- 22. Cindersnap Gloves -->
+
+			<!-- 23. Craterflesh Gloves -->
+
+			<!-- 24. Daredevil Gloves -->
+
+			<!-- 25. Dark Displacement Gloves -->
+
+			<!-- 26. Dark Justiciar Gauntlets (Rare) -->
+
+			<!-- 27. Flawed Helldusk Gloves -->
+
+			<!-- 28. Gloves of Battlemage's Power -->
 				<node id="GameObjects">
+					<!-- Bands of blue light snap and contract when the gloved fingertips are pressed together - evidence of the arcane polarity linking them.  -->
+					<attribute id="Description" type="TranslatedString" handle="h307d5dc6gd55eg46adg9a07g2363d765159b" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h62510ec6g3314g4719g9c3cg3de055058d18" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="15381544-e616-46e6-a881-0af793971863" />
+					<attribute id="Name" type="LSString" value="MAG_Gish_ArcaneAcuity_Gloves" />
+					<attribute id="ParentTemplateId" type="FixedString" value="16d3a315-e79b-49ee-98b1-3951594c51f0" />
+					<attribute id="Stats" type="FixedString" value="MAG_Gish_ArcaneAcuity_Gloves" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209027" />
+					<children>
+						<node id="Equipment">
+							<children>
+								<node id="AfroLongHair" />
+								<node id="AfroShortHair" />
+								<node id="CurlyLongHair" />
+								<node id="CurlyShortHair" />
+								<node id="DreadLongHair" />
+								<node id="DreadShortHair" />
+								<node id="LongHair" />
+								<node id="ParentRace">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
+											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
+											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
+										</node>
+									</children>
+								</node>
+								<node id="ShortHair" />
+								<node id="Slot">
+									<attribute id="Object" type="FixedString" value="Gloves" />
+								</node>
+								<node id="VisualSet">
+									<attribute id="BodySetVisual" type="FixedString" value="" />
+									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
+									<children>
+										<node id="MaterialOverrides">
+											<attribute id="MaterialResource" type="FixedString" value="" />
+											<children>
+												<node id="MaterialPresets" />
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Primary" />
+													<attribute id="Value" type="fvec3" value="0.54179835 0.5193824 0.49201536" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Secondary" />
+													<attribute id="Value" type="fvec3" value="0.81960785 0.5686275 0.27058825" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="True" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Tertiary" />
+													<attribute id="Value" type="fvec3" value="0.41568628 0.37254903 0.29803923" />
+												</node>
+											</children>
+										</node>
+										<node id="RealMaterialOverrides" />
+									</children>
+								</node>
+								<node id="Visuals">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="5b6fe8b2-1c4b-661a-40c1-0042114706e3" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="71180b76-5752-4a97-b71f-911a69197f58" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="8f140866-93b6-f6ad-54a8-1e2924f516e7" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="e39505f7-f576-4e70-a99e-8e29cd381a11" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="e9630d08-7246-e768-68c0-def1b30166e8" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="47c0315c-7dc6-4862-b39b-8bf3a10f8b54" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="a3ab0742-9568-f20e-cd46-19e34be4f4d8" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="8324d8f6-b6bd-1866-6206-bd4cf83e792e" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="f602b30e-52dd-409e-d5e4-6ff13f7d98f4" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="abf674d2-2ea4-4a74-ade0-125429f69f83" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="14c80daf-495d-fa19-e3ac-884d449a7885" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="b4a34ce7-41be-44d9-8486-938fe1472149" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="11c6ce18-ba20-301f-a214-e2f575abcf64" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="a933e2a8-aee1-4ecb-80d2-8f47b706f024" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="e3ede8f4-b547-4efb-1c7f-bf40ac5f84e2" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="8f00cf38-4588-433a-8175-8acdbbf33f33" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="11143d24-3f99-f15c-2805-0977321aa57e" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="5640e766-aa53-428d-815b-6a0b4ef95aca" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="4fef4b1e-4932-c8c7-2fcd-39e565eecdfb" />
+												</node>
+											</children>
+										</node>
+										<node id="Object">
+											<attribute id="MapKey" type="guid" value="c491d027-4332-4fda-948f-4a3df6772baa" />
+											<children>
+												<node id="MapValue">
+													<attribute id="Object" type="FixedString" value="caf2d5eb-64b2-49cf-4dca-56d1c41ca9b7" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="WavyLongHair" />
+								<node id="WavyShortHair" />
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="IsHiddenStatus" type="bool" value="False" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_GLOVESOFBATTLEMAGESPOWER_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			<!-- 29. Gloves of Cinder and Sizzle -->
+
+			<!-- 30. Gloves of Crushing -->
+
+			<!-- 31. Gloves of Missile Snaring -->
+
+			<!-- 32. Gloves of the Automaton -->
+
+			<!-- 33. Gloves of the Balanced Hands -->
+
+			<!-- 34. Gloves of The Duellist -->
+				<node id="GameObjects">
+					<!-- Ways of beginning a duel have varied over the years. Perhaps the most famous is the Bildumbacher Method, in which the instigator drips paint thinner onto the opponent's socks.   -->
 					<attribute id="Description" type="TranslatedString" handle="h2e1fb1ffg2a4bg4d07gb5abg51da20a80fef" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h6c092253g52c1g4419g9168g386710c421fd" version="2" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -998,224 +1278,33 @@
 						</node>
 					</children>
 				</node>
-			<!-- Gloves of Battlemage's Power -->
+			<!-- 35. Gloves of Uninhibited Kushigo -->
+
+			<!-- 36. Jhannyl's Gloves -->
+
+			<!-- 37. Martial Exertion Gloves -->
+
+			<!-- 38. Nimblefinger Gloves -->
+
+			<!-- 39. Poisoner's Gloves -->
+
+			<!-- 40. Raven Gloves -->
+
+			<!-- 41. Seraphic Pugilist Gloves -->
+
+			<!-- 42. Servitor of the Black Hand Gloves -->
+
+			<!-- 43. Snow-Dusted Monastery Gloves -->
+
+			<!-- 44. Spellseeking Gloves -->
+
+			<!-- 45. Stalker Gloves -->
+
+			<!-- 46. Swordmaster Gloves -->
+
+			<!-- 47. The Sparkle Hands -->
 				<node id="GameObjects">
-					<attribute id="Description" type="TranslatedString" handle="h307d5dc6gd55eg46adg9a07g2363d765159b" version="1" />
-					<attribute id="DisplayName" type="TranslatedString" handle="h62510ec6g3314g4719g9c3cg3de055058d18" version="2" />
-					<attribute id="LevelName" type="FixedString" value="" />
-					<attribute id="MapKey" type="FixedString" value="15381544-e616-46e6-a881-0af793971863" />
-					<attribute id="Name" type="LSString" value="MAG_Gish_ArcaneAcuity_Gloves" />
-					<attribute id="ParentTemplateId" type="FixedString" value="16d3a315-e79b-49ee-98b1-3951594c51f0" />
-					<attribute id="Stats" type="FixedString" value="MAG_Gish_ArcaneAcuity_Gloves" />
-					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
-					<attribute id="Type" type="FixedString" value="item" />
-					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209027" />
-					<children>
-						<node id="Equipment">
-							<children>
-								<node id="AfroLongHair" />
-								<node id="AfroShortHair" />
-								<node id="CurlyLongHair" />
-								<node id="CurlyShortHair" />
-								<node id="DreadLongHair" />
-								<node id="DreadShortHair" />
-								<node id="LongHair" />
-								<node id="ParentRace">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<attribute id="MapValue" type="guid" value="00000000-0000-0000-0000-000000000000" />
-										</node>
-									</children>
-								</node>
-								<node id="ShortHair" />
-								<node id="Slot">
-									<attribute id="Object" type="FixedString" value="Gloves" />
-								</node>
-								<node id="VisualSet">
-									<attribute id="BodySetVisual" type="FixedString" value="" />
-									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
-									<children>
-										<node id="MaterialOverrides">
-											<attribute id="MaterialResource" type="FixedString" value="" />
-											<children>
-												<node id="MaterialPresets" />
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Primary" />
-													<attribute id="Value" type="fvec3" value="0.54179835 0.5193824 0.49201536" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Secondary" />
-													<attribute id="Value" type="fvec3" value="0.81960785 0.5686275 0.27058825" />
-												</node>
-												<node id="Vector3Parameters">
-													<attribute id="Color" type="bool" value="False" />
-													<attribute id="Custom" type="bool" value="True" />
-													<attribute id="Enabled" type="bool" value="True" />
-													<attribute id="Parameter" type="FixedString" value="Metal_Tertiary" />
-													<attribute id="Value" type="fvec3" value="0.41568628 0.37254903 0.29803923" />
-												</node>
-											</children>
-										</node>
-										<node id="RealMaterialOverrides" />
-									</children>
-								</node>
-								<node id="Visuals">
-									<children>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="5b6fe8b2-1c4b-661a-40c1-0042114706e3" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="71180b76-5752-4a97-b71f-911a69197f58" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="8f140866-93b6-f6ad-54a8-1e2924f516e7" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="e39505f7-f576-4e70-a99e-8e29cd381a11" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="e9630d08-7246-e768-68c0-def1b30166e8" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="47c0315c-7dc6-4862-b39b-8bf3a10f8b54" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="a3ab0742-9568-f20e-cd46-19e34be4f4d8" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="f07faafa-0c6f-4f79-a049-70e96b23d51b" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="8324d8f6-b6bd-1866-6206-bd4cf83e792e" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="06aaae02-bb9e-4fa3-ac00-b08e13a5b0fa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="f602b30e-52dd-409e-d5e4-6ff13f7d98f4" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="abf674d2-2ea4-4a74-ade0-125429f69f83" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="14c80daf-495d-fa19-e3ac-884d449a7885" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="b4a34ce7-41be-44d9-8486-938fe1472149" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="11c6ce18-ba20-301f-a214-e2f575abcf64" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="a933e2a8-aee1-4ecb-80d2-8f47b706f024" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="e3ede8f4-b547-4efb-1c7f-bf40ac5f84e2" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="8f00cf38-4588-433a-8175-8acdbbf33f33" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="11143d24-3f99-f15c-2805-0977321aa57e" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="5640e766-aa53-428d-815b-6a0b4ef95aca" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="4fef4b1e-4932-c8c7-2fcd-39e565eecdfb" />
-												</node>
-											</children>
-										</node>
-										<node id="Object">
-											<attribute id="MapKey" type="guid" value="c491d027-4332-4fda-948f-4a3df6772baa" />
-											<children>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="caf2d5eb-64b2-49cf-4dca-56d1c41ca9b7" />
-												</node>
-											</children>
-										</node>
-									</children>
-								</node>
-								<node id="WavyLongHair" />
-								<node id="WavyShortHair" />
-							</children>
-						</node>
-						<!-- Changes: Gale can eat it -->
-						<node id="OnUsePeaceActions">
-							<children>
-								<node id="Action">
-									<attribute id="ActionType" type="int32" value="7" />
-									<children>
-										<node id="Attributes">
-											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
-											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
-											<attribute id="Consume" type="bool" value="True" />
-											<attribute id="IsHiddenStatus" type="bool" value="False" />
-											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
-											<attribute id="StatusDuration" type="int32" value="0" />
-										</node>
-									</children>
-								</node>
-							</children>
-						</node>
-						<node id="Tags">
-							<children>
-								<node id="Tag">
-									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
-									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
-								</node>
-								<node id="Tag">
-									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
-									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
-								</node>
-							</children>
-						</node>
-						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
-						<node id="StatusList">
-							<children>
-								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_GLOVESOFBATTLEMAGESPOWER_ARMOUR_TECHNICAL" />
-								</node>
-							</children>
-						</node>
-					</children>
-				</node>
-			<!-- The Sparkle Hands -->
-				<node id="GameObjects">
+					<!-- 'Sometimes I just want to feel that spark,' Yrre the Sparkstruck said. 'Feel the lightning course through me.' -->
 					<attribute id="Description" type="TranslatedString" handle="h3b872abeg3afbg4c81g8474g731ac264ba87" version="2" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h96e160abgb570g4507g80d8g03f4931f8ae9" version="4" />
 					<attribute id="Icon" type="FixedString" value="Item_MAG_ChargedLightning_AbilityCheckBoost_Gloves" />
@@ -1415,6 +1504,35 @@
 						</node>
 					</children>
 				</node>
+			<!-- 48. Thunderpalm Strikers -->
+
+			<!-- 49. Winkling Gloves -->
+
+			<!-- 50. Wondrous Gloves -->
+
+			<!-- 51. Abyss Beckoners -->
+
+			<!-- 52. Bhaalist Gloves -->
+
+			<!-- 53. Bonespike Gloves -->
+
+			<!-- 54. Gauntlet of the Tyrant -->
+
+			<!-- 55. Gauntlets of Hill Giant Strength -->
+
+			<!-- 56. Gemini Gloves -->
+
+			<!-- 57. Gloves of Dexterity -->
+
+			<!-- 58. Helldusk Gloves -->
+
+			<!-- 59. Hr'a'cknir Bracers -->
+
+			<!-- 60. Quickspell Gloves -->
+
+			<!-- 61. Spellmight Gloves -->
+
+			<!-- 62. Gloves of Soul Catching -->
 			</children>
 		</node>
 	</region>

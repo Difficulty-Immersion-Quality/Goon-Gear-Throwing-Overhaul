@@ -354,12 +354,31 @@
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
 
+<!-- ==================================== Armour - Gloves (Clothing) ==================================== -->
+
+	<!-- 3. Fleetfingers -->
+	<!-- "MAG_Mobility_JumpOnDash_Passive", "MAG_MOBILITY_JUMPONDASH_TECHNICAL" -->
+	<content contentuid="h7cfb0f31geb19g48afgb7b6g5560f3bf9e9d" version="1">Once per turn, after the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they can &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; without using a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt; for [1] round.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
+<!-- ==================================== Armour - Gloves (Medium) ==================================== -->
+
+	<!-- 6. The Reviving Hands -->
+	<!-- "MAG_Revivify_Gloves_Passive" -->
+	<content contentuid="h30f1a9acg7a77g46e0g824bg8037eb98bf98" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] rounds. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] rounds.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
 <!-- ==================================== GEAR ==================================== -->
 
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
 	<!-- "MAG_ShadowBlinding_Weapon_Passive", "GOON_SHADOW_BLINDING_TECHNICAL" --> <content contentuid="h2c526f46g60f2g4c49g9262g26baa6b6af4a" version="1">If you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, you have a chance of &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; your target for [1] turns.</content>
-	<!-- "MAG_Revivify_Gloves_Passive" --> <content contentuid="h30f1a9acg7a77g46e0g824bg8037eb98bf98" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] turns. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] turns.</content>
 	<!-- , &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Archer"&gt;Starry Form: Archer&lt;/LSTag&gt;, &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Chalice"&gt;Starry Form: Chalice&lt;/LSTag&gt;, or &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Dragon"&gt;Starry Form: Dragon&lt;/LSTag&gt;. -->
 	<!-- "MAG_Gish_ArcaneAcuity_Gloves_Passive" --> <content contentuid="hf583b6a7g93e9g4024g849fge9c76241e0ab" version="1">When you hit a target with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt; or a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;Melee Weapon Attack&lt;/LSTag&gt; that is also a spell, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
 	<!-- "UNI_MassHealRing_Passive" --> <content contentuid="h1585ed41g588ag4ff4gad07gb09acc5e3792" version="1">Whenever you heal a creature it becomes &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [1] turns.</content>
@@ -406,7 +425,6 @@
 	<!-- "MAG_Spellbreaker_Battleaxe_Passive	" --> <content contentuid="h6c9f3c93g7e68g4969gb60cg809a96ce9a65" version="1">You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against &lt;LSTag Tooltip="Concentration"&gt;concentrating&lt;/LSTag&gt; creatures.</content>
 	<!-- "MAG_TheHunters_Dagger_Passive", "GOON_HUNTERSDAGGER_RUPTURE_TECHNICAL_APPLIER" --> <content contentuid="hf38c5a04g2bb3g4a65g9cbdg3ee366e57242" version="1">When you deal damage with this weapon, possibly &lt;LSTag Type="Status" Tooltip="BARBED_ARROW"&gt;Rupture&lt;/LSTag&gt; your target for [1] turns.</content>
 	<!-- "MAG_TheCrimson_Vicious_Passive" --> <content contentuid="hc5b54a05g5b17g4ad2g9774g69f540a70f3a" version="1">Attacks with this weapon deal an additional [1], if you attacked with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
-	<!-- "MAG_Mobility_JumpOnDash_Passive", "MAG_MOBILITY_JUMPONDASH_TECHNICAL" --> <content contentuid="h7cfb0f31geb19g48afgb7b6g5560f3bf9e9d" version="1">Once per turn, after the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they can &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; without using a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;.</content>
 	<!-- "UND_DuergarRaft_Hammer_Passive" --> <content contentuid="h03de4225g96deg49aag9a14gd1a3af9b0986" version="1">Knock nearby foes &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turns, after killing a hostile target or landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon.</content>
 	<!-- "UNI_WYR_Circus_ClownHammer_Passive", "GOON_GRIM_IRONY_TECHNICAL_APPLIER" --> <content contentuid="h2ef43338g970ag42cfga983g22037d203ff2" version="1">Whenever this weapon lands a critical hit, both target and attacker have to succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, or be affected by &lt;LSTag Type="Status" Tooltip="HIDEOUS_LAUGHTER"&gt;Hideous Laughter&lt;/LSTag&gt; for [1] turns.</content>
 	<!-- "Goon_Redcap_Sickle_Bonus" --> <content contentuid="hd50a1576gf04ag4d04gab36g2a0353418307" version="1">Feyvourite Weapon</content>

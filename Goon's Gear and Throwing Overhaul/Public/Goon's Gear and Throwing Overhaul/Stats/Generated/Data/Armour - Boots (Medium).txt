@@ -204,19 +204,16 @@ data "StatusPropertyFlags" "IgnoreResting"
 data "StackId" "MAG_UNMOVABLE"
 // data "Boosts" "Attribute(Grounded);StatusImmunity(SG_Prone)"
 data "Boosts" "Attribute(Grounded);StatusImmunity(SG_Prone)"
-data "Passives" "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
+data "Passives" "Goon_BootsOfStriding_Unmovable_Technical_Passive"
 
 // Note: It's 100% needed to check for the status here, as the passive does not exist in time to be caught by these conditions.
-new entry "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
+// TODO: Double check this, because it hasn't appeared to be the case with other items just using OnStatusRemoved.
+new entry "Goon_BootsOfStriding_Unmovable_Technical_Passive"
 type "PassiveData"
-// using "MAG_Paladin_MomentumOnConcentration_Boots_Passive"
-using "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
-// data "Properties" "IsHidden"
-// data "StatsFunctorContext" "OnStatusRemove;OnStatusRemoved;OnDamaged"
+data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnStatusApplied;OnStatusRemoved;OnDamaged"
-// data "Conditions" "not IsConcentrating()"
 data "Conditions" "not IsConcentrating() or (not HasPassive('MAG_Paladin_MomentumOnConcentration_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_BOOTSOFSTRIDING'))"
-// data "StatsFunctors" "RemoveStatus(MAG_UNMOVABLE)"
+data "StatsFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 
 // ==================================== 3. Blackguard's Greaves ====================================
 // Changes: The +1 Athletics bonus now functions while under the effects of non-humanoid polymorphs.

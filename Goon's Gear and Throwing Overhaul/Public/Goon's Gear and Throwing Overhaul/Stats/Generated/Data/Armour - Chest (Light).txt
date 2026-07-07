@@ -90,7 +90,6 @@ new entry "GOON_SHADECLINGERARMOUR_EQUIP_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-// data "OnRemoveFunctors" "IF(not HasStatus('GOON_GEAR_POLYMORPH_SHADECLINGERARMOUR')):RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
 
 // ==================
 
@@ -143,7 +142,7 @@ new entry "Goon_ShadeclingerArmour_ClingingShadows_Technical_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnStatusRemoved"
-data "Conditions" "not HasPassive('MAG_Harpers_ArmorOfShadows_Passive')"
+data "Conditions" "not HasPassive('MAG_Harpers_ArmorOfShadows_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_SHADECLINGERARMOUR')"
 data "StatsFunctors" "RemoveStatus(MAG_HARPERS_OBSCURITY_SAVING_THROWS)"
 
 // ==================================== 6. Spidersilk Armour ====================================
@@ -302,7 +301,7 @@ new entry "Goon_ArmourOfMoonbasking_LunarVitality_Technical_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnStatusRemoved"
-data "Conditions" "not HasPassive('MAG_Druid_Wildshape_TempHP_Passive') or not Goon_IsDruidWildshapeOrStatus()"
+data "Conditions" "(not HasPassive('MAG_Druid_Wildshape_TempHP_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_ARMOUROFMOONBASKING')) or not Goon_IsDruidWildshapeOrStatus()"
 data "StatsFunctors" "RemoveStatus(MAG_DRUID_WILDSHAPE_TEMP_HP)"
 
 new entry "MAG_Druid_Wildshape_SpellResistance_Passive"
@@ -353,7 +352,7 @@ new entry "Goon_ArmourOfMoonbasking_LunarProtection_Technical_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnStatusRemoved"
-data "Conditions" "not HasPassive('MAG_Druid_Wildshape_SpellResistance_Passive') or not Goon_IsDruidWildshapeOrStatus()"
+data "Conditions" "(not HasPassive('MAG_Druid_Wildshape_SpellResistance_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_ARMOUROFMOONBASKING')) or not Goon_IsDruidWildshapeOrStatus()"
 data "StatsFunctors" "RemoveStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE)"
 
 // ==================================== 9. Armour of the Sporekeeper ====================================

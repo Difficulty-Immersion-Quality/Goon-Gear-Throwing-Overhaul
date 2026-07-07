@@ -609,7 +609,7 @@ new entry "Goon_CloakOfDisplacement_Displaced_Technical_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnStatusRemoved"
-data "Conditions" "not HasPassive('MAG_PHB_Displacement_Cloak_Passive')"
+data "Conditions" "not HasPassive('MAG_PHB_Displacement_Cloak_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_CLOAKOFDISPLACEMENT')"
 data "StatsFunctors" "RemoveStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT)"
 
 // ==================================== 10. Derivation Cloak ====================================
@@ -905,7 +905,7 @@ new entry "Goon_ShadeSlayerCloak_SkilledSkullduggery_Technical_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnStatusRemoved"
-data "Conditions" "not HasPassive('MAG_Critical_Hiding_ReduceCriticalRange_Passive')"
+data "Conditions" "not HasPassive('MAG_Critical_Hiding_ReduceCriticalRange_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_SHADESLAYERCLOAK')"
 data "StatsFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 
 // ==================================== 17. Cloak of Avarice (Innaccessible/cut content) ====================================

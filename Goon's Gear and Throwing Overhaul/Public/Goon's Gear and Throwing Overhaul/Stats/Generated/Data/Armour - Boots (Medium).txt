@@ -207,7 +207,6 @@ data "Boosts" "Attribute(Grounded);StatusImmunity(SG_Prone)"
 data "Passives" "Goon_BootsOfStriding_Unmovable_Technical_Passive"
 
 // Note: It's 100% needed to check for the status here, as the passive does not exist in time to be caught by these conditions.
-// TODO: Double check this, because it hasn't appeared to be the case with other items just using OnStatusRemoved.
 new entry "Goon_BootsOfStriding_Unmovable_Technical_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
@@ -723,7 +722,6 @@ data "PreviewCursor" "Cast"
 // Changes: Force Bravado gives 2 rounds of Force Conduit if the wearer does now have any, but only 1 round if they do.
 // Changes: Descriptions improved.
 // TODO: FX for the application at the end of turn.
-// TODO: If the boots are equipped mid-combat the technical Force Bravado won't be applied, and the affects will not trigger that turn.
 
 new entry "MAG_ZOC_ForceConduitWhileSurounded_Boots"
 type "Armor"
@@ -732,6 +730,7 @@ using "MAG_ZOC_ForceConduitWhileSurounded_Boots"
 // data "RootTemplate" "cde75746-e209-433b-838c-300e3c7d8306"
 // data "Rarity" "Uncommon"
 data "PassivesOnEquip" "MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive;Goon_Gear_Polymorph_TenaciousBoots"
+data "StatusOnEquip" "GOON_TENACIOUSBOOTS_EQUIP_TECHNICAL"
 // data "Boosts" "Skill(Athletics,1);UnlockSpell(Shout_MAG_ZOC_ImmovableShout)"
 // data "Unique" "1"
 
@@ -742,6 +741,11 @@ using "MAG_ZOC_ForceConduitWhileSurounded_Boots"
 data "Unique" "0"
 
 new entry "GOON_TENACIOUSBOOTS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+new entry "GOON_TENACIOUSBOOTS_EQUIP_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
@@ -777,18 +781,30 @@ data "DescriptionParams" "1;2;Distance(3);2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
-data "BoostContext" "OnCreate;OnTurn;OnCombatStarted;OnMovedDistance;OnEnterAttackRange;OnLeaveAttackRange;OnSurfaceEnter;OnPushed"
-data "BoostConditions" "Combat() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED')"
-data "Boosts" "Tag(GOON_FORCEBRAVADO)"
-data "StatsFunctorContext" "OnTurn;OnStatusRemoved"
+data "StatsFunctorContext" "OnCreate;OnTurn"
 data "Conditions" "Combat()"
-data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnTurn)):ApplyStatus(GOON_FORCEBRAVADO_TECHNICAL,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('GOON_FORCEBRAVADO_TECHNICAL') and Tagged('GOON_FORCEBRAVADO') and HasStatus('MAG_ZOC_FORCE_CONDUIT')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('GOON_FORCEBRAVADO_TECHNICAL') and Tagged('GOON_FORCEBRAVADO') and not HasStatus('MAG_ZOC_FORCE_CONDUIT')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('GOON_FORCEBRAVADO_TECHNICAL') and Tagged('GOON_FORCEBRAVADO')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT_DURATION_TECHNICAL, 100, 1)"
+data "StatsFunctors" "ApplyStatus(GOON_FORCEBRAVADO_TECHNICAL,100,1)"
+
+// // What a wild idea that wasn't needed or predictably functional. I'm too attached to this jank to delete it.
+// data "BoostContext" "OnCreate;OnTurn;OnCombatStarted;OnMovedDistance;OnEnterAttackRange;OnLeaveAttackRange;OnSurfaceEnter;OnPushed"
+// data "BoostConditions" "Combat() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED')"
+// data "Boosts" "Tag(GOON_FORCEBRAVADO)"
 
 new entry "GOON_FORCEBRAVADO_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead;IgnoreResting"
+data "StackId" "GOON_FORCEBRAVADO_TECHNICAL"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;ApplyToDead;IgnoreResting"
 data "TickType" "EndTurn"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.TimeOut) and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED') and HasStatus('MAG_ZOC_FORCE_CONDUIT')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT,100,1);IF(RemoveCause(StatusRemoveCause.TimeOut) and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED') and not HasStatus('MAG_ZOC_FORCE_CONDUIT')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT,100,2);IF(RemoveCause(StatusRemoveCause.TimeOut) and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED')):ApplyStatus(MAG_ZOC_FORCE_CONDUIT_DURATION_TECHNICAL, 100, 1)"
+data "Passives" "Goon_TenaciousBoots_ForceBravado_Technical_Passive"
+
+new entry "Goon_TenaciousBoots_ForceBravado_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_ZOC_ForceConduitWhileSurounded_Boots_Passive') and not HasStatus('GOON_GEAR_POLYMORPH_TENACIOUSBOOTS')"
+data "StatsFunctors" "RemoveStatus(GOON_FORCEBRAVADO_TECHNICAL)"
 
 new entry "Shout_MAG_ZOC_ImmovableShout"
 type "SpellData"

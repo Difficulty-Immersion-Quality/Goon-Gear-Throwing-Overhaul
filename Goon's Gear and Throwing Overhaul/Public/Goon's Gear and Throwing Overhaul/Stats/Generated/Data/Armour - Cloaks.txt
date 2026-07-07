@@ -515,9 +515,8 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_CAUSTICREPRISAL"
 // ==================================== 9. Cloak of Displacement ====================================
 // Changes: Forced honour ruleset changes.
 // Changes: Displacement now functions while under the effects of non-humanoid polymorphs.
+// Changes: Displaced is now ignored by more entities that can ignore illusions or attack without sight.
 // Changes: Descriptions improved.
-// TODO: template
-// TODO: polymorph.
 
 new entry "MAG_PHB_CloakOfDisplacement_Cloak"
 type "Armor"
@@ -759,7 +758,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== 15. Nymph Cloak ====================================
 // Changes: Restored unused Nymphish Charm passive that increases the wearers Charisma by 1 to a maximum of 20.
-// Changes: Removed Nymphish Charm's cap of 20.
+// Changes: Nymphish Charm now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_LC_Nymph_Cloak"
 type "Armor"
@@ -769,13 +768,36 @@ using "MAG_LC_Nymph_Cloak"
 // data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
 // data "Rarity" "VeryRare"
 // data "Boosts" "UnlockSpell(Target_MAG_NymphCloak_Dominate_Person)"
-data "PassivesOnEquip" "MAG_LC_Nymph_Cloak_Passive"
+data "PassivesOnEquip" "MAG_LC_Nymph_Cloak_Passive;Goon_Gear_Polymorph_NymphCloak"
 // data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+new entry "Goon_MAG_LC_Nymph_Cloak_NotUnique"
+type "Armor"
+using "MAG_LC_Nymph_Cloak"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_NYMPHCLOAK_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_NymphCloak"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_NYMPHCLOAK, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_NYMPHCLOAK"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_NYMPHCLOAK"
+data "Boosts" ""
+data "Passives" "MAG_LC_Nymph_Cloak_Passive"
+
+// ==================
 
 new entry "MAG_LC_Nymph_Cloak_Passive"
 type "PassiveData"
@@ -784,12 +806,11 @@ using "MAG_LC_Nymph_Cloak_Passive"
 // data "DisplayName" "h73b3a2begfd77g41f4g8828g639e76e91dcd;2"
 // // Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1], to maximum of [2].
 // data "Description" "h98845916g5f75g4846g81c5g1cbd08bfbe10;2"
-// // Your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score increases by [1].
-data "Description" "h1707807fg321ag4ba2g9be3gd18171fda6cb;1"
 // data "DescriptionParams" "1;20"
-data "DescriptionParams" "1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "Boosts" "Ability(Charisma, 1, 20)"
-data "Boosts" "Ability(Charisma, 1)"
 
 // new entry "Target_MAG_NymphCloak_Dominate_Person"
 // type "SpellData"
@@ -799,8 +820,8 @@ data "Boosts" "Ability(Charisma, 1)"
 // data "UseCosts" "ActionPoint:1"
 
 // ==================================== 16. Shade-Slayer Cloak ====================================
-// Bug Fix: Skilled Skullduggery is removed when the cloak is unequipped.
-// TODO: polymorph.
+// Bug Fix: Skilled Skullduggery is removed when the cloak is unequipped, or when the passive is otherwise removed.
+// Changes: Stealthy Critical now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_Critical_HidingCritical_Cloak"
 type "Armor"
@@ -810,8 +831,15 @@ using "MAG_Critical_HidingCritical_Cloak"
 // data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
 // data "Rarity" "VeryRare"
 // data "PassivesOnEquip" "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
+data "PassivesOnEquip" "MAG_Critical_Hiding_ReduceCriticalRange_Passive;Goon_Gear_Polymorph_ShadeSlayerCloak"
 data "StatusOnEquip" "GOON_SHADESLAYERCLOAK_EQUIP_TECHNICAL"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Critical_HidingCritical_Cloak_NotUnique"
+type "Armor"
+using "MAG_Critical_HidingCritical_Cloak"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_SHADESLAYERCLOAK_ARMOUR_TECHNICAL"
 type "StatusData"
@@ -822,22 +850,43 @@ new entry "GOON_SHADESLAYERCLOAK_EQUIP_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 
-// new entry "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
-// type "PassiveData"
+// ==================
+
+new entry "Goon_Gear_Polymorph_ShadeSlayerCloak"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_SHADESLAYERCLOAK, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_SHADESLAYERCLOAK"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_SHADESLAYERCLOAK"
+data "Boosts" ""
+data "Passives" "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
+
+// ==================
+
+new entry "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
+type "PassiveData"
+using "MAG_Critical_Hiding_ReduceCriticalRange_Passive"
 // // Stealthy Critical
 // data "DisplayName" "h45c8f017g88abg43e8gbbb0gbeabc933a016;2"
 // // While hiding, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
 // data "Description" "h8cbbaa63g1d97g4741gb065gc06a1647ab86;4"
 // data "DescriptionParams" "1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnStatusApplied"
 // data "Conditions" "StatusId('SNEAKING_CLEAR') or StatusId('SNEAKING_LIGHTLY_OBSCURED') or StatusId('SNEAKING_HEAVILY_OBSCURED')"
 // data "StatsFunctors" "ApplyStatus(MAG_CRITICAL_HIDING_CRITICAL, 100, -1)"
 
-// new entry "MAG_CRITICAL_HIDING_CRITICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
+new entry "MAG_CRITICAL_HIDING_CRITICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_CRITICAL_HIDING_CRITICAL"
 // // Skilled Skullduggery
 // data "DisplayName" "h62406005ge05dg48b9ga380gaa57a95da8a4;2"
 // // While hidden, the number the affected entity needs to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.
@@ -850,6 +899,14 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 // data "RemoveConditions" "not HasStatus('SNEAKING_CLEAR') and not HasStatus('SNEAKING_LIGHTLY_OBSCURED') and not HasStatus('SNEAKING_HEAVILY_OBSCURED')"
 // data "RemoveEvents" "OnObscurityChanged;OnStatusRemoved;OnStatusApplied"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+data "Passives" "Goon_ShadeSlayerCloak_SkilledSkullduggery_Technical_Passive"
+
+new entry "Goon_ShadeSlayerCloak_SkilledSkullduggery_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusRemoved"
+data "Conditions" "not HasPassive('MAG_Critical_Hiding_ReduceCriticalRange_Passive')"
+data "StatsFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 
 // ==================================== 17. Cloak of Avarice (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
@@ -899,9 +956,8 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 // Bug Fix: Mental Debilitation can now trigger on missed Attack Rolls that still have a relevant Saving Throw.
 // Bug Fix: Mental Debilitation will no longer attempt to apply Mental Fatigure to the wearer.
 // Changes: Mental Debilitation's Mental Fatigue condition application will now only apply once per action.
+// Changes: Mental Debilitation now functions while under the effects of non-humanoid polymorphs.
 // Changes: Forced honour ruleset changes.
-// TODO: Template
-// TODO: polymorph.
 // TODO: Check for the harmful flag, but maybe in the future after I bug fix the shit out of all the missing flags...
 // TODO: OnStatusApplied? Any way to check for actions? Harmful flag might work well enough for that. Unsure if OnAttacked is sufficient for contexts with AOE and such.
 
@@ -919,12 +975,36 @@ data "ValueLevel" "6"
 data "ValueScale" "1.2"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Psychic_MentalFatigue_Cape_Passive"
+data "PassivesOnEquip" "MAG_Psychic_MentalFatigue_Cape_Passive;Goon_Gear_Polymorph_BraindrainCape"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Psychic_MentalFatigue_Cape_NotUnique"
+type "Armor"
+using "MAG_Psychic_MentalFatigue_Cape"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_BRAINDRAINCAPE_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_BraindrainCape"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_BRAINDRAINCAPE, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_BRAINDRAINCAPE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_BRAINDRAINCAPE"
+data "Boosts" ""
+data "Passives" "MAG_Psychic_MentalFatigue_Cape_Passive"
+
+// ==================
 
 new entry "MAG_Psychic_MentalFatigue_Cape_Passive"
 type "PassiveData"
@@ -934,7 +1014,9 @@ using "MAG_Psychic_MentalFatigue_Cape_Passive"
 // // When the wearer succeeds a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against any foe's spells or actions, that foe gains &lt;LSTag Type="Status" Tooltip="MAG_PSYCHIC_MENTAL_FATIGUE"&gt;Mental Fatigue&lt;/LSTag&gt;.
 // data "Description" "hf948f80eg0c7cg4404gba31g00d465a633c0;2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
-data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnAttacked"
 // data "Conditions" "not Item() and not Self() and not IsMiss() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow()"
 data "Conditions" "not Item() and not Self() and Enemy() and IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and IsSavingThrow() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_MENTALDEBILITATION',context.Source)"

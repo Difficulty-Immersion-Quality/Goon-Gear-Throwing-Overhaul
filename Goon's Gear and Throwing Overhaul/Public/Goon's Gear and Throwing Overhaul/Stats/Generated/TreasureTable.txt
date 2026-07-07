@@ -430,18 +430,18 @@ new subtable "1,1"
 object category "I_Goon_MAG_EndGameCaster_Cloak_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_MAG_Radiant_CrusaderMantle_Cloak_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_LC_Nymph_Cloak_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Critical_HidingCritical_Cloak_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0 20
+new subtable "1,1"
+object category "I_Goon_MAG_Psychic_MentalFatigue_Cape_NotUnique",1,0,0,0,0,0,0,0
 // ==================================== Armour - Gloves (Clothing)
 // ==================================== Armour - Gloves (Medium)
 // ==================================== Armour - Helmets (Clothing)

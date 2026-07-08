@@ -29,6 +29,7 @@
 // ==================================== 3. Fleetfingers ====================================
 // Changes: Running Jump now modifies the base jump with a spell variant, instead of granting an additional action. - Thanks to Lumaterian for this implementation with "Fleetfingers Enhanced".
 // Changes: Running Jump no longer requires the wearer to be in combat.
+// Changes: Running Jump now functions while under the effects of non-humanoid polymorphs.
 // Changes: Now grants Advantage on Acrobatics Skill Checks.
 // Changes: Descriptions improved.
 
@@ -137,8 +138,7 @@ data "StatsFunctors" "RemoveStatus(MAG_MOBILITY_JUMPONDASH_TECHNICAL)"
 // ==================================== 6. Gloves of Belligerent Skies ====================================
 // Changes: Thunderous Conversion will only apply Reverberation once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
 // Changes: Thunderous Conversion's "OncePerAttack" cooldown is removed, allowing Reverberation to be applied from AOE to more than a single target.
-// TODO: Template.
-// TODO: polymorph.
+// Changes: Thunderous Conversion now functions while under the effects of non-humanoid polymorphs.
 
 new entry "MAG_Thunder_Reverberation_Gloves"
 type "Armor"
@@ -147,17 +147,40 @@ using "MAG_Thunder_Reverberation_Gloves"
 // data "RootTemplate" "c987b6e4-adcb-47d6-8dfd-6d4d2f15a381"
 // data "Rarity" "Uncommon"
 // data "PassivesOnEquip" "MAG_Thunder_Reverberation_Gloves_Passive"
-data "PassivesOnEquip" "Goon_MAG_Thunder_Reverberation_Gloves_Passive"
+data "PassivesOnEquip" "Goon_MAG_Thunder_Reverberation_Gloves_Passive;Goon_Gear_Polymorph_GlovesOfBelligerentSkies"
 // data "MinAmount" "1"
 // data "MaxAmount" "1"
 // data "Priority" "1"
 // data "Unique" "1"
 // data "MinLevel" "1"
 
+new entry "Goon_MAG_Thunder_Reverberation_Gloves_NotUnique"
+type "Armor"
+using "MAG_Thunder_Reverberation_Gloves"
+// data "Unique" "1"
+data "Unique" "0"
+
 new entry "GOON_GLOVESOFBELLIGERENTSKIES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_GlovesOfBelligerentSkies"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_GLOVESOFBELLIGERENTSKIES, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_GLOVESOFBELLIGERENTSKIES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_GLOVESOFBELLIGERENTSKIES"
+data "Boosts" ""
+data "Passives" "Goon_MAG_Thunder_Reverberation_Gloves_Passive"
+
+// ==================
 
 // new entry "MAG_Thunder_Reverberation_Gloves_Passive"
 // type "PassiveData"
@@ -175,11 +198,12 @@ new entry "Goon_MAG_Thunder_Reverberation_Gloves_Passive"
 type "PassiveData"
 // // Thunderous Conversion
 data "DisplayName" "h65bd774ag9b29g4d15g8f57gea9f48ff2dc0;3"
-// // When the wearer deals[1],[2], or[3], inflict [4] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).
+// // When the wearer deals[1],[2], or[3], inflict [4] rounds of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).
 data "Description" "hc720dc2bge923g41degac3bge73b82b035cb;1"
 data "DescriptionParams" "DealDamage(,Lightning);DealDamage(,Radiant);DealDamage(,Thunder);2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
-data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55;28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 data "StatsFunctorContext" "OnDamage"
 data "Conditions" "(IsDamageTypeLightning() or IsDamageTypeThunder() or IsDamageTypeRadiant()) and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION',context.Target)"
@@ -214,14 +238,53 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSCONVERSION"
 // ==================================== 9. Gloves of the Growling Underdog ====================================
 // Bug Fix: Underdog's Bravery now properly checks the range of enemies from the wearer, instead of the target.
 // Bug Fix: Underdog's Bravery now functions with melee attacks that aren't weapon attacks.
-// TODO: Something/anything.
+// Changes: Underdog's Bravery requires that the wearer is both Threatened and has 2 non-incapacitated enemies within 3 meters.
+// Changes: Underdog's Bravery now functions while under the effects of non-humanoid polymorphs.
 
-// gear entry
+new entry "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves"
+type "Armor"
+// using "_Hand_Magic_Metal"
+using "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves"
+// data "RootTemplate" "1001f28b-5ea3-4257-864c-f60c812aecf0"
+// data "ValueLevel" "4"
+// data "ValueLevel" "5"
+data "ValueLevel" "5"
+// data "ValueScale" "1.2"
+// data "ValueScale" "2"
+data "ValueScale" "2"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive"
+data "PassivesOnEquip" "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive;Goon_Gear_Polymorph_GlovesOfTheGrowlingUnderdog"
+// data "Unique" "1"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+new entry "Goon_MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_NotUnique"
+type "Armor"
+// using "_Hand_Magic_Metal"
+using "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_GLOVESOFTHEGROWLINGUNDERDOG_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_GlovesOfTheGrowlingUnderdog"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_GLOVESOFTHEGROWLINGUNDERDOG, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_GLOVESOFTHEGROWLINGUNDERDOG"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_GLOVESOFTHEGROWLINGUNDERDOG"
+data "Boosts" ""
+data "Passives" "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive"
+
+// ==================
 
 new entry "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive"
 type "PassiveData"
@@ -230,9 +293,15 @@ using "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive"
 // data "DisplayName" "ha23a6fc0g00a3g432cg8b7ag7afca6adf044;2"
 // // The wearer gains &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;melee attack rolls&lt;/LSTag&gt; while surrounded by [1] or more foes.
 // data "Description" "h924148a4gc14ag4b1egb8dcg47f47a5ea62a;4"
+// // The wearer gains &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; if they are &lt;LSTag Type="Status" Tooltip="FLANKED"&gt;Threatened&lt;/LSTag&gt; while surrounded by [1] or more enemies within [2].
+data "Description" "hfb809e36g2398g4155g8890g6be893638f63;1"
 // data "DescriptionParams" "2"
+data "DescriptionParams" "1;Distance(3)"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
 // data "Boosts" "IF(IsMeleeAttack() and IsWeaponAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Target, context.Source)):Advantage(AttackRoll);"
-data "Boosts" "IF(IsMeleeAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source)):Advantage(AttackRoll)"
+data "Boosts" "IF(IsMeleeAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED')):Advantage(AttackRoll)"
 
 // ==================================== 10. Gloves of Thievery ====================================
 // TODO: Something/anything.
@@ -286,9 +355,8 @@ data "Boosts" "IF(IsMeleeAttack() and HasEnemyWithinRange('SG_Incapacitated', 3,
 
 // ==================================== 15. Luminous Gloves ====================================
 // Changes: Radiating Orb Gloves will only apply Radiating Orb once per action, for each target damaged.
-// Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
-// TODO: loca.
-// TODO: polymorph.
+// Changes: Radiating Orb Gloves now functions while under the effects of non-humanoid polymorphs.
+// Changes: Rarity is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
 
 new entry "MAG_Radiant_RadiatingOrb_Gloves"
 type "Armor"
@@ -298,12 +366,36 @@ using "MAG_Radiant_RadiatingOrb_Gloves"
 // data "Rarity" "Uncommon"
 data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Gloves_Passive"
+data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Gloves_Passive;Goon_Gear_Polymorph_LuminousGloves"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Radiant_RadiatingOrb_Gloves_NotUnique"
+type "Armor"
+using "MAG_Radiant_RadiatingOrb_Gloves"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_LUMINOUSGLOVES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_LuminousGloves"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_LUMINOUSGLOVES, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_LUMINOUSGLOVES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_LUMINOUSGLOVES"
+data "Boosts" ""
+data "Passives" "MAG_Radiant_RadiatingOrb_Gloves_Passive"
+
+// ==================
 
 new entry "MAG_Radiant_RadiatingOrb_Gloves_Passive"
 type "PassiveData"
@@ -312,11 +404,12 @@ using "MAG_Radiant_RadiatingOrb_Gloves_Passive"
 // data "DisplayName" "h357b2758gcd31g451dga7f0g8da7cde736c1;2"
 // // When the wearer deals [1], the target receives [2] turn of &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt;.
 // data "Description" "hb6cd4447ge729g41ffg8496g85ac5a4e8b9e;6"
-// // When the wearer deals[1], the target receives [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt;.
+// // When the wearer deals[1], the target receives [2] rounds of &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt;.
 data "Description" "hd28abf48gca2dg4c46g9428g818a5869b075;1"
 // data "DescriptionParams" "DealDamage(,Radiant);2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
-data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55;28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "HasDamageDoneForType(DamageType.Radiant) and not Item()"

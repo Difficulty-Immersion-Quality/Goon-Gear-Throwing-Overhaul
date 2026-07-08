@@ -37,7 +37,7 @@
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Ammunition;Loading;Twohanded;Dippable;Magical"
 
-// ==================================== Sharran Crossbow ====================================
+// ==================================== 1. Sharran Crossbow ====================================
 // Trivia: If picking it up from the chest, it is necessary to pass a DC 10  Intelligence saving throw History to notice it is actually a Sharran Crossbow.
 // TODO: Something edgy with obscurity or something rather typical of the emos. Listen to Marilyn Manson if inspiration for a rework is lacking, but try to forget how lame his set was back when I saw him 12 years ago omg I'm getting old.
 
@@ -51,14 +51,21 @@
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "Unique" "1"
 
+new entry "Goon_UND_SharranCrossbow_NotUnique"
+type "Weapon"
+using "UND_SharranCrossbow"
+// data "Unique" "1"
+data "Unique" "0"
+
 new entry "GOON_SHARRANCROSSBOW_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Light Crossbow of Speed (Inaccessible/Cut content) ====================================
-// Changes: Now Legendary instead of Rare. Weapon enchant increased from +1 to +2.
-// Changes: Added a custom passive, Lethal Swiftness; once per turn when landing a critical hit or killing blow on an enemy you can Dash using a bonus action.
+// ==================================== 2. Light Crossbow of Speed (Inaccessible/Cut content) ====================================
+// Changes: Added a custom passive, Lethal Swiftness; once per turn when landing a critical hit or killing blow on an enemy you can Dash using a Reaction.
+// Changes: Now Very Rare instead of Rare.
+// Changes: Weapon enchant increased from +1 to +2.
 
 new entry "MAG_BG_OfSpeed_LightCrossbow"
 type "Weapon"
@@ -67,56 +74,93 @@ using "MAG_BG_OfSpeed_LightCrossbow"
 // data "RootTemplate" "664ff469-770a-4597-9be2-506465e5486f"
 // data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
 // data "Rarity" "Rare"
-data "Rarity" "Legendary"
+data "Rarity" "VeryRare"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Boosts" "UnlockSpell(Projectile_MAG_BG_OfSpeed_LightCrossbow_BonusAttack)"
-data "PassivesOnEquip" "Goon_Lethal_Swiftness_Passive"
+data "PassivesOnEquip" "Goon_Lethal_Swiftness_Passive;Goon_Gear_Polymorph_LightCrossbowOfSpeed"
 // data "Unique" "1"
+
+new entry "Goon_MAG_BG_OfSpeed_LightCrossbow_NotUnique"
+type "Weapon"
+using "MAG_BG_OfSpeed_LightCrossbow"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_LIGHTCROSSBOWOFSPEED_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "Projectile_MAG_BG_OfSpeed_LightCrossbow_BonusAttack"
-// type "SpellData"
-// data "SpellType" "Projectile"
+// ==================
+
+new entry "Goon_Gear_Polymorph_LightCrossbowOfSpeed"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_LIGHTCROSSBOWOFSPEED, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_LIGHTCROSSBOWOFSPEED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_LIGHTCROSSBOWOFSPEED"
+data "Boosts" ""
+data "Passives" "Goon_Lethal_Swiftness_Passive"
+
+// ==================
+
+new entry "Projectile_MAG_BG_OfSpeed_LightCrossbow_BonusAttack"
+type "SpellData"
+data "SpellType" "Projectile"
 // using "Projectile_MainHandAttack"
+using "Projectile_MAG_BG_OfSpeed_LightCrossbow_BonusAttack"
 // data "Cooldown" "OncePerTurn"
-// Blink-of-an-eye Bolt
+// // Blink-of-an-eye Bolt
 // data "DisplayName" "h1eb4a116g1e71g4bbbgb343gb1125c02f74a;3"
+// data "Icon" "Projectile_MainHandAttack"
+data "Icon" "Projectile_OffHandAttack"
 // data "UseCosts" "BonusActionPoint:1"
 // data "SpellFlags" "IsAttack;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;CanDualWield;Temporary"
+data "SpellFlags" "IsAttack;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;CanDualWield"
 
 new entry "Goon_Lethal_Swiftness_Passive"
 type "PassiveData"
-// Lethal Swiftness
+// // Lethal Swiftness
 data "DisplayName" "h2768d915g07aag486dga7e9g53ddcaa5adf0;1"
-// After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.
+// // After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with this weapon, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; for [1] round.
 data "Description" "h565e4a63g2355g46bfgb4c5g0a650b7704a7;1"
-data "Properties" "OncePerTurn"
-data "Icon" "Action_Dash"
+data "DescriptionParams" "1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted;OncePerTurn"
 data "StatsFunctorContext" "OnDamage"
-data "Conditions" "(not Self() and Character() and Enemy()) and IsKillingBlow() or IsCritical() and (IsRangedWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit) and IsProficientWithEquippedWeapon())"
-data "StatsFunctors" "ApplyStatus(SELF, GOON_LETHAL_SWIFTNESS_UNLOCK,100,1)"
+data "Conditions" "AttackedWithPassiveSourceWeapon() and (not Self() and Character() and Enemy()) and (IsKillingBlow() or IsCritical()) and IsHit()"
+data "StatsFunctors" "ApplyStatus(SELF, GOON_LETHAL_SWIFTNESS,100,1)"
 
-new entry "GOON_LETHAL_SWIFTNESS_UNLOCK"
+new entry "GOON_LETHAL_SWIFTNESS"
 type "StatusData"
 data "StatusType" "BOOST"
-// Lethal Swiftness
+// // Lethal Swiftness
 data "DisplayName" "h2768d915g07aag486dga7e9g53ddcaa5adf0;1"
-// After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.
+// // After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with this weapon, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; for [1] round.
 data "Description" "h565e4a63g2355g46bfgb4c5g0a650b7704a7;1"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableCombatlog;IgnoreResting;ApplyToDead"
-data "Boosts" "UnlockSpell(Goon_Shout_Dash_Lethal_Swiftness)"
+data "DescriptionParams" "1"
+data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog;IgnoreResting;ApplyToDead"
+data "Boosts" "UnlockSpell(Goon_Shout_Dash_Lethal_Swiftness);IF(Goon_IsRestrictedPolymorphStatus()):UnlockSpell(Goon_Shout_Dash_Lethal_Swiftness_Wildshape)"
 
 new entry "Goon_Shout_Dash_Lethal_Swiftness"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_Dash"
+data "Cooldown" "OncePerTurn"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "ReactionActionPoint:1"
 // data "SpellFlags" "IgnoreSilence;Stealth;Invisible;NoCameraMove"
 data "SpellFlags" "IgnoreSilence;Stealth;Invisible;NoCameraMove;Temporary"
-data "Cooldown" "OncePerTurn"
+
+new entry "Goon_Shout_Dash_Lethal_Swiftness_Wildshape"
+type "SpellData"
+data "SpellType" "Shout"
+using "Goon_Shout_Dash_Lethal_Swiftness"
+// data "SpellFlags" "IgnoreSilence;Stealth;Invisible;NoCameraMove;Temporary"
+data "SpellFlags" "IgnoreSilence;Stealth;Invisible;NoCameraMove;Temporary;Wildshape"

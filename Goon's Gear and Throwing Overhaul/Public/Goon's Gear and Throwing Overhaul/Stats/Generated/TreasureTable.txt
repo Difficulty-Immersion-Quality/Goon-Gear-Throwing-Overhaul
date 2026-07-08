@@ -453,14 +453,14 @@ object category "I_Goon_MAG_Mobility_JumpOnDash_Gloves_NotUnique",1,0,0,0,0,0,0,
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Thunder_Reverberation_Gloves_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0 10
 // new subtable "1,1"
@@ -471,8 +471,8 @@ object category "I_Goon_MAG_Mobility_JumpOnDash_Gloves_NotUnique",1,0,0,0,0,0,0,
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Radiant_RadiatingOrb_Gloves_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
@@ -586,3 +586,8 @@ new subtable "1,1"
 object category "I_Goon_MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet_NotUnique",1,0,0,0,0,0,0,0
 // ==================================== Armour - Helmets (Light)
 // ==================================== Armour - Helmets (Medium)
+// ==================================== Weapon - Light Crossbows
+new subtable "1,1"
+object category "I_Goon_UND_SharranCrossbow_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_BG_OfSpeed_LightCrossbow_NotUnique",1,0,0,0,0,0,0,0

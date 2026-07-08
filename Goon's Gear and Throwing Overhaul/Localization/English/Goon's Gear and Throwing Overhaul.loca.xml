@@ -360,6 +360,17 @@
 	<!-- "MAG_Mobility_JumpOnDash_Passive", "MAG_MOBILITY_JUMPONDASH_TECHNICAL" -->
 	<content contentuid="h7cfb0f31geb19g48afgb7b6g5560f3bf9e9d" version="1">Once per turn, after the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they can &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; without using a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt; for [1] round.</content>
 
+	<!-- 6. Gloves of Belligerent Skies -->
+	<!-- "Goon_MAG_Thunder_Reverberation_Gloves_Passive" --> <content contentuid="hc720dc2bge923g41degac3bge73b82b035cb" version="1">When the wearer deals[1],[2], or[3], inflict [4] rounds of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).</content>
+
+	<!-- 9. Gloves of the Growling Underdog -->
+	<!-- "MAG_ZOC_AdvantageOnMeleeAttackWhileSurounded_Gloves_Passive" -->
+	<content contentuid="hfb809e36g2398g4155g8890g6be893638f63" version="1">The wearer gains &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; if they are &lt;LSTag Type="Status" Tooltip="FLANKED"&gt;Threatened&lt;/LSTag&gt; while surrounded by [1] or more enemies within [2].</content>
+
+	<!-- 15. Luminous Gloves -->
+	<!-- "MAG_Radiant_RadiatingOrb_Gloves_Passive" -->
+	<content contentuid="hd28abf48gca2dg4c46g9428g818a5869b075" version="1">When the wearer deals[1], the target receives [2] rounds of &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt;.</content>
+
 	<!--  -->
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
@@ -369,6 +380,17 @@
 	<!-- 6. The Reviving Hands -->
 	<!-- "MAG_Revivify_Gloves_Passive" -->
 	<content contentuid="h30f1a9acg7a77g46e0g824bg8037eb98bf98" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] rounds. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] rounds.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
+<!-- ==================================== Weapon - Light Crossbows ==================================== -->
+
+	<!-- 2. Light Crossbow of Speed (Inaccessible/Cut content) -->
+	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" -->
+	<content contentuid="h2768d915g07aag486dga7e9g53ddcaa5adf0" version="1">Lethal Swiftness</content>
+	<content contentuid="h565e4a63g2355g46bfgb4c5g0a650b7704a7" version="1">After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with this weapon, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; for [1] round.</content>
 
 	<!--  -->
 	<!-- "" -->
@@ -448,7 +470,6 @@
 	<!-- "MAG_Infernal_Metal_Gloves_FireDamage_Passive", "GOON_INFERNALTOUCH_TECHNICAL_APPLIER" --> <content contentuid="h4855f6bfgcd92g4833ga020gd0dd642acdfc" version="1">Melee and &lt;LSTag Type="Spell" Tooltip="Throw_Throw"&gt;thrown&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; using melee weapons deal an additional [1]. Your unarmed attacks deal an additional [2], and can possibly inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; for [3] turns.</content>
 	<!-- "MAG_GREATER_NECROMANCY_LIFE_ESSENCE" --> <content contentuid="haa5631e9gfc72g47e3gb563gac681088dbef" version="1">Affected entity has absorbed a creature's essence. It can use that essence to cast its next Necromancy spell that consumes a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; without consuming a spell slot.</content>
 	<!-- "Goon_MAG_ElementalGish_ElementalInfusion_Ring_Passive" --> <content contentuid="hcf3df843gde89g4fa3gbf5bga968594221eb" version="1">When one of your spells deal[1],[2],[3],[4], or[5], that element infuses your weapon.&lt;br&gt;&lt;br&gt;Until the end of your next turn, you deal an additional 1d4 damage of that element on your first successful weapon attack.</content>
-	<!-- "Goon_MAG_Thunder_Reverberation_Gloves_Passive" --> <content contentuid="hc720dc2bge923g41degac3bge73b82b035cb" version="1">When the wearer deals[1],[2], or[3], inflict [4] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; upon the target(s).</content>
 	<!-- "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive" --> <content contentuid="h1a045f3cg3524g41dag863agab4d40bd991b" version="1">When the wearer deals[1] to another creature, they gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
 	<!-- "MAG_TheClover_Rearrangement_Passive" --> <content contentuid="h7c477753gd60bg412fg8cebg19dce4be5840" version="1">Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack.&lt;br&gt;&lt;br&gt;When you roll [1] damage or less with this weapon, reroll the dice, taking the highest result.</content>
 	<!-- "MAG_Blindside_Shortsword_Passive" --> <content contentuid="h11e87f4cg6dafg4236g81f8gbfd5fb6817c1" version="1">Psychic Steel Virtuoso</content>
@@ -464,10 +485,10 @@
 	<content contentuid="hfb2f7afcgd8b7g4e70gbf22ga2efa47051e3" version="1">The wearer is &lt;LSTag Tooltip="ArmourProficiency"&gt;Proficient&lt;/LSTag&gt; with Light Armour.</content>
 
 	<!-- NEW ENTRIES -->
-	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h2768d915g07aag486dga7e9g53ddcaa5adf0" version="1">Lethal Swiftness</content>
-	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h565e4a63g2355g46bfgb4c5g0a650b7704a7" version="1">After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.</content>
-	<!-- "Goon_WulbrenHammer_Structural_Decommission_Passive" --> <content contentuid="hef699771g3a4cg40edg9a7cg0dd3c7bc229d" version="1">Structural Decommission</content>
-	<!-- "Goon_WulbrenHammer_Structural_Decommission_Passive" --> <content contentuid="h5be62e5dgc35ag4cb6g8336g32028740eb62" version="1">Deals an additional [1] to Constructs, and inanimate objects.</content>
+
+	<!-- "Goon_WulbrenHammer_Structural_Decommission_Passive" -->
+	<content contentuid="hef699771g3a4cg40edg9a7cg0dd3c7bc229d" version="1">Structural Decommission</content>
+	<content contentuid="h5be62e5dgc35ag4cb6g8336g32028740eb62" version="1">Deals an additional [1] to Constructs, and inanimate objects.</content>
 
 	<!-- "" -->
 	<content contentuid="" version="1"></content>

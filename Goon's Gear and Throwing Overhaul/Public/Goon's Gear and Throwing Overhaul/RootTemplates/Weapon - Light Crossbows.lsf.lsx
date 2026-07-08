@@ -4,8 +4,10 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-			<!-- Sharran Crossbow - Local template -->
+			<!-- 1. Sharran Crossbow - Local template -->
+				<!-- TODO: Doesn't this have to be in a level file? lol -->
 				<node id="GameObjects">
+					<!-- A sleek, well-made crossbow that is plain but for the symbol of Shar on the handle. -->
 					<attribute id="Description" type="TranslatedString" handle="h4cc98022gca0bg49e9g9e3bgc4b038bac79e" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hd095fb89ga6e0g45abg87e3g86669614a429" version="1" />
 					<attribute id="Flag" type="int32" value="1" />
@@ -83,8 +85,9 @@
 						</node>
 					</children>
 				</node>
-			<!-- Light Crossbow of Speed -->
+			<!-- 2. Light Crossbow of Speed (Inaccessible/Cut content) -->
 				<node id="GameObjects">
+					<!-- Bolts slot into this crossbow with wonderful ease, as if eager to nestle against the stock, soon to fly.  -->
 					<attribute id="Description" type="TranslatedString" handle="hc1af971fgceebg4b3eg85dcg8c40f1d201b6" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb627cd79gfcf1g4e50gbc65g5340f81e0831" version="2" />
 					<attribute id="LevelName" type="FixedString" value="" />

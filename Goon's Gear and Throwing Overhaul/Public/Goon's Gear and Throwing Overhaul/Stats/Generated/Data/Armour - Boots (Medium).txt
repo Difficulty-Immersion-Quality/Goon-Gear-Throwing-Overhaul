@@ -507,6 +507,7 @@ data "Conditions" "IsSpell() and HasSpellFlag(SpellFlags.Concentration)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_TEMPORARY_HP_8, 100, -1)"
 
 // ==================================== 8. Boots of Persistence ====================================
+// Bug Fix: Visuals are no longer incorrect for all bodies except BT2. Thanks to Kobold Juno for bringing to attention with the release of Boots of Persistence Visual Fix.
 // Changes: The +1 bonus to Dexterity Saving Throws now functions while under the effects of non-humanoid polymorphs.
 // Changes: Legendary Mobility now functions while under the effects of non-humanoid polymorphs.
 // Note: "MAG_END_GAME_LONGSTRIDER" found under Blackguard's Greaves.

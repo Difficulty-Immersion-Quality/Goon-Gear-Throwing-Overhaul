@@ -8,7 +8,7 @@
 -- Dual wielding 2 of the same weapon shuffles them in the logic when one is thrown. Not really a problem unless you have a specific enchant, poison, etc. on off or main.
 -- Auto-equip into an empty off-hand (thrown from backpack while main is occupied, off-hand free) doesn't work for regular weapons — Equip seems to default to main-hand placement and wrongly displaces the equipped main weapon instead of filling the empty off-hand. Worked fine for shields specifically since they're off-hand-restricted by their own item data. Currently reverted to routing these to inventory instead; would need a confirmed way to target Equip at a specific slot to re-enable safely.
 
-local DEBUG = true
+local DEBUG = false
 local function log(m) if DEBUG then Ext.Utils.Print("[ReturnFix] "..m) end end
 
 local V = {

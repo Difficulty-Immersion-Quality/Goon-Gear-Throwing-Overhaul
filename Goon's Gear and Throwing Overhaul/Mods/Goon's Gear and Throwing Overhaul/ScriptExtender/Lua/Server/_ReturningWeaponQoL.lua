@@ -6,9 +6,9 @@
 -- Comeback Handaxe seems to bug out, "you can't use this right now" or some such after throwing it, you can still throw it though, just not equip or drop? Was able to then equip it on a different character.
 -- For some reason the only thing firing after loading the save for the first time is the cast print. Throwing is vanilla until reload.
 -- Dual wielding 2 of the same weapon shuffles them in the logic when one is thrown. Not really a problem unless you have a specific enchant, poison, etc. on off or main.
+-- Auto-equip into an empty off-hand (thrown from backpack while main is occupied, off-hand free) doesn't work for regular weapons — Equip seems to default to main-hand placement and wrongly displaces the equipped main weapon instead of filling the empty off-hand. Worked fine for shields specifically since they're off-hand-restricted by their own item data. Currently reverted to routing these to inventory instead; would need a confirmed way to target Equip at a specific slot to re-enable safely.
 
-local DEBUG = false
--- local DEBUG = true
+local DEBUG = true
 local function log(m) if DEBUG then Ext.Utils.Print("[ReturnFix] "..m) end end
 
 local V = {
@@ -77,16 +77,16 @@ end)
 
 -- Four possible outcomes, mutually exclusive:
 -- A. Thrown from a hand slot (fromMain/fromOff)  → re-equip it there. If thrown from main hand while dual-wielding, the off-hand weapon gets unequipped and re-equipped around the returning item — needed for it to seat back in the main-hand slot correctly.
--- B. Thrown from backpack, both hands occupied   → leave it in the bag.
+-- B. Thrown from backpack, main hand occupied (regardless of off-hand)   → leave it in the bag. Previously split into B (both hands occupied) and D (off-hand free, auto-equip there), but D was reverted — Equip appears to default to main-hand placement for non-restricted items rather than the actually-empty off-hand, which wrongly displaced the equipped main weapon. See TODO at top of file.
 -- C. Thrown from backpack, unarmed (hadMain==0)  → equip into main hand.
--- D. Thrown from backpack, main occupied but off-hand empty (hadOff==0) → equip into the empty off-hand (e.g. throwing a returning shield from inventory while a one-handed weapon is already equipped). 
 
--- C and D both need an explicit ToInventory first: unlike a re-thrown equipped weapon, the item was never part of the character's inventory tree, so Equip alone doesn't reliably pick it up off the ground.
+-- C needs an explicit ToInventory first: unlike a re-thrown equipped weapon, the item was never part of the character's inventory tree, so Equip alone doesn't reliably pick it up off the ground.
 
 Ext.Osiris.RegisterListener("OnThrown", 7, "after",
 function(item, itemTemplate, char)
 
     if not IsReturning(item) then
+        log(("OnThrown fired but NOT tagged as returning  item:%s"):format(tostring(item)))
         ClearVars(char)
         return
     end
@@ -102,8 +102,7 @@ function(item, itemTemplate, char)
     local fromMain = (hadMain==1) and ((item == mainItem) or (itemTemplate == mainTempl))
     local fromOff  = (hadOff==1)  and ((item == offItem)  or (itemTemplate == offTempl))
 
-    -- Attempted a stricter version below to stop two identical dual-wielded weapons from both matching a single thrown item (template-only ambiguity), but it broke matching entirely for that case — the "exact identity" half of the check may never actually succeed in practice, since `item` from OnThrown appears to print with a name prefix ("TemplateName_GUID") while mainItem/offItem sometimes print as a bare GUID, meaning `item == mainItem` could be comparing two differently-formatted strings that never equal each other even for the same physical item. If revisiting, extract the raw 36-char UUID substring from both sides before comparing, rather than comparing the full identifier strings as-is.
-    -- Left here as a jumping-off point, not currently in use:
+    -- Attempted a stricter version below to stop two identical dual-wielded weapons from both matching a single thrown item (template-only ambiguity), but it broke matching entirely for that case — the "exact identity" half of the check may never actually succeed in practice, since `item` from OnThrown appears to print with a name prefix ("TemplateName_GUID") while mainItem/offItem sometimes print as a bare GUID, meaning `item == mainItem` could be comparing two differently-formatted strings that never equal each other even for the same physical item. If revisiting, extract the raw 36-char UUID substring from both sides before comparing, rather than comparing the full identifier strings as-is. Left here as a jumping-off point, not currently in use:
     --[[
     local mainExact = (hadMain==1) and (item == mainItem)
     local offExact  = (hadOff==1)  and (item == offItem)
@@ -129,7 +128,9 @@ function(item, itemTemplate, char)
                 tostring(offItem), tostring(offTempl), tostring(hadOff),
                 tostring(fromMain), tostring(fromOff)))
 
-    if not (fromMain or fromOff) and hadMain == 1 and hadOff == 1 then
+    -- TODO: Should the Shield of returning come to hand if offhand empty?
+    -- if not (fromMain or fromOff) and hadMain == 1 and hadOff == 1 then -- This do be doing the breaking of functionality
+    if not (fromMain or fromOff) and hadMain == 1 then
         -- Case B: backpack throw, both hands occupied → stays in the bag.
         Osi.ToInventory(item, char, 1, 1, 0)
         ClearVars(char)

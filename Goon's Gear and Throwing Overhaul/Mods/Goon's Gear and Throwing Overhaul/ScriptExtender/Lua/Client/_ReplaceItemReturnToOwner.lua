@@ -35,5 +35,4 @@ local function ReplaceItemReturnToOwner()
     end
 end
 
-Ext.Events.SessionLoaded:Subscribe(ReplaceItemReturnToOwner)
 Ext.Events.StatsLoaded:Subscribe(ReplaceItemReturnToOwner)

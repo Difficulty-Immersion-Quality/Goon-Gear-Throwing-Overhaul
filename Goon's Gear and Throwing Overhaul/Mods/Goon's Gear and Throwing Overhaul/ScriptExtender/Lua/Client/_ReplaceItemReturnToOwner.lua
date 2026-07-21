@@ -8,7 +8,6 @@ local function ReplaceItemReturnToOwner()
                 local stat = Ext.Stats.Get(statName)
                 if stat and stat.Boosts and stat.Boosts:find("ItemReturnToOwner%(%)") then
                     stat.Boosts = stat.Boosts:gsub("ItemReturnToOwner%(%)", "Tag(RETURNING_ITEM)")
-                    stat:Sync()
                 end
             end, debug.traceback)
             
@@ -24,7 +23,6 @@ local function ReplaceItemReturnToOwner()
                 local stat = Ext.Stats.Get(statName)
                 if stat and stat.DefaultBoosts and stat.DefaultBoosts:find("ItemReturnToOwner%(%)") then
                     stat.DefaultBoosts = stat.DefaultBoosts:gsub("ItemReturnToOwner%(%)", "Tag(RETURNING_ITEM)")
-                    stat:Sync()
                 end
             end, debug.traceback)
             

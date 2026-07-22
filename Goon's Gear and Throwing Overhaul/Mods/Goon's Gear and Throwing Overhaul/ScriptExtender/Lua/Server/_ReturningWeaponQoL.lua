@@ -9,6 +9,15 @@ local MELEE_OFF_HAND = 4
 
 local pendingThrowsByCharacter = {}
 
+-- grab the equipment inventory by type instead of assuming it's Inventories[2]
+local function getEquipmentInventory(ownerEntity)
+    for _, inv in pairs(ownerEntity.InventoryOwner.Inventories) do
+        if inv.InventoryData and inv.InventoryData.Type == "Equipment" then
+            return inv
+        end
+    end
+end
+
 Ext.Entity.OnCreateDeferred("SpellCastTargetsChangedEvent", function(spellCastEntity)
     local selectedTarget = spellCastEntity.SpellSyncTargeting.Targets[1]
 
@@ -17,15 +26,13 @@ Ext.Entity.OnCreateDeferred("SpellCastTargetsChangedEvent", function(spellCastEn
         return
     end
 
-    local selectedItemEntity = selectedTarget.Target2.Target
+    -- snapshot both hands while the weapon's still equipped, matching the thrown item against these in OnThrown, so no need to dig the item (and its slot) out of the target itself
     local casterEntity = spellCastEntity.SpellCastState.Caster
-    local equipmentItems = casterEntity.InventoryOwner.Inventories[2].InventoryContainer.Items
+    local equipmentItems = getEquipmentInventory(casterEntity).InventoryContainer.Items
     local mainHandSlot = equipmentItems[MELEE_MAIN_HAND]
     local offHandSlot = equipmentItems[MELEE_OFF_HAND]
-    local casterUuid = casterEntity.Uuid.EntityUuid
 
-    pendingThrowsByCharacter[casterUuid] = {
-        equipmentSlot = selectedItemEntity.InventoryMember.EquipmentSlot,
+    pendingThrowsByCharacter[casterEntity.Uuid.EntityUuid] = {
         mainHandItemUuid = mainHandSlot
             and mainHandSlot.Item.Uuid.EntityUuid,
         offHandItemUuid = offHandSlot
@@ -54,7 +61,26 @@ Ext.Osiris.RegisterListener("OnThrown", 7, "after",
             return
         end
 
-        local equipmentItems = throwerEntity.InventoryOwner.Inventories[2].InventoryContainer.Items
+        -- bring the returning item back no matter what, the re-equip below is best-effort
+        Osi.ToInventory(thrownItemUuid, throwerUuid, 1, 1, 0)
+
+        -- work out which hand it came from by matching the thrown item against the snapshot (no InventoryMember read, so nothing to crash on)
+        local thrownUuid = thrownItemEntity.Uuid.EntityUuid
+        local originSlot
+        if handSnapshot then
+            if thrownUuid == handSnapshot.mainHandItemUuid then
+                originSlot = MELEE_MAIN_HAND
+            elseif thrownUuid == handSnapshot.offHandItemUuid then
+                originSlot = MELEE_OFF_HAND
+            end
+        end
+
+        -- not thrown from a hand tracked (inventory throw, enemy, etc.), leave it in the bag
+        if originSlot == nil then
+            return
+        end
+
+        local equipmentItems = getEquipmentInventory(throwerEntity).InventoryContainer.Items
         local currentMainHandSlot = equipmentItems[MELEE_MAIN_HAND]
         local currentOffHandSlot = equipmentItems[MELEE_OFF_HAND]
         local currentMainHandUuid = currentMainHandSlot
@@ -62,9 +88,7 @@ Ext.Osiris.RegisterListener("OnThrown", 7, "after",
         local currentOffHandUuid = currentOffHandSlot
             and currentOffHandSlot.Item.Uuid.EntityUuid
 
-        Osi.ToInventory(thrownItemUuid, throwerUuid, 1, 1, 0)
-
-        if handSnapshot.equipmentSlot == MELEE_MAIN_HAND then
+        if originSlot == MELEE_MAIN_HAND then
             if currentMainHandUuid == nil then
                 Osi.Equip(throwerUuid, thrownItemUuid, 1, 1, 0)
                 return
@@ -82,7 +106,7 @@ Ext.Osiris.RegisterListener("OnThrown", 7, "after",
             return
         end
 
-        if handSnapshot.equipmentSlot == MELEE_OFF_HAND then
+        if originSlot == MELEE_OFF_HAND then
             if currentOffHandUuid == nil
                 and currentMainHandUuid == handSnapshot.mainHandItemUuid then
                 Osi.Equip(throwerUuid, thrownItemUuid, 1, 1, 0)

@@ -138,20 +138,31 @@ end
 -- TODO: ~ for melee weapons, and if they don't have the thrown property they can do half damage or something...
 -- Probably a way to keep the damage fixed to 1 but having it as the weapons damage.
 
--- function IsLightThrownObject(entity, checkStacks)
---     entity = entity or context.Target
---     return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(500,entity,checkStacks) & ~HasLiftingWeightGreaterThan(10000,entity,checkStacks)
--- end
+function IsLightThrownObject(entity, checkStacks)
+    -- entity = entity or context.Target
+    entity = entity or context.HitDescription.ThrownObject
+    -- return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(500,entity,checkStacks) & ~HasLiftingWeightGreaterThan(10000,entity,checkStacks)
+    return ~(HasWeaponProperty(WeaponProperties.Melee,entity) | HasWeaponProperty(WeaponProperties.Thrown,entity))
+         & HasLiftingWeightGreaterThan(500,entity,checkStacks) 
+         & ~HasLiftingWeightGreaterThan(10000,entity,checkStacks)
+end
 
--- function IsMediumThrownObject(entity, checkStacks)
---     entity = entity or context.Target
---     return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(10000,entity,checkStacks) & ~HasLiftingWeightGreaterThan(50000,entity,checkStacks)
--- end
+function IsMediumThrownObject(entity, checkStacks)
+    -- entity = entity or context.Target
+    entity = entity or context.HitDescription.ThrownObject
+    -- return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(10000,entity,checkStacks) & ~HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+    return ~(HasWeaponProperty(WeaponProperties.Melee,entity) | HasWeaponProperty(WeaponProperties.Thrown,entity))
+         & HasLiftingWeightGreaterThan(10000,entity,checkStacks) 
+         & ~HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+end
 
--- function IsHeavyThrownObject(entity, checkStacks)
---     entity = entity or context.Target
---     return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(50000,entity,checkStacks)
--- end
+function IsHeavyThrownObject(entity, checkStacks)
+    -- entity = entity or context.Target
+    entity = entity or context.HitDescription.ThrownObject
+    -- return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+    return ~(HasWeaponProperty(WeaponProperties.Melee,entity) | HasWeaponProperty(WeaponProperties.Thrown,entity))
+         & HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+end
 
 -- ====================================
 

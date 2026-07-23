@@ -186,6 +186,7 @@
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== 17. Necklace of Elemental Augmentation ====================================
+// Bug Fix: Elemental Augmentation no longer adds 1 damage if the spellcasting modifier equals 0 or less.
 // Changes: Elemental Augmentation's spellcasting modifier damage bonus now only triggers once per action, meaning multi-attack spells such as Eldritch Blast will not benefit more than once, for each target damaged.
 // Changes: Elemental Augmentation's spellcasting modifier damage bonus will now deal damage based on the damage type of the spell for spells using weapons that deal conditional damage (e.g. Booming Blade), instead of being a damage rider for both the weapon damage and conditional damage, or just the weapon damage itself. If the conditions are not met for the conditional damage, per RAW the weapon damage will not benefit from the damage bonus, e.g. if you are using Booming Blade prior to being level 5.
 // Changes: Elemental Augmentation now functions while under the effects of non-humanoid polymorphs.

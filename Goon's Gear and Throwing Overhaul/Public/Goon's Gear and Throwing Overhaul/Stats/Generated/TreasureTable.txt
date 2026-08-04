@@ -586,6 +586,9 @@ new subtable "1,1"
 object category "I_Goon_MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet_NotUnique",1,0,0,0,0,0,0,0
 // ==================================== Armour - Helmets (Light)
 // ==================================== Armour - Helmets (Medium)
+// ==================================== Armour - Rings
+new subtable "1,1"
+object category "I_Goon_MAG_Frost_GenerateSurfaceOnColdDamage_Ring_NotUnique",1,0,0,0,0,0,0,0
 // ==================================== Weapon - Light Crossbows
 new subtable "1,1"
 object category "I_Goon_UND_SharranCrossbow_NotUnique",1,0,0,0,0,0,0,0

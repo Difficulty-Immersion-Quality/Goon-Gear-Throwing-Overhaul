@@ -4,7 +4,60 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+			<!-- Snowburst Ring -->
 				<node id="GameObjects">
+					<!-- A series of names have been scratched out, one after the other, on the inside of the ring. The last word, untouched, is not a name. It simply reads: Mine.  -->
+					<attribute id="Description" type="TranslatedString" handle="h41ce4583g4731g4958gb232g78307bc5e99f" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hbf4b7c6cg4283g429cgb0d3g2880a7382ef2" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="ee8d0bb8-ee1c-437c-b8e0-a9671b865c48" />
+					<attribute id="Name" type="LSString" value="MAG_Frost_GenerateSurfaceOnColdDamage_Ring" />
+					<attribute id="ParentTemplateId" type="FixedString" value="52f6619c-edd3-4493-a420-c124f52c2a03" />
+					<attribute id="Stats" type="FixedString" value="MAG_Frost_GenerateSurfaceOnColdDamage_Ring" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="TechnicalDescriptionParams" type="LSString" value="" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="IsHiddenStatus" type="bool" value="False" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SNOWBURSTRING_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
 				</node>
 			</children>
 		</node>

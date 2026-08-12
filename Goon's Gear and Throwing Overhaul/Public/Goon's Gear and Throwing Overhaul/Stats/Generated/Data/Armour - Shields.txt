@@ -448,7 +448,7 @@ using "MAG_Legendary_ShieldRiposte_Passive"
 // data "DisplayName" "h946566c4ga493g4f40g839bg168fa4ea1ce6;3"
 // When a foe hits you with a melee attack, you can use your reaction, dealing it [1] and knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; unless they succeed a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
 // data "Description" "h26f21dd8g9317g42e3gacbagcc19abaf9ba6;4"
-// When a foe hits you with a melee attack, you can use your reaction, dealing it [1] and knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn unless they succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+// When a foe hits you with a melee attack, you can use your reaction, dealing [1] and knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn unless they succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
 data "Description" "h6e9ec880gcdb6g4fa7g9f69ge0b3217482db;1"
 // data "DescriptionParams" "DealDamage(2d4, Force)"
 // data "TooltipSave" "f762efbb-f8f1-493e-b248-2de1567b4bd2"

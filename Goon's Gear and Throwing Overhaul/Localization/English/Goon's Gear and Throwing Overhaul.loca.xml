@@ -38,57 +38,130 @@
 
 <!-- ==================================== WEAPON ACTIONS ==================================== -->
 
+    <!-- Backbreaker -->
 	<!-- "Goon_Target_PostureBreaker_Offhand" --> <content contentuid="haad96815g5d0dg4285ga31eg0da094df82d1" version="1">Backbreaker (Offhand)</content>
-	<!-- "Goon_Zone_Cleave_Offhand" --> <content contentuid="h046d806egc13fg403fgb220g8cdbd04778c0" version="1">Cleave (Offhand)</content>
-	<!-- "Interrupt_Overwhelm", "Overwhelm" --> <content contentuid="h3ff15630ga20cg4697gabaeg7909acd8b811" version="1">When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.</content>
-	<!-- "Goon_Interrupt_Overwhelm_Offhand", "Goon_Overwhelm_Offhand" --> <content contentuid="h3a82ba6cgea61g4c98g8abcg07ef3cd2b315" version="1">Tenacity (Offhand)</content>
-	<!-- "Goon_Interrupt_Overwhelm_Offhand", "Goon_Overwhelm_Offhand" --> <content contentuid="h1110423cg3acfg4207ga238ga0770520477f" version="1">When you miss an offhand weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.</content>
-	<!-- "Goon_Target_ConcussiveSmash_Offhand" --> <content contentuid="h90771cb4g5136g4cd4g8236g2f2cf39bbe25" version="1">Concussive Smash (Offhand)</content>
-	<!-- "Goon_Target_CripplingStrike_Offhand" --> <content contentuid="h99b3c2f0g0c43g4b6cgb77dg2f806ca992a5" version="1">Maiming Strike (Offhand)</content>
-	<!-- "Goon_Target_CripplingStrike_Offhand" --> <content contentuid="h36bca418g0d3dg47b0g9a9agdeb235538cd9" version="1">Maiming Strike (Offhand)</content>
-	<!-- "Goon_Target_DisarmingStrike_Offhand" --> <content contentuid="he6091780g9697g48fag972egdd47b8df7cd3" version="1">Disarming Strike (Offhand)</content>
-	<!-- "Goon_Target_OpeningAttack_Offhand" --> <content contentuid="h25288e12gdec4g47c0g97e7g2a7a3f41eae5" version="1">Flourish (Offhand)</content>
-	<!-- "Goon_Target_HeartStopper_Offhand" --> <content contentuid="hebf45cd6g6e31g4367gbbe0ge38bc0a69a51" version="1">Heartstopper (Offhand)</content>
-	<!-- "Goon_Target_Slash_New_Offhand" --> <content contentuid="h8905cdc4ge4bag4c98gbc19g6bf26f3ff04e" version="1">Lacerate (Offhand)</content>
-	<!-- "Goon_Target_PiercingThrust_Offhand" --> <content contentuid="h54451bd7g3d3ag4e08g900cg6b9c5b1d564e" version="1">Piercing Strike (Offhand)</content>
-	<!-- "Goon_Target_PommelStrike_Offhand" --> <content contentuid="h7d939ee7g1211g48c0g9553g4627e522095a" version="1">Pommel Strike (Offhand)</content>
-	<!-- "Shout_FullSwing" --> <content contentuid="h08bcf205ge623g4d53g982cgaffb9817751e" version="1">Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal an additional [2] with your main hand melee weapon this turn.</content>
-	<!-- "FULL_SWING" --> <content contentuid="he6838708g2ae8g48aeg83d6g53e606108898" version="1">Deals an additional [1] with main hand melee attacks.</content>
-	<!-- "FullSwing_Passive" --> <content contentuid="h1984b3e7g92a6g4936gb4ceg0576d36c6b53" version="1">Deal an additional [1] with main hand melee attacks.</content>
-	<!-- "Goon_Shout_FullSwing_Offhand" --> <content contentuid="h5b290079g0b06g401fg86d2g8a3f7cf21b87" version="1">Prepare (Offhand)</content>
-	<!-- "Goon_Shout_FullSwing_Offhand" --> <content contentuid="h754c5775g1a4fg400eg9d49gc1f607bd146c" version="1">Deals an additional [1] with off-hand melee attacks.</content>
-	<!-- "GOON_FULL_SWING_OFFHAND", "Goon_FullSwing_Passive_Offhand" --> <content contentuid="hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5" version="1">Prepared (Offhand)</content>
-	<!-- "Goon_FullSwing_Passive_Offhand" --> <content contentuid="h40c656acg09e5g48b3g84d1g05e61ec090c4" version="1">Deal an additional [1] with off-hand melee attacks.</content>
-	<!-- "Goon_Rush_SpringAttack_Offhand" --> <content contentuid="h9a7d334bg91a3g4f0eg8244gf6806e2c75ca" version="1">Rush Attack (Offhand)</content>
-	<!-- "Goon_Target_Topple_Offhand" --> <content contentuid="h8be29bd0g39acg460cgad99g48cfd27e2941" version="1">Topple (Offhand)</content>
-	<!-- "Goon_Target_HinderingSmash_Offhand" --> <content contentuid="h028fa086g4c49g4408ga471g456a695559df" version="1">Weakening Strike (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_SilencingBlade_Offhand" --> <content contentuid="ha9df0dbdgf610g4b0cgb14eg2a74de61c04c" version="1">Hush You! (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_CorrosiveStrike_Offhand" --> <content contentuid="h43ed6f6bgdaa1g4c3dga7deg7406ee9a12e1" version="1">Corrosive Strike (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_Leech_Offhand" --> <content contentuid="h6a9baabfg5744g4185g8084ga64e27aad1b8" version="1">Bloodletting (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_Bonesaw_Offhand" --> <content contentuid="hf40bb9f2g2211g47a5gb358g8e55abda13fc" version="1">Incise Ligaments (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_Syringe_Offhand" --> <content contentuid="hacc2246cg8b83g4f68g9788g99629e13d9db" version="1">Inject Nostrum (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_Trepan_Offhand" --> <content contentuid="hd01cd495gc084g4630gb8bdg0f45937bebff" version="1">Trephination (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand" --> <content contentuid="h64942341ge9c3g4a3bg8d9bg03f61c3f4360" version="1">Frigid Blade (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand" --> <content contentuid="h1bd20310g7f97g4f53gb0d5g6428947da15f" version="1">You add your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; as Cold damage.&lt;br&gt;&lt;br&gt;When the attack hits, apply &lt;LSTag Type="Status" Tooltip="MAG_INCREASED_DAMAGE_COLD"&gt;Frostbite&lt;/LSTag&gt;. The creature takes [1] when making a weapon attack.</content>
-	<!-- "Goon_Target_GOB_GoblinKing_ForceAttack_WeaponAttack_Offhand" --> <content contentuid="h20447d6cg9d12g46f3gbee6gd5d1e3048737" version="1">Absolute Power (Offhand)</content>
-	<!-- "Goon_Target_MAG_WeaponAction_SearingBlood_Offhand" --> <content contentuid="h363f39e6g26fbg4bd4gb638g499b914d3c41" version="1">Searing Blood (Offhand)</content>
-	<!-- "Goon_Shout_MAG_WhirlwindAttack_Offhand" --> <content contentuid="hb7d7bddag6a14g4a51g82ddg46a9c0e69d0b" version="1">Whirlwind Attack (Offhand)</content>
-	<!-- "Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand" --> <content contentuid="hef72f4dage8d5g4a3cg8ed5gf6fab5d484b2" version="1">Ensnaring Strike (Melee - Offhand)</content>
-	<!-- "MAG_BoundToBeBonded_Passive" --> <content contentuid="heee2c268g4226g464aga2f0gdf9e12a1e0f9" version="1">This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
-	<!-- "MAG_Barbarian_Armor_RageSupport_Passive" --> <content contentuid="h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; or starts their turn while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt; in combat, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.</content>
-	<!-- "Target_ConcussiveSmash" --> <content contentuid="h7edda7a5g49fcg4c39g8943g1f19aa5d78dd" version="1">Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They cannot take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 
+    <!-- Brace (Melee) -->
 
-	<!-- "Target_Bash" --> <content contentuid="h497fe29fg16bbg4e99gbc14g25a76f87c9c8" version="1">Bash your shield against a target to knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
-	<!-- "Target_ShieldBlow_Riposte", "Interrupt_ShieldBlow" --> <content contentuid="h0c55dbc7gccedg4ae3g94efg17167ffc09f9" version="1">When struck by a melee attack you may bash your shield against the attacker. They must succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or fall &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
-	<!-- "MAG_Legendary_ShieldRiposte_Passive" --> <content contentuid="h6e9ec880gcdb6g4fa7g9f69ge0b3217482db" version="1">When a foe hits you with a melee attack, you can use your reaction, dealing it [1] and knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn unless they succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
-	<!-- "Interrupt_Legendary_ShieldBlow" --> <content contentuid="hb31ab11dgeb62g42b9gb5dfg15a5d910bb7d" version="1">When a creature damages you, deal it [1] and possibly knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn.</content>
+    <!-- Cleave -->
+	<!-- "Goon_Zone_Cleave_Offhand" -->
+    <content contentuid="h046d806egc13fg403fgb220g8cdbd04778c0" version="1">Cleave (Offhand)</content>
 
-	<!-- "GOON_UNWIELDY" --> <content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
-	<!-- "GOON_UNWIELDY" --> <content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
+    <!-- Concussive Smash -->
+	<!-- "Target_ConcussiveSmash" -->
+    <content contentuid="h7edda7a5g49fcg4c39g8943g1f19aa5d78dd" version="1">Possibly &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Daze&lt;/LSTag&gt; your target. They cannot take &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; and lose the &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; bonus to their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
+	<!-- "Goon_Target_ConcussiveSmash_Offhand" -->
+    <content contentuid="h90771cb4g5136g4cd4g8236g2f2cf39bbe25" version="1">Concussive Smash (Offhand)</content>
 
-	<!-- "Target_MAG_WeaponAction_FlashingDawn" --> <content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.</content>
+    <!-- Maiming Strike -->
+	<!-- "Goon_Target_CripplingStrike_Offhand" -->
+    <content contentuid="h36bca418g0d3dg47b0g9a9agdeb235538cd9" version="1">Maiming Strike (Offhand)</content>
 
+    <!-- Disarming Strike -->
+	<!-- "Goon_Target_DisarmingStrike_Offhand" -->
+    <content contentuid="he6091780g9697g48fag972egdd47b8df7cd3" version="1">Disarming Strike (Offhand)</content>
+
+    <!-- Flourish -->
+	<!-- "Goon_Target_OpeningAttack_Offhand" -->
+    <content contentuid="h25288e12gdec4g47c0g97e7g2a7a3f41eae5" version="1">Flourish (Offhand)</content>
+
+	<!-- Heartstopper -->
+	<!-- "Target_HeartStopper" -->
+	<content contentuid="h0b4e08c6gced3g487dg881dg01da88351937" version="1">Possibly inflicts &lt;LSTag Type="Status" Tooltip="CHEST_TRAUMA"&gt;Chest Trauma&lt;/LSTag&gt;: target loses an &lt;LSTag Tooltip="Action"&gt;Action&lt;/LSTag&gt;.</content>
+	<!-- "Goon_Target_HeartStopper_Offhand" -->
+    <content contentuid="hebf45cd6g6e31g4367gbbe0ge38bc0a69a51" version="1">Heartstopper (Offhand)</content>
+
+    <!-- Lacerate -->
+	<!-- "Goon_Target_Slash_New_Offhand" -->
+    <content contentuid="h8905cdc4ge4bag4c98gbc19g6bf26f3ff04e" version="1">Lacerate (Offhand)</content>
+
+    <!-- Piercing Strike -->
+    <!-- "Goon_Target_PiercingThrust_Offhand" --> <content contentuid="h54451bd7g3d3ag4e08g900cg6b9c5b1d564e" version="1">Piercing Strike (Offhand)</content>
+
+    <!-- Pommel Strike -->
+	<!-- "Goon_Target_PommelStrike_Offhand" -->
+    <content contentuid="h7d939ee7g1211g48c0g9553g4627e522095a" version="1">Pommel Strike (Offhand)</content>
+
+    <!-- Prepare -->
+	<!-- "Shout_FullSwing" -->
+    <content contentuid="h08bcf205ge623g4d53g982cgaffb9817751e" version="1">Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with your main-hand melee weapon this turn.</content>
+	<!-- "FULL_SWING", "FullSwing_Passive" -->
+    <content contentuid="he6838708g2ae8g48aeg83d6g53e606108898" version="1">Sacrificed [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to its &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with its main-hand melee weapon this turn.</content>
+	<!-- "Goon_Shout_FullSwing_Offhand" -->
+    <content contentuid="h5b290079g0b06g401fg86d2g8a3f7cf21b87" version="1">Prepare (Offhand)</content>
+	<content contentuid="h8313b113g6129g4b36gb91egeb3040ce1b96" version="1">Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with your off-hand melee weapon this turn.</content>
+	<!-- "GOON_FULL_SWING_OFFHAND", "Goon_FullSwing_Passive_Offhand" -->
+    <content contentuid="hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5" version="1">Prepared (Offhand)</content>
+    <content contentuid="h754c5775g1a4fg400eg9d49gc1f607bd146c" version="1">Sacrificed [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to its &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with its off-hand melee weapon this turn.</content>
+
+    <!-- Rush Attack -->
+	<!-- "Goon_Rush_SpringAttack_Offhand" -->
+    <content contentuid="h9a7d334bg91a3g4f0eg8244gf6806e2c75ca" version="1">Rush Attack (Offhand)</content>
+
+    <!-- Tenacity -->
+	<!-- "Interrupt_Overwhelm", "Overwhelm" -->
+    <content contentuid="h3ff15630ga20cg4697gabaeg7909acd8b811" version="1">When you miss with a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; using your main-hand weapon, deal damage equal to your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1.</content>
+	<!-- "Goon_Interrupt_Overwhelm_Offhand", "Goon_Overwhelm_Offhand" -->
+    <content contentuid="h3a82ba6cgea61g4c98g8abcg07ef3cd2b315" version="1">Tenacity (Offhand)</content>
+	<content contentuid="h1110423cg3acfg4207ga238ga0770520477f" version="1">When you miss with a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; using your off-hand weapon, deal damage equal to your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1.</content>
+
+    <!-- Topple -->
+	<!-- "Goon_Target_Topple_Offhand" -->
+    <content contentuid="h8be29bd0g39acg460cgad99g48cfd27e2941" version="1">Topple (Offhand)</content>
+
+    <!-- Weakening Strike -->
+	<!-- "Goon_Target_HinderingSmash_Offhand" -->
+    <content contentuid="h028fa086g4c49g4408ga471g456a695559df" version="1">Weakening Strike (Offhand)</content>
+
+    <!-- Whirlwind Attack -->
+	<!-- "Goon_Shout_MAG_WhirlwindAttack_Offhand" -->
+    <content contentuid="hb7d7bddag6a14g4a51g82ddg46a9c0e69d0b" version="1">Whirlwind Attack (Offhand)</content>
+
+<!-- ==================================== WEAPON ACTIONS - Unsorted -->
+
+	<!-- "Goon_Target_MAG_WeaponAction_SilencingBlade_Offhand" -->
+	<content contentuid="ha9df0dbdgf610g4b0cgb14eg2a74de61c04c" version="1">Hush You! (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_CorrosiveStrike_Offhand" -->
+	<content contentuid="h43ed6f6bgdaa1g4c3dga7deg7406ee9a12e1" version="1">Corrosive Strike (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Leech_Offhand" -->
+	<content contentuid="h6a9baabfg5744g4185g8084ga64e27aad1b8" version="1">Bloodletting (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Bonesaw_Offhand" -->
+	<content contentuid="hf40bb9f2g2211g47a5gb358g8e55abda13fc" version="1">Incise Ligaments (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Syringe_Offhand" -->
+	<content contentuid="hacc2246cg8b83g4f68g9788g99629e13d9db" version="1">Inject Nostrum (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Trepan_Offhand" -->
+	<content contentuid="hd01cd495gc084g4630gb8bdg0f45937bebff" version="1">Trephination (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand" -->
+	<content contentuid="h64942341ge9c3g4a3bg8d9bg03f61c3f4360" version="1">Frigid Blade (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand" -->
+	<content contentuid="h1bd20310g7f97g4f53gb0d5g6428947da15f" version="1">You add your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; as Cold damage.&lt;br&gt;&lt;br&gt;When the attack hits, apply &lt;LSTag Type="Status" Tooltip="MAG_INCREASED_DAMAGE_COLD"&gt;Frostbite&lt;/LSTag&gt;. The creature takes [1] when making a weapon attack.</content>
+	<!-- "Goon_Target_GOB_GoblinKing_ForceAttack_WeaponAttack_Offhand" -->
+	<content contentuid="h20447d6cg9d12g46f3gbee6gd5d1e3048737" version="1">Absolute Power (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_SearingBlood_Offhand" -->
+	<content contentuid="h363f39e6g26fbg4bd4gb638g499b914d3c41" version="1">Searing Blood (Offhand)</content>
+	<!-- "Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand" -->
+	<content contentuid="hef72f4dage8d5g4a3cg8ed5gf6fab5d484b2" version="1">Ensnaring Strike (Melee - Offhand)</content>
+	<!-- "MAG_BoundToBeBonded_Passive" -->
+	<content contentuid="heee2c268g4226g464aga2f0gdf9e12a1e0f9" version="1">This weapon has a +[1] bonus to damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
+	<!-- "MAG_Barbarian_Armor_RageSupport_Passive" -->
+	<content contentuid="h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7" version="1">Once per turn, when the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Rage"&gt;Rages&lt;/LSTag&gt; or starts their turn while &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt; in combat, they generate [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.</content>
+
+	<!-- "Target_Bash" -->
+	<content contentuid="h497fe29fg16bbg4e99gbc14g25a76f87c9c8" version="1">Bash your shield against a target to knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
+	<!-- "Target_ShieldBlow_Riposte", "Interrupt_ShieldBlow" -->
+	<content contentuid="h0c55dbc7gccedg4ae3g94efg17167ffc09f9" version="1">When struck by a melee attack you may bash your shield against the attacker. They must succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or fall &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
+	<!-- "MAG_Legendary_ShieldRiposte_Passive" -->
+	<content contentuid="h6e9ec880gcdb6g4fa7g9f69ge0b3217482db" version="1">When a foe hits you with a melee attack, you can use your reaction, dealing [1] and knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn unless they succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
+	<!-- "Interrupt_Legendary_ShieldBlow" -->
+	<content contentuid="hb31ab11dgeb62g42b9gb5dfg15a5d910bb7d" version="1">When a creature damages you, deal it [1] and possibly knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn.</content>
+
+	<!-- "GOON_UNWIELDY" -->
+	<content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
+	<!-- "GOON_UNWIELDY" -->
+	<content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
+
+	<!-- "Target_MAG_WeaponAction_FlashingDawn" -->
+    <content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.</content>
 
 	<!--  -->
 	<!-- "" -->

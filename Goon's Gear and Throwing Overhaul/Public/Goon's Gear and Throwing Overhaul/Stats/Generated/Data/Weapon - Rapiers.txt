@@ -198,6 +198,7 @@ data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL', GetAttackWeap
 // Bug Fix: Withering Cut applies to thrown attacks, description overhauled.
 // Bug Fix: Added missing Honour ruleset bools to Withering Cut to prevent damage riders acting as a damage rider source.
 // Changes: Withering Cut can now be used by Invisible characters.
+// TODO: Bad description.
 
 // new entry "MAG_TheDueller_Rapier"
 // type "Weapon"
@@ -278,11 +279,13 @@ data "DescriptionParams" "DealDamage(,Necrotic)"
 // data "ExtraDescriptionParams" ""
 // data "Icon" "GenericIcon_DamageType_Necrotic"
 // data "Conditions" "IsAbleToReact(context.Observer) and not Item() and IsMeleeAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack()"
-data "Conditions" "IsAbleToReact(context.Observer) and not Item() and (IsMeleeAttack() and IsWeaponAttack() or IsRangedUnarmedAttack()) and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit)"
+data "Conditions" "Goon_BasicHarmfulInterruptConditions(false,false,true) and IsAttackUsingMeleeWeapon() and IsHit()"
 // data "Properties" "DealDamage(ProficiencyBonus, Necrotic);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
 data "Properties" "DealDamage(ProficiencyBonus, Necrotic, Magical,,0,,true,false);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
 // data "Cost" "ReactionActionPoint:1"
 // data "Stack" ""
+// data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+data "EnableCondition" "Goon_BasicHarmfulInterruptEnableConditions()"
 // data "InterruptDefaultValue" "Enabled;Ask"
 data "InterruptFlags" "InterruptWhileInvisible"
 

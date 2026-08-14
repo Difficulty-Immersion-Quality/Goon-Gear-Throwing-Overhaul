@@ -347,6 +347,7 @@ data "OnApplyFunctors" "IF(Character() and not HasStatus('MAG_CHARGED_LIGHTNING'
 // Bug Fix: Now uses Maneuver Save DC instead of Spell Save DC.
 // Bug Fix: Can be used while under the effects of more non-hostile Polymorphs, but requires a shield to be equipped.
 // Changes: Can now be used by Invisible player characters.
+// TODO: Goon_InAttackRange support for using shields in main-hand slot?
 
 new entry "Target_Bash"
 type "SpellData"
@@ -418,11 +419,13 @@ data "Description" "h0c55dbc7gccedg4ae3g94efg17167ffc09f9;1"
 data "DescriptionParams" "1"
 // data "Icon" "Action_Bash"
 // data "Conditions" "IsAbleToReact(context.Observer) and Enemy(context.Source,context.Observer) and IsMeleeAttack() and (IsHit() or IsCritical()) and not HasStatus('INVISIBILITY') and HasLastAttackTriggered()"
-data "Conditions" "(Player(context.Observer) or not HasStatus('SG_Invisible',context.Observer)) and IsAbleToReact(context.Observer) and Enemy(context.Source,context.Observer) and IsMeleeAttack() and (IsHit() or IsCritical()) and HasLastAttackTriggered()"
+data "Conditions" "Goon_BasicHarmfulInterruptConditions(true) and Goon_InAttackRange(false,true) and IsMeleeAttack() and IsHit()"
 // data "Properties" "UseSpell(SWAP,Target_ShieldBlow_Riposte,true,true,true);ApplyStatus(OBSERVER_OBSERVER,INTERRUPT_RIPOSTE,100,0)"
 // data "Cost" "ReactionActionPoint:1"
 // data "EnableCondition" "not HasAnyStatus({'SG_Polymorph','SG_Blinded'}) or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
-data "EnableCondition" "(not HasStatus('SG_Polymorph') or Goon_IsNonHostilePolymorphStatus()) and not HasStatus('SG_Blinded') and HasShieldEquipped(context.Source)"
+data "EnableCondition" "Goon_BasicHarmfulInterruptEnableConditions() and Goon_HasWeaponEquipped(nil,nil,nil,true)"
+// data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+data "EnableContext" "OnStatusApplied;OnStatusRemoved;OnEquip"
 // data "Cooldown" "OncePerTurn"
 // data "InterruptDefaultValue" "Enabled;Ask"
 data "InterruptFlags" "InterruptWhileInvisible"

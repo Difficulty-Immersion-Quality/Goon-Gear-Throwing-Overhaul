@@ -154,6 +154,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== Magical Hand Crossbow ====================================
 // Bug Fix: Cunning Combo now works while under the effects of more non-hostile and non-spellcasting restricted Polymorphs.
 // Changes: Cunning Combo can now be used by Invisible characters.
+// TODO: IF(Goon_HasWeaponEquipped(true)) with unarmed/weapon
 
 // new entry "MAG_Cunning_HandCrossbow"
 // type "Weapon"
@@ -192,10 +193,10 @@ using "Interrupt_MAG_Cunning_Combo_HandCrossbow"
 // data "ExtraDescriptionParams" ""
 // data "InterruptContext" "OnCastHit"
 // data "Conditions" "not DistanceToEntityGreaterThan(2, context.ObserverPosition, context.Target) and IsAbleToReact(context.Observer) and not Item() and IsRangedAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack() and not IsKillingBlow() and HasLastAttackTriggered()"
-data "Conditions" "not DistanceToEntityGreaterThan(2, context.ObserverPosition, context.Target) and IsAbleToReact(context.Observer) and not Item() and IsRangedAttack() and Self(context.Source,context.Observer) and IsHit() and IsWeaponAttack() and not IsKillingBlow() and HasLastAttackTriggered()"
+data "Conditions" "Goon_BasicHarmfulInterruptConditions(false) and Goon_InAttackRange(false,false) and IsRangedWeaponAttack() and IsHit()"
 // data "Properties" "UseAttack()"
 // data "Cost" "ReactionActionPoint:1"
 // data "Stack" ""
 // data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
-data "EnableCondition" "not HasStatus('SG_Polymorph') or Goon_IsUnrestrictedPolymorphStatus()"
+data "EnableCondition" "Goon_BasicHarmfulInterruptEnableConditions()"
 data "InterruptFlags" "InterruptWhileInvisible"

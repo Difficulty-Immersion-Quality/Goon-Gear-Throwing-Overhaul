@@ -101,7 +101,7 @@ data "StatsFunctors" "CreateSurface(3,3,FogCloud,true)"
 // Bug Fix: Absorb Elements: X Damage conditions can no longer deal damage multiple times from a single attack, and buff weapon damage instead of providing a damage bonus.
 // Bug Fix: Absorb Elements now has a functional once per short rest cooldown.
 // Changes: Absorb Elements now functions while under the effects of non-humanoid polymorphs.
-// Changes: Absorb Elements can now be used by Invisible characters. // TODO: "(Player(context.Observer) or not HasStatus('SG_Invisible',context.Observer)) and " ?
+// Changes: Absorb Elements can now be used by Invisible characters.
 // Changes: Descriptions improved.
 // Changes: Most functionality for Absorb Elements exists solely from the main passive. If "Absorb_Elements_Passive" is given to NPCs it will just work tm.
 // TODO: Conditional cantrip stuff, Gregarious Caster for reference.
@@ -217,13 +217,13 @@ data "TooltipStatusApply" "ApplyStatus(GOON_ABSORB_ELEMENTS_ACTIVE,100,1);ApplyS
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "InterruptContextScope" "Self"
 // data "Conditions" "IsAbleToReact(context.Observer) and Self(context.Target,context.Observer) and (SpellDamageTypeIs(DamageType.Acid) or SpellDamageTypeIs(DamageType.Cold) or SpellDamageTypeIs(DamageType.Fire) or SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Thunder)) and not AnyEntityIsItem()"
-data "Conditions" "IsAbleToReact(context.Observer) and Self(context.Target,context.Observer) and Goon_IsSpellDamageTypeElemental() and not AnyEntityIsItem()"
+data "Conditions" "Goon_InterruptConditions() and Self(context.Target,context.Observer) and Goon_IsSpellDamageTypeElemental()"
 // data "Properties" "SetDamageResistance(Acid);SetDamageResistance(Cold);SetDamageResistance(Fire);SetDamageResistance(Lightning);SetDamageResistance(Thunder);ApplyStatus(OBSERVER_TARGET, ABSORB_ELEMENTS_ACTIVE,100,1)"
 data "Properties" "ApplyStatus(OBSERVER_TARGET,GOON_ABSORB_ELEMENTS_ACTIVE,100,1)"
 // data "Cost" "ReactionActionPoint:1;Interrupt_AbsorbElements:1"
 // data "Cooldown" "OncePerShortRestPerItem"
 // data "EnableCondition" "(not HasStatus('SG_Polymorph') or Tagged('MINDFLAYER') or HasStatus('SG_Disguise')) and HasActionResource('Interrupt_AbsorbElements', 1, 0, false, false, context.Source)"
-data "EnableCondition" "HasActionResource('Interrupt_AbsorbElements', 1, 0, false, false, context.Source) and Goon_IsNonHostilePolymorphStatus()"
+data "EnableCondition" "Goon_InterruptEnableConditions(true) and HasActionResource('Interrupt_AbsorbElements', 1, 0, false, false, context.Source)"
 // data "EnableContext" "OnActionResourcesChanged"
 data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 data "InterruptFlags" "InterruptWhileInvisible"
@@ -598,7 +598,7 @@ data "Description" "h3de2b022g4520g45f4gb989g3cea3f3d9159;1"
 // data "SoundStop" "MAG_Status_CloakOfDisplacement_End"
 // data "StackId" "MAG_PHB_CLOAK_OF_DISPLACEMENT"
 // data "Boosts" "IF(not Tagged('BLINDSIGHT', context.Source)):Disadvantage(AttackTarget)"
-data "Boosts" "IF(not Goon_CanIgnoreIllusions()):Disadvantage(AttackTarget)"
+data "Boosts" "IF(not Goon_CanIgnoreIllusions(false)):Disadvantage(AttackTarget)"
 // data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnAttacked) and IsHit() and not IsCriticalMiss() and TotalAttackDamageDoneGreaterThan(0)) or IsStatusEvent(StatusEvent.OnCombatEnded)"
 // data "RemoveEvents" "OnCombatEnded;OnAttacked"
 // data "StatusPropertyFlags" "DisableOverhead"

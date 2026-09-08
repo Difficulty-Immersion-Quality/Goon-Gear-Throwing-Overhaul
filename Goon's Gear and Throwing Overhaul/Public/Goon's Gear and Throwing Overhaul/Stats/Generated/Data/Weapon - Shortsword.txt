@@ -299,7 +299,7 @@ data "Cooldown" "OncePerShortRest"
 // Bug Fix: Organ Rearranger's damage reroll works when thrown.
 // Changes: Organ Rearranger's description clarified.
 // TODO: loca
-// TODO: polymorph
+// TODO: Refactor.
 
 // new entry "MAG_Duergar_Sword_KingsKnife"
 // type "Weapon"

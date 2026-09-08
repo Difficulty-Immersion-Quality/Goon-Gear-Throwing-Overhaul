@@ -566,7 +566,9 @@ data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,fa
 
 // ==================================== 28. Gloves of Battlemage's Power ====================================
 // Bug Fix: Inadvertently fix every issue with Larian's Patch #8 implementation, such as Shadow Blade and Flame Blade triggering the effect with every successful attack.
-// Changes: Swapped conditions for gaining from a janky list of spells using weapons to all melee spell attacks. 
+// Changes: Swapped conditions for gaining from a janky list of spells using weapons to all melee spell attacks.
+// TODO: Refactor.
+
 
 // new entry "MAG_Gish_ArcaneAcuity_Gloves"
 // type "Armor"
@@ -649,6 +651,7 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 
 // ==================================== 34. Gloves of The Duellist ====================================
 // Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
+// TODO: Refactor.
 
 // new entry "MAG_OfTheDuelist_Gloves"
 // type "Armor"
@@ -692,6 +695,7 @@ data "ExtraDescription" "hebb849acge25fg4a37g821cga5092f299d70;1"
 // Bug Fix: Description now states that it triggers from diseases and Bloodless being applied, matching the functionality.
 // Changes: Added a once per turn cooldown.
 // TODO: Throwing thingo
+// TODO: Refactor.
 
 // new entry "MAG_Harpers_JhannylGloves"
 // type "Armor"
@@ -823,6 +827,7 @@ data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)
 
 // ==================================== 45. Stalker Gloves ====================================
 // Bug Fix: Now works with Rakish Sneak Attack.
+// TODO: Refactor.
 
 // new entry "MAG_Stalker_Gloves"
 // type "Armor"
@@ -871,7 +876,7 @@ data "Conditions" "Goon_IsSneakAttack()"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 47. The Sparkle Hands ====================================
-// TODO: polymorph.
+// TODO: Refactor.
 
 // new entry "MAG_ChargedLightning_AbilityCheckBoost_Gloves"
 // type "Armor"

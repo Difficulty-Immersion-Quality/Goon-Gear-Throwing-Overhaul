@@ -18,7 +18,7 @@
 
 // ========================== Callous Glow Ring ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
-// TODO: polymorph.
+// TODO: Refactor.
 
 new entry "MAG_Radiant_DamageBonusOnIlluminatedTarget_Ring"
 type "Armor"
@@ -57,7 +57,7 @@ data "Rarity" "Rare"
 
 // ========================== Coruscation Ring ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
-// TODO: polymorph.
+// TODO: Refactor.
 
 new entry "MAG_Radiant_RadiatingOrb_Ring"
 type "Armor"
@@ -202,7 +202,7 @@ data "Rarity" "Rare"
 // Note: Cantrips are manually supported in the "Goon_IsConditionalDamageCantripEligible()" function within Goon's Library, if they are not they will behave the same as is expected of vanilla.
 // Note: 5e Spells and Homebrew Spells make edits to "MAG_ElementalGish_ElementalInfusion_Ring_Passive", so it's replaced with a custom copy.
 // TODO: Template.
-// TODO: polymorph.
+// TODO: Refactor.
 
 new entry "MAG_ElementalGish_ElementalInfusion_Ring"
 type "Armor"
@@ -283,7 +283,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALINFUSION"
 // Bug Fix: Mental Inhibition can now trigger on missed Attack Rolls that still have a relevant Saving Throw.
 // Changes: Mental Inhibition can only be applied once per action, per target.
 // TODO: Template
-// TODO: polymorph.
+// TODO: Refactor.
 
 // new entry "MAG_Psychic_MentalOverload_Ring"
 // type "Armor"
@@ -355,7 +355,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION"
 // Changes: Spiteful Thunder Dazed condition application now only triggers once per action, per target.
 // Changes: Forced Honour ruleset changes.
 // TODO: Template.
-// TODO: polymorph.
+// TODO: Refactor.
 
 new entry "MAG_Thunder_InflictDazeOnThunderDamage_Ring"
 type "Armor"
@@ -597,7 +597,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_SNOWBURST"
 
 // ==================================== Strange Conduit Ring ====================================
 // TODO: Template
-// TODO: polymorph.
+// TODO: Refactor.
 
 // new entry "MAG_Gish_PsychicDamageBonusWhileConcentrating_Ring"
 // type "Armor"

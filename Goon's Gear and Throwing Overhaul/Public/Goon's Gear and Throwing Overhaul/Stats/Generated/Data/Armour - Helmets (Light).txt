@@ -6,6 +6,7 @@
 
 // 
 
+// TODO: Number them.
 // ==================================== Angelic Plume Helmet ====================================
 // TODO: Something/anything.
 
@@ -100,7 +101,7 @@
 // Bug Fix: Battle Acuity now only triggers once per attack.
 // Changes: Battle Acuity applies to thrown attacks.
 // TODO: Only when throwing melee weapons.
-// TODO: polymorph.
+// TODO: Refactor.
 
 new entry "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive"
 type "PassiveData"

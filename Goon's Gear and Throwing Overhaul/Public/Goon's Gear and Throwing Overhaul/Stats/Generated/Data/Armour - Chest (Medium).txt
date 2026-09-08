@@ -28,8 +28,8 @@
 
 // ==================================== 3. Luminous Armour ====================================
 // Bug Fix: Radiant Shockwave's tooltip now shows the duration it applies Radiant Orb for.
-// Changes: Radiating Shockwave's Radiant Shockwave will now only trigger once per action.
 // Changes: Radiating Shockwave now functions while under the effects of non-humanoid polymorphs.
+// Changes: Radiating Shockwave's Radiant Shockwave will now only trigger once per action.
 // Changes: Rarity set to Rare to reflect it being BiS endgame gear for some builds.
 // Changes: Descriptions improved.
 

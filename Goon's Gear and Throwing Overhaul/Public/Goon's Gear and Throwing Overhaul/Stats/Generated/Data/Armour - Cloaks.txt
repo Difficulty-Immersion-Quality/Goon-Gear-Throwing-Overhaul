@@ -389,6 +389,7 @@ data "Passives" ""
 
 // ==================================== 5. Fleshmelter Cloak ====================================
 // Changes: Caustic Reprisal now functions while under the effects of non-humanoid polymorphs.
+// Changes: Caustic Reprisal's Acid condition application will now only apply once per action, per attacker.
 // Changes: Caustic Reprisal now triggers on a hit landing, instead of from damage being dealt.
 // Changes: Caustic Reprisal's tooltip now specifies that damage is increased on a crit.
 // Changes: In addition to Caustic Reprisal's Acid damage, there's now a 50% chance for the attacker to be afflicted with the Acid condition for 1 turn, or have their existing Acid condition's duration increased by 1 turn.
@@ -955,8 +956,8 @@ data "StatsFunctors" "RemoveStatus(MAG_CRITICAL_HIDING_CRITICAL)"
 // Bug Fix: Mental Debilitation no longer applies Mental Fatigue to creatures that are not enemies.
 // Bug Fix: Mental Debilitation can now trigger on missed Attack Rolls that still have a relevant Saving Throw.
 // Bug Fix: Mental Debilitation will no longer attempt to apply Mental Fatigure to the wearer.
-// Changes: Mental Debilitation's Mental Fatigue condition application will now only apply once per action.
 // Changes: Mental Debilitation now functions while under the effects of non-humanoid polymorphs.
+// Changes: Mental Debilitation's Mental Fatigue condition application will now only apply once per action.
 // Changes: Forced honour ruleset changes.
 // TODO: Check for the harmful flag, but maybe in the future after I bug fix the shit out of all the missing flags...
 // TODO: OnStatusApplied? Any way to check for actions? Harmful flag might work well enough for that. Unsure if OnAttacked is sufficient for contexts with AOE and such.

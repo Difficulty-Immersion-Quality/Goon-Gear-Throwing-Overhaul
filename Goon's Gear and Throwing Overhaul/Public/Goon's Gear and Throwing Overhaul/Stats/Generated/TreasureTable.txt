@@ -487,8 +487,8 @@ object category "I_Goon_MAG_Radiant_RadiatingOrb_Gloves_NotUnique",1,0,0,0,0,0,0
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Critical_Force_Gloves_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
@@ -557,8 +557,8 @@ object category "I_Goon_MAG_Radiant_RadiatingOrb_Gloves_NotUnique",1,0,0,0,0,0,0
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
-// new subtable "1,1"
-// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Infernal_Metal_Gloves_NotUnique",1,0,0,0,0,0,0,0
 // new subtable "1,1"
 // object category "I_XXX",1,0,0,0,0,0,0,0
 // new subtable "1,1"

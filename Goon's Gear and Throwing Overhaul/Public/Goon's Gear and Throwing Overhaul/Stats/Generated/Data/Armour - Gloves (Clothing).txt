@@ -494,17 +494,49 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 23. Craterflesh Gloves ====================================
-// Bug Fix: No longer a damage rider that functions as a damage rider source.
-// TODO: Template stuff.
+// Bug Fix: Craterous Wounds's Force damage is longer a damage rider that functions as a damage rider source.
+// Changes: Craterous Wounds will only apply Radiating Orb once per action, per target.
+// Changes: Craterous Wounds now functions while under the effects of non-humanoid polymorphs.
 
-// new entry "MAG_Critical_Force_Gloves"
-// type "Armor"
+new entry "MAG_Critical_Force_Gloves"
+type "Armor"
 // using "_Hand_Magic_Metal"
+using "MAG_Critical_Force_Gloves"
 // data "RootTemplate" "556c4071-7d59-4cb7-ad84-9fa0efcd535f"
 // data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Critical_Force_Critical_Passive"
+data "PassivesOnEquip" "MAG_Critical_Force_Critical_Passive;Goon_Gear_Polymorph_CraterfleshGloves"
 // data "Unique" "1"
+
+new entry "Goon_MAG_Critical_Force_Gloves_NotUnique"
+type "Armor"
+// using "_Hand_Magic_Metal"
+using "MAG_Critical_Force_Gloves"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "GOON_CRATERFLESHGLOVES_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_CraterfleshGloves"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_CRATERFLESHGLOVES, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_CRATERFLESHGLOVES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_CRATERFLESHGLOVES"
+data "Boosts" ""
+data "Passives" "MAG_Critical_Force_Critical_Passive"
+
+// ==================
 
 new entry "MAG_Critical_Force_Critical_Passive"
 type "PassiveData"
@@ -513,16 +545,25 @@ using "MAG_Critical_Force_Critical_Passive"
 // data "DisplayName" "h14b285aag980cg4e8dg9d1fgec61e7aba0e4;2"
 // // Whenever you score a &lt;LSTag Tooltip="CriticalHit"&gt;critical hit&lt;/LSTag&gt;, deal an additional [1].
 // data "Description" "h485c5d37g241dg453fg8555g0406d28f1476;3"
+// // Whenever you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, deal an additional [1].
+data "Description" "h3d3967a8ga8deg4a39g9932g13088e4dacdc;1"
 // data "DescriptionParams" "DealDamage(1d6, Force)"
 data "DescriptionParams" "DealDamage(2d6, Force)"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; for each target.
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "2e9bcfe0-6444-477c-a767-40e967ca7b55;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+data "Boosts" "IF(IsCritical() and Goon_IsAttackUsingMeleeWeapon() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_CRATERFLESHGLOVES',context.Target)):CharacterWeaponDamage(1d6, Force);IF(IsCritical() and IsMeleeUnarmedAttack() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_CRATERFLESHGLOVES',context.Target)):CharacterUnarmedDamage(1d6, Force)"
 // data "StatsFunctorContext" "OnDamage"
+data "Conditions" "IsCritical() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_CRATERFLESHGLOVES',context.Target)"
 // data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical)"
-data "StatsFunctors" "IF(IsCritical()):DealDamage(1d6, Force,Magical,,0,,true,false)"
+data "StatsFunctors" "IF(not Goon_IsAttackUsingMeleeWeapon() and not IsMeleeUnarmedAttack()):DealDamage(1d6, Force,Magical,,0,,true,false);ApplyStatus(GOON_ONCEPERACTION_COOLDOWN_CRATERFLESHGLOVES, 100, 1)"
 
-// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+new entry "GOON_ONCEPERACTION_COOLDOWN_CRATERFLESHGLOVES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
+data "StackId" "GOON_ONCEPERACTION_COOLDOWN_CRATERFLESHGLOVES"
 
 // ==================================== 24. Daredevil Gloves ====================================
 // TODO: Something/anything.
@@ -1018,11 +1059,12 @@ data "Properties" "Highlighted"
 
 // ==================================== 58. Helldusk Gloves ====================================
 // Bug Fix: Infernal Touch's Bleeding application displays properly in the combat log.
+// Bug Fix: Infernal Touch's Bleeding application no longer works with throwing.
 // Changes: Infernal Touch's 1d6 Fire damage applies when throwing melee weapons.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
-// TODO: polymorph.
+// Changes: Infernal Acuity now functions while under the effects of non-humanoid polymorphs.
+// Changes: Infernal Touch now functions while under the effects of non-humanoid polymorphs.
 // TODO: Item spell inherits from NPC spell that inherits from regular spell, fuck me lol.
-// TODO: The bleeding applies to thrown, but probably wasn't intended.
 
 new entry "MAG_Infernal_Metal_Gloves"
 type "Armor"
@@ -1033,15 +1075,40 @@ using "MAG_Infernal_Metal_Gloves"
 // data "Rarity" "VeryRare"
 // data "Boosts" "RollBonus(SavingThrow, 1, Strength);UnlockSpell(Projectile_MAG_FireRay)"
 // data "PassivesOnEquip" "MAG_Infernal_Metal_AttackBonus_Passive;MAG_Infernal_Metal_Gloves_FireDamage_Passive"
+data "PassivesOnEquip" "MAG_Infernal_Metal_AttackBonus_Passive;MAG_Infernal_Metal_Gloves_FireDamage_Passive;Goon_Gear_Polymorph_HellduskGloves"
 // data "Unique" "1"
 // data "MinLevel" "1"
 // data "Proficiency Group" ""
 data "Proficiency Group" "HeavyArmor"
 
+new entry "Goon_MAG_Infernal_Metal_Gloves_NotUnique"
+type "Armor"
+// using "_Hand_Magic_Metal"
+using "MAG_Infernal_Metal_Gloves"
+// data "Unique" "1"
+data "Unique" "0"
+
 new entry "GOON_HELLDUSKGLOVES_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
+
+// ==================
+
+new entry "Goon_Gear_Polymorph_HellduskGloves"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_HELLDUSKGLOVES, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_HELLDUSKGLOVES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_HELLDUSKGLOVES"
+data "Boosts" ""
+data "Passives" "MAG_Infernal_Metal_AttackBonus_Passive;MAG_Infernal_Metal_Gloves_FireDamage_Passive"
+
+// ==================
 
 new entry "MAG_Infernal_Metal_AttackBonus_Passive"
 type "PassiveData"
@@ -1051,6 +1118,8 @@ using "MAG_Infernal_Metal_AttackBonus_Passive"
 // // You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
 // data "Description" "h46ffe4b1gd070g484eg94a4g0d14439ea36c;3"
 // data "DescriptionParams" "1"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "RollBonus(Attack, 1);SpellSaveDC(1)"
 
@@ -1066,10 +1135,13 @@ data "Description" "h4855f6bfgcd92g4833ga020gd0dd642acdfc;1"
 // data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic)"
 data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic);2"
 data "TooltipSave" "Constitution"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "CharacterWeaponDamage(1d6, Fire);CharacterUnarmedDamage(1d6, Necrotic)"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsUnarmedAttack()"
+data "Conditions" "IsMeleeUnarmedAttack()"
 // data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2,,,,not SavingThrow(Ability.Constitution,15))"
 data "StatsFunctors" "ApplyStatus(GOON_INFERNALTOUCH_TECHNICAL_APPLIER, 100, 0)"
 
@@ -1084,6 +1156,8 @@ data "DescriptionParams" "DealDamage(1d6, Fire);DealDamage(1d6, Necrotic);2"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 15)"
+// TODO: What me smoking? Think I was tooling with it for Slayer Multiattack.
+// data "OnApplySuccess" "IF(StatusGroupDurationEqualOrLessThan(context.Target,'BLEEDING',0.1)):ApplyStatus(BLEEDING, 100, 2)"
 data "OnApplySuccess" "ApplyStatus(BLEEDING, 100, 2)"
 
 // new entry "Projectile_MAG_FireRay"

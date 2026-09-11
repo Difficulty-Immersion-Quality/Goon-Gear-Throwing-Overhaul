@@ -96,6 +96,7 @@ using "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat"
 // data "RootTemplate" "fa68c8ad-67d7-4680-88bc-f0b066e71761"
 // data "Rarity" "Uncommon"
 // data "PassivesOnEquip" "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
+data "PassivesOnEquip" "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive;Goon_Gear_Polymorph_HatOfStormScionsPower"
 // data "ValueLevel" "6"
 data "ValueLevel" "6"
 // data "ValueScale" "2.3"
@@ -111,6 +112,23 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
+// ==================
+
+new entry "Goon_Gear_Polymorph_HatOfStormScionsPower"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_HATOFSTORMSCIONSPOWER, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_HATOFSTORMSCIONSPOWER"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_HATOFSTORMSCIONSPOWER"
+data "Boosts" ""
+data "Passives" "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
+
+// ==================
+
 new entry "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
 type "PassiveData"
 using "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
@@ -122,7 +140,8 @@ using "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_Passive"
 data "Description" "h1a045f3cg3524g41dag863agab4d40bd991b;1"
 data "DescriptionParams" "DealDamage(,Thunder);2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
-data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a;28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Properties" "OncePerAttack"
 data "Properties" ""

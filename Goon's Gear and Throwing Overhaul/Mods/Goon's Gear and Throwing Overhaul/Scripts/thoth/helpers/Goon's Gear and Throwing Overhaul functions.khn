@@ -7,67 +7,85 @@
 
 function IsAttack()
     -- return IsMeleeAttack() | IsRangedAttack()
-    return IsMeleeAttack() | IsRangedAttack() | IsWeaponAttack()
+    if IsMeleeAttack().Result             then return ConditionResult(true) end
+    if IsRangedAttack().Result            then return ConditionResult(true) end
+    if Goon_IsThrownWeaponAttack().Result then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsWeaponAttack()
     -- result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
-    local result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
-                or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
-                or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
-                or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
-    -- return ConditionResult(result)
-    return ConditionResult(result) | IsMainHandWeaponAttack() | IsOffHandAttack() | Goon_IsThrownWeaponAttack()
+    -- or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
+    -- or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+    -- or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	-- return ConditionResult(result)
+    if IsMainHandWeaponAttack().Result    then return ConditionResult(true) end
+    if IsOffHandAttack().Result           then return ConditionResult(true) end
+    if Goon_IsThrownWeaponAttack().Result then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsWeaponAttackAttackDescription()
     -- result = context.AttackDescription.AttackType == AttackType.RangedWeaponAttack
-    local result = context.AttackDescription.AttackType == AttackType.RangedWeaponAttack
-                or context.AttackDescription.AttackType == AttackType.MeleeWeaponAttack
-                or context.AttackDescription.AttackType == AttackType.RangedOffHandWeaponAttack
-                or context.AttackDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
-    -- return ConditionResult(result)
-    return ConditionResult(result) | IsMainHandWeaponAttack() | IsOffHandAttack() | Goon_IsThrownWeaponAttack()
+    -- or context.AttackDescription.AttackType == AttackType.MeleeWeaponAttack
+    -- or context.AttackDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+    -- or context.AttackDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	-- return ConditionResult(result)
+    if IsMainHandWeaponAttack().Result    then return ConditionResult(true) end
+    if IsOffHandAttack().Result           then return ConditionResult(true) end
+    if Goon_IsThrownWeaponAttack().Result then return ConditionResult(true) end
+    return ConditionResult(false)
+end
+
+function IsMainHandAttack()
+    -- result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack or context.HitDescription.AttackType == AttackType.MeleeUnarmedAttack or context.HitDescription.AttackType == AttackType.RangedUnarmedAttack
+	-- return ConditionResult(result)
+    if IsMainHandWeaponAttack().Result then return ConditionResult(true) end
+    if IsRangedUnarmedAttack().Result  then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsMainHandWeaponAttack()
-    -- result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack 
-    local result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack 
-                or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
-    -- return ConditionResult(result)
-    return ConditionResult(result) | Goon_IsMeleeMainhandWeaponAttack() | Goon_IsRangedMainhandWeaponAttack()
+    -- result = context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	-- return ConditionResult(result)
+    if Goon_IsMeleeMainhandWeaponAttack().Result  then return ConditionResult(true) end
+    if Goon_IsRangedMainhandWeaponAttack().Result then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsOffHandAttack()
-    -- result = context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack 
-    local result = context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack 
-                or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
-    -- return ConditionResult(result)
-    return ConditionResult(result) | Goon_IsMeleeOffhandWeaponAttack() | Goon_IsRangedOffhandWeaponAttack()
+    -- result = context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	-- return ConditionResult(result)
+    if Goon_IsMeleeOffhandWeaponAttack().Result  then return ConditionResult(true) end
+    if Goon_IsRangedOffhandWeaponAttack().Result then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
--- function IsSpellAttack()
---     return IsMeleeSpellAttack() | IsRangedSpellAttack()
--- end
+function IsSpellAttack()
+    -- return IsMeleeSpellAttack() | IsRangedSpellAttack()
+    if IsMeleeSpellAttack().Result  then return ConditionResult(true) end
+    if IsRangedSpellAttack().Result then return ConditionResult(true) end
+    return ConditionResult(false)
+end
 
 -- ==================================== Melee
 
 function IsMeleeAttack()
-    -- result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack 
-    local result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack 
-                or context.HitDescription.AttackType == AttackType.MeleeSpellAttack 
-                or context.HitDescription.AttackType == AttackType.MeleeUnarmedAttack 
-                or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
-    -- return ConditionResult(result)
-    return ConditionResult(result) | IsMeleeWeaponAttack() | IsMeleeUnarmedAttack() | IsMeleeSpellAttack()
+    -- result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack or context.HitDescription.AttackType == AttackType.MeleeSpellAttack or context.HitDescription.AttackType == AttackType.MeleeUnarmedAttack or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+	-- return ConditionResult(result)
+    if IsMeleeWeaponAttack().Result  then return ConditionResult(true) end
+    if IsMeleeUnarmedAttack().Result then return ConditionResult(true) end
+    if IsMeleeSpellAttack().Result   then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsMeleeWeaponAttack()
     -- result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
-    local result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
-                or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
+    -- or context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack
     -- return ConditionResult(result)
-    return ConditionResult(result) | Goon_IsMeleeMainhandWeaponAttack() | Goon_IsMeleeOffhandWeaponAttack()
+    if Goon_IsMeleeMainhandWeaponAttack().Result then return ConditionResult(true) end
+    if Goon_IsMeleeOffhandWeaponAttack().Result  then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsMeleeUnarmedAttack()
@@ -85,21 +103,21 @@ end
 -- ==================================== Ranged
 
 function IsRangedAttack()
-    -- result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack 
-    local result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack 
-                or context.HitDescription.AttackType == AttackType.RangedSpellAttack 
-                or context.HitDescription.AttackType == AttackType.RangedUnarmedAttack 
-                or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
-    -- return ConditionResult(result)
-    return ConditionResult(result) | IsRangedWeaponAttack() | IsRangedUnarmedAttack() | IsRangedSpellAttack()
+    -- result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack or context.HitDescription.AttackType == AttackType.RangedSpellAttack or context.HitDescription.AttackType == AttackType.RangedUnarmedAttack or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+	-- return ConditionResult(result)
+    if IsRangedWeaponAttack().Result  then return ConditionResult(true) end
+    if IsRangedUnarmedAttack().Result then return ConditionResult(true) end
+    if IsRangedSpellAttack().Result   then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsRangedWeaponAttack()
     -- result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
-    local result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
-                or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+    -- or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
     -- return ConditionResult(result)
-    return ConditionResult(result) | Goon_IsRangedMainhandWeaponAttack() | Goon_IsRangedOffhandWeaponAttack()
+    if Goon_IsRangedMainhandWeaponAttack().Result then return ConditionResult(true) end
+    if Goon_IsRangedOffhandWeaponAttack().Result  then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 function IsRangedUnarmedAttack()   
@@ -129,15 +147,19 @@ function AttackedWithPassiveSourceWeapon()
     -- result = IsPassiveSource(context.Passive, GetAttackWeapon(), context.Source) | IsPassiveSource(context.Passive, GetAttackWeapon(), GetAttackWeapon()) 
     --        | IsPassiveOwner(context.Passive, GetAttackWeapon(), context.Source)  | IsPassiveOwner(context.Passive, GetAttackWeapon(), GetAttackWeapon())
     -- return result
-    return IsPassiveSource(context.Passive, weaponToCheck, context.Source) | IsPassiveSource(context.Passive, weaponToCheck, weaponToCheck) 
-         | IsPassiveOwner(context.Passive, weaponToCheck, context.Source)  | IsPassiveOwner(context.Passive, weaponToCheck, weaponToCheck)
+    if IsPassiveSource(context.Passive, weaponToCheck, context.Source).Result then return ConditionResult(true) end
+    if IsPassiveSource(context.Passive, weaponToCheck, weaponToCheck).Result  then return ConditionResult(true) end
+    if IsPassiveOwner(context.Passive, weaponToCheck, context.Source).Result  then return ConditionResult(true) end
+    if IsPassiveOwner(context.Passive, weaponToCheck, weaponToCheck).Result   then return ConditionResult(true) end
+    return ConditionResult(false)
 end
 
 -- ==================================== Condensed functions ====================================
 
 -- Potent Robe: Gregarious Caster
 function Goon_IsConditionalDamageCantripEligible_Greg()
-    return Goon_IsConditionalDamageCantripEligible() & ~HasStatus( 'GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER' , context.Target)
+    if not Goon_IsConditionalDamageCantripEligible().Result then return ConditionResult(false) end
+    return ~HasStatus( 'GOON_ONCEPERACTION_COOLDOWN_GREGARIOUSCASTER' , context.Target)
 end
 
 -- ==================================== Vanilla throw stuff ====================================
@@ -147,121 +169,147 @@ end
 function IsLightThrownObject(entity, checkStacks)
     -- entity = entity or context.Target
     entity = entity or context.HitDescription.ThrownObject
-    return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(500,entity,checkStacks) & ~HasLiftingWeightGreaterThan(10000,entity,checkStacks)
+    -- return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(500,entity,checkStacks) & ~HasLiftingWeightGreaterThan(10000,entity,checkStacks)
+    if HasWeaponProperty(WeaponProperties.Thrown, entity).Result        then return ConditionResult(false) end
+    if not HasLiftingWeightGreaterThan(500, entity, checkStacks).Result then return ConditionResult(false) end
+    return ~HasLiftingWeightGreaterThan(10000, entity, checkStacks)
 end
 
 function IsMediumThrownObject(entity, checkStacks)
     -- entity = entity or context.Target
     entity = entity or context.HitDescription.ThrownObject
-    return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(10000,entity,checkStacks) & ~HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+    -- return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(10000,entity,checkStacks) & ~HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+    if HasWeaponProperty(WeaponProperties.Thrown, entity).Result          then return ConditionResult(false) end
+    if not HasLiftingWeightGreaterThan(10000, entity, checkStacks).Result then return ConditionResult(false) end
+    return ~HasLiftingWeightGreaterThan(50000, entity, checkStacks)
 end
 
 function IsHeavyThrownObject(entity, checkStacks)
     -- entity = entity or context.Target
     entity = entity or context.HitDescription.ThrownObject
-    return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+    -- return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(50000,entity,checkStacks)
+        if HasWeaponProperty(WeaponProperties.Thrown, entity).Result then return ConditionResult(false) end
+    return HasLiftingWeightGreaterThan(50000, entity, checkStacks)
 end
 
 function Goon_IsLightThrownObjectNotWeapon(item, checkStacks)
     item = item or context.HitDescription.ThrownObject
-    return ~(HasWeaponProperty(WeaponProperties.Melee, item) | HasWeaponProperty(WeaponProperties.Thrown, item))
-         & HasLiftingWeightGreaterThan(500, item, checkStacks) 
-         & ~HasLiftingWeightGreaterThan(10000, item, checkStacks)
+    if HasWeaponProperty(WeaponProperties.Melee, item).Result         then return ConditionResult(false) end
+    if HasWeaponProperty(WeaponProperties.Thrown, item).Result        then return ConditionResult(false) end
+    if not HasLiftingWeightGreaterThan(500, item, checkStacks).Result then return ConditionResult(false) end
+    return ~HasLiftingWeightGreaterThan(10000, item, checkStacks)
 end
 
 function Goon_IsMediumThrownObjectNotWeapon(item, checkStacks)
     item = item or context.HitDescription.ThrownObject
-    return ~(HasWeaponProperty(WeaponProperties.Melee, item) | HasWeaponProperty(WeaponProperties.Thrown, item))
-         & HasLiftingWeightGreaterThan(10000, item, checkStacks) 
-         & ~HasLiftingWeightGreaterThan(50000, item, checkStacks)
+    if HasWeaponProperty(WeaponProperties.Melee, item).Result           then return ConditionResult(false) end
+    if HasWeaponProperty(WeaponProperties.Thrown, item).Result          then return ConditionResult(false) end
+    if not HasLiftingWeightGreaterThan(10000, item, checkStacks).Result then return ConditionResult(false) end
+    return ~HasLiftingWeightGreaterThan(50000, item, checkStacks)
 end
 
 function Goon_IsHeavyThrownObjectNotWeapon(item, checkStacks)
     item = item or context.HitDescription.ThrownObject
-    return ~(HasWeaponProperty(WeaponProperties.Melee, item) | HasWeaponProperty(WeaponProperties.Thrown, item))
-         & HasLiftingWeightGreaterThan(50000, item, checkStacks)
+        if HasWeaponProperty(WeaponProperties.Melee, item).Result  then return ConditionResult(false) end
+        if HasWeaponProperty(WeaponProperties.Thrown, item).Result then return ConditionResult(false) end
+    return HasLiftingWeightGreaterThan(50000, item, checkStacks)
 end
 
 -- ====================================
 
 function SlingShoesThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_PROJECTILE_SHOES_TECHNICAL', 'GOON_SLINGINGSHOES_ARMOUR_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_PROJECTILE_SHOES_TECHNICAL', 'GOON_SLINGINGSHOES_ARMOUR_TECHNICAL' }, {}, {}, item)
 end
 
 -- Nyrulna
 function NyrulnaOnThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({}, { 'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_ON' }, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({}, { 'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_ON' }, {}, item)
 end
 
 function NyrulnaOffThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({}, { 'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_OFF' }, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({}, { 'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_OFF' }, {}, item)
 end
 
 function d4FireThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_FIRE_THROW', 'ELEMENTAL_WEAPON_FIRE', 'MAG_FIRE_ALWAYS_DIPPED_FIRE', 'GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE', 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_FIRE_THROW', 'ELEMENTAL_WEAPON_FIRE', 'MAG_FIRE_ALWAYS_DIPPED_FIRE', 'GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE', 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Non-magical variant of d4FireThrow
 function d4FireThrowReg(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'DIPPED_FIRE', 'BURNING' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'DIPPED_FIRE', 'BURNING' }, {}, {}, item)
 end
 
 function d4ColdThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_COLD_THROW', 'ELEMENTAL_WEAPON_COLD', 'MAG_FROST_FROST_WEAPON', 'MAG_FROST_FROST_SMALL_WEAPON', 'GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL', 'GOON_ALLANDRASWHELM_WEAPON_TECHNICAL', 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_COLD_THROW', 'ELEMENTAL_WEAPON_COLD', 'MAG_FROST_FROST_WEAPON', 'MAG_FROST_FROST_SMALL_WEAPON', 'GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL', 'GOON_ALLANDRASWHELM_WEAPON_TECHNICAL', 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 function d4LightningThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_LIGHTNING_THROW', 'ELEMENTAL_WEAPON_LIGHTNING', 'GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE', 'GOON_LIGHTNINGJABBER_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_LIGHTNING_THROW', 'ELEMENTAL_WEAPON_LIGHTNING', 'GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE', 'GOON_LIGHTNINGJABBER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 function d4ThunderThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_THUNDER_THROW', 'ELEMENTAL_WEAPON_THUNDER', 'MAG_THUNDER_THUNDER_WEAPON' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_THUNDER_THROW', 'ELEMENTAL_WEAPON_THUNDER', 'MAG_THUNDER_THUNDER_WEAPON' }, {}, {}, item)
 end
 
 function d4AcidThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_ACID_THROW', 'ELEMENTAL_WEAPON_ACID', 'GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE', 'GOON_CORROSIVEFLAIL_WEAPON_TECHNICAL', 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_ACID_THROW', 'ELEMENTAL_WEAPON_ACID', 'GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE', 'GOON_CORROSIVEFLAIL_WEAPON_TECHNICAL', 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 function d4PoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_POISON_THROW' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_POISON_THROW' }, {}, {}, item)
 end
 
 -- Non-magical variant of d4PoisThrow
 function d4PoisThrowReg(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'DIPPED_POISON' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'DIPPED_POISON' }, {}, {}, item)
 end
 
 function d4NecroticThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_NECROTIC_THROW', 'ELEMENTAL_WEAPON_NECROTIC', 'MAG_NECROTIC_NECROTIC_WEAPON', 'MAG_NECROTIC_NECROTIC_WEAPON_RED_Aza', 'MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION', 'GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_NECROTIC_THROW', 'ELEMENTAL_WEAPON_NECROTIC', 'MAG_NECROTIC_NECROTIC_WEAPON', 'MAG_NECROTIC_NECROTIC_WEAPON_RED_Aza', 'MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION', 'GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE' }, {}, {}, item)
 end
 
 function d4ForceThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_FORCE_THROW', 'ELEMENTAL_WEAPON_FORCE', 'MAG_FORCE_FORCE_WEAPON_LESSER', 'GOON_BREACHINGPIKESTAFF_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_FORCE_THROW', 'ELEMENTAL_WEAPON_FORCE', 'MAG_FORCE_FORCE_WEAPON_LESSER', 'GOON_BREACHINGPIKESTAFF_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 function d4PsychicThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_PSYCHIC_THROW', 'ELEMENTAL_WEAPON_PSYCHIC', 'UND_NERE_SWORD_PSYCHIC_DAMAGE', 'GOON_SWORDOFSCREAMS_WEAPON_TECHNICAL', 'GOON_KETHERICSWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_PSYCHIC_THROW', 'ELEMENTAL_WEAPON_PSYCHIC', 'UND_NERE_SWORD_PSYCHIC_DAMAGE', 'GOON_SWORDOFSCREAMS_WEAPON_TECHNICAL', 'GOON_KETHERICSWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- TODO: Confirm that this actually sets the thrower on fire with non-light objects
 function BurnThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'BURNING','FLAMING_SPHERE_AURA' }, {}, {}, item) 
-         & IsLightThrownObject(item, false)
+    if not IsHit().Result                          then return ConditionResult(false) end
+    if not IsLightThrownObject(item, false).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'BURNING','FLAMING_SPHERE_AURA' }, {}, {}, item)
 end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
@@ -269,178 +317,206 @@ end
 -- Jagged Spear
 function TorturousEdgesThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_JAGGEDSPEAR_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_JAGGEDSPEAR_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Blightbringer
 function PreyDeceleratorThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_BLIGHTBRINGER_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_BLIGHTBRINGER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Bow of the Banshee
 function BloodCurdlingEmissionThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_BOWOFTHEBANSHEE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_BOWOFTHEBANSHEE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Kurwin's Cauteriser
 function CauteriserThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_KURWINSCAUTERISER_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_KURWINSCAUTERISER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Speedy Reply
 function SpeedyReplyThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_SPEEDYREPLY_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & Enemy(context.Target)
+    if not IsHit().Result               then return ConditionResult(false) end
+    if not Enemy(context.Target).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_SPEEDYREPLY_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Monster Slayer Glaive
 function MonsterSlayerGlaiveThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_MONSTERSLAYERGLAIVE_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & Tagged('MONSTROSITY', context.Target)
+    if not IsHit().Result                               then return ConditionResult(false) end
+    if not Tagged('MONSTROSITY', context.Target).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_MONSTERSLAYERGLAIVE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- The Impaler
 function TheImpalerThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_THEIMPALER_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & HasMaxHPWithoutTemporaryHP(context.Target)
+    if not IsHit().Result                                    then return ConditionResult(false) end
+    if not HasMaxHPWithoutTemporaryHP(context.Target).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_THEIMPALER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Clown Hammer
 function ClownHammerThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_CLOWNHAMMER_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & IsCritical()
+    if not IsHit().Result      then return ConditionResult(false) end
+    if not IsCritical().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_CLOWNHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Intransigent Warhammer
 function IntransigentWarhammerThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_INTRANSIGENTWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & (IsCritical() or IsKillingBlow())
+    if not IsHit().Result                                  then return ConditionResult(false) end
+    if not (IsCritical().Result or IsKillingBlow().Result) then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_INTRANSIGENTWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Trident of the Waves
 function TridentOfTheWavesThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- The Undead Bane
 function TheUndeadBaneThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_THEUNDEADBANE_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & UndeadOrFiend(context.Target)
+    if not IsHit().Result                       then return ConditionResult(false) end
+    if not UndeadOrFiend(context.Target).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_THEUNDEADBANE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Hammer of the Just
 function HammerOfTheJustThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_HAMMEROFTHEJUST_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & UndeadOrFiend(context.Target)
+    if not IsHit().Result                       then return ConditionResult(false) end
+    if not UndeadOrFiend(context.Target).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_HAMMEROFTHEJUST_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Wulbren's Hammer
 function WBongleThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_WULBRENSHAMMER_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & (Item(context.Target) or Tagged('CONSTRUCT', context.Target))
+    if not IsHit().Result                                                              then return ConditionResult(false) end
+    if not (Item(context.Target).Result or Tagged('CONSTRUCT', context.Target).Result) then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_WULBRENSHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- TODO: Fix this one.
 -- Blooded Greataxe
 function BloodedGreataxeThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_BLOODEDGREATAXE_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50, context.Source)
+    if not IsHit().Result                                                              then return ConditionResult(false) end
+    if not HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50, context.Source).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_BLOODEDGREATAXE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Dragon's Grasp
 function DragonsGraspThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_DRAGONSGRASP_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & Goon_HasBurningConditionOrTag(context.Target)
+    if not IsHit().Result                                       then return ConditionResult(false) end
+    if not Goon_HasBurningConditionOrTag(context.Target).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_DRAGONSGRASP_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Ritual Axe
 function RitualAxeThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_RITUALAXE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_RITUALAXE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Sussur Weapons
 function SussurThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'GOON_SUSSURGREATSWORD_WEAPON_TECHNICAL', 'GOON_SUSSURDAGGER_WEAPON_TECHNICAL', 'GOON_SUSSURSICKLE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_SUSSURGREATSWORD_WEAPON_TECHNICAL', 'GOON_SUSSURDAGGER_WEAPON_TECHNICAL', 'GOON_SUSSURSICKLE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- TODO: Check for if damage was dealt prior to application TotalDamageDoneGreaterThan(0)
 -- The Sparky Points & The Jolt Shooter
 function ChargedLightningThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'GOON_THESPARKYPOINTS_WEAPON_TECHNICAL', 'GOON_THEJOLTSHOOTER_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_THESPARKYPOINTS_WEAPON_TECHNICAL', 'GOON_THEJOLTSHOOTER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- TODO: Check for if damage was dealt prior to application TotalDamageDoneGreaterThan(0)
 -- Thermodynamo Axe
 function ThermodynamoThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_THERMODYNAMOAXE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_THERMODYNAMOAXE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- TODO: Check for if damage was dealt prior to application TotalDamageDoneGreaterThan(0)
 -- Hellfire Greataxe
 function HellfireGreataxeThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_HELLFIREGREATAXE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_HELLFIREGREATAXE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Vison of the Absolute spear
 function VisionAbsoluteThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'TRUE_SOUL_SPEAR_WEAPON_BOOST', 'GOON_VISIONOFTHEABSOLUTE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'TRUE_SOUL_SPEAR_WEAPON_BOOST', 'GOON_VISIONOFTHEABSOLUTE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Justiciar's Scimitar
 function ShadowBlindingThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_JUSTICIARSSCIMITAR_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_JUSTICIARSSCIMITAR_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Combination Axe (Cut content)
 function CriticalVirtuosoThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_COMBINATIONAXE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_COMBINATIONAXE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow
 function ViciousThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'GOON_DOLORAMARUS_WEAPON_TECHNICAL', 'GOON_VICIOUSBATTLEAXE_WEAPON_TECHNICAL', 'GOON_VICIOUSSHORTBOW_WEAPON_TECHNICAL', 'GOON_VICIOUSSHORTSWORD_WEAPON_TECHNICAL' }, {}, {}, item) 
-         & IsCritical()
+    if not IsHit().Result      then return ConditionResult(false) end
+    if not IsCritical().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_DOLORAMARUS_WEAPON_TECHNICAL', 'GOON_VICIOUSBATTLEAXE_WEAPON_TECHNICAL', 'GOON_VICIOUSSHORTBOW_WEAPON_TECHNICAL', 'GOON_VICIOUSSHORTSWORD_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Flail of Ages
 function FlailOfAgesThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Assassin's Touch
 function AssassinsTouchThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_ASSASSINSTOUCH_WEAPON_TECHNICAL' }, {}, {}, item) & HasAnyStatus({ 'SG_Unconscious','SG_Stunned','SG_Incapacitated'}, {}, {}, context.Target)
+    if not IsHit().Result                                                                                   then return ConditionResult(false) end
+    if not HasAnyStatus({ 'SG_Unconscious','SG_Stunned','SG_Incapacitated'}, {}, {}, context.Target).Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_ASSASSINSTOUCH_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Handmaiden's Mace
 function HandmaidenThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Dwarven Thrower shortening
@@ -451,19 +527,22 @@ end
 
 function IsDwarvenThrower(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_DWARVEN_THROWER_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_DWARVEN_THROWER_TECHNICAL' }, {}, {}, item)
 end
 
 -- Radiant not covered in vanilla for d4 bonuses
 function d4RadiantThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_RADIANT_RADIANCE_WEAPON', 'GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE', 'GOON_MOONLIGHTGLAIVE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_RADIANT_RADIANCE_WEAPON', 'GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE', 'GOON_MOONLIGHTGLAIVE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Trident of the Depths
 function d6ColdThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_TRIDENTOFTHEDEPTHS_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_TRIDENTOFTHEDEPTHS_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- ==================================== Larger than d4 bonuses (and not poison) ====================================
@@ -471,32 +550,38 @@ end
 -- Decomissioned this one for the sake of rebalancing Nyrulna
 function d6ThunderThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_THUNDER_GREATER_THUNDER_WEAPON' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_THUNDER_GREATER_THUNDER_WEAPON' }, {}, {}, item)
 end
 
 function d8RadiantThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_RADIANT_STRONG_RADIANCE_WEAPON' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_RADIANT_STRONG_RADIANCE_WEAPON' }, {}, {}, item)
 end
 
 function d6ForceThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_FORCE_FORCE_WEAPON' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_FORCE_FORCE_WEAPON' }, {}, {}, item)
 end
 
 function d6LightningThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_CHARGED_LIGHTNING_LIGHTNING_GREATER_WEAPON' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_CHARGED_LIGHTNING_LIGHTNING_GREATER_WEAPON' }, {}, {}, item)
 end
 
 function d6HellfireFireThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'MAG_FIRE_DIPPED_HELLFIRE' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_FIRE_DIPPED_HELLFIRE' }, {}, {}, item)
 end
 
 function d6NecroticThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'GOON_MYRKULITESCOURGE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'GOON_MYRKULITESCOURGE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- ==================================== Poisons ====================================
@@ -504,67 +589,78 @@ end
 -- Serpent Fang Toxin
 function d6PoisThrowReg(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'TOXIN_SERPENTVENOM_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'TOXIN_SERPENTVENOM_DIPPED' }, {}, {}, item)
 end
 
 -- Magical variant for Venomous Revenge and d6 poison weapons
 function d6PoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE', 'MAG_POISON_POISON_WEAPON', 'MAG_LESSER_INFERNAL_WEAPON', 'GOON_INFERNALWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE', 'MAG_POISON_POISON_WEAPON', 'MAG_LESSER_INFERNAL_WEAPON', 'GOON_INFERNALWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Wyvern Toxin
 function d8PoisThrowReg(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'TOXIN_WYVERN_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'TOXIN_WYVERN_DIPPED' }, {}, {}, item)
 end
 
 -- Purple Worm Toxin
 function d10PoisThrowReg(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'TOXIN_PURPLEWORM_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'TOXIN_PURPLEWORM_DIPPED' }, {}, {}, item)
 end
 
 -- Magical variant for Hellbeard Halberd & Handmaiden's Mace poison
 function d10PoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({  'MAG_INFERNAL_WEAPON', 'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'MAG_INFERNAL_WEAPON', 'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Basic Poison
 function BPoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'POISON_SIMPLE_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'POISON_SIMPLE_DIPPED' }, {}, {}, item)
 end
 
 -- Drow Poison
 function DPoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'POISON_DROW_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'POISON_DROW_DIPPED' }, {}, {}, item)
 end
 
 -- Crawler Mucus - Also covers "Karabasan's Poison"
 function CMPoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'POISON_CRAWLER_MUCUS_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'POISON_CRAWLER_MUCUS_DIPPED' }, {}, {}, item)
 end
 
 -- Malice
 function MPoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'POISON_MALICE_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'POISON_MALICE_DIPPED' }, {}, {}, item)
 end
 
 -- Simple Toxin
 function SToxThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_TOXIN_BASIC_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_TOXIN_BASIC_DIPPED' }, {}, {}, item)
 end
 
 -- Thisobald's Brewed-Up Bellyglummer
 function BGPoisThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'UNI_POISON_BREWER_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'UNI_POISON_BREWER_DIPPED' }, {}, {}, item)
 end
 
 -- OILS
@@ -572,41 +668,48 @@ end
 -- Arsonist's Oil
 function AOilThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_OIL_REMOVERESISTANCEFIRE_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_OIL_REMOVERESISTANCEFIRE_DIPPED' }, {}, {}, item)
 end
 
 -- Oil of Bane
 function BOilThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_OIL_BANE_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_OIL_BANE_DIPPED' }, {}, {}, item)
 end
 
 -- Diluted Oil of Sharpness
 function DSOilThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_OIL_DAMAGEATTACKBUFF_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_OIL_DAMAGEATTACKBUFF_DIPPED' }, {}, {}, item)
 end
 
 -- Oil of Diminution
 function DOilThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_OIL_REDUCE_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_OIL_REDUCE_DIPPED' }, {}, {}, item)
 end
 
 -- Oil of Combustion
 function COilThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_OIL_COMBUSTION_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_OIL_COMBUSTION_DIPPED' }, {}, {}, item)
 end
 
 -- Wizardsbane Oil
 function WBOilThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_OIL_WIZARDSBANE_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_OIL_WIZARDSBANE_DIPPED' }, {}, {}, item)
 end
 
 -- Oil of Freezing
 function FOilThrow(item)
     item = item or context.HitDescription.ThrownObject
-    return IsHit() & HasAnyStatus({ 'ALCH_OIL_FROST_DIPPED' }, {}, {}, item)
+    if not IsHit().Result then return ConditionResult(false) end
+    return HasAnyStatus({ 'ALCH_OIL_FROST_DIPPED' }, {}, {}, item)
 end

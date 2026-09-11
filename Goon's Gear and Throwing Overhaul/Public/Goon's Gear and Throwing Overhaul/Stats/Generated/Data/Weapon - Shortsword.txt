@@ -298,7 +298,6 @@ data "Cooldown" "OncePerShortRest"
 // Bug Fix: Organ Rearranger's damage reroll only applies to attacks using the weapon itself.
 // Bug Fix: Organ Rearranger's damage reroll works when thrown.
 // Changes: Organ Rearranger's description clarified.
-// TODO: loca
 // TODO: Refactor.
 
 // new entry "MAG_Duergar_Sword_KingsKnife"
@@ -326,11 +325,12 @@ using "MAG_TheClover_Rearrangement_Passive"
 data "Description" "h7c477753gd60bg412fg8cebg19dce4be5840;1"
 // data "DescriptionParams" "2;19;18"
 data "DescriptionParams" "2"
-// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
-data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "ReduceCriticalAttackThreshold(1);IF(AttackingWithMeleeWeapon(context.Source)):Reroll(Damage,2,true)"
 data "Boosts" "ReduceCriticalAttackThreshold(1);IF(HasAnyStatus({ 'GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL','GOON_THECLOVER_WEAPON_TECHNICAL' }, {}, {}, GetAttackWeapon())):Reroll(Damage,2,true)"
+
+// // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 // ==================================== Sword of Life Stealing ====================================
 // TODO: Something/anything.

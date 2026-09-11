@@ -219,11 +219,11 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_TheDueller_ImprovedDuelist_Passive"
 type "PassiveData"
 using "MAG_TheDueller_ImprovedDuelist_Passive"
-// Elegant Duellist
+// // Elegant Duellist
 // data "DisplayName" "h711045a1g2e51g4ca1gbed0g1f418fa12e6b;1"
-// While your off-hand is empty, you score a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; when rolling a 19. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.
+// // While your off-hand is empty, you score a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; when rolling a 19. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.
 // data "Description" "hd5a3914bgf8c8g4f2bg89c0gcca964daf305;2"
-// While your off-hand is empty, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.
+// // While your off-hand is empty, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.
 data "Description" "hf1abc2bfg8c26g4622ga84cga2bf91f45dac;1"
 // data "DescriptionParams" "1"
 // data "BoostContext" "OnCreate;OnEquip"
@@ -233,12 +233,14 @@ data "Description" "hf1abc2bfg8c26g4622ga84cga2bf91f45dac;1"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and not HasStatus('BLEEDING') and HasStatus('MAG_LEGENDARY_COMPELLED_DUEL')"
 // data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 3,,,,not SavingThrow(Ability.Constitution,15))"
 
-// new entry "MAG_TheDueller_WitheringCut_Passive"
-// type "PassiveData"
-// Withering Cut
+new entry "MAG_TheDueller_WitheringCut_Passive"
+type "PassiveData"
+using "MAG_TheDueller_WitheringCut_Passive"
+// // Withering Cut
 // data "DisplayName" "h74969443gf85bg45b4ga2b3g40a4fe7911ba;1"
-// On a hit with a melee weapon, use a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+// // On a hit with a melee weapon, use a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
 // data "Description" "h1c73d482ga6f3g4c33g90edg4b33345cb51d;1"
+data "Properties" "Highlighted"
 // data "Boosts" "UnlockInterrupt(Interrupt_TheDueller_WitheringCut)"
 
 new entry "Target_MAG_Legendary_CompelledDuel"
@@ -279,13 +281,13 @@ data "DescriptionParams" "DealDamage(,Necrotic)"
 // data "ExtraDescriptionParams" ""
 // data "Icon" "GenericIcon_DamageType_Necrotic"
 // data "Conditions" "IsAbleToReact(context.Observer) and not Item() and IsMeleeAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack()"
-data "Conditions" "Goon_BasicHarmfulInterruptConditions(false,false,true) and IsAttackUsingMeleeWeapon() and IsHit()"
+data "Conditions" "Goon_BasicHarmfulInterruptConditions(false,false,true) and (Goon_IsAttackUsingMeleeWeapon(true) or (Goon_IsThrownWeaponAttack() and HasStatus('GOON_DUELLISTSPREROGATIVE_WEAPON_TECHNICAL', context.HitDescription.ThrownObject))) and IsHit()"
 // data "Properties" "DealDamage(ProficiencyBonus, Necrotic);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
 data "Properties" "DealDamage(ProficiencyBonus, Necrotic, Magical,,0,,true,false);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
 // data "Cost" "ReactionActionPoint:1"
 // data "Stack" ""
 // data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
-data "EnableCondition" "Goon_BasicHarmfulInterruptEnableConditions()"
+data "EnableCondition" "Goon_InterruptEnableConditions()"
 // data "InterruptDefaultValue" "Enabled;Ask"
 data "InterruptFlags" "InterruptWhileInvisible"
 

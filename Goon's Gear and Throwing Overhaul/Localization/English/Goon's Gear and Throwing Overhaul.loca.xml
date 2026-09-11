@@ -466,6 +466,16 @@
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
 
+<!-- ==================================== Armour - Helmets (Clothing) ==================================== -->
+
+	<!-- 15. Cap of Wrath -->
+	<!-- "MAG_Violence_LowHP_Violence_Passive", "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL" -->
+	<content contentuid="hfce80e86g4c97g46b7gb01fg16e5a6368eb1" version="1">During combat, when the wearer starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] rounds.</content>
+
+	<!--  -->
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+
 <!-- ==================================== Armour - Rings ==================================== -->
 
 	<!-- Snowburst Ring -->

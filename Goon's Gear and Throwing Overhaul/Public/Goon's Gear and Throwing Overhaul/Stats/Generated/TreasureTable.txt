@@ -581,6 +581,90 @@ object category "I_Goon_MAG_Infernal_Metal_Gloves_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_MAG_OfRevivify_Gloves_NotUnique",1,0,0,0,0,0,0,0
 // ==================================== Armour - Helmets (Clothing)
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 10
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_Goon_MAG_Violence_ViolenceOnDamaged_Helmet_NotUnique",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 20
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 30
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0 40
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_XXX",1,0,0,0,0,0,0,0
 // ==================================== Armour - Helmets (Heavy)
 new subtable "1,1"
 object category "I_Goon_MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet_NotUnique",1,0,0,0,0,0,0,0

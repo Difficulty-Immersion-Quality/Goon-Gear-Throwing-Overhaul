@@ -107,6 +107,12 @@ data "ValueScale" "2.3"
 // data "Unique" "1"
 // data "MinLevel" "1"
 
+new entry "Goon_MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat_NotUnique"
+type "Armor"
+using "MAG_Thunder_ArcaneAcuityOnThunderDamage_Hat"
+// data "Unique" "1"
+data "Unique" "0"
+
 new entry "GOON_HATOFSTORMSCIONSPOWER_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -229,33 +235,67 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 
 // ==================================== 15. Cap of Wrath ====================================
 // Bug Fix: ...
-// TODO: Template
-// TODO: loca
-// TODO: polymorph.
+// Changes: Descriptions improved.
 
-// new entry "MAG_Violence_ViolenceOnDamaged_Helmet"
-// type "Armor"
+new entry "MAG_Violence_ViolenceOnDamaged_Helmet"
+type "Armor"
 // using "_Head_Magic"
+using "MAG_Violence_ViolenceOnDamaged_Helmet"
 // data "RootTemplate" "b2ac96aa-5f04-49fb-800c-ab51a2bdb3c6"
 // data "ItemGroup" ""
 // data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Violence_LowHP_Violence_Passive"
+data "PassivesOnEquip" "MAG_Violence_LowHP_Violence_Passive;Goon_Gear_Polymorph_CapOfWrath"
 // data "StatusOnEquip" "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
+data "StatusOnEquip" ""
 // data "Unique" "1"
+
+new entry "Goon_MAG_Violence_ViolenceOnDamaged_Helmet_NotUnique"
+type "Armor"
+// using "_Head_Magic"
+using "MAG_Violence_ViolenceOnDamaged_Helmet"
+// data "Unique" "1"
+data "Unique" "0"
 
 new entry "GOON_CAPOFWRATH_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// new entry "MAG_Violence_LowHP_Violence_Passive"
-// type "PassiveData"
+// ==================
+
+new entry "Goon_Gear_Polymorph_CapOfWrath"
+type "PassiveData"
+using "Goon_Gear_Polymorph_Template"
+data "StatsFunctors" "ApplyStatus(GOON_GEAR_POLYMORPH_CAPOFWRATH, 100, -1)"
+
+new entry "GOON_GEAR_POLYMORPH_CAPOFWRATH"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_GEAR_POLYMORPH_TEMPLATE"
+data "StackId" "GOON_GEAR_POLYMORPH_CAPOFWRATH"
+data "Boosts" ""
+data "Passives" "MAG_Violence_LowHP_Violence_Passive"
+
+// ==================
+
+new entry "MAG_Violence_LowHP_Violence_Passive"
+type "PassiveData"
+using "MAG_Violence_LowHP_Violence_Passive"
 // // Last Stand
 // data "DisplayName" "hc9ee68f2g9cb1g496cg9dceg0bb5acb2cebe;2"
 // // During combat, when the wearer starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.
 // data "Description" "hbe48470eg0881g4036g89c8g5a290c83162a;4"
+// // During combat, when the wearer starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] rounds.
+data "Description" "hfce80e86g4c97g46b7gb01fg16e5a6368eb1;4"
 // data "DescriptionParams" "2"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+data "Properties" "Highlighted"
+data "StatsFunctorContext" "OnTurn"
+data "Conditions" "Combat() and not Dead() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50)"
+data "StatsFunctors" "ApplyStatus(MAG_VIOLENCE,100,2);ApplyStatus(MAG_VIOLENCE_DURATION_TECHNICAL,100,1)"
 
 new entry "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
 type "StatusData"
@@ -265,7 +305,7 @@ using "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
 // data "DisplayName" "hb86457edg7402g4de9g86a3gbf035a3bae95;2"
 // // During combat, when the creature starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for 1 turn.
 // data "Description" "h924abaebg4147g456cg93b3g1e72df079c76;2"
-// // During combat, when the creature starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] turns.
+// // During combat, when the wearer starts their turn with 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they gain &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt; for [1] rounds.
 data "Description" "hfce80e86g4c97g46b7gb01fg16e5a6368eb1;1"
 data "DescriptionParams" "2"
 // data "StackId" "MAG_RAGE_LOWHP_VIOLENCE_TECHNICAL"
@@ -347,6 +387,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // ==================================== 23. Haste Helm ====================================
 // Bug Fix: The wearer now gains Momentum when they enter combat, and not just at the start of the next round if they joined combat after it initially began.
 // TODO: Refactor.
+// TODO: Template.
 
 // new entry "MAG_Mobility_MomentumOnCombatStart_Helmet"
 // type "Armor"
@@ -475,6 +516,8 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // Changes: Now grants halved damage to Critical Hits instead of Immunity to them triggering. This is largely a change without distinction except for the fact that a Critical Hit is a guaranteed hit.
 // Changes: Added Heavy Armor Proficiency Group to match the edited Helldusk Armour.
 // Note: "IgnoreSurfaceCover(SurfaceFogCloud)" is not matching with the description.
+// TODO: Refactor.
+// TODO: Template.
 
 new entry "MAG_Infernal_Metal_Helmet"
 type "Armor"
@@ -490,6 +533,8 @@ data "PassivesOnEquip" "MAG_Infernal_Metal_Helmet_InfernalSight_Passive;MAG_Magi
 // data "Unique" "1"
 // data "Proficiency Group" ""
 data "Proficiency Group" "HeavyArmor"
+
+// data "PassivesOnEquip" "MAG_Infernal_Metal_Helmet_InfernalSight_Passive;MAG_MagicalDurability_Passive;Goon_Critical_Hit_Resistance_Polymorph"
 
 new entry "GOON_HELLDUSKHELMET_ARMOUR_TECHNICAL"
 type "StatusData"

@@ -188,7 +188,7 @@ function IsHeavyThrownObject(entity, checkStacks)
     -- entity = entity or context.Target
     entity = entity or context.HitDescription.ThrownObject
     -- return ~HasWeaponProperty(WeaponProperties.Thrown,entity) & HasLiftingWeightGreaterThan(50000,entity,checkStacks)
-        if HasWeaponProperty(WeaponProperties.Thrown, entity).Result then return ConditionResult(false) end
+    if HasWeaponProperty(WeaponProperties.Thrown, entity).Result then return ConditionResult(false) end
     return HasLiftingWeightGreaterThan(50000, entity, checkStacks)
 end
 
@@ -210,8 +210,8 @@ end
 
 function Goon_IsHeavyThrownObjectNotWeapon(item, checkStacks)
     item = item or context.HitDescription.ThrownObject
-        if HasWeaponProperty(WeaponProperties.Melee, item).Result  then return ConditionResult(false) end
-        if HasWeaponProperty(WeaponProperties.Thrown, item).Result then return ConditionResult(false) end
+    if HasWeaponProperty(WeaponProperties.Melee, item).Result  then return ConditionResult(false) end
+    if HasWeaponProperty(WeaponProperties.Thrown, item).Result then return ConditionResult(false) end
     return HasLiftingWeightGreaterThan(50000, item, checkStacks)
 end
 

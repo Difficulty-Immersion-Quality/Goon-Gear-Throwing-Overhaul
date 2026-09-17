@@ -6,6 +6,7 @@
 
 // 
 
+// TODO: Number them.
 // ==================================== Angelic Plume Helmet ====================================
 // TODO: Something/anything.
 
@@ -14,7 +15,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Frayed Drow Hood ====================================
 // TODO: Something/anything.
@@ -24,7 +25,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Leather Helmet ====================================
 // TODO: Something/anything.
@@ -34,7 +35,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Leatherstring Helmet ====================================
 // TODO: Something/anything.
@@ -44,7 +45,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Red Carmine Mask ====================================
 // TODO: Something/anything.
@@ -54,7 +55,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Rich Arcanist Helmet ====================================
 // TODO: Something/anything.
@@ -64,7 +65,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Scorpion Helmet ====================================
 // TODO: Something/anything.
@@ -74,7 +75,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Covert Cowl ====================================
 // TODO: Something/anything.
@@ -84,7 +85,7 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Dark Justiciar Mask ====================================
 // TODO: Something/anything.
@@ -94,22 +95,24 @@
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Helmet of Arcane Acuity ====================================
 // Bug Fix: Battle Acuity now only triggers once per attack.
 // Changes: Battle Acuity applies to thrown attacks.
+// TODO: Only when throwing melee weapons.
+// TODO: Refactor.
 
 new entry "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive"
 type "PassiveData"
 using "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive"
-// Battle Acuity
+// // Battle Acuity
 // data "DisplayName" "he07ba98dgc5f3g479cg831fg55efe9aa49eb;3"
-// Whenever you deal damage with a weapon attack, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
+// // Whenever you deal damage with a weapon attack, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
 // data "Description" "h774d5e0cg0211g4875ga83bgf14cba6b2bbb;4"
-// Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
+// // Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.
 data "Description" "h1adb1860g647fg402egb774g1ff6be448951;1"
-data "Properties" "OncePerAttack"
+data "Properties" "Highlighted;OncePerAttack"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsWeaponAttack()"
 data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
@@ -123,7 +126,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Shadow of Menzoberranzan ====================================
 // TODO: Something/anything.
@@ -133,7 +136,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== Helmet of Grit ====================================
 // TODO: Something/anything.
@@ -143,5 +146,5 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
 // new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 

@@ -1,3 +1,12 @@
+// ==================================== Non-unique items with redacted story features ====================================
+
+new entry "Goon_Gear_StoryRedacted"
+type "PassiveData"
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; Redacted Features
+data "DisplayName" "h9fd93b0ag9449g4882g9d76g32e85f14b1f9;1"
+// // Story-related features have been removed from this non-unique version of the original item.
+data "Description" "h3db5494bgbaa6g48d0gb4edg38933f73cca4;1"
+
 // ==================================== Dexterity throwing stat entries (Lua) ====================================
 // HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)
 // WEIGHT_SMALL WEIGHT_TINY WEIGHT_MEDIUM ?
@@ -22,20 +31,21 @@ data "Boosts" "MonkWeaponAttackOverride()"
 new entry "Goon_DamageReroll_Throwing_Master_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Boosts" "IF(HasAnyStatus({'GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL','GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL','GOON_THECLOVER_WEAPON_TECHNICAL'}, {}, {},context.HitDescription.ThrownObject)):Reroll(Damage,2,true)"
+data "Boosts" "IF(HasAnyStatus({ 'GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL','GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL','GOON_THECLOVER_WEAPON_TECHNICAL' }, {}, {}, context.HitDescription.ThrownObject)):Reroll(Damage,2,true)"
 
 // Ignore Resistance: Adamantine Scimitar, Adamantine Longsword
 new entry "Goon_IgnoreResistance_Throwing_Master_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Boosts" "IF(HasAnyStatus({'MAG_BYPASS_SLASHING_RESISTANCE_TECHNICAL'}, {}, {},context.HitDescription.ThrownObject)):IgnoreResistance(Slashing, Resistant)"
+data "Boosts" "IF(HasAnyStatus({ 'MAG_BYPASS_SLASHING_RESISTANCE_TECHNICAL' }, {}, {}, context.HitDescription.ThrownObject)):IgnoreResistance(Slashing, Resistant)"
 
-// TODO: Figure out how to allow advantage for throwing specific weapons
-// Advantage: Pelorsun Blade, Gandrel's Aspiration, Hunting Shortbow
+// // TODO: Figure out how to allow advantage for throwing specific weapons. Could do it via scripting when previewing the throw.
+// // Also relevant for Shadow Blade and shit, will be for a few things... Goon_IsShadowBladeWeapon()
+// // Advantage: Pelorsun Blade, Gandrel's Aspiration, Hunting Shortbow
 // new entry "Goon_Advantage_Throwing_Master_Passive"
 // type "PassiveData"
 // data "Properties" "IsHidden"
-// data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL',context.HitDescription.ThrownObject) and UndeadOrFiend()):Advantage(AttackRoll)"
+// data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL', context.HitDescription.ThrownObject) and UndeadOrFiend()):Advantage(AttackRoll)"
 
 //  context.HitDescription.AttackType == AttackType.RangedUnarmedAttack
 
@@ -86,6 +96,149 @@ data "OnApplyRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)"
 data "OnApplySuccess" "ApplyStatus(SILENCED,100,2)"
 data "OnApplyFail" ""
 
+// ==================================== High Spellcasting ====================================
+// Changes: No more stacking Spell Save DC to over 9000.
+// Note: Items granting this passive will instantly remove the condition on unequip if it uses StatusOnEquip. OnUnequip seems to be a BS event, or just no good in the order of operations when unequipping the source item.
+
+new entry "MAG_SpellSaveDC_Enchantment_Passive"
+type "PassiveData"
+using "MAG_SpellSaveDC_Enchantment_Passive"
+// // High Spellcasting
+// data "DisplayName" "hdd33f0f8g13d0g4791g9f63g2d16b7784155;2"
+// // You gain a +[1] bonus to &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
+// data "Description" "he8570ff2gec84g4da0g8d6bg69ecd4d10a39;2"
+// data "DescriptionParams" "2"
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; This effect does &lt;b&gt;not&lt;/b&gt; stack with similar effects.
+data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f"
+data "Properties" "Highlighted"
+// data "Boosts" "SpellSaveDC(2)"
+data "Boosts" ""
+data "StatsFunctorContext" "OnCreate;OnEquip;OnStatusApplied;OnStatusRemoved"
+data "Conditions" "not HasStatus('GOON_SPELLSAVEDC_ENCHANTMENT_2')"
+data "StatsFunctors" "ApplyStatus(SELF,GOON_SPELLSAVEDC_ENCHANTMENT_2,100,-1)"
+
+new entry "Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph"
+type "PassiveData"
+using "MAG_SpellSaveDC_Enchantment_Passive"
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; This effect does &lt;b&gt;not&lt;/b&gt; stack with similar effects.
+// data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+new entry "GOON_SPELLSAVEDC_ENCHANTMENT_2"
+type "StatusData"
+data "StatusType" "BOOST"
+// // High Spellcasting
+data "DisplayName" "hdd33f0f8g13d0g4791g9f63g2d16b7784155;2"
+// // You gain a +[1] bonus to &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
+data "Description" "he8570ff2gec84g4da0g8d6bg69ecd4d10a39;2"
+data "DescriptionParams" "2"
+data "StackId" "GOON_SPELLSAVEDC_ENCHANTMENT"
+data "StackPriority" "2"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
+data "Boosts" "SpellSaveDC(2)"
+data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
+data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Passive') and not HasPassive('Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph')"
+data "OnRemoveFunctors" "IF(HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive')):ApplyStatus(GOON_SPELLSAVEDC_ENCHANTMENT_1,100,-1)"
+
+new entry "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+type "PassiveData"
+// using "MAG_SpellSaveDC_Enchantment_Passive"
+using "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+// data "DescriptionParams" "1"
+// data "Boosts" "SpellSaveDC(1)"
+data "Boosts" ""
+data "Conditions" "not HasStatus('GOON_SPELLSAVEDC_ENCHANTMENT_1') and not HasStatus('GOON_SPELLSAVEDC_ENCHANTMENT_2')"
+data "StatsFunctors" "ApplyStatus(SELF,GOON_SPELLSAVEDC_ENCHANTMENT_1,100,-1)"
+
+new entry "Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph"
+type "PassiveData"
+using "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+// // &lt;LSTag Type="Image" Info="TutorialYellowWarning"/&gt; This effect does &lt;b&gt;not&lt;/b&gt; stack with similar effects.
+// data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "a41be849-2738-425e-966e-4f031583bc2f;28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+new entry "GOON_SPELLSAVEDC_ENCHANTMENT_1"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_SPELLSAVEDC_ENCHANTMENT_2"
+data "DescriptionParams" "1"
+data "StackPriority" "1"
+data "Boosts" "SpellSaveDC(1)"
+data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive') and not HasPassive('Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph')"
+data "OnRemoveFunctors" ""
+
+// ==================================== Magical Plate ====================================
+
+new entry "ARM_MagicalPlate_1_Passive"
+type "PassiveData"
+using "ARM_MagicalPlate_1_Passive"
+// // Magical Plate
+// data "DisplayName" "h05e94d9eg15feg4151gae95g17ba0c3c39c7;2"
+// // All incoming damage is reduced by [1].
+// data "Description" "hcfffddb5g33c6g45c7gb3e8g153bd1bcbf70;3"
+// data "DescriptionParams" "1"
+data "Properties" "Highlighted"
+// data "Boosts" "DamageReduction(All, Flat, 1)"
+
+new entry "Goon_ARM_MagicalPlate_1_Passive_Polymorph"
+type "PassiveData"
+using "ARM_MagicalPlate_1_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+new entry "ARM_MagicalPlate_2_Passive"
+type "PassiveData"
+// using "ARM_MagicalPlate_1_Passive"
+using "ARM_MagicalPlate_2_Passive"
+// data "DescriptionParams" "2"
+// data "Boosts" "DamageReduction(All, Flat, 2)"
+
+new entry "Goon_ARM_MagicalPlate_2_Passive_Polymorph"
+type "PassiveData"
+using "ARM_MagicalPlate_2_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+// ==================================== Stealthy ====================================
+
+new entry "ARM_Stealthy_1_Passive"
+type "PassiveData"
+using "ARM_Stealthy_1_Passive"
+// // Stealthy
+// data "DisplayName" "h1ef55a95g7073g4a06g82feg1cb443bce5a8;2"
+// // Gain a +[1] bonus to Stealth &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
+// data "Description" "h3e1bf121gff26g45fbg8fcdgcc2b96ca7298;2"
+// // Gain a +[1] bonus to &lt;LSTag Tooltip="Stealth"&gt;Stealth&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
+data "Description" "h2a1426e3g5bb6g4ca4g9b96g7c676ef74be8;1"
+// data "DescriptionParams" "1"
+data "Properties" "Highlighted"
+// data "Boosts" "RollBonus(SkillCheck, 1, Stealth)"
+
+new entry "Goon_ARM_Stealthy_1_Passive_Polymorph"
+type "PassiveData"
+using "ARM_Stealthy_1_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+// new entry "ARM_Stealthy_2_Passive"
+// type "PassiveData"
+// using "ARM_Stealthy_1_Passive"
+// data "DescriptionParams" "2"
+// data "Boosts" "RollBonus(SkillCheck, 2, Stealth)"
+
+new entry "Goon_ARM_Stealthy_2_Passive_Polymorph"
+type "PassiveData"
+using "ARM_Stealthy_2_Passive"
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+// ==================================== Advantage ====================================
+// TODO: All items with Advantage boosts directly on them have a wack ass tooltip referring to "Saving Throws Checks". Do as passives instead.
+
+// data "Boosts" "Advantage(SavingThrow, Constitution)"
+
 // ==================================== Shadow Blade - Knife of the Undermountain King, Justiciar's Scimitar ====================================
 // Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
 // Note: Necessary to include here as it's a passive used by multiple weapons and not just the summon itself.
@@ -97,6 +250,8 @@ data "OnApplyFail" ""
 // Bug Fix: The Dolor Amarus passive no longer states that it applies to unarmed attacks when it doesn't.
 // Bug Fix: The additional damage only applies to attacking with or throwing the weapon itself.
 // Changes: Dolor Amarus passive now works when thrown.
+// TODO: Bullshit... aint no way that works when thrown, no boosts from the weapon work when thrown like that.
+// data "Boosts" "IF((IsWeaponAttack() or IsMeleeUnarmedAttack() or IsRangedUnarmedAttack()) and IsCritical()):DamageBonus(7,,false);"
 
 new entry "MAG_Vicious_Weapon_Passive"
 type "PassiveData"
@@ -192,6 +347,7 @@ data "OnApplyFunctors" "IF(Character() and not HasStatus('MAG_CHARGED_LIGHTNING'
 // Bug Fix: Now uses Maneuver Save DC instead of Spell Save DC.
 // Bug Fix: Can be used while under the effects of more non-hostile Polymorphs, but requires a shield to be equipped.
 // Changes: Can now be used by Invisible player characters.
+// TODO: Goon_InAttackRange support for using shields in main-hand slot?
 
 new entry "Target_Bash"
 type "SpellData"
@@ -263,11 +419,13 @@ data "Description" "h0c55dbc7gccedg4ae3g94efg17167ffc09f9;1"
 data "DescriptionParams" "1"
 // data "Icon" "Action_Bash"
 // data "Conditions" "IsAbleToReact(context.Observer) and Enemy(context.Source,context.Observer) and IsMeleeAttack() and (IsHit() or IsCritical()) and not HasStatus('INVISIBILITY') and HasLastAttackTriggered()"
-data "Conditions" "(Player(context.Observer) or not HasStatus('SG_Invisible',context.Observer)) and IsAbleToReact(context.Observer) and Enemy(context.Source,context.Observer) and IsMeleeAttack() and (IsHit() or IsCritical()) and HasLastAttackTriggered()"
+data "Conditions" "Goon_BasicHarmfulInterruptConditions(true) and Goon_InAttackRange(false,true) and IsMeleeAttack() and IsHit()"
 // data "Properties" "UseSpell(SWAP,Target_ShieldBlow_Riposte,true,true,true);ApplyStatus(OBSERVER_OBSERVER,INTERRUPT_RIPOSTE,100,0)"
 // data "Cost" "ReactionActionPoint:1"
 // data "EnableCondition" "not HasAnyStatus({'SG_Polymorph','SG_Blinded'}) or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
-data "EnableCondition" "(not HasStatus('SG_Polymorph') or Goon_IsNonHostilePolymorphStatus()) and not HasStatus('SG_Blinded') and HasShieldEquipped(context.Source)"
+data "EnableCondition" "Goon_BasicHarmfulInterruptEnableConditions() and Goon_HasWeaponEquipped(nil,nil,nil,true)"
+// data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+data "EnableContext" "OnStatusApplied;OnStatusRemoved;OnEquip"
 // data "Cooldown" "OncePerTurn"
 // data "InterruptDefaultValue" "Enabled;Ask"
 data "InterruptFlags" "InterruptWhileInvisible"
@@ -289,13 +447,18 @@ data "BoostConditions" "Tagged('ACT2_TWN_HOSPITAL_NURSE',context.Source)"
 
 // ==================================== Blind Immunity ====================================
 // Bug Fix: Blind Immunity no longer allows the entity to ignore Darkness clouds, being Immune to Blinded and having X-ray vision are not the same.
+// TODO: Blind Immunity polymorph.
+
+// // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 new entry "MAG_Shadow_BlindImmunity_Ring_Passive"
 type "PassiveData"
 using "MAG_Shadow_BlindImmunity_Ring_Passive"
-// Blind Immunity
+// // Blind Immunity
 // data "DisplayName" "hf1d1e91dg0542g40a6g93e7ge0d5e31296c7;2"
-// The wearer cannot be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.
+// // The wearer cannot be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.
 // data "Description" "hb00b5a9bg7c63g443fga699gb3341d39c41d;4"
+data "Properties" "Highlighted"
 // data "Boosts" "StatusImmunity(SG_Blinded);IgnoreSurfaceCover(SurfaceDarknessCloud)"
 data "Boosts" "StatusImmunity(SG_Blinded)"

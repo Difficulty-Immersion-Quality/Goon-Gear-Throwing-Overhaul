@@ -97,10 +97,12 @@ new entry "MAG_Blindside_Shortsword_Passive"
 type "PassiveData"
 using "MAG_Blindside_Shortsword_Passive"
 // Psychic Steel Virtuoso 
-data "DisplayName" "h7c6ed618g4287g476ag98ccg7a085866a266;2"
+// data "DisplayName" "h7c6ed618g4287g476ag98ccg7a085866a266;2"
+// Psychic Steel Virtuoso
+data "DisplayName" "h11e87f4cg6dafg4236g81f8gbfd5fb6817c1;1"
 // When the wielder attacks with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, they deal an additional [1].
-data "Description" "h9dea8b17gc5bdg406bg955cg64f97c0f3679;2"
-data "DescriptionParams" "DealDamage(1d8, Psychic)"
+// data "Description" "h9dea8b17gc5bdg406bg955cg64f97c0f3679;2"
+// data "DescriptionParams" "DealDamage(1d8, Psychic)"
 // data "StatsFunctorContext" "OnDamage"
 // data "StatsFunctorContext" ""
 data "StatsFunctorContext" ""
@@ -293,7 +295,10 @@ data "Cooldown" "OncePerShortRest"
 
 // ==================================== Knife of the Undermountain King ====================================
 // Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
-// TODO: Get Organ Rearranger's damage reroll to work with throwing, could be tricky maybe if it can't go into spell properties.
+// Bug Fix: Organ Rearranger's damage reroll only applies to attacks using the weapon itself.
+// Bug Fix: Organ Rearranger's damage reroll works when thrown.
+// Changes: Organ Rearranger's description clarified.
+// TODO: Refactor.
 
 // new entry "MAG_Duergar_Sword_KingsKnife"
 // type "Weapon"
@@ -309,14 +314,23 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "MAG_TheClover_Rearrangement_Passive"
-// type "PassiveData"
-// Organ Rearranger
+new entry "MAG_TheClover_Rearrangement_Passive"
+type "PassiveData"
+using "MAG_TheClover_Rearrangement_Passive"
+// // Organ Rearranger
 // data "DisplayName" "h15c46cc7g164fg41ffga02ege59329268c58;2"
-// Reduce the number you need to roll a <LSTag Tooltip="CriticalHit">Critical Hit</LSTag> while attacking by 1. This effect can stack. When you roll [1] damage or less, reroll the dice, taking the highest result.
+// // Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack. When you roll [1] damage or less, reroll the dice, taking the highest result.
 // data "Description" "h6984b8aagbb23g46b3g8c29g1a65974e4bcb;4"
+// // Reduce the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by 1. This effect can stack.&lt;br&gt;&lt;br&gt;When you roll [1] damage or less with this weapon, reroll the dice, taking the highest result.
+data "Description" "h7c477753gd60bg412fg8cebg19dce4be5840;1"
 // data "DescriptionParams" "2;19;18"
+data "DescriptionParams" "2"
+data "Properties" "Highlighted"
 // data "Boosts" "ReduceCriticalAttackThreshold(1);IF(AttackingWithMeleeWeapon(context.Source)):Reroll(Damage,2,true)"
+data "Boosts" "ReduceCriticalAttackThreshold(1);IF(HasAnyStatus({ 'GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL','GOON_THECLOVER_WEAPON_TECHNICAL' }, {}, {}, GetAttackWeapon())):Reroll(Damage,2,true)"
+
+// // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+// data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 // ==================================== Sword of Life Stealing ====================================
 // TODO: Something/anything.

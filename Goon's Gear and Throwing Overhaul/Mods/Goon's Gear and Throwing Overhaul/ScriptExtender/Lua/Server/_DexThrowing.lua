@@ -35,8 +35,7 @@ end
 
 -- ==================================== Listeners
 -- Apply when previewing Throw (passive check only)
-Ext.Osiris.RegisterListener("StartedPreviewingSpell", 4, "after",
-function(caster, spell, isMostPowerful, hasMultipleLevels)
+Ext.Osiris.RegisterListener("StartedPreviewingSpell", 4, "after", function(caster, spell, isMostPowerful, hasMultipleLevels)
     if THROW_SPELL_BLACKLIST[spell] then 
         return 
     end
@@ -50,20 +49,18 @@ function(caster, spell, isMostPowerful, hasMultipleLevels)
     end
 end)
 
+-- TODO: Not "UsingSpell"?
 -- Apply technical status when Throw is actually cast
-Ext.Osiris.RegisterListener("CastSpell", 5, "after",
-function(caster, spell, spellType, spellElement, storyActionID)
+Ext.Osiris.RegisterListener("CastSpell", 5, "after", function(caster, spell, spellType, spellElement, storyActionID)
     RemoveTechnicalStatus(caster)
 end)
 
 -- Remove technical status if Throw fails
-Ext.Osiris.RegisterListener("CastSpellFailed", 5, "after",
-function(caster, spell, spellType, spellElement, storyActionID)
+Ext.Osiris.RegisterListener("CastSpellFailed", 5, "after", function(caster, spell, spellType, spellElement, storyActionID)
     RemoveTechnicalStatus(caster)
 end)
 
 -- Safety: remove statuses if preview switches to another spell
-Ext.Osiris.RegisterListener("StartedPreviewingSpell", 4, "after",
-function(caster, spell, isMostPowerful, hasMultipleLevels)
+Ext.Osiris.RegisterListener("StartedPreviewingSpell", 4, "after", function(caster, spell, isMostPowerful, hasMultipleLevels)
     RemoveTechnicalStatus(caster)
 end)

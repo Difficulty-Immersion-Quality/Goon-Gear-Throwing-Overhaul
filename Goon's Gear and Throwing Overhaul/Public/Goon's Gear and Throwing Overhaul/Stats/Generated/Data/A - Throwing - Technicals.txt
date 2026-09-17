@@ -4,9 +4,9 @@
 new entry "GOON_PRONE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Enraged Throw
+// // Enraged Throw
 data "DisplayName" "ha09dcb86gbe9eg4e61gb095g35147a8f75e1;4"
-// Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt.
+// // Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt.
 data "Description" "hca4be97fg0867g4346g8e2dg3c7d152047b0;1"
 data "TooltipSave" "Dexterity"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -15,6 +15,7 @@ data "OnApplySuccess" "ApplyStatus(PRONE,100,1)"
 data "OnApplyFail" ""
 
 // ==================================== Coatings ====================================
+// Some of these don't exist here... expand
 
 // Oil of Diminution
 new entry "GOON_OIL_DIMINUTION_TECHNICAL_APPLIER"

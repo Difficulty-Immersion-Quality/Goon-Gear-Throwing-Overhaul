@@ -1,36 +1,47 @@
-// ==================================== Pendant Of Animal Speech ====================================
-// Simple amulet providing a once per long rest Speak with Animals. Attainable form Arron in the Grove.
+// ==================================== 1. Pendant Of Animal Speech ====================================
+// Simple amulet providing a once per long rest Speak with Animals. Attainable from Arron in the Grove.
 
-new entry "Goon_Pendant_Animal_Speech_Amulet"
+new entry "Goon_PendantOfAnimalSpeech_Amulet"
 type "Armor"
-using "_Amulet"
+using "_Amulet_Magic"
 data "RootTemplate" "970d17f4-3d9d-4df8-bdda-4fde3c6d112c"
-data "ValueUUID" "f0e7be35-8be4-483d-afa8-dc9a104ea758"
+data "ItemGroup" ""
 data "Rarity" "Uncommon"
-data "Boosts" "UnlockSpell(Goon_SpeakWithAnimals_Pendant_Animal_Speech_Amulet)"
-
-new entry "Goon_SpeakWithAnimals_Pendant_Animal_Speech_Amulet"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_SpeakWithAnimals"
-data "Cooldown" "OncePerRestPerItem"
-// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:1"
-data "UseCosts" ""
-// data "MemoryCost" "1"
-data "MemoryCost" "0"
+data "Boosts" "UnlockSpell(Goon_Shout_SpeakWithAnimals_PendantOfAnimalSpeech)"
+data "Unique" "1"
 
 new entry "GOON_PENDANTOFANIMALSPEECH_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+new entry "Goon_PendantOfAnimalSpeech_Amulet_NotUnique"
+type "Armor"
+using "Goon_PendantOfAnimalSpeech_Amulet"
+// data "Unique" "1"
+data "Unique" "0"
+
+new entry "Goon_Shout_SpeakWithAnimals_PendantOfAnimalSpeech"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SpeakWithAnimals"
+data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:1"
+data "UseCosts" "ActionPoint:1"
+// data "MemoryCost" "1"
+data "MemoryCost" "0"
+
+// oldge
+new entry "Goon_Pendant_Animal_Speech_Amulet"
+type "Armor"
+using "Goon_PendantOfAnimalSpeech_Amulet"
+
+// ==================================== 2. XXXXXXXXXXXX ====================================
+// 
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

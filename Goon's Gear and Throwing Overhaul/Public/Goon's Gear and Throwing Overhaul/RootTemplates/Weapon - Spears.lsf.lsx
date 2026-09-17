@@ -109,7 +109,7 @@
 									<attribute id="Object" type="FixedString" value="MAG_LIGHTNING_THROW" />
 								</node>
 								<node id="Status">
-									<attribute id="Object" type="FixedString" value="MAG_LIGHTNING_THROW" />
+									<attribute id="Object" type="FixedString" value="GOON_LIGHTNINGJABBER_WEAPON_TECHNICAL" />
 								</node>
 							</children>
 						</node>

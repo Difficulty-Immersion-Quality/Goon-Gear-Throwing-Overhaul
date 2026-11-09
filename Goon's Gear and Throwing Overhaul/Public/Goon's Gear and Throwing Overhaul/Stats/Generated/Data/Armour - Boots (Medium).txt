@@ -112,7 +112,7 @@ data "Properties" "Highlighted"
 // data "Conditions" "IsSpell() and IsEnergyDamage()"
 data "Conditions" "IsSpell() and IsEnergyDamage() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM',context.Source)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_MOMENTUM, 100, 2);ApplyStatus(SELF, MAG_MOMENTUM_DURATION_TECHNICAL, 100, 1)"
-data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1);ApplyStatus(SELF,GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM, 100, 1)"
+data "StatsFunctors" "ApplyStatus(MAG_MOMENTUM, 100, 2);ApplyStatus(MAG_MOMENTUM_DURATION_TECHNICAL, 100, 1);ApplyStatus(SELF,GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM, 100, 1)"
 
 new entry "GOON_ONCEPERACTION_COOLDOWN_ELEMENTALMOMENTUM"
 type "StatusData"

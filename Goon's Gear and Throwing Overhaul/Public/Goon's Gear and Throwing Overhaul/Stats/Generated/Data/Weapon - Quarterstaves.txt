@@ -575,7 +575,7 @@ data "InterruptFlags" "InterruptWhileInvisible"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Staff of Cherished Necromancy ====================================
-// Changes: Life Essence Harvest's Consume Life Essence passive no longer consumes the Life Essence Active condition, when a Necromancy spell without a spell slot cost is cast.
+// Changes: Life Essence Harvest's Consume Life Essence passive no longer consumes the Life Essence Active condition when a Necromancy cantrip is cast.
 // Changes: Consolidated the Life Essence Active condition's functionality into the Life Essence Condition, and made the toggleable passive Consume Life Essence hidden and static; all functionality in tact, just not bloated and weird.
 // TODO: Per the GreaterNecromancySpellFilter() .khn script, this effect is intended to allow the casting of an extra Necromancy spell only if the spell level is equal to or lower than the number of Life Essence turns the wielder has. However, this restriction is currently non-functional, and any level of Necromancy spell can be cast using the effect. Though none of the tooltips explicitly mention this functionality, Life Essence displays the number of turns the wielder has on its tooltip.
 // TODO: Template.
@@ -596,31 +596,33 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // new entry "MAG_Heightened_Necromancy_Passive"
 // type "PassiveData"
-// Heightened Necromancy
+// // Heightened Necromancy
 // data "DisplayName" "ha45e3bf5gc5e4g4578g8584g96ef8f82cab6;2"
-// Creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against your Necromancy spells.
+// // Creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against your Necromancy spells.
 // data "Description" "h552bbd99gec93g4c06g9fb1g8525647cf48c;2"
 // data "Boosts" "UnlockSpellVariant(HeightenedNecromancySpellCheck(),ModifySavingThrowDisadvantage(),ModifyTooltipDescription())"
 
-// new entry "MAG_GreaterNecromancyStaff_LifeEssenceHarvest_Passive"
-// type "PassiveData"
-// Life Essence Harvest
+new entry "MAG_GreaterNecromancyStaff_LifeEssenceHarvest_Passive"
+type "PassiveData"
+using "MAG_GreaterNecromancyStaff_LifeEssenceHarvest_Passive"
+// // Life Essence Harvest
 // data "DisplayName" "hc78d53a5g6507g4176ga5begbbc16f57f543;2"
-// When the wielder kills a hostile creature with a spell, they greedily absorb its energy and gain &lt;LSTag Type="Status" Tooltip="MAG_GREATER_NECROMANCY_LIFE_ESSENCE"&gt;Life Essence&lt;/LSTag&gt; until their next &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
+// // When the wielder kills a hostile creature with a spell, they greedily absorb its energy and gain &lt;LSTag Type="Status" Tooltip="MAG_GREATER_NECROMANCY_LIFE_ESSENCE"&gt;Life Essence&lt;/LSTag&gt; until their next &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
 // data "Description" "h0dfae69cg1f47g43e1g8cabg1ca03a28dbbb;2"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "not Item() and Enemy() and IsKillingBlow() and IsSpell()"
+data "Conditions" "IsKillingBlow() and IsSpell() and Character()"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_GREATER_NECROMANCY_LIFE_ESSENCE,100, -1)"
 
 new entry "MAG_GREATER_NECROMANCY_LIFE_ESSENCE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MAG_GREATER_NECROMANCY_LIFE_ESSENCE"
-// Life Essence
+// // Life Essence
 // data "DisplayName" "ha2654c3eg6985g4d5eg8619g9120754e233b;2"
-// Affected entity has absorbed a creature's essence. It can use that essence to cast any Necromancy spell without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
+// // Affected entity has absorbed a creature's essence. It can use that essence to cast any Necromancy spell without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
 // data "Description" "hb72b3606g64cfg4ff5g9a17g7b82496f7f03;2"
-// Affected entity has absorbed a creature's essence. It can use that essence to cast its next Necromancy spell that consumes a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; without consuming a spell slot.
+// // Affected entity has absorbed a creature's essence. It can use that essence to cast its next Necromancy spell that consumes a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; without consuming a spell slot.
 data "Description" "haa5631e9gfc72g47e3gb563gac681088dbef;1"
 // data "Icon" "PassiveFeature_Generic_Death"
 // data "StackId" "MAG_GREATER_NECROMANCY_LIFE_ESSENCE"
@@ -633,16 +635,16 @@ data "Boosts" "UnlockSpellVariant(GreaterNecromancySpellFilter(),ModifyIconGlow(
 new entry "MAG_GreaterNecromancyStaff_CosumeLifeEssence_Passive"
 type "PassiveData"
 using "MAG_GreaterNecromancyStaff_CosumeLifeEssence_Passive"
-// Consume Life Essence
+// // Consume Life Essence
 // data "DisplayName" "h974fc825gc350g4ff9ga318g215bdd53309f;2"
-// Consume the life essence that you have collected to cast any Necromancy spell without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
+// // Consume the life essence that you have collected to cast any Necromancy spell without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
 // data "Description" "h5ccf6135g91e6g451fg8c31g1fb16b8570ea;2"
 // data "Icon" "PassiveFeature_Generic_Death"
 // data "Properties" "IsToggled;Temporary;Highlighted;ToggledDefaultAddToHotbar"
 data "Properties" "Temporary;IsHidden"
 // data "StatsFunctorContext" "OnCast"
 // data "Conditions" "IsSpell() and IsSpellSchool(SpellSchool.Necromancy)"
-data "Conditions" "IsSpell() and IsSpellSchool(SpellSchool.Necromancy) and (HasUseCosts('SpellSlot') or HasUseCosts('WarlockSpellSlot'))"
+data "Conditions" "IsSpell() and IsSpellSchool(SpellSchool.Necromancy) & ~HasCantripSpellLevel()"
 // data "StatsFunctors" "RemoveStatus(SELF, MAG_GREATER_NECROMANCY_LIFE_ESSENCE);RemoveStatus(SELF, MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE)"
 // data "ToggleOnFunctors" "ApplyStatus(MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE, 100, -1)"
 data "ToggleOnFunctors" ""
@@ -654,9 +656,9 @@ data "ToggleOffContext" ""
 // new entry "MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// Life Essence Active
+// // Life Essence Active
 // data "DisplayName" "h0940d6a4ge061g406cga072ge1ff4069aafd;2"
-// Affected entity next Necromancy spell can be cast without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
+// // Affected entity next Necromancy spell can be cast without consuming a &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt;.
 // data "Description" "ha8b3b258g2b80g4b7agad85gc847ae3cd258;2"
 // data "Icon" "PassiveFeature_Generic_Death"
 // data "StackId" "MAG_GREATER_NECROMANCY_LIFE_ESSENCE_ACTIVE"

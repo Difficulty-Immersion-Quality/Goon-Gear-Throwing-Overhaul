@@ -234,12 +234,12 @@ data "StatsFunctors" "IF(IsDamageTypeCold() and HasStatus('CHILLED',context.Targ
 new entry "Goon_FlailOfAges_Burning"
 type "PassiveData"
 using "Goon_FlailOfAges_Acid"
-data "StatsFunctors" "IF(IsDamageTypeCold() and HasStatus('BURNING',context.Target)):SetStatusDuration(BURNING,1,Add);IF(IsDamageTypeFire() and not HasStatus('BURNING',context.Target)):ApplyStatus(BURNING,100,2)"
+data "StatsFunctors" "IF(IsDamageTypeFire() and HasStatus('BURNING',context.Target)):SetStatusDuration(BURNING,1,Add);IF(IsDamageTypeFire() and not HasStatus('BURNING',context.Target)):ApplyStatus(BURNING,100,2)"
 
 new entry "Goon_FlailOfAges_Slow"
 type "PassiveData"
 using "Goon_FlailOfAges_Acid"
-data "StatsFunctors" "IF(HasStatus('SLOW',context.Target)):SetStatusDuration(SLOW,1,Add);IF(HasStatus('SLOW',context.Target)):ApplyStatus(SLOW,100,2)"
+data "StatsFunctors" "IF(HasStatus('SLOW',context.Target)):SetStatusDuration(SLOW,1,Add);IF(not HasStatus('SLOW',context.Target)):ApplyStatus(SLOW,100,2)"
 
 new entry "GOON_FLAILOFAGES_WEAPON_TECHNICAL"
 type "StatusData"
@@ -287,7 +287,7 @@ new entry "Goon_FlailOfAges_VFX"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnEquip;OnCreate"
-data "StatsFunctors" "IF(HasStatus('GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target)) and not HasStatus('GOON_FLAILOFAGES_ACID_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target)) and not HasStatus('GOON_FLAILOFAGES_FIRE_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target)) and not HasStatus('GOON_FLAILOFAGES_COLD_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_FLAILOFAGES_ACID_VFX, 100, 1);IF(HasStatus('GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target)) and not HasStatus('GOON_FLAILOFAGES_ACID_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target)) and not HasStatus('GOON_FLAILOFAGES_FIRE_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target)) and not HasStatus('GOON_FLAILOFAGES_COLD_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_FLAILOFAGES_ACID_VFX, 100, 1)"
+data "StatsFunctors" "IF(HasAnyStatus({ 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, { 'GOON_FLAILOFAGES_ACID_VFX','GOON_FLAILOFAGES_FIRE_VFX','GOON_FLAILOFAGES_COLD_VFX' }, GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_FLAILOFAGES_ACID_VFX, 100, 1);IF(HasAnyStatus({ 'GOON_FLAILOFAGES_WEAPON_TECHNICAL' }, {}, { 'GOON_FLAILOFAGES_ACID_VFX','GOON_FLAILOFAGES_FIRE_VFX','GOON_FLAILOFAGES_COLD_VFX' }, GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_FLAILOFAGES_ACID_VFX, 100, 1)"
 
 new entry "GOON_FLAILOFAGES_ACID_VFX"
 type "StatusData"

@@ -93,7 +93,7 @@ data "StatsFunctorContext" "OnStatusApplied"
 // data "Conditions" "SpellId('Shout_Disengage') or SpellId('Shout_Disengage_BonusAction') or SpellId('Shout_Disengage_CunningAction') or SpellId('Shout_Disengage_StepOfTheWind')"
 data "Conditions" "Goon_HasDisengageCondition()"
 // data "StatsFunctors" "CreateSurface(2,2,FogCloud,true)"
-data "StatsFunctors" "CreateSurface(3,3,FogCloud,true)"
+data "StatsFunctors" "CreateSurface(3,2,FogCloud,true)"
 
 // ==================================== 3. Cloak of Elemental Absorption ====================================
 // Bug Fix: Absorb Elements is now functional for unrestricted polymoprhs, such as Starry Form.

@@ -774,8 +774,19 @@ using "MAG_ArcaneTrickster_Ring_Passive"
 data "Description" "h2042de2fgc22fg4161g9050g59fffac63c85;1"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsWeaponAttack()"
-data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
+data "Conditions" "(IsWeaponAttack() or IsRangedUnarmedAttack()) and not Item()"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_ARCANE_TRICKSTER_ILLUSION_QUICKENING, 100, 1)"
+
+// new entry "MAG_ARCANE_TRICKSTER_ILLUSION_QUICKENING"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// // Quickening Incantation
+// data "DisplayName" "h3cc3599cgdaadg467egb0f9gef04126a24a5;1"
+// // You can cast Illusion and Enchantment Spells as a bonus action.
+// data "Description" "hd060b9d9g81acg4ff4g9ac5gebd2fdf0f44a;1"
+// data "Icon" "GenericIcon_Intent_Buff"
+// data "StackId" "MAG_ARCANE_TRICKSTER_ILLUSION_QUICKENING"
+// data "Boosts" "UnlockSpellVariant(ArcaneTricksterQuickenedSpellFilter(), ModifyIconGlow(),ModifyTooltipDescription(), ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint))"
 
 // ==================================== Fetish of Callarduran Smoothhands ====================================
 // TODO: Something/anything.

@@ -706,7 +706,7 @@ using "MAG_StaffOFRam_KnockStun_Passive"
 // data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
 // Once per turn, the blow possibly knocks a foe back [1] and &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; them. This has no effect on dragons or Huge creatures.
 // data "Description" "h30031d03gc514g4b3bgbe22g85ef148cc2e7;6"
-// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
+// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; for [2] round. This has no effect on dragons or Huge creatures.
 data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
 // data "DescriptionParams" "Distance(2)"
 data "DescriptionParams" "Distance(2);1"
@@ -716,18 +716,34 @@ data "TooltipSave" "Constitution"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and not Ally() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON') and not SavingThrow(Ability.Constitution, 8, false, false, context.Target)"
 data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON')"
 // data "StatsFunctors" "IF(not Ally()):Force(2,OriginToEntity,Aggressive);IF(Ally()):Force(2,OriginToEntity,Friendly);ApplyStatus(STUNNED, 100, 1)"
-data "StatsFunctors" "IF(not Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Aggressive);IF(Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Friendly);ApplyStatus(GOON_STAFFOFRAM_STUN_TECHNICAL, 100, 0)"
+data "StatsFunctors" "ApplyStatus(GOON_STAFFOFRAM_PUSH_TECHNICAL_APPLIER, 100, 0)"
+
+new entry "GOON_STAFFOFRAM_PUSH_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Staff of the Ram
+data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
+// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; for [2] round. This has no effect on dragons or Huge creatures.
+data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
+data "DescriptionParams" "Distance(2);1"
+data "TooltipSave" "Constitution"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+// TODO: Verify Force() inside a status pushes away from the wielder (status source). If it pushes from the wrong origin, move the push back into the passive and only gate the stun here.
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)"
+data "OnApplySuccess" "IF(not Ally()):Force(2,OriginToTarget,Aggressive);IF(Ally()):Force(2,OriginToTarget,Friendly);ApplyStatus(GOON_STAFFOFRAM_STUN_TECHNICAL, 100, 0)"
 
 new entry "GOON_STAFFOFRAM_STUN_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 // Staff of the Ram
 data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
-// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
+// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; for [2] round. This has no effect on dragons or Huge creatures.
 data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
 data "DescriptionParams" "Distance(2);1"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(STUNNED, 100, 1)"
+data "TooltipSave" "Constitution"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)"
+data "OnApplySuccess" "ApplyStatus(STUNNED, 100, 1)"
 
 // ==================================== Woe ====================================
 // TODO: Something/anything.

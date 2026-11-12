@@ -340,6 +340,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "hefe38517g8993g4b98g94ccgb6a7d7274d76;2"
 // When the wielder deals damage using this weapon, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
 data "Description" "hfceeb862gbcb0g49cag8b9bgdeb29686304f;4"
+data "DescriptionParams" "2"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyFunctors" "IF(Character() and not HasStatus('MAG_CHARGED_LIGHTNING', context.Source)):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING_LIGHTNING_DAMAGE_ONCE_TECHNICAL,100, 0);IF(Character()):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING_GENERATE_CHARGE_FX, 100, 0);IF(Character() and not IsDischargingLightning(context.Source)):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING,100, 2);IF(Character()):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING_DURATION_TECHNICAL, 100, 1)"
 

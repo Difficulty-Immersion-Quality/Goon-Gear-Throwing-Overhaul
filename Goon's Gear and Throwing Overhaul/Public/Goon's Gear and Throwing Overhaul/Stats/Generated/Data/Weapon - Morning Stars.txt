@@ -130,7 +130,7 @@ data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);Deal
 // Deal additional[1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.
 data "Description" "h5a6970b0g1f2dg4060g9e88g4ecc1899c571;1"
 // data "DescriptionParams" "Distance(3)"
-data "DescriptionParams" "DealDamage(,Radiant);3
+data "DescriptionParams" "DealDamage(,Radiant);3"
 // data "ExtraDescription" ""
 // data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant)"
 // data "TooltipStatusApply" "ApplyStatus(BLINDED,100,3)"

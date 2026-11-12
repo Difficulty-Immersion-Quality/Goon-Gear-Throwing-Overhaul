@@ -25,6 +25,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "h359ee476gb8f5g4caegbd5bgf2b9a29f3ad0;2"
 // Targets must succeed a Constitution Saving Throw or receive Disadvantage on Strength Checks and Saving Throws, as well as a [1] penalty to damage on melee attacks. 
 data "Description" "h0ca79c18g3bb5g4082gb185g2f82815d7a63;1"
+data "DescriptionParams" "1d4"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 11)"

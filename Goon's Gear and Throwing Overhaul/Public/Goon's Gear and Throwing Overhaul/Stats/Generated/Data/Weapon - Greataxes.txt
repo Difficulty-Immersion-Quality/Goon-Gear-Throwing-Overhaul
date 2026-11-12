@@ -136,13 +136,14 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// Gargantuan Cleave
 new entry "Zone_UNI_SuperheavyWeapon_Spell"
 type "SpellData"
 data "SpellType" "Zone"
 // using "Zone_Cleave"
 using "Zone_UNI_SuperheavyWeapon_Spell"
 // data "TooltipDamageList" "DealDamage(MainMeleeWeapon+1d6, MainMeleeWeaponDamageType)"
-data "TooltipDamageList" "DealDamage(MainMeleeWeapon/2, MainWeaponDamageType);DealDamage(1d6, MainMeleeWeaponDamageType)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon/2, MainMeleeWeaponDamageType);DealDamage(1d6, MainMeleeWeaponDamageType)"
 
 // ==================================== Blooded Greataxe ====================================
 // Bug Fix: Relentless Revenge works when the weapon is thrown.

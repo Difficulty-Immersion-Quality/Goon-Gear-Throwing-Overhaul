@@ -148,9 +148,8 @@ data "DescriptionParams" "DealDamage(,Thunder);2"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can only trigger once per &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;.
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "d58d5fff-c41b-46a7-afde-9bfd4852eb0a;28186bf3-e19b-43a9-8395-7dc31a6a211d"
-data "Properties" "Highlighted"
 // data "Properties" "OncePerAttack"
-data "Properties" ""
+data "Properties" "Highlighted"
 data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsDamageTypeThunder() "
 data "Conditions" "IsDamageTypeThunder() and not Self() and Character() and not HasStatus('GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY',context.Source)"

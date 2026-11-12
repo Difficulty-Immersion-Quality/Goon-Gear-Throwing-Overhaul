@@ -265,8 +265,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 // Prey Decelerator
 data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
-// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [2].
-data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
+// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [1] rounds.
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "DescriptionParams" "1d4;2"
+data "DescriptionParams" "2"
 data "OnApplyFunctors" "ApplyStatus(SLOW, 100, 2)"

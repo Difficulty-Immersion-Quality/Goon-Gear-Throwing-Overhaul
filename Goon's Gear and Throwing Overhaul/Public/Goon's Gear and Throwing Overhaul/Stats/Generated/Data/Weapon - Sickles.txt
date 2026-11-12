@@ -48,8 +48,10 @@ data "Boosts" ""
 
 new entry "WPN_Redcap_Sickle"
 type "Weapon"
-using "WPN_Sickle"
+// using "WPN_Sickle"
+using "WPN_Redcap_Sickle"
 // data "Damage" "2d4"
+data "Damage" "1d4"
 data "PassivesOnEquip" "Goon_Redcap_Sickle_Bonus"
 
 new entry "Goon_Redcap_Sickle_Bonus"

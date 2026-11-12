@@ -485,7 +485,8 @@ end
 -- Combination Axe (Cut content)
 function CriticalVirtuosoThrow(item)
     item = item or context.HitDescription.ThrownObject
-    if not IsHit().Result then return ConditionResult(false) end
+    if not IsHit().Result      then return ConditionResult(false) end
+    if not IsCritical().Result then return ConditionResult(false) end
     return HasAnyStatus({ 'GOON_COMBINATIONAXE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 

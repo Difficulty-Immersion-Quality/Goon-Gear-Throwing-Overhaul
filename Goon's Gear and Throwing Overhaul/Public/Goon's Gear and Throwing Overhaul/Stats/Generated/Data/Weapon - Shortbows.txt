@@ -127,7 +127,8 @@ data "DisplayName" "h18b2e6adg7043g4fbbg91e9ge40520c0cb7c;2"
 // On a hit, possibly &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frighten&lt;/LSTag&gt; your target for [1]. Gain a +[2] bonus to attack and damage against Frightened creatures.
 data "Description" "h4d85aea3g3449g4afag874bg7372c516d55c;1"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "DescriptionParams" "1d4;2"
+data "DescriptionParams" "2;1d4"
+data "TooltipSave" "Wisdom"
 data "OnApplyRoll" "not SavingThrow(Ability.Wisdom, ManeuverSaveDC(), AdvantageOnFrightened(), DisadvantageOnFrightened())"
 data "OnApplySuccess" "ApplyStatus(FRIGHTENED, 100, 2)"
 

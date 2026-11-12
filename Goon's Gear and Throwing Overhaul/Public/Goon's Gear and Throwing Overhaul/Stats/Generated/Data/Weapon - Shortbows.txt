@@ -214,15 +214,43 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "MAG_BG_BlightBringer_Passive"
+type "PassiveData"
+// using "MAG_UndeadSlayer_Passive"
+using "MAG_BG_BlightBringer_Passive"
+// // Blightbringer
+// data "DisplayName" "h6525a5bfg162cg4b3bg96b2gc0531e7b0edb;1"
+// // Attacking gnomes or dwarves with this weapon receives a +[1] bonus to Attack and Damage rolls.
+// data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
+// // &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Gnomes and Dwarves.
+data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
+// data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):RollBonus(RangedWeaponAttack, 1d4)"
+data "Boosts" "IF(HasStatus('GOON_BLIGHTBRINGER_WEAPON_TECHNICAL', GetAttackWeapon(context.Source)) and (Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target))):RollBonus(RangedWeaponAttack, 1d4);IF(HasStatus('GOON_BLIGHTBRINGER_WEAPON_TECHNICAL', GetAttackWeapon(context.Source)) and IsRangedWeaponAttack() and (Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target))):CharacterWeaponDamage(1d4)"
+
+new entry "MAG_SMALL_CREATURE_SLAYER_BLESS"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_UNDEAD_SLAYER_BLESS"
+using "MAG_SMALL_CREATURE_SLAYER_BLESS"
+// // Blightbringer
+// data "DisplayName" "hab5ce2b2g7984g4a3ag8e30g62b8ab525400;1"
+// // When used against gnomes or dwarves, this weapon has a +[1] bonus to Attack and Damage Rolls.
+// data "Description" "h81255ea0gc7b9g404ag831dg351149e99a54;1"
+// // &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Gnomes and Dwarves.
+data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
+// data "StackId" "MAG_SMALL_CREATURE_SLAYER_BLESS"
+// data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):WeaponDamage(1d4, Piercing)"
+data "Boosts" ""
+
 new entry "MAG_BG_SlowedOnCrit_Passive"
 type "PassiveData"
 // using "MAG_Vicious_Weapon_Passive"
 using "MAG_BG_SlowedOnCrit_Passive"
-// Prey Decelerator
+// // Prey Decelerator
 // data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
-// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature.
+// // When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature.
 // data "Description" "ha7341f13g5c89g4cd0g8f8dga2e245777df0;1"
-// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [1] rounds.
+// // When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [1] rounds.
 data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "2"
@@ -232,40 +260,13 @@ data "DescriptionParams" "2"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical()"
 // data "StatsFunctors" "ApplyStatus(SLOW, 100, 2)"
 
-new entry "MAG_BG_BlightBringer_Passive"
-type "PassiveData"
-// using "MAG_UndeadSlayer_Passive"
-using "MAG_BG_BlightBringer_Passive"
-// Blightbringer
-// data "DisplayName" "h6525a5bfg162cg4b3bg96b2gc0531e7b0edb;1"
-// Attacking gnomes or dwarves with this weapon receives a +[1] bonus to Attack and Damage rolls.
-// data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
-// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Gnomes and Dwarves.
-data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
-// data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):RollBonus(RangedWeaponAttack, 1d4)"
-data "Boosts" "IF(Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target)):RollBonus(RangedWeaponAttack, 1d4);IF(IsRangedWeaponAttack() and (Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target))):CharacterWeaponDamage(1d4)"
-
-new entry "MAG_SMALL_CREATURE_SLAYER_BLESS"
-type "StatusData"
-data "StatusType" "BOOST"
-// using "MAG_UNDEAD_SLAYER_BLESS"
-using "MAG_SMALL_CREATURE_SLAYER_BLESS"
-// Blightbringer
-// data "DisplayName" "hab5ce2b2g7984g4a3ag8e30g62b8ab525400;1"
-// When used against gnomes or dwarves, this weapon has a +[1] bonus to Attack and Damage Rolls.
-// data "Description" "h81255ea0gc7b9g404ag831dg351149e99a54;1"
-//  &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Gnomes and Dwarves.
-data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
-// data "StackId" "MAG_SMALL_CREATURE_SLAYER_BLESS"
-// data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):WeaponDamage(1d4, Piercing)"
-data "Boosts" ""
-
 new entry "GOON_PREYDECELERATOR_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 // Prey Decelerator
 data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
-// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [1] rounds.
+// // When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [1] rounds.
+data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "2"
 data "OnApplyFunctors" "ApplyStatus(SLOW, 100, 2)"

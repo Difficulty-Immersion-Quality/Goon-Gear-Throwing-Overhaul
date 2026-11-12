@@ -600,7 +600,7 @@ end
 function d6PoisThrow(item)
     item = item or context.HitDescription.ThrownObject
     if not IsHit().Result then return ConditionResult(false) end
-    return HasAnyStatus({ 'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE', 'MAG_POISON_POISON_WEAPON', 'MAG_LESSER_INFERNAL_WEAPON', 'GOON_INFERNALWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
+    return HasAnyStatus({ 'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE', 'MAG_POISON_POISON_WEAPON', 'MAG_LESSER_INFERNAL_WEAPON', 'GOON_INFERNALWARHAMMER_WEAPON_TECHNICAL', 'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL' }, {}, {}, item)
 end
 
 -- Wyvern Toxin
@@ -621,7 +621,7 @@ end
 function d10PoisThrow(item)
     item = item or context.HitDescription.ThrownObject
     if not IsHit().Result then return ConditionResult(false) end
-    return HasAnyStatus({ 'MAG_INFERNAL_WEAPON', 'GOON_HANDMAIDENSMACE_WEAPON_TECHNICAL' }, {}, {}, item)
+    return HasAnyStatus({ 'MAG_INFERNAL_WEAPON' }, {}, {}, item)
 end
 
 -- Basic Poison

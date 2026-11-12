@@ -12,6 +12,9 @@
 	<!-- "ARM_Stealthy_1_Passive" -->
 	<content contentuid="h2a1426e3g5bb6g4ca4g9b96g7c676ef74be8" version="1">Gain a +[1] bonus to &lt;LSTag Tooltip="Stealth"&gt;Stealth&lt;/LSTag&gt; &lt;LSTag Tooltip="SkillCheck"&gt;Checks&lt;/LSTag&gt;.</content>
 
+	<!-- "MAG_LESSER_INFERNAL_WEAPON" -->
+    <content contentuid="he656a1e4ge48dg40c5gb058ga9061a408871" version="1">Lesser Infernal Weapon</content>
+
 <!-- ==================================== Containers ==================================== -->
 
 	<!-- "Goon's Gear and Throwing Overhaul Mega Container" -  -->

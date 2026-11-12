@@ -270,6 +270,7 @@ data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
 
 // ==================================== Infernal weapons ====================================
 // Changes: Infernal Weapon now deal 1d12 Poison damage instead of a flat 6.
+// Changes: Weaker version of Infernal Weapon renamed to Lesser Infernal Weapon.
 // Changes: Lesser Infernal Weapon now deal 1d6 Poison damage instead of a flat 3.
 
 new entry "MAG_LESSER_INFERNAL_WEAPON"
@@ -277,6 +278,10 @@ type "StatusData"
 data "StatusType" "BOOST"
 // using "MAG_INFERNAL_WEAPON"
 using "MAG_LESSER_INFERNAL_WEAPON"
+// // Infernal Weapon
+// data "DisplayName" "h6816720eg3126g4738gabb9g87c8001186a6;2"
+// // Lesser Infernal Weapon
+data "DisplayName" "he656a1e4ge48dg40c5gb058ga9061a408871;1"
 // data "DescriptionParams" "DealDamage(3,Poison)"
 data "DescriptionParams" "DealDamage(1d6,Poison)"
 // data "Boosts" "WeaponDamage(3, Poison)"

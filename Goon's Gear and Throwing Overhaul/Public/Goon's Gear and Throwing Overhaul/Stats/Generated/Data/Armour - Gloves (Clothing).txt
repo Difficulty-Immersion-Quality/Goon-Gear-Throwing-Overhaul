@@ -106,7 +106,7 @@ data "Boosts" "UnlockSpellVariant(Goon_IsJumpSpellCategory(),ModifyIconGlow(),Mo
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 data "RemoveEvents" "OnSpellCast"
 data "RemoveConditions" "IsStatusEvent(StatusEvent.OnSpellCast) and Goon_IsJumpSpellCategory()"
-data "Passives" "Goon_ShadeSlayerCloak_SkilledSkullduggery_Technical_Passive"
+data "Passives" "Goon_Fleetfingers_RunningJump_Technical_Passive"
 
 new entry "Goon_Fleetfingers_RunningJump_Technical_Passive"
 type "PassiveData"
@@ -301,7 +301,7 @@ data "DescriptionParams" "1;Distance(3)"
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"
 // data "Boosts" "IF(IsMeleeAttack() and IsWeaponAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Target, context.Source)):Advantage(AttackRoll);"
-data "Boosts" "IF(IsMeleeAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED')):Advantage(AttackRoll)"
+data "Boosts" "IF(IsMeleeAttack() and HasEnemyWithinRange('SG_Incapacitated', 3, nil, 2, context.Source, context.Source) and HasStatus('FLANKED', context.Source)):Advantage(AttackRoll)"
 
 // ==================================== 10. Gloves of Thievery ====================================
 // TODO: Something/anything.

@@ -99,7 +99,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Brace (Melee) ====================================
 // TODO: It's a two-hander thing, maybe do something with it later + Goon_CanAttack_Offhand
@@ -196,7 +196,7 @@ data "SpellSuccess" "DealDamage(OffhandMeleeWeapon/2, OffhandMeleeWeaponDamageTy
 data "DisplayName" "h046d806egc13fg403fgb220g8cdbd04778c0;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon/2, OffhandMeleeWeaponDamageType)"
 data "CastTextEvent" "CastOffhand"
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Concussive Smash ====================================
 // Changes: No longer uses HybridCasterWeaponActionDC, instead using ManeuverSaveDC consistent with other weapon actions.
@@ -239,7 +239,7 @@ data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamag
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Maiming Strike ====================================
 // Changes: Now properly functions as weapon damage while retaining the die size/static values, enabling more synergy. In particular, it deals magical damage if the weapon is magical, and CharacterWeaponDamage boosts will apply.
@@ -283,7 +283,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Disarming Strike ====================================
 // Bug Fix: Added missing TooltipStatusApply.
@@ -350,7 +350,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Flourish ====================================
 // Bug Fix: Attacking a target that is not eligible for being Knocked Out no longer does magical damage.
@@ -397,7 +397,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Heartstopper ====================================
 
@@ -441,7 +441,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Lacerate ====================================
 // Doesn't inherit from "Target_AdvancedMeleeWeaponAction"
@@ -493,7 +493,7 @@ data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamag
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Piercing Strike ====================================
 
@@ -534,7 +534,7 @@ data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamag
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Pommel Strike ====================================
 // Bug Fix: Player check for target conditions made more robust.
@@ -578,7 +578,7 @@ data "DisplayName" "h7d939ee7g1211g48c0g9553g4627e522095a;1"
 data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
 data "CastTextEvent" "CastOffhand"
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Prepare ====================================
 // Changes: The main weapon action now only buffs main hand weapon attacks.
@@ -671,7 +671,7 @@ data "Description" "h8313b113g6129g4b36gb91egeb3040ce1b96;1"
 data "SpellProperties" "ApplyStatus(GOON_FULL_SWING_OFFHAND,100,1)"
 data "TooltipStatusApply" "ApplyStatus(GOON_FULL_SWING_OFFHAND,100,1)"
 data "DescriptionParams" "Distance(3);DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
-data "RequirementConditions" "Goon_CanAttack_Offhand(context.Target) and not Goon_IsEncumbered() and not Immobilized() and CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "Goon_CanAttack_Offhand(context.Target) and not Goon_IsEncumbered() and not Immobilized() and CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 data "UseCosts" "Movement:3"
 
 new entry "GOON_FULL_SWING_OFFHAND"
@@ -694,7 +694,7 @@ data "DisplayName" "hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5;1"
 // // Sacrificed [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to its &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with its off-hand melee weapon this turn.
 data "Description" "h754c5775g1a4fg400eg9d49gc1f607bd146c;1"
 data "DescriptionParams" "Distance(3)"
-data "Boosts" "IF(Goon_IsMeleeOffhandWeaponAttack() and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
+data "Boosts" "IF(Goon_IsMeleeOffhandWeaponAttack() and IsProficientWithEquippedWeapon(context.Source, false, true)):CharacterWeaponDamage(max(1,StrengthModifier))"
 
 // ==================================== Rush Attack ====================================
 // Changes: You can charge anywhere and don't have to declare a target.
@@ -773,7 +773,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 // data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;7bfeb9dd-1348-45c7-bff9-ed42f8cd43a1,,;b780092c-cc12-43d5-b60e-acbac3fdceed,,;abbeb7de-2128-4b16-95e5-7b9d7b1af2f9,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 data "CombatAIOverrideSpell" "Goon_Rush_SpringAttack_Offhand_AI"
 
 new entry "Goon_Rush_SpringAttack_Offhand_AI"
@@ -852,7 +852,7 @@ data "DisplayName" "h3a82ba6cgea61g4c98g8abcg07ef3cd2b315;1"
 // // When you miss with a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; using your off-hand weapon, deal damage equal to your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1.
 data "Description" "h1110423cg3acfg4207ga238ga0770520477f;1"
 data "DescriptionParams" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
-data "Conditions" "Goon_InterruptConditions() and Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and Goon_IsMeleeOffhandWeaponAttack() and IsProficientWithEquippedWeapon()"
+data "Conditions" "Goon_InterruptConditions() and Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and Goon_IsMeleeOffhandWeaponAttack() and IsProficientWithEquippedWeapon(context.Source, false, true)"
 data "Properties" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
 
 // ==================================== Topple ====================================
@@ -915,7 +915,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Weakening Strike ====================================
 // Bug Fix: Conditions for non-lethal damage made more robust.
@@ -960,7 +960,7 @@ data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier)
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // new entry "HINDERED"
 // type "StatusData"
@@ -1035,4 +1035,4 @@ data "SpellSuccess" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType)"
 data "CastTextEvent" "CastOffhand"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"

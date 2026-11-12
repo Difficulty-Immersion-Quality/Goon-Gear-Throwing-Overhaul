@@ -170,7 +170,7 @@ data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, Offhan
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
-data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon(context.Source, false, true) and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.

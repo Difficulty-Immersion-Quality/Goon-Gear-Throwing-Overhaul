@@ -353,6 +353,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_MENTALINHIBITION"
 // Bug Fix: Spiteful Thunder Dazed condition application now only triggers on Thunder damage, instead of all damage.
 // Bug Fix: Spiteful Thunder can now apply Dazed to an already Dazed creature.
 // Changes: Spiteful Thunder Dazed condition application now only triggers once per action, per target.
+// Changes: Spiteful Thunder now uses SourceSpellDC instead of a static DC of 13.
 // Changes: Forced Honour ruleset changes.
 // TODO: Template.
 // TODO: Refactor.
@@ -405,7 +406,7 @@ data "Description" "h6434a385g471bg4729g9d4bgb51b42a05f2b;7"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "DescriptionParams" "DealDamage(,Thunder)"
 data "TooltipSave" "Constitution"
-data "OnApplyRoll" "not SavingThrow(Ability.Constitution,13)"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, SourceSpellDC())"
 data "OnApplySuccess" "ApplyStatus(DAZED, 100, 2)"
 
 new entry "GOON_ONCEPERACTION_COOLDOWN_SPITEFULTHUNDER"

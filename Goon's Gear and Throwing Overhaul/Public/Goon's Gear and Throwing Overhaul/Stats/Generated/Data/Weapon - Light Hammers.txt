@@ -100,6 +100,7 @@ using "MOO_WulbrenHammer"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "WeaponFunctors" "IF(Item()):DealDamage(2d4,Force)"
 data "WeaponFunctors" ""
+data "PassivesOnEquip" "Goon_WulbrenHammer_Structural_Decommission_Passive"
 // data "Unique" "1"
 
 new entry "GOON_WULBRENSHAMMER_WEAPON_TECHNICAL"
@@ -115,9 +116,7 @@ data "DisplayName" "hef699771g3a4cg40edg9a7cg0dd3c7bc229d;1"
 data "Description" "h5be62e5dgc35ag4cb6g8336g32028740eb62;1"
 data "DescriptionParams" "DealDamage(2d4,Force)"
 data "TooltipConditionalDamage" "DealDamage(2d4,Force)"
-data "BoostContext" "OnAttack"
-data "BoostConditions" "AttackedWithPassiveSourceWeapon() and HasDamageEffectFlag(DamageFlags.Hit)"
-data "Boosts" "IF(Item() or Tagged('CONSTRUCT', context.Target)):WeaponDamage(2d4,Force)"
+data "Boosts" "IF(Item(context.Target) or Tagged('CONSTRUCT', context.Target)):WeaponDamage(2d4,Force)"
 
 // ==================================== Brewing Ladle (Inaccessible/Cut content) ====================================
 // TODO: Needs a custom entry, the model resizing, all that shit. But could be a fun item.

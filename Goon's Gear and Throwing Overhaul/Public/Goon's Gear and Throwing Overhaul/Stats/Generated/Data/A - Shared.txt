@@ -269,7 +269,8 @@ data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
 // data "Boosts" "IF(IsWeaponAttack() and IsCritical()):DamageBonus(7,,false)"
 
 // ==================================== Infernal weapons ====================================
-// Changes: Lesser infernal weapons deal 1d6 Poison damage instead of a flat 3. 
+// Changes: Infernal Weapon now deal 1d12 Poison damage instead of a flat 6.
+// Changes: Lesser Infernal Weapon now deal 1d6 Poison damage instead of a flat 3.
 
 new entry "MAG_LESSER_INFERNAL_WEAPON"
 type "StatusData"
@@ -286,16 +287,16 @@ type "StatusData"
 data "StatusType" "BOOST"
 // using "DIPPED_POISON"
 using "MAG_INFERNAL_WEAPON"
-// Infernal Weapon
+// // Infernal Weapon
 // data "DisplayName" "h6816720eg3126g4738gabb9g87c8001186a6;2"
-// On a hit, the affected entity deals an additional [1] and can possibly <LSTag Type="Status" Tooltip="POISONED">Poison</LSTag> its target. 
+// // On a hit, the affected entity deals an additional [1] and can possibly &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poison&lt;/LSTag&gt; its target. 
 // data "Description" "h39186345gdb1eg4965g82ccg354ce3573fbd;3"
 // data "DescriptionParams" "DealDamage(6,Poison)"
-data "DescriptionParams" "DealDamage(1d10,Poison)"
+data "DescriptionParams" "DealDamage(1d12,Poison)"
 // data "Icon" "GenericIcon_DamageType_Poison"
 // data "StackId" "MAG_INFERNAL_WEAPON"
 // data "Boosts" "WeaponDamage(6, Poison)"
-data "Boosts" "WeaponDamage(1d10,Poison)"
+data "Boosts" "WeaponDamage(1d12,Poison)"
 // data "Passives" "MAG_Infernal_Weapon_Passive"
 data "Passives" ""
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
@@ -305,11 +306,11 @@ data "Passives" ""
 new entry "MAG_Infernal_Weapon_Passive"
 type "PassiveData"
 using "MAG_Infernal_Weapon_Passive"
-// Malebolge Stinger
+// // Malebolge Stinger
 // data "DisplayName" "h9e579063gc086g4828g8837g5b3067d8554d;1"
-// On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt;.
+// // On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt;.
 // data "Description" "h11a618a5g6bd5g4d48gaba1gfc7784d80d99;1"
-// On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.
+// // On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.
 data "Description" "hc4d3de99ge275g4176gb149g91a4e61e5488;1"
 data "DescriptionParams" "2"
 data "TooltipSave" "Constitution"
@@ -321,9 +322,9 @@ data "StatsFunctors" "ApplyStatus(GOON_INFERNAL_WEAPON_TECHNICAL_APPLIER, 100, 0
 new entry "GOON_INFERNAL_WEAPON_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Malebolge Stinger
+// // Malebolge Stinger
 data "DisplayName" "h9e579063gc086g4828g8837g5b3067d8554d;1"
-// On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.
+// // On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.
 data "Description" "hc4d3de99ge275g4176gb149g91a4e61e5488;1"
 data "DescriptionParams" "2"
 data "TooltipSave" "Constitution"

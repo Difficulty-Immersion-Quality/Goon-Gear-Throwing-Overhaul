@@ -36,7 +36,7 @@
 
 // ==================================== Hellbeard Halberd ====================================
 // Bug Fix: Chance to inflict the Poisoned condition is now visible
-// Bug Fix: Poison condition application and 1d6 Poison damage works with throwing.
+// Bug Fix: Poison condition application and 1d12 (formerly 6 flat) Poison damage works with throwing.
 // Changes: Saving throw DC for Poisoned increased from 12 to 13.
 
 new entry "MAG_Infernal_Hellbeard_Halberd"

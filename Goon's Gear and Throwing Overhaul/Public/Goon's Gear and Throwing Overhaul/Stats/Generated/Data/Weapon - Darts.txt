@@ -1,6 +1,7 @@
 // ==================================== Base entry ====================================
 // TODO: Custom weapon actions, Hand Crossbow throwing equivulent
 // TODO: Maybe keep them as proper ranged weapons?
+// TODO: data "Weapon Group" "SimpleMeleeWeapon"?
 
 new entry "WPN_Dart"
 type "Weapon"

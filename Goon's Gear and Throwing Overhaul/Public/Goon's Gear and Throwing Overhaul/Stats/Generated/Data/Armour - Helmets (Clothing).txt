@@ -56,7 +56,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 5. Dark Justiciar Mask ====================================
+// ==================================== 6. Dark Justiciar Mask ====================================
 // TODO: Something/anything.
 
 // new entry "UND_Justiciar_Mask_Magic"
@@ -73,7 +73,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 6. Hat of Fire Acuity ====================================
+// ==================================== 7. Hat of Fire Acuity ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -83,7 +83,7 @@
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 7. Hat of Storm Scion's Power ====================================
+// ==================================== 8. Hat of Storm Scion's Power ====================================
 // Bug Fix: Thunderous Acuity can no longer be triggered from dealing damage to yourself or entities that aren't characters.
 // Changes: Thunderous Acuity now functions while under the effects of non-humanoid polymorphs.
 // Changes: Thunderous Acuity's Arcane Acuity condition application will now only apply once per action.
@@ -162,7 +162,7 @@ data "StatusType" "BOOST"
 using "GOON_ONCEPERACTION_COOLDOWN_TEMPLATE"
 data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 
-// ==================================== 8. Infernal Mask ====================================
+// ==================================== 9. Infernal Mask ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -172,7 +172,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 9. Key of the Ancients ====================================
+// ==================================== 10. Key of the Ancients ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -182,7 +182,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 10. Marksmanship Hat ====================================
+// ==================================== 11. Marksmanship Hat ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -192,7 +192,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 11. The Lifebringer ====================================
+// ==================================== 12. The Lifebringer ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -202,7 +202,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 12. The Shadespell Circlet ====================================
+// ==================================== 13. The Shadespell Circlet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -212,7 +212,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 13. Wapira's Crown ====================================
+// ==================================== 14. Wapira's Crown ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -222,7 +222,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 14. Warped Headband of Intellect ====================================
+// ==================================== 15. Warped Headband of Intellect ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -232,7 +232,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_THUNDEROUSACUITY"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 15. Cap of Wrath ====================================
+// ==================================== 16. Cap of Wrath ====================================
 // Bug Fix: ...
 // Changes: Descriptions improved.
 
@@ -313,7 +313,7 @@ data "DescriptionParams" "2"
 data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50)):ApplyStatus(MAG_VIOLENCE,100,2);IF(not Dead() and Combat() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50)):ApplyStatus(MAG_VIOLENCE_DURATION_TECHNICAL,100,1)"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
 
-// ==================================== 16. Circle of Bones ====================================
+// ==================================== 17. Circle of Bones ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -323,7 +323,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 17. Circlet of Blasting ====================================
+// ==================================== 18. Circlet of Blasting ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -333,7 +333,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 18. Circlet of Mental Anguish ====================================
+// ==================================== 19. Circlet of Mental Anguish ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -343,7 +343,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 19. Circlet of Psionic Revenge ====================================
+// ==================================== 20. Circlet of Psionic Revenge ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -353,7 +353,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 20. Diadem of Arcane Synergy ====================================
+// ==================================== 21. Diadem of Arcane Synergy ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -363,7 +363,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 21. Fistbreaker Helm ====================================
+// ==================================== 22. Fistbreaker Helm ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -373,7 +373,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 22. Gibus of the Worshipful Servant ====================================
+// ==================================== 23. Gibus of the Worshipful Servant ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -383,7 +383,7 @@ data "TickFunctors" "IF(not Dead() and Combat() and HasHPPercentageWithoutTempor
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 23. Haste Helm ====================================
+// ==================================== 24. Haste Helm ====================================
 // Bug Fix: The wearer now gains Momentum when they enter combat, and not just at the start of the next round if they joined combat after it initially began.
 // TODO: Refactor.
 // TODO: Template.
@@ -423,7 +423,7 @@ data "Properties" "OncePerCombat"
 data "StatsFunctorContext" "OnTurn;OnRound;OnCombatStarted"
 data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY_ONCOMBATSTART_DOONCE_TECHNICAL')):ApplyStatus(MAG_MOMENTUM, 100, 3)"
 
-// ==================================== 24. Hat of the Sharp Caster ====================================
+// ==================================== 25. Hat of the Sharp Caster ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -433,7 +433,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 25. Hat of Uninhibited Kushigo ====================================
+// ==================================== 26. Hat of Uninhibited Kushigo ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -443,7 +443,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 26. Scabby Pugilist Circlet ====================================
+// ==================================== 27. Scabby Pugilist Circlet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -453,7 +453,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 27. The Pointy Hat ====================================
+// ==================================== 28. The Pointy Hat ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -463,7 +463,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 28. Assassin of Bhaal Cowl ====================================
+// ==================================== 29. Assassin of Bhaal Cowl ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -473,7 +473,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 29. Birthright ====================================
+// ==================================== 30. Birthright ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -483,7 +483,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 30. Bonespike Helmet ====================================
+// ==================================== 31. Bonespike Helmet ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -493,7 +493,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 31. Circlet of Hunting ====================================
+// ==================================== 32. Circlet of Hunting ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -503,7 +503,7 @@ data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 32. Helldusk Helmet ====================================
+// ==================================== 33. Helldusk Helmet ====================================
 // Bug Fix: The Infernal Sight passive now allows the wearer to see through darkness.
 // Bug Fix: The Infernal Sight passive now provides light cone VFX the same as Darkvision from other sources.
 // Bug Fix: Vanilla's Critical Hit immunity did not work in all cases (SetRoll and possibly AdjustRoll e.g. Luck of the Far Realms), but my implementation below does.
@@ -593,7 +593,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "TargetEffect" "32111bfc-925e-4e95-9f31-cddc211619fd"
 // data "BeamEffect" "a76e1745-fca0-46fd-b93b-ac4abc37a598"
 
-// ==================================== 33. Hood of the Weave ====================================
+// ==================================== 34. Hood of the Weave ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -603,7 +603,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 34. Horns of the Berserker ====================================
+// ==================================== 35. Horns of the Berserker ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -613,7 +613,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 35. Jannath's Hat ====================================
+// ==================================== 36. Jannath's Hat ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -623,7 +623,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 36. Mask of Soul Perception ====================================
+// ==================================== 37. Mask of Soul Perception ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -633,7 +633,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 37. Pyroquickness Hat ====================================
+// ==================================== 38. Pyroquickness Hat ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -643,7 +643,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 38. Shapeshifter Hat ====================================
+// ==================================== 39. Shapeshifter Hat ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -653,7 +653,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 39. Mask of the Shapeshifter ====================================
+// ==================================== 40. Mask of the Shapeshifter ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -663,7 +663,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 40. Hat Of Uproarious Laughter (Innaccessible/cut content) ====================================
+// ==================================== 41. Hat Of Uproarious Laughter (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -673,7 +673,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 41. Helm of Arcane Gate (Innaccessible/cut content) ====================================
+// ==================================== 42. Helm of Arcane Gate (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -683,7 +683,7 @@ data "TooltipDamageList" "DealDamage(2d8, Fire);DealDamage(2d8,Fire,,,,ad727a13-
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
-// ==================================== 42. Circlet of Fire (Innaccessible/cut content) ====================================
+// ==================================== 43. Circlet of Fire (Innaccessible/cut content) ====================================
 // TODO: Something/anything.
 
 // gear entry

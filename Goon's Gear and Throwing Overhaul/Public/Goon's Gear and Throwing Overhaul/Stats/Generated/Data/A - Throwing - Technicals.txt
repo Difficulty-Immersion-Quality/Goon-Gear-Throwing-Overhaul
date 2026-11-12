@@ -15,7 +15,7 @@ data "OnApplySuccess" "ApplyStatus(PRONE,100,1)"
 data "OnApplyFail" ""
 
 // ==================================== Coatings ====================================
-// TODO:Some of these don't exist here... expand.
+// TODO: Some of these don't exist here... expand.
 // TODO: Edit vanilla entries for consistency, but, at that point just do Goon's Consumable Overhaul.
 
 // Oil of Diminution

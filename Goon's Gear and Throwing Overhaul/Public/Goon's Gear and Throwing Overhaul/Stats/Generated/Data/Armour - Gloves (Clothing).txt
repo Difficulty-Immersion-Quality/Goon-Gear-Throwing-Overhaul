@@ -494,7 +494,7 @@ data "StackId" "GOON_ONCEPERACTION_COOLDOWN_RADIATINGORBGLOVES"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
 
 // ==================================== 23. Craterflesh Gloves ====================================
-// Bug Fix: Craterous Wounds's Force damage is longer a damage rider that functions as a damage rider source.
+// Bug Fix: Craterous Wounds's Force damage is no longer a damage rider that functions as a damage rider source.
 // Changes: Craterous Wounds will only apply Radiating Orb once per action, per target.
 // Changes: Craterous Wounds now functions while under the effects of non-humanoid polymorphs.
 

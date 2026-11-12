@@ -183,6 +183,8 @@ object category "I_Goon_MAG_CQCaster_ArcaneChargeAfterDash_Boots_NotUnique",1,0,
 new subtable "1,1"
 object category "I_Goon_MAG_Bard_RefreshBardicInspirationSlot_Shoes_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
+object category "I_Goon_MAG_TerrainWalkers_Boots_NotUnique",1,0,0,0,0,0,0,0
+new subtable "1,1"
 object category "I_Goon_MAG_Monk_Magic_Boots_NotUnique",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_Goon_MAG_Evasive_Shoes_NotUnique",1,0,0,0,0,0,0,0

@@ -198,3 +198,4 @@ data "OnApplySuccess" "ApplyStatus(FRIGHTENED, 100, 2)"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+

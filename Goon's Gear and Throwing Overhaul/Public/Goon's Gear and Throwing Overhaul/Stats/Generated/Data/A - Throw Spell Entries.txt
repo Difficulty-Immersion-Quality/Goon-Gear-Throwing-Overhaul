@@ -69,7 +69,7 @@ data "SpellSuccess" "TARGET:IF(Goon_IsLightThrownObjectNotWeapon(nil,false)):Dea
 // data "DisplayName" "ha09dcb86gbe9eg4e61gb095g35147a8f75e1;4"
 // Pick up an item or creature and throw it at a target, dealing additional damage and knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
 // data "Description" "h909ab163ga33eg440cgaeb3g6b60550614f3;7"
-// Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt.
+// Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
 data "Description" "hca4be97fg0867g4346g8e2dg3c7d152047b0;1"
 // Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage. &lt;br&gt;&lt;br&gt;The damage of &lt;LSTag Tooltip="Thrown"&gt;Thrown Weapons&lt;/LSTag&gt; is the same as the weapon's melee damage.&lt;br&gt;&lt;br&gt;You also deal additional damage based on your Strength.
 // data "ExtraDescription" "he130a838gd830g48d6g9e00ga0e23c165c9f;1"

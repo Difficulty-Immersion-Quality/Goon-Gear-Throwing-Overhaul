@@ -47,7 +47,7 @@ function IsMainHandAttack()
 end
 
 function IsMainHandWeaponAttack()
-    -- result = context.HitDescription.AttackType == AttackType.MeleeOffHandWeaponAttack or context.HitDescription.AttackType == AttackType.RangedOffHandWeaponAttack
+    -- result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack or context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
 	-- return ConditionResult(result)
     if Goon_IsMeleeMainhandWeaponAttack().Result  then return ConditionResult(true) end
     if Goon_IsRangedMainhandWeaponAttack().Result then return ConditionResult(true) end

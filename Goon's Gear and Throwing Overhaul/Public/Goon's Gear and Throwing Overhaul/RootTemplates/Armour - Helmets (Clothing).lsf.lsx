@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-			<!-- 7. Hat of Storm Scion's Power -->
+			<!-- 8. Hat of Storm Scion's Power -->
 				<node id="GameObjects">
 					<!-- Two sigils glow white where the hat brushes your temples - something is being tapped into; something distant and fearsome. -->
 					<attribute id="Description" type="TranslatedString" handle="h9823fa2eg6fcag4460gab88g288417d5d2f8" version="1" />
@@ -856,7 +856,7 @@
 						</node>
 					</children>
 				</node>
-			<!-- 15. Cap of Wrath -->
+			<!-- 16. Cap of Wrath -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h9b91dbdegc617g4a73g8d4dgcdd0e5cf38aa" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h95ccb55ag6618g4d14ga06cgbd2fd0989876" version="1" />

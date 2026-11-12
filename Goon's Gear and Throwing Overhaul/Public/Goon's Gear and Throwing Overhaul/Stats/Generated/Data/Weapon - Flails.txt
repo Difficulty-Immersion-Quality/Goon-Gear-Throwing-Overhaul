@@ -172,7 +172,6 @@ type "PassiveData"
 data "DisplayName" "hc6b5cac7g7c3bg433ega63fge3d40cec5ccf;1"
 // Reduce incoming Bludgeoning, Piercing, and Slashing damage by half your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; (rounded down).
 data "Description" "h6af7fa47g660dg4433ga045g91c420bf9357;1"
-data "DescriptionParams" "ProficiencyBonus"
 data "Boosts" "DamageReduction(Piercing, Flat, ProficiencyBonus/2);DamageReduction(Bludgeoning, Flat, ProficiencyBonus/2);DamageReduction(Slashing, Flat, ProficiencyBonus/2)"
 
 // ==================================== Flail of Ages ====================================

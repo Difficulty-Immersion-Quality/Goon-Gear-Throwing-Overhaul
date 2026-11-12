@@ -790,6 +790,12 @@ data "PassivesOnEquip" "MAG_TerrainWalker_Passive;Goon_Gear_Polymorph_BootsOfGen
 // data "Unique" "1"
 // data "MinLevel" "1"
 
+new entry "Goon_MAG_TerrainWalkers_Boots_NotUnique"
+type "Armor"
+using "MAG_TerrainWalkers_Boots"
+// data "Unique" "1"
+data "Unique" "0"
+
 new entry "GOON_BOOTSOFGENIALSTRIDING_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"

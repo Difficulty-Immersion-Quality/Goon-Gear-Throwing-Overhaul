@@ -433,7 +433,7 @@ type "Armor"
 // using "_Amulet_Magic"
 using "UND_MonkAmulet_Amulet"
 // data "RootTemplate" "086ae8fd-c44e-43a7-b8be-777b551a06d6"
-// data "ItemGroup" "8a61de95-7857-4f79-a0a0-7a6aeaa2255f"
+// data "ItemGroup" ""
 // data "ValueUUID" "7da97bda-6776-4796-8b0b-d3b96ff3c9fb"
 // data "Rarity" "Rare"
 data "PassivesOnEquip" "Goon_Gear_Polymorph_SentientAmulet"
@@ -730,6 +730,8 @@ data "Boosts" ""
 data "Passives" "Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph;MAG_OfTheDevout_Amulet_Passive"
 
 // ==================
+// TODO: (Clanker) OncePerLongRestPerItem may stop the StatsFunctors below from firing again after the first trigger, which the depleted/godswill technicals rely on. Test casting Channel Divinity twice across a short rest; drop it to "Highlighted" if the tracking breaks.
+// TODO: (Me) I tested the fuck out of this but can't be assed to look at it rn.
 
 new entry "MAG_OfTheDevout_Amulet_Passive"
 type "PassiveData"

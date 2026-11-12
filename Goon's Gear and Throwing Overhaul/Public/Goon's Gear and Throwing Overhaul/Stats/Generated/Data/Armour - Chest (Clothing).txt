@@ -258,7 +258,7 @@ data "Description" "h4ac5eb5ag65d3g4ab4g9052gf850eef54dc7;1"
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted;OncePerTurn"
 data "StatsFunctorContext" "OnStatusApplied;OnTurn"
-data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusHasStatusGroup(context.StatusId,'SG_Rage')) or (context.HasContextFlag(StatsFunctorContext.OnTurn) and HasStatus('SG_Rage',context.Source)) and Combat()"
+data "Conditions" "((context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusHasStatusGroup(context.StatusId,'SG_Rage')) or (context.HasContextFlag(StatsFunctorContext.OnTurn) and HasStatus('SG_Rage',context.Source))) and Combat()"
 data "StatsFunctors" "ApplyStatus(SELF,MAG_VIOLENCE,100,2);ApplyStatus(SELF,MAG_VIOLENCE_DURATION_TECHNICAL,100,1)"
 
 // ==================================== 10. Garb of the Land and Sky ====================================

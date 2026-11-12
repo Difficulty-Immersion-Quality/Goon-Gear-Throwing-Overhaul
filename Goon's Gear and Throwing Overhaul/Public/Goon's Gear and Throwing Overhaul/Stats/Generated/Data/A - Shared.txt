@@ -139,7 +139,7 @@ data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndi
 data "Boosts" "SpellSaveDC(2)"
 data "RemoveEvents" "OnEquip;OnUnequip;OnStatusApplied;OnStatusRemoved"
 data "RemoveConditions" "not HasPassive('MAG_SpellSaveDC_Enchantment_Passive') and not HasPassive('Goon_MAG_SpellSaveDC_Enchantment_Passive_Polymorph')"
-data "OnRemoveFunctors" "IF(HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive')):ApplyStatus(GOON_SPELLSAVEDC_ENCHANTMENT_1,100,-1)"
+data "OnRemoveFunctors" "IF(HasPassive('MAG_SpellSaveDC_Enchantment_Lesser_Passive') or HasPassive('Goon_MAG_SpellSaveDC_Enchantment_Lesser_Passive_Polymorph')):ApplyStatus(GOON_SPELLSAVEDC_ENCHANTMENT_1,100,-1)"
 
 new entry "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
 type "PassiveData"

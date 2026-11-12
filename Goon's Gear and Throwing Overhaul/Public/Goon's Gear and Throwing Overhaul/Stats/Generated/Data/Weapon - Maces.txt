@@ -40,7 +40,7 @@ using "WPN_Mace_2"
 // data "Weapon Properties" "Melee;Dippable;Magical"
 data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
 
-// ==================================== Handmaiden's Mace - Chance to inflict the Poisoned condition is now visible ====================================
+// ==================================== Handmaiden's Mace ====================================
 // Bug Fix: Saving throw for applying Poison is now visible.
 // Bug Fix: Poison condition application and 1d6 Poison damage works with throwing.
 // Changes: Saving throw DC for Poisoned increased from 12 to 13. Added an additional application for Frightened, with a DC of 13; both work with throwing.
@@ -91,7 +91,7 @@ new entry "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
-data "OnApplySuccess" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_POISON, 100, 0);ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_FRIGHTENED, 100, 0)"
+data "OnApplyFunctors" "ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_POISON, 100, 0);ApplyStatus(GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_FRIGHTENED, 100, 0)"
 
 new entry "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_POISON"
 type "StatusData"
@@ -198,4 +198,3 @@ data "OnApplySuccess" "ApplyStatus(FRIGHTENED, 100, 2)"
 // type "StatusData"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-

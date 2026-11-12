@@ -315,8 +315,9 @@ using "MAG_Monk_Armor_MountainStance_Passive"
 // data "DisplayName" "h0d95fe10gdd02g41f8g91fcgac832eadc51c;1"
 // // While using &lt;LSTag Type="Status" Tooltip="PATIENT_DEFENCE"&gt;Patient Defence&lt;/LSTag&gt;, you also benefit from the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;.
 // data "Description" "hf633200cgd324g42f1gb7efg6100e0e6bbfb;1"
-// // The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_Dash_StepOfTheWind"&gt;Step of the Wind: Dash&lt;/LSTag&gt;.
+// // The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_PatientDefense"&gt;Patient Defence&lt;/LSTag&gt;.
 data "Description" "h1102c1e8g60f5g455ag8e9egd72b54ef3afc;1"
+data "DescriptionParams" "1"
 // // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; Continues to function while willingly under the effects of &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphs&lt;/LSTag&gt;, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 data "Properties" "Highlighted"

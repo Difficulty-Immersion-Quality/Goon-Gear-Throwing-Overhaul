@@ -334,7 +334,7 @@
 
 	<!-- 10. Garb of the Land and Sky -->
 	<!-- "MAG_Monk_Armor_MountainStance_Passive" -->
-	<content contentuid="h1102c1e8g60f5g455ag8e9egd72b54ef3afc" version="1">The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_Dash_StepOfTheWind"&gt;Step of the Wind: Dash&lt;/LSTag&gt;.</content>
+	<content contentuid="h1102c1e8g60f5g455ag8e9egd72b54ef3afc" version="1">The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_PatientDefense"&gt;Patient Defence&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Monk_Armor_WindStance_Passive" -->
 	<content contentuid="h6f9c66d6ge95ag4ee1g8dc1g92ce54d520a2" version="1">The wearer gains [1] round of &lt;LSTag Type="Status" Tooltip="MAG_MONK_SWIFT_AS_THE_WIND"&gt;Swift as Wind&lt;/LSTag&gt; after using &lt;LSTag Type="Spell" Tooltip="Shout_Dash_StepOfTheWind"&gt;Step of the Wind: Dash&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Disengage_StepOfTheWind"&gt;Step of the Wind: Disengage&lt;/LSTag&gt;.</content>
 	<!-- "MAG_MONK_SWIFT_AS_THE_WIND" -->

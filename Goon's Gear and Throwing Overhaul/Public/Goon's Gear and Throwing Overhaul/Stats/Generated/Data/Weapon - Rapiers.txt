@@ -70,6 +70,8 @@ new entry "Goon_Target_MAG_WeaponAction_SearingBlood_Offhand"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MAG_WeaponAction_SearingBlood"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
 data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BURNING,100,2);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Fire);DealDamage(SELF, 1d6, Slashing);DealDamage(1d6, Fire); ExecuteWeaponFunctors(OffHand);"
 // Searing Blood (Offhand)
 data "DisplayName" "h363f39e6g26fbg4bd4gb638g499b914d3c41;1"
@@ -321,4 +323,3 @@ new entry "GOON_VERMINSIGN_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-

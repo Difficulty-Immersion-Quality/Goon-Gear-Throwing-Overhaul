@@ -451,6 +451,7 @@ using "MAG_Legendary_ShieldRiposte_Passive"
 // When a foe hits you with a melee attack, you can use your reaction, dealing [1] and knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn unless they succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
 data "Description" "h6e9ec880gcdb6g4fa7g9f69ge0b3217482db;1"
 // data "DescriptionParams" "DealDamage(2d4, Force)"
+data "DescriptionParams" "DealDamage(2d4, Force);1"
 // data "TooltipSave" "f762efbb-f8f1-493e-b248-2de1567b4bd2"
 // data "Icon" "Action_Bash"
 // data "Boosts" "UnlockInterrupt(Interrupt_Legendary_ShieldBlow)"
@@ -529,4 +530,3 @@ new entry "GOON_ENFORCERSHIELD_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting;ApplyToDead"
-

@@ -25,6 +25,7 @@ function IsWeaponAttack()
     return ConditionResult(false)
 end
 
+-- AttackDescription is not a thing, at least in this context.
 function IsWeaponAttackAttackDescription()
     -- result = context.AttackDescription.AttackType == AttackType.RangedWeaponAttack
     -- or context.AttackDescription.AttackType == AttackType.MeleeWeaponAttack
@@ -378,6 +379,7 @@ end
 function IntransigentWarhammerThrow(item)
     item = item or context.HitDescription.ThrownObject
     if not IsHit().Result                                  then return ConditionResult(false) end
+    if not Enemy(context.Target).Result                    then return ConditionResult(false) end
     if not (IsCritical().Result or IsKillingBlow().Result) then return ConditionResult(false) end
     return HasAnyStatus({ 'GOON_INTRANSIGENTWARHAMMER_WEAPON_TECHNICAL' }, {}, {}, item)
 end

@@ -236,7 +236,7 @@ using "MAG_LC_Frigid_Trident"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_CripplingStrike);UnlockSpell(Target_MAG_WeaponAction_FrigidBlade)"
 data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_DisarmingStrike);UnlockSpell(Target_CripplingStrike);UnlockSpell(Target_MAG_WeaponAction_FrigidBlade)"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Rush_SpringAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand);UnlockSpell(Goon_Target_DisarmingStrike_Offhand)"
-data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Rush_SpringAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand);UnlockSpell(Goon_Target_DisarmingStrike_Offhand);UnlockSpell(Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Rush_SpringAttack_Offhand);UnlockSpell(Goon_Target_DisarmingStrike_Offhand);UnlockSpell(Goon_Target_CripplingStrike_Offhand);UnlockSpell(Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand)"
 
 new entry "GOON_ALLANDRASWHELM_WEAPON_TECHNICAL"
 type "StatusData"

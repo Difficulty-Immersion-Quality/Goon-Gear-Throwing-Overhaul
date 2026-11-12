@@ -496,6 +496,14 @@
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
 
+<!-- ==================================== Weapon - Daggers ==================================== -->
+
+	<!-- 6. Ritual Dagger -->
+	<!-- "GOB_PainPriest_Dagger_Passive" -->
+    <content contentuid="h70afb983g9ff5g4f5cgbde0g6116e405e432" version="1">After a successful attack with this dagger, the wielder is &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [1] round.</content>
+	<!-- "Shout_GOB_PainPriest_DaggerSpell" -->
+    <content contentuid="h84763380g605cg4cd9g8bd8g471ca14becf4" version="1">Pain is a path to power. Take [1] to become &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [2] rounds.</content>
+
 <!-- ==================================== Weapon - Light Crossbows ==================================== -->
 
 	<!-- 2. Light Crossbow of Speed (Inaccessible/Cut content) -->

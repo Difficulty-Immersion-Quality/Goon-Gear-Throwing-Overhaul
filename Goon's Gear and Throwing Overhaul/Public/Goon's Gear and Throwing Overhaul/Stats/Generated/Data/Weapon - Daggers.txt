@@ -210,8 +210,10 @@ data "OnApplySuccess" "ApplyStatus(BARBED_ARROW, 100, 3)"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Ritual Dagger ====================================
-// Bug Fix: The Pain Maiden's Blessing now applies Bless for the correct duration.
+// Bug Fix: The Pain Maiden's Blessing's description now accurately describes duration.
 // Bug Fix: Blood Sacrifice now creates an Unstable Blood surface instead of a regular Blood surface if the caster has the Unstable Blood passive.
+// Changes: Blood Sacrifice now applies Bless for 2 rounds instead of 1.
+// Changes: The Pain Maiden's Blessing and Blood Sacrifice now just applies Bless instead of a renamed copy called The Pain Maiden's Blessing. It's clearer and they never stacked.
 // TODO: Throwing support.
 
 // new entry "GOB_PainPriest_Dagger"
@@ -234,29 +236,35 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "GOB_PainPriest_Dagger_Passive"
 type "PassiveData"
 using "GOB_PainPriest_Dagger_Passive"
-// The Pain Maiden's Blessing
+// // The Pain Maiden's Blessing
 // data "DisplayName" "hd9721db9gf3a1g4b29g9667g02fea4f4b0f0;3"
-// After a successful attack with this dagger, the wielder receives a +1d4 bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; until the end of their next turn.
+// // After a successful attack with this dagger, the wielder receives a +1d4 bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; until the end of their next turn.
 // data "Description" "hee1dc4f7g0a8fg4c6bg890ag5d65995224ed;5"
+// // After a successful attack with this dagger, the wielder is &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [1] round.
+data "Description" "h70afb983g9ff5g4f5cgbde0g6116e405e432;1"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "AttackedWithPassiveSourceWeapon()"
 // data "StatsFunctors" "ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
-data "StatsFunctors" "ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,2)"
+data "StatsFunctors" "ApplyStatus(SELF,BLESS,100,1)"
 
 new entry "Shout_GOB_PainPriest_DaggerSpell"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_GOB_PainPriest_DaggerSpell"
 // data "SpellProperties" "GROUND:CreateSurface(1,-1,Blood);DealDamage(1d4,Slashing);ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
-data "SpellProperties" "GROUND:IF(not HasPassive('LOW_BloodMerchant_ExplosiveBlood',context.Source)):CreateSurface(1,-1,Blood);GROUND:IF(HasPassive('LOW_BloodMerchant_ExplosiveBlood',context.Source)):CreateSurface(1,-1,BloodExploding);DealDamage(1d4,Slashing);ApplyStatus(SELF,GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
+data "SpellProperties" "GROUND:IF(not HasPassive('LOW_BloodMerchant_ExplosiveBlood',context.Source)):CreateSurface(1,-1,Blood);GROUND:IF(HasPassive('LOW_BloodMerchant_ExplosiveBlood',context.Source)):CreateSurface(1,-1,BloodExploding);DealDamage(1d4,Slashing);ApplyStatus(SELF,BLESS,100,2)"
 // data "TargetConditions" "Self()"
 // data "Icon" "Action_SacrificeToLoviatar"
-// Blood Sacrifice
+// // Blood Sacrifice
 // data "DisplayName" "h8dd636c7g37a8g4d40gb0afga1722fbaa09c;2"
-// Pain is a path to power. Take [1] to receive a +[2] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// // Pain is a path to power. Take [1] to receive a +[2] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
 // data "Description" "h79bb4af0g3ca6g4817ga157g8679fde3dae8;4"
+// // Pain is a path to power. Take [1] to receive a +[2] bonus to become &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [3] rounds.
+data "Description" "h84763380g605cg4cd9g8bd8g471ca14becf4;1"
 // data "DescriptionParams" "DealDamage(1d4,Slashing);1d4"
+data "DescriptionParams" "DealDamage(1d4,Slashing);1d4;2"
 // data "TooltipStatusApply" "ApplyStatus(GOB_PAIN_PRIEST_DAGGER_BLESS,100,1)"
+data "TooltipStatusApply" "ApplyStatus(BLESS,100,2)"
 // data "CastSound" "CrSpell_Cast_BloodSacrifice"
 // data "CastTextEvent" "Cast"
 // data "UseCosts" "BonusActionPoint:1"
@@ -265,6 +273,14 @@ data "SpellProperties" "GROUND:IF(not HasPassive('LOW_BloodMerchant_ExplosiveBlo
 // data "SpellFlags" "Stealth;IgnoreSilence"
 // data "PrepareEffect" "e4abb54b-8d1a-4940-a6e0-71cd6a895831"
 // data "CastEffect" "c3c4ce67-c06b-42ef-84d6-d4f6eb205805"
+
+// new entry "GOB_PAIN_PRIEST_DAGGER_BLESS"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "BLESS"
+// // The Pain Maiden's Blessing
+// data "DisplayName" "h2c3378cdgc280g48b8g90b9g3ad3d8001e70;4"
+// data "Icon" "Item_WPN_HUM_Dagger_A_1"
 
 // ==================================== Ritual Dagger of Shar ====================================
 // TODO: Something/anything.

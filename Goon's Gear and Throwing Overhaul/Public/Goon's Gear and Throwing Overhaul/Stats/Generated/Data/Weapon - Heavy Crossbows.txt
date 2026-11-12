@@ -256,24 +256,24 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_UndeadSlayer_Passive"
 type "PassiveData"
 using "MAG_UndeadSlayer_Passive"
-// Revenant Scourge
+// // Revenant Scourge
 // data "DisplayName" "hb1e1efaag886bg4cdbgad72g260c65a38e17;1"
-// When used against undead creatures this weapon has +[1] bonus to Attack and Damage rolls.
+// // When used against undead creatures this weapon has +[1] bonus to Attack and Damage rolls.
 // data "Description" "he543a58dgc4f9g4a25ga5e9gca44862ddc0b;1"
-// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Undead.
+// // &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Undead.
 data "Description" "h84bb0923g7d8ag4b3agaddag8e49930bb680;1"
 // data "DescriptionParams" "1d4"
-data "Boosts" "IF(Tagged('UNDEAD',context.Target)):RollBonus(RangedWeaponAttack, 1d4);IF(IsRangedWeaponAttack() and Tagged('UNDEAD',context.Target)):CharacterWeaponDamage(1d4)"
+data "Boosts" "IF(HasStatus('GOON_THELONGARMOFTHEGUR_WEAPON_TECHNICAL', GetAttackWeapon(context.Source)) and Tagged('UNDEAD',context.Target)):RollBonus(RangedWeaponAttack, 1d4);IF(HasStatus('GOON_THELONGARMOFTHEGUR_WEAPON_TECHNICAL', GetAttackWeapon(context.Source)) and IsRangedWeaponAttack() and Tagged('UNDEAD',context.Target)):CharacterWeaponDamage(1d4)"
 
 new entry "MAG_UNDEAD_SLAYER_BLESS"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MAG_UNDEAD_SLAYER_BLESS"
-// Revenant Scourge
+// // Revenant Scourge
 // data "DisplayName" "h7fa313e9gb2cag42e7g8e54g268b629cfc6d;2"
-// When used against undead creatures this weapon has +[1] bonus to Attack and Damage rolls.
+// // When used against undead creatures this weapon has +[1] bonus to Attack and Damage rolls.
 // data "Description" "h72384fb0gfb27g4c21gbbb3ge9a9f73a6d38;1"
-// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Undead.
+// // &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Undead.
 data "Description" "h84bb0923g7d8ag4b3agaddag8e49930bb680;1"
 // data "DescriptionParams" "1d4"
 // data "Icon" "GenericIcon_Intent_Buff"

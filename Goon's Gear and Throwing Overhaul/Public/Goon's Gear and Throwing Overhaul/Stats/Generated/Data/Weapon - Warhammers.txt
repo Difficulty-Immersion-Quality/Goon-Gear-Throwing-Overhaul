@@ -70,7 +70,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 new entry "Goon_WPN_Warhammer_Ceremonial"
 type "Weapon"
-using "WPN_Battleaxe_1"
+using "WPN_Warhammer_1"
 
 new entry "GOON_CEREMONIALWARHAMMER_WEAPON_TECHNICAL"
 type "StatusData"

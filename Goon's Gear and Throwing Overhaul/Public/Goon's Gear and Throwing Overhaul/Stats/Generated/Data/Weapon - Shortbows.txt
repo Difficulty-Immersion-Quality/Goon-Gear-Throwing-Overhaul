@@ -215,8 +215,21 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 new entry "MAG_BG_SlowedOnCrit_Passive"
 type "PassiveData"
+// using "MAG_Vicious_Weapon_Passive"
 using "MAG_BG_SlowedOnCrit_Passive"
+// Prey Decelerator
+// data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
+// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature.
+// data "Description" "ha7341f13g5c89g4cd0g8f8dga2e245777df0;1"
+// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [1] rounds.
+data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
+// data "DescriptionParams" ""
 data "DescriptionParams" "2"
+// data "BoostContext" ""
+// data "Boosts" ""
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical()"
+// data "StatsFunctors" "ApplyStatus(SLOW, 100, 2)"
 
 new entry "MAG_BG_BlightBringer_Passive"
 type "PassiveData"
@@ -245,24 +258,6 @@ data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
 // data "StackId" "MAG_SMALL_CREATURE_SLAYER_BLESS"
 // data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):WeaponDamage(1d4, Piercing)"
 data "Boosts" ""
-
-new entry "MAG_BG_SlowedOnCrit_Passive"
-type "PassiveData"
-// using "MAG_Vicious_Weapon_Passive"
-using "MAG_BG_SlowedOnCrit_Passive"
-// Prey Decelerator
-// data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
-// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature.
-// data "Description" "ha7341f13g5c89g4cd0g8f8dga2e245777df0;1"
-// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [2].
-data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "2"
-// data "BoostContext" ""
-// data "Boosts" ""
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical()"
-// data "StatsFunctors" "ApplyStatus(SLOW, 100, 2)"
 
 new entry "GOON_PREYDECELERATOR_TECHNICAL_APPLIER"
 type "StatusData"

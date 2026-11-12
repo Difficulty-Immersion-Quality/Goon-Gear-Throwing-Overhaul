@@ -627,6 +627,7 @@ using "FULL_SWING"
 // // Sacrificed [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to its &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with its main-hand melee weapon this turn.
 data "Description" "he6838708g2ae8g48aeg83d6g53e606108898;1"
 // data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+data "DescriptionParams" "Distance(6)"
 // data "Icon" "statIcons_FullSwing"
 // data "StackId" "FULLSWING"
 // data "TickType" "EndTurn"
@@ -643,6 +644,7 @@ using "FullSwing_Passive"
 // // Sacrificed [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to its &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with its main-hand melee weapon this turn.
 data "Description" "he6838708g2ae8g48aeg83d6g53e606108898;1"
 // data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+data "DescriptionParams" "Distance(6)"
 // data "Icon" "unknown"
 // data "Properties" "IsHidden"
 // data "Boosts" "IF(IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
@@ -680,7 +682,7 @@ using "FULL_SWING"
 data "DisplayName" "hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5;1"
 // // Sacrificed [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to its &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with its off-hand melee weapon this turn.
 data "Description" "h754c5775g1a4fg400eg9d49gc1f607bd146c;1"
-data "DescriptionParams" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "DescriptionParams" "Distance(3)"
 data "StackId" "GOON_FULL_SWING_OFFHAND"
 data "Passives" "Goon_FullSwing_Passive_Offhand"
 
@@ -691,6 +693,7 @@ using "FullSwing_Passive"
 data "DisplayName" "hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5;1"
 // // Sacrificed [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal additional damage equal to its &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to a minimum of 1, with its off-hand melee weapon this turn.
 data "Description" "h754c5775g1a4fg400eg9d49gc1f607bd146c;1"
+data "DescriptionParams" "Distance(3)"
 data "Boosts" "IF(Goon_IsMeleeOffhandWeaponAttack() and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
 
 // ==================================== Rush Attack ====================================

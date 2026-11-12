@@ -36,6 +36,15 @@
 	<!-- Barbarian - Enraged Throw -->
 	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 
+<!-- ==================================== Throwing - Technicals ==================================== -->
+
+	<!-- "GOON_OIL_DIMINUTION_TECHNICAL_APPLIER" -->
+    <content contentuid="ha099cfccgac67g42b9gba08gbcab76b5da13" version="1">Affected entity becomes &lt;LSTag Type="Status" Tooltip="REDUCE"&gt;Reduced&lt;/LSTag&gt; for [1] rounds unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
+	<!-- "GOON_OIL_BANE_TECHNICAL_APPLIER" -->
+    <content contentuid="h6fecf21cg642eg484bg8fbbgd6deef9d0763" version="1">Affected entity becomes &lt;LSTag Type="Status" Tooltip="ALCH_OIL_BANE_CONDITION"&gt;Baned&lt;/LSTag&gt; for [1] rounds unless it succeeds a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
+	<!-- "GOON_TOXIN_SIMPLE_TECHNICAL_APPLIER", "GOON_TOXIN_SERPENT_TECHNICAL_APPLIER", "GOON_TOXIN_WYVERN_TECHNICAL_APPLIER", "GOON_TOXIN_PURPLEWORM_TECHNICAL_APPLIER" -->
+    <content contentuid="hec3e6679gf5f0g4669g8629g631ca9b4f737" version="1">Affected entity takes [1] at the end of its turn unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
+
 <!-- ==================================== WEAPON ACTIONS ==================================== -->
 
     <!-- Backbreaker -->

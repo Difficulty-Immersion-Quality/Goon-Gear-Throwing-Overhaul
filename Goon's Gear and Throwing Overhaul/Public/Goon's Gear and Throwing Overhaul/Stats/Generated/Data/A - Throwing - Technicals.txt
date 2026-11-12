@@ -6,7 +6,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 // // Enraged Throw
 data "DisplayName" "ha09dcb86gbe9eg4e61gb095g35147a8f75e1;4"
-// // Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt.
+// // Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
 data "Description" "hca4be97fg0867g4346g8e2dg3c7d152047b0;1"
 data "TooltipSave" "Dexterity"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -15,17 +15,18 @@ data "OnApplySuccess" "ApplyStatus(PRONE,100,1)"
 data "OnApplyFail" ""
 
 // ==================================== Coatings ====================================
-// Some of these don't exist here... expand
+// TODO:Some of these don't exist here... expand.
+// TODO: Edit vanilla entries for consistency, but, at that point just do Goon's Consumable Overhaul.
 
 // Oil of Diminution
 new entry "GOON_OIL_DIMINUTION_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Oil of Diminution
+// // Oil of Diminution
 data "DisplayName" "h359ee476gb8f5g4caegbd5bgf2b9a29f3ad0;2"
-// Targets must succeed a Constitution Saving Throw or receive Disadvantage on Strength Checks and Saving Throws, as well as a [1] penalty to damage on melee attacks. 
-data "Description" "h0ca79c18g3bb5g4082gb185g2f82815d7a63;1"
-data "DescriptionParams" "1d4"
+// // Affected entity becomes &lt;LSTag Type="Status" Tooltip="REDUCE"&gt;Reduced&lt;/LSTag&gt; for [1] rounds unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "ha099cfccgac67g42b9gba08gbcab76b5da13;1"
+data "DescriptionParams" "2"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 11)"
@@ -36,10 +37,10 @@ data "OnApplyFail" ""
 new entry "GOON_OIL_BANE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Oil of Bane
+// // Oil of Bane
 data "DisplayName" "h58787b49g9d53g4b4fg8234g7f8cefee8dab;2"
-// Targets become Baned for [1] turns unless they succeed a Charisma Saving Throw.
-data "Description" "hd31b5402g3f9bg4b1ag8400gbd961b0a25a0;1"
+// // Affected entity becomes &lt;LSTag Type="Status" Tooltip="ALCH_OIL_BANE_CONDITION"&gt;Baned&lt;/LSTag&gt; for [1] rounds unless it succeeds a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h6fecf21cg642eg484bg8fbbgd6deef9d0763;1"
 data "DescriptionParams" "2"
 data "TooltipSave" "Charisma"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -51,10 +52,10 @@ data "OnApplyFail" ""
 new entry "GOON_TOXIN_SIMPLE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Simple Toxin
+// // Simple Toxin
 data "DisplayName" "h02524745g3faeg4540g8aecg7b5794f4c41a;2"
-// Affected entity takes [1] at the end of their turn, unless it succeeds a Constitution Saving Throw.
-data "Description" "h28f417e6g3ed9g495egb02fg105c2ad12208;3"
+// // Affected entity takes [1] at the end of its turn unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hec3e6679gf5f0g4669g8629g631ca9b4f737;1"
 data "DescriptionParams" "DealDamage(1d4,Poison)"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -66,10 +67,10 @@ data "OnApplyFail" ""
 new entry "GOON_TOXIN_SERPENT_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Serpent Venom Toxin
+// // Serpent Venom Toxin
 data "DisplayName" "h7531476bgfb94g4e9cg8ab0gd28654b257ed;2"
-// Affected entity takes [1] at the end of their turn, or half that damage if it succeeds a Constitution <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>.
-data "Description" "h43726bacg78aeg4095g9bdega832a889aa6a;4"
+// // Affected entity takes [1] at the end of its turn unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hec3e6679gf5f0g4669g8629g631ca9b4f737;1"
 data "DescriptionParams" "DealDamage(1d6,Poison)"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -81,10 +82,10 @@ data "OnApplyFail" ""
 new entry "GOON_TOXIN_WYVERN_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Wyvern Toxin
+// // Wyvern Toxin
 data "DisplayName" "h8756c9d0gdbdeg459egbee0g61ea46ed9b4f;1"
-// Affected entity takes [1] at the end of their turn, or half that damage if it succeeds a Constitution <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>.
-data "Description" "h6ecf93d6gab2fg4f96gb2f9gc6139b281b70;3"
+// // Affected entity takes [1] at the end of its turn unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hec3e6679gf5f0g4669g8629g631ca9b4f737;1"
 data "DescriptionParams" "DealDamage(1d8,Poison)"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -96,10 +97,10 @@ data "OnApplyFail" ""
 new entry "GOON_TOXIN_PURPLEWORM_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Purple Worm Toxin
+// // Purple Worm Toxin
 data "DisplayName" "hdc5a159eg5cbbg4466gac36gf63b48e8acb6;2"
-// Affected entity takes [1] at the end of their turn, or half that damage if it succeeds a Constitution <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>.
-data "Description" "h25913176g1788g4a81g8990g411aa91f55b5;3"
+// // Affected entity takes [1] at the end of its turn unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hec3e6679gf5f0g4669g8629g631ca9b4f737;1"
 data "DescriptionParams" "DealDamage(1d10,Poison)"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"

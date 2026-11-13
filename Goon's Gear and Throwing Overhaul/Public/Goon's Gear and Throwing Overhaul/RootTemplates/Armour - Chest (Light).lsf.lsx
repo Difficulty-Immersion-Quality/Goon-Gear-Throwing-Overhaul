@@ -1,11 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <save>
 	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<node id="GameObjects">
-				</node>
 			<!-- 1. Blazer of Benevolence -->
 
 			<!-- 2. Scarlet Leather Armour -->
@@ -988,7 +986,9 @@
 													<attribute id="Object" type="FixedString" value="4c4f825d-bec9-50a3-aa17-c7892544834a" />
 												</node>
 												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="354939fb-1ca4-1513-67a1-6daf62a0a22e" />
+													<!-- Bug Fix: Replaced GTY_F_ARM_Druid_B_1_Pants githyanki pants with the pair used by other body types (GTY_F_ARM_Druid_B_2_Pants) -->
+													<!-- <attribute id="Object" type="FixedString" value="354939fb-1ca4-1513-67a1-6daf62a0a22e" /> -->
+													<attribute id="Object" type="FixedString" value="bcb8ab85-18ab-31b6-d48f-8ecdb93ef1ca" />
 												</node>
 											</children>
 										</node>
@@ -1208,6 +1208,7 @@
 					</children>
 				</node>
 			<!-- 9. Armour of the Sporekeeper -->
+				<!-- TODO: fix visual bugs -->
 
 			<!-- 10. Bhaalist Armour -->
 
@@ -1216,6 +1217,7 @@
 			<!-- 12. Torment Drinker Armour (Innaccessible/cut content) -->
 
 			<!-- 13. Druidic Armour variants (Innaccessible/cut content) -->
+				<!-- TODO: fix visual bugs -->
 
 			</children>
 		</node>

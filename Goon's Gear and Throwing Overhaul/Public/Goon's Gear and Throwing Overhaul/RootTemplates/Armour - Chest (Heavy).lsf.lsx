@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <save>
 	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
 	<region id="Templates">
@@ -11,6 +11,7 @@
 			<!-- 3. Cerebral Citadel Armour -->
 
 			<!-- 4. Dwarven Splintmail -->
+				<!-- TODO: fix visual bugs -->
 
 			<!-- 5. Flawed Helldusk Armour -->
 
@@ -208,9 +209,10 @@
 												<node id="MapValue">
 													<attribute id="Object" type="FixedString" value="f8f94b3a-52e7-94ca-f4b3-8a3bbc68d861" />
 												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="4cf4710e-87c9-ca2c-6823-dcd28a82cd7d" />
-												</node>
+                                            <!-- Bug Fix: Removed DWR_F_ARM_Splint_Adamantine_Apron, duplicates the apron already in the Belt -->
+                                                <!-- <node id="MapValue">
+                                                    <attribute id="Object" type="FixedString" value="4cf4710e-87c9-ca2c-6823-dcd28a82cd7d" />
+                                                </node> -->
 											</children>
 										</node>
 										<node id="Object">
@@ -296,9 +298,10 @@
 												<node id="MapValue">
 													<attribute id="Object" type="FixedString" value="645cf233-09a8-b762-5b8c-639a5632555b" />
 												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="15eb00e5-cd3e-3c15-7046-9e7b226eb2fa" />
-												</node>
+                                            <!-- Bug Fix: Removed DGB_M_ARM_Splint_Adamantine_Apron, duplicates the apron already in the Belt -->
+                                                <!-- <node id="MapValue">
+                                                    <attribute id="Object" type="FixedString" value="15eb00e5-cd3e-3c15-7046-9e7b226eb2fa" />
+                                                </node> -->
 											</children>
 										</node>
 										<node id="Object">
@@ -316,9 +319,10 @@
 												<node id="MapValue">
 													<attribute id="Object" type="FixedString" value="487f80d0-6e9f-5254-5396-e497b1ceb680" />
 												</node>
-												<node id="MapValue">
-													<attribute id="Object" type="FixedString" value="69c9746b-c947-8528-6829-f4d608eff684" />
-												</node>
+                                            <!-- Bug Fix: Removed DGB_F_ARM_Splint_Adamantine_Apron, duplicates the apron already in the Belt -->
+                                                <!-- <node id="MapValue">
+                                                    <attribute id="Object" type="FixedString" value="69c9746b-c947-8528-6829-f4d608eff684" />
+                                                </node> -->
 											</children>
 										</node>
 										<node id="Object">
